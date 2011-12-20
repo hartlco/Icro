@@ -3,7 +3,7 @@
 
 @interface XMLRPCEncoder (XMLRPCEncoderPrivate)
 
-- (NSString *)valueTag: (NSString *)tag value: (NSString *)value;
+- (void)valueTag: (NSString *)tag value: (NSString *)value;
 
 #pragma mark -
 
@@ -11,25 +11,35 @@
 
 #pragma mark -
 
-- (NSString *)encodeObject: (id)object;
+- (void)encodeObject: (id)object;
 
 #pragma mark -
 
-- (NSString *)encodeArray: (NSArray *)array;
+- (void)encodeArray: (NSArray *)array;
 
-- (NSString *)encodeDictionary: (NSDictionary *)dictionary;
+- (void)encodeDictionary: (NSDictionary *)dictionary;
 
 #pragma mark -
 
-- (NSString *)encodeBoolean: (CFBooleanRef)boolean;
+- (void)encodeBoolean: (CFBooleanRef)boolean;
 
-- (NSString *)encodeNumber: (NSNumber *)number;
+- (void)encodeNumber: (NSNumber *)number;
 
-- (NSString *)encodeString: (NSString *)string omitTag: (BOOL)omitTag;
+- (void)encodeString: (NSString *)string omitTag: (BOOL)omitTag;
 
-- (NSString *)encodeDate: (NSDate *)date;
+- (void)encodeDate: (NSDate *)date;
 
-- (NSString *)encodeData: (NSData *)data;
+- (void)encodeData: (NSData *)data;
+
+#pragma mark -
+
+- (void)appendString:(NSString *)aString;
+
+- (void)appendFormat:(NSString *)format, ...;
+
+#pragma mark -
+
+- (void)openStreamingCache;
 
 @end
 
@@ -50,28 +60,53 @@
 #pragma mark -
 
 - (NSString *)encode {
-    NSMutableString *buffer = [NSMutableString stringWithString: @"<?xml version=\"1.0\"?><methodCall>"];
-    
-    [buffer appendFormat: @"<methodName>%@</methodName>", [self encodeString: myMethod omitTag: YES]];
-    
-    [buffer appendString: @"<params>"];
+    [self encodeForStreaming];
+
+    NSInputStream *stream = [self encodedStream];
+    NSMutableData *encodedData = [NSMutableData data];
+
+    [stream open];
+
+    while ([stream hasBytesAvailable]) {
+        uint8_t buf[1024];
+        unsigned int len = 0;
+
+        len = [stream read:buf maxLength:1024];
+        if (len) {
+            [encodedData appendBytes:buf length:len];
+        }
+    }
+
+    [stream close];
+
+    return [[[NSString alloc] initWithData:encodedData encoding:NSUTF8StringEncoding] autorelease];
+}
+
+- (void)encodeForStreaming {
+    [self appendString: @"<?xml version=\"1.0\"?><methodCall><methodName>"];
+
+    [self encodeString: myMethod omitTag: YES];
+
+    [self appendString: @"</methodName><params>"];
     
     if (myParameters) {
         NSEnumerator *enumerator = [myParameters objectEnumerator];
         id parameter = nil;
         
         while ((parameter = [enumerator nextObject])) {
-            [buffer appendString: @"<param>"];
-            [buffer appendString: [self encodeObject: parameter]];
-            [buffer appendString: @"</param>"];
+            [self appendString: @"<param>"];
+            [self encodeObject: parameter];
+            [self appendString: @"</param>"];
         }
     }
     
-    [buffer appendString: @"</params>"];
+    [self appendString: @"</params>"];
     
-    [buffer appendString: @"</methodCall>"];
-    
-    return buffer;
+    [self appendString: @"</methodCall>"];
+}
+
+- (NSInputStream *)encodedStream {
+    return [NSInputStream inputStreamWithFileAtPath:streamingCacheFilePath];
 }
 
 #pragma mark -
@@ -113,7 +148,12 @@
 - (void)dealloc {
     [myMethod release];
     [myParameters release];
-    
+    if (streamingCacheFile != nil) {
+        [streamingCacheFile closeFile];
+        [streamingCacheFile release];
+        [[NSFileManager defaultManager] removeItemAtPath:streamingCacheFilePath error:nil];
+    }
+    [streamingCacheFilePath release];
     [super dealloc];
 }
 
@@ -123,8 +163,8 @@
 
 @implementation XMLRPCEncoder (XMLRPCEncoderPrivate)
 
-- (NSString *)valueTag: (NSString *)tag value: (NSString *)value {
-    return [NSString stringWithFormat: @"<value><%@>%@</%@></value>", tag, value, tag];
+- (void)valueTag: (NSString *)tag value: (NSString *)value {
+    [self appendFormat: @"<value><%@>%@</%@></value>", tag, value, tag];
 }
 
 #pragma mark -
@@ -135,105 +175,131 @@
 
 #pragma mark -
 
-- (NSString *)encodeObject: (id)object {
+- (void)encodeObject: (id)object {
     if (!object) {
-        return nil;
+        return;
     }
     
     if ([object isKindOfClass: [NSArray class]]) {
-        return [self encodeArray: object];
+        [self encodeArray: object];
     } else if ([object isKindOfClass: [NSDictionary class]]) {
-        return [self encodeDictionary: object];
+        [self encodeDictionary: object];
     } else if (((CFBooleanRef)object == kCFBooleanTrue) || ((CFBooleanRef)object == kCFBooleanFalse)) {
-        return [self encodeBoolean: (CFBooleanRef)object];
+        [self encodeBoolean: (CFBooleanRef)object];
     } else if ([object isKindOfClass: [NSNumber class]]) {
-        return [self encodeNumber: object];
+        [self encodeNumber: object];
     } else if ([object isKindOfClass: [NSString class]]) {
-        return [self encodeString: object omitTag: NO];
+        [self encodeString: object omitTag: NO];
     } else if ([object isKindOfClass: [NSDate class]]) {
-        return [self encodeDate: object];
+        [self encodeDate: object];
     } else if ([object isKindOfClass: [NSData class]]) {
-        return [self encodeData: object];
+        [self encodeData: object];
     } else {
-        return [self encodeString: object omitTag: NO];
+        [self encodeString: object omitTag: NO];
     }
 }
 
 #pragma mark -
 
-- (NSString *)encodeArray: (NSArray *)array {
-    NSMutableString *buffer = [NSMutableString string];
+- (void)encodeArray: (NSArray *)array {
     NSEnumerator *enumerator = [array objectEnumerator];
     
-    [buffer appendString: @"<value><array><data>"];
+    [self appendString: @"<value><array><data>"];
     
     id object = nil;
     
     while (object = [enumerator nextObject]) {
-        [buffer appendString: [self encodeObject: object]];
+        [self encodeObject: object];
     }
     
-    [buffer appendString: @"</data></array></value>"];
-    
-    return (NSString *)buffer;
+    [self appendString: @"</data></array></value>"];
 }
 
-- (NSString *)encodeDictionary: (NSDictionary *)dictionary {
-    NSMutableString * buffer = [NSMutableString string];
+- (void)encodeDictionary: (NSDictionary *)dictionary {
     NSEnumerator *enumerator = [dictionary keyEnumerator];
     
-    [buffer appendString: @"<value><struct>"];
+    [self appendString: @"<value><struct>"];
     
     NSString *key = nil;
     
     while (key = [enumerator nextObject]) {
-        [buffer appendString: @"<member>"];
-        [buffer appendFormat: @"<name>%@</name>", [self encodeString: key omitTag: YES]];
-        [buffer appendString: [self encodeObject: [dictionary objectForKey: key]]];
-        [buffer appendString: @"</member>"];
+        [self appendString: @"<member>"];
+        [self appendString: @"<name>"];
+        [self encodeString: key omitTag: YES];
+        [self appendString: @"</name>"];
+        [self encodeObject: [dictionary objectForKey: key]];
+        [self appendString: @"</member>"];
     }
     
-    [buffer appendString: @"</struct></value>"];
-    
-    return (NSString *)buffer;
+    [self appendString: @"</struct></value>"];
 }
 
 #pragma mark -
 
-- (NSString *)encodeBoolean: (CFBooleanRef)boolean {
+- (void)encodeBoolean: (CFBooleanRef)boolean {
     if (boolean == kCFBooleanTrue) {
-        return [self valueTag: @"boolean" value: @"1"];
+        [self valueTag: @"boolean" value: @"1"];
     } else {
-        return [self valueTag: @"boolean" value: @"0"];
+        [self valueTag: @"boolean" value: @"0"];
     }
 }
 
-- (NSString *)encodeNumber: (NSNumber *)number {
+- (void)encodeNumber: (NSNumber *)number {
     NSString *numberType = [NSString stringWithCString: [number objCType] encoding: NSUTF8StringEncoding];
     
     if ([numberType isEqualToString: @"d"]) {
-        return [self valueTag: @"double" value: [number stringValue]];
+        [self valueTag: @"double" value: [number stringValue]];
     } else {
-        return [self valueTag: @"i4" value: [number stringValue]];
+        [self valueTag: @"i4" value: [number stringValue]];
     }
 }
 
-- (NSString *)encodeString: (NSString *)string omitTag: (BOOL)omitTag {
+- (void)encodeString: (NSString *)string omitTag: (BOOL)omitTag {
     return omitTag ? [string escapedString] : [self valueTag: @"string" value: [string escapedString]];
 }
 
-- (NSString *)encodeDate: (NSDate *)date {
+- (void)encodeDate: (NSDate *)date {
     unsigned components = kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay | kCFCalendarUnitHour | kCFCalendarUnitMinute | kCFCalendarUnitSecond;
     NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components: components fromDate: date];
     NSString *buffer = [NSString stringWithFormat: @"%.4d%.2d%.2dT%.2d:%.2d:%.2d", [dateComponents year], [dateComponents month], [dateComponents day], [dateComponents hour], [dateComponents minute], [dateComponents second], nil];
     
-    return [self valueTag: @"dateTime.iso8601" value: buffer];
+    [self valueTag: @"dateTime.iso8601" value: buffer];
 }
 
-- (NSString *)encodeData: (NSData *)data {
+- (void)encodeData: (NSData *)data {
     NSString *buffer = [NSString base64StringFromData: data length: [data length]];
 
-    return [self valueTag: @"base64" value: buffer];
+    [self valueTag: @"base64" value: buffer];
+}
+
+#pragma mark -
+
+- (void)appendString:(NSString *)aString {
+    [streamingCacheFile writeData:[aString dataUsingEncoding:NSUTF8StringEncoding]];
+}
+
+- (void)appendFormat:(NSString *)format, ... {
+    va_list ap;
+	va_start(ap, format);
+	NSString *message = [[[NSString alloc] initWithFormat:format arguments:ap] autorelease];
+
+    [self appendString:message];
+}
+
+#pragma mark -
+
+- (void)openStreamingCache {
+    if (streamingCacheFile != nil)
+        return;
+
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *directory = [paths objectAtIndex:0];
+    NSString *guid = [[NSProcessInfo processInfo] globallyUniqueString];
+    streamingCacheFilePath = [[directory stringByAppendingPathComponent:guid] retain];
+
+    [fileManager createFileAtPath:streamingCacheFilePath contents:nil attributes:nil];
+    streamingCacheFile = [[NSFileHandle fileHandleForWritingAtPath:streamingCacheFilePath] retain];
 }
 
 @end

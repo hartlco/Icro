@@ -3,9 +3,15 @@
 @interface XMLRPCEncoder : NSObject {
     NSString *myMethod;
     NSArray *myParameters;
+    NSFileHandle *streamingCacheFile;
+    NSString *streamingCacheFilePath;
 }
 
 - (NSString *)encode;
+
+- (void)encodeForStreaming;
+
+- (NSInputStream *)encodedStream;
 
 #pragma mark -
 
