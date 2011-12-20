@@ -1,6 +1,10 @@
 #import "XMLRPCEncoder.h"
 #import "NSStringAdditions.h"
 
+// If you change this, be sure it's a multiple of 90.
+// The base 64 encoding adds a new line every 90 characters.
+#define CHUNK_SIZE 18000
+
 @interface XMLRPCEncoder (XMLRPCEncoderPrivate)
 
 - (void)valueTag: (NSString *)tag value: (NSString *)value;
@@ -30,6 +34,10 @@
 - (void)encodeDate: (NSDate *)date;
 
 - (void)encodeData: (NSData *)data;
+
+- (void)encodeInputStream: (NSInputStream *)stream;
+
+- (void)encodeFileHandle: (NSFileHandle *)handle;
 
 #pragma mark -
 
@@ -194,6 +202,10 @@
         [self encodeDate: object];
     } else if ([object isKindOfClass: [NSData class]]) {
         [self encodeData: object];
+    } else if ([object isKindOfClass: [NSInputStream class]]) {
+        [self encodeInputStream: object];
+    } else if ([object isKindOfClass: [NSFileHandle class]]) {
+        [self encodeFileHandle: object];
     } else {
         [self encodeString: object omitTag: NO];
     }
@@ -270,6 +282,41 @@
     NSString *buffer = [NSString base64StringFromData: data length: [data length]];
 
     [self valueTag: @"base64" value: buffer];
+}
+
+- (void)encodeInputStream: (NSInputStream *)stream {
+    [self appendString:@"<value><base64>"];
+
+    [stream open];
+
+    while ([stream hasBytesAvailable]) {
+        uint8_t buf[CHUNK_SIZE];
+        unsigned int len = 0;
+
+        len = [stream read:buf maxLength:CHUNK_SIZE];
+        if (len) {
+            NSData *chunk = [NSData dataWithBytes:buf length:len];
+            NSString *encodedChunk = [NSString base64StringFromData:chunk length:0];
+            [self appendString:encodedChunk];
+        }
+    }
+
+    [stream close];
+
+    [self appendString:@"</base64></value>"];
+}
+
+- (void)encodeFileHandle: (NSFileHandle *)handle {
+    [self appendString:@"<value><base64>"];
+
+    NSData *chunk = [handle readDataOfLength:CHUNK_SIZE];
+    while ([chunk length] > 0) {
+        NSString *encodedChunk = [NSString base64StringFromData:chunk length:0];
+        [self appendString:encodedChunk];
+        chunk = [handle readDataOfLength:CHUNK_SIZE];
+    }
+
+    [self appendString:@"</base64></value>"];
 }
 
 #pragma mark -
