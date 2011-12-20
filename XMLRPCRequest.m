@@ -78,11 +78,18 @@
     return [myXMLEncoder encode];
 }
 
+- (NSInputStream *)bodyStream {
+    return [myXMLEncoder encodedStream];
+}
+
+- (NSNumber *)bodyLength {
+    return [myXMLEncoder encodedLength];
+}
+
 #pragma mark -
 
 - (NSURLRequest *)request {
-    NSData *content = [[self body] dataUsingEncoding: NSUTF8StringEncoding];
-    NSNumber *contentLength = [NSNumber numberWithInt: [content length]];
+    NSNumber *contentLength = [self bodyLength];
     
     if (!myRequest) {
         return nil;
@@ -96,10 +103,12 @@
         [myRequest setValue: @"text/xml" forHTTPHeaderField: @"Content-Type"];
     }
     
-    if (![myRequest valueForHTTPHeaderField: @"Content-Length"]) {
-        [myRequest addValue: [contentLength stringValue] forHTTPHeaderField: @"Content-Length"];
-    } else {
-        [myRequest setValue: [contentLength stringValue] forHTTPHeaderField: @"Content-Length"];
+    if (contentLength) {
+        if (![myRequest valueForHTTPHeaderField: @"Content-Length"]) {
+            [myRequest addValue: [contentLength stringValue] forHTTPHeaderField: @"Content-Length"];
+        } else {
+            [myRequest setValue: [contentLength stringValue] forHTTPHeaderField: @"Content-Length"];
+        }
     }
     
     if (![myRequest valueForHTTPHeaderField: @"Accept"]) {
@@ -115,7 +124,11 @@
       }
     }
     
-    [myRequest setHTTPBody: content];
+    if (streamRequestFromDisk) {
+        [myRequest setHTTPBodyStream: [self bodyStream]];
+    } else {
+        [myRequest setHTTPBody: [[self body] dataUsingEncoding:NSUTF8StringEncoding]];
+    }
     
     return (NSURLRequest *)myRequest;
 }
@@ -124,6 +137,16 @@
 
 - (void)setValue: (NSString *)value forHTTPHeaderField: (NSString *)header {
     [myRequest setValue: value forHTTPHeaderField: header];
+}
+
+#pragma mark -
+
+- (BOOL)streamRequestFromDisk {
+    return streamRequestFromDisk;
+}
+
+- (void)setStreamRequestFromDisk:(BOOL)shouldStream {
+    streamRequestFromDisk = shouldStream;
 }
 
 #pragma mark -

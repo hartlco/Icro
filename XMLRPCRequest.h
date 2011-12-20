@@ -5,6 +5,7 @@
 @interface XMLRPCRequest : NSObject {
     NSMutableURLRequest *myRequest;
     XMLRPCEncoder *myXMLEncoder;
+    BOOL streamRequestFromDisk;
 }
 
 - (id)initWithURL: (NSURL *)URL;
@@ -39,6 +40,10 @@
 
 - (NSString *)body;
 
+- (NSInputStream *)bodyStream;
+
+- (NSNumber *)bodyLength;
+
 #pragma mark -
 
 - (NSURLRequest *)request;
@@ -46,5 +51,11 @@
 #pragma mark -
 
 - (void)setValue: (NSString *)value forHTTPHeaderField: (NSString *)header;
+
+#pragma mark -
+
+- (BOOL)streamRequestFromDisk;
+
+- (void)setStreamRequestFromDisk:(BOOL)shouldStream;
 
 @end

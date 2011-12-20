@@ -115,6 +115,8 @@
     [self appendString: @"</params>"];
     
     [self appendString: @"</methodCall>"];
+
+    [streamingCacheFile synchronizeFile];
 }
 
 - (NSInputStream *)encodedStream {
@@ -122,6 +124,20 @@
         [self encodeForStreaming];
     }
     return [NSInputStream inputStreamWithFileAtPath:streamingCacheFilePath];
+}
+
+- (NSNumber *)encodedLength {
+    if (streamingCacheFilePath == nil) {
+        [self encodeForStreaming];
+    }
+
+    NSError *error = nil;
+    NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:streamingCacheFilePath error:&error];
+    if (error) {
+        return nil;
+    }
+
+    return [attributes objectForKey:NSFileSize];
 }
 
 #pragma mark -

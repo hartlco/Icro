@@ -13,6 +13,8 @@
 
 - (NSInputStream *)encodedStream;
 
+- (NSNumber *)encodedLength;
+
 #pragma mark -
 
 - (void)setMethod: (NSString *)method withParameters: (NSArray *)parameters;
