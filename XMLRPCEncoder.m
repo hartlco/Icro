@@ -68,7 +68,9 @@
 #pragma mark -
 
 - (NSString *)encode {
-    [self encodeForStreaming];
+    if (streamingCacheFilePath == nil) {
+        [self encodeForStreaming];
+    }
 
     NSInputStream *stream = [self encodedStream];
     NSMutableData *encodedData = [NSMutableData data];
@@ -91,6 +93,8 @@
 }
 
 - (void)encodeForStreaming {
+    [self openStreamingCache];
+
     [self appendString: @"<?xml version=\"1.0\"?><methodCall><methodName>"];
 
     [self encodeString: myMethod omitTag: YES];
@@ -114,6 +118,9 @@
 }
 
 - (NSInputStream *)encodedStream {
+    if (streamingCacheFilePath == nil) {
+        [self encodeForStreaming];
+    }
     return [NSInputStream inputStreamWithFileAtPath:streamingCacheFilePath];
 }
 
