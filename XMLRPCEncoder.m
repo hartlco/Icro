@@ -290,7 +290,10 @@
 }
 
 - (void)encodeString: (NSString *)string omitTag: (BOOL)omitTag {
-    return omitTag ? [string escapedString] : [self valueTag: @"string" value: [string escapedString]];
+    if (omitTag)
+        [self appendString: [string escapedString]];
+    else
+        [self valueTag: @"string" value: [string escapedString]];
 }
 
 - (void)encodeDate: (NSDate *)date {
