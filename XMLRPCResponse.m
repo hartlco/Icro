@@ -1,5 +1,6 @@
 #import "XMLRPCResponse.h"
 #import "XMLRPCEventBasedParser.h"
+#import "XMLRPCDataCleaner.h"
 
 @implementation XMLRPCResponse
 
@@ -17,13 +18,15 @@
             
             return nil;
         }
-    
-        myBody = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+
+        XMLRPCDataCleaner *cleaner = [[XMLRPCDataCleaner alloc] initWithData:data];
+        myBody = [[NSString alloc] initWithData: [cleaner cleanData] encoding: NSUTF8StringEncoding];
         myObject = [[parser parse] retain];
         
         isFault = [parser isFault];
         
         [parser release];
+        [cleaner release];
     }
     
     return self;
