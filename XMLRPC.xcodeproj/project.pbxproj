@@ -65,6 +65,12 @@
 		903B0DD212F7581200BD6E09 /* XMLRPCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C6030E33A659006453B4 /* XMLRPCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		903B0DD312F7581200BD6E09 /* XMLRPCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C6040E33A659006453B4 /* XMLRPCResponse.m */; };
 		903B0DD412F7581F00BD6E09 /* XMLRPC.pch in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C6160E33A672006453B4 /* XMLRPC.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		E12F55C214A1EC590060A510 /* XMLRPCDataCleaner.h in Headers */ = {isa = PBXBuildFile; fileRef = E12F55C014A1EC590060A510 /* XMLRPCDataCleaner.h */; };
+		E12F55C314A1EC590060A510 /* XMLRPCDataCleaner.h in Headers */ = {isa = PBXBuildFile; fileRef = E12F55C014A1EC590060A510 /* XMLRPCDataCleaner.h */; };
+		E12F55C414A1EC590060A510 /* XMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = E12F55C114A1EC590060A510 /* XMLRPCDataCleaner.m */; };
+		E12F55C514A1EC590060A510 /* XMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = E12F55C114A1EC590060A510 /* XMLRPCDataCleaner.m */; };
+		E12F55D614A1ED070060A510 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E12F55D514A1ED070060A510 /* libiconv.dylib */; };
+		E12F55D714A1ED9F0060A510 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E12F55D214A1ECE80060A510 /* libiconv.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +137,10 @@
 		8DC2EF5B0486A6940098B216 /* XMLRPC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XMLRPC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		903B0DB612F7574800BD6E09 /* libXMLRPC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXMLRPC.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		E12F55C014A1EC590060A510 /* XMLRPCDataCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCDataCleaner.h; sourceTree = "<group>"; };
+		E12F55C114A1EC590060A510 /* XMLRPCDataCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCDataCleaner.m; sourceTree = "<group>"; };
+		E12F55D214A1ECE80060A510 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		E12F55D514A1ED070060A510 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12F55D714A1ED9F0060A510 /* libiconv.dylib in Frameworks */,
 				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12F55D614A1ED070060A510 /* libiconv.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +304,8 @@
 				07B0C5FC0E33A659006453B4 /* XMLRPCConnection.m */,
 				075137F90E429E560019E4F6 /* XMLRPCConnectionManager.h */,
 				075137FA0E429E560019E4F6 /* XMLRPCConnectionManager.m */,
+				E12F55C014A1EC590060A510 /* XMLRPCDataCleaner.h */,
+				E12F55C114A1EC590060A510 /* XMLRPCDataCleaner.m */,
 				07B0C5FF0E33A659006453B4 /* XMLRPCEncoder.h */,
 				07B0C6000E33A659006453B4 /* XMLRPCEncoder.m */,
 				07EF45390E721A5D009F2708 /* XMLRPCEventBasedParser.h */,
@@ -309,6 +323,8 @@
 		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E12F55D214A1ECE80060A510 /* libiconv.dylib */,
+				E12F55D514A1ED070060A510 /* libiconv.dylib */,
 				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
 				0799AF5D0F67266400B71B22 /* SenTestingKit.framework */,
 			);
@@ -353,6 +369,7 @@
 				0707047810114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h in Headers */,
 				07B0C6100E33A659006453B4 /* XMLRPCRequest.h in Headers */,
 				07B0C6120E33A659006453B4 /* XMLRPCResponse.h in Headers */,
+				E12F55C214A1EC590060A510 /* XMLRPCDataCleaner.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +389,7 @@
 				903B0DD012F7581200BD6E09 /* XMLRPCRequest.h in Headers */,
 				903B0DD212F7581200BD6E09 /* XMLRPCResponse.h in Headers */,
 				903B0DD412F7581F00BD6E09 /* XMLRPC.pch in Headers */,
+				E12F55C314A1EC590060A510 /* XMLRPCDataCleaner.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +577,7 @@
 				0707047910114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m in Sources */,
 				07B0C6110E33A659006453B4 /* XMLRPCRequest.m in Sources */,
 				07B0C6130E33A659006453B4 /* XMLRPCResponse.m in Sources */,
+				E12F55C414A1EC590060A510 /* XMLRPCDataCleaner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +594,7 @@
 				903B0DCF12F7581200BD6E09 /* XMLRPCEventBasedParserDelegate.m in Sources */,
 				903B0DD112F7581200BD6E09 /* XMLRPCRequest.m in Sources */,
 				903B0DD312F7581200BD6E09 /* XMLRPCResponse.m in Sources */,
+				E12F55C514A1EC590060A510 /* XMLRPCDataCleaner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
