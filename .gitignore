@@ -7,7 +7,6 @@
 *.mode2
 *.pbxuser
 *.perspectivev3
-*.xcworkspace
 build/
 classes/
 logs/
