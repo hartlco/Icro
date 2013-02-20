@@ -24,6 +24,6 @@
 #import <Foundation/Foundation.h>
 #ifndef _WPXMLRPC
     #define _WPXMLRPC
-    #import "WPXMLRPCRequest.h"
-    #import "WPXMLRPCResponse.h"
+    #import "WPXMLRPCEncoder.h"
+    #import "WPXMLRPCDecoder.h"
 #endif /* _WPXMLRPC */
