@@ -25,6 +25,8 @@
 #import "WPXMLRPCDecoderDelegate.h"
 #import "WPXMLRPCDataCleaner.h"
 
+NSString *const WPXMLRPCFaultErrorDomain = @"WPXMLRPCFaultError";
+
 @interface WPXMLRPCDecoder () <NSXMLParserDelegate>
 @end
 
@@ -83,12 +85,12 @@
     return _isFault;
 }
 
-- (NSNumber *)faultCode {
+- (NSInteger)faultCode {
     if ([self isFault]) {
-        return [_object objectForKey: @"faultCode"];
+        return [[_object objectForKey: @"faultCode"] integerValue];
     }
 
-    return nil;
+    return 0;
 }
 
 - (NSString *)faultString {
@@ -97,6 +99,14 @@
     }
 
     return nil;
+}
+
+- (NSError *)error {
+    if ([_parser parserError]) {
+        return [_parser parserError];
+    }
+
+    return [NSError errorWithDomain:WPXMLRPCFaultErrorDomain code:[self faultCode] userInfo:@{NSLocalizedDescriptionKey: [self faultString]}];
 }
 
 #pragma mark -

@@ -23,6 +23,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const WPXMLRPCFaultErrorDomain;
+
 /**
  `WPXMLRPCEncoder` encodes a XML-RPC response
  */
@@ -49,12 +51,17 @@
 /**
  The XML-RPC error code
  */
-- (NSNumber *)faultCode;
+- (NSInteger)faultCode;
 
 /**
  The XML-RPC error message
  */
 - (NSString *)faultString;
+
+/**
+ Returns an error if there was a problem decoding the data, or if it's a XML-RPC error
+ */
+- (NSError *)error;
 
 ///-------------------------------------
 /// @name Accessing the decoded response
