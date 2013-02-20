@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.7'
 
   s.documentation = {
-    :appledoc => [ 'AppledocSettings.plist' ]
+    :appledoc => []
   }
 end
