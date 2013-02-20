@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/wordpress-mobile/wpxmlrpc.git", :tag => "0.9.1" }
   s.source_files = 'WPXMLRPC'
   s.public_header_files = [ 'WPXMLRPC/WPXMLRPC.h', 'WPXMLRPC/WPXMLRPCEncoder.h', 'WPXMLRPC/WPXMLRPCDecoder.h' ]
-  s.frameworks   = 'libiconv.dylib'
+  s.libraries    = 'iconv'
   s.requires_arc = true
 
   s.ios.deployment_target = '5.0'
