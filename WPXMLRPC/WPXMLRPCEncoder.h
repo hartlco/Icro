@@ -57,11 +57,11 @@
 ///------------------------------------
 
 /**
- The encoded request as a `NSString`
+ The encoded request as a `NSData`
  
  You should pass this to `[NSMutableRequest setHTTPBody:]`
  */
-@property (nonatomic, readonly) NSString *body;
+@property (nonatomic, readonly) NSData *body;
 
 /**
  The encoded request as a `NSInputStream`

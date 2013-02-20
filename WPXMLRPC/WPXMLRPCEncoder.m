@@ -73,7 +73,7 @@
 
 #pragma mark -
 
-- (NSString *)body {
+- (NSData *)body {
     if (_streamingCacheFilePath == nil) {
         [self encodeForStreaming];
     }
@@ -95,7 +95,7 @@
 
     [stream close];
 
-    return [[NSString alloc] initWithData:encodedData encoding:NSUTF8StringEncoding];
+    return encodedData;
 }
 
 - (void)encodeForStreaming {
