@@ -23,6 +23,7 @@
 
 #import "WPXMLRPCDecoder.h"
 #import "WPXMLRPCDecoderDelegate.h"
+#import "WPXMLRPCDataCleaner.h"
 
 @interface WPXMLRPCDecoder () <NSXMLParserDelegate>
 @end
@@ -57,7 +58,15 @@
     [_parser setDelegate:self];
     
     [_parser parse];
-    
+
+    if ([_parser parserError]) {
+        WPXMLRPCDataCleaner *cleaner = [[WPXMLRPCDataCleaner alloc] initWithData:_body];
+        _body = [cleaner cleanData];
+        _parser = [[NSXMLParser alloc] initWithData:_body];
+        [_parser setDelegate:self];
+        [_parser parse];
+    }
+
     if ([_parser parserError])
         return;
 

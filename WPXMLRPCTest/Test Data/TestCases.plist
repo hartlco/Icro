@@ -39,5 +39,14 @@
 		<key>Age</key>
 		<integer>25</integer>
 	</dict>
+	<key>IncompleteXmlTest</key>
+	<array>
+		<string>Hello World!</string>
+		<integer>42</integer>
+		<real>3.14</real>
+		<integer>1</integer>
+		<date>2009-07-18T21:34:00Z</date>
+		<data>eW91IGNhbid0IHJlYWQgdGhpcyE=</data>
+	</array>
 </dict>
 </plist>
