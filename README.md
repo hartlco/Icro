@@ -24,7 +24,8 @@ WordPress XML-RPC only provides classes to encode and decode XML-RPC. You are fr
 
 ## Building a XML-RPC request
 
-	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://example.com/xmlrpc"]];
+	NSURL *URL = [NSURL URLWithString:@"http://example.com/xmlrpc"];
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
 	[request setHTTPMethod:@"POST"];
 	
 	WPXMLRPCEncoder *encoder = [[WPXMLRPCEncoder alloc] initWithMethod:@"demo.addTwoNumbers" andParameters:@[@1, @2]];
@@ -32,7 +33,8 @@ WordPress XML-RPC only provides classes to encode and decode XML-RPC. You are fr
 
 ## Building a XML-RPC request using streaming
 
-	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://example.com/xmlrpc"]];
+	NSURL *URL = [NSURL URLWithString:@"http://example.com/xmlrpc"];
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
 	[request setHTTPMethod:@"POST"];
 	
 	NSInputStream *fileStream = [NSInputStream inputStreamWithFileAtPath:filePath];
