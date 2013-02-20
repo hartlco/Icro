@@ -1,4 +1,4 @@
-// WPBase64Utils.h
+// WPXMLRPCDecoder.h
 //
 // Copyright (c) 2013 WordPress - http://wordpress.org/
 // Based on Eric Czarny's xmlrpc library - https://github.com/eczarny/xmlrpc
@@ -21,9 +21,50 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-@interface WPBase64Utils : NSObject
-+ (NSString *)encodeData:(NSData *)data;
-+ (void)encodeInputStream:(NSInputStream *)stream withChunkHandler:(void (^)(NSString *chunk))chunkHandler;
-+ (void)encodeFileHandle:(NSFileHandle *)fileHandle withChunkHandler:(void (^)(NSString *chunk))chunkHandler;
-+ (NSData *)decodeString:(NSString *)string;
+#import <Foundation/Foundation.h>
+
+/**
+ `WPXMLRPCEncoder` encodes a XML-RPC response
+ */
+@interface WPXMLRPCDecoder : NSObject
+
+/**
+ Initializes a `WPXMLRPCDecoder` object with the specified response data.
+
+ @param data the data returned by your XML-RPC request
+
+ @return The newly-initialized XML-RPC response
+ */
+- (id)initWithData:(NSData *)data;
+
+///-----------------------
+/// @name Error management
+///-----------------------
+
+/**
+ Returns YES if the response contains a XML-RPC error
+ */
+- (BOOL)isFault;
+
+/**
+ The XML-RPC error code
+ */
+- (NSNumber *)faultCode;
+
+/**
+ The XML-RPC error message
+ */
+- (NSString *)faultString;
+
+///-------------------------------------
+/// @name Accessing the decoded response
+///-------------------------------------
+
+/**
+ The decoded object
+ 
+ Check isFault before trying to do anything with this object.
+ */
+- (id)object;
+
 @end

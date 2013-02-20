@@ -1,4 +1,4 @@
-// WPBase64Utils.h
+// WPXMLRPCDecoderDelegate.h
 //
 // Copyright (c) 2013 WordPress - http://wordpress.org/
 // Based on Eric Czarny's xmlrpc library - https://github.com/eczarny/xmlrpc
@@ -21,9 +21,55 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-@interface WPBase64Utils : NSObject
-+ (NSString *)encodeData:(NSData *)data;
-+ (void)encodeInputStream:(NSInputStream *)stream withChunkHandler:(void (^)(NSString *chunk))chunkHandler;
-+ (void)encodeFileHandle:(NSFileHandle *)fileHandle withChunkHandler:(void (^)(NSString *chunk))chunkHandler;
-+ (NSData *)decodeString:(NSString *)string;
+#import <Foundation/Foundation.h>
+
+typedef enum {
+    WPXMLRPCElementTypeArray,
+    WPXMLRPCElementTypeDictionary,
+    WPXMLRPCElementTypeMember,
+    WPXMLRPCElementTypeName,
+    WPXMLRPCElementTypeInteger,
+    WPXMLRPCElementTypeDouble,
+    WPXMLRPCElementTypeBoolean,
+    WPXMLRPCElementTypeString,
+    WPXMLRPCElementTypeDate,
+    WPXMLRPCElementTypeData
+} WPXMLRPCElementType;
+
+#pragma mark -
+
+@interface WPXMLRPCDecoderDelegate : NSObject<NSXMLParserDelegate> {
+    WPXMLRPCDecoderDelegate *myParent;
+    NSMutableArray *myChildren;
+    WPXMLRPCElementType myElementType;
+    NSString *myElementKey;
+    id myElementValue;
+}
+
+- (id)initWithParent:(WPXMLRPCDecoderDelegate *)parent;
+
+#pragma mark -
+
+- (void)setParent:(WPXMLRPCDecoderDelegate *)parent;
+
+- (WPXMLRPCDecoderDelegate *)parent;
+
+#pragma mark -
+
+- (void)setElementType:(WPXMLRPCElementType)elementType;
+
+- (WPXMLRPCElementType)elementType;
+
+#pragma mark -
+
+- (void)setElementKey:(NSString *)elementKey;
+
+- (NSString *)elementKey;
+
+#pragma mark -
+
+- (void)setElementValue:(id)elementValue;
+
+- (id)elementValue;
+
 @end

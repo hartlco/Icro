@@ -1,5 +1,5 @@
 #import "WPXMLRPCParserTest.h"
-#import "WPXMLRPCEventBasedParser.h"
+#import "WPXMLRPCDecoder.h"
 
 @interface WPXMLRPCParserTest (WPXMLRPCParserTestPrivate)
 
@@ -39,9 +39,9 @@
     while (testCaseName = [testCaseEnumerator nextObject]) {
         NSString *testCase = [[self unitTestBundle] pathForResource:testCaseName ofType:@"xml"];
         NSData *testCaseData =[[NSData alloc] initWithContentsOfFile:testCase];
-        WPXMLRPCEventBasedParser *parser = [[WPXMLRPCEventBasedParser alloc] initWithData:testCaseData];
+        WPXMLRPCDecoder *decoder = [[WPXMLRPCDecoder alloc] initWithData:testCaseData];
         id testCaseResult = [myTestCases objectForKey:testCaseName];
-        id parsedResult = [parser parse];
+        id parsedResult = [decoder object];
         
         STAssertTrue([self parsedResult:parsedResult isEqualToTestCaseResult:testCaseResult], @"The test case failed: %@", testCaseName);
     }

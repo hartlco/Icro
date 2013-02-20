@@ -1,7 +1,6 @@
 // WPXMLRPC.h
 //
 // Copyright (c) 2013 WordPress - http://wordpress.org/
-//
 // Based on Eric Czarny's xmlrpc library - https://github.com/eczarny/xmlrpc
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy

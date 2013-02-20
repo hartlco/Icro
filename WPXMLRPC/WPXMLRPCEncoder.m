@@ -1,3 +1,26 @@
+// WPXMLRPCEncoder.m
+//
+// Copyright (c) 2013 WordPress - http://wordpress.org/
+// Based on Eric Czarny's xmlrpc library - https://github.com/eczarny/xmlrpc
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
 #import "WPXMLRPCEncoder.h"
 #import "WPBase64Utils.h"
 #import "WPStringUtils.h"
@@ -5,45 +28,18 @@
 @interface WPXMLRPCEncoder (WPXMLRPCEncoderPrivate)
 
 - (void)valueTag:(NSString *)tag value:(NSString *)value;
-
-#pragma mark -
-
-- (NSString *)replaceTarget:(NSString *)target withValue:(NSString *)value inString:(NSString *)string;
-
-#pragma mark -
-
 - (void)encodeObject:(id)object;
-
-#pragma mark -
-
 - (void)encodeArray:(NSArray *)array;
-
 - (void)encodeDictionary:(NSDictionary *)dictionary;
-
-#pragma mark -
-
 - (void)encodeBoolean:(CFBooleanRef)boolean;
-
 - (void)encodeNumber:(NSNumber *)number;
-
 - (void)encodeString:(NSString *)string omitTag:(BOOL)omitTag;
-
 - (void)encodeDate:(NSDate *)date;
-
 - (void)encodeData:(NSData *)data;
-
 - (void)encodeInputStream:(NSInputStream *)stream;
-
 - (void)encodeFileHandle:(NSFileHandle *)handle;
-
-#pragma mark -
-
 - (void)appendString:(NSString *)aString;
-
 - (void)appendFormat:(NSString *)format, ...;
-
-#pragma mark -
-
 - (void)openStreamingCache;
 
 @end
@@ -51,30 +47,38 @@
 #pragma mark -
 
 @implementation WPXMLRPCEncoder {
-    NSString *myMethod;
-    NSArray *myParameters;
-    NSFileHandle *streamingCacheFile;
-    NSString *streamingCacheFilePath;
+    NSString *_method;
+    NSArray *_parameters;
+    NSFileHandle *_streamingCacheFile;
+    NSString *_streamingCacheFilePath;
 }
 
-- (id)init {
+- (void)dealloc {
+    if (_streamingCacheFile != nil) {
+        [_streamingCacheFile closeFile];
+        [[NSFileManager defaultManager] removeItemAtPath:_streamingCacheFilePath error:nil];
+    }
+}
+
+- (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters {
     self = [super init];
     if (self) {
-        myMethod = [[NSString alloc] init];
-        myParameters = [[NSArray alloc] init];
+        _method = method;
+        _parameters = parameters;
     }
-    
+
     return self;
 }
 
+
 #pragma mark -
 
-- (NSString *)encode {
-    if (streamingCacheFilePath == nil) {
+- (NSString *)body {
+    if (_streamingCacheFilePath == nil) {
         [self encodeForStreaming];
     }
 
-    NSInputStream *stream = [self encodedStream];
+    NSInputStream *stream = [self bodyStream];
     NSMutableData *encodedData = [NSMutableData data];
 
     [stream open];
@@ -99,12 +103,12 @@
 
     [self appendString:@"<?xml version=\"1.0\"?><methodCall><methodName>"];
 
-    [self encodeString:myMethod omitTag:YES];
+    [self encodeString:_method omitTag:YES];
 
     [self appendString:@"</methodName><params>"];
     
-    if (myParameters) {
-        NSEnumerator *enumerator = [myParameters objectEnumerator];
+    if (_parameters) {
+        NSEnumerator *enumerator = [_parameters objectEnumerator];
         id parameter = nil;
         
         while ((parameter = [enumerator nextObject])) {
@@ -118,65 +122,28 @@
     
     [self appendString:@"</methodCall>"];
 
-    [streamingCacheFile synchronizeFile];
+    [_streamingCacheFile synchronizeFile];
 }
 
-- (NSInputStream *)encodedStream {
-    if (streamingCacheFilePath == nil) {
+- (NSInputStream *)bodyStream {
+    if (_streamingCacheFilePath == nil) {
         [self encodeForStreaming];
     }
-    return [NSInputStream inputStreamWithFileAtPath:streamingCacheFilePath];
+    return [NSInputStream inputStreamWithFileAtPath:_streamingCacheFilePath];
 }
 
-- (NSNumber *)encodedLength {
-    if (streamingCacheFilePath == nil) {
+- (NSUInteger)contentLength {
+    if (_streamingCacheFilePath == nil) {
         [self encodeForStreaming];
     }
 
     NSError *error = nil;
-    NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:streamingCacheFilePath error:&error];
+    NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:_streamingCacheFilePath error:&error];
     if (error) {
-        return nil;
+        return 0;
     }
 
-    return [attributes objectForKey:NSFileSize];
-}
-
-#pragma mark -
-
-- (void)setMethod:(NSString *)method withParameters:(NSArray *)parameters {
-    
-    if (!method) {
-        myMethod = nil;
-    } else {
-        myMethod = method;
-    }
-    
-    
-    if (!parameters) {
-        myParameters = nil;
-    } else {
-        myParameters = parameters;
-    }
-}
-
-#pragma mark -
-
-- (NSString *)method {
-    return myMethod;
-}
-
-- (NSArray *)parameters {
-    return myParameters;
-}
-
-#pragma mark -
-
-- (void)dealloc {
-    if (streamingCacheFile != nil) {
-        [streamingCacheFile closeFile];
-        [[NSFileManager defaultManager] removeItemAtPath:streamingCacheFilePath error:nil];
-    }
+    return [[attributes objectForKey:NSFileSize] unsignedIntegerValue];
 }
 
 @end
@@ -188,14 +155,6 @@
 - (void)valueTag:(NSString *)tag value:(NSString *)value {
     [self appendFormat:@"<value><%@>%@</%@></value>", tag, value, tag];
 }
-
-#pragma mark -
-
-- (NSString *)replaceTarget:(NSString *)target withValue:(NSString *)value inString:(NSString *)string {
-    return [[string componentsSeparatedByString:target] componentsJoinedByString:value];    
-}
-
-#pragma mark -
 
 - (void)encodeObject:(id)object {
     if (!object) {
@@ -224,8 +183,6 @@
         [self encodeString:object omitTag:NO];
     }
 }
-
-#pragma mark -
 
 - (void)encodeArray:(NSArray *)array {
     NSEnumerator *enumerator = [array objectEnumerator];
@@ -259,8 +216,6 @@
     
     [self appendString:@"</struct></value>"];
 }
-
-#pragma mark -
 
 - (void)encodeBoolean:(CFBooleanRef)boolean {
     if (boolean == kCFBooleanTrue) {
@@ -319,10 +274,8 @@
     [self appendString:@"</base64></value>"];
 }
 
-#pragma mark -
-
 - (void)appendString:(NSString *)aString {
-    [streamingCacheFile writeData:[aString dataUsingEncoding:NSUTF8StringEncoding]];
+    [_streamingCacheFile writeData:[aString dataUsingEncoding:NSUTF8StringEncoding]];
 }
 
 - (void)appendFormat:(NSString *)format, ... {
@@ -333,20 +286,18 @@
     [self appendString:message];
 }
 
-#pragma mark -
-
 - (void)openStreamingCache {
-    if (streamingCacheFile != nil)
+    if (_streamingCacheFile != nil)
         return;
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *directory = [paths objectAtIndex:0];
     NSString *guid = [[NSProcessInfo processInfo] globallyUniqueString];
-    streamingCacheFilePath = [directory stringByAppendingPathComponent:guid];
+    _streamingCacheFilePath = [directory stringByAppendingPathComponent:guid];
 
-    [fileManager createFileAtPath:streamingCacheFilePath contents:nil attributes:nil];
-    streamingCacheFile = [NSFileHandle fileHandleForWritingAtPath:streamingCacheFilePath];
+    [fileManager createFileAtPath:_streamingCacheFilePath contents:nil attributes:nil];
+    _streamingCacheFile = [NSFileHandle fileHandleForWritingAtPath:_streamingCacheFilePath];
 }
 
 @end
