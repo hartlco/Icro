@@ -36,6 +36,7 @@ NSString *const WPXMLRPCFaultErrorDomain = @"WPXMLRPCFaultError";
     BOOL _isFault;
     NSData *_body;
     id _object;
+    NSMutableString *_methodName;
 }
 
 - (id)initWithData:(NSData *)data {
@@ -72,7 +73,11 @@ NSString *const WPXMLRPCFaultErrorDomain = @"WPXMLRPCFaultError";
     if ([_parser parserError])
         return;
 
-    _object = [_delegate elementValue];
+    if (_methodName) {
+        _object = @{@"methodName": _methodName, @"params": [_delegate elementValue]};
+    } else {
+        _object = [_delegate elementValue];
+    }
 }
 
 - (void)abortParsing {
@@ -106,7 +111,11 @@ NSString *const WPXMLRPCFaultErrorDomain = @"WPXMLRPCFaultError";
         return [_parser parserError];
     }
 
-    return [NSError errorWithDomain:WPXMLRPCFaultErrorDomain code:[self faultCode] userInfo:@{NSLocalizedDescriptionKey: [self faultString]}];
+    if ([self isFault]) {
+        return [NSError errorWithDomain:WPXMLRPCFaultErrorDomain code:[self faultCode] userInfo:@{NSLocalizedDescriptionKey: [self faultString]}];
+    }
+
+    return nil;
 }
 
 #pragma mark -
@@ -128,7 +137,21 @@ NSString *const WPXMLRPCFaultErrorDomain = @"WPXMLRPCFaultError";
         _delegate = [[WPXMLRPCDecoderDelegate alloc] initWithParent:nil];
         
         [_parser setDelegate:_delegate];
+    } else if ([element isEqualToString:@"methodName"]) {
+        _methodName = [NSMutableString string];
     }
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    if ([elementName isEqualToString:@"methodName"]) {
+        _delegate = [[WPXMLRPCDecoderDelegate alloc] initWithParent:nil];
+
+        [_parser setDelegate:_delegate];
+    }
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    [_methodName appendString:string];
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {

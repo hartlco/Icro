@@ -142,7 +142,7 @@
         return;
     }
     
-    if ([element isEqualToString:@"array"]) {
+    if ([element isEqualToString:@"array"] || [element isEqualToString:@"params"]) {
         NSMutableArray *array = [[NSMutableArray alloc] init];
         
         [self setElementValue:array];

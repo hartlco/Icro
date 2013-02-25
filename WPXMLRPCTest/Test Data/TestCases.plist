@@ -30,6 +30,16 @@
 		<date>2009-07-18T21:34:00Z</date>
 		<data>eW91IGNhbid0IHJlYWQgdGhpcyE=</data>
 	</array>
+	<key>RequestTestCase</key>
+	<dict>
+		<key>methodName</key>
+		<string>wp.getUsersBlogs</string>
+		<key>params</key>
+		<array>
+			<string>username</string>
+			<string>password</string>
+		</array>
+	</dict>
 	<key>SimpleStructTestCase</key>
 	<dict>
 		<key>Name</key>
