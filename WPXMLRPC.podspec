@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "WPXMLRPC"
-  s.version      = "0.9.2"
+  s.version      = "0.9.3"
   s.summary      = "Lightweight XML-RPC library."
   s.homepage     = "https://github.com/wordpress-mobile/wpxmlrpc"
   s.license      = { :type => 'MIT', :file => 'LICENSE.md' }
