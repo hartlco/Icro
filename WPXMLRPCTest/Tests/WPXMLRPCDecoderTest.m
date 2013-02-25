@@ -1,5 +1,6 @@
 #import "WPXMLRPCDecoderTest.h"
 #import "WPXMLRPCDecoder.h"
+#import "WPStringUtils.h"
 
 @implementation WPXMLRPCDecoderTest {
     NSDictionary *myTestCases;

@@ -12,6 +12,12 @@
 		87B8CEB01EE84A35BE33679A /* libPods-WPXMLRPCTest-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D472F4DC414ECEA5AD0D42 /* libPods-WPXMLRPCTest-OSX.a */; };
 		E156190316DBC5A2006532C4 /* RequestTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156190216DBC5A2006532C4 /* RequestTestCase.xml */; };
 		E156190416DBC630006532C4 /* RequestTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156190216DBC5A2006532C4 /* RequestTestCase.xml */; };
+		E156190616DBCEA0006532C4 /* entities.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156190516DBCEA0006532C4 /* entities.xml */; };
+		E156190716DBCEA7006532C4 /* entities.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156190516DBCEA0006532C4 /* entities.xml */; };
+		E156190916DBCEF3006532C4 /* entitiesDecoded.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156190816DBCEF3006532C4 /* entitiesDecoded.xml */; };
+		E156190A16DBCFFD006532C4 /* entitiesDecoded.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156190816DBCEF3006532C4 /* entitiesDecoded.xml */; };
+		E156190D16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E156190C16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m */; };
+		E156190E16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E156190C16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m */; };
 		E1C689CD16D4377D00B7732D /* WPBase64UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C689CC16D4377D00B7732D /* WPBase64UtilsTest.m */; };
 		E1C689CE16D4377D00B7732D /* WPBase64UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C689CC16D4377D00B7732D /* WPBase64UtilsTest.m */; };
 		E1C689D016D437EF00B7732D /* TestImage.base64 in Resources */ = {isa = PBXBuildFile; fileRef = E1C689CF16D437EF00B7732D /* TestImage.base64 */; };
@@ -72,6 +78,10 @@
 		B6828D1AA25E4CFDB3CE3A70 /* Pods-WPXMLRPCTest-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WPXMLRPCTest-OSX.xcconfig"; path = "Pods/Pods-WPXMLRPCTest-OSX.xcconfig"; sourceTree = SOURCE_ROOT; };
 		B784562C41AA4F70AD9E1683 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E156190216DBC5A2006532C4 /* RequestTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = RequestTestCase.xml; sourceTree = "<group>"; };
+		E156190516DBCEA0006532C4 /* entities.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = entities.xml; sourceTree = "<group>"; };
+		E156190816DBCEF3006532C4 /* entitiesDecoded.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = entitiesDecoded.xml; sourceTree = "<group>"; };
+		E156190B16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCEntitiesTest.h; sourceTree = "<group>"; };
+		E156190C16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCEntitiesTest.m; sourceTree = "<group>"; };
 		E1C689CB16D4377D00B7732D /* WPBase64UtilsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPBase64UtilsTest.h; sourceTree = "<group>"; };
 		E1C689CC16D4377D00B7732D /* WPBase64UtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPBase64UtilsTest.m; sourceTree = "<group>"; };
 		E1C689CF16D437EF00B7732D /* TestImage.base64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestImage.base64; sourceTree = "<group>"; };
@@ -263,6 +273,8 @@
 				E1D0D8AA16D4051700E33F4C /* WPXMLRPCDecoderTest.m */,
 				E1C689CB16D4377D00B7732D /* WPBase64UtilsTest.h */,
 				E1C689CC16D4377D00B7732D /* WPBase64UtilsTest.m */,
+				E156190B16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.h */,
+				E156190C16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -285,6 +297,8 @@
 				E1C689D216D437F800B7732D /* TestImage.png */,
 				E1C689D516D459BD00B7732D /* IncompleteXmlTest.xml */,
 				E156190216DBC5A2006532C4 /* RequestTestCase.xml */,
+				E156190516DBCEA0006532C4 /* entities.xml */,
+				E156190816DBCEF3006532C4 /* entitiesDecoded.xml */,
 			);
 			path = "Test Data";
 			sourceTree = "<group>";
@@ -377,6 +391,8 @@
 				E1C689D316D437F800B7732D /* TestImage.png in Resources */,
 				E1C689D616D459BD00B7732D /* IncompleteXmlTest.xml in Resources */,
 				E156190316DBC5A2006532C4 /* RequestTestCase.xml in Resources */,
+				E156190616DBCEA0006532C4 /* entities.xml in Resources */,
+				E156190916DBCEF3006532C4 /* entitiesDecoded.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +415,8 @@
 				E1C689D416D437F800B7732D /* TestImage.png in Resources */,
 				E1C689D716D459BD00B7732D /* IncompleteXmlTest.xml in Resources */,
 				E156190416DBC630006532C4 /* RequestTestCase.xml in Resources */,
+				E156190716DBCEA7006532C4 /* entities.xml in Resources */,
+				E156190A16DBCFFD006532C4 /* entitiesDecoded.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +506,7 @@
 				E1D0D8E016D416D100E33F4C /* WPBase64Utils.m in Sources */,
 				E1D0D8E416D41AFE00E33F4C /* WPStringUtils.m in Sources */,
 				E1C689CD16D4377D00B7732D /* WPBase64UtilsTest.m in Sources */,
+				E156190D16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +522,7 @@
 				E1D0D8E116D416D100E33F4C /* WPBase64Utils.m in Sources */,
 				E1D0D8E516D41AFE00E33F4C /* WPStringUtils.m in Sources */,
 				E1C689CE16D4377D00B7732D /* WPBase64UtilsTest.m in Sources */,
+				E156190E16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

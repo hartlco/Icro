@@ -28,7 +28,6 @@
 + (NSString *)unescapedStringWithString:(NSString *)aString {
     NSMutableString *string = [NSMutableString stringWithString:aString];
 
-    [string replaceOccurrencesOfString:@"&amp;"  withString:@"&" options:NSLiteralSearch range:NSMakeRange(0, [string length])];
     [string replaceOccurrencesOfString:@"&quot;" withString:@"\"" options:NSLiteralSearch range:NSMakeRange(0, [string length])];
     [string replaceOccurrencesOfString:@"&#x27;" withString:@"'" options:NSLiteralSearch range:NSMakeRange(0, [string length])];
     [string replaceOccurrencesOfString:@"&#x39;" withString:@"'" options:NSLiteralSearch range:NSMakeRange(0, [string length])];
@@ -36,6 +35,7 @@
     [string replaceOccurrencesOfString:@"&#x96;" withString:@"'" options:NSLiteralSearch range:NSMakeRange(0, [string length])];
     [string replaceOccurrencesOfString:@"&gt;" withString:@">" options:NSLiteralSearch range:NSMakeRange(0, [string length])];
     [string replaceOccurrencesOfString:@"&lt;" withString:@"<" options:NSLiteralSearch range:NSMakeRange(0, [string length])];
+    [string replaceOccurrencesOfString:@"&amp;"  withString:@"&" options:NSLiteralSearch range:NSMakeRange(0, [string length])];
 
     return [NSString stringWithString:string];
 }
