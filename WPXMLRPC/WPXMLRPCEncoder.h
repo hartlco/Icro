@@ -39,6 +39,29 @@
 - (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters;
 
 /**
+ Initializes a `WPXMLRPCEncoder` object with the specified response params.
+
+ @warning The response encoder is for testing purposes only, and hasn't been tested to implement a XML-RPC server
+
+ @param parameters an array containing the result parameters for the response
+
+ @return The newly-initialized XML-RPC response
+ */
+- (id)initWithResponseParams:(NSArray *)params;
+
+/**
+ Initializes a `WPXMLRPCEncoder` object with the specified response fault.
+
+ @warning The response encoder is for testing purposes only, and hasn't been tested to implement a XML-RPC server
+
+ @param faultCode the fault code
+ @param faultString the fault message string
+
+ @return The newly-initialized XML-RPC response
+ */
+- (id)initWithResponseFaultCode:(NSNumber *)faultCode andString:(NSString *)faultString;
+
+/**
  The XML-RPC method for this request.
  
  This is a *read-only* property, as requests can't be reused.

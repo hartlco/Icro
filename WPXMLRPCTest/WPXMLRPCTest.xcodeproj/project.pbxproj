@@ -18,6 +18,8 @@
 		E156190A16DBCFFD006532C4 /* entitiesDecoded.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156190816DBCEF3006532C4 /* entitiesDecoded.xml */; };
 		E156190D16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E156190C16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m */; };
 		E156190E16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E156190C16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m */; };
+		E156191116DBD90D006532C4 /* WPXMLRPCEncoderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E156191016DBD90D006532C4 /* WPXMLRPCEncoderTest.m */; };
+		E156191216DBD90D006532C4 /* WPXMLRPCEncoderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E156191016DBD90D006532C4 /* WPXMLRPCEncoderTest.m */; };
 		E1C689CD16D4377D00B7732D /* WPBase64UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C689CC16D4377D00B7732D /* WPBase64UtilsTest.m */; };
 		E1C689CE16D4377D00B7732D /* WPBase64UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C689CC16D4377D00B7732D /* WPBase64UtilsTest.m */; };
 		E1C689D016D437EF00B7732D /* TestImage.base64 in Resources */ = {isa = PBXBuildFile; fileRef = E1C689CF16D437EF00B7732D /* TestImage.base64 */; };
@@ -82,6 +84,8 @@
 		E156190816DBCEF3006532C4 /* entitiesDecoded.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = entitiesDecoded.xml; sourceTree = "<group>"; };
 		E156190B16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCEntitiesTest.h; sourceTree = "<group>"; };
 		E156190C16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCEntitiesTest.m; sourceTree = "<group>"; };
+		E156190F16DBD90D006532C4 /* WPXMLRPCEncoderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCEncoderTest.h; sourceTree = "<group>"; };
+		E156191016DBD90D006532C4 /* WPXMLRPCEncoderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCEncoderTest.m; sourceTree = "<group>"; };
 		E1C689CB16D4377D00B7732D /* WPBase64UtilsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPBase64UtilsTest.h; sourceTree = "<group>"; };
 		E1C689CC16D4377D00B7732D /* WPBase64UtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPBase64UtilsTest.m; sourceTree = "<group>"; };
 		E1C689CF16D437EF00B7732D /* TestImage.base64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestImage.base64; sourceTree = "<group>"; };
@@ -275,6 +279,8 @@
 				E1C689CC16D4377D00B7732D /* WPBase64UtilsTest.m */,
 				E156190B16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.h */,
 				E156190C16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m */,
+				E156190F16DBD90D006532C4 /* WPXMLRPCEncoderTest.h */,
+				E156191016DBD90D006532C4 /* WPXMLRPCEncoderTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -507,6 +513,7 @@
 				E1D0D8E416D41AFE00E33F4C /* WPStringUtils.m in Sources */,
 				E1C689CD16D4377D00B7732D /* WPBase64UtilsTest.m in Sources */,
 				E156190D16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m in Sources */,
+				E156191116DBD90D006532C4 /* WPXMLRPCEncoderTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +530,7 @@
 				E1D0D8E516D41AFE00E33F4C /* WPStringUtils.m in Sources */,
 				E1C689CE16D4377D00B7732D /* WPBase64UtilsTest.m in Sources */,
 				E156190E16DBD0FB006532C4 /* WPXMLRPCEntitiesTest.m in Sources */,
+				E156191216DBD90D006532C4 /* WPXMLRPCEncoderTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

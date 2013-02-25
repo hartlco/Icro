@@ -51,6 +51,9 @@
     NSArray *_parameters;
     NSFileHandle *_streamingCacheFile;
     NSString *_streamingCacheFilePath;
+    BOOL _isResponse, _isFault;
+    NSNumber *_faultCode;
+    NSString *_faultString;
 }
 
 - (void)dealloc {
@@ -67,6 +70,26 @@
         _parameters = parameters;
     }
 
+    return self;
+}
+
+- (id)initWithResponseParams:(NSArray *)params {
+    self = [super init];
+    if (self) {
+        _parameters = params;
+        _isResponse = YES;
+    }
+    return self;
+}
+
+- (id)initWithResponseFaultCode:(NSNumber *)faultCode andString:(NSString *)faultString {
+    self = [super init];
+    if (self) {
+        _faultCode = faultCode;
+        _faultString = faultString;
+        _isResponse = YES;
+        _isFault = YES;
+    }
     return self;
 }
 
@@ -101,12 +124,22 @@
 - (void)encodeForStreaming {
     [self openStreamingCache];
 
-    [self appendString:@"<?xml version=\"1.0\"?><methodCall><methodName>"];
+    [self appendString:@"<?xml version=\"1.0\"?>"];
+    if (_isResponse) {
+        [self appendString:@"<methodResponse>"];
+        if (_isFault) {
+            [self appendString:@"<fault>"];
+            [self encodeDictionary:@{@"faultCode": _faultCode, @"faultString": _faultString}];
+            [self appendString:@"</fault>"];
+        } else {
+            [self appendString:@"<params>"];
+        }
+    } else {
+        [self appendString:@"<methodCall><methodName>"];
+        [self encodeString:_method omitTag:YES];
+        [self appendString:@"</methodName><params>"];
+    }
 
-    [self encodeString:_method omitTag:YES];
-
-    [self appendString:@"</methodName><params>"];
-    
     if (_parameters) {
         NSEnumerator *enumerator = [_parameters objectEnumerator];
         id parameter = nil;
@@ -117,10 +150,16 @@
             [self appendString:@"</param>"];
         }
     }
-    
-    [self appendString:@"</params>"];
-    
-    [self appendString:@"</methodCall>"];
+
+    if (_isResponse) {
+        if (!_isFault) {
+            [self appendString:@"</params>"];
+        }
+        [self appendString:@"</methodResponse>"];
+    } else {
+        [self appendString:@"</params>"];
+        [self appendString:@"</methodCall>"];
+    }
 
     [_streamingCacheFile synchronizeFile];
 }
