@@ -26,6 +26,17 @@
     }
 }
 
+- (void)testNoXmlThrowsError {
+    NSString *testCase = [[self unitTestBundle] pathForResource:@"NoXmlResponseTestCase" ofType:@"xml"];
+    NSData *testCaseData =[[NSData alloc] initWithContentsOfFile:testCase];
+    WPXMLRPCDecoder *decoder = [[WPXMLRPCDecoder alloc] initWithData:testCaseData];
+    STAssertNil([decoder object], nil);
+    STAssertNotNil([decoder error], nil);
+    NSError *error = [decoder error];
+    STAssertEqualObjects([error domain], WPXMLRPCErrorDomain, nil);
+    STAssertEquals([error code], WPXMLRPCInvalidInputError, nil);
+}
+
 #pragma mark -
 
 - (NSBundle *)unitTestBundle {
