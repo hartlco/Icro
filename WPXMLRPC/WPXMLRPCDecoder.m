@@ -36,6 +36,7 @@ NSString *const WPXMLRPCErrorDomain = @"WPXMLRPCError";
     WPXMLRPCDecoderDelegate *_delegate;
     BOOL _isFault;
     NSData *_body;
+    NSData *_originalData;
     id _object;
     NSMutableString *_methodName;
 }
@@ -47,6 +48,7 @@ NSString *const WPXMLRPCErrorDomain = @"WPXMLRPCError";
     
     if (self = [self init]) {
         _body = data;
+        _originalData = data;
         _parser = [[NSXMLParser alloc] initWithData:data];
         _delegate = nil;
         _isFault = NO;
@@ -64,7 +66,7 @@ NSString *const WPXMLRPCErrorDomain = @"WPXMLRPCError";
     [_parser parse];
 
     if ([_parser parserError]) {
-        WPXMLRPCDataCleaner *cleaner = [[WPXMLRPCDataCleaner alloc] initWithData:_body];
+        WPXMLRPCDataCleaner *cleaner = [[WPXMLRPCDataCleaner alloc] initWithData:_originalData];
         _body = [cleaner cleanData];
         _parser = [[NSXMLParser alloc] initWithData:_body];
         [_parser setDelegate:self];
