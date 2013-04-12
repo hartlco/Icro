@@ -111,6 +111,16 @@ NSString *const WPXMLRPCErrorDomain = @"WPXMLRPCError";
 
 - (NSError *)error {
     if ([_parser parserError]) {
+        NSString *response = [[NSString alloc] initWithData:_originalData encoding:NSUTF8StringEncoding];
+        if (response) {
+            // Search for known PHP errors
+            NSError *error = NULL;
+            NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"Allowed memory size of \\d+ bytes exhausted" options:NSRegularExpressionCaseInsensitive error:&error];
+            NSUInteger numberOfMatches = [regex numberOfMatchesInString:response options:0 range:NSMakeRange(0, [response length])];
+            if (numberOfMatches > 0) {
+                return [NSError errorWithDomain:WPXMLRPCErrorDomain code:WPXMLRPCOutOfMemoryError userInfo:@{NSLocalizedDescriptionKey: NSLocalizedStringFromTable(@"Your site ran out of memory while processing this request", @"WPXMLRPC", nil)}];
+            }
+        }
         return [_parser parserError];
     }
 
