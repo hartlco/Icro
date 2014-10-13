@@ -283,7 +283,7 @@
 
 - (void)encodeDate:(NSDate *)date {
     unsigned components = kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay | kCFCalendarUnitHour | kCFCalendarUnitMinute | kCFCalendarUnitSecond;
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendar *calendar = [NSCalendar calendarWithIdentifier:NSGregorianCalendar];
     [calendar setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
     NSDateComponents *dateComponents = [calendar components:components fromDate:date];
     NSString *buffer = [NSString stringWithFormat:@"%.4ld%.2d%.2dT%.2d:%.2ld:%.2ld%@", (long)[dateComponents year], (int)[dateComponents month], (int)[dateComponents day], (int)[dateComponents hour], (long)[dateComponents minute], (long)[dateComponents second], @"Z", nil];

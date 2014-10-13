@@ -19,8 +19,16 @@
     STAssertEqualObjects(parsedResult, testCaseData, nil);
 }
 
-- (void)testResponseEncoder {
-    
+/*
+ This is meant to test https://github.com/wordpress-mobile/wpxmlrpc/issues/15
+ 
+ I haven't found a way to change the locale for testing, so I had to switch the calendar manually on the simulator settings
+ */
+- (void)testDateEncoder {
+    WPXMLRPCEncoder *encoder = [[WPXMLRPCEncoder alloc] initWithMethod:@"wp.getUsersBlogs" andParameters:@[[NSDate dateWithTimeIntervalSince1970:0]]];
+    NSString *result = [[NSString alloc] initWithData:[encoder body] encoding:NSUTF8StringEncoding];
+    NSString *expected = @"<?xml version=\"1.0\"?><methodCall><methodName>wp.getUsersBlogs</methodName><params><param><value><dateTime.iso8601>19700101T00:00:00Z</dateTime.iso8601></value></param></params></methodCall>";
+    STAssertEqualObjects(expected, result, nil);
 }
 
 #pragma mark - 
