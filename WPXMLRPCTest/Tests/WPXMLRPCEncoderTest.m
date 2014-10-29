@@ -37,10 +37,11 @@
     NSString *directory = [paths objectAtIndex:0];
     NSString *guid = [[NSProcessInfo processInfo] globallyUniqueString];
     NSString *cacheFilePath = [directory stringByAppendingPathComponent:guid];
-    
     WPXMLRPCEncoder *encoder = [[WPXMLRPCEncoder alloc] initWithMethod:@"wp.getUsersBlogs" andParameters:@[@"username", @"password", @{@"bits": [NSInputStream inputStreamWithFileAtPath:filePath]}] cacheFilePath:cacheFilePath];
     
-    NSInputStream * inputStream = [encoder bodyStream];
+    NSError * error = nil;
+    
+    NSInputStream * inputStream = [encoder bodyStreamWithError:&error];
     
     encoder = nil;
     

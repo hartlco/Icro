@@ -114,6 +114,10 @@
     }
 
     NSInputStream *stream = [self bodyStream];
+    if (!stream){
+        return nil;
+    }
+    
     NSMutableData *encodedData = [NSMutableData data];
 
     [stream open];
@@ -133,9 +137,11 @@
     return encodedData;
 }
 
-- (void)encodeForStreaming {
+- (BOOL)encodeForStreaming {
     [self openStreamingCache];
-
+    if (!_streamingCacheFile){
+        return NO;
+    }
     [self appendString:@"<?xml version=\"1.0\"?>"];
     if (_isResponse) {
         [self appendString:@"<methodResponse>"];
@@ -174,11 +180,41 @@
     }
 
     [_streamingCacheFile synchronizeFile];
+    return YES;
 }
 
 - (NSInputStream *)bodyStream {
+    return [self bodyStreamWithError:nil];
+}
+
+- (NSInputStream *)bodyStreamWithError:(NSError **) error {
+    BOOL failed = NO;
     if (_streamingCacheFile == nil) {
-        [self encodeForStreaming];
+        @try {
+            if (![self encodeForStreaming]){
+                return nil;
+            }
+        }
+        @catch (NSException *exception) {
+            failed = YES;
+            if (![[exception name] isEqualToString:NSFileHandleOperationException]){
+                [exception raise];
+            }
+            if (error) {
+                NSDictionary *userInfo = @{
+                                           NSLocalizedDescriptionKey: [exception reason]};
+                *error = [NSError errorWithDomain:NSCocoaErrorDomain
+                                             code:(NSInteger)NSFileWriteUnknownError
+                                         userInfo:userInfo];
+            }
+        }
+        @finally {
+        }
+        
+    }
+    
+    if (failed){
+        return nil;
     }
     return [NSInputStream inputStreamWithFileAtPath:_streamingCacheFilePath];
 }
@@ -350,10 +386,10 @@
         NSString *guid = [[NSProcessInfo processInfo] globallyUniqueString];
         _streamingCacheFilePath = [directory stringByAppendingPathComponent:guid];
     }
-    
+    NSError * error = nil;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     [fileManager createFileAtPath:_streamingCacheFilePath contents:nil attributes:nil];
-    _streamingCacheFile = [NSFileHandle fileHandleForWritingAtPath:_streamingCacheFilePath];
+    _streamingCacheFile = [NSFileHandle fileHandleForWritingToURL:[NSURL fileURLWithPath:_streamingCacheFilePath] error:&error];
 }
 
 @end

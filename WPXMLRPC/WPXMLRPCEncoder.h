@@ -103,7 +103,21 @@
 
  You should pass this to `[NSMutableRequest setHTTPBodyStream:]`
  */
-@property (nonatomic, readonly) NSInputStream *bodyStream;
+- (NSInputStream *)bodyStream;
+
+/**
+ The encoded request as a `NSInputStream`. If the enconding fails it will return nil and a the error parameter will be filled.
+ 
+ Every `WPXMLRPCEncoder` instance supports streaming, but it's specially useful when enconding large data files.
+ 
+ You should pass this to `[NSMutableRequest setHTTPBodyStream:]`
+
+ @param error On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
+ 
+ @return an NSInputStream if the encoding works or nil if it fails.
+ 
+ */
+- (NSInputStream *)bodyStreamWithError:(NSError **) error;
 
 /**
  The encoded request content length
