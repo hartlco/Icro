@@ -49,27 +49,39 @@
 @implementation WPXMLRPCEncoder {
     NSString *_method;
     NSArray *_parameters;
-    NSFileHandle *_streamingCacheFile;
-    NSString *_streamingCacheFilePath;
+    NSFileHandle *_streamingCacheFile;    
     BOOL _isResponse, _isFault;
     NSNumber *_faultCode;
     NSString *_faultString;
+    BOOL _externalCacheFile;
 }
 
 - (void)dealloc {
     if (_streamingCacheFile != nil) {
         [_streamingCacheFile closeFile];
-        [[NSFileManager defaultManager] removeItemAtPath:_streamingCacheFilePath error:nil];
+        if (!_externalCacheFile){
+            [[NSFileManager defaultManager] removeItemAtPath:_streamingCacheFilePath error:nil];
+        }
     }
 }
 
 - (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters {
+    return [self initWithMethod:method andParameters:parameters cacheFilePath:nil];
+}
+
+- (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters cacheFilePath:(NSString *) filePath {
     self = [super init];
     if (self) {
         _method = method;
         _parameters = parameters;
+        if (filePath != nil){
+            _externalCacheFile = YES;
+            _streamingCacheFilePath = [filePath copy];
+        } else {
+            _externalCacheFile = NO;
+        }
     }
-
+    
     return self;
 }
 
@@ -97,7 +109,7 @@
 #pragma mark -
 
 - (NSData *)body {
-    if (_streamingCacheFilePath == nil) {
+    if (_streamingCacheFile == nil) {
         [self encodeForStreaming];
     }
 
@@ -165,14 +177,14 @@
 }
 
 - (NSInputStream *)bodyStream {
-    if (_streamingCacheFilePath == nil) {
+    if (_streamingCacheFile == nil) {
         [self encodeForStreaming];
     }
     return [NSInputStream inputStreamWithFileAtPath:_streamingCacheFilePath];
 }
 
 - (NSUInteger)contentLength {
-    if (_streamingCacheFilePath == nil) {
+    if (_streamingCacheFile == nil) {
         [self encodeForStreaming];
     }
 
@@ -330,13 +342,16 @@
 - (void)openStreamingCache {
     if (_streamingCacheFile != nil)
         return;
-
+    
+    // if no file path for the cache was defined then create internal cache
+    if (!_streamingCacheFilePath) {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+        NSString *directory = [paths objectAtIndex:0];
+        NSString *guid = [[NSProcessInfo processInfo] globallyUniqueString];
+        _streamingCacheFilePath = [directory stringByAppendingPathComponent:guid];
+    }
+    
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *directory = [paths objectAtIndex:0];
-    NSString *guid = [[NSProcessInfo processInfo] globallyUniqueString];
-    _streamingCacheFilePath = [directory stringByAppendingPathComponent:guid];
-
     [fileManager createFileAtPath:_streamingCacheFilePath contents:nil attributes:nil];
     _streamingCacheFile = [NSFileHandle fileHandleForWritingAtPath:_streamingCacheFilePath];
 }

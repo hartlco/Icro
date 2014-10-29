@@ -31,6 +31,25 @@
     STAssertEqualObjects(expected, result, nil);
 }
 
+- (void)testStreamingEncoder {
+    NSString * filePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"TestImage" ofType:@"png"];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *directory = [paths objectAtIndex:0];
+    NSString *guid = [[NSProcessInfo processInfo] globallyUniqueString];
+    NSString *cacheFilePath = [directory stringByAppendingPathComponent:guid];
+    
+    WPXMLRPCEncoder *encoder = [[WPXMLRPCEncoder alloc] initWithMethod:@"wp.getUsersBlogs" andParameters:@[@"username", @"password", @{@"bits": [NSInputStream inputStreamWithFileAtPath:filePath]}] cacheFilePath:cacheFilePath];
+    
+    NSInputStream * inputStream = [encoder bodyStream];
+    
+    encoder = nil;
+    
+    STAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:cacheFilePath isDirectory:nil],@"Cache File must be present");
+    
+    STAssertTrue([[NSFileManager defaultManager] removeItemAtPath:cacheFilePath error:nil], @"It must be possible to remove the file");
+
+}
+
 #pragma mark - 
 
 - (NSBundle *)unitTestBundle {

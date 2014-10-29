@@ -39,6 +39,16 @@
 - (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters;
 
 /**
+ Initializes a `WPXMLRPCEncoder` object with the specified method and parameters.
+ 
+ @param method the XML-RPC method for this request
+ @param parameters an array containing the parameters for the request. If you want to support streaming, you can use either `NSInputStream` or `NSFileHandle` to encode binary data
+ @param manageCacheFile indicates if the encoder should manage all the lifecycle of the cache file or if the invoker is responsible to delete it after the encoding is done.
+ @return The newly-initialized XML-RPC request
+ */
+- (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters cacheFilePath:(NSString *) path;
+
+/**
  Initializes a `WPXMLRPCEncoder` object with the specified response params.
 
  @warning The response encoder is for testing purposes only, and hasn't been tested to implement a XML-RPC server
@@ -101,5 +111,10 @@
  If you are using bodyStream to build your request, you should set the `Content-Length` header with this value.
  */
 @property (nonatomic, readonly) NSUInteger contentLength;
+
+/**
+ The path for the cache file that is being used to stream the request.
+ */
+@property (nonatomic, readonly) NSString * streamingCacheFilePath;
 
 @end
