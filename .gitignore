@@ -10,6 +10,12 @@
 build/
 classes/
 logs/
-xcuserdata/
+xcuserdata
 docs/
 Pods/
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
