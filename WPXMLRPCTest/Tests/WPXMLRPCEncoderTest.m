@@ -42,6 +42,8 @@
     NSError * error = nil;
     
     NSInputStream * inputStream = [encoder bodyStreamWithError:&error];
+    [inputStream open];
+    [inputStream close];
     
     encoder = nil;
     
