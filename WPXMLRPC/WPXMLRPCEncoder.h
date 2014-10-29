@@ -43,10 +43,10 @@
  
  @param method the XML-RPC method for this request
  @param parameters an array containing the parameters for the request. If you want to support streaming, you can use either `NSInputStream` or `NSFileHandle` to encode binary data
- @param manageCacheFile indicates if the encoder should manage all the lifecycle of the cache file or if the invoker is responsible to delete it after the encoding is done.
+ @param cacheFilePath path for the cache file that the encoder will user.If defined the invoker is responsible to delete it after the encoding is done.
  @return The newly-initialized XML-RPC request
  */
-- (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters cacheFilePath:(NSString *) path;
+- (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters cacheFilePath:(NSString *) path NS_DESIGNATED_INITIALIZER; 
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified response params.
