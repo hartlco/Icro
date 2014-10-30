@@ -15,7 +15,7 @@
     WPXMLRPCEncoder *encoder = [[WPXMLRPCEncoder alloc] initWithMethod:@"wp.getUsersBlogs" andParameters:@[@"username", @"password"]];
     NSString *testCase = [[self unitTestBundle] pathForResource:@"RequestTestCase" ofType:@"xml"];
     NSString *testCaseData = [[NSString alloc] initWithContentsOfFile:testCase encoding:NSUTF8StringEncoding error:nil];
-    NSString *parsedResult = [[NSString alloc] initWithData:[encoder body] encoding:NSUTF8StringEncoding];
+    NSString *parsedResult = [[NSString alloc] initWithData:[encoder dataEncodedWithError:nil] encoding:NSUTF8StringEncoding];
     STAssertEqualObjects(parsedResult, testCaseData, nil);
 }
 
@@ -26,7 +26,7 @@
  */
 - (void)testDateEncoder {
     WPXMLRPCEncoder *encoder = [[WPXMLRPCEncoder alloc] initWithMethod:@"wp.getUsersBlogs" andParameters:@[[NSDate dateWithTimeIntervalSince1970:0]]];
-    NSString *result = [[NSString alloc] initWithData:[encoder body] encoding:NSUTF8StringEncoding];
+    NSString *result = [[NSString alloc] initWithData:[encoder dataEncodedWithError:nil] encoding:NSUTF8StringEncoding];
     NSString *expected = @"<?xml version=\"1.0\"?><methodCall><methodName>wp.getUsersBlogs</methodName><params><param><value><dateTime.iso8601>19700101T00:00:00Z</dateTime.iso8601></value></param></params></methodCall>";
     STAssertEqualObjects(expected, result, nil);
 }
@@ -37,14 +37,11 @@
     NSString *directory = [paths objectAtIndex:0];
     NSString *guid = [[NSProcessInfo processInfo] globallyUniqueString];
     NSString *cacheFilePath = [directory stringByAppendingPathComponent:guid];
-    WPXMLRPCEncoder *encoder = [[WPXMLRPCEncoder alloc] initWithMethod:@"wp.getUsersBlogs" andParameters:@[@"username", @"password", @{@"bits": [NSInputStream inputStreamWithFileAtPath:filePath]}] cacheFilePath:cacheFilePath];
+    WPXMLRPCEncoder *encoder = [[WPXMLRPCEncoder alloc] initWithMethod:@"wp.getUsersBlogs" andParameters:@[@"username", @"password", @{@"bits": [NSInputStream inputStreamWithFileAtPath:filePath]}]];
     
     NSError * error = nil;
     
-    NSInputStream * inputStream = [encoder bodyStreamWithError:&error];
-    [inputStream open];
-    [inputStream close];
-    
+    [encoder encodeToFile:cacheFilePath error:&error];
     encoder = nil;
     
     STAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:cacheFilePath isDirectory:nil],@"Cache File must be present");

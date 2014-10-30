@@ -36,17 +36,7 @@
 
  @return The newly-initialized XML-RPC request
  */
-- (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters;
-
-/**
- Initializes a `WPXMLRPCEncoder` object with the specified method and parameters.
- 
- @param method the XML-RPC method for this request
- @param parameters an array containing the parameters for the request. If you want to support streaming, you can use either `NSInputStream` or `NSFileHandle` to encode binary data
- @param cacheFilePath path for the cache file that the encoder will user.If defined the invoker is responsible to delete it after the encoding is done.
- @return The newly-initialized XML-RPC request
- */
-- (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters cacheFilePath:(NSString *) path NS_DESIGNATED_INITIALIZER; 
+- (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters NS_DESIGNATED_INITIALIZER;
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified response params.
@@ -90,45 +80,27 @@
 ///------------------------------------
 
 /**
- The encoded request as a `NSData`
+ The encoded request as a `NSData` object.
  
  You should pass this to `[NSMutableRequest setHTTPBody:]`
- */
-@property (nonatomic, readonly) NSData *body;
-
-/**
- The encoded request as a `NSInputStream`
-
- Every `WPXMLRPCEncoder` instance supports streaming, but it's specially useful when enconding large data files.
-
- You should pass this to `[NSMutableRequest setHTTPBodyStream:]`
- */
-- (NSInputStream *)bodyStream;
-
-/**
- The encoded request as a `NSInputStream`. If the enconding fails it will return nil and a the error parameter will be filled.
  
- Every `WPXMLRPCEncoder` instance supports streaming, but it's specially useful when enconding large data files.
- 
- You should pass this to `[NSMutableRequest setHTTPBodyStream:]`
-
  @param error On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
  
- @return an NSInputStream if the encoding works or nil if it fails.
+ @return A NSData object with the encoded method and paramaters, nil if there was an error.
+ */
+- (NSData *) dataEncodedWithError:(NSError **) error;
+
+/**
+ Encodes the request to the filePath.
  
+ The caller is responsible to manage the resulting file after the request is finished.
+ 
+ @param error On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
+ 
+ @return BOOL, YES if the request was completed with success, NO if some error occurred.
  */
-- (NSInputStream *)bodyStreamWithError:(NSError **) error;
+- (BOOL)encodeToFile:(NSString *)filePath error:(NSError **) error;
 
-/**
- The encoded request content length
 
- If you are using bodyStream to build your request, you should set the `Content-Length` header with this value.
- */
-@property (nonatomic, readonly) NSUInteger contentLength;
-
-/**
- The path for the cache file that is being used to stream the request.
- */
-@property (nonatomic, readonly) NSString * streamingCacheFilePath;
 
 @end
