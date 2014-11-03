@@ -36,7 +36,7 @@
 
  @return The newly-initialized XML-RPC request
  */
-- (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters;
+- (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters NS_DESIGNATED_INITIALIZER;
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified response params.
@@ -47,7 +47,7 @@
 
  @return The newly-initialized XML-RPC response
  */
-- (id)initWithResponseParams:(NSArray *)params;
+- (id)initWithResponseParams:(NSArray *)params NS_DESIGNATED_INITIALIZER;
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified response fault.
@@ -59,7 +59,7 @@
 
  @return The newly-initialized XML-RPC response
  */
-- (id)initWithResponseFaultCode:(NSNumber *)faultCode andString:(NSString *)faultString;
+- (id)initWithResponseFaultCode:(NSNumber *)faultCode andString:(NSString *)faultString NS_DESIGNATED_INITIALIZER;
 
 /**
  The XML-RPC method for this request.
@@ -83,23 +83,36 @@
  The encoded request as a `NSData`
  
  You should pass this to `[NSMutableRequest setHTTPBody:]`
+ @warning This method is now deprecated you should use dataEncodedWithError:(NSError *)error;
+ 
+ @param error On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
+ 
+ @return A NSData object with the encoded method and paramaters, nil if there was an error.
  */
-@property (nonatomic, readonly) NSData *body;
+@property (nonatomic, readonly) NSData *body DEPRECATED_ATTRIBUTE;
 
 /**
- The encoded request as a `NSInputStream`
-
- Every `WPXMLRPCEncoder` instance supports streaming, but it's specially useful when enconding large data files.
-
- You should pass this to `[NSMutableRequest setHTTPBodyStream:]`
+ The encoded request as a `NSData` object.
+ 
+ You should pass this to `[NSMutableRequest setHTTPBody:]`
+ 
+ @param error On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
+ 
+ @return A NSData object with the encoded method and paramaters, nil if there was an error.
  */
-@property (nonatomic, readonly) NSInputStream *bodyStream;
+- (NSData *) dataEncodedWithError:(NSError **) error;
 
 /**
- The encoded request content length
-
- If you are using bodyStream to build your request, you should set the `Content-Length` header with this value.
+ Encodes the request to the filePath.
+ 
+ The caller is responsible to manage the resulting file after the request is finished.
+ 
+ @param error On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
+ 
+ @return BOOL, YES if the request was completed with success, NO if some error occurred.
  */
-@property (nonatomic, readonly) NSUInteger contentLength;
+- (BOOL)encodeToFile:(NSString *)filePath error:(NSError **) error;
+
+
 
 @end

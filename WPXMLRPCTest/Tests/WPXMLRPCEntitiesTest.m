@@ -31,7 +31,7 @@
 
 - (void)testXmlEntitiesEncoding {
     WPXMLRPCEncoder *encoder = [[WPXMLRPCEncoder alloc] initWithMethod:@"fake.test" andParameters:@[@"<b>&lt;b&gt;</b> tag &amp; &quot;other&quot; \"tags\""]];
-    NSString *encoded = [[NSString alloc] initWithData:[encoder body] encoding:NSUTF8StringEncoding];
+    NSString *encoded = [[NSString alloc] initWithData:[encoder dataEncodedWithError:nil] encoding:NSUTF8StringEncoding];
     NSString *expected = @"<?xml version=\"1.0\"?><methodCall><methodName>fake.test</methodName><params><param><value><string>&#60;b&#62;&#38;lt;b&#38;gt;&#60;/b&#62; tag &#38;amp; &#38;quot;other&#38;quot; \"tags\"</string></value></param></params></methodCall>";
     STAssertEqualObjects(encoded, expected, nil);
 }

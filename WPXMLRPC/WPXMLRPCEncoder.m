@@ -25,42 +25,16 @@
 #import "WPBase64Utils.h"
 #import "WPStringUtils.h"
 
-@interface WPXMLRPCEncoder (WPXMLRPCEncoderPrivate)
-
-- (void)valueTag:(NSString *)tag value:(NSString *)value;
-- (void)encodeObject:(id)object;
-- (void)encodeArray:(NSArray *)array;
-- (void)encodeDictionary:(NSDictionary *)dictionary;
-- (void)encodeBoolean:(CFBooleanRef)boolean;
-- (void)encodeNumber:(NSNumber *)number;
-- (void)encodeString:(NSString *)string omitTag:(BOOL)omitTag;
-- (void)encodeDate:(NSDate *)date;
-- (void)encodeData:(NSData *)data;
-- (void)encodeInputStream:(NSInputStream *)stream;
-- (void)encodeFileHandle:(NSFileHandle *)handle;
-- (void)appendString:(NSString *)aString;
-- (void)appendFormat:(NSString *)format, ...;
-- (void)openStreamingCache;
-
-@end
-
 #pragma mark -
 
 @implementation WPXMLRPCEncoder {
     NSString *_method;
     NSArray *_parameters;
-    NSFileHandle *_streamingCacheFile;
-    NSString *_streamingCacheFilePath;
-    BOOL _isResponse, _isFault;
+    NSFileHandle *_streamingCacheFile;    
+    BOOL _isResponse;
+    BOOL _isFault;
     NSNumber *_faultCode;
     NSString *_faultString;
-}
-
-- (void)dealloc {
-    if (_streamingCacheFile != nil) {
-        [_streamingCacheFile closeFile];
-        [[NSFileManager defaultManager] removeItemAtPath:_streamingCacheFilePath error:nil];
-    }
 }
 
 - (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters {
@@ -69,7 +43,7 @@
         _method = method;
         _parameters = parameters;
     }
-
+    
     return self;
 }
 
@@ -94,36 +68,41 @@
 }
 
 
-#pragma mark -
+#pragma mark - Public methods
 
 - (NSData *)body {
-    if (_streamingCacheFilePath == nil) {
-        [self encodeForStreaming];
+    return [self dataEncodedWithError:nil];
+}
+
+- (NSData *)dataEncodedWithError:(NSError **) error {
+    NSString * filePath = [self tmpFilePathForCache];
+    if (![self encodeToFile:filePath error:error]){
+        return nil;
     }
 
-    NSInputStream *stream = [self bodyStream];
-    NSMutableData *encodedData = [NSMutableData data];
-
-    [stream open];
-
-    while ([stream hasBytesAvailable]) {
-        uint8_t buf[1024];
-        NSInteger len = 0;
-
-        len = [stream read:buf maxLength:1024];
-        if (len) {
-            [encodedData appendBytes:buf length:len];
-        }
-    }
-
-    [stream close];
-
+    NSData * encodedData = [NSData dataWithContentsOfFile:filePath options:NSDataReadingUncached error:error];
+    
+    [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+    
     return encodedData;
 }
 
-- (void)encodeForStreaming {
-    [self openStreamingCache];
+- (BOOL)encodeToFile:(NSString *)filePath error:(NSError **) error {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager createFileAtPath:filePath contents:nil attributes:nil];
+    _streamingCacheFile = [NSFileHandle fileHandleForWritingToURL:[NSURL fileURLWithPath:filePath] error:error];
+    if (!_streamingCacheFile){
+        return NO;
+    }
+    
+    [self encodeForStreaming];
+    
+    return YES;
+}
 
+#pragma mark - Private methods
+
+- (void)encodeForStreaming {
     [self appendString:@"<?xml version=\"1.0\"?>"];
     if (_isResponse) {
         [self appendString:@"<methodResponse>"];
@@ -163,33 +142,6 @@
 
     [_streamingCacheFile synchronizeFile];
 }
-
-- (NSInputStream *)bodyStream {
-    if (_streamingCacheFilePath == nil) {
-        [self encodeForStreaming];
-    }
-    return [NSInputStream inputStreamWithFileAtPath:_streamingCacheFilePath];
-}
-
-- (NSUInteger)contentLength {
-    if (_streamingCacheFilePath == nil) {
-        [self encodeForStreaming];
-    }
-
-    NSError *error = nil;
-    NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:_streamingCacheFilePath error:&error];
-    if (error) {
-        return 0;
-    }
-
-    return [[attributes objectForKey:NSFileSize] unsignedIntegerValue];
-}
-
-@end
-
-#pragma mark -
-
-@implementation WPXMLRPCEncoder (WPXMLRPCEncoderPrivate)
 
 - (void)valueTag:(NSString *)tag value:(NSString *)value {
     [self appendFormat:@"<value><%@>%@</%@></value>", tag, value, tag];
@@ -327,18 +279,12 @@
     [self appendString:message];
 }
 
-- (void)openStreamingCache {
-    if (_streamingCacheFile != nil)
-        return;
-
-    NSFileManager *fileManager = [NSFileManager defaultManager];
+- (NSString *)tmpFilePathForCache {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *directory = [paths objectAtIndex:0];
     NSString *guid = [[NSProcessInfo processInfo] globallyUniqueString];
-    _streamingCacheFilePath = [directory stringByAppendingPathComponent:guid];
-
-    [fileManager createFileAtPath:_streamingCacheFilePath contents:nil attributes:nil];
-    _streamingCacheFile = [NSFileHandle fileHandleForWritingAtPath:_streamingCacheFilePath];
+    NSString * tmpPath = [directory stringByAppendingPathComponent:guid];
+    return tmpPath;
 }
 
 @end
