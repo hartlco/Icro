@@ -47,7 +47,7 @@
 
  @return The newly-initialized XML-RPC response
  */
-- (id)initWithResponseParams:(NSArray *)params;
+- (id)initWithResponseParams:(NSArray *)params NS_DESIGNATED_INITIALIZER;
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified response fault.
@@ -59,7 +59,7 @@
 
  @return The newly-initialized XML-RPC response
  */
-- (id)initWithResponseFaultCode:(NSNumber *)faultCode andString:(NSString *)faultString;
+- (id)initWithResponseFaultCode:(NSNumber *)faultCode andString:(NSString *)faultString NS_DESIGNATED_INITIALIZER;
 
 /**
  The XML-RPC method for this request.
