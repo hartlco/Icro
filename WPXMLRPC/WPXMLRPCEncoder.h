@@ -80,6 +80,18 @@
 ///------------------------------------
 
 /**
+ The encoded request as a `NSData`
+ 
+ You should pass this to `[NSMutableRequest setHTTPBody:]`
+ @warning This method is now deprecated you should use dataEncodedWithError:(NSError *)error;
+ 
+ @param error On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
+ 
+ @return A NSData object with the encoded method and paramaters, nil if there was an error.
+ */
+@property (nonatomic, readonly) NSData *body DEPRECATED_ATTRIBUTE;
+
+/**
  The encoded request as a `NSData` object.
  
  You should pass this to `[NSMutableRequest setHTTPBody:]`

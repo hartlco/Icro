@@ -70,6 +70,10 @@
 
 #pragma mark - Public methods
 
+- (NSData *)body {
+    return [self dataEncodedWithError:nil];
+}
+
 - (NSData *)dataEncodedWithError:(NSError **) error {
     NSString * filePath = [self tmpFilePathForCache];
     if (![self encodeToFile:filePath error:error]){
