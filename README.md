@@ -13,7 +13,7 @@ dependency management.
 
 Just add this to your Podfile and run `pod install`:
 
-	pod 'wpxmlrpc', '~> 0.1'
+	pod 'wpxmlrpc', '~> 0.5'
 
 Another option, if you don't use CocoaPods, is to copy the `WPXMLRPC`
 folder to your project.
@@ -29,18 +29,30 @@ WordPress XML-RPC only provides classes to encode and decode XML-RPC. You are fr
 	[request setHTTPMethod:@"POST"];
 	
 	WPXMLRPCEncoder *encoder = [[WPXMLRPCEncoder alloc] initWithMethod:@"demo.addTwoNumbers" andParameters:@[@1, @2]];
-	[request setHTTPBody:encoder.body];
+	[request setHTTPBody:[encoder dataEncodedWithError:nil]];
 
 ## Building a XML-RPC request using streaming
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *directory = [paths objectAtIndex:0];
+    NSString *guid = [[NSProcessInfo processInfo] globallyUniqueString];
+    NSString *streamingCacheFilePath = [directory stringByAppendingPathComponent:guid];
 
 	NSURL *URL = [NSURL URLWithString:@"http://example.com/xmlrpc"];
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
 	[request setHTTPMethod:@"POST"];
 	
 	NSInputStream *fileStream = [NSInputStream inputStreamWithFileAtPath:filePath];
-	WPXMLRPCEncoder *encoder = [[WPXMLRPCEncoder alloc] initWithMethod:@"test.uploadFile" andParameters:@[fileStream]];
-	[request setHTTPBodyStream:encoder.bodyStream];
-	[request setValue:[encoder.contentLength stringValue] forHTTPHeaderField:@"Content-Length"];
+	WPXMLRPCEncoder *encoder = [[WPXMLRPCEncoder alloc] initWithMethod:@"test.uploadFile" andParameters:@[fileStream]];	      
+	
+	[encoder encodeToFile:streamingCacheFilePath error:nil];
+
+	NSError *error = nil;
+    NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:&error];
+    unsigned long contentLength = [[attributes objectForKey:NSFileSize] unsignedIntegerValue];
+    NSInputStream * inputStream = [NSInputStream inputStreamWithFileAtPath:filePath]; 
+
+	[request setHTTPBodyStream:inputStream];
+	[request setValue:[NSString stringWithFormat:@"%lu", contentLength] forHTTPHeaderField:@"Content-Length"];
 
 ## Parsing a XML-RPC response
 
