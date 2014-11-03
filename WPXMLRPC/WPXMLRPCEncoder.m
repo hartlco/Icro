@@ -95,37 +95,14 @@
         return NO;
     }
     
-    BOOL failed = NO;
-    @try {
-        if (![self encodeForStreaming]){
-            return nil;
-        }
-    }
-    @catch (NSException *exception) {
-        failed = YES;
-        if (![[exception name] isEqualToString:NSFileHandleOperationException]){
-            [exception raise];
-        }
-        if (error) {
-            NSDictionary *userInfo = @{
-                                       NSLocalizedDescriptionKey: [exception reason]};
-            *error = [NSError errorWithDomain:NSCocoaErrorDomain
-                                         code:(NSInteger)NSFileWriteUnknownError
-                                     userInfo:userInfo];
-        }
-    }
-    @finally {
-    }
+    [self encodeForStreaming];
     
-    return !failed;
+    return YES;
 }
 
 #pragma mark - Private methods
 
-- (BOOL)encodeForStreaming {
-    if (!_streamingCacheFile){
-        return NO;
-    }
+- (void)encodeForStreaming {
     [self appendString:@"<?xml version=\"1.0\"?>"];
     if (_isResponse) {
         [self appendString:@"<methodResponse>"];
@@ -164,7 +141,6 @@
     }
 
     [_streamingCacheFile synchronizeFile];
-    return YES;
 }
 
 - (void)valueTag:(NSString *)tag value:(NSString *)value {
