@@ -30,6 +30,7 @@
 - (NSString *)cleanCharactersBeforePreamble:(NSString *)str;
 - (NSString *)cleanInvalidXMLCharacters:(NSString *)str;
 - (NSString *)cleanWithTidyIfPresent:(NSString *)str;
+- (NSString *)cleanClosingTagIfNeeded:(NSString *)str;
 @end
 
 @implementation WPXMLRPCDataCleaner {
@@ -64,6 +65,7 @@
     cleanString = [self cleanCharactersBeforePreamble:cleanString];
     cleanString = [self cleanInvalidXMLCharacters:cleanString];
     cleanString = [self cleanWithTidyIfPresent:cleanString];
+    cleanString = [self cleanClosingTagIfNeeded:cleanString];
     
     cleanData = [cleanString dataUsingEncoding:NSUTF8StringEncoding];
     
@@ -180,6 +182,44 @@
     
     // If we reach this point, something failed. Return the original string
     return str;
+}
+
+/**
+ In certain situations the xml response can be truncated due to an inaccurate
+ content-length header. This can happen, for example, due to a BOM or whitespace
+ preceeding  an opening php tag. In these cases the xmlrpc response can be truncated
+ the length of these extra leading characters.
+ Check for a good closing tag, and try to repair a broken closing tag.
+ */
+- (NSString *)cleanClosingTagIfNeeded:(NSString *)str
+{
+    // Check for breakage.
+    NSRange range = [str rangeOfString:@"/methodResponse>" options:NSBackwardsSearch];
+    if (range.location != NSNotFound) {
+        // All is well.
+        return str;
+    }
+
+    NSString *endingTags;
+    NSRange fragmentRange;
+    if ([str rangeOfString:@"<params>"].location == NSNotFound) {
+        endingTags = @"</fault></methodResponse>";
+        fragmentRange = [str rangeOfString:@"</f" options:NSBackwardsSearch];
+    } else {
+        endingTags = @"</params></methodResponse>";
+        // This is tricky. If the content is truncated too much then this could catch
+        // a closing param tag, not the closing params tag. However, if that is the
+        // case then the response more malformd than what we're attempting to fix
+        // and would likely be broken anyway.
+        fragmentRange = [str rangeOfString:@"</p" options:NSBackwardsSearch];
+    }
+
+    if (fragmentRange.location == NSNotFound) {
+        // Can't fix.
+        return str;
+    }
+
+    return [NSString stringWithFormat:@"%@%@", [str substringToIndex:fragmentRange.location], endingTags];
 }
 
 @end
