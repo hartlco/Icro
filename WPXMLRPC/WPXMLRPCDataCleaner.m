@@ -194,32 +194,27 @@
 - (NSString *)cleanClosingTagIfNeeded:(NSString *)str
 {
     // Check for breakage.
-    NSRange range = [str rangeOfString:@"/methodResponse>" options:NSBackwardsSearch];
+    NSString *closingTag = @"</methodResponse>";
+    NSRange range = [str rangeOfString:closingTag options:NSBackwardsSearch];
     if (range.location != NSNotFound) {
         // All is well.
         return str;
     }
 
-    NSString *endingTags;
-    NSRange fragmentRange;
+    // find the range of the closing params or fault tag
     if ([str rangeOfString:@"<params>"].location == NSNotFound) {
-        endingTags = @"</fault></methodResponse>";
-        fragmentRange = [str rangeOfString:@"</f" options:NSBackwardsSearch];
+        range = [str rangeOfString:@"</fault>" options:NSBackwardsSearch];
     } else {
-        endingTags = @"</params></methodResponse>";
-        // This is tricky. If the content is truncated too much then this could catch
-        // a closing param tag, not the closing params tag. However, if that is the
-        // case then the response more malformd than what we're attempting to fix
-        // and would likely be broken anyway.
-        fragmentRange = [str rangeOfString:@"</p" options:NSBackwardsSearch];
+        range = [str rangeOfString:@"</params>" options:NSBackwardsSearch];
     }
 
-    if (fragmentRange.location == NSNotFound) {
+    if (range.location == NSNotFound) {
         // Can't fix.
         return str;
     }
 
-    return [NSString stringWithFormat:@"%@%@", [str substringToIndex:fragmentRange.location], endingTags];
+    NSInteger index = range.location + range.length;
+    return [NSString stringWithFormat:@"%@%@", [str substringToIndex:index], closingTag];
 }
 
 @end
