@@ -30,6 +30,7 @@
 - (NSString *)cleanCharactersBeforePreamble:(NSString *)str;
 - (NSString *)cleanInvalidXMLCharacters:(NSString *)str;
 - (NSString *)cleanWithTidyIfPresent:(NSString *)str;
+- (NSString *)cleanClosingTagIfNeeded:(NSString *)str;
 @end
 
 @implementation WPXMLRPCDataCleaner {
@@ -64,6 +65,7 @@
     cleanString = [self cleanCharactersBeforePreamble:cleanString];
     cleanString = [self cleanInvalidXMLCharacters:cleanString];
     cleanString = [self cleanWithTidyIfPresent:cleanString];
+    cleanString = [self cleanClosingTagIfNeeded:cleanString];
     
     cleanData = [cleanString dataUsingEncoding:NSUTF8StringEncoding];
     
@@ -180,6 +182,39 @@
     
     // If we reach this point, something failed. Return the original string
     return str;
+}
+
+/**
+ In certain situations the xml response can be truncated due to an inaccurate
+ content-length header. This can happen, for example, due to a BOM or whitespace
+ preceeding  an opening php tag. In these cases the xmlrpc response can be truncated
+ the length of these extra leading characters.
+ Check for a good closing tag, and try to repair a broken closing tag.
+ */
+- (NSString *)cleanClosingTagIfNeeded:(NSString *)str
+{
+    // Check for breakage.
+    NSString *closingTag = @"</methodResponse>";
+    NSRange range = [str rangeOfString:closingTag options:NSBackwardsSearch];
+    if (range.location != NSNotFound) {
+        // All is well.
+        return str;
+    }
+
+    // find the range of the closing params or fault tag
+    if ([str rangeOfString:@"<params>"].location == NSNotFound) {
+        range = [str rangeOfString:@"</fault>" options:NSBackwardsSearch];
+    } else {
+        range = [str rangeOfString:@"</params>" options:NSBackwardsSearch];
+    }
+
+    if (range.location == NSNotFound) {
+        // Can't fix.
+        return str;
+    }
+
+    NSInteger index = range.location + range.length;
+    return [NSString stringWithFormat:@"%@%@", [str substringToIndex:index], closingTag];
 }
 
 @end
