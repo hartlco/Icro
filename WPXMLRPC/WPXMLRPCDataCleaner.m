@@ -30,7 +30,7 @@
 - (NSString *)cleanCharactersBeforePreamble:(NSString *)str;
 - (NSString *)cleanInvalidXMLCharacters:(NSString *)str;
 - (NSString *)cleanWithTidyIfPresent:(NSString *)str;
-- (NSString *)cleanClosingTagIfNeeded:(NSString *)str;
+- (NSString *)cleanClosingTagIfNeeded:(NSString *)str lengthOfCharactersPrecedingPreamble:(NSInteger)length;
 @end
 
 @implementation WPXMLRPCDataCleaner {
@@ -53,22 +53,24 @@
 - (NSData *)cleanData {
     if (xmlData == nil)
         return nil;
-    
+
     NSData *cleanData = [self cleanInvalidUTF8:xmlData];
     NSString *cleanString = [[NSString alloc] initWithData:cleanData encoding:NSUTF8StringEncoding];
-    
+
     if (cleanString == nil) {
         // Although it shouldn't happen, fall back to Latin1 if data is not proper UTF-8
         cleanString = [[NSString alloc] initWithData:cleanData encoding:NSISOLatin1StringEncoding];
     }
-    
+    NSInteger startinglength = [cleanString length];
     cleanString = [self cleanCharactersBeforePreamble:cleanString];
+    NSInteger len = startinglength - [cleanString length];
     cleanString = [self cleanInvalidXMLCharacters:cleanString];
     cleanString = [self cleanWithTidyIfPresent:cleanString];
-    cleanString = [self cleanClosingTagIfNeeded:cleanString];
-    
+
+    cleanString = [self cleanClosingTagIfNeeded:cleanString lengthOfCharactersPrecedingPreamble:len];
+
     cleanData = [cleanString dataUsingEncoding:NSUTF8StringEncoding];
-    
+
     return cleanData;
 }
 
@@ -82,18 +84,18 @@
 - (NSData *)cleanInvalidUTF8:(NSData *)data {
     NSData *result;
     iconv_t cd = iconv_open("UTF-8", "UTF-8"); // convert to UTF-8 from UTF-8
-	int one = 1;
-	iconvctl(cd, ICONV_SET_DISCARD_ILSEQ, &one); // discard invalid characters
-	
-	size_t inbytesleft, outbytesleft;
-	inbytesleft = outbytesleft = data.length;
+    int one = 1;
+    iconvctl(cd, ICONV_SET_DISCARD_ILSEQ, &one); // discard invalid characters
 
-	char *inbuf  = (char *)data.bytes;
-	char *outbuf = malloc(sizeof(char) * data.length);
-	char *outptr = outbuf;
+    size_t inbytesleft, outbytesleft;
+    inbytesleft = outbytesleft = data.length;
 
-	if (iconv(cd, &inbuf, &inbytesleft, &outptr, &outbytesleft) == (size_t)-1) {
-		// Failed iconv, possible errors to encounter in `errno`:
+    char *inbuf  = (char *)data.bytes;
+    char *outbuf = malloc(sizeof(char) * data.length);
+    char *outptr = outbuf;
+
+    if (iconv(cd, &inbuf, &inbytesleft, &outptr, &outbytesleft) == (size_t)-1) {
+        // Failed iconv, possible errors to encounter in `errno`:
         //
         //     E2BIG - There is not sufficient room at *outbuf.
         //     EILSEQ - An invalid multibyte sequence has been encountered in the input.
@@ -101,15 +103,15 @@
         //
         // It should never happen since we've told iconv to discard anything invalid
 
-		result = data;
+        result = data;
     } else {
         result = [NSData dataWithBytes:outbuf length:data.length - outbytesleft];
     }
-	
-	iconv_close(cd);
-	free(outbuf);
 
-	return result;
+    iconv_close(cd);
+    free(outbuf);
+
+    return result;
 }
 
 /**
@@ -118,7 +120,7 @@
 - (NSString *)cleanCharactersBeforePreamble:(NSString *)str {
     NSRange range = [str rangeOfString:@"<?xml"];
     // Did we find the string "<?xml" ?
-    if (range.location != NSNotFound && range.length > 0 && range.location > 0) {   
+    if (range.location != NSNotFound && range.length > 0 && range.location > 0) {
         str = [str substringFromIndex:range.location];
     }
     return str;
@@ -126,7 +128,7 @@
 
 /**
  Remove invalid characters as specified by the XML 1.0 standard
- 
+
  Based on http://benjchristensen.com/2008/02/07/how-to-strip-invalid-xml-characters/
  */
 - (NSString *)cleanInvalidXMLCharacters:(NSString *)str {
@@ -154,13 +156,13 @@
 - (NSString *)cleanWithTidyIfPresent:(NSString *)str {
     /*
      The conditional code we're executing is the equivalent of:
-     
+
      [[CTidy tidy] tidyString:str inputFormat:TidyFormat_XML outputFormat:TidyFormat_XML diagnostics:NULL error:&err];
      */
     id _CTidyClass = NSClassFromString(@"CTidy");
     SEL _CTidySelector = NSSelectorFromString(@"tidy");
     SEL _CTidyTidyStringSelector = NSSelectorFromString(@"tidyString:inputFormat:outputFormat:encoding:diagnostics:error:");
-    
+
     if (_CTidyClass && [_CTidyClass respondsToSelector:_CTidySelector]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -177,9 +179,9 @@
 
             if (result)
                 return result;
-        }        
+        }
     }
-    
+
     // If we reach this point, something failed. Return the original string
     return str;
 }
@@ -191,30 +193,54 @@
  the length of these extra leading characters.
  Check for a good closing tag, and try to repair a broken closing tag.
  */
-- (NSString *)cleanClosingTagIfNeeded:(NSString *)str
+- (NSString *)cleanClosingTagIfNeeded:(NSString *)str lengthOfCharactersPrecedingPreamble:(NSInteger)length
 {
+    // Clean responses, but not requests (for now).
+    if ([str rangeOfString:@"methodResponse"].location == NSNotFound) {
+        return str;
+    }
+
     // Check for breakage.
     NSString *closingTag = @"</methodResponse>";
     NSRange range = [str rangeOfString:closingTag options:NSBackwardsSearch];
     if (range.location != NSNotFound) {
-        // All is well.
+        // Nothing broken. All is well.
         return str;
     }
 
-    // find the range of the closing params or fault tag
+    // Determine the proper closing tags for the request.
+    NSString *closingTags;
     if ([str rangeOfString:@"<params>"].location == NSNotFound) {
-        range = [str rangeOfString:@"</fault>" options:NSBackwardsSearch];
+        closingTags = @"</value></fault></methodResponse>";
     } else {
-        range = [str rangeOfString:@"</params>" options:NSBackwardsSearch];
+        closingTags = @"</param></params></methodResponse>";
     }
 
-    if (range.location == NSNotFound) {
-        // Can't fix.
+    // If the length of the content cleaned from before the preamble is greater
+    // than the length of the closing tags, then the xml is too damaged to repair.
+    if (length > closingTags) {
+        // we can't fix this
         return str;
     }
 
+    // Find the start of the last end tag
+    range = [str rangeOfString:@"<" options:NSBackwardsSearch];
+    if (range.location == NSNotFound) {
+        // This should never happen, but handle the one in a million case.
+        return str;
+    }
+
+    // Find the ending stub
+    NSString *stub = [str substringFromIndex:range.location];
+    range = [closingTags rangeOfString:stub];
+    if (range.location == NSNotFound) {
+        // This should never happen, but paranoia!
+        return str;
+    }
+
+    // Append the missing part of the closing tags
     NSInteger index = range.location + range.length;
-    return [NSString stringWithFormat:@"%@%@", [str substringToIndex:index], closingTag];
+    return [NSString stringWithFormat:@"%@%@", str, [closingTags substringFromIndex:index]];
 }
 
 @end
