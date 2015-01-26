@@ -217,12 +217,36 @@
     }
 
     // If the length of the content cleaned from before the preamble is greater
-    // than the length of the closing tags, then the xml is too damaged to repair.
-    if (length > closingTags) {
+    // than the length of the closing tags, then the xml is (probably) too damaged to repair.
+    if (length > [closingTags length]) {
         // we can't fix this
         return str;
     }
 
+    // Find the last valid closing tag
+    static NSRegularExpression *regex;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSError *error;
+        regex = [NSRegularExpression regularExpressionWithPattern:@"</[^>]+>[^>]*$" options:NSRegularExpressionCaseInsensitive error:&error];
+    });
+
+    NSRange lastTagRange = [regex rangeOfFirstMatchInString:str options:NSMatchingReportCompletion range:NSMakeRange(0, [str length])];
+    if (lastTagRange.location == NSNotFound) {
+        // wtf?
+        return str;
+    }
+
+    NSString *lastClosingTag = [str substringWithRange:lastTagRange];
+    range = [closingTags rangeOfString:lastClosingTag];
+    if (range.location != NSNotFound) {
+        // Partial match
+        NSString *s1 = [str substringToIndex:lastTagRange.location]; // get the string up to the start of the last closing tag.
+        NSString *s2 = [closingTags substringFromIndex:range.location];
+        return [NSString stringWithFormat:@"%@%@", s1, s2];
+    }
+
+    // No partial match so just replace the entire string.
     // Find the start of the last end tag
     range = [str rangeOfString:@"<" options:NSBackwardsSearch];
     if (range.location == NSNotFound) {
@@ -230,16 +254,15 @@
         return str;
     }
 
-    // Find the ending stub
+    // Find the ending stub, if there is one
+    NSInteger index = 0;
     NSString *stub = [str substringFromIndex:range.location];
     range = [closingTags rangeOfString:stub];
-    if (range.location == NSNotFound) {
-        // This should never happen, but paranoia!
-        return str;
+    if (range.location != NSNotFound) {
+        index = range.location + range.length;
     }
 
     // Append the missing part of the closing tags
-    NSInteger index = range.location + range.length;
     return [NSString stringWithFormat:@"%@%@", str, [closingTags substringFromIndex:index]];
 }
 
