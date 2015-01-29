@@ -201,20 +201,13 @@
     }
 
     // Check for breakage.
-    NSString *closingTag = @"</methodResponse>";
-    NSRange range = [str rangeOfString:closingTag options:NSBackwardsSearch];
-    if (range.location != NSNotFound) {
+    if ([str containsString:@"</methodResponse>"]) {
         // Nothing broken. All is well.
         return str;
     }
 
-    // Determine the proper closing tags for the request.
-    NSString *closingTags;
-    if ([str rangeOfString:@"<params>"].location == NSNotFound) {
-        closingTags = @"</value></fault></methodResponse>";
-    } else {
-        closingTags = @"</param></params></methodResponse>";
-    }
+    // Get the proper closing tags for the request.
+    NSString *closingTags = [self cloingTagsForString:str];
 
     // If the length of the content cleaned from before the preamble is greater
     // than the length of the closing tags, then the xml is (probably) too damaged to repair.
@@ -223,7 +216,29 @@
         return str;
     }
 
-    // Find the last valid closing tag
+    // Repair a truncated reponse where the ending markup is a partial match to
+    // the closing tags.  This should be the majority of cases.
+    NSString *repairedStr = [self repairTruncatedClosingTags:closingTags inResponseString:str];
+    if (repairedStr) {
+        return repairedStr;
+    }
+
+    // No partial match found so append the closing tags safely.
+    repairedStr = [self appendClosingTags:closingTags toResponseString:str];
+    return repairedStr;
+}
+
+- (NSString *)cloingTagsForString:(NSString *)str
+{
+    if ([str containsString:@"<params>"]) {
+        return @"</param></params></methodResponse>";
+    } else {
+        return @"</value></fault></methodResponse>";
+    }
+}
+
+- (NSRange)rangeOfLastValidClosingTagInString:(NSString *)str
+{
     static NSRegularExpression *regex;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -231,30 +246,39 @@
         regex = [NSRegularExpression regularExpressionWithPattern:@"</[^>]+>[^>]*$" options:NSRegularExpressionCaseInsensitive error:&error];
     });
 
-    NSRange lastTagRange = [regex rangeOfFirstMatchInString:str options:NSMatchingReportCompletion range:NSMakeRange(0, [str length])];
-    if (lastTagRange.location == NSNotFound) {
-        // wtf?
+    return [regex rangeOfFirstMatchInString:str options:NSMatchingReportCompletion range:NSMakeRange(0, [str length])];
+}
+
+- (NSString *)repairTruncatedClosingTags:(NSString *)closingTags inResponseString:(NSString *)str
+{
+    // Find the last valid closing tag.
+    NSRange rangeOfLastValidTag = [self rangeOfLastValidClosingTagInString:str];
+    if (rangeOfLastValidTag.location == NSNotFound) {
+        // There was no valid closing tag to be found. Strange!
         return str;
     }
-
-    NSString *lastClosingTag = [str substringWithRange:lastTagRange];
-    range = [closingTags rangeOfString:lastClosingTag];
-    if (range.location != NSNotFound) {
-        // Partial match
-        NSString *s1 = [str substringToIndex:lastTagRange.location]; // get the string up to the start of the last closing tag.
-        NSString *s2 = [closingTags substringFromIndex:range.location];
-        return [NSString stringWithFormat:@"%@%@", s1, s2];
+    NSString *lastClosingTag = [str substringWithRange:rangeOfLastValidTag];
+    NSRange range = [closingTags rangeOfString:lastClosingTag];
+    if (range.location == NSNotFound) {
+        return nil;
     }
 
-    // No partial match so just replace the entire string.
+    // Partial match found
+    NSString *s1 = [str substringToIndex:rangeOfLastValidTag.location]; // get the string up to the start of the last closing tag.
+    NSString *s2 = [closingTags substringFromIndex:range.location];
+    return [NSString stringWithFormat:@"%@%@", s1, s2];
+}
+
+- (NSString *)appendClosingTags:(NSString *)closingTags toResponseString:(NSString *)str
+{
     // Find the start of the last end tag
-    range = [str rangeOfString:@"<" options:NSBackwardsSearch];
+    NSRange range = [str rangeOfString:@"<" options:NSBackwardsSearch];
     if (range.location == NSNotFound) {
         // This should never happen, but handle the one in a million case.
         return str;
     }
 
-    // Find the ending stub, if there is one
+    // Find the ending stub, if there is one, as a safety precaution.
     NSInteger index = 0;
     NSString *stub = [str substringFromIndex:range.location];
     range = [closingTags rangeOfString:stub];
@@ -264,6 +288,7 @@
 
     // Append the missing part of the closing tags
     return [NSString stringWithFormat:@"%@%@", str, [closingTags substringFromIndex:index]];
+
 }
 
 @end
