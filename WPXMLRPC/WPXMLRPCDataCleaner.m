@@ -201,7 +201,7 @@
     }
 
     // Check for breakage.
-    if ([str containsString:@"</methodResponse>"]) {
+    if ([str rangeOfString:@"</methodResponse>"].location != NSNotFound) {
         // Nothing broken. All is well.
         return str;
     }
@@ -230,7 +230,7 @@
 
 - (NSString *)cloingTagsForString:(NSString *)str
 {
-    if ([str containsString:@"<params>"]) {
+    if ([str rangeOfString:@"<params>"].location != NSNotFound) {
         return @"</param></params></methodResponse>";
     } else {
         return @"</value></fault></methodResponse>";
