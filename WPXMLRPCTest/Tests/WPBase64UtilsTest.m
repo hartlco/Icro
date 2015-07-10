@@ -12,13 +12,17 @@
 @implementation WPBase64UtilsTest {
     NSString *expectedEncoded;
     NSData *expectedDecoded;
+    NSData *expectedDecodedControlCharacters;
     NSString *encodedFilePath;
+    NSString *encodedControlCharacters;
 }
 
 - (void)setUp {
     expectedEncoded = [NSString stringWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"TestImage" ofType:@"base64"] encoding:NSASCIIStringEncoding error:nil];
     encodedFilePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"TestImage" ofType:@"png"];
     expectedDecoded = [NSData dataWithContentsOfFile:encodedFilePath];
+    encodedControlCharacters = @"\r\n";
+    expectedDecodedControlCharacters = [@"" dataUsingEncoding:NSASCIIStringEncoding];
 }
 
 - (void)testEncodeWithData {
@@ -29,6 +33,11 @@
 - (void)testDecodeWithData {
     NSData *parsedDecoded = [WPBase64Utils decodeString:expectedEncoded];
     STAssertEqualObjects(expectedDecoded, parsedDecoded, nil);
+}
+
+- (void)testDecodeControlCharactersString {
+    NSData *parsedDecoded = [WPBase64Utils decodeString:encodedControlCharacters];
+    STAssertEqualObjects(expectedDecodedControlCharacters, parsedDecoded, nil);
 }
 
 - (void)testEncodeWithInputStream {

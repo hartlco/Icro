@@ -145,7 +145,10 @@ void *NewBase64Decode(
 			outputBuffer[j + 1] = (accumulated[1] << 4) | (accumulated[2] >> 2);
 		if(accumulateIndex >= 4)
 			outputBuffer[j + 2] = (accumulated[2] << 6) | accumulated[3];
-		j += accumulateIndex - 1;
+        
+        // We should increment j only with a positive accumulateIndex to prevent integer overflow
+        if (accumulateIndex > 0)
+            j += accumulateIndex - 1;
 	}
 
 	if (outputLength)
