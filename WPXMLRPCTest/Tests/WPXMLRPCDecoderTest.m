@@ -1,6 +1,9 @@
-#import "WPXMLRPCDecoderTest.h"
 #import "WPXMLRPCDecoder.h"
 #import "WPStringUtils.h"
+#import <XCTest/XCTest.h>
+
+@interface WPXMLRPCDecoderTest : XCTestCase
+@end
 
 @implementation WPXMLRPCDecoderTest {
     NSDictionary *myTestCases;
@@ -22,7 +25,7 @@
         id testCaseResult = [myTestCases objectForKey:testCaseName];
         id parsedResult = [decoder object];
 
-        STAssertEqualObjects(parsedResult, testCaseResult, nil);
+        XCTAssertEqualObjects(parsedResult, testCaseResult);
     }
 }
 
@@ -30,11 +33,11 @@
     NSString *testCase = [[self unitTestBundle] pathForResource:@"NoXmlResponseTestCase" ofType:@"xml"];
     NSData *testCaseData =[[NSData alloc] initWithContentsOfFile:testCase];
     WPXMLRPCDecoder *decoder = [[WPXMLRPCDecoder alloc] initWithData:testCaseData];
-    STAssertNil([decoder object], nil);
-    STAssertNotNil([decoder error], nil);
+    XCTAssertNil([decoder object]);
+    XCTAssertNotNil([decoder error]);
     NSError *error = [decoder error];
-    STAssertEqualObjects([error domain], WPXMLRPCErrorDomain, nil);
-    STAssertEquals([error code], WPXMLRPCInvalidInputError, nil);
+    XCTAssertEqualObjects([error domain], WPXMLRPCErrorDomain);
+    XCTAssertEqual([error code], WPXMLRPCInvalidInputError);
 }
 
 #pragma mark -

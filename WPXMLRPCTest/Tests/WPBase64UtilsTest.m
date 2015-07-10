@@ -1,13 +1,10 @@
-//
-//  WPBase64UtilsTest.m
-//  WPXMLRPCTest
-//
-//  Created by Jorge Bernal on 2/19/13.
-//
-//
-
-#import "WPBase64UtilsTest.h"
 #import "WPBase64Utils.h"
+
+#import <XCTest/XCTest.h>
+
+@interface WPBase64UtilsTest : XCTestCase
+
+@end
 
 @implementation WPBase64UtilsTest {
     NSString *expectedEncoded;
@@ -27,17 +24,17 @@
 
 - (void)testEncodeWithData {
     NSString *parsedEncoded = [WPBase64Utils encodeData:expectedDecoded];
-    STAssertEqualObjects(expectedEncoded, parsedEncoded, nil);
+    XCTAssertEqualObjects(expectedEncoded, parsedEncoded);
 }
 
 - (void)testDecodeWithData {
     NSData *parsedDecoded = [WPBase64Utils decodeString:expectedEncoded];
-    STAssertEqualObjects(expectedDecoded, parsedDecoded, nil);
+    XCTAssertEqualObjects(expectedDecoded, parsedDecoded);
 }
 
 - (void)testDecodeControlCharactersString {
     NSData *parsedDecoded = [WPBase64Utils decodeString:encodedControlCharacters];
-    STAssertEqualObjects(expectedDecodedControlCharacters, parsedDecoded, nil);
+    XCTAssertEqualObjects(expectedDecodedControlCharacters, parsedDecoded);
 }
 
 - (void)testEncodeWithInputStream {
@@ -45,7 +42,7 @@
     [WPBase64Utils encodeInputStream:[NSInputStream inputStreamWithFileAtPath:encodedFilePath] withChunkHandler:^(NSString *chunk) {
         [parsedEncoded appendString:chunk];
     }];
-    STAssertEqualObjects(expectedEncoded, parsedEncoded, nil);
+    XCTAssertEqualObjects(expectedEncoded, parsedEncoded);
 }
 
 - (void)testEncodeWithFileHandle {
@@ -53,7 +50,7 @@
     [WPBase64Utils encodeFileHandle:[NSFileHandle fileHandleForReadingAtPath:encodedFilePath] withChunkHandler:^(NSString *chunk) {
         [parsedEncoded appendString:chunk];
     }];
-    STAssertEqualObjects(expectedEncoded, parsedEncoded, nil);
+    XCTAssertEqualObjects(expectedEncoded, parsedEncoded);
 }
 
 @end
