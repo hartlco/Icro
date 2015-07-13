@@ -1,4 +1,4 @@
-#import "WPXMLRPCDataCleanerTest.h"
+#import <XCTest/XCTest.h>
 #import "WPXMLRPCDataCleaner.h"
 
 static NSString * const CompleteResponse = @"<methodResponse><params><param><value><string>Hello!</string></value></param></params></methodResponse>";
@@ -6,6 +6,9 @@ static NSString * const CompleteFault = @"<methodResponse><fault><value><struct>
 
 @interface WPXMLRPCDataCleaner (CleaningSteps)
 - (NSString *)cleanClosingTagIfNeeded:(NSString *)str lengthOfCharactersPrecedingPreamble:(NSInteger)length;
+@end
+
+@interface WPXMLRPCDataCleanerTest : XCTestCase
 @end
 
 @implementation WPXMLRPCDataCleanerTest
@@ -18,7 +21,7 @@ static NSString * const CompleteFault = @"<methodResponse><fault><value><struct>
 
     // Test a whole response
     NSString *cleanedString = [cleaner cleanClosingTagIfNeeded:CompleteResponse lengthOfCharactersPrecedingPreamble:0];
-    STAssertEqualObjects(CompleteResponse, cleanedString, @"A good reponse should just be returned intact.");
+    XCTAssertEqualObjects(CompleteResponse, cleanedString, @"A good reponse should just be returned intact.");
 }
 
 - (void)testReturnsGoodStringWhenPreambleWasCleanedOfJunk
@@ -26,7 +29,7 @@ static NSString * const CompleteFault = @"<methodResponse><fault><value><struct>
     WPXMLRPCDataCleaner *cleaner = [[WPXMLRPCDataCleaner alloc] init];
     // Test a whole response but some info was cleaned from before the preamble
     NSString *cleanedString = [cleaner cleanClosingTagIfNeeded:CompleteResponse lengthOfCharactersPrecedingPreamble:35];
-    STAssertEqualObjects(CompleteResponse, cleanedString, @"Info cleaned from the preamble should not affect a good response.");
+    XCTAssertEqualObjects(CompleteResponse, cleanedString, @"Info cleaned from the preamble should not affect a good response.");
 }
 
 - (void)testReturnsOriginalStringWhenPreambleHadTooMuchJunk
@@ -35,7 +38,7 @@ static NSString * const CompleteFault = @"<methodResponse><fault><value><struct>
     // Test a truncated response where too much info was cleaned from before the preamble.
     NSString *truncatedResponse = [CompleteResponse substringWithRange:NSMakeRange(0, [CompleteResponse length] - 35)];
     NSString *cleanedString = [cleaner cleanClosingTagIfNeeded:truncatedResponse lengthOfCharactersPrecedingPreamble:35];
-    STAssertEqualObjects(truncatedResponse, cleanedString, @"Should not try to fix a response where too much junk was removed from the preamble.");
+    XCTAssertEqualObjects(truncatedResponse, cleanedString, @"Should not try to fix a response where too much junk was removed from the preamble.");
 }
 
 - (void)testCleansResponseTurncatedBeforeParam
@@ -44,7 +47,7 @@ static NSString * const CompleteFault = @"<methodResponse><fault><value><struct>
     // Test a response truncated just before the param tag
     NSString *truncatedResponse = [CompleteResponse substringWithRange:NSMakeRange(0, [CompleteResponse length] - 34)];
     NSString *cleanedString = [cleaner cleanClosingTagIfNeeded:truncatedResponse lengthOfCharactersPrecedingPreamble:0];
-    STAssertEqualObjects(CompleteResponse, cleanedString, @"Failed to repair a damanged closing param tag.");
+    XCTAssertEqualObjects(CompleteResponse, cleanedString, @"Failed to repair a damanged closing param tag.");
 }
 
 - (void)testCleansResponseTurncatedInParam
@@ -53,7 +56,7 @@ static NSString * const CompleteFault = @"<methodResponse><fault><value><struct>
     // Test a response truncated in the param tag
     NSString *truncatedResponse = [CompleteResponse substringWithRange:NSMakeRange(0, [CompleteResponse length] - 33)];
     NSString *cleanedString = [cleaner cleanClosingTagIfNeeded:truncatedResponse lengthOfCharactersPrecedingPreamble:0];
-    STAssertEqualObjects(CompleteResponse, cleanedString, @"Failed to repair a damanged closing param tag.");
+    XCTAssertEqualObjects(CompleteResponse, cleanedString, @"Failed to repair a damanged closing param tag.");
 }
 
 - (void)testCleansResponseTurncatedInParams
@@ -62,7 +65,7 @@ static NSString * const CompleteFault = @"<methodResponse><fault><value><struct>
     // test a response truncated in the params tag
     NSString *truncatedResponse = [CompleteResponse substringWithRange:NSMakeRange(0, [CompleteResponse length] - 20)];
     NSString *cleanedString = [cleaner cleanClosingTagIfNeeded:truncatedResponse lengthOfCharactersPrecedingPreamble:0];
-    STAssertEqualObjects(CompleteResponse, cleanedString, @"Failed to repair a damanged closing params tag.");
+    XCTAssertEqualObjects(CompleteResponse, cleanedString, @"Failed to repair a damanged closing params tag.");
 }
 
 - (void)testCleansResponseTurncatedInMethodResponse
@@ -71,7 +74,7 @@ static NSString * const CompleteFault = @"<methodResponse><fault><value><struct>
     // test a response truncated in the methodResponse tag
     NSString *truncatedResponse = [CompleteResponse substringWithRange:NSMakeRange(0, [CompleteResponse length] - 10)];
     NSString *cleanedString = [cleaner cleanClosingTagIfNeeded:truncatedResponse lengthOfCharactersPrecedingPreamble:0];
-    STAssertEqualObjects(CompleteResponse, cleanedString, @"Failed to repair a damanged closing methodResponse tag.");
+    XCTAssertEqualObjects(CompleteResponse, cleanedString, @"Failed to repair a damanged closing methodResponse tag.");
 }
 
 - (void)testCleansFaultTurncateBeforeValue
@@ -80,7 +83,7 @@ static NSString * const CompleteFault = @"<methodResponse><fault><value><struct>
     // Test a fault truncated at the value tag
     NSString *truncatedFault = [CompleteFault substringWithRange:NSMakeRange(0, [CompleteFault length] - 33)];
     NSString *cleanedString = [cleaner cleanClosingTagIfNeeded:truncatedFault lengthOfCharactersPrecedingPreamble:0];
-    STAssertEqualObjects(CompleteFault, cleanedString, @"Failed to repair a damanged closing value tag.");
+    XCTAssertEqualObjects(CompleteFault, cleanedString, @"Failed to repair a damanged closing value tag.");
 }
 
 - (void)testCleansFaultTurncatedIValue
@@ -89,7 +92,7 @@ static NSString * const CompleteFault = @"<methodResponse><fault><value><struct>
     // Test a fault truncated in the value tag
     NSString *truncatedFault = [CompleteFault substringWithRange:NSMakeRange(0, [CompleteFault length] - 30)];
     NSString *cleanedString = [cleaner cleanClosingTagIfNeeded:truncatedFault lengthOfCharactersPrecedingPreamble:0];
-    STAssertEqualObjects(CompleteFault, cleanedString, @"Failed to repair a damanged closing value tag.");
+    XCTAssertEqualObjects(CompleteFault, cleanedString, @"Failed to repair a damanged closing value tag.");
 }
 
 - (void)testCleansFaultTurncatedInFault
@@ -98,7 +101,7 @@ static NSString * const CompleteFault = @"<methodResponse><fault><value><struct>
     // Test a fault truncated in the fault tag
     NSString *truncatedFault = [CompleteFault substringWithRange:NSMakeRange(0, [CompleteFault length] - 20)];
     NSString *cleanedString = [cleaner cleanClosingTagIfNeeded:truncatedFault lengthOfCharactersPrecedingPreamble:0];
-    STAssertEqualObjects(CompleteFault, cleanedString, @"Failed to repair a damanged closing fault tag.");
+    XCTAssertEqualObjects(CompleteFault, cleanedString, @"Failed to repair a damanged closing fault tag.");
 }
 
 - (void)testCleansFaultTurncatedInMethodResponse
@@ -107,7 +110,7 @@ static NSString * const CompleteFault = @"<methodResponse><fault><value><struct>
     // Test a fault truncated in the method response tag
     NSString *truncatedFault = [CompleteFault substringWithRange:NSMakeRange(0, [CompleteFault length] - 10)];
     NSString *cleanedString = [cleaner cleanClosingTagIfNeeded:truncatedFault lengthOfCharactersPrecedingPreamble:0];
-    STAssertEqualObjects(CompleteFault, cleanedString, @"Failed to repair a damanged closing methodResponse tag.");
+    XCTAssertEqualObjects(CompleteFault, cleanedString, @"Failed to repair a damanged closing methodResponse tag.");
 }
 
 @end
