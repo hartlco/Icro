@@ -59,6 +59,6 @@
 		<data>eW91IGNhbid0IHJlYWQgdGhpcyE=</data>
 	</array>
 	<key>OverflowInteger32TestCase</key>
-	<string>9223372036854775807</string>
+	<integer>9223372036854775807</integer>
 </dict>
 </plist>
