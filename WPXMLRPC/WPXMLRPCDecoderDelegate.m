@@ -310,7 +310,11 @@
 #pragma mark -
 
 - (NSNumber *)parseInteger:(NSString *)value {
-    return [NSNumber numberWithInteger:[value integerValue]];
+    long long longValue = [value longLongValue];
+    if (longValue == LLONG_MAX) {
+        return [self.numberFormatter numberFromString:value];
+    }
+    return [NSNumber numberWithLongLong:longValue];
 }
 
 - (NSNumber *)parseDouble:(NSString *)value {
@@ -347,6 +351,17 @@
 
 - (NSData *)parseData:(NSString *)value {
     return [WPBase64Utils decodeString:value];
+}
+
+#pragma mark - formatter
+
+- (NSNumberFormatter *)numberFormatter {
+    static NSNumberFormatter *numberFormatter;
+    if (!numberFormatter) {
+        numberFormatter = [[NSNumberFormatter alloc] init];
+        numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+    }
+    return numberFormatter;
 }
 
 @end
