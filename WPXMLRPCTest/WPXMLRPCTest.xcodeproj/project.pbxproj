@@ -10,7 +10,6 @@
 		5D17F0BB1A1D311C0087CCB8 /* WPXMLRPCDataCleanerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D17F0BA1A1D311C0087CCB8 /* WPXMLRPCDataCleanerTest.m */; };
 		609D5C4B847D477A93B60ABB /* libPods-WPXMLRPCTest-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 877A56A0005640AF9B9F6E1D /* libPods-WPXMLRPCTest-iOS.a */; };
 		87B8CEB01EE84A35BE33679A /* libPods-WPXMLRPCTest-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D472F4DC414ECEA5AD0D42 /* libPods-WPXMLRPCTest-OSX.a */; };
-		DDC8A5FB1C6224B30030B63C /* OverflowInteger64TestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = DDC8A5FA1C6224B30030B63C /* OverflowInteger64TestCase.xml */; };
 		DDC8A5FD1C622D550030B63C /* OverflowInteger32TestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = DDC8A5FC1C622D550030B63C /* OverflowInteger32TestCase.xml */; };
 		E156190316DBC5A2006532C4 /* RequestTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156190216DBC5A2006532C4 /* RequestTestCase.xml */; };
 		E156190416DBC630006532C4 /* RequestTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156190216DBC5A2006532C4 /* RequestTestCase.xml */; };
@@ -84,7 +83,6 @@
 		5D17F0BA1A1D311C0087CCB8 /* WPXMLRPCDataCleanerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDataCleanerTest.m; sourceTree = "<group>"; };
 		877A56A0005640AF9B9F6E1D /* libPods-WPXMLRPCTest-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WPXMLRPCTest-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B784562C41AA4F70AD9E1683 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		DDC8A5FA1C6224B30030B63C /* OverflowInteger64TestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = OverflowInteger64TestCase.xml; sourceTree = "<group>"; };
 		DDC8A5FC1C622D550030B63C /* OverflowInteger32TestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = OverflowInteger32TestCase.xml; sourceTree = "<group>"; };
 		E156190216DBC5A2006532C4 /* RequestTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = RequestTestCase.xml; sourceTree = "<group>"; };
 		E156190516DBCEA0006532C4 /* entities.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = entities.xml; sourceTree = "<group>"; };
@@ -293,7 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				DDC8A5FC1C622D550030B63C /* OverflowInteger32TestCase.xml */,
-				DDC8A5FA1C6224B30030B63C /* OverflowInteger64TestCase.xml */,
 				E1D0D8AD16D4053B00E33F4C /* AlternativeDateFormatsTestCase.xml */,
 				E1D0D8AE16D4053B00E33F4C /* DefaultTypeTestCase.xml */,
 				E1D0D8AF16D4053B00E33F4C /* EmptyBooleanTestCase.xml */,
@@ -395,7 +392,6 @@
 				E1D0D8BB16D4053B00E33F4C /* EmptyBooleanTestCase.xml in Resources */,
 				E1D0D8BD16D4053B00E33F4C /* EmptyDataTestCase.xml in Resources */,
 				E1D0D8BF16D4053B00E33F4C /* EmptyDoubleTestCase.xml in Resources */,
-				DDC8A5FB1C6224B30030B63C /* OverflowInteger64TestCase.xml in Resources */,
 				E1D0D8C116D4053B00E33F4C /* EmptyIntegerTestCase.xml in Resources */,
 				E1D0D8C316D4053B00E33F4C /* EmptyStringTestCase.xml in Resources */,
 				E1D0D8C516D4053B00E33F4C /* SimpleArrayTestCase.xml in Resources */,

@@ -40,17 +40,6 @@
     XCTAssertEqual([error code], WPXMLRPCInvalidInputError);
 }
 
-- (void)testOverflowIntegerTestCase {
-    NSString *testCase = [[self unitTestBundle] pathForResource:@"OverflowInteger64TestCase" ofType:@"xml"];
-    NSData *testCaseData =[[NSData alloc] initWithContentsOfFile:testCase];
-    WPXMLRPCDecoder *decoder = [[WPXMLRPCDecoder alloc] initWithData:testCaseData];
-    unsigned long long overflowLong = LLONG_MAX;
-    overflowLong++;
-    id expectedTestCaseResult = [NSNumber numberWithUnsignedLongLong:overflowLong];
-    id parsedResult = [decoder object];
-    XCTAssertEqualObjects(parsedResult, expectedTestCaseResult);
-}
-
 #pragma mark -
 
 - (NSBundle *)unitTestBundle {
