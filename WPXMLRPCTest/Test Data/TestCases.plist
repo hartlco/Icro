@@ -58,5 +58,7 @@
 		<date>2009-07-18T21:34:00Z</date>
 		<data>eW91IGNhbid0IHJlYWQgdGhpcyE=</data>
 	</array>
+	<key>OverflowInteger32TestCase</key>
+	<integer>9223372036854775807</integer>
 </dict>
 </plist>
