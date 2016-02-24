@@ -16,7 +16,7 @@
     NSString *testCase = [[self unitTestBundle] pathForResource:@"RequestTestCase" ofType:@"xml"];
     NSString *testCaseData = [[NSString alloc] initWithContentsOfFile:testCase encoding:NSUTF8StringEncoding error:nil];
     NSString *parsedResult = [[NSString alloc] initWithData:[encoder dataEncodedWithError:nil] encoding:NSUTF8StringEncoding];
-    STAssertEqualObjects(parsedResult, testCaseData, nil);
+    XCTAssertEqualObjects(parsedResult, testCaseData);
 }
 
 /*
@@ -28,7 +28,7 @@
     WPXMLRPCEncoder *encoder = [[WPXMLRPCEncoder alloc] initWithMethod:@"wp.getUsersBlogs" andParameters:@[[NSDate dateWithTimeIntervalSince1970:0]]];
     NSString *result = [[NSString alloc] initWithData:[encoder dataEncodedWithError:nil] encoding:NSUTF8StringEncoding];
     NSString *expected = @"<?xml version=\"1.0\"?><methodCall><methodName>wp.getUsersBlogs</methodName><params><param><value><dateTime.iso8601>19700101T00:00:00Z</dateTime.iso8601></value></param></params></methodCall>";
-    STAssertEqualObjects(expected, result, nil);
+    XCTAssertEqualObjects(expected, result);
 }
 
 - (void)testStreamingEncoder {
@@ -44,9 +44,9 @@
     [encoder encodeToFile:cacheFilePath error:&error];
     encoder = nil;
     
-    STAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:cacheFilePath isDirectory:nil],@"Cache File must be present");
+    XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:cacheFilePath isDirectory:nil],@"Cache File must be present");
     
-    STAssertTrue([[NSFileManager defaultManager] removeItemAtPath:cacheFilePath error:nil], @"It must be possible to remove the file");
+    XCTAssertTrue([[NSFileManager defaultManager] removeItemAtPath:cacheFilePath error:nil], @"It must be possible to remove the file");
 
 }
 

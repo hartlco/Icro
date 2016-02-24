@@ -6,8 +6,8 @@
 //
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface WPBase64UtilsTest : SenTestCase
+@interface WPBase64UtilsTest : XCTestCase
 
 @end

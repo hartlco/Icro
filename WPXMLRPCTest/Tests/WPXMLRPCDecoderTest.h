@@ -1,4 +1,4 @@
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface WPXMLRPCDecoderTest : SenTestCase
+@interface WPXMLRPCDecoderTest : XCTestCase
 @end

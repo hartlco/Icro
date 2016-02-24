@@ -29,10 +29,8 @@
 		E1C689D416D437F800B7732D /* TestImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C689D216D437F800B7732D /* TestImage.png */; };
 		E1C689D616D459BD00B7732D /* IncompleteXmlTest.xml in Resources */ = {isa = PBXBuildFile; fileRef = E1C689D516D459BD00B7732D /* IncompleteXmlTest.xml */; };
 		E1C689D716D459BD00B7732D /* IncompleteXmlTest.xml in Resources */ = {isa = PBXBuildFile; fileRef = E1C689D516D459BD00B7732D /* IncompleteXmlTest.xml */; };
-		E1D0D85B16D4048200E33F4C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D0D85A16D4048200E33F4C /* SenTestingKit.framework */; };
 		E1D0D85D16D4048200E33F4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D0D85C16D4048200E33F4C /* UIKit.framework */; };
 		E1D0D85F16D4048200E33F4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D0D85E16D4048200E33F4C /* Foundation.framework */; };
-		E1D0D87316D404AB00E33F4C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D0D85A16D4048200E33F4C /* SenTestingKit.framework */; };
 		E1D0D87516D404AC00E33F4C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D0D87416D404AB00E33F4C /* Cocoa.framework */; };
 		E1D0D8A216D4050900E33F4C /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D0D89316D4050900E33F4C /* WPXMLRPCDataCleaner.m */; };
 		E1D0D8A316D4050900E33F4C /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D0D89516D4050900E33F4C /* WPXMLRPCEncoder.m */; };
@@ -95,13 +93,12 @@
 		E1C689CF16D437EF00B7732D /* TestImage.base64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestImage.base64; sourceTree = "<group>"; };
 		E1C689D216D437F800B7732D /* TestImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage.png; sourceTree = "<group>"; };
 		E1C689D516D459BD00B7732D /* IncompleteXmlTest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = IncompleteXmlTest.xml; sourceTree = "<group>"; };
-		E1D0D85716D4048200E33F4C /* WPXMLRPCTest-iOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WPXMLRPCTest-iOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1D0D85A16D4048200E33F4C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		E1D0D85716D4048200E33F4C /* WPXMLRPCTest-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WPXMLRPCTest-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D0D85C16D4048200E33F4C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		E1D0D85E16D4048200E33F4C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		E1D0D86216D4048200E33F4C /* WPXMLRPCTest-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WPXMLRPCTest-iOS-Info.plist"; sourceTree = "<group>"; };
 		E1D0D86916D4048200E33F4C /* WPXMLRPCTest-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WPXMLRPCTest-iOS-Prefix.pch"; sourceTree = "<group>"; };
-		E1D0D87216D404AB00E33F4C /* WPXMLRPCTest-OSX.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WPXMLRPCTest-OSX.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1D0D87216D404AB00E33F4C /* WPXMLRPCTest-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WPXMLRPCTest-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D0D87416D404AB00E33F4C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E1D0D87716D404AC00E33F4C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		E1D0D87816D404AC00E33F4C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -144,7 +141,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1D0D8D916D4088D00E33F4C /* libiconv.dylib in Frameworks */,
-				E1D0D85B16D4048200E33F4C /* SenTestingKit.framework in Frameworks */,
 				E1D0D85D16D4048200E33F4C /* UIKit.framework in Frameworks */,
 				E1D0D85F16D4048200E33F4C /* Foundation.framework in Frameworks */,
 				609D5C4B847D477A93B60ABB /* libPods-WPXMLRPCTest-iOS.a in Frameworks */,
@@ -156,7 +152,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1D0D8D716D4088000E33F4C /* libiconv.dylib in Frameworks */,
-				E1D0D87316D404AB00E33F4C /* SenTestingKit.framework in Frameworks */,
 				E1D0D87516D404AC00E33F4C /* Cocoa.framework in Frameworks */,
 				87B8CEB01EE84A35BE33679A /* libPods-WPXMLRPCTest-OSX.a in Frameworks */,
 			);
@@ -193,8 +188,8 @@
 		E1D0D85816D4048200E33F4C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E1D0D85716D4048200E33F4C /* WPXMLRPCTest-iOS.octest */,
-				E1D0D87216D404AB00E33F4C /* WPXMLRPCTest-OSX.octest */,
+				E1D0D85716D4048200E33F4C /* WPXMLRPCTest-iOS.xctest */,
+				E1D0D87216D404AB00E33F4C /* WPXMLRPCTest-OSX.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,7 +199,6 @@
 			children = (
 				E1D0D8D816D4088D00E33F4C /* libiconv.dylib */,
 				E1D0D8D616D4088000E33F4C /* libiconv.dylib */,
-				E1D0D85A16D4048200E33F4C /* SenTestingKit.framework */,
 				E1D0D85C16D4048200E33F4C /* UIKit.framework */,
 				E1D0D85E16D4048200E33F4C /* Foundation.framework */,
 				E1D0D87416D404AB00E33F4C /* Cocoa.framework */,
@@ -331,7 +325,6 @@
 				E1D0D85216D4048200E33F4C /* Sources */,
 				E1D0D85316D4048200E33F4C /* Frameworks */,
 				E1D0D85416D4048200E33F4C /* Resources */,
-				E1D0D85516D4048200E33F4C /* ShellScript */,
 				F0587B6299B34AAA9FB66B59 /* Copy Pods Resources */,
 				BFBAC2EF15BD48C69004C938 /* Copy Pods Resources */,
 			);
@@ -341,8 +334,8 @@
 			);
 			name = "WPXMLRPCTest-iOS";
 			productName = "WPXMLRPCTest-iOS";
-			productReference = E1D0D85716D4048200E33F4C /* WPXMLRPCTest-iOS.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productReference = E1D0D85716D4048200E33F4C /* WPXMLRPCTest-iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E1D0D87116D404AB00E33F4C /* WPXMLRPCTest-OSX */ = {
 			isa = PBXNativeTarget;
@@ -351,7 +344,6 @@
 				E1D0D86D16D404AB00E33F4C /* Sources */,
 				E1D0D86E16D404AB00E33F4C /* Frameworks */,
 				E1D0D86F16D404AB00E33F4C /* Resources */,
-				E1D0D87016D404AB00E33F4C /* ShellScript */,
 				257EC4085F5244599532958E /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -360,8 +352,8 @@
 			);
 			name = "WPXMLRPCTest-OSX";
 			productName = "WPXMLRPCTest-OSX";
-			productReference = E1D0D87216D404AB00E33F4C /* WPXMLRPCTest-OSX.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productReference = E1D0D87216D404AB00E33F4C /* WPXMLRPCTest-OSX.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -471,32 +463,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WPXMLRPCTest-iOS/Pods-WPXMLRPCTest-iOS-resources.sh\"\n";
 		};
-		E1D0D85516D4048200E33F4C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		E1D0D87016D404AB00E33F4C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
 		F0587B6299B34AAA9FB66B59 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -554,16 +520,16 @@
 		E1D0D85016D4033000E33F4C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 			};
 			name = Debug;
 		};
 		E1D0D85116D4033000E33F4C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 			};
 			name = Release;
 		};
@@ -583,6 +549,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -598,11 +565,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "WPXMLRPCTest-iOS/WPXMLRPCTest-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -622,6 +588,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -630,11 +597,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "WPXMLRPCTest-iOS/WPXMLRPCTest-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -653,7 +619,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -670,11 +639,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "WPXMLRPCTest-OSX/WPXMLRPCTest-OSX-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				WRAPPER_EXTENSION = octest;
+				SDKROOT = macosx;			
 			};
 			name = Debug;
 		};
@@ -694,7 +662,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -704,10 +675,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "WPXMLRPCTest-OSX/WPXMLRPCTest-OSX-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

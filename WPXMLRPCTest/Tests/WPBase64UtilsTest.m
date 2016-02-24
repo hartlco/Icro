@@ -23,12 +23,12 @@
 
 - (void)testEncodeWithData {
     NSString *parsedEncoded = [WPBase64Utils encodeData:expectedDecoded];
-    STAssertEqualObjects(expectedEncoded, parsedEncoded, nil);
+    XCTAssertEqualObjects(expectedEncoded, parsedEncoded);
 }
 
 - (void)testDecodeWithData {
     NSData *parsedDecoded = [WPBase64Utils decodeString:expectedEncoded];
-    STAssertEqualObjects(expectedDecoded, parsedDecoded, nil);
+    XCTAssertEqualObjects(expectedDecoded, parsedDecoded);
 }
 
 - (void)testEncodeWithInputStream {
@@ -36,7 +36,7 @@
     [WPBase64Utils encodeInputStream:[NSInputStream inputStreamWithFileAtPath:encodedFilePath] withChunkHandler:^(NSString *chunk) {
         [parsedEncoded appendString:chunk];
     }];
-    STAssertEqualObjects(expectedEncoded, parsedEncoded, nil);
+    XCTAssertEqualObjects(expectedEncoded, parsedEncoded);
 }
 
 - (void)testEncodeWithFileHandle {
@@ -44,7 +44,7 @@
     [WPBase64Utils encodeFileHandle:[NSFileHandle fileHandleForReadingAtPath:encodedFilePath] withChunkHandler:^(NSString *chunk) {
         [parsedEncoded appendString:chunk];
     }];
-    STAssertEqualObjects(expectedEncoded, parsedEncoded, nil);
+    XCTAssertEqualObjects(expectedEncoded, parsedEncoded);
 }
 
 @end
