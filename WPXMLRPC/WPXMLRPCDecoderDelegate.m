@@ -310,7 +310,7 @@
 #pragma mark -
 
 - (NSNumber *)parseInteger:(NSString *)value {
-    return [NSNumber numberWithInteger:[value integerValue]];
+    return [NSNumber numberWithLongLong:[value longLongValue]];
 }
 
 - (NSNumber *)parseDouble:(NSString *)value {

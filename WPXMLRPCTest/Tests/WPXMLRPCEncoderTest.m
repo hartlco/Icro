@@ -1,13 +1,9 @@
-//
-//  WPXMLRPCEncoderTest.m
-//  WPXMLRPCTest
-//
-//  Created by Jorge Bernal on 2/25/13.
-//
-//
-
 #import "WPXMLRPCEncoder.h"
-#import "WPXMLRPCEncoderTest.h"
+#import <XCTest/XCTest.h>
+
+@interface WPXMLRPCEncoderTest : XCTestCase
+
+@end
 
 @implementation WPXMLRPCEncoderTest
 

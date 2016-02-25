@@ -1,15 +1,12 @@
-//
-//  WPXMLRPCEntitiesTest.m
-//  WPXMLRPCTest
-//
-//  Created by Jorge Bernal on 2/25/13.
-//
-//
-
 #import "WPXMLRPCDecoder.h"
 #import "WPXMLRPCEncoder.h"
 #import "WPStringUtils.h"
-#import "WPXMLRPCEntitiesTest.h"
+
+#import <XCTest/XCTest.h>
+
+@interface WPXMLRPCEntitiesTest : XCTestCase
+
+@end
 
 @implementation WPXMLRPCEntitiesTest
 
