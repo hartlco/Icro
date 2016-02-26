@@ -72,6 +72,7 @@
 		E1D0D8E816D41BF000E33F4C /* EscapingTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E1D0D8E616D41BF000E33F4C /* EscapingTestCase.xml */; };
 		FFFB38531C7F6C2E00E064D0 /* OverflowInteger32TestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = FFFB38521C7F6C2E00E064D0 /* OverflowInteger32TestCase.xml */; };
 		FFFB38551C7F6C4300E064D0 /* WPXMLRPCDataCleanerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFB38541C7F6C4300E064D0 /* WPXMLRPCDataCleanerTest.m */; };
+		FFFB38601C8106CE00E064D0 /* OverflowInteger32TestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = FFFB38521C7F6C2E00E064D0 /* OverflowInteger32TestCase.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -425,6 +426,7 @@
 				E1D0D8C016D4053B00E33F4C /* EmptyDoubleTestCase.xml in Resources */,
 				E1D0D8C216D4053B00E33F4C /* EmptyIntegerTestCase.xml in Resources */,
 				E1D0D8C416D4053B00E33F4C /* EmptyStringTestCase.xml in Resources */,
+				FFFB38601C8106CE00E064D0 /* OverflowInteger32TestCase.xml in Resources */,
 				E1D0D8C616D4053B00E33F4C /* SimpleArrayTestCase.xml in Resources */,
 				E1D0D8C816D4053B00E33F4C /* SimpleStructTestCase.xml in Resources */,
 				E1D0D8CA16D4053B00E33F4C /* TestCases.plist in Resources */,
@@ -528,7 +530,7 @@
 		E1D0D85016D4033000E33F4C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 			};
 			name = Debug;
@@ -536,7 +538,7 @@
 		E1D0D85116D4033000E33F4C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 			};
 			name = Release;
@@ -573,7 +575,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "WPXMLRPCTest-iOS/WPXMLRPCTest-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -605,7 +607,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "WPXMLRPCTest-iOS/WPXMLRPCTest-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
