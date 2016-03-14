@@ -44,7 +44,7 @@
     NSString *testCase = [[self unitTestBundle] pathForResource:@"InvalidFault" ofType:@"xml"];
     NSData *testCaseData =[[NSData alloc] initWithContentsOfFile:testCase];
     WPXMLRPCDecoder *decoder = [[WPXMLRPCDecoder alloc] initWithData:testCaseData];
-    XCTAssertNil([decoder object]);
+    XCTAssertNotNil([decoder object]);
     XCTAssertNotNil([decoder error]);
     NSError *error = [decoder error];
     XCTAssertEqualObjects([error domain], WPXMLRPCErrorDomain);

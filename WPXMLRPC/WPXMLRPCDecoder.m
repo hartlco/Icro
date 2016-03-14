@@ -125,7 +125,13 @@ NSString *const WPXMLRPCErrorDomain = @"WPXMLRPCError";
     }
 
     if ([self isFault]) {
-        return [NSError errorWithDomain:WPXMLRPCFaultErrorDomain code:[self faultCode] userInfo:@{NSLocalizedDescriptionKey: [self faultString]}];
+        if ([self faultString] == nil) {
+            return [NSError errorWithDomain:WPXMLRPCErrorDomain
+                                       code:WPXMLRPCInvalidInputError
+                                   userInfo:@{NSLocalizedDescriptionKey: NSLocalizedString(@"The data doesn't look like a valid XML-RPC Fault response", @"WPXMLRPC failed to read fault response from server")}];
+        } else {
+            return [NSError errorWithDomain:WPXMLRPCFaultErrorDomain code:[self faultCode] userInfo:@{NSLocalizedDescriptionKey: [self faultString]}];
+        }
     }
 
     if (_object == nil) {
