@@ -1,11 +1,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'WPXMLRPCTest-OSX' do
-  platform :osx
+  platform :osx, '10.9'
+  pod "wpxmlrpc", :path => "../"
   pod 'CTidy', '~> 0.3'
 end
 
 target 'WPXMLRPCTest-iOS' do
-  platform :ios
+  platform :ios, '7.0'
+  pod "wpxmlrpc", :path => "../" 
   pod 'CTidy', '~> 0.3'
 end

@@ -1,10 +1,17 @@
 PODS:
   - CTidy (0.3.1)
+  - wpxmlrpc (0.8.2)
 
 DEPENDENCIES:
   - CTidy (~> 0.3)
+  - wpxmlrpc (from `../`)
+
+EXTERNAL SOURCES:
+  wpxmlrpc:
+    :path: ../
 
 SPEC CHECKSUMS:
   CTidy: f43e98bca701c27d9ecdda51d18734622b8cca70
+  wpxmlrpc: 451bbf27356c89818fd85b58f4695aa96f8ece8d
 
 COCOAPODS: 0.39.0
