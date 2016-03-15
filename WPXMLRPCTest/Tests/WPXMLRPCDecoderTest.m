@@ -40,6 +40,17 @@
     XCTAssertEqual([error code], WPXMLRPCInvalidInputError);
 }
 
+- (void)testInvalidFaultXmlThrowsError {
+    NSString *testCase = [[self unitTestBundle] pathForResource:@"InvalidFault" ofType:@"xml"];
+    NSData *testCaseData =[[NSData alloc] initWithContentsOfFile:testCase];
+    WPXMLRPCDecoder *decoder = [[WPXMLRPCDecoder alloc] initWithData:testCaseData];
+    XCTAssertNotNil([decoder object]);
+    XCTAssertNotNil([decoder error]);
+    NSError *error = [decoder error];
+    XCTAssertEqualObjects([error domain], WPXMLRPCErrorDomain);
+    XCTAssertEqual([error code], WPXMLRPCInvalidInputError);
+}
+
 #pragma mark -
 
 - (NSBundle *)unitTestBundle {
