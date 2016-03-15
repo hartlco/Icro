@@ -28,6 +28,8 @@
  */
 @interface WPXMLRPCEncoder : NSObject
 
+- (instancetype)init NS_UNAVAILABLE;
+
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified method and parameters.
 
