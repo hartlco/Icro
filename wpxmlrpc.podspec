@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
   s.author       = { "Automattic" => "mobile@automattic.com" }
   s.source       = { :git => "https://github.com/wordpress-mobile/wpxmlrpc.git", :tag => "#{s.version}" }
   s.source_files = 'WPXMLRPC'
+  s.public_header_files = [ 'WPXMLRPC/WPXMLRPC.h', 'WPXMLRPC/WPXMLRPCEncoder.h', 'WPXMLRPC/WPXMLRPCDecoder.h' ]
   s.libraries    = 'iconv'
   s.requires_arc = true
 
