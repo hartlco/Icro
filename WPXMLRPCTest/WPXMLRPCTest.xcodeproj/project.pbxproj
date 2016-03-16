@@ -110,6 +110,8 @@
 		E1D0D8D816D4088D00E33F4C /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		E1D0D8E616D41BF000E33F4C /* EscapingTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = EscapingTestCase.xml; sourceTree = "<group>"; };
 		FF561A5C1C96F93D00C692B9 /* InvalidFault.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = InvalidFault.xml; sourceTree = "<group>"; };
+		FFE317091C99804100430319 /* WPBase64Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPBase64Utils.h; path = ../WPXMLRPC/WPBase64Utils.h; sourceTree = "<group>"; };
+		FFE3170B1C99804100430319 /* WPStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPStringUtils.h; path = ../WPXMLRPC/WPStringUtils.h; sourceTree = "<group>"; };
 		FFFB38521C7F6C2E00E064D0 /* OverflowInteger32TestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = OverflowInteger32TestCase.xml; sourceTree = "<group>"; };
 		FFFB38541C7F6C4300E064D0 /* WPXMLRPCDataCleanerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDataCleanerTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +155,7 @@
 		E1D0D84B16D4033000E33F4C = {
 			isa = PBXGroup;
 			children = (
+				FFE3170F1C99806800430319 /* WPXMLRPC-InternalHeader */,
 				E1D0D8AC16D4053B00E33F4C /* Test Data */,
 				E1D0D8A816D4051700E33F4C /* Tests */,
 				E1D0D86016D4048200E33F4C /* WPXMLRPCTest-iOS */,
@@ -269,6 +272,15 @@
 				FF561A5C1C96F93D00C692B9 /* InvalidFault.xml */,
 			);
 			path = "Test Data";
+			sourceTree = "<group>";
+		};
+		FFE3170F1C99806800430319 /* WPXMLRPC-InternalHeader */ = {
+			isa = PBXGroup;
+			children = (
+				FFE317091C99804100430319 /* WPBase64Utils.h */,
+				FFE3170B1C99804100430319 /* WPStringUtils.h */,
+			);
+			name = "WPXMLRPC-InternalHeader";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
