@@ -13,7 +13,7 @@ dependency management.
 
 Just add this to your Podfile and run `pod install`:
 
-	pod 'wpxmlrpc', '~> 0.5'
+	pod 'wpxmlrpc'
 
 Another option, if you don't use CocoaPods, is to copy the `WPXMLRPC`
 folder to your project.
