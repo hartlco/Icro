@@ -4,7 +4,7 @@ language: objective-c
 podfile: WPXMLRPCTest/Podfile
 before_install:
 # - gem install cocoapods # Since Travis is not always on latest version
-- pod install --project-directory=WPXMLRPCTest
+- pod install --project-directory=WPXMLRPCTest --no-repo-update
 script:
 - set -o pipefail && xcodebuild test -workspace WPXMLRPCTest/WPXMLRPCTest.xcworkspace -scheme WPXMLRPCTest-iOS -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
