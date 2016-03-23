@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E156623E1CA2F22800E6D156"
-               BuildableName = "wpxmlrpc-iOS.framework"
+               BuildableName = "wpxmlrpc.framework"
                BlueprintName = "wpxmlrpc-iOS"
                ReferencedContainer = "container:wpxmlrpc.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E156623E1CA2F22800E6D156"
-            BuildableName = "wpxmlrpc-iOS.framework"
+            BuildableName = "wpxmlrpc.framework"
             BlueprintName = "wpxmlrpc-iOS"
             ReferencedContainer = "container:wpxmlrpc.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E156623E1CA2F22800E6D156"
-            BuildableName = "wpxmlrpc-iOS.framework"
+            BuildableName = "wpxmlrpc.framework"
             BlueprintName = "wpxmlrpc-iOS"
             ReferencedContainer = "container:wpxmlrpc.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E156623E1CA2F22800E6D156"
-            BuildableName = "wpxmlrpc-iOS.framework"
+            BuildableName = "wpxmlrpc.framework"
             BlueprintName = "wpxmlrpc-iOS"
             ReferencedContainer = "container:wpxmlrpc.xcodeproj">
          </BuildableReference>
