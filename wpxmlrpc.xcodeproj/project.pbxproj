@@ -8,11 +8,89 @@
 
 /* Begin PBXBuildFile section */
 		E15662431CA2F22800E6D156 /* wpxmlrpc-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = E15662421CA2F22800E6D156 /* wpxmlrpc-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E156624A1CA2F22800E6D156 /* wpxmlrpc-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E156623F1CA2F22800E6D156 /* wpxmlrpc-iOS.framework */; };
+		E156624A1CA2F22800E6D156 /* wpxmlrpc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E156623F1CA2F22800E6D156 /* wpxmlrpc.framework */; };
 		E156624F1CA2F22800E6D156 /* wpxmlrpc_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E156624E1CA2F22800E6D156 /* wpxmlrpc_iOSTests.m */; };
 		E156625F1CA2F25400E6D156 /* wpxmlrpc-Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = E156625E1CA2F25400E6D156 /* wpxmlrpc-Mac.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E15662661CA2F25400E6D156 /* wpxmlrpc-Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E156625C1CA2F25400E6D156 /* wpxmlrpc-Mac.framework */; };
+		E15662661CA2F25400E6D156 /* wpxmlrpc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E156625C1CA2F25400E6D156 /* wpxmlrpc.framework */; };
 		E156626B1CA2F25400E6D156 /* wpxmlrpc_MacTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E156626A1CA2F25400E6D156 /* wpxmlrpc_MacTests.m */; };
+		E15662811CA2F29700E6D156 /* WPBase64Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = E15662741CA2F29700E6D156 /* WPBase64Utils.h */; };
+		E15662821CA2F29700E6D156 /* WPBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662751CA2F29700E6D156 /* WPBase64Utils.m */; };
+		E15662831CA2F29700E6D156 /* WPStringUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E15662761CA2F29700E6D156 /* WPStringUtils.h */; };
+		E15662841CA2F29700E6D156 /* WPStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662771CA2F29700E6D156 /* WPStringUtils.m */; };
+		E15662851CA2F29700E6D156 /* WPXMLRPC.h in Headers */ = {isa = PBXBuildFile; fileRef = E15662781CA2F29700E6D156 /* WPXMLRPC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E15662861CA2F29700E6D156 /* WPXMLRPCDataCleaner.h in Headers */ = {isa = PBXBuildFile; fileRef = E15662791CA2F29700E6D156 /* WPXMLRPCDataCleaner.h */; };
+		E15662871CA2F29700E6D156 /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = E156627A1CA2F29700E6D156 /* WPXMLRPCDataCleaner.m */; };
+		E15662881CA2F29700E6D156 /* WPXMLRPCDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = E156627B1CA2F29700E6D156 /* WPXMLRPCDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E15662891CA2F29700E6D156 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E156627C1CA2F29700E6D156 /* WPXMLRPCDecoder.m */; };
+		E156628A1CA2F29700E6D156 /* WPXMLRPCDecoderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E156627D1CA2F29700E6D156 /* WPXMLRPCDecoderDelegate.h */; };
+		E156628B1CA2F29700E6D156 /* WPXMLRPCDecoderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E156627E1CA2F29700E6D156 /* WPXMLRPCDecoderDelegate.m */; };
+		E156628C1CA2F29700E6D156 /* WPXMLRPCEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = E156627F1CA2F29700E6D156 /* WPXMLRPCEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E156628D1CA2F29700E6D156 /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662801CA2F29700E6D156 /* WPXMLRPCEncoder.m */; };
+		E15662C21CA2F2C100E6D156 /* WPBase64UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662A41CA2F2B200E6D156 /* WPBase64UtilsTest.m */; };
+		E15662C31CA2F2C100E6D156 /* WPXMLRPCDataCleanerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662A51CA2F2B200E6D156 /* WPXMLRPCDataCleanerTest.m */; };
+		E15662C41CA2F2C100E6D156 /* WPXMLRPCDecoderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662A61CA2F2B200E6D156 /* WPXMLRPCDecoderTest.m */; };
+		E15662C51CA2F2C100E6D156 /* WPXMLRPCEncoderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662A71CA2F2B200E6D156 /* WPXMLRPCEncoderTest.m */; };
+		E15662C61CA2F2C100E6D156 /* WPXMLRPCEntitiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662A81CA2F2B200E6D156 /* WPXMLRPCEntitiesTest.m */; };
+		E15662C71CA2F2C200E6D156 /* WPBase64UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662A41CA2F2B200E6D156 /* WPBase64UtilsTest.m */; };
+		E15662C81CA2F2C200E6D156 /* WPXMLRPCDataCleanerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662A51CA2F2B200E6D156 /* WPXMLRPCDataCleanerTest.m */; };
+		E15662C91CA2F2C200E6D156 /* WPXMLRPCDecoderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662A61CA2F2B200E6D156 /* WPXMLRPCDecoderTest.m */; };
+		E15662CA1CA2F2C200E6D156 /* WPXMLRPCEncoderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662A71CA2F2B200E6D156 /* WPXMLRPCEncoderTest.m */; };
+		E15662CB1CA2F2C200E6D156 /* WPXMLRPCEntitiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662A81CA2F2B200E6D156 /* WPXMLRPCEntitiesTest.m */; };
+		E15662CD1CA2F2D400E6D156 /* AlternativeDateFormatsTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156628F1CA2F2B200E6D156 /* AlternativeDateFormatsTestCase.xml */; };
+		E15662CE1CA2F2D400E6D156 /* DefaultTypeTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662901CA2F2B200E6D156 /* DefaultTypeTestCase.xml */; };
+		E15662CF1CA2F2D400E6D156 /* EmptyBooleanTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662911CA2F2B200E6D156 /* EmptyBooleanTestCase.xml */; };
+		E15662D01CA2F2D400E6D156 /* EmptyDataTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662921CA2F2B200E6D156 /* EmptyDataTestCase.xml */; };
+		E15662D11CA2F2D400E6D156 /* EmptyDoubleTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662931CA2F2B200E6D156 /* EmptyDoubleTestCase.xml */; };
+		E15662D21CA2F2D400E6D156 /* EmptyIntegerTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662941CA2F2B200E6D156 /* EmptyIntegerTestCase.xml */; };
+		E15662D31CA2F2D400E6D156 /* EmptyStringTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662951CA2F2B200E6D156 /* EmptyStringTestCase.xml */; };
+		E15662D41CA2F2D400E6D156 /* entities.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662961CA2F2B200E6D156 /* entities.xml */; };
+		E15662D51CA2F2D400E6D156 /* entitiesDecoded.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662971CA2F2B200E6D156 /* entitiesDecoded.xml */; };
+		E15662D61CA2F2D400E6D156 /* EscapingTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662981CA2F2B200E6D156 /* EscapingTestCase.xml */; };
+		E15662D71CA2F2D400E6D156 /* IncompleteXmlTest.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662991CA2F2B200E6D156 /* IncompleteXmlTest.xml */; };
+		E15662D81CA2F2D400E6D156 /* InvalidFault.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156629A1CA2F2B200E6D156 /* InvalidFault.xml */; };
+		E15662D91CA2F2D400E6D156 /* NoXmlResponseTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156629B1CA2F2B200E6D156 /* NoXmlResponseTestCase.xml */; };
+		E15662DA1CA2F2D400E6D156 /* OverflowInteger32TestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156629C1CA2F2B200E6D156 /* OverflowInteger32TestCase.xml */; };
+		E15662DB1CA2F2D400E6D156 /* RequestTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156629D1CA2F2B200E6D156 /* RequestTestCase.xml */; };
+		E15662DC1CA2F2D400E6D156 /* SimpleArrayTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156629E1CA2F2B200E6D156 /* SimpleArrayTestCase.xml */; };
+		E15662DD1CA2F2D400E6D156 /* SimpleStructTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156629F1CA2F2B200E6D156 /* SimpleStructTestCase.xml */; };
+		E15662DE1CA2F2D400E6D156 /* TestCases.plist in Resources */ = {isa = PBXBuildFile; fileRef = E15662A01CA2F2B200E6D156 /* TestCases.plist */; };
+		E15662DF1CA2F2D400E6D156 /* TestImage.base64 in Resources */ = {isa = PBXBuildFile; fileRef = E15662A11CA2F2B200E6D156 /* TestImage.base64 */; };
+		E15662E01CA2F2D400E6D156 /* TestImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E15662A21CA2F2B200E6D156 /* TestImage.png */; };
+		E15662E11CA2F2D500E6D156 /* AlternativeDateFormatsTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156628F1CA2F2B200E6D156 /* AlternativeDateFormatsTestCase.xml */; };
+		E15662E21CA2F2D500E6D156 /* DefaultTypeTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662901CA2F2B200E6D156 /* DefaultTypeTestCase.xml */; };
+		E15662E31CA2F2D500E6D156 /* EmptyBooleanTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662911CA2F2B200E6D156 /* EmptyBooleanTestCase.xml */; };
+		E15662E41CA2F2D500E6D156 /* EmptyDataTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662921CA2F2B200E6D156 /* EmptyDataTestCase.xml */; };
+		E15662E51CA2F2D500E6D156 /* EmptyDoubleTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662931CA2F2B200E6D156 /* EmptyDoubleTestCase.xml */; };
+		E15662E61CA2F2D500E6D156 /* EmptyIntegerTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662941CA2F2B200E6D156 /* EmptyIntegerTestCase.xml */; };
+		E15662E71CA2F2D500E6D156 /* EmptyStringTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662951CA2F2B200E6D156 /* EmptyStringTestCase.xml */; };
+		E15662E81CA2F2D500E6D156 /* entities.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662961CA2F2B200E6D156 /* entities.xml */; };
+		E15662E91CA2F2D500E6D156 /* entitiesDecoded.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662971CA2F2B200E6D156 /* entitiesDecoded.xml */; };
+		E15662EA1CA2F2D500E6D156 /* EscapingTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662981CA2F2B200E6D156 /* EscapingTestCase.xml */; };
+		E15662EB1CA2F2D500E6D156 /* IncompleteXmlTest.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15662991CA2F2B200E6D156 /* IncompleteXmlTest.xml */; };
+		E15662EC1CA2F2D500E6D156 /* InvalidFault.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156629A1CA2F2B200E6D156 /* InvalidFault.xml */; };
+		E15662ED1CA2F2D500E6D156 /* NoXmlResponseTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156629B1CA2F2B200E6D156 /* NoXmlResponseTestCase.xml */; };
+		E15662EE1CA2F2D500E6D156 /* OverflowInteger32TestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156629C1CA2F2B200E6D156 /* OverflowInteger32TestCase.xml */; };
+		E15662EF1CA2F2D500E6D156 /* RequestTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156629D1CA2F2B200E6D156 /* RequestTestCase.xml */; };
+		E15662F01CA2F2D500E6D156 /* SimpleArrayTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156629E1CA2F2B200E6D156 /* SimpleArrayTestCase.xml */; };
+		E15662F11CA2F2D500E6D156 /* SimpleStructTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = E156629F1CA2F2B200E6D156 /* SimpleStructTestCase.xml */; };
+		E15662F21CA2F2D500E6D156 /* TestCases.plist in Resources */ = {isa = PBXBuildFile; fileRef = E15662A01CA2F2B200E6D156 /* TestCases.plist */; };
+		E15662F31CA2F2D500E6D156 /* TestImage.base64 in Resources */ = {isa = PBXBuildFile; fileRef = E15662A11CA2F2B200E6D156 /* TestImage.base64 */; };
+		E15662F41CA2F2D500E6D156 /* TestImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E15662A21CA2F2B200E6D156 /* TestImage.png */; };
+		E15662F51CA2F2DC00E6D156 /* WPBase64Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = E15662741CA2F29700E6D156 /* WPBase64Utils.h */; };
+		E15662F61CA2F2DC00E6D156 /* WPBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662751CA2F29700E6D156 /* WPBase64Utils.m */; };
+		E15662F71CA2F2DC00E6D156 /* WPStringUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E15662761CA2F29700E6D156 /* WPStringUtils.h */; };
+		E15662F81CA2F2DC00E6D156 /* WPStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662771CA2F29700E6D156 /* WPStringUtils.m */; };
+		E15662F91CA2F2DC00E6D156 /* WPXMLRPC.h in Headers */ = {isa = PBXBuildFile; fileRef = E15662781CA2F29700E6D156 /* WPXMLRPC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E15662FA1CA2F2DC00E6D156 /* WPXMLRPCDataCleaner.h in Headers */ = {isa = PBXBuildFile; fileRef = E15662791CA2F29700E6D156 /* WPXMLRPCDataCleaner.h */; };
+		E15662FB1CA2F2DC00E6D156 /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = E156627A1CA2F29700E6D156 /* WPXMLRPCDataCleaner.m */; };
+		E15662FC1CA2F2DC00E6D156 /* WPXMLRPCDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = E156627B1CA2F29700E6D156 /* WPXMLRPCDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E15662FD1CA2F2DC00E6D156 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E156627C1CA2F29700E6D156 /* WPXMLRPCDecoder.m */; };
+		E15662FE1CA2F2DC00E6D156 /* WPXMLRPCDecoderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E156627D1CA2F29700E6D156 /* WPXMLRPCDecoderDelegate.h */; };
+		E15662FF1CA2F2DC00E6D156 /* WPXMLRPCDecoderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E156627E1CA2F29700E6D156 /* WPXMLRPCDecoderDelegate.m */; };
+		E15663001CA2F2DC00E6D156 /* WPXMLRPCEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = E156627F1CA2F29700E6D156 /* WPXMLRPCEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E15663011CA2F2DC00E6D156 /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662801CA2F29700E6D156 /* WPXMLRPCEncoder.m */; };
+		E15663031CA2F3E800E6D156 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E15663021CA2F3E800E6D156 /* libiconv.tbd */; };
+		E15663051CA2F3F100E6D156 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E15663041CA2F3F100E6D156 /* libiconv.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,18 +111,58 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E156623F1CA2F22800E6D156 /* wpxmlrpc-iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "wpxmlrpc-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E156623F1CA2F22800E6D156 /* wpxmlrpc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = wpxmlrpc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15662421CA2F22800E6D156 /* wpxmlrpc-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wpxmlrpc-iOS.h"; sourceTree = "<group>"; };
 		E15662441CA2F22800E6D156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E15662491CA2F22800E6D156 /* wpxmlrpc-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wpxmlrpc-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E156624E1CA2F22800E6D156 /* wpxmlrpc_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wpxmlrpc_iOSTests.m; sourceTree = "<group>"; };
 		E15662501CA2F22800E6D156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E156625C1CA2F25400E6D156 /* wpxmlrpc-Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "wpxmlrpc-Mac.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E156625C1CA2F25400E6D156 /* wpxmlrpc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = wpxmlrpc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E156625E1CA2F25400E6D156 /* wpxmlrpc-Mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wpxmlrpc-Mac.h"; sourceTree = "<group>"; };
 		E15662601CA2F25400E6D156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E15662651CA2F25400E6D156 /* wpxmlrpc-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wpxmlrpc-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E156626A1CA2F25400E6D156 /* wpxmlrpc_MacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wpxmlrpc_MacTests.m; sourceTree = "<group>"; };
 		E156626C1CA2F25400E6D156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E15662741CA2F29700E6D156 /* WPBase64Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPBase64Utils.h; sourceTree = "<group>"; };
+		E15662751CA2F29700E6D156 /* WPBase64Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPBase64Utils.m; sourceTree = "<group>"; };
+		E15662761CA2F29700E6D156 /* WPStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPStringUtils.h; sourceTree = "<group>"; };
+		E15662771CA2F29700E6D156 /* WPStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPStringUtils.m; sourceTree = "<group>"; };
+		E15662781CA2F29700E6D156 /* WPXMLRPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPC.h; sourceTree = "<group>"; };
+		E15662791CA2F29700E6D156 /* WPXMLRPCDataCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDataCleaner.h; sourceTree = "<group>"; };
+		E156627A1CA2F29700E6D156 /* WPXMLRPCDataCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDataCleaner.m; sourceTree = "<group>"; };
+		E156627B1CA2F29700E6D156 /* WPXMLRPCDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDecoder.h; sourceTree = "<group>"; };
+		E156627C1CA2F29700E6D156 /* WPXMLRPCDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoder.m; sourceTree = "<group>"; };
+		E156627D1CA2F29700E6D156 /* WPXMLRPCDecoderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDecoderDelegate.h; sourceTree = "<group>"; };
+		E156627E1CA2F29700E6D156 /* WPXMLRPCDecoderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoderDelegate.m; sourceTree = "<group>"; };
+		E156627F1CA2F29700E6D156 /* WPXMLRPCEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCEncoder.h; sourceTree = "<group>"; };
+		E15662801CA2F29700E6D156 /* WPXMLRPCEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCEncoder.m; sourceTree = "<group>"; };
+		E156628F1CA2F2B200E6D156 /* AlternativeDateFormatsTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AlternativeDateFormatsTestCase.xml; sourceTree = "<group>"; };
+		E15662901CA2F2B200E6D156 /* DefaultTypeTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DefaultTypeTestCase.xml; sourceTree = "<group>"; };
+		E15662911CA2F2B200E6D156 /* EmptyBooleanTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = EmptyBooleanTestCase.xml; sourceTree = "<group>"; };
+		E15662921CA2F2B200E6D156 /* EmptyDataTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = EmptyDataTestCase.xml; sourceTree = "<group>"; };
+		E15662931CA2F2B200E6D156 /* EmptyDoubleTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = EmptyDoubleTestCase.xml; sourceTree = "<group>"; };
+		E15662941CA2F2B200E6D156 /* EmptyIntegerTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = EmptyIntegerTestCase.xml; sourceTree = "<group>"; };
+		E15662951CA2F2B200E6D156 /* EmptyStringTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = EmptyStringTestCase.xml; sourceTree = "<group>"; };
+		E15662961CA2F2B200E6D156 /* entities.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = entities.xml; sourceTree = "<group>"; };
+		E15662971CA2F2B200E6D156 /* entitiesDecoded.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = entitiesDecoded.xml; sourceTree = "<group>"; };
+		E15662981CA2F2B200E6D156 /* EscapingTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = EscapingTestCase.xml; sourceTree = "<group>"; };
+		E15662991CA2F2B200E6D156 /* IncompleteXmlTest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = IncompleteXmlTest.xml; sourceTree = "<group>"; };
+		E156629A1CA2F2B200E6D156 /* InvalidFault.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = InvalidFault.xml; sourceTree = "<group>"; };
+		E156629B1CA2F2B200E6D156 /* NoXmlResponseTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = NoXmlResponseTestCase.xml; sourceTree = "<group>"; };
+		E156629C1CA2F2B200E6D156 /* OverflowInteger32TestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = OverflowInteger32TestCase.xml; sourceTree = "<group>"; };
+		E156629D1CA2F2B200E6D156 /* RequestTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = RequestTestCase.xml; sourceTree = "<group>"; };
+		E156629E1CA2F2B200E6D156 /* SimpleArrayTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SimpleArrayTestCase.xml; sourceTree = "<group>"; };
+		E156629F1CA2F2B200E6D156 /* SimpleStructTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SimpleStructTestCase.xml; sourceTree = "<group>"; };
+		E15662A01CA2F2B200E6D156 /* TestCases.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestCases.plist; sourceTree = "<group>"; };
+		E15662A11CA2F2B200E6D156 /* TestImage.base64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestImage.base64; sourceTree = "<group>"; };
+		E15662A21CA2F2B200E6D156 /* TestImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage.png; sourceTree = "<group>"; };
+		E15662A41CA2F2B200E6D156 /* WPBase64UtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPBase64UtilsTest.m; sourceTree = "<group>"; };
+		E15662A51CA2F2B200E6D156 /* WPXMLRPCDataCleanerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDataCleanerTest.m; sourceTree = "<group>"; };
+		E15662A61CA2F2B200E6D156 /* WPXMLRPCDecoderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoderTest.m; sourceTree = "<group>"; };
+		E15662A71CA2F2B200E6D156 /* WPXMLRPCEncoderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCEncoderTest.m; sourceTree = "<group>"; };
+		E15662A81CA2F2B200E6D156 /* WPXMLRPCEntitiesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCEntitiesTest.m; sourceTree = "<group>"; };
+		E15663021CA2F3E800E6D156 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		E15663041CA2F3F100E6D156 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15663051CA2F3F100E6D156 /* libiconv.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E156624A1CA2F22800E6D156 /* wpxmlrpc-iOS.framework in Frameworks */,
+				E156624A1CA2F22800E6D156 /* wpxmlrpc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15663031CA2F3E800E6D156 /* libiconv.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E15662661CA2F25400E6D156 /* wpxmlrpc-Mac.framework in Frameworks */,
+				E15662661CA2F25400E6D156 /* wpxmlrpc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,10 +204,14 @@
 		E15662331CA2F1DD00E6D156 = {
 			isa = PBXGroup;
 			children = (
+				E156628E1CA2F2B200E6D156 /* Test Data */,
+				E15662A31CA2F2B200E6D156 /* Tests */,
+				E15662731CA2F29700E6D156 /* WPXMLRPC */,
 				E15662411CA2F22800E6D156 /* wpxmlrpc-iOS */,
 				E156624D1CA2F22800E6D156 /* wpxmlrpc-iOSTests */,
 				E156625D1CA2F25400E6D156 /* wpxmlrpc-Mac */,
 				E15662691CA2F25400E6D156 /* wpxmlrpc-MacTests */,
+				E15663061CA2F3FB00E6D156 /* Frameworks */,
 				E15662401CA2F22800E6D156 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,9 +219,9 @@
 		E15662401CA2F22800E6D156 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E156623F1CA2F22800E6D156 /* wpxmlrpc-iOS.framework */,
+				E156623F1CA2F22800E6D156 /* wpxmlrpc.framework */,
 				E15662491CA2F22800E6D156 /* wpxmlrpc-iOSTests.xctest */,
-				E156625C1CA2F25400E6D156 /* wpxmlrpc-Mac.framework */,
+				E156625C1CA2F25400E6D156 /* wpxmlrpc.framework */,
 				E15662651CA2F25400E6D156 /* wpxmlrpc-MacTests.xctest */,
 			);
 			name = Products;
@@ -139,6 +263,76 @@
 			path = "wpxmlrpc-MacTests";
 			sourceTree = "<group>";
 		};
+		E15662731CA2F29700E6D156 /* WPXMLRPC */ = {
+			isa = PBXGroup;
+			children = (
+				E15662741CA2F29700E6D156 /* WPBase64Utils.h */,
+				E15662751CA2F29700E6D156 /* WPBase64Utils.m */,
+				E15662761CA2F29700E6D156 /* WPStringUtils.h */,
+				E15662771CA2F29700E6D156 /* WPStringUtils.m */,
+				E15662781CA2F29700E6D156 /* WPXMLRPC.h */,
+				E15662791CA2F29700E6D156 /* WPXMLRPCDataCleaner.h */,
+				E156627A1CA2F29700E6D156 /* WPXMLRPCDataCleaner.m */,
+				E156627B1CA2F29700E6D156 /* WPXMLRPCDecoder.h */,
+				E156627C1CA2F29700E6D156 /* WPXMLRPCDecoder.m */,
+				E156627D1CA2F29700E6D156 /* WPXMLRPCDecoderDelegate.h */,
+				E156627E1CA2F29700E6D156 /* WPXMLRPCDecoderDelegate.m */,
+				E156627F1CA2F29700E6D156 /* WPXMLRPCEncoder.h */,
+				E15662801CA2F29700E6D156 /* WPXMLRPCEncoder.m */,
+			);
+			path = WPXMLRPC;
+			sourceTree = "<group>";
+		};
+		E156628E1CA2F2B200E6D156 /* Test Data */ = {
+			isa = PBXGroup;
+			children = (
+				E156628F1CA2F2B200E6D156 /* AlternativeDateFormatsTestCase.xml */,
+				E15662901CA2F2B200E6D156 /* DefaultTypeTestCase.xml */,
+				E15662911CA2F2B200E6D156 /* EmptyBooleanTestCase.xml */,
+				E15662921CA2F2B200E6D156 /* EmptyDataTestCase.xml */,
+				E15662931CA2F2B200E6D156 /* EmptyDoubleTestCase.xml */,
+				E15662941CA2F2B200E6D156 /* EmptyIntegerTestCase.xml */,
+				E15662951CA2F2B200E6D156 /* EmptyStringTestCase.xml */,
+				E15662961CA2F2B200E6D156 /* entities.xml */,
+				E15662971CA2F2B200E6D156 /* entitiesDecoded.xml */,
+				E15662981CA2F2B200E6D156 /* EscapingTestCase.xml */,
+				E15662991CA2F2B200E6D156 /* IncompleteXmlTest.xml */,
+				E156629A1CA2F2B200E6D156 /* InvalidFault.xml */,
+				E156629B1CA2F2B200E6D156 /* NoXmlResponseTestCase.xml */,
+				E156629C1CA2F2B200E6D156 /* OverflowInteger32TestCase.xml */,
+				E156629D1CA2F2B200E6D156 /* RequestTestCase.xml */,
+				E156629E1CA2F2B200E6D156 /* SimpleArrayTestCase.xml */,
+				E156629F1CA2F2B200E6D156 /* SimpleStructTestCase.xml */,
+				E15662A01CA2F2B200E6D156 /* TestCases.plist */,
+				E15662A11CA2F2B200E6D156 /* TestImage.base64 */,
+				E15662A21CA2F2B200E6D156 /* TestImage.png */,
+			);
+			name = "Test Data";
+			path = "WPXMLRPCTest/Test Data";
+			sourceTree = "<group>";
+		};
+		E15662A31CA2F2B200E6D156 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E15662A41CA2F2B200E6D156 /* WPBase64UtilsTest.m */,
+				E15662A51CA2F2B200E6D156 /* WPXMLRPCDataCleanerTest.m */,
+				E15662A61CA2F2B200E6D156 /* WPXMLRPCDecoderTest.m */,
+				E15662A71CA2F2B200E6D156 /* WPXMLRPCEncoderTest.m */,
+				E15662A81CA2F2B200E6D156 /* WPXMLRPCEntitiesTest.m */,
+			);
+			name = Tests;
+			path = WPXMLRPCTest/Tests;
+			sourceTree = "<group>";
+		};
+		E15663061CA2F3FB00E6D156 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E15663041CA2F3F100E6D156 /* libiconv.tbd */,
+				E15663021CA2F3E800E6D156 /* libiconv.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -146,6 +340,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15662831CA2F29700E6D156 /* WPStringUtils.h in Headers */,
+				E15662851CA2F29700E6D156 /* WPXMLRPC.h in Headers */,
+				E156628C1CA2F29700E6D156 /* WPXMLRPCEncoder.h in Headers */,
+				E15662881CA2F29700E6D156 /* WPXMLRPCDecoder.h in Headers */,
+				E156628A1CA2F29700E6D156 /* WPXMLRPCDecoderDelegate.h in Headers */,
+				E15662861CA2F29700E6D156 /* WPXMLRPCDataCleaner.h in Headers */,
+				E15662811CA2F29700E6D156 /* WPBase64Utils.h in Headers */,
 				E15662431CA2F22800E6D156 /* wpxmlrpc-iOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +355,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15662F71CA2F2DC00E6D156 /* WPStringUtils.h in Headers */,
+				E15662F91CA2F2DC00E6D156 /* WPXMLRPC.h in Headers */,
+				E15663001CA2F2DC00E6D156 /* WPXMLRPCEncoder.h in Headers */,
+				E15662FC1CA2F2DC00E6D156 /* WPXMLRPCDecoder.h in Headers */,
+				E15662FE1CA2F2DC00E6D156 /* WPXMLRPCDecoderDelegate.h in Headers */,
+				E15662FA1CA2F2DC00E6D156 /* WPXMLRPCDataCleaner.h in Headers */,
+				E15662F51CA2F2DC00E6D156 /* WPBase64Utils.h in Headers */,
 				E156625F1CA2F25400E6D156 /* wpxmlrpc-Mac.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,7 +384,7 @@
 			);
 			name = "wpxmlrpc-iOS";
 			productName = "wpxmlrpc-iOS";
-			productReference = E156623F1CA2F22800E6D156 /* wpxmlrpc-iOS.framework */;
+			productReference = E156623F1CA2F22800E6D156 /* wpxmlrpc.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E15662481CA2F22800E6D156 /* wpxmlrpc-iOSTests */ = {
@@ -212,7 +420,7 @@
 			);
 			name = "wpxmlrpc-Mac";
 			productName = "wpxmlrpc-Mac";
-			productReference = E156625C1CA2F25400E6D156 /* wpxmlrpc-Mac.framework */;
+			productReference = E156625C1CA2F25400E6D156 /* wpxmlrpc.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E15662641CA2F25400E6D156 /* wpxmlrpc-MacTests */ = {
@@ -287,6 +495,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15662D41CA2F2D400E6D156 /* entities.xml in Resources */,
+				E15662DA1CA2F2D400E6D156 /* OverflowInteger32TestCase.xml in Resources */,
+				E15662D11CA2F2D400E6D156 /* EmptyDoubleTestCase.xml in Resources */,
+				E15662D81CA2F2D400E6D156 /* InvalidFault.xml in Resources */,
+				E15662D51CA2F2D400E6D156 /* entitiesDecoded.xml in Resources */,
+				E15662CD1CA2F2D400E6D156 /* AlternativeDateFormatsTestCase.xml in Resources */,
+				E15662D31CA2F2D400E6D156 /* EmptyStringTestCase.xml in Resources */,
+				E15662E01CA2F2D400E6D156 /* TestImage.png in Resources */,
+				E15662DB1CA2F2D400E6D156 /* RequestTestCase.xml in Resources */,
+				E15662DE1CA2F2D400E6D156 /* TestCases.plist in Resources */,
+				E15662D91CA2F2D400E6D156 /* NoXmlResponseTestCase.xml in Resources */,
+				E15662D61CA2F2D400E6D156 /* EscapingTestCase.xml in Resources */,
+				E15662D01CA2F2D400E6D156 /* EmptyDataTestCase.xml in Resources */,
+				E15662DC1CA2F2D400E6D156 /* SimpleArrayTestCase.xml in Resources */,
+				E15662CE1CA2F2D400E6D156 /* DefaultTypeTestCase.xml in Resources */,
+				E15662D21CA2F2D400E6D156 /* EmptyIntegerTestCase.xml in Resources */,
+				E15662CF1CA2F2D400E6D156 /* EmptyBooleanTestCase.xml in Resources */,
+				E15662DF1CA2F2D400E6D156 /* TestImage.base64 in Resources */,
+				E15662DD1CA2F2D400E6D156 /* SimpleStructTestCase.xml in Resources */,
+				E15662D71CA2F2D400E6D156 /* IncompleteXmlTest.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +529,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15662E81CA2F2D500E6D156 /* entities.xml in Resources */,
+				E15662EE1CA2F2D500E6D156 /* OverflowInteger32TestCase.xml in Resources */,
+				E15662E51CA2F2D500E6D156 /* EmptyDoubleTestCase.xml in Resources */,
+				E15662EC1CA2F2D500E6D156 /* InvalidFault.xml in Resources */,
+				E15662E91CA2F2D500E6D156 /* entitiesDecoded.xml in Resources */,
+				E15662E11CA2F2D500E6D156 /* AlternativeDateFormatsTestCase.xml in Resources */,
+				E15662E71CA2F2D500E6D156 /* EmptyStringTestCase.xml in Resources */,
+				E15662F41CA2F2D500E6D156 /* TestImage.png in Resources */,
+				E15662EF1CA2F2D500E6D156 /* RequestTestCase.xml in Resources */,
+				E15662F21CA2F2D500E6D156 /* TestCases.plist in Resources */,
+				E15662ED1CA2F2D500E6D156 /* NoXmlResponseTestCase.xml in Resources */,
+				E15662EA1CA2F2D500E6D156 /* EscapingTestCase.xml in Resources */,
+				E15662E41CA2F2D500E6D156 /* EmptyDataTestCase.xml in Resources */,
+				E15662F01CA2F2D500E6D156 /* SimpleArrayTestCase.xml in Resources */,
+				E15662E21CA2F2D500E6D156 /* DefaultTypeTestCase.xml in Resources */,
+				E15662E61CA2F2D500E6D156 /* EmptyIntegerTestCase.xml in Resources */,
+				E15662E31CA2F2D500E6D156 /* EmptyBooleanTestCase.xml in Resources */,
+				E15662F31CA2F2D500E6D156 /* TestImage.base64 in Resources */,
+				E15662F11CA2F2D500E6D156 /* SimpleStructTestCase.xml in Resources */,
+				E15662EB1CA2F2D500E6D156 /* IncompleteXmlTest.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +559,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15662871CA2F29700E6D156 /* WPXMLRPCDataCleaner.m in Sources */,
+				E156628D1CA2F29700E6D156 /* WPXMLRPCEncoder.m in Sources */,
+				E15662821CA2F29700E6D156 /* WPBase64Utils.m in Sources */,
+				E15662841CA2F29700E6D156 /* WPStringUtils.m in Sources */,
+				E15662891CA2F29700E6D156 /* WPXMLRPCDecoder.m in Sources */,
+				E156628B1CA2F29700E6D156 /* WPXMLRPCDecoderDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +573,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E156624F1CA2F22800E6D156 /* wpxmlrpc_iOSTests.m in Sources */,
+				E15662C31CA2F2C100E6D156 /* WPXMLRPCDataCleanerTest.m in Sources */,
+				E15662C51CA2F2C100E6D156 /* WPXMLRPCEncoderTest.m in Sources */,
+				E15662C21CA2F2C100E6D156 /* WPBase64UtilsTest.m in Sources */,
+				E15662C41CA2F2C100E6D156 /* WPXMLRPCDecoderTest.m in Sources */,
+				E15662C61CA2F2C100E6D156 /* WPXMLRPCEntitiesTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +585,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15662FB1CA2F2DC00E6D156 /* WPXMLRPCDataCleaner.m in Sources */,
+				E15663011CA2F2DC00E6D156 /* WPXMLRPCEncoder.m in Sources */,
+				E15662F61CA2F2DC00E6D156 /* WPBase64Utils.m in Sources */,
+				E15662F81CA2F2DC00E6D156 /* WPStringUtils.m in Sources */,
+				E15662FD1CA2F2DC00E6D156 /* WPXMLRPCDecoder.m in Sources */,
+				E15662FF1CA2F2DC00E6D156 /* WPXMLRPCDecoderDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +599,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E156626B1CA2F25400E6D156 /* wpxmlrpc_MacTests.m in Sources */,
+				E15662C81CA2F2C200E6D156 /* WPXMLRPCDataCleanerTest.m in Sources */,
+				E15662CA1CA2F2C200E6D156 /* WPXMLRPCEncoderTest.m in Sources */,
+				E15662C71CA2F2C200E6D156 /* WPBase64UtilsTest.m in Sources */,
+				E15662C91CA2F2C200E6D156 /* WPXMLRPCDecoderTest.m in Sources */,
+				E15662CB1CA2F2C200E6D156 /* WPXMLRPCEntitiesTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,12 +679,12 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "wpxmlrpc-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.wpxmlrpc;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = wpxmlrpc;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -461,11 +731,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "wpxmlrpc-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.wpxmlrpc;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = wpxmlrpc;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -612,11 +882,11 @@
 				INFOPLIST_FILE = "wpxmlrpc-Mac/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.wpxmlrpc;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = wpxmlrpc;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -665,10 +935,10 @@
 				INFOPLIST_FILE = "wpxmlrpc-Mac/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.wpxmlrpc;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = wpxmlrpc;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
