@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E156624A1CA2F22800E6D156 /* wpxmlrpc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E156623F1CA2F22800E6D156 /* wpxmlrpc.framework */; };
-		E156624F1CA2F22800E6D156 /* wpxmlrpc_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E156624E1CA2F22800E6D156 /* wpxmlrpc_iOSTests.m */; };
 		E15662661CA2F25400E6D156 /* wpxmlrpc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E156625C1CA2F25400E6D156 /* wpxmlrpc.framework */; };
-		E156626B1CA2F25400E6D156 /* wpxmlrpc_MacTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E156626A1CA2F25400E6D156 /* wpxmlrpc_MacTests.m */; };
 		E15662811CA2F29700E6D156 /* WPBase64Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = E15662741CA2F29700E6D156 /* WPBase64Utils.h */; };
 		E15662821CA2F29700E6D156 /* WPBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662751CA2F29700E6D156 /* WPBase64Utils.m */; };
 		E15662831CA2F29700E6D156 /* WPStringUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E15662761CA2F29700E6D156 /* WPStringUtils.h */; };
@@ -110,15 +108,9 @@
 
 /* Begin PBXFileReference section */
 		E156623F1CA2F22800E6D156 /* wpxmlrpc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = wpxmlrpc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E15662441CA2F22800E6D156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E15662491CA2F22800E6D156 /* wpxmlrpc-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wpxmlrpc-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E156624E1CA2F22800E6D156 /* wpxmlrpc_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wpxmlrpc_iOSTests.m; sourceTree = "<group>"; };
-		E15662501CA2F22800E6D156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E156625C1CA2F25400E6D156 /* wpxmlrpc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = wpxmlrpc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E15662601CA2F25400E6D156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E15662651CA2F25400E6D156 /* wpxmlrpc-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wpxmlrpc-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E156626A1CA2F25400E6D156 /* wpxmlrpc_MacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wpxmlrpc_MacTests.m; sourceTree = "<group>"; };
-		E156626C1CA2F25400E6D156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E15662741CA2F29700E6D156 /* WPBase64Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPBase64Utils.h; sourceTree = "<group>"; };
 		E15662751CA2F29700E6D156 /* WPBase64Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPBase64Utils.m; sourceTree = "<group>"; };
 		E15662761CA2F29700E6D156 /* WPStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPStringUtils.h; sourceTree = "<group>"; };
@@ -159,6 +151,8 @@
 		E15662A81CA2F2B200E6D156 /* WPXMLRPCEntitiesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCEntitiesTest.m; sourceTree = "<group>"; };
 		E15663021CA2F3E800E6D156 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		E15663041CA2F3F100E6D156 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
+		E15663081CA2F8F900E6D156 /* Info-Tests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Tests.plist"; sourceTree = "<group>"; };
+		E15663091CA2F8F900E6D156 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,13 +194,10 @@
 		E15662331CA2F1DD00E6D156 = {
 			isa = PBXGroup;
 			children = (
+				E15662731CA2F29700E6D156 /* WPXMLRPC */,
 				E156628E1CA2F2B200E6D156 /* Test Data */,
 				E15662A31CA2F2B200E6D156 /* Tests */,
-				E15662731CA2F29700E6D156 /* WPXMLRPC */,
-				E15662411CA2F22800E6D156 /* wpxmlrpc-iOS */,
-				E156624D1CA2F22800E6D156 /* wpxmlrpc-iOSTests */,
-				E156625D1CA2F25400E6D156 /* wpxmlrpc-Mac */,
-				E15662691CA2F25400E6D156 /* wpxmlrpc-MacTests */,
+				E15663071CA2F8F900E6D156 /* Support */,
 				E15663061CA2F3FB00E6D156 /* Frameworks */,
 				E15662401CA2F22800E6D156 /* Products */,
 			);
@@ -221,40 +212,6 @@
 				E15662651CA2F25400E6D156 /* wpxmlrpc-MacTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E15662411CA2F22800E6D156 /* wpxmlrpc-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				E15662441CA2F22800E6D156 /* Info.plist */,
-			);
-			path = "wpxmlrpc-iOS";
-			sourceTree = "<group>";
-		};
-		E156624D1CA2F22800E6D156 /* wpxmlrpc-iOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				E156624E1CA2F22800E6D156 /* wpxmlrpc_iOSTests.m */,
-				E15662501CA2F22800E6D156 /* Info.plist */,
-			);
-			path = "wpxmlrpc-iOSTests";
-			sourceTree = "<group>";
-		};
-		E156625D1CA2F25400E6D156 /* wpxmlrpc-Mac */ = {
-			isa = PBXGroup;
-			children = (
-				E15662601CA2F25400E6D156 /* Info.plist */,
-			);
-			path = "wpxmlrpc-Mac";
-			sourceTree = "<group>";
-		};
-		E15662691CA2F25400E6D156 /* wpxmlrpc-MacTests */ = {
-			isa = PBXGroup;
-			children = (
-				E156626A1CA2F25400E6D156 /* wpxmlrpc_MacTests.m */,
-				E156626C1CA2F25400E6D156 /* Info.plist */,
-			);
-			path = "wpxmlrpc-MacTests";
 			sourceTree = "<group>";
 		};
 		E15662731CA2F29700E6D156 /* WPXMLRPC */ = {
@@ -325,6 +282,15 @@
 				E15663021CA2F3E800E6D156 /* libiconv.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E15663071CA2F8F900E6D156 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				E15663081CA2F8F900E6D156 /* Info-Tests.plist */,
+				E15663091CA2F8F900E6D156 /* Info.plist */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -564,7 +530,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E156624F1CA2F22800E6D156 /* wpxmlrpc_iOSTests.m in Sources */,
 				E15662C31CA2F2C100E6D156 /* WPXMLRPCDataCleanerTest.m in Sources */,
 				E15662C51CA2F2C100E6D156 /* WPXMLRPCEncoderTest.m in Sources */,
 				E15662C21CA2F2C100E6D156 /* WPBase64UtilsTest.m in Sources */,
@@ -590,7 +555,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E156626B1CA2F25400E6D156 /* wpxmlrpc_MacTests.m in Sources */,
 				E15662C81CA2F2C200E6D156 /* WPXMLRPCDataCleanerTest.m in Sources */,
 				E15662CA1CA2F2C200E6D156 /* WPXMLRPCEncoderTest.m in Sources */,
 				E15662C71CA2F2C200E6D156 /* WPBase64UtilsTest.m in Sources */,
@@ -669,7 +633,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "wpxmlrpc-iOS/Info.plist";
+				INFOPLIST_FILE = Support/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -721,7 +685,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "wpxmlrpc-iOS/Info.plist";
+				INFOPLIST_FILE = Support/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -774,7 +738,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "wpxmlrpc-iOSTests/Info.plist";
+				INFOPLIST_FILE = "Support/Info-Tests.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -816,7 +780,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "wpxmlrpc-iOSTests/Info.plist";
+				INFOPLIST_FILE = "Support/Info-Tests.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -871,7 +835,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "wpxmlrpc-Mac/Info.plist";
+				INFOPLIST_FILE = Support/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -924,7 +888,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "wpxmlrpc-Mac/Info.plist";
+				INFOPLIST_FILE = Support/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -976,7 +940,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "wpxmlrpc-MacTests/Info.plist";
+				INFOPLIST_FILE = "Support/Info-Tests.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1019,7 +983,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "wpxmlrpc-MacTests/Info.plist";
+				INFOPLIST_FILE = "Support/Info-Tests.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
