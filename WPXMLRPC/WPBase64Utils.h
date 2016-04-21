@@ -21,6 +21,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import <Foundation/Foundation.h>
+
 @interface WPBase64Utils : NSObject
 + (NSString *)encodeData:(NSData *)data;
 + (void)encodeInputStream:(NSInputStream *)stream withChunkHandler:(void (^)(NSString *chunk))chunkHandler;
