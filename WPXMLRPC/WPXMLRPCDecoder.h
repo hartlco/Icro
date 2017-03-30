@@ -43,7 +43,7 @@ typedef NS_ENUM(NSInteger, WPXMLRPCError) {
 
  @return The newly-initialized XML-RPC response
  */
-- (instancetype _Nullable )initWithData:(nonnull NSData *)data;
+- (instancetype _Nullable)initWithData:(nonnull NSData *)data;
 
 ///-----------------------
 /// @name Error management

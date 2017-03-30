@@ -28,7 +28,7 @@
  */
 @interface WPXMLRPCEncoder : NSObject
 
-- (instancetype _Nullable )init NS_UNAVAILABLE;
+- (instancetype _Nonnull)init NS_UNAVAILABLE;
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified method and parameters.
@@ -38,7 +38,7 @@
 
  @return The newly-initialized XML-RPC request
  */
-- (instancetype _Nullable )initWithMethod:(nonnull NSString *)method andParameters:(NSArray *_Nullable)parameters NS_DESIGNATED_INITIALIZER;
+- (instancetype _Nonnull)initWithMethod:(nonnull NSString *)method andParameters:(NSArray *_Nullable)parameters NS_DESIGNATED_INITIALIZER;
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified response params.
@@ -49,7 +49,7 @@
 
  @return The newly-initialized XML-RPC response
  */
-- (instancetype _Nullable )initWithResponseParams:(NSArray *_Nullable)params NS_DESIGNATED_INITIALIZER;
+- (instancetype _Nonnull)initWithResponseParams:(NSArray *_Nullable)params NS_DESIGNATED_INITIALIZER;
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified response fault.
@@ -61,7 +61,7 @@
 
  @return The newly-initialized XML-RPC response
  */
-- (instancetype _Nonnull )initWithResponseFaultCode:(nonnull NSNumber *)faultCode andString:(nonnull NSString *)faultString NS_DESIGNATED_INITIALIZER;
+- (instancetype _Nonnull)initWithResponseFaultCode:(nonnull NSNumber *)faultCode andString:(nonnull NSString *)faultString NS_DESIGNATED_INITIALIZER;
 
 /**
  The XML-RPC method for this request.
