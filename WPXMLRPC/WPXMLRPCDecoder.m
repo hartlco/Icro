@@ -41,7 +41,7 @@ NSString *const WPXMLRPCErrorDomain = @"WPXMLRPCError";
     NSMutableString *_methodName;
 }
 
-- (id)initWithData:(NSData *)data {
+- (instancetype)initWithData:(NSData *)data {
     if (!data) {
         return nil;
     }

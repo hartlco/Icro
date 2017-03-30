@@ -23,8 +23,8 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *const WPXMLRPCFaultErrorDomain;
-extern NSString *const WPXMLRPCErrorDomain;
+extern NSString * _Nonnull const WPXMLRPCFaultErrorDomain;
+extern NSString * _Nonnull const WPXMLRPCErrorDomain;
 
 typedef NS_ENUM(NSInteger, WPXMLRPCError) {
     WPXMLRPCInvalidInputError, // The data passed doesn't look like a XML-RPC response
@@ -43,7 +43,7 @@ typedef NS_ENUM(NSInteger, WPXMLRPCError) {
 
  @return The newly-initialized XML-RPC response
  */
-- (id)initWithData:(NSData *)data;
+- (instancetype _Nullable )initWithData:(nonnull NSData *)data;
 
 ///-----------------------
 /// @name Error management
@@ -62,12 +62,12 @@ typedef NS_ENUM(NSInteger, WPXMLRPCError) {
 /**
  The XML-RPC error message
  */
-- (NSString *)faultString;
+- (NSString *_Nullable)faultString;
 
 /**
  Returns an error if there was a problem decoding the data, or if it's a XML-RPC error
  */
-- (NSError *)error;
+- (NSError *_Nullable)error;
 
 ///-------------------------------------
 /// @name Accessing the decoded response
@@ -78,6 +78,6 @@ typedef NS_ENUM(NSInteger, WPXMLRPCError) {
  
  Check isFault before trying to do anything with this object.
  */
-- (id)object;
+- (id _Nullable )object;
 
 @end
