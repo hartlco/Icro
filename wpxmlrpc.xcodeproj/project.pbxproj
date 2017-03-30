@@ -720,6 +720,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -746,6 +747,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.wordpress.wpxmlrpc-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRIP_PNG_TEXT = NO;
 			};
 			name = Debug;
 		};
@@ -768,6 +770,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -787,6 +790,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.wordpress.wpxmlrpc-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRIP_PNG_TEXT = NO;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1012,6 +1016,7 @@
 				E15662521CA2F22800E6D156 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E15662561CA2F22800E6D156 /* Build configuration list for PBXNativeTarget "wpxmlrpc-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -1020,6 +1025,7 @@
 				E15662541CA2F22800E6D156 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E156626D1CA2F25400E6D156 /* Build configuration list for PBXNativeTarget "wpxmlrpc-Mac" */ = {
 			isa = XCConfigurationList;
@@ -1028,6 +1034,7 @@
 				E156626F1CA2F25400E6D156 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E15662701CA2F25400E6D156 /* Build configuration list for PBXNativeTarget "wpxmlrpc-MacTests" */ = {
 			isa = XCConfigurationList;
@@ -1036,6 +1043,7 @@
 				E15662721CA2F25400E6D156 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
