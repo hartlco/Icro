@@ -28,7 +28,7 @@
  */
 @interface WPXMLRPCEncoder : NSObject
 
-- (instancetype _Nonnull)init NS_UNAVAILABLE;
+- (nonnull instancetype)init NS_UNAVAILABLE;
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified method and parameters.
@@ -38,7 +38,7 @@
 
  @return The newly-initialized XML-RPC request
  */
-- (instancetype _Nonnull)initWithMethod:(nonnull NSString *)method andParameters:(NSArray *_Nullable)parameters NS_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithMethod:(nonnull NSString *)method andParameters:(nullable NSArray *)parameters NS_DESIGNATED_INITIALIZER;
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified response params.
@@ -49,7 +49,7 @@
 
  @return The newly-initialized XML-RPC response
  */
-- (instancetype _Nonnull)initWithResponseParams:(NSArray *_Nullable)params NS_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithResponseParams:(nullable NSArray *)params NS_DESIGNATED_INITIALIZER;
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified response fault.
@@ -61,21 +61,21 @@
 
  @return The newly-initialized XML-RPC response
  */
-- (instancetype _Nonnull)initWithResponseFaultCode:(nonnull NSNumber *)faultCode andString:(nonnull NSString *)faultString NS_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithResponseFaultCode:(nonnull NSNumber *)faultCode andString:(nonnull NSString *)faultString NS_DESIGNATED_INITIALIZER;
 
 /**
  The XML-RPC method for this request.
  
  This is a *read-only* property, as requests can't be reused.
  */
-@property (nonatomic, readonly) NSString * _Nonnull method;
+@property (nonatomic, readonly, nonnull) NSString * method;
 
 /**
  The XML-RPC parameters for this request.
 
  This is a *read-only* property, as requests can't be reused.
  */
-@property (nonatomic, readonly) NSArray * _Nullable parameters;
+@property (nonatomic, readonly, nullable) NSArray * parameters;
 
 ///------------------------------------
 /// @name Accessing the encoded request
@@ -91,7 +91,7 @@
  
  @return A NSData object with the encoded method and paramaters, nil if there was an error.
  */
-@property (nonatomic, readonly) NSData * _Nullable body DEPRECATED_ATTRIBUTE;
+@property (nonatomic, readonly, nullable) NSData * body DEPRECATED_ATTRIBUTE;
 
 /**
  The encoded request as a `NSData` object.
@@ -102,7 +102,7 @@
  
  @return A NSData object with the encoded method and paramaters, nil if there was an error.
  */
-- (NSData *_Nullable) dataEncodedWithError:(NSError *_Nullable*_Nullable) error;
+- (nullable NSData *) dataEncodedWithError:(NSError *_Nullable*_Nullable) error;
 
 /**
  Encodes the request to the filePath.
@@ -113,7 +113,7 @@
  
  @return BOOL, YES if the request was completed with success, NO if some error occurred.
  */
-- (BOOL)encodeToFile:(NSString *_Nonnull)filePath error:(NSError *_Nullable*_Nullable) error;
+- (BOOL)encodeToFile:(nonnull NSString *)filePath error:(NSError *_Nullable*_Nullable) error;
 
 
 
