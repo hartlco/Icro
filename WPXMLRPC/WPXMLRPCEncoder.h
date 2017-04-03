@@ -23,12 +23,14 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  `WPXMLRPCEncoder` encodes a XML-RPC request
  */
 @interface WPXMLRPCEncoder : NSObject
 
-- (nonnull instancetype)init NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified method and parameters.
@@ -38,7 +40,7 @@
 
  @return The newly-initialized XML-RPC request
  */
-- (nonnull instancetype)initWithMethod:(nonnull NSString *)method andParameters:(nullable NSArray *)parameters NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithMethod:(NSString *)method andParameters:(nullable NSArray *)parameters NS_DESIGNATED_INITIALIZER;
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified response params.
@@ -49,7 +51,7 @@
 
  @return The newly-initialized XML-RPC response
  */
-- (nonnull instancetype)initWithResponseParams:(nullable NSArray *)params NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithResponseParams:(nullable NSArray *)params NS_DESIGNATED_INITIALIZER;
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified response fault.
@@ -61,14 +63,14 @@
 
  @return The newly-initialized XML-RPC response
  */
-- (nonnull instancetype)initWithResponseFaultCode:(nonnull NSNumber *)faultCode andString:(nonnull NSString *)faultString NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithResponseFaultCode:(NSNumber *)faultCode andString:(NSString *)faultString NS_DESIGNATED_INITIALIZER;
 
 /**
  The XML-RPC method for this request.
  
  This is a *read-only* property, as requests can't be reused.
  */
-@property (nonatomic, readonly, nonnull) NSString * method;
+@property (nonatomic, readonly) NSString * method;
 
 /**
  The XML-RPC parameters for this request.
@@ -113,8 +115,8 @@
  
  @return BOOL, YES if the request was completed with success, NO if some error occurred.
  */
-- (BOOL)encodeToFile:(nonnull NSString *)filePath error:(NSError *_Nullable*_Nullable) error;
-
-
+- (BOOL)encodeToFile:(NSString *)filePath error:(NSError *_Nullable*_Nullable) error;
 
 @end
+
+NS_ASSUME_NONNULL_END
