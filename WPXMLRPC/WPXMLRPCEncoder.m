@@ -37,7 +37,7 @@
     NSString *_faultString;
 }
 
-- (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters {
+- (instancetype)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters {
     self = [super init];
     if (self) {
         _method = method;
@@ -47,7 +47,7 @@
     return self;
 }
 
-- (id)initWithResponseParams:(NSArray *)params {
+- (instancetype)initWithResponseParams:(NSArray *)params {
     self = [super init];
     if (self) {
         _parameters = params;
@@ -56,7 +56,7 @@
     return self;
 }
 
-- (id)initWithResponseFaultCode:(NSNumber *)faultCode andString:(NSString *)faultString {
+- (instancetype)initWithResponseFaultCode:(NSNumber *)faultCode andString:(NSString *)faultString {
     self = [super init];
     if (self) {
         _faultCode = faultCode;

@@ -19,6 +19,9 @@
     id testCaseName;
     
     while (testCaseName = [testCaseEnumerator nextObject]) {
+        if ([testCaseName isEqualToString:@"IncompleteXmlTest"]) {
+            continue;
+        }
         NSString *testCase = [[self unitTestBundle] pathForResource:testCaseName ofType:@"xml"];
         NSData *testCaseData =[[NSData alloc] initWithContentsOfFile:testCase];
         WPXMLRPCDecoder *decoder = [[WPXMLRPCDecoder alloc] initWithData:testCaseData];
@@ -27,6 +30,21 @@
 
         XCTAssertEqualObjects(parsedResult, testCaseResult);
     }
+}
+
+- (void)testCTidyDataCleaner {
+    // Only run if CTidy is available
+    if (!NSClassFromString(@"CTidy")) {
+        return;
+    }
+    NSString *testCaseName = @"IncompleteXmlTest";
+    NSString *testCase = [[self unitTestBundle] pathForResource:testCaseName ofType:@"xml"];
+    NSData *testCaseData =[[NSData alloc] initWithContentsOfFile:testCase];
+    WPXMLRPCDecoder *decoder = [[WPXMLRPCDecoder alloc] initWithData:testCaseData];
+    id testCaseResult = [myTestCases objectForKey:testCaseName];
+    id parsedResult = [decoder object];
+
+    XCTAssertEqualObjects(parsedResult, testCaseResult);
 }
 
 - (void)testNoXmlThrowsError {

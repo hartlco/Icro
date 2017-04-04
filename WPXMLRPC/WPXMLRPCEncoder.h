@@ -23,6 +23,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  `WPXMLRPCEncoder` encodes a XML-RPC request
  */
@@ -38,7 +40,7 @@
 
  @return The newly-initialized XML-RPC request
  */
-- (id)initWithMethod:(NSString *)method andParameters:(NSArray *)parameters NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithMethod:(NSString *)method andParameters:(nullable NSArray *)parameters NS_DESIGNATED_INITIALIZER;
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified response params.
@@ -49,7 +51,7 @@
 
  @return The newly-initialized XML-RPC response
  */
-- (id)initWithResponseParams:(NSArray *)params NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithResponseParams:(nullable NSArray *)params NS_DESIGNATED_INITIALIZER;
 
 /**
  Initializes a `WPXMLRPCEncoder` object with the specified response fault.
@@ -61,21 +63,21 @@
 
  @return The newly-initialized XML-RPC response
  */
-- (id)initWithResponseFaultCode:(NSNumber *)faultCode andString:(NSString *)faultString NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithResponseFaultCode:(NSNumber *)faultCode andString:(NSString *)faultString NS_DESIGNATED_INITIALIZER;
 
 /**
  The XML-RPC method for this request.
  
  This is a *read-only* property, as requests can't be reused.
  */
-@property (nonatomic, readonly) NSString *method;
+@property (nonatomic, readonly) NSString * method;
 
 /**
  The XML-RPC parameters for this request.
 
  This is a *read-only* property, as requests can't be reused.
  */
-@property (nonatomic, readonly) NSArray *parameters;
+@property (nonatomic, readonly, nullable) NSArray * parameters;
 
 ///------------------------------------
 /// @name Accessing the encoded request
@@ -91,7 +93,7 @@
  
  @return A NSData object with the encoded method and paramaters, nil if there was an error.
  */
-@property (nonatomic, readonly) NSData *body DEPRECATED_ATTRIBUTE;
+@property (nonatomic, readonly, nullable) NSData * body DEPRECATED_ATTRIBUTE;
 
 /**
  The encoded request as a `NSData` object.
@@ -102,7 +104,7 @@
  
  @return A NSData object with the encoded method and paramaters, nil if there was an error.
  */
-- (NSData *) dataEncodedWithError:(NSError **) error;
+- (nullable NSData *) dataEncodedWithError:(NSError *_Nullable*_Nullable) error;
 
 /**
  Encodes the request to the filePath.
@@ -113,8 +115,8 @@
  
  @return BOOL, YES if the request was completed with success, NO if some error occurred.
  */
-- (BOOL)encodeToFile:(NSString *)filePath error:(NSError **) error;
-
-
+- (BOOL)encodeToFile:(NSString *)filePath error:(NSError *_Nullable*_Nullable) error;
 
 @end
+
+NS_ASSUME_NONNULL_END
