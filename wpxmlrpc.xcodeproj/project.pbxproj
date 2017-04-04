@@ -87,6 +87,7 @@
 		E15663011CA2F2DC00E6D156 /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E15662801CA2F29700E6D156 /* WPXMLRPCEncoder.m */; };
 		E15663031CA2F3E800E6D156 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E15663021CA2F3E800E6D156 /* libiconv.tbd */; };
 		E15663051CA2F3F100E6D156 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E15663041CA2F3F100E6D156 /* libiconv.tbd */; };
+		FF41CBF11E93C08F001B8235 /* wpxmlrpc.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FF41CBEE1E93C08F001B8235 /* wpxmlrpc.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,9 @@
 		E15663041CA2F3F100E6D156 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
 		E15663081CA2F8F900E6D156 /* Info-Tests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Tests.plist"; sourceTree = "<group>"; };
 		E15663091CA2F8F900E6D156 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF41CBEC1E93C08F001B8235 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		FF41CBED1E93C08F001B8235 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FF41CBEE1E93C08F001B8235 /* wpxmlrpc.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wpxmlrpc.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,7 @@
 		E15662331CA2F1DD00E6D156 = {
 			isa = PBXGroup;
 			children = (
+				FF41CBEB1E93C05E001B8235 /* Metadata */,
 				E15662731CA2F29700E6D156 /* WPXMLRPC */,
 				E156628E1CA2F2B200E6D156 /* Test Data */,
 				E15662A31CA2F2B200E6D156 /* Tests */,
@@ -291,6 +296,16 @@
 				E15663091CA2F8F900E6D156 /* Info.plist */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		FF41CBEB1E93C05E001B8235 /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				FF41CBEC1E93C08F001B8235 /* LICENSE.md */,
+				FF41CBED1E93C08F001B8235 /* README.md */,
+				FF41CBEE1E93C08F001B8235 /* wpxmlrpc.podspec */,
+			);
+			name = Metadata;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,6 +461,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF41CBF11E93C08F001B8235 /* wpxmlrpc.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
