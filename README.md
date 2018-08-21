@@ -13,6 +13,11 @@ Icro does not serve the purpose of a showcase project. Many parts were hacked to
 From now on all development will happen in public on Github.
 A structure with issues, planned features will be added using the GitHub tools.
 
+## Building
+
+Open `Icro.xcworkspace` in Xcode 9 and compile it. All required dependencies are checked in and can be found in the `Podfile`.
+In order to fix signing, please change the development team during development.
+
 ## Contributing
 
 Feel free to contribute to this project at any time with any improvement. In the coming days I plan to generate some issue I want to tackle for upcoming versions of Icro, some would be perfect starter tasks.
