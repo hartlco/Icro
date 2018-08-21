@@ -103,6 +103,7 @@
 		5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D180208904D300F484B2 /* AppNavigator.swift */; };
 		5BB73F09212C854400120FAB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58377B212950F40076121E /* Item.swift */; };
 		5BB73F0A212C855C00120FAB /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58377A212950F40076121E /* Author.swift */; };
+		5BB73F0C212C9E0B00120FAB /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB73F0B212C9E0B00120FAB /* ListViewModelTests.swift */; };
 		5BC1820720790C930061F261 /* SingleImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */; };
 		5BC1820820790C930061F261 /* SingleImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */; };
 		5BD32BB92089A12E005D250A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD32BB72089A12E005D250A /* SettingsViewController.swift */; };
@@ -181,6 +182,7 @@
 		5BA6D17B2087C0B300F484B2 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ViewController/LoginViewController.xib; sourceTree = "<group>"; };
 		5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = ViewModel/LoginViewModel.swift; sourceTree = "<group>"; };
 		5BA6D180208904D300F484B2 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppNavigator.swift; path = Navigator/AppNavigator.swift; sourceTree = "<group>"; };
+		5BB73F0B212C9E0B00120FAB /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SingleImageCollectionViewCell.swift; path = View/SingleImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SingleImageCollectionViewCell.xib; path = View/SingleImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		5BD32BB72089A12E005D250A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewController/SettingsViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			children = (
 				5B58373F2128B0680076121E /* HTMLContentTests.swift */,
 				5B5837392128B04A0076121E /* Info.plist */,
+				5BB73F0B212C9E0B00120FAB /* ListViewModelTests.swift */,
 			);
 			path = IcroTests;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				5B5837582128B5F80076121E /* SettingsViewController.swift in Sources */,
 				5B5837592128B5F80076121E /* SettingsViewController.xib in Sources */,
 				5B58375A2128B5F80076121E /* BlacklistViewController.swift in Sources */,
+				5BB73F0C212C9E0B00120FAB /* ListViewModelTests.swift in Sources */,
 				5B58375B2128B5F80076121E /* BlacklistViewController.xib in Sources */,
 				5B58375C2128B5F80076121E /* InsertLinkViewController.swift in Sources */,
 				5B58375D2128B5F80076121E /* InsertLinkViewController.xib in Sources */,
