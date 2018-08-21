@@ -45,6 +45,7 @@ class TabBarViewController: UITabBarController {
 
             let image = UIImage.fontAwesomeIcon(name: .edit, textColor: .white, size: CGSize(width: 30, height: 26))
             let newPostIcon = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(showComposeViewController))
+			newPostIcon.accessibilityLabel = "Compose"
             viewController.navigationItem.rightBarButtonItem = newPostIcon
 
             switch type {
