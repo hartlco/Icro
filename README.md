@@ -6,9 +6,11 @@
 
 [Download from the App Store](https://itunes.apple.com/us/app/icro/id1375296597?ls=1&mt=8)
 
+![](https://travis-ci.com/hartlco/Icro.svg?branch=master)
+
 ## About
 Icro does not serve the purpose of a showcase project. Many parts were hacked together as I wanted to ship this App as quickly as possible.
-From now on all development will happen in public on Github. Build and unit-test integration with Travis is planned and should follow soon.
+From now on all development will happen in public on Github.
 A structure with issues, planned features will be added using the GitHub tools.
 
 ## Contributing
