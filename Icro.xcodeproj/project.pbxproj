@@ -1,0 +1,1048 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07273D8420BE2818AE651E13 /* Pods_Icro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017321F11249BE9396D08AF6 /* Pods_Icro.framework */; };
+		5B2A5A7820A613EF00B54399 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7720A613EF00B54399 /* Font.swift */; };
+		5B2A5A7A20A6196700B54399 /* FakeTableCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */; };
+		5B397070207BDD9D007DE3CC /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */; };
+		5B3F68772098BB8800A24983 /* KeyboardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F68762098BB8800A24983 /* KeyboardInputView.swift */; };
+		5B3F68792098BBA200A24983 /* KeyboardInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3F68782098BBA200A24983 /* KeyboardInputView.xib */; };
+		5B44C71420979CCC0003B35D /* BlacklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71220979CCC0003B35D /* BlacklistViewController.swift */; };
+		5B44C71520979CCC0003B35D /* BlacklistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B44C71320979CCC0003B35D /* BlacklistViewController.xib */; };
+		5B44C71720979CF20003B35D /* BlacklistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71620979CF20003B35D /* BlacklistViewModel.swift */; };
+		5B494E662124C0FA00C3969B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B494E652124C0FA00C3969B /* Color.swift */; };
+		5B4E4187208AF8C700FC610A /* Pods-Icro-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */; };
+		5B4E4189208B08CE00FC610A /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
+		5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
+		5B4E418D208C44FB00FC610A /* Date+ComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */; };
+		5B58371B212860BA0076121E /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371A212860BA0076121E /* ComposeViewModel.swift */; };
+		5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371D212861220076121E /* EditActionsConfigurator.swift */; };
+		5B583722212861220076121E /* UserItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371E212861220076121E /* UserItemCellConfigurator.swift */; };
+		5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371F212861220076121E /* ProfileViewConfigurator.swift */; };
+		5B583724212861220076121E /* ItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583720212861220076121E /* ItemCellConfigurator.swift */; };
+		5B5837262128616E0076121E /* ItemNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837252128616E0076121E /* ItemNavigator.swift */; };
+		5B583728212861770076121E /* SettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583727212861770076121E /* SettingsNavigator.swift */; };
+		5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837292128618B0076121E /* UserListViewModel.swift */; };
+		5B58372C2128619B0076121E /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
+		5B58372E212861F30076121E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372D212861F30076121E /* ListViewController.swift */; };
+		5B5837302128620C0076121E /* Date+Ago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372F2128620C0076121E /* Date+Ago.swift */; };
+		5B5837402128B0680076121E /* HTMLContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58373F2128B0680076121E /* HTMLContentTests.swift */; };
+		5B5837412128B1BA0076121E /* HTMLContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2B001EB45213006DEB40 /* HTMLContent.swift */; };
+		5B5837422128B37E0076121E /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7720A613EF00B54399 /* Font.swift */; };
+		5B5837432128B3970076121E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B494E652124C0FA00C3969B /* Color.swift */; };
+		5B5837442128B3C20076121E /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
+		5B5837452128B40C0076121E /* ItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583720212861220076121E /* ItemCellConfigurator.swift */; };
+		5B5837472128B4A90076121E /* ItemNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837252128616E0076121E /* ItemNavigator.swift */; };
+		5B5837482128B5070076121E /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF462070DF8000C51258 /* UserSettings.swift */; };
+		5B5837492128B50C0076121E /* Date+ComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */; };
+		5B58374A2128B5B80076121E /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AF51EB449BC006DEB40 /* Resource.swift */; };
+		5B58374B2128B5BD0076121E /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6CFF207E8147002FB9FF /* UserListViewController.swift */; };
+		5B58374C2128B5C70076121E /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
+		5B58374D2128B5D10076121E /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
+		5B58374E2128B5D50076121E /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */; };
+		5B58374F2128B5F80076121E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
+		5B5837502128B5F80076121E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372D212861F30076121E /* ListViewController.swift */; };
+		5B5837512128B5F80076121E /* ListViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754FC2070139F00018DFA /* ListViewController.xib */; };
+		5B5837522128B5F80076121E /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */; };
+		5B5837532128B5F80076121E /* ComposeViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */; };
+		5B5837542128B5F80076121E /* UserListViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D00207E8147002FB9FF /* UserListViewController.xib */; };
+		5B5837552128B5F80076121E /* TabBarViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
+		5B5837562128B5F80076121E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17A2087C0B300F484B2 /* LoginViewController.swift */; };
+		5B5837572128B5F80076121E /* LoginViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17B2087C0B300F484B2 /* LoginViewController.xib */; };
+		5B5837582128B5F80076121E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD32BB72089A12E005D250A /* SettingsViewController.swift */; };
+		5B5837592128B5F80076121E /* SettingsViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BD32BB82089A12E005D250A /* SettingsViewController.xib */; };
+		5B58375A2128B5F80076121E /* BlacklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71220979CCC0003B35D /* BlacklistViewController.swift */; };
+		5B58375B2128B5F80076121E /* BlacklistViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71320979CCC0003B35D /* BlacklistViewController.xib */; };
+		5B58375C2128B5F80076121E /* InsertLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BECC33820A8017200EC63F2 /* InsertLinkViewController.swift */; };
+		5B58375D2128B5F80076121E /* InsertLinkViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BECC33920A8017200EC63F2 /* InsertLinkViewController.xib */; };
+		5B58375E2128B5F80076121E /* SettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583727212861770076121E /* SettingsNavigator.swift */; };
+		5B58375F2128B5F80076121E /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D180208904D300F484B2 /* AppNavigator.swift */; };
+		5B5837602128B5F80076121E /* ComposeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BECC33C20A8021A00EC63F2 /* ComposeNavigator.swift */; };
+		5B5837612128B5F80076121E /* EditActionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371D212861220076121E /* EditActionsConfigurator.swift */; };
+		5B5837622128B5F80076121E /* ProfileViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371F212861220076121E /* ProfileViewConfigurator.swift */; };
+		5B5837632128B5F80076121E /* UserItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371E212861220076121E /* UserItemCellConfigurator.swift */; };
+		5B5837642128B5F80076121E /* Date+Ago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372F2128620C0076121E /* Date+Ago.swift */; };
+		5B5837652128B5F80076121E /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */; };
+		5B5837662128B5F80076121E /* Icro-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */; };
+		5B5837672128B5F80076121E /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */; };
+		5B5837682128B5F80076121E /* FakeTableCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */; };
+		5B5837692128B5F80076121E /* SingleImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */; };
+		5B58376A2128B5F80076121E /* SingleImageCollectionViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */; };
+		5B58376B2128B5F80076121E /* ItemTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */; };
+		5B58376C2128B5F80076121E /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
+		5B58376D2128B5F80076121E /* ProfileTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */; };
+		5B58376E2128B5F80076121E /* UserItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */; };
+		5B58376F2128B5F80076121E /* UserItemTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */; };
+		5B5837702128B5F80076121E /* KeyboardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F68762098BB8800A24983 /* KeyboardInputView.swift */; };
+		5B5837712128B5F80076121E /* KeyboardInputView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F68782098BBA200A24983 /* KeyboardInputView.xib */; };
+		5B5837722128B5F80076121E /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837292128618B0076121E /* UserListViewModel.swift */; };
+		5B5837732128B5F80076121E /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371A212860BA0076121E /* ComposeViewModel.swift */; };
+		5B5837742128B5F80076121E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */; };
+		5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
+		5B5837762128B5F80076121E /* BlacklistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71620979CF20003B35D /* BlacklistViewModel.swift */; };
+		5B5837772128B5F80076121E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */; };
+		5B58377C212950F50076121E /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58377A212950F40076121E /* Author.swift */; };
+		5B58377D212950F50076121E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58377B212950F40076121E /* Item.swift */; };
+		5B60CF472070DF8000C51258 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF462070DF8000C51258 /* UserSettings.swift */; };
+		5B60CF4E2072A66C00C51258 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */; };
+		5B60CF4F2072A66C00C51258 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */; };
+		5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
+		5B6D7FCE2081BF8E0096A764 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */; };
+		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
+		5B8754FE2070139F00018DFA /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8754FC2070139F00018DFA /* ListViewController.xib */; };
+		5BA6D1792087ACF900F484B2 /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */; };
+		5BA6D17C2087C0B300F484B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17A2087C0B300F484B2 /* LoginViewController.swift */; };
+		5BA6D17D2087C0B300F484B2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA6D17B2087C0B300F484B2 /* LoginViewController.xib */; };
+		5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */; };
+		5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D180208904D300F484B2 /* AppNavigator.swift */; };
+		5BC1820720790C930061F261 /* SingleImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */; };
+		5BC1820820790C930061F261 /* SingleImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */; };
+		5BD32BB92089A12E005D250A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD32BB72089A12E005D250A /* SettingsViewController.swift */; };
+		5BD32BBA2089A12E005D250A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BD32BB82089A12E005D250A /* SettingsViewController.xib */; };
+		5BE9455F2079EFCE004F9FF4 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
+		5BE945602079EFCE004F9FF4 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */; };
+		5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
+		5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */; };
+		5BECC33A20A8017200EC63F2 /* InsertLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BECC33820A8017200EC63F2 /* InsertLinkViewController.swift */; };
+		5BECC33B20A8017200EC63F2 /* InsertLinkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BECC33920A8017200EC63F2 /* InsertLinkViewController.xib */; };
+		5BECC33D20A8021A00EC63F2 /* ComposeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BECC33C20A8021A00EC63F2 /* ComposeNavigator.swift */; };
+		5BED6D01207E8147002FB9FF /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6CFF207E8147002FB9FF /* UserListViewController.swift */; };
+		5BED6D02207E8147002FB9FF /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D00207E8147002FB9FF /* UserListViewController.xib */; };
+		5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */; };
+		5BED6D06207E81CC002FB9FF /* UserItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */; };
+		6A08AC2C45B16F554801BA99 /* Pods_IcroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14B873910DAE1E815D6F7A22 /* Pods_IcroTests.framework */; };
+		C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */; };
+		C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
+		C5FA2ACE1EB4482C006DEB40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACC1EB4482C006DEB40 /* LaunchScreen.storyboard */; };
+		C5FA2AF61EB449BC006DEB40 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AF51EB449BC006DEB40 /* Resource.swift */; };
+		C5FA2B011EB45213006DEB40 /* HTMLContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2B001EB45213006DEB40 /* HTMLContent.swift */; };
+		F4D91D0B1DF766AE6558D0FB /* Pods_Icro_IcroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCD9BDA9C2513F911EAA9F3B /* Pods_Icro_IcroTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5B58373A2128B04A0076121E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5FA2AB81EB4482C006DEB40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5FA2ABF1EB4482C006DEB40;
+			remoteInfo = Icro;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		017321F11249BE9396D08AF6 /* Pods_Icro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14B873910DAE1E815D6F7A22 /* Pods_IcroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IcroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52C2D67E51BFF3B28100165E /* Pods-Icro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro.release.xcconfig"; sourceTree = "<group>"; };
+		5B2A5A7720A613EF00B54399 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Font.swift; path = Helper/Font.swift; sourceTree = "<group>"; };
+		5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FakeTableCellButton.swift; path = Helper/FakeTableCellButton.swift; sourceTree = "<group>"; };
+		5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageDownloadManager.swift; path = Helper/ImageDownloadManager.swift; sourceTree = "<group>"; };
+		5B3F68762098BB8800A24983 /* KeyboardInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyboardInputView.swift; path = View/KeyboardInputView.swift; sourceTree = "<group>"; };
+		5B3F68782098BBA200A24983 /* KeyboardInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = KeyboardInputView.xib; path = View/KeyboardInputView.xib; sourceTree = "<group>"; };
+		5B44C71220979CCC0003B35D /* BlacklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlacklistViewController.swift; path = ViewController/BlacklistViewController.swift; sourceTree = "<group>"; };
+		5B44C71320979CCC0003B35D /* BlacklistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BlacklistViewController.xib; path = ViewController/BlacklistViewController.xib; sourceTree = "<group>"; };
+		5B44C71620979CF20003B35D /* BlacklistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlacklistViewModel.swift; path = ViewModel/BlacklistViewModel.swift; sourceTree = "<group>"; };
+		5B494E652124C0FA00C3969B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Helper/Color.swift; sourceTree = "<group>"; };
+		5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-Icro-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
+		5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MicropubRequestController.swift; path = Netowkring/MicropubRequestController.swift; sourceTree = "<group>"; };
+		5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewModel.swift; path = ViewModel/SettingsViewModel.swift; sourceTree = "<group>"; };
+		5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Date+ComponentsFormatter.swift"; path = "Helper/Date+ComponentsFormatter.swift"; sourceTree = "<group>"; };
+		5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Icro-Bridging-Header.h"; sourceTree = "<group>"; };
+		5B58371A212860BA0076121E /* ComposeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComposeViewModel.swift; path = ViewModel/ComposeViewModel.swift; sourceTree = "<group>"; };
+		5B58371D212861220076121E /* EditActionsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditActionsConfigurator.swift; path = Configurator/EditActionsConfigurator.swift; sourceTree = "<group>"; };
+		5B58371E212861220076121E /* UserItemCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserItemCellConfigurator.swift; path = Configurator/UserItemCellConfigurator.swift; sourceTree = "<group>"; };
+		5B58371F212861220076121E /* ProfileViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewConfigurator.swift; path = Configurator/ProfileViewConfigurator.swift; sourceTree = "<group>"; };
+		5B583720212861220076121E /* ItemCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCellConfigurator.swift; path = Configurator/ItemCellConfigurator.swift; sourceTree = "<group>"; };
+		5B5837252128616E0076121E /* ItemNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemNavigator.swift; path = Navigator/ItemNavigator.swift; sourceTree = "<group>"; };
+		5B583727212861770076121E /* SettingsNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsNavigator.swift; path = Navigator/SettingsNavigator.swift; sourceTree = "<group>"; };
+		5B5837292128618B0076121E /* UserListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListViewModel.swift; path = ViewModel/UserListViewModel.swift; sourceTree = "<group>"; };
+		5B58372B2128619B0076121E /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewModel.swift; path = ViewModel/ListViewModel.swift; sourceTree = "<group>"; };
+		5B58372D212861F30076121E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ViewController/ListViewController.swift; sourceTree = "<group>"; };
+		5B58372F2128620C0076121E /* Date+Ago.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Ago.swift"; path = "Helper/Date+Ago.swift"; sourceTree = "<group>"; };
+		5B5837352128B04A0076121E /* IcroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IcroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B5837392128B04A0076121E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B58373F2128B0680076121E /* HTMLContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLContentTests.swift; sourceTree = "<group>"; };
+		5B58377A212950F40076121E /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Author.swift; path = Model/Author.swift; sourceTree = "<group>"; };
+		5B58377B212950F40076121E /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Model/Item.swift; sourceTree = "<group>"; };
+		5B60CF462070DF8000C51258 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserSettings.swift; path = Helper/UserSettings.swift; sourceTree = "<group>"; };
+		5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComposeViewController.swift; path = ViewController/ComposeViewController.swift; sourceTree = "<group>"; };
+		5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ComposeViewController.xib; path = ViewController/ComposeViewController.xib; sourceTree = "<group>"; };
+		5B689BAB20837ECE005B9874 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TabBarViewController.xib; path = ViewController/TabBarViewController.xib; sourceTree = "<group>"; };
+		5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CacheStorage.swift; path = Helper/CacheStorage.swift; sourceTree = "<group>"; };
+		5B8754F92070137300018DFA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
+		5B8754FC2070139F00018DFA /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ListViewController.xib; path = ViewController/ListViewController.xib; sourceTree = "<group>"; };
+		5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Loading.swift"; path = "Helper/UIViewController+Loading.swift"; sourceTree = "<group>"; };
+		5BA6D17A2087C0B300F484B2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewController/LoginViewController.swift; sourceTree = "<group>"; };
+		5BA6D17B2087C0B300F484B2 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ViewController/LoginViewController.xib; sourceTree = "<group>"; };
+		5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = ViewModel/LoginViewModel.swift; sourceTree = "<group>"; };
+		5BA6D180208904D300F484B2 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppNavigator.swift; path = Navigator/AppNavigator.swift; sourceTree = "<group>"; };
+		5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SingleImageCollectionViewCell.swift; path = View/SingleImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SingleImageCollectionViewCell.xib; path = View/SingleImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		5BD32BB72089A12E005D250A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewController/SettingsViewController.swift; sourceTree = "<group>"; };
+		5BD32BB82089A12E005D250A /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ViewController/SettingsViewController.xib; sourceTree = "<group>"; };
+		5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = View/ItemTableViewCell.swift; sourceTree = "<group>"; };
+		5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ItemTableViewCell.xib; path = View/ItemTableViewCell.xib; sourceTree = "<group>"; };
+		5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileTableViewCell.swift; path = View/ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileTableViewCell.xib; path = View/ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		5BECC33820A8017200EC63F2 /* InsertLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InsertLinkViewController.swift; path = ViewController/InsertLinkViewController.swift; sourceTree = "<group>"; };
+		5BECC33920A8017200EC63F2 /* InsertLinkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InsertLinkViewController.xib; path = ViewController/InsertLinkViewController.xib; sourceTree = "<group>"; };
+		5BECC33C20A8021A00EC63F2 /* ComposeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComposeNavigator.swift; path = Navigator/ComposeNavigator.swift; sourceTree = "<group>"; };
+		5BED6CFF207E8147002FB9FF /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserListViewController.swift; path = ViewController/UserListViewController.swift; sourceTree = "<group>"; };
+		5BED6D00207E8147002FB9FF /* UserListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserListViewController.xib; path = ViewController/UserListViewController.xib; sourceTree = "<group>"; };
+		5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserItemTableViewCell.swift; path = View/UserItemTableViewCell.swift; sourceTree = "<group>"; };
+		5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserItemTableViewCell.xib; path = View/UserItemTableViewCell.xib; sourceTree = "<group>"; };
+		94EFF3BFFA6977873973D18F /* Pods-Icro-IcroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A46BBCD92B53C40E02AB78B6 /* Pods-IcroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IcroTests/Pods-IcroTests.release.xcconfig"; sourceTree = "<group>"; };
+		C5FA2AC01EB4482C006DEB40 /* Icro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Icro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C5FA2ACD1EB4482C006DEB40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C5FA2ACF1EB4482C006DEB40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5FA2AF51EB449BC006DEB40 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Netowkring/Resource.swift; sourceTree = "<group>"; };
+		C5FA2B001EB45213006DEB40 /* HTMLContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTMLContent.swift; path = Helper/HTMLContent.swift; sourceTree = "<group>"; };
+		CCD9BDA9C2513F911EAA9F3B /* Pods_Icro_IcroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_IcroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D426512F7548658C554240A1 /* Pods-IcroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroTests/Pods-IcroTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E95C33C086DABED6C39EDF82 /* Pods-Icro-IcroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests.release.xcconfig"; sourceTree = "<group>"; };
+		EA46B8BCBC230D1C9A721F76 /* Pods-Icro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B5837322128B04A0076121E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A08AC2C45B16F554801BA99 /* Pods_IcroTests.framework in Frameworks */,
+				F4D91D0B1DF766AE6558D0FB /* Pods_Icro_IcroTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5FA2ABD1EB4482C006DEB40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07273D8420BE2818AE651E13 /* Pods_Icro.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0DFA605700743A5D165A3DC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				017321F11249BE9396D08AF6 /* Pods_Icro.framework */,
+				14B873910DAE1E815D6F7A22 /* Pods_IcroTests.framework */,
+				CCD9BDA9C2513F911EAA9F3B /* Pods_Icro_IcroTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B5837362128B04A0076121E /* IcroTests */ = {
+			isa = PBXGroup;
+			children = (
+				5B58373F2128B0680076121E /* HTMLContentTests.swift */,
+				5B5837392128B04A0076121E /* Info.plist */,
+			);
+			path = IcroTests;
+			sourceTree = "<group>";
+		};
+		5B8754F4206FE95200018DFA /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				5B58371D212861220076121E /* EditActionsConfigurator.swift */,
+				5B583720212861220076121E /* ItemCellConfigurator.swift */,
+				5B58371F212861220076121E /* ProfileViewConfigurator.swift */,
+				5B58371E212861220076121E /* UserItemCellConfigurator.swift */,
+			);
+			name = Configurator;
+			sourceTree = "<group>";
+		};
+		5B8754F5206FEC6800018DFA /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				5B583727212861770076121E /* SettingsNavigator.swift */,
+				5B5837252128616E0076121E /* ItemNavigator.swift */,
+				5BA6D180208904D300F484B2 /* AppNavigator.swift */,
+				5BECC33C20A8021A00EC63F2 /* ComposeNavigator.swift */,
+			);
+			name = Navigator;
+			sourceTree = "<group>";
+		};
+		5B8754F82070129400018DFA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5B8754F92070137300018DFA /* TabBarViewController.swift */,
+				5B58372D212861F30076121E /* ListViewController.swift */,
+				5B8754FC2070139F00018DFA /* ListViewController.xib */,
+				5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */,
+				5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */,
+				5BED6CFF207E8147002FB9FF /* UserListViewController.swift */,
+				5BED6D00207E8147002FB9FF /* UserListViewController.xib */,
+				5B689BAB20837ECE005B9874 /* TabBarViewController.xib */,
+				5BA6D17A2087C0B300F484B2 /* LoginViewController.swift */,
+				5BA6D17B2087C0B300F484B2 /* LoginViewController.xib */,
+				5BD32BB72089A12E005D250A /* SettingsViewController.swift */,
+				5BD32BB82089A12E005D250A /* SettingsViewController.xib */,
+				5B44C71220979CCC0003B35D /* BlacklistViewController.swift */,
+				5B44C71320979CCC0003B35D /* BlacklistViewController.xib */,
+				5BECC33820A8017200EC63F2 /* InsertLinkViewController.swift */,
+				5BECC33920A8017200EC63F2 /* InsertLinkViewController.xib */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		C5FA2AB71EB4482C006DEB40 = {
+			isa = PBXGroup;
+			children = (
+				C5FA2AC21EB4482C006DEB40 /* Icro */,
+				5B5837362128B04A0076121E /* IcroTests */,
+				C5FA2AC11EB4482C006DEB40 /* Products */,
+				D66296A63450197DD12D949D /* Pods */,
+				0DFA605700743A5D165A3DC5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C5FA2AC11EB4482C006DEB40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5FA2AC01EB4482C006DEB40 /* Icro.app */,
+				5B5837352128B04A0076121E /* IcroTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C5FA2AC21EB4482C006DEB40 /* Icro */ = {
+			isa = PBXGroup;
+			children = (
+				5B8754F82070129400018DFA /* ViewController */,
+				5B8754F5206FEC6800018DFA /* Navigator */,
+				5B8754F4206FE95200018DFA /* Configurator */,
+				C5FA2AFF1EB451F9006DEB40 /* Helper */,
+				C5FA2AFC1EB45164006DEB40 /* View */,
+				C5FA2AF71EB44F2F006DEB40 /* ViewModel */,
+				C5FA2AF41EB4499F006DEB40 /* Netowkring */,
+				C5FA2AF11EB44839006DEB40 /* Model */,
+				C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */,
+				C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */,
+				C5FA2ACC1EB4482C006DEB40 /* LaunchScreen.storyboard */,
+				C5FA2ACF1EB4482C006DEB40 /* Info.plist */,
+				5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */,
+			);
+			path = Icro;
+			sourceTree = "<group>";
+		};
+		C5FA2AF11EB44839006DEB40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B58377A212950F40076121E /* Author.swift */,
+				5B58377B212950F40076121E /* Item.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C5FA2AF41EB4499F006DEB40 /* Netowkring */ = {
+			isa = PBXGroup;
+			children = (
+				C5FA2AF51EB449BC006DEB40 /* Resource.swift */,
+				5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */,
+			);
+			name = Netowkring;
+			sourceTree = "<group>";
+		};
+		C5FA2AF71EB44F2F006DEB40 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5B5837292128618B0076121E /* UserListViewModel.swift */,
+				5B58372B2128619B0076121E /* ListViewModel.swift */,
+				5B58371A212860BA0076121E /* ComposeViewModel.swift */,
+				5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */,
+				5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */,
+				5B44C71620979CF20003B35D /* BlacklistViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		C5FA2AFC1EB45164006DEB40 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */,
+				5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */,
+				5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */,
+				5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */,
+				5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */,
+				5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */,
+				5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */,
+				5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */,
+				5B3F68762098BB8800A24983 /* KeyboardInputView.swift */,
+				5B3F68782098BBA200A24983 /* KeyboardInputView.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C5FA2AFF1EB451F9006DEB40 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C5FA2B001EB45213006DEB40 /* HTMLContent.swift */,
+				5B60CF462070DF8000C51258 /* UserSettings.swift */,
+				5B58372F2128620C0076121E /* Date+Ago.swift */,
+				5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */,
+				5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */,
+				5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */,
+				5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */,
+				5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */,
+				5B2A5A7720A613EF00B54399 /* Font.swift */,
+				5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */,
+				5B494E652124C0FA00C3969B /* Color.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		D66296A63450197DD12D949D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA46B8BCBC230D1C9A721F76 /* Pods-Icro.debug.xcconfig */,
+				52C2D67E51BFF3B28100165E /* Pods-Icro.release.xcconfig */,
+				D426512F7548658C554240A1 /* Pods-IcroTests.debug.xcconfig */,
+				A46BBCD92B53C40E02AB78B6 /* Pods-IcroTests.release.xcconfig */,
+				94EFF3BFFA6977873973D18F /* Pods-Icro-IcroTests.debug.xcconfig */,
+				E95C33C086DABED6C39EDF82 /* Pods-Icro-IcroTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B5837342128B04A0076121E /* IcroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B58373C2128B04A0076121E /* Build configuration list for PBXNativeTarget "IcroTests" */;
+			buildPhases = (
+				228EC1B8085181E1AA0D5DAE /* [CP] Check Pods Manifest.lock */,
+				5B5837312128B04A0076121E /* Sources */,
+				5B5837322128B04A0076121E /* Frameworks */,
+				5B5837332128B04A0076121E /* Resources */,
+				AE1FBD1F4B09763241B392B6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B58373B2128B04A0076121E /* PBXTargetDependency */,
+			);
+			name = IcroTests;
+			productName = IcroTests;
+			productReference = 5B5837352128B04A0076121E /* IcroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C5FA2ABF1EB4482C006DEB40 /* Icro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5FA2AE81EB4482C006DEB40 /* Build configuration list for PBXNativeTarget "Icro" */;
+			buildPhases = (
+				53C8FC14491D3DD53B4AF3AC /* [CP] Check Pods Manifest.lock */,
+				C5FA2ABC1EB4482C006DEB40 /* Sources */,
+				C5FA2ABD1EB4482C006DEB40 /* Frameworks */,
+				C5FA2ABE1EB4482C006DEB40 /* Resources */,
+				EABA67040489353A359E8CCF /* [CP] Embed Pods Frameworks */,
+				5B494E642123590E00C3969B /* SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Icro;
+			productName = Icro;
+			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C5FA2AB81EB4482C006DEB40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Martin Hartl";
+				TargetAttributes = {
+					5B5837342128B04A0076121E = {
+						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = 9E8SXF3Y36;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C5FA2ABF1EB4482C006DEB40;
+					};
+					C5FA2ABF1EB4482C006DEB40 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 9E8SXF3Y36;
+						LastSwiftMigration = 0930;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = C5FA2ABB1EB4482C006DEB40 /* Build configuration list for PBXProject "Icro" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C5FA2AB71EB4482C006DEB40;
+			productRefGroup = C5FA2AC11EB4482C006DEB40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C5FA2ABF1EB4482C006DEB40 /* Icro */,
+				5B5837342128B04A0076121E /* IcroTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B5837332128B04A0076121E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5FA2ABE1EB4482C006DEB40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B8754FE2070139F00018DFA /* ListViewController.xib in Resources */,
+				5BC1820820790C930061F261 /* SingleImageCollectionViewCell.xib in Resources */,
+				5B44C71520979CCC0003B35D /* BlacklistViewController.xib in Resources */,
+				5BA6D17D2087C0B300F484B2 /* LoginViewController.xib in Resources */,
+				C5FA2ACE1EB4482C006DEB40 /* LaunchScreen.storyboard in Resources */,
+				5BE945602079EFCE004F9FF4 /* ItemTableViewCell.xib in Resources */,
+				5BED6D02207E8147002FB9FF /* UserListViewController.xib in Resources */,
+				5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */,
+				5BD32BBA2089A12E005D250A /* SettingsViewController.xib in Resources */,
+				5B4E4187208AF8C700FC610A /* Pods-Icro-acknowledgements.plist in Resources */,
+				5B60CF4F2072A66C00C51258 /* ComposeViewController.xib in Resources */,
+				C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */,
+				5BED6D06207E81CC002FB9FF /* UserItemTableViewCell.xib in Resources */,
+				5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */,
+				5B3F68792098BBA200A24983 /* KeyboardInputView.xib in Resources */,
+				5BECC33B20A8017200EC63F2 /* InsertLinkViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		228EC1B8085181E1AA0D5DAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Icro-IcroTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53C8FC14491D3DD53B4AF3AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Icro-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B494E642123590E00C3969B /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint";
+		};
+		AE1FBD1F4B09763241B392B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework",
+				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework",
+				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
+				"${BUILT_PRODUCTS_DIR}/Keyboard+LayoutGuide/KeyboardLayoutGuide.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/wpxmlrpc/wpxmlrpc.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AcknowList.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTCoreText.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTFoundation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageViewer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeyboardLayoutGuide.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/wpxmlrpc.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EABA67040489353A359E8CCF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Icro/Pods-Icro-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework",
+				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework",
+				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
+				"${BUILT_PRODUCTS_DIR}/Keyboard+LayoutGuide/KeyboardLayoutGuide.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/wpxmlrpc/wpxmlrpc.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AcknowList.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTCoreText.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTFoundation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageViewer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeyboardLayoutGuide.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/wpxmlrpc.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Icro/Pods-Icro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B5837312128B04A0076121E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B58374F2128B5F80076121E /* TabBarViewController.swift in Sources */,
+				5B5837502128B5F80076121E /* ListViewController.swift in Sources */,
+				5B5837512128B5F80076121E /* ListViewController.xib in Sources */,
+				5B5837522128B5F80076121E /* ComposeViewController.swift in Sources */,
+				5B5837532128B5F80076121E /* ComposeViewController.xib in Sources */,
+				5B5837542128B5F80076121E /* UserListViewController.xib in Sources */,
+				5B5837552128B5F80076121E /* TabBarViewController.xib in Sources */,
+				5B5837562128B5F80076121E /* LoginViewController.swift in Sources */,
+				5B5837572128B5F80076121E /* LoginViewController.xib in Sources */,
+				5B5837582128B5F80076121E /* SettingsViewController.swift in Sources */,
+				5B5837592128B5F80076121E /* SettingsViewController.xib in Sources */,
+				5B58375A2128B5F80076121E /* BlacklistViewController.swift in Sources */,
+				5B58375B2128B5F80076121E /* BlacklistViewController.xib in Sources */,
+				5B58375C2128B5F80076121E /* InsertLinkViewController.swift in Sources */,
+				5B58375D2128B5F80076121E /* InsertLinkViewController.xib in Sources */,
+				5B58375E2128B5F80076121E /* SettingsNavigator.swift in Sources */,
+				5B58375F2128B5F80076121E /* AppNavigator.swift in Sources */,
+				5B5837602128B5F80076121E /* ComposeNavigator.swift in Sources */,
+				5B5837612128B5F80076121E /* EditActionsConfigurator.swift in Sources */,
+				5B5837622128B5F80076121E /* ProfileViewConfigurator.swift in Sources */,
+				5B5837632128B5F80076121E /* UserItemCellConfigurator.swift in Sources */,
+				5B5837642128B5F80076121E /* Date+Ago.swift in Sources */,
+				5B5837652128B5F80076121E /* ImageDownloadManager.swift in Sources */,
+				5B5837662128B5F80076121E /* Icro-Bridging-Header.h in Sources */,
+				5B5837672128B5F80076121E /* UIViewController+Loading.swift in Sources */,
+				5B5837682128B5F80076121E /* FakeTableCellButton.swift in Sources */,
+				5B5837692128B5F80076121E /* SingleImageCollectionViewCell.swift in Sources */,
+				5B58376A2128B5F80076121E /* SingleImageCollectionViewCell.xib in Sources */,
+				5B58376B2128B5F80076121E /* ItemTableViewCell.xib in Sources */,
+				5B58376C2128B5F80076121E /* ProfileTableViewCell.swift in Sources */,
+				5B58376D2128B5F80076121E /* ProfileTableViewCell.xib in Sources */,
+				5B58376E2128B5F80076121E /* UserItemTableViewCell.swift in Sources */,
+				5B58376F2128B5F80076121E /* UserItemTableViewCell.xib in Sources */,
+				5B5837702128B5F80076121E /* KeyboardInputView.swift in Sources */,
+				5B5837712128B5F80076121E /* KeyboardInputView.xib in Sources */,
+				5B5837722128B5F80076121E /* UserListViewModel.swift in Sources */,
+				5B5837732128B5F80076121E /* ComposeViewModel.swift in Sources */,
+				5B5837742128B5F80076121E /* LoginViewModel.swift in Sources */,
+				5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */,
+				5B5837762128B5F80076121E /* BlacklistViewModel.swift in Sources */,
+				5B5837772128B5F80076121E /* AppDelegate.swift in Sources */,
+				5B5837472128B4A90076121E /* ItemNavigator.swift in Sources */,
+				5B5837412128B1BA0076121E /* HTMLContent.swift in Sources */,
+				5B58374E2128B5D50076121E /* CacheStorage.swift in Sources */,
+				5B5837432128B3970076121E /* Color.swift in Sources */,
+				5B58374A2128B5B80076121E /* Resource.swift in Sources */,
+				5B5837442128B3C20076121E /* ItemTableViewCell.swift in Sources */,
+				5B58374B2128B5BD0076121E /* UserListViewController.swift in Sources */,
+				5B5837482128B5070076121E /* UserSettings.swift in Sources */,
+				5B5837402128B0680076121E /* HTMLContentTests.swift in Sources */,
+				5B5837492128B50C0076121E /* Date+ComponentsFormatter.swift in Sources */,
+				5B58374C2128B5C70076121E /* ListViewModel.swift in Sources */,
+				5B58374D2128B5D10076121E /* MicropubRequestController.swift in Sources */,
+				5B5837422128B37E0076121E /* Font.swift in Sources */,
+				5B5837452128B40C0076121E /* ItemCellConfigurator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5FA2ABC1EB4482C006DEB40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BA6D17C2087C0B300F484B2 /* LoginViewController.swift in Sources */,
+				5B58372C2128619B0076121E /* ListViewModel.swift in Sources */,
+				5B583728212861770076121E /* SettingsNavigator.swift in Sources */,
+				5B58371B212860BA0076121E /* ComposeViewModel.swift in Sources */,
+				5BE9455F2079EFCE004F9FF4 /* ItemTableViewCell.swift in Sources */,
+				5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */,
+				5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */,
+				5B4E418D208C44FB00FC610A /* Date+ComponentsFormatter.swift in Sources */,
+				5B6D7FCE2081BF8E0096A764 /* CacheStorage.swift in Sources */,
+				5B44C71720979CF20003B35D /* BlacklistViewModel.swift in Sources */,
+				5B3F68772098BB8800A24983 /* KeyboardInputView.swift in Sources */,
+				5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */,
+				5B58377C212950F50076121E /* Author.swift in Sources */,
+				5B583722212861220076121E /* UserItemCellConfigurator.swift in Sources */,
+				5B44C71420979CCC0003B35D /* BlacklistViewController.swift in Sources */,
+				5B4E4189208B08CE00FC610A /* MicropubRequestController.swift in Sources */,
+				5BED6D01207E8147002FB9FF /* UserListViewController.swift in Sources */,
+				5B5837302128620C0076121E /* Date+Ago.swift in Sources */,
+				5BA6D1792087ACF900F484B2 /* UIViewController+Loading.swift in Sources */,
+				5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */,
+				5B58372E212861F30076121E /* ListViewController.swift in Sources */,
+				5B60CF472070DF8000C51258 /* UserSettings.swift in Sources */,
+				5B583724212861220076121E /* ItemCellConfigurator.swift in Sources */,
+				5B494E662124C0FA00C3969B /* Color.swift in Sources */,
+				C5FA2B011EB45213006DEB40 /* HTMLContent.swift in Sources */,
+				C5FA2AF61EB449BC006DEB40 /* Resource.swift in Sources */,
+				5B397070207BDD9D007DE3CC /* ImageDownloadManager.swift in Sources */,
+				5B58377D212950F50076121E /* Item.swift in Sources */,
+				5B5837262128616E0076121E /* ItemNavigator.swift in Sources */,
+				5BC1820720790C930061F261 /* SingleImageCollectionViewCell.swift in Sources */,
+				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
+				5B2A5A7A20A6196700B54399 /* FakeTableCellButton.swift in Sources */,
+				C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */,
+				5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */,
+				5B60CF4E2072A66C00C51258 /* ComposeViewController.swift in Sources */,
+				5BD32BB92089A12E005D250A /* SettingsViewController.swift in Sources */,
+				5BECC33A20A8017200EC63F2 /* InsertLinkViewController.swift in Sources */,
+				5BECC33D20A8021A00EC63F2 /* ComposeNavigator.swift in Sources */,
+				5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */,
+				5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */,
+				5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */,
+				5B2A5A7820A613EF00B54399 /* Font.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B58373B2128B04A0076121E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5FA2ABF1EB4482C006DEB40 /* Icro */;
+			targetProxy = 5B58373A2128B04A0076121E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C5FA2ACC1EB4482C006DEB40 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5FA2ACD1EB4482C006DEB40 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5B58373D2128B04A0076121E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94EFF3BFFA6977873973D18F /* Pods-Icro-IcroTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = IcroTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Icro.app/Icro";
+			};
+			name = Debug;
+		};
+		5B58373E2128B04A0076121E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E95C33C086DABED6C39EDF82 /* Pods-Icro-IcroTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = IcroTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Icro.app/Icro";
+			};
+			name = Release;
+		};
+		C5FA2AE61EB4482C006DEB40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C5FA2AE71EB4482C006DEB40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C5FA2AE91EB4482C006DEB40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA46B8BCBC230D1C9A721F76 /* Pods-Icro.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				INFOPLIST_FILE = Icro/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.Icro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Icro/Icro-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		C5FA2AEA1EB4482C006DEB40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52C2D67E51BFF3B28100165E /* Pods-Icro.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				INFOPLIST_FILE = Icro/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.Icro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Icro/Icro-Bridging-Header.h";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B58373C2128B04A0076121E /* Build configuration list for PBXNativeTarget "IcroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B58373D2128B04A0076121E /* Debug */,
+				5B58373E2128B04A0076121E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5FA2ABB1EB4482C006DEB40 /* Build configuration list for PBXProject "Icro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5FA2AE61EB4482C006DEB40 /* Debug */,
+				C5FA2AE71EB4482C006DEB40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5FA2AE81EB4482C006DEB40 /* Build configuration list for PBXNativeTarget "Icro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5FA2AE91EB4482C006DEB40 /* Debug */,
+				C5FA2AEA1EB4482C006DEB40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C5FA2AB81EB4482C006DEB40 /* Project object */;
+}

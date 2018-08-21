@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="166" id="KGk-i7-Jjw" customClass="ProfileTableViewCell" customModule="Icro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="356" height="166"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="356" height="165.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HjY-Tf-ZHh">
+                        <rect key="frame" x="0.0" y="0.0" width="356" height="165.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6k2-tr-gM5">
+                                <rect key="frame" x="10" y="10" width="336" height="145.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sJa-SJ-kBz">
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="62.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C01-tG-0Ky">
+                                                <rect key="frame" x="0.0" y="1.5" width="60" height="60"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="r7H-Yb-Qgh"/>
+                                                    <constraint firstAttribute="height" constant="60" id="vLs-DF-ExE"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vA6-P8-WYU">
+                                                <rect key="frame" x="70" y="12" width="266" height="38.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="115-dV-n7v">
+                                                        <rect key="frame" x="0.0" y="0.0" width="266" height="20.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGO-ec-f8y">
+                                                                <rect key="frame" x="0.0" y="0.0" width="43" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4w-fO-Z65">
+                                                                <rect key="frame" x="47" y="1.5" width="219" height="18"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKl-ph-c2z">
+                                                        <rect key="frame" x="0.0" y="20.5" width="266" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlD-Og-hMQ">
+                                        <rect key="frame" x="0.0" y="72.5" width="336" height="30"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <state key="normal" title="URL Button"/>
+                                        <connections>
+                                            <action selector="profileButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hDB-qe-vds"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="edX-vn-kcm">
+                                        <rect key="frame" x="0.0" y="112.5" width="336" height="33"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERN-64-qSe">
+                                                <rect key="frame" x="0.0" y="0.0" width="158" height="33"/>
+                                                <color key="backgroundColor" name="whiteTransparent"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <state key="normal" title="Follow"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="followButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Shw-v8-iS2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYu-U3-4XF">
+                                                <rect key="frame" x="178" y="0.0" width="158" height="33"/>
+                                                <color key="backgroundColor" name="whiteTransparent"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <state key="normal" title="Following"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="followingButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="E8K-fn-i2z"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="accentLight"/>
+                        <constraints>
+                            <constraint firstItem="6k2-tr-gM5" firstAttribute="leading" secondItem="HjY-Tf-ZHh" secondAttribute="leading" constant="10" id="HcA-dG-3tw"/>
+                            <constraint firstItem="6k2-tr-gM5" firstAttribute="top" secondItem="HjY-Tf-ZHh" secondAttribute="top" constant="10" id="Vnj-qE-cVq"/>
+                            <constraint firstAttribute="trailing" secondItem="6k2-tr-gM5" secondAttribute="trailing" constant="10" id="vmi-O5-Ii7"/>
+                            <constraint firstAttribute="bottom" secondItem="6k2-tr-gM5" secondAttribute="bottom" constant="10" id="wIZ-YQ-CkV"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="accentSuperLight"/>
+                <constraints>
+                    <constraint firstItem="HjY-Tf-ZHh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5dU-lg-8w9"/>
+                    <constraint firstAttribute="trailing" secondItem="HjY-Tf-ZHh" secondAttribute="trailing" id="AgS-BZ-uhg"/>
+                    <constraint firstAttribute="bottom" secondItem="HjY-Tf-ZHh" secondAttribute="bottom" id="LPl-Wa-av2"/>
+                    <constraint firstItem="HjY-Tf-ZHh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="UKD-04-U67"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="avatarImageView" destination="C01-tG-0Ky" id="JBJ-2u-hVF"/>
+                <outlet property="bioLabel" destination="sKl-ph-c2z" id="KUO-wo-RNe"/>
+                <outlet property="followButton" destination="ERN-64-qSe" id="nlz-fx-J6a"/>
+                <outlet property="followingButton" destination="YYu-U3-4XF" id="7G9-UP-7Lp"/>
+                <outlet property="nameLabel" destination="eGO-ec-f8y" id="hQG-1F-f1B"/>
+                <outlet property="profileButton" destination="HlD-Og-hMQ" id="FYX-xA-HjH"/>
+                <outlet property="usernameLabel" destination="n4w-fO-Z65" id="r5x-Md-nhD"/>
+            </connections>
+            <point key="canvasLocation" x="142" y="163"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="accentLight">
+            <color red="0.99599999189376831" green="0.94499999284744263" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="accentSuperLight">
+            <color red="0.99199998378753662" green="0.98000001907348633" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteTransparent">
+            <color red="1" green="1" blue="1" alpha="0.94999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
