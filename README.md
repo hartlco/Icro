@@ -1,8 +1,8 @@
 # Icro - a Micro.blog client
 
-![](https://hartl.co/apps/icro/assets/images/icro-on-iphone.png)
+<img src="https://hartl.co/apps/icro/assets/images/icro-on-iphone.png" width="250">
 
-[Icro](https://hartl.co/apps/icro/index.html) is a third-part [Micro.blog](https://micro.blog) client.
+[Icro](https://hartl.co/apps/icro/index.html) is a third-party [Micro.blog](https://micro.blog) client.
 
 [Download from the App Store](https://itunes.apple.com/us/app/icro/id1375296597?ls=1&mt=8)
 
