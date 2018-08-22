@@ -13,6 +13,7 @@ extension Notification.Name {
 
 class ItemTableViewCell: UITableViewCell {
     static let identifer = "ItemTableViewCell"
+    var isFavorite: Bool = false
 
     @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var avatarImageView: UIImageView! {
@@ -86,6 +87,27 @@ class ItemTableViewCell: UITableViewCell {
 
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+
+    // Accessibility
+
+    override var accessibilityLabel: String? {
+        set {}
+        get {
+            var axLabel = self.usernameLabel.text! + ": " + self.attributedLabel.text! + ", " + self.timeLabel.text!
+            if self.isFavorite { axLabel += ", favorited" }
+            return (axLabel)
+        }
+    }
+
+    override var accessibilityCustomActions: [UIAccessibilityCustomAction]? {
+    set {}
+    get {
+    var axActions = [UIAccessibilityCustomAction(name: (self.usernameLabel.text! + ", " + self.atUsernameLabel.text!),
+    target: self,
+    selector: #selector(didTapAvatarGestureRecognizer))]
+    return (axActions)
+    }
     }
 
     // MARK: - Private

@@ -66,7 +66,8 @@ final class EditActionsConfigurator {
                                                    textColor: .white,
                                                    size: CGSize(width: 30, height: 30))
 
-        let favoriteAction = UIContextualAction(style: .normal, title: "Favorite") { [weak self] _, _, _ in
+        let faveTitle = (item.isFavorite ? "Unfavorite" : "Favorite")
+        let favoriteAction = UIContextualAction(style: .normal, title: faveTitle) { [weak self] _, _, _ in
             tableView.setEditing(false, animated: true)
             self?.viewModel.toggleFave(for: item)
         }
