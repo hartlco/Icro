@@ -55,7 +55,8 @@ class TabBarViewController: UITabBarController {
                                                      style: .plain,
                                                      target: self,
                                                      action: #selector(showSettingsViewController))
-                viewController.navigationItem.leftBarButtonItem = settingsButton
+				settingsButton.accessibilityLabel = "Settings"
+				viewController.navigationItem.leftBarButtonItem = settingsButton
             case .timeline:
                 let photosButton  = UIBarButtonItem(title: "Photos", style: .plain, target: self, action: #selector(showPhotosTimeline))
                 viewController.navigationItem.leftBarButtonItem = photosButton
