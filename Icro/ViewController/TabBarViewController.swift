@@ -45,6 +45,7 @@ class TabBarViewController: UITabBarController {
 
             let image = UIImage.fontAwesomeIcon(name: .edit, textColor: .white, size: CGSize(width: 30, height: 26))
             let newPostIcon = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(showComposeViewController))
+			newPostIcon.accessibilityLabel = "Compose"
             viewController.navigationItem.rightBarButtonItem = newPostIcon
 
             switch type {
@@ -54,7 +55,8 @@ class TabBarViewController: UITabBarController {
                                                      style: .plain,
                                                      target: self,
                                                      action: #selector(showSettingsViewController))
-                viewController.navigationItem.leftBarButtonItem = settingsButton
+				settingsButton.accessibilityLabel = "Settings"
+				viewController.navigationItem.leftBarButtonItem = settingsButton
             case .timeline:
                 let photosButton  = UIBarButtonItem(title: "Photos", style: .plain, target: self, action: #selector(showPhotosTimeline))
                 viewController.navigationItem.leftBarButtonItem = photosButton
