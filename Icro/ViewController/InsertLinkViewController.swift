@@ -11,11 +11,13 @@ class InsertLinkViewController: UIViewController, UITextFieldDelegate {
     private var cancelButton: UIBarButtonItem?
     @IBOutlet private weak var titleTextField: UITextField!
     @IBOutlet weak var linkTextField: UITextField!
+    @IBOutlet weak var insertButton: FakeTableCellButton!
 
     init() {
         super.init(nibName: "InsertLinkViewController", bundle: nil)
-        title = "Insert Link"
-        cancelButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(cancel))
+        title = NSLocalizedString("INSERTLINKVIEWCONTROLLER_TITLE", comment: "")
+        cancelButton = UIBarButtonItem(title: NSLocalizedString("INSERTLINKVIEWCONTROLLER_CANCELBUTTON_TITLE", comment: ""),
+                                       style: .plain, target: self, action: #selector(cancel))
         navigationItem.leftBarButtonItem = cancelButton
     }
 
@@ -26,6 +28,9 @@ class InsertLinkViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         titleTextField.becomeFirstResponder()
+        titleTextField.placeholder = NSLocalizedString("INSERTLINKVIEWCONTROLLER_TITLETEXTFIELD_TEXT", comment: "")
+        linkTextField.placeholder = NSLocalizedString("INSERTLINKVIEWCONTROLLER_LINKTEXTFIELD_TEXT", comment: "")
+        insertButton.setTitle(NSLocalizedString("INSERTLINKVIEWCONTROLLER_INSERTBUTTON_TITLE", comment: ""), for: .normal)
     }
 
     // MARK: - UITextFieldDelegate

@@ -33,6 +33,6 @@ class BlacklistViewModel {
     }
 
     var title: String {
-        return "Add words/usernames to your mute filter"
+        return NSLocalizedString("BLACKLISTVIEWMODEL_TITLE", comment: "")
     }
 }

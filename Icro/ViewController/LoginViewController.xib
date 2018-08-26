@@ -13,8 +13,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Icro" customModuleProvider="target">
             <connections>
                 <outlet property="infoLabel" destination="r8c-6k-s4W" id="8o8-OJ-wDA"/>
+                <outlet property="infoLabelText" destination="Kj8-y1-vwQ" id="6tJ-Do-saF"/>
                 <outlet property="loginButton" destination="aJN-QV-DNK" id="yid-eb-VOQ"/>
                 <outlet property="textField" destination="Yrd-Xg-YNu" id="AWq-gL-xoF"/>
+                <outlet property="textFieldInfo" destination="ohj-V4-WLt" id="FbY-rK-RXb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

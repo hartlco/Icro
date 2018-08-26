@@ -52,6 +52,8 @@ class ProfileTableViewCell: UITableViewCell {
         super.awakeFromNib()
         let avatarTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(avatarImageViewPressed(_:)))
         avatarImageView.addGestureRecognizer(avatarTapRecognizer)
+        followButton.setTitle(NSLocalizedString("PROFILETABLEVIEWCELL_FOLLOWBUTTON_TITLE", comment: ""), for: .normal)
+        followingButton.setTitle(NSLocalizedString("PROFILETABLEVIEWCELL_FOLLOWINGBUTTON_TITLE", comment: ""), for: .normal)
     }
 
     override func prepareForReuse() {

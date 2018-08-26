@@ -25,7 +25,7 @@ class UserListViewController: UIViewController {
         self.itemNavigator = itemNavigator
         super.init(nibName: String(describing: UserListViewController.self), bundle: nil)
 
-        title = "Following"
+        title = NSLocalizedString("USERLISTVIEWCONTROLLER_TITLE", comment: "")
 
         viewModel.didStartLoading = { [weak self] in
             self?.showLoading(position: .bottom)

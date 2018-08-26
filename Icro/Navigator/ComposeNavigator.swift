@@ -27,13 +27,19 @@ final class ComposeNavigator: NSObject {
     func openImageInsertion(sourceView: UIView?,
                             imageInsertion: @escaping (ComposeViewModel.Image) -> Void,
                             imageUpload: @escaping (UIImage) -> Void) {
-        let alert = UIAlertController(title: "More", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title:
+            NSLocalizedString("COMPOSENAVIGATOR_OPENIMAGEALERT_TITLE", comment: ""),
+                                      message: nil, preferredStyle: .actionSheet)
 
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Default action"), style: .cancel, handler: { _ in
+        alert.addAction(UIAlertAction(title:
+            NSLocalizedString("COMPOSENAVIGATOR_OPENIMAGEALERT_CANCELACTION", comment: ""),
+                                      style: .cancel, handler: { _ in
             alert.dismiss(animated: true, completion: nil)
         }))
 
-        alert.addAction(UIAlertAction(title: "Image URL", style: .default, handler: { [weak self] _ in
+        alert.addAction(UIAlertAction(title:
+            NSLocalizedString("COMPOSENAVIGATOR_OPENIMAGEALERT_URLACTION", comment: ""),
+                                      style: .default, handler: { [weak self] _ in
             let viewController = InsertLinkViewController()
             viewController.completion = { title, url in
                 guard let title = title, let url = url else { return }
@@ -44,7 +50,9 @@ final class ComposeNavigator: NSObject {
         }))
 
         if viewModel.imageUploadEnabled {
-            alert.addAction(UIAlertAction(title: "Upload Image", style: .default, handler: { [weak self] _ in
+            alert.addAction(UIAlertAction(title:
+                NSLocalizedString("COMPOSENAVIGATOR_OPENIMAGEALERT_UPLOADACTION", comment: ""),
+                                          style: .default, handler: { [weak self] _ in
                 self?.showImagePicker(sourceView: sourceView)
                 self?.imageSelection = { image in
                     imageUpload(image)

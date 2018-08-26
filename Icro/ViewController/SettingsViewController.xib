@@ -12,15 +12,30 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Icro" customModuleProvider="target">
             <connections>
+                <outlet property="accountLabel" destination="Dr7-5z-rwZ" id="2p7-dF-QPe"/>
+                <outlet property="acknowledgmentsButton" destination="BvW-1v-Kdg" id="JhY-no-XLS"/>
+                <outlet property="blacklistButton" destination="dKE-Cq-VEE" id="Aph-lk-1uw"/>
+                <outlet property="blogSetupInfoLabel" destination="oBm-rI-ndn" id="WXx-aO-qy7"/>
+                <outlet property="blogSetupLabel" destination="7Wp-Y8-2Jw" id="hrg-Xo-qPj"/>
                 <outlet property="blogSetupSwitch" destination="nvF-0J-VFA" id="eK5-yk-vsS"/>
+                <outlet property="blogSetupSwitchLabel" destination="n70-w5-3lV" id="0Rl-Ox-hsL"/>
                 <outlet property="blogSetupView" destination="evc-Yc-fPN" id="xR0-mT-Qv1"/>
                 <outlet property="blogUrlTextField" destination="t7R-m1-ISl" id="0g4-9A-WCZ"/>
+                <outlet property="contentLabel" destination="LIS-qY-yDS" id="LbV-Ff-Diy"/>
+                <outlet property="guidlinesButton" destination="2Sx-Lm-3dU" id="D9q-rf-9KO"/>
+                <outlet property="hartlcoOnMicroBlogButton" destination="HlX-ag-V85" id="5Y1-em-Wl7"/>
+                <outlet property="logoutButton" destination="pII-iB-fBa" id="Win-S8-khh"/>
+                <outlet property="micropubSetupInfoLabel" destination="BMd-JN-0y4" id="EhO-3V-Uoo"/>
+                <outlet property="micropubSetupLabel" destination="L07-eM-QCf" id="rTE-pI-fu6"/>
                 <outlet property="micropubSetupSwitch" destination="vQ4-Cj-ecL" id="LZH-P6-25Q"/>
+                <outlet property="micropubSetupSwitchLabel" destination="zxa-Tr-YYc" id="BRV-sg-Kw2"/>
                 <outlet property="micropubSetupView" destination="H4A-3P-gFE" id="esh-Lz-PjV"/>
                 <outlet property="micropubTokenTextField" destination="pja-zR-TPH" id="rK1-6w-hVP"/>
                 <outlet property="micropubUrlTextField" destination="UIe-Fy-LUd" id="kyu-u6-U66"/>
+                <outlet property="otherLabel" destination="CFm-hM-gli" id="R2L-t1-vx0"/>
                 <outlet property="outterStackView" destination="M9s-jG-emT" id="MH2-rP-e1r"/>
                 <outlet property="passwordTextField" destination="h3J-of-geq" id="mCM-lm-UqY"/>
+                <outlet property="supportButton" destination="TJ0-eB-xT0" id="E2T-28-l0T"/>
                 <outlet property="usernameTextField" destination="efE-wO-EOt" id="jt4-fo-I6p"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
