@@ -4,23 +4,7 @@
 //
 
 import Foundation
-
-struct LoginInformation: Codable {
-    let token: String
-    let username: String
-    let defaultSite: String
-
-    init?(json: JSONDictionary) {
-        guard let token = json["token"] as? String,
-            let username = json["username"] as? String else {
-                return nil
-        }
-
-        self.token = token
-        self.username = username
-        self.defaultSite = (json["default_site"] as? String) ?? "micro.blog"
-    }
-}
+import IcroKit
 
 final class LoginViewModel {
     enum LoginType {

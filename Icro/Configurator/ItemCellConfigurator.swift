@@ -5,6 +5,7 @@
 
 import Foundation
 import SDWebImage
+import IcroKit
 
 final class ItemCellConfigurator: NSObject {
     fileprivate let itemNavigator: ItemNavigator

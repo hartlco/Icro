@@ -5,6 +5,7 @@
 
 import Foundation
 import wpxmlrpc
+import IcroKit
 
 final class ComposeViewModel {
     struct Image {
@@ -89,7 +90,7 @@ final class ComposeViewModel {
     func upload(image: UIImage) {
         imageState = .uploading(progress: 0.0)
 
-        let endpoint: MicropubRequestController.Endpoint
+        let endpoint: MicropubEndpoint
         if let info = userSettings.micropubInfo {
             endpoint = .custom(info: info)
         } else {

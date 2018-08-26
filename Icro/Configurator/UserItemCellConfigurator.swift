@@ -5,6 +5,7 @@
 
 import Foundation
 import SDWebImage
+import IcroKit
 
 final class UserItemCellConfigurator {
     func configure(cell: UserItemTableViewCell, for user: Author) {

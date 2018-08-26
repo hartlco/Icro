@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import IcroKit
 
 // swiftlint:disable type_body_length
 class ListViewModel: NSObject {

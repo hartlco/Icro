@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import IcroKit
 
 final class SettingsViewModel {
     private let userSettings: UserSettings

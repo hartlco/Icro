@@ -5,18 +5,35 @@
 
 import Foundation
 
-struct Author: Codable {
-    let name: String
-    let url: URL?
-    let avatar: URL
-    var username: String?
-    var bio: String?
-    var followingCount: Int?
-    var isFollowing: Bool?
-    var isYou = false
+public struct Author: Codable {
+    public let name: String
+    public let url: URL?
+    public let avatar: URL
+    public var username: String?
+    public var bio: String?
+    public var followingCount: Int?
+    public var isFollowing: Bool?
+    public var isYou = false
+
+    public init(name: String,
+                url: URL?,
+                avatar: URL,
+                username: String?,
+                bio: String?,
+                followingCount: Int?,
+                isFollowing: Bool?,
+                isYou: Bool = false) {
+        self.url = url
+        self.avatar = avatar
+        self.name = name
+        self.bio = bio
+        self.followingCount = followingCount
+        self.isFollowing = isFollowing
+        self.isYou = isYou
+    }
 }
 
-extension Author {
+public extension Author {
     init?(dictionary: JSONDictionary) {
         guard let name = dictionary["name"] as? String,
             let avatarURLString = dictionary["avatar"] as? String,

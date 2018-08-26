@@ -7,55 +7,57 @@ import Foundation
 
 let dateFormatter = ISO8601DateFormatter()
 
-class Empty: Codable { }
+public class Empty: Codable {
+    public init() { }
+}
 
-class ItemResponse: Codable {
-    let author: Author?
-    let items: [Item]
+public class ItemResponse: Codable {
+    public let author: Author?
+    public let items: [Item]
 
-    init(author: Author?,
-         items: [Item]) {
+    public init(author: Author?,
+                items: [Item]) {
         self.author = author
         self.items = items
     }
 }
 
 extension Item: Hashable {
-    var hashValue: Int {
+    public var hashValue: Int {
         return id.hashValue
     }
 }
 
-class Item: Codable {
+public class Item: Codable {
     // swiftlint:disable identifier_name
-    let id: String
-    let htmlContent: HTMLContent
+    public let id: String
+    public let htmlContent: HTMLContent
 
-    lazy var content: NSAttributedString = {
+    public lazy var content: NSAttributedString = {
         return htmlContent.attributedStringWithoutImages() ?? NSAttributedString(string: "")
     }()
 
-    lazy var images: [URL] = {
+    public lazy var images: [URL] = {
         return htmlContent.imageLinks()
     }()
 
-    let url: URL
+    public let url: URL
     // swiftlint:disable identifier_name
-    let date_published: Date
+    public let date_published: Date
 
-    lazy var relativeDateString: String = {
+    public lazy var relativeDateString: String = {
         return date_published.timeAgo
     }()
 
-    var author: Author
-    var isFavorite: Bool
+    public var author: Author
+    public var isFavorite: Bool
 
-    init(id: String,
-         htmlContent: HTMLContent,
-         url: URL,
-         date_published: Date,
-         author: Author,
-         isFavorite: Bool) {
+    public init(id: String,
+                htmlContent: HTMLContent,
+                url: URL,
+                date_published: Date,
+                author: Author,
+                isFavorite: Bool) {
         self.id = id
         self.htmlContent = htmlContent
         self.url = url
@@ -64,7 +66,7 @@ class Item: Codable {
         self.isFavorite = isFavorite
     }
 
-    func resetContent() {
+    public func resetContent() {
         content = htmlContent.attributedStringWithoutImages() ?? NSAttributedString(string: "")
     }
 }
@@ -105,7 +107,7 @@ extension Item {
 }
 
 extension Item: Equatable {
-    static func == (lhs: Item, rhs: Item) -> Bool {
+    public static func == (lhs: Item, rhs: Item) -> Bool {
         return lhs.id == rhs.id
     }
 }

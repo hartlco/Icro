@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import IcroKit
 import SDWebImage
 import ImageViewer
 

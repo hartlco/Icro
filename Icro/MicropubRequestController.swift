@@ -4,35 +4,13 @@
 //
 
 import Foundation
+import IcroKit
 import Alamofire
 
 class MicropubRequestController {
-    enum Endpoint {
-        case micropub
-        case custom(info: UserSettings.MicropubInfo)
-
-        var urlString: String {
-            switch self {
-            case .micropub:
-                return "https://micro.blog/micropub"
-            case .custom(let info):
-                return info.urlString
-            }
-        }
-
-        var token: String {
-            switch self {
-            case .micropub:
-                return UserSettings.shared.token
-            case .custom(let info):
-                return info.micropubToken
-            }
-        }
-    }
-
     private var currentlyRunningTask: Request?
 
-    func post(endpoint: Endpoint, message: String, completion: @escaping (Error?) -> Void) {
+    func post(endpoint: MicropubEndpoint, message: String, completion: @escaping (Error?) -> Void) {
         let sessionConfig = URLSessionConfiguration.default
 
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
@@ -73,7 +51,7 @@ class MicropubRequestController {
         currentlyRunningTask?.cancel()
     }
 
-    func uploadImages(endpoint: Endpoint,
+    func uploadImages(endpoint: MicropubEndpoint,
                       image: UIImage,
                       uploadProgress: @escaping (Float) -> Void,
                       completion: @escaping (ComposeViewModel.Image?, Error?) -> Void) {
@@ -142,41 +120,11 @@ extension URL {
     }
 }
 
-extension String {
-    public func stringByAddingPercentEncodingForFormData(plusForSpace: Bool=false) -> String? {
-        let unreserved = "*-._"
-        let allowedCharacterSet = NSMutableCharacterSet.alphanumeric()
-        allowedCharacterSet.addCharacters(in: unreserved)
-
-        if plusForSpace {
-            allowedCharacterSet.addCharacters(in: " ")
-        }
-
-        var encoded = addingPercentEncoding(withAllowedCharacters: allowedCharacterSet as CharacterSet)
-        if plusForSpace {
-            encoded = encoded?.replacingOccurrences(of: " ", with: "+")
-        }
-        return encoded
-    }
-}
-
 extension UIImage {
     var jpeg: Data? {
         return self.jpegData(compressionQuality: 1)   // QUALITY min = 0 / max = 1
     }
     var png: Data? {
         return self.pngData()
-    }
-}
-
-struct MediaEndpoint: Codable {
-    let mediaEndpoint: URL
-}
-
-extension MediaEndpoint {
-    init?(dictionary: JSONDictionary) {
-        guard let endpointString = dictionary["media-endpoint"] as? String,
-        let url = URL(string: endpointString) else { return nil }
-        self.mediaEndpoint = url
     }
 }

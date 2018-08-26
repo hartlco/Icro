@@ -17,4 +17,7 @@ target 'Icro' do
 	
 	target 'IcroTests' do
 	end
+	
+	target 'IcroKit' do
+	end
 end

@@ -5,6 +5,7 @@
 
 import UIKit
 import SwiftMessages
+import IcroKit
 
 extension UIViewController {
     func showLoading(position: SwiftMessages.PresentationStyle) {

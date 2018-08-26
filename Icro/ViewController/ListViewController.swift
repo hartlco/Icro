@@ -5,6 +5,7 @@
 
 import UIKit
 import SwiftMessages
+import IcroKit
 
 class ListViewController: UIViewController {
     @IBOutlet fileprivate weak var tableView: UITableView! {
