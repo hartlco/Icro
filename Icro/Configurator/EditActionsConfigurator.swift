@@ -26,7 +26,7 @@ final class EditActionsConfigurator {
             self?.itemNavigator.openConversation(item: item)
             tableView.setEditing(false, animated: true)
         }
-        conversationAction.title = nil
+
         conversationAction.backgroundColor = Color.main
         conversationAction.image = UIImage.fontAwesomeIcon(name: .comments,
                                                            textColor: .white,
@@ -38,7 +38,6 @@ final class EditActionsConfigurator {
             tableView.setEditing(false, animated: true)
         }
         shareAction.backgroundColor = Color.accent
-        shareAction.title = nil
         shareAction.image = UIImage.fontAwesomeIcon(name: .shareSquareO,
                                                     textColor: .white,
                                                     size: CGSize(width: 30, height: 30))
@@ -55,29 +54,27 @@ final class EditActionsConfigurator {
             tableView.setEditing(false, animated: true)
         }
         replyAction.backgroundColor = Color.accentDark
-        replyAction.title = nil
         replyAction.image = UIImage.fontAwesomeIcon(name: .reply,
                                                     textColor: .white,
                                                     size: CGSize(width: 30, height: 30))
 
-        let moreAction = UIContextualAction(style: .normal, title: "Reply") { [weak self] _, _, _ in
+        let moreAction = UIContextualAction(style: .normal, title: "More") { [weak self] _, _, _ in
             tableView.setEditing(false, animated: true)
             self?.itemNavigator.openMore(item: item, sourceView: cell)
         }
 
         moreAction.backgroundColor = Color.separatorColor
-        moreAction.title = nil
         moreAction.image = UIImage.fontAwesomeIcon(name: .ellipsisH,
                                                    textColor: .white,
                                                    size: CGSize(width: 30, height: 30))
 
-        let favoriteAction = UIContextualAction(style: .normal, title: "Favorite") { [weak self] _, _, _ in
+        let title = item.isFavorite ? "Unfavorite" : "Favorite"
+        let favoriteAction = UIContextualAction(style: .normal, title: title) { [weak self] _, _, _ in
             tableView.setEditing(false, animated: true)
             self?.viewModel.toggleFave(for: item)
         }
 
         favoriteAction.backgroundColor = Color.yellow
-        favoriteAction.title = nil
 
         // swiftlint:disable line_length
         let image = item.isFavorite ? UIImage.fontAwesomeIcon(name: .star, textColor: .white, size: CGSize(width: 30, height: 30)) : UIImage.fontAwesomeIcon(name: .starO, textColor: .white, size: CGSize(width: 30, height: 30))
