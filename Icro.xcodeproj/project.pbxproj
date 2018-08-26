@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		07273D8420BE2818AE651E13 /* Pods_Icro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017321F11249BE9396D08AF6 /* Pods_Icro.framework */; };
-		5B2A5A7820A613EF00B54399 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7720A613EF00B54399 /* Font.swift */; };
+		0DD652B4694652F73953220D /* Pods_Icro_IcroKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD791585584689A5DBBBA5F4 /* Pods_Icro_IcroKit.framework */; };
+		56262F9E11CAD54C72679804 /* Pods_Icro_IcroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCD9BDA9C2513F911EAA9F3B /* Pods_Icro_IcroTests.framework */; };
 		5B2A5A7A20A6196700B54399 /* FakeTableCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */; };
 		5B397070207BDD9D007DE3CC /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */; };
 		5B3F68772098BB8800A24983 /* KeyboardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F68762098BB8800A24983 /* KeyboardInputView.swift */; };
@@ -16,11 +17,8 @@
 		5B44C71420979CCC0003B35D /* BlacklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71220979CCC0003B35D /* BlacklistViewController.swift */; };
 		5B44C71520979CCC0003B35D /* BlacklistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B44C71320979CCC0003B35D /* BlacklistViewController.xib */; };
 		5B44C71720979CF20003B35D /* BlacklistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71620979CF20003B35D /* BlacklistViewModel.swift */; };
-		5B494E662124C0FA00C3969B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B494E652124C0FA00C3969B /* Color.swift */; };
 		5B4E4187208AF8C700FC610A /* Pods-Icro-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */; };
-		5B4E4189208B08CE00FC610A /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
 		5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
-		5B4E418D208C44FB00FC610A /* Date+ComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */; };
 		5B58371B212860BA0076121E /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371A212860BA0076121E /* ComposeViewModel.swift */; };
 		5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371D212861220076121E /* EditActionsConfigurator.swift */; };
 		5B583722212861220076121E /* UserItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371E212861220076121E /* UserItemCellConfigurator.swift */; };
@@ -31,21 +29,12 @@
 		5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837292128618B0076121E /* UserListViewModel.swift */; };
 		5B58372C2128619B0076121E /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
 		5B58372E212861F30076121E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372D212861F30076121E /* ListViewController.swift */; };
-		5B5837302128620C0076121E /* Date+Ago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372F2128620C0076121E /* Date+Ago.swift */; };
 		5B5837402128B0680076121E /* HTMLContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58373F2128B0680076121E /* HTMLContentTests.swift */; };
-		5B5837412128B1BA0076121E /* HTMLContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2B001EB45213006DEB40 /* HTMLContent.swift */; };
-		5B5837422128B37E0076121E /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7720A613EF00B54399 /* Font.swift */; };
-		5B5837432128B3970076121E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B494E652124C0FA00C3969B /* Color.swift */; };
 		5B5837442128B3C20076121E /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
 		5B5837452128B40C0076121E /* ItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583720212861220076121E /* ItemCellConfigurator.swift */; };
 		5B5837472128B4A90076121E /* ItemNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837252128616E0076121E /* ItemNavigator.swift */; };
-		5B5837482128B5070076121E /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF462070DF8000C51258 /* UserSettings.swift */; };
-		5B5837492128B50C0076121E /* Date+ComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */; };
-		5B58374A2128B5B80076121E /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AF51EB449BC006DEB40 /* Resource.swift */; };
 		5B58374B2128B5BD0076121E /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6CFF207E8147002FB9FF /* UserListViewController.swift */; };
 		5B58374C2128B5C70076121E /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
-		5B58374D2128B5D10076121E /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
-		5B58374E2128B5D50076121E /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */; };
 		5B58374F2128B5F80076121E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
 		5B5837502128B5F80076121E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372D212861F30076121E /* ListViewController.swift */; };
 		5B5837512128B5F80076121E /* ListViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754FC2070139F00018DFA /* ListViewController.xib */; };
@@ -67,7 +56,6 @@
 		5B5837612128B5F80076121E /* EditActionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371D212861220076121E /* EditActionsConfigurator.swift */; };
 		5B5837622128B5F80076121E /* ProfileViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371F212861220076121E /* ProfileViewConfigurator.swift */; };
 		5B5837632128B5F80076121E /* UserItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371E212861220076121E /* UserItemCellConfigurator.swift */; };
-		5B5837642128B5F80076121E /* Date+Ago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372F2128620C0076121E /* Date+Ago.swift */; };
 		5B5837652128B5F80076121E /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */; };
 		5B5837662128B5F80076121E /* Icro-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */; };
 		5B5837672128B5F80076121E /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */; };
@@ -87,13 +75,10 @@
 		5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
 		5B5837762128B5F80076121E /* BlacklistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71620979CF20003B35D /* BlacklistViewModel.swift */; };
 		5B5837772128B5F80076121E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */; };
-		5B58377C212950F50076121E /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58377A212950F40076121E /* Author.swift */; };
-		5B58377D212950F50076121E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58377B212950F40076121E /* Item.swift */; };
-		5B60CF472070DF8000C51258 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF462070DF8000C51258 /* UserSettings.swift */; };
 		5B60CF4E2072A66C00C51258 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */; };
 		5B60CF4F2072A66C00C51258 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */; };
 		5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
-		5B6D7FCE2081BF8E0096A764 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */; };
+		5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B869B07214E4633000A051C /* MicropubEndpoint.swift */; };
 		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
 		5B8754FE2070139F00018DFA /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8754FC2070139F00018DFA /* ListViewController.xib */; };
 		5BA6D1792087ACF900F484B2 /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */; };
@@ -101,11 +86,25 @@
 		5BA6D17D2087C0B300F484B2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA6D17B2087C0B300F484B2 /* LoginViewController.xib */; };
 		5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */; };
 		5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D180208904D300F484B2 /* AppNavigator.swift */; };
-		5BB73F09212C854400120FAB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58377B212950F40076121E /* Item.swift */; };
-		5BB73F0A212C855C00120FAB /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58377A212950F40076121E /* Author.swift */; };
 		5BB73F0C212C9E0B00120FAB /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB73F0B212C9E0B00120FAB /* ListViewModelTests.swift */; };
 		5BC1820720790C930061F261 /* SingleImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */; };
 		5BC1820820790C930061F261 /* SingleImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */; };
+		5BC347B22132944900DEB45D /* IcroKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC347B02132944900DEB45D /* IcroKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC347AE2132944900DEB45D /* IcroKit.framework */; };
+		5BC347B62132944900DEB45D /* IcroKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC347AE2132944900DEB45D /* IcroKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5BC347BB2132947100DEB45D /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58377A212950F40076121E /* Author.swift */; };
+		5BC347BC2132947100DEB45D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58377B212950F40076121E /* Item.swift */; };
+		5BC347BD213294A900DEB45D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AF51EB449BC006DEB40 /* Resource.swift */; };
+		5BC347BF2132950D00DEB45D /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF462070DF8000C51258 /* UserSettings.swift */; };
+		5BC347C02132955900DEB45D /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
+		5BC347C12132955900DEB45D /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
+		5BC347C22132957300DEB45D /* HTMLContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2B001EB45213006DEB40 /* HTMLContent.swift */; };
+		5BC347C32132958600DEB45D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B494E652124C0FA00C3969B /* Color.swift */; };
+		5BC347C42132958600DEB45D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7720A613EF00B54399 /* Font.swift */; };
+		5BC347C5213295C000DEB45D /* Date+Ago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372F2128620C0076121E /* Date+Ago.swift */; };
+		5BC347C72132960900DEB45D /* LoginInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC347C62132960900DEB45D /* LoginInformation.swift */; };
+		5BC347C82132962200DEB45D /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */; };
+		5BC347C92132963A00DEB45D /* Date+ComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */; };
 		5BD32BB92089A12E005D250A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD32BB72089A12E005D250A /* SettingsViewController.swift */; };
 		5BD32BBA2089A12E005D250A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BD32BB82089A12E005D250A /* SettingsViewController.xib */; };
 		5BE9455F2079EFCE004F9FF4 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
@@ -119,13 +118,10 @@
 		5BED6D02207E8147002FB9FF /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D00207E8147002FB9FF /* UserListViewController.xib */; };
 		5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */; };
 		5BED6D06207E81CC002FB9FF /* UserItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */; };
-		B21A684B81B6BD8C71078658 /* Pods_Icro_IcroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCD9BDA9C2513F911EAA9F3B /* Pods_Icro_IcroTests.framework */; };
 		BF707E742131C45600506E64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
 		C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */; };
 		C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		C5FA2ACE1EB4482C006DEB40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACC1EB4482C006DEB40 /* LaunchScreen.storyboard */; };
-		C5FA2AF61EB449BC006DEB40 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AF51EB449BC006DEB40 /* Resource.swift */; };
-		C5FA2B011EB45213006DEB40 /* HTMLContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2B001EB45213006DEB40 /* HTMLContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,13 +132,34 @@
 			remoteGlobalIDString = C5FA2ABF1EB4482C006DEB40;
 			remoteInfo = Icro;
 		};
+		5BC347B32132944900DEB45D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5FA2AB81EB4482C006DEB40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BC347AD2132944900DEB45D;
+			remoteInfo = IcroKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5BC347BA2132944900DEB45D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5BC347B62132944900DEB45D /* IcroKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		017321F11249BE9396D08AF6 /* Pods_Icro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14B873910DAE1E815D6F7A22 /* Pods_IcroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IcroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C2D67E51BFF3B28100165E /* Pods-Icro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro.release.xcconfig"; sourceTree = "<group>"; };
-		5B2A5A7720A613EF00B54399 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Font.swift; path = Helper/Font.swift; sourceTree = "<group>"; };
+		5B2A5A7720A613EF00B54399 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FakeTableCellButton.swift; path = Helper/FakeTableCellButton.swift; sourceTree = "<group>"; };
 		5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageDownloadManager.swift; path = Helper/ImageDownloadManager.swift; sourceTree = "<group>"; };
 		5B3F68762098BB8800A24983 /* KeyboardInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyboardInputView.swift; path = View/KeyboardInputView.swift; sourceTree = "<group>"; };
@@ -150,11 +167,11 @@
 		5B44C71220979CCC0003B35D /* BlacklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlacklistViewController.swift; path = ViewController/BlacklistViewController.swift; sourceTree = "<group>"; };
 		5B44C71320979CCC0003B35D /* BlacklistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BlacklistViewController.xib; path = ViewController/BlacklistViewController.xib; sourceTree = "<group>"; };
 		5B44C71620979CF20003B35D /* BlacklistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlacklistViewModel.swift; path = ViewModel/BlacklistViewModel.swift; sourceTree = "<group>"; };
-		5B494E652124C0FA00C3969B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Helper/Color.swift; sourceTree = "<group>"; };
+		5B494E652124C0FA00C3969B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-Icro-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
-		5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MicropubRequestController.swift; path = Netowkring/MicropubRequestController.swift; sourceTree = "<group>"; };
+		5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicropubRequestController.swift; sourceTree = "<group>"; };
 		5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewModel.swift; path = ViewModel/SettingsViewModel.swift; sourceTree = "<group>"; };
-		5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Date+ComponentsFormatter.swift"; path = "Helper/Date+ComponentsFormatter.swift"; sourceTree = "<group>"; };
+		5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ComponentsFormatter.swift"; sourceTree = "<group>"; };
 		5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Icro-Bridging-Header.h"; sourceTree = "<group>"; };
 		5B58371A212860BA0076121E /* ComposeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComposeViewModel.swift; path = ViewModel/ComposeViewModel.swift; sourceTree = "<group>"; };
 		5B58371D212861220076121E /* EditActionsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditActionsConfigurator.swift; path = Configurator/EditActionsConfigurator.swift; sourceTree = "<group>"; };
@@ -166,17 +183,18 @@
 		5B5837292128618B0076121E /* UserListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListViewModel.swift; path = ViewModel/UserListViewModel.swift; sourceTree = "<group>"; };
 		5B58372B2128619B0076121E /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewModel.swift; path = ViewModel/ListViewModel.swift; sourceTree = "<group>"; };
 		5B58372D212861F30076121E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ViewController/ListViewController.swift; sourceTree = "<group>"; };
-		5B58372F2128620C0076121E /* Date+Ago.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Ago.swift"; path = "Helper/Date+Ago.swift"; sourceTree = "<group>"; };
+		5B58372F2128620C0076121E /* Date+Ago.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ago.swift"; sourceTree = "<group>"; };
 		5B5837352128B04A0076121E /* IcroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IcroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5837392128B04A0076121E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B58373F2128B0680076121E /* HTMLContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLContentTests.swift; sourceTree = "<group>"; };
-		5B58377A212950F40076121E /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Author.swift; path = Model/Author.swift; sourceTree = "<group>"; };
-		5B58377B212950F40076121E /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Model/Item.swift; sourceTree = "<group>"; };
-		5B60CF462070DF8000C51258 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserSettings.swift; path = Helper/UserSettings.swift; sourceTree = "<group>"; };
+		5B58377A212950F40076121E /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		5B58377B212950F40076121E /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		5B60CF462070DF8000C51258 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComposeViewController.swift; path = ViewController/ComposeViewController.swift; sourceTree = "<group>"; };
 		5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ComposeViewController.xib; path = ViewController/ComposeViewController.xib; sourceTree = "<group>"; };
 		5B689BAB20837ECE005B9874 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TabBarViewController.xib; path = ViewController/TabBarViewController.xib; sourceTree = "<group>"; };
-		5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CacheStorage.swift; path = Helper/CacheStorage.swift; sourceTree = "<group>"; };
+		5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
+		5B869B07214E4633000A051C /* MicropubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicropubEndpoint.swift; sourceTree = "<group>"; };
 		5B8754F92070137300018DFA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
 		5B8754FC2070139F00018DFA /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ListViewController.xib; path = ViewController/ListViewController.xib; sourceTree = "<group>"; };
 		5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Loading.swift"; path = "Helper/UIViewController+Loading.swift"; sourceTree = "<group>"; };
@@ -187,6 +205,10 @@
 		5BB73F0B212C9E0B00120FAB /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SingleImageCollectionViewCell.swift; path = View/SingleImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SingleImageCollectionViewCell.xib; path = View/SingleImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		5BC347AE2132944900DEB45D /* IcroKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IcroKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BC347B02132944900DEB45D /* IcroKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IcroKit.h; sourceTree = "<group>"; };
+		5BC347B12132944900DEB45D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BC347C62132960900DEB45D /* LoginInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInformation.swift; sourceTree = "<group>"; };
 		5BD32BB72089A12E005D250A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewController/SettingsViewController.swift; sourceTree = "<group>"; };
 		5BD32BB82089A12E005D250A /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ViewController/SettingsViewController.xib; sourceTree = "<group>"; };
 		5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = View/ItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -200,8 +222,10 @@
 		5BED6D00207E8147002FB9FF /* UserListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserListViewController.xib; path = ViewController/UserListViewController.xib; sourceTree = "<group>"; };
 		5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserItemTableViewCell.swift; path = View/UserItemTableViewCell.swift; sourceTree = "<group>"; };
 		5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserItemTableViewCell.xib; path = View/UserItemTableViewCell.xib; sourceTree = "<group>"; };
+		62BDE592B91FF53059E2B98A /* Pods-Icro-IcroKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroKit/Pods-Icro-IcroKit.release.xcconfig"; sourceTree = "<group>"; };
 		94EFF3BFFA6977873973D18F /* Pods-Icro-IcroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A46BBCD92B53C40E02AB78B6 /* Pods-IcroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IcroTests/Pods-IcroTests.release.xcconfig"; sourceTree = "<group>"; };
+		B1016753D82E9CA15583B804 /* Pods-Icro-IcroKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroKit/Pods-Icro-IcroKit.debug.xcconfig"; sourceTree = "<group>"; };
 		BF707E772131C46500506E64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BF71E43E214287CF007E88BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C5FA2AC01EB4482C006DEB40 /* Icro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Icro.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,12 +233,13 @@
 		C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5FA2ACD1EB4482C006DEB40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5FA2ACF1EB4482C006DEB40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C5FA2AF51EB449BC006DEB40 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Netowkring/Resource.swift; sourceTree = "<group>"; };
-		C5FA2B001EB45213006DEB40 /* HTMLContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTMLContent.swift; path = Helper/HTMLContent.swift; sourceTree = "<group>"; };
+		C5FA2AF51EB449BC006DEB40 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		C5FA2B001EB45213006DEB40 /* HTMLContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLContent.swift; sourceTree = "<group>"; };
 		CCD9BDA9C2513F911EAA9F3B /* Pods_Icro_IcroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_IcroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D426512F7548658C554240A1 /* Pods-IcroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroTests/Pods-IcroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E95C33C086DABED6C39EDF82 /* Pods-Icro-IcroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests.release.xcconfig"; sourceTree = "<group>"; };
 		EA46B8BCBC230D1C9A721F76 /* Pods-Icro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro.debug.xcconfig"; sourceTree = "<group>"; };
+		FD791585584689A5DBBBA5F4 /* Pods_Icro_IcroKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_IcroKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,7 +247,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B21A684B81B6BD8C71078658 /* Pods_Icro_IcroTests.framework in Frameworks */,
+				56262F9E11CAD54C72679804 /* Pods_Icro_IcroTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BC347AA2132944900DEB45D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DD652B4694652F73953220D /* Pods_Icro_IcroKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +263,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */,
 				07273D8420BE2818AE651E13 /* Pods_Icro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +277,7 @@
 				017321F11249BE9396D08AF6 /* Pods_Icro.framework */,
 				14B873910DAE1E815D6F7A22 /* Pods_IcroTests.framework */,
 				CCD9BDA9C2513F911EAA9F3B /* Pods_Icro_IcroTests.framework */,
+				FD791585584689A5DBBBA5F4 /* Pods_Icro_IcroKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -302,10 +337,64 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
+		5BC347AF2132944900DEB45D /* IcroKit */ = {
+			isa = PBXGroup;
+			children = (
+				5BC347CD2132A69D00DEB45D /* Helper */,
+				5BC347CC2132A68D00DEB45D /* Settings */,
+				5BC347CB2132A66A00DEB45D /* Network */,
+				5BC347CA2132A65000DEB45D /* Model */,
+				5BC347B02132944900DEB45D /* IcroKit.h */,
+				5BC347B12132944900DEB45D /* Info.plist */,
+			);
+			path = IcroKit;
+			sourceTree = "<group>";
+		};
+		5BC347CA2132A65000DEB45D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B58377A212950F40076121E /* Author.swift */,
+				5B58377B212950F40076121E /* Item.swift */,
+				C5FA2B001EB45213006DEB40 /* HTMLContent.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5BC347CB2132A66A00DEB45D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C5FA2AF51EB449BC006DEB40 /* Resource.swift */,
+				5B869B07214E4633000A051C /* MicropubEndpoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5BC347CC2132A68D00DEB45D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5B60CF462070DF8000C51258 /* UserSettings.swift */,
+				5BC347C62132960900DEB45D /* LoginInformation.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		5BC347CD2132A69D00DEB45D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */,
+				5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */,
+				5B58372F2128620C0076121E /* Date+Ago.swift */,
+				5B2A5A7720A613EF00B54399 /* Font.swift */,
+				5B494E652124C0FA00C3969B /* Color.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		C5FA2AB71EB4482C006DEB40 = {
 			isa = PBXGroup;
 			children = (
 				C5FA2AC21EB4482C006DEB40 /* Icro */,
+				5BC347AF2132944900DEB45D /* IcroKit */,
 				5B5837362128B04A0076121E /* IcroTests */,
 				C5FA2AC11EB4482C006DEB40 /* Products */,
 				D66296A63450197DD12D949D /* Pods */,
@@ -318,6 +407,7 @@
 			children = (
 				C5FA2AC01EB4482C006DEB40 /* Icro.app */,
 				5B5837352128B04A0076121E /* IcroTests.xctest */,
+				5BC347AE2132944900DEB45D /* IcroKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -332,7 +422,6 @@
 				C5FA2AFC1EB45164006DEB40 /* View */,
 				C5FA2AF71EB44F2F006DEB40 /* ViewModel */,
 				C5FA2AF41EB4499F006DEB40 /* Netowkring */,
-				C5FA2AF11EB44839006DEB40 /* Model */,
 				C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */,
 				C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */,
 				C5FA2ACC1EB4482C006DEB40 /* LaunchScreen.storyboard */,
@@ -343,19 +432,9 @@
 			path = Icro;
 			sourceTree = "<group>";
 		};
-		C5FA2AF11EB44839006DEB40 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5B58377A212950F40076121E /* Author.swift */,
-				5B58377B212950F40076121E /* Item.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		C5FA2AF41EB4499F006DEB40 /* Netowkring */ = {
 			isa = PBXGroup;
 			children = (
-				C5FA2AF51EB449BC006DEB40 /* Resource.swift */,
 				5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */,
 			);
 			name = Netowkring;
@@ -394,17 +473,10 @@
 		C5FA2AFF1EB451F9006DEB40 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				C5FA2B001EB45213006DEB40 /* HTMLContent.swift */,
-				5B60CF462070DF8000C51258 /* UserSettings.swift */,
-				5B58372F2128620C0076121E /* Date+Ago.swift */,
 				5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */,
-				5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */,
 				5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */,
 				5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */,
-				5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */,
-				5B2A5A7720A613EF00B54399 /* Font.swift */,
 				5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */,
-				5B494E652124C0FA00C3969B /* Color.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -418,11 +490,24 @@
 				A46BBCD92B53C40E02AB78B6 /* Pods-IcroTests.release.xcconfig */,
 				94EFF3BFFA6977873973D18F /* Pods-Icro-IcroTests.debug.xcconfig */,
 				E95C33C086DABED6C39EDF82 /* Pods-Icro-IcroTests.release.xcconfig */,
+				B1016753D82E9CA15583B804 /* Pods-Icro-IcroKit.debug.xcconfig */,
+				62BDE592B91FF53059E2B98A /* Pods-Icro-IcroKit.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5BC347AB2132944900DEB45D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BC347B22132944900DEB45D /* IcroKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		5B5837342128B04A0076121E /* IcroTests */ = {
@@ -445,6 +530,25 @@
 			productReference = 5B5837352128B04A0076121E /* IcroTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5BC347AD2132944900DEB45D /* IcroKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BC347B92132944900DEB45D /* Build configuration list for PBXNativeTarget "IcroKit" */;
+			buildPhases = (
+				20C3A106AC1DA7AB6DC70FC0 /* [CP] Check Pods Manifest.lock */,
+				5BC347A92132944900DEB45D /* Sources */,
+				5BC347AA2132944900DEB45D /* Frameworks */,
+				5BC347AB2132944900DEB45D /* Headers */,
+				5BC347AC2132944900DEB45D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IcroKit;
+			productName = IcroKit;
+			productReference = 5BC347AE2132944900DEB45D /* IcroKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		C5FA2ABF1EB4482C006DEB40 /* Icro */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5FA2AE81EB4482C006DEB40 /* Build configuration list for PBXNativeTarget "Icro" */;
@@ -455,10 +559,12 @@
 				C5FA2ABE1EB4482C006DEB40 /* Resources */,
 				EABA67040489353A359E8CCF /* [CP] Embed Pods Frameworks */,
 				5B494E642123590E00C3969B /* SwiftLint */,
+				5BC347BA2132944900DEB45D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5BC347B42132944900DEB45D /* PBXTargetDependency */,
 			);
 			name = Icro;
 			productName = Icro;
@@ -481,6 +587,11 @@
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C5FA2ABF1EB4482C006DEB40;
+					};
+					5BC347AD2132944900DEB45D = {
+						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = 9E8SXF3Y36;
+						ProvisioningStyle = Automatic;
 					};
 					C5FA2ABF1EB4482C006DEB40 = {
 						CreatedOnToolsVersion = 8.2;
@@ -511,12 +622,20 @@
 			targets = (
 				C5FA2ABF1EB4482C006DEB40 /* Icro */,
 				5B5837342128B04A0076121E /* IcroTests */,
+				5BC347AD2132944900DEB45D /* IcroKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5B5837332128B04A0076121E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BC347AC2132944900DEB45D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -550,6 +669,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		20C3A106AC1DA7AB6DC70FC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Icro-IcroKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		228EC1B8085181E1AA0D5DAE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -691,12 +828,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BB73F0A212C855C00120FAB /* Author.swift in Sources */,
 				5B58374F2128B5F80076121E /* TabBarViewController.swift in Sources */,
 				5B5837502128B5F80076121E /* ListViewController.swift in Sources */,
 				5B5837512128B5F80076121E /* ListViewController.xib in Sources */,
 				5B5837522128B5F80076121E /* ComposeViewController.swift in Sources */,
-				5BB73F09212C854400120FAB /* Item.swift in Sources */,
 				5B5837532128B5F80076121E /* ComposeViewController.xib in Sources */,
 				5B5837542128B5F80076121E /* UserListViewController.xib in Sources */,
 				5B5837552128B5F80076121E /* TabBarViewController.xib in Sources */,
@@ -713,9 +848,9 @@
 				5B58375F2128B5F80076121E /* AppNavigator.swift in Sources */,
 				5B5837602128B5F80076121E /* ComposeNavigator.swift in Sources */,
 				5B5837612128B5F80076121E /* EditActionsConfigurator.swift in Sources */,
+				5BC347C12132955900DEB45D /* MicropubRequestController.swift in Sources */,
 				5B5837622128B5F80076121E /* ProfileViewConfigurator.swift in Sources */,
 				5B5837632128B5F80076121E /* UserItemCellConfigurator.swift in Sources */,
-				5B5837642128B5F80076121E /* Date+Ago.swift in Sources */,
 				5B5837652128B5F80076121E /* ImageDownloadManager.swift in Sources */,
 				5B5837662128B5F80076121E /* Icro-Bridging-Header.h in Sources */,
 				5B5837672128B5F80076121E /* UIViewController+Loading.swift in Sources */,
@@ -736,19 +871,30 @@
 				5B5837762128B5F80076121E /* BlacklistViewModel.swift in Sources */,
 				5B5837772128B5F80076121E /* AppDelegate.swift in Sources */,
 				5B5837472128B4A90076121E /* ItemNavigator.swift in Sources */,
-				5B5837412128B1BA0076121E /* HTMLContent.swift in Sources */,
-				5B58374E2128B5D50076121E /* CacheStorage.swift in Sources */,
-				5B5837432128B3970076121E /* Color.swift in Sources */,
-				5B58374A2128B5B80076121E /* Resource.swift in Sources */,
 				5B5837442128B3C20076121E /* ItemTableViewCell.swift in Sources */,
 				5B58374B2128B5BD0076121E /* UserListViewController.swift in Sources */,
-				5B5837482128B5070076121E /* UserSettings.swift in Sources */,
 				5B5837402128B0680076121E /* HTMLContentTests.swift in Sources */,
-				5B5837492128B50C0076121E /* Date+ComponentsFormatter.swift in Sources */,
 				5B58374C2128B5C70076121E /* ListViewModel.swift in Sources */,
-				5B58374D2128B5D10076121E /* MicropubRequestController.swift in Sources */,
-				5B5837422128B37E0076121E /* Font.swift in Sources */,
 				5B5837452128B40C0076121E /* ItemCellConfigurator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BC347A92132944900DEB45D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BC347BD213294A900DEB45D /* Resource.swift in Sources */,
+				5BC347C5213295C000DEB45D /* Date+Ago.swift in Sources */,
+				5BC347C82132962200DEB45D /* CacheStorage.swift in Sources */,
+				5BC347BC2132947100DEB45D /* Item.swift in Sources */,
+				5BC347C42132958600DEB45D /* Font.swift in Sources */,
+				5BC347C22132957300DEB45D /* HTMLContent.swift in Sources */,
+				5BC347C72132960900DEB45D /* LoginInformation.swift in Sources */,
+				5BC347BF2132950D00DEB45D /* UserSettings.swift in Sources */,
+				5BC347BB2132947100DEB45D /* Author.swift in Sources */,
+				5BC347C32132958600DEB45D /* Color.swift in Sources */,
+				5BC347C92132963A00DEB45D /* Date+ComponentsFormatter.swift in Sources */,
+				5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,27 +909,18 @@
 				5BE9455F2079EFCE004F9FF4 /* ItemTableViewCell.swift in Sources */,
 				5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */,
 				5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */,
-				5B4E418D208C44FB00FC610A /* Date+ComponentsFormatter.swift in Sources */,
-				5B6D7FCE2081BF8E0096A764 /* CacheStorage.swift in Sources */,
 				5B44C71720979CF20003B35D /* BlacklistViewModel.swift in Sources */,
 				5B3F68772098BB8800A24983 /* KeyboardInputView.swift in Sources */,
 				5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */,
-				5B58377C212950F50076121E /* Author.swift in Sources */,
 				5B583722212861220076121E /* UserItemCellConfigurator.swift in Sources */,
 				5B44C71420979CCC0003B35D /* BlacklistViewController.swift in Sources */,
-				5B4E4189208B08CE00FC610A /* MicropubRequestController.swift in Sources */,
 				5BED6D01207E8147002FB9FF /* UserListViewController.swift in Sources */,
-				5B5837302128620C0076121E /* Date+Ago.swift in Sources */,
 				5BA6D1792087ACF900F484B2 /* UIViewController+Loading.swift in Sources */,
 				5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */,
 				5B58372E212861F30076121E /* ListViewController.swift in Sources */,
-				5B60CF472070DF8000C51258 /* UserSettings.swift in Sources */,
 				5B583724212861220076121E /* ItemCellConfigurator.swift in Sources */,
-				5B494E662124C0FA00C3969B /* Color.swift in Sources */,
-				C5FA2B011EB45213006DEB40 /* HTMLContent.swift in Sources */,
-				C5FA2AF61EB449BC006DEB40 /* Resource.swift in Sources */,
+				5BC347C02132955900DEB45D /* MicropubRequestController.swift in Sources */,
 				5B397070207BDD9D007DE3CC /* ImageDownloadManager.swift in Sources */,
-				5B58377D212950F50076121E /* Item.swift in Sources */,
 				5B5837262128616E0076121E /* ItemNavigator.swift in Sources */,
 				5BC1820720790C930061F261 /* SingleImageCollectionViewCell.swift in Sources */,
 				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
@@ -797,7 +934,6 @@
 				5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */,
 				5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */,
 				5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */,
-				5B2A5A7820A613EF00B54399 /* Font.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,6 +944,11 @@
 			isa = PBXTargetDependency;
 			target = C5FA2ABF1EB4482C006DEB40 /* Icro */;
 			targetProxy = 5B58373A2128B04A0076121E /* PBXContainerItemProxy */;
+		};
+		5BC347B42132944900DEB45D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BC347AD2132944900DEB45D /* IcroKit */;
+			targetProxy = 5BC347B32132944900DEB45D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -877,6 +1018,68 @@
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Icro.app/Icro";
+			};
+			name = Release;
+		};
+		5BC347B72132944900DEB45D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1016753D82E9CA15583B804 /* Pods-Icro-IcroKit.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = IcroKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5BC347B82132944900DEB45D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62BDE592B91FF53059E2B98A /* Pods-Icro-IcroKit.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = IcroKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -995,6 +1198,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EA46B8BCBC230D1C9A721F76 /* Pods-Icro.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1016,6 +1220,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 52C2D67E51BFF3B28100165E /* Pods-Icro.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1040,6 +1245,15 @@
 			buildConfigurations = (
 				5B58373D2128B04A0076121E /* Debug */,
 				5B58373E2128B04A0076121E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BC347B92132944900DEB45D /* Build configuration list for PBXNativeTarget "IcroKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BC347B72132944900DEB45D /* Debug */,
+				5BC347B82132944900DEB45D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

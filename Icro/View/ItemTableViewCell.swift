@@ -4,12 +4,9 @@
 //
 
 import UIKit
+import IcroKit
 import SDWebImage
 import ImageViewer
-
-extension Notification.Name {
-    static let asyncInlineImageFinishedLoading = Notification.Name(rawValue: "asyncInlineImageFinishedLoading")
-}
 
 class ItemTableViewCell: UITableViewCell {
     static let identifer = "ItemTableViewCell"

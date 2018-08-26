@@ -4,6 +4,7 @@
 //
 
 import XCTest
+import IcroKit
 
 class ListViewModelTests: XCTestCase {
     // MARK: - shouldShowProfileHeader

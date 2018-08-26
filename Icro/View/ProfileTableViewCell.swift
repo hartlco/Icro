@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import IcroKit
 
 class ProfileTableViewCell: UITableViewCell {
     static let identifier = "ProfileTableViewCell"

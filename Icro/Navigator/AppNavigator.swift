@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import IcroKit
 
 final class AppNavigator {
     private let window: UIWindow

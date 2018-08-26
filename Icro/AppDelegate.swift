@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import IcroKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

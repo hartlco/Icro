@@ -6,36 +6,50 @@
 import Foundation
 import KeychainAccess
 
-extension Notification.Name {
-    static let blackListChanged = Notification.Name(rawValue: "blackListChanged")
+public extension Notification.Name {
+    public static let blackListChanged = Notification.Name(rawValue: "blackListChanged")
 }
 
-final class UserSettings {
-    struct WordpressInfo {
-        let urlString: String
-        let username: String
-        let password: String
+public final class UserSettings {
+    public struct WordpressInfo {
+        public init(urlString: String,
+                    username: String,
+                    password: String) {
+            self.urlString = urlString
+            self.username = username
+            self.password = password
+        }
+
+        public let urlString: String
+        public let username: String
+        public let password: String
     }
 
-    struct MicropubInfo {
-        let urlString: String
-        let micropubToken: String
+    public struct MicropubInfo {
+        public init(urlString: String,
+                    micropubToken: String) {
+            self.urlString = urlString
+            self.micropubToken = micropubToken
+        }
+
+        public let urlString: String
+        public let micropubToken: String
     }
 
-    static let shared = UserSettings()
+    public static let shared = UserSettings()
 
     private let userDefaults: UserDefaults
     private let notificationCenter: NotificationCenter
     private let keychain = Keychain(service: "co.hartl.icro")
 
-    init(userDefaults: UserDefaults = .standard,
-         notificationCenter: NotificationCenter = .default) {
+    public init(userDefaults: UserDefaults = .standard,
+                notificationCenter: NotificationCenter = .default) {
         self.userDefaults = userDefaults
         self.notificationCenter = notificationCenter
     }
 
     // swiftlint:disable identifier_name
-    var lastread_timeline: String? {
+    public var lastread_timeline: String? {
         set {
             userDefaults.set(newValue, forKey: #function)
             userDefaults.synchronize()
@@ -46,7 +60,7 @@ final class UserSettings {
         }
     }
 
-    var username: String {
+    public var username: String {
         set {
             userDefaults.set(newValue, forKey: #function)
             userDefaults.synchronize()
@@ -57,7 +71,7 @@ final class UserSettings {
         }
     }
 
-    var token: String {
+    public var token: String {
         set {
             userDefaults.set(newValue, forKey: #function)
             userDefaults.synchronize()
@@ -68,7 +82,7 @@ final class UserSettings {
         }
     }
 
-    var defaultSite: String {
+    public var defaultSite: String {
         set {
             userDefaults.set(newValue, forKey: #function)
             userDefaults.synchronize()
@@ -79,7 +93,7 @@ final class UserSettings {
         }
     }
 
-    var wordPressUsername: String? {
+    public var wordPressUsername: String? {
         set {
             keychain[#function] = newValue
         }
@@ -88,7 +102,7 @@ final class UserSettings {
         }
     }
 
-    var wordPressUrlString: String? {
+    public var wordPressUrlString: String? {
         set {
             keychain[#function] = newValue
         }
@@ -97,7 +111,7 @@ final class UserSettings {
         }
     }
 
-    var wordPressPassword: String? {
+    public var wordPressPassword: String? {
         set {
             keychain[#function] = newValue
         }
@@ -106,7 +120,7 @@ final class UserSettings {
         }
     }
 
-    var wordpressInfo: WordpressInfo? {
+    public var wordpressInfo: WordpressInfo? {
         guard let username = wordPressUsername,
         let urlString = wordPressUrlString,
             let password = wordPressPassword else { return nil }
@@ -114,7 +128,7 @@ final class UserSettings {
         return WordpressInfo(urlString: urlString, username: username, password: password)
     }
 
-    func setWordpressInfo(info: WordpressInfo?) {
+    public func setWordpressInfo(info: WordpressInfo?) {
         guard let info = info else {
             wordPressPassword = nil
             wordPressUrlString = nil
@@ -127,7 +141,7 @@ final class UserSettings {
         wordPressUsername = info.username
     }
 
-    var micropubUrlString: String? {
+    public var micropubUrlString: String? {
         set {
             keychain[#function] = newValue
         }
@@ -136,7 +150,7 @@ final class UserSettings {
         }
     }
 
-    var micropubToken: String? {
+    public var micropubToken: String? {
         set {
             keychain[#function] = newValue
         }
@@ -145,14 +159,14 @@ final class UserSettings {
         }
     }
 
-    var micropubInfo: MicropubInfo? {
+    public var micropubInfo: MicropubInfo? {
         guard let urlString = micropubUrlString,
             let token = micropubToken else { return nil }
 
         return MicropubInfo(urlString: urlString, micropubToken: token)
     }
 
-    func setMicropubInfo(info: MicropubInfo?) {
+    public func setMicropubInfo(info: MicropubInfo?) {
         guard let info = info else {
             micropubUrlString = nil
             micropubToken = nil
@@ -163,17 +177,17 @@ final class UserSettings {
         micropubUrlString = info.urlString
     }
 
-    var loggedIn: Bool {
+    public var loggedIn: Bool {
         return username != "" && token != ""
     }
 
-    func save(loginInformation: LoginInformation) {
+    public func save(loginInformation: LoginInformation) {
         username = loginInformation.username
         token = loginInformation.token
         defaultSite = loginInformation.defaultSite
     }
 
-    func addToBlacklist(word: String?) {
+    public func addToBlacklist(word: String?) {
         guard let word = word else { return }
 
         var words = Set(blacklist)
@@ -182,7 +196,7 @@ final class UserSettings {
         blacklist = array
     }
 
-    func removeIndexFromBlacklist(index: Int) {
+    public func removeIndexFromBlacklist(index: Int) {
         guard index < blacklist.count else { return }
 
         let delete = blacklist[index]
@@ -192,7 +206,7 @@ final class UserSettings {
         blacklist = array
     }
 
-    var blacklist: [String] {
+    public var blacklist: [String] {
         set {
             if newValue != blacklist {
                 userDefaults.set(newValue, forKey: #function)

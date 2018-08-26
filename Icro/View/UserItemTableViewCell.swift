@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import IcroKit
 
 class UserItemTableViewCell: UITableViewCell {
     static let identifier = "UserItemTableViewCell"

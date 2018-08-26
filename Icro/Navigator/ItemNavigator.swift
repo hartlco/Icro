@@ -6,6 +6,7 @@
 import UIKit
 import SafariServices
 import ImageViewer
+import IcroKit
 
 final class ItemNavigator {
     private let navigationController: UINavigationController

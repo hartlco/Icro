@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import IcroKit
 import KeyboardLayoutGuide
 import ImageViewer
 import SDWebImage

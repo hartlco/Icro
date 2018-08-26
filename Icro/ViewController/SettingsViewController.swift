@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import IcroKit
 
 class SettingsViewController: UIViewController {
     private let navigator: SettingsNavigator

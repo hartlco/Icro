@@ -6,6 +6,7 @@
 import Foundation
 import AcknowList
 import MessageUI
+import IcroKit
 
 final class SettingsNavigator: NSObject {
     private let navigationController: UINavigationController

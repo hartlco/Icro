@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import IcroKit
 
 class BlacklistViewModel {
     private let userSettings: UserSettings

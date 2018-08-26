@@ -8,7 +8,11 @@ import Kanna
 import DTCoreText
 import SDWebImage
 
-final class HTMLContent: Codable {
+public extension Notification.Name {
+    static let asyncInlineImageFinishedLoading = Notification.Name(rawValue: "asyncInlineImageFinishedLoading")
+}
+
+public final class HTMLContent: Codable {
     private let rawHTMLString: String
     private let itemID: String
 
@@ -17,19 +21,19 @@ final class HTMLContent: Codable {
         self.itemID = itemID
     }
 
-    func imageLinks() -> [URL] {
+    public func imageLinks() -> [URL] {
         return rawHTMLString.imagesLinks().compactMap(URL.init)
     }
 
-    func imageDescs() -> [String] {
+    public func imageDescs() -> [String] {
         return rawHTMLString.imagesDescs()
     }
 
-    func attributedStringWithoutImages() -> NSAttributedString? {
+    public func attributedStringWithoutImages() -> NSAttributedString? {
         return rawHTMLString.withoutImages().htmlToAttributedString(for: itemID)
     }
 
-    static func textLinks(for attributedString: NSAttributedString?) -> [(text: String, url: URL)] {
+    public static func textLinks(for attributedString: NSAttributedString?) -> [(text: String, url: URL)] {
         guard let text = attributedString else {
             return []
         }
