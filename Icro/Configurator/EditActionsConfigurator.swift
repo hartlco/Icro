@@ -18,6 +18,15 @@ final class EditActionsConfigurator {
         self.viewModel = viewModel
     }
 
+    func canEdit(at indexPath: IndexPath) -> Bool {
+        switch viewModel.viewType(for: indexPath.section, row: indexPath.row) {
+        case .author:
+            return false
+        case .item:
+            return true
+        }
+    }
+
     func tralingEditActions(at indexPath: IndexPath, in tableView: UITableView) -> UISwipeActionsConfiguration? {
         let item = viewModel.item(for: indexPath.row)
         let cell = tableView.cellForRow(at: indexPath)

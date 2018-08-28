@@ -210,6 +210,10 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, UITabl
                    leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         return editActionsConfigurator.leadingEditActions(at: indexPath, in: tableView)
     }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return editActionsConfigurator.canEdit(at: indexPath)
+    }
 }
 
 extension ListViewController: ScrollToTop {
