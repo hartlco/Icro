@@ -13,7 +13,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var outterStackView: UIStackView!
     @IBOutlet private weak var blogSetupView: UIView!
     @IBOutlet private weak var blogSetupSwitch: UISwitch!
-    @IBOutlet weak var blogSetupSwitchLabel: UILabel!
+    @IBOutlet private weak var blogSetupSwitchLabel: UILabel!
     @IBOutlet fileprivate weak var blogUrlTextField: UITextField! {
         didSet {
             blogUrlTextField.delegate = self
@@ -42,20 +42,20 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet private weak var micropubSetupSwitch: UISwitch!
     @IBOutlet private weak var micropubSetupView: UIView!
-    @IBOutlet weak var micropubSetupSwitchLabel: UILabel!
-    @IBOutlet weak var blogSetupLabel: UILabel!
-    @IBOutlet weak var blogSetupInfoLabel: UILabel!
-    @IBOutlet weak var micropubSetupLabel: UILabel!
-    @IBOutlet weak var micropubSetupInfoLabel: UILabel!
-    @IBOutlet weak var accountLabel: UILabel!
-    @IBOutlet weak var logoutButton: FakeTableCellButton!
-    @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var blacklistButton: FakeTableCellButton!
-    @IBOutlet weak var guidlinesButton: FakeTableCellButton!
-    @IBOutlet weak var otherLabel: UILabel!
-    @IBOutlet weak var hartlcoOnMicroBlogButton: FakeTableCellButton!
-    @IBOutlet weak var supportButton: FakeTableCellButton!
-    @IBOutlet weak var acknowledgmentsButton: FakeTableCellButton!
+    @IBOutlet private weak var micropubSetupSwitchLabel: UILabel!
+    @IBOutlet private weak var blogSetupLabel: UILabel!
+    @IBOutlet private weak var blogSetupInfoLabel: UILabel!
+    @IBOutlet private weak var micropubSetupLabel: UILabel!
+    @IBOutlet private weak var micropubSetupInfoLabel: UILabel!
+    @IBOutlet private weak var accountLabel: UILabel!
+    @IBOutlet private weak var logoutButton: FakeTableCellButton!
+    @IBOutlet private weak var contentLabel: UILabel!
+    @IBOutlet private weak var blacklistButton: FakeTableCellButton!
+    @IBOutlet private weak var guidlinesButton: FakeTableCellButton!
+    @IBOutlet private weak var otherLabel: UILabel!
+    @IBOutlet private weak var hartlcoOnMicroBlogButton: FakeTableCellButton!
+    @IBOutlet private weak var supportButton: FakeTableCellButton!
+    @IBOutlet private weak var acknowledgmentsButton: FakeTableCellButton!
 
     init(navigator: SettingsNavigator,
          itemNavigator: ItemNavigator,

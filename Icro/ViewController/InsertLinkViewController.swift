@@ -10,8 +10,8 @@ class InsertLinkViewController: UIViewController, UITextFieldDelegate {
 
     private var cancelButton: UIBarButtonItem?
     @IBOutlet private weak var titleTextField: UITextField!
-    @IBOutlet weak var linkTextField: UITextField!
-    @IBOutlet weak var insertButton: FakeTableCellButton!
+    @IBOutlet private weak var linkTextField: UITextField!
+    @IBOutlet private weak var insertButton: FakeTableCellButton!
 
     init() {
         super.init(nibName: "InsertLinkViewController", bundle: nil)
