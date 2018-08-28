@@ -22,6 +22,12 @@ final class ComposeViewModel {
     private let imageUploadService = MicropubRequestController()
     private let userSettings: UserSettings
 
+    private(set) var imageState = ImageState.idle {
+        didSet {
+            didChangeImageState?(imageState)
+        }
+    }
+
     var didChangeImageState: ((ImageState) -> Void)?
 
     var didUpdateImages: (() -> Void)?
@@ -81,11 +87,11 @@ final class ComposeViewModel {
     }
 
     func upload(image: UIImage) {
-        didChangeImageState?(.uploading(progress: 0.0))
+        imageState = .uploading(progress: 0.0)
         imageUploadService.uploadImages(image: image, uploadProgress: { [weak self] progress in
-            self?.didChangeImageState?(.uploading(progress: progress))
+            self?.imageState = .uploading(progress: progress)
             }, completion: { [weak self] image, _ in
-            self?.didChangeImageState?(.idle)
+            self?.imageState = .idle
 
             if let image = image {
                 self?.insertImage(image: image)
@@ -94,7 +100,7 @@ final class ComposeViewModel {
     }
 
     func cancelImageUpload() {
-        didChangeImageState?(.idle)
+        imageState = .idle
         imageUploadService.cancelImageUpload()
     }
 
