@@ -56,11 +56,18 @@ final class ComposeViewController: UIViewController {
         keyboardInputView.cancelButton.addTarget(self, action: #selector(canelImageUpload), for: .touchUpInside)
 
         viewModel.didUpdateImages = { [weak self] in
-            self?.updateImageCollection()
+            guard let strongSelf = self else { return }
+            strongSelf.updateImageCollection()
+            strongSelf.keyboardInputView.update(for: strongSelf.textView.text,
+                                                numberOfImages: strongSelf.viewModel.numberOfImages,
+                                                imageState: strongSelf.viewModel.imageState)
         }
 
         viewModel.didChangeImageState = { [weak self] imageState in
-            self?.keyboardInputView.update(for: imageState)
+            guard let strongSelf = self else { return }
+            strongSelf.keyboardInputView.update(for: strongSelf.textView.text,
+                                                numberOfImages: strongSelf.viewModel.numberOfImages,
+                                                imageState: strongSelf.viewModel.imageState)
         }
 
         navigationItem.leftBarButtonItem = cancelButton
@@ -93,7 +100,9 @@ final class ComposeViewController: UIViewController {
     // MARK: - Private
 
     private func setupKeyboardInputView() {
-        keyboardInputView.text = viewModel.startText
+        keyboardInputView.update(for: viewModel.startText,
+                                 numberOfImages: viewModel.numberOfImages,
+                                 imageState: viewModel.imageState)
         keyboardInputView.translatesAutoresizingMaskIntoConstraints = false
         keyboardInputView.addConstraint(NSLayoutConstraint(item: keyboardInputView,
                                                            attribute: .height,
@@ -196,7 +205,7 @@ extension ComposeViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ComposeViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        keyboardInputView.text = textView.text
+        keyboardInputView.update(for: textView.text, numberOfImages: viewModel.numberOfImages, imageState: viewModel.imageState)
     }
 }
 
