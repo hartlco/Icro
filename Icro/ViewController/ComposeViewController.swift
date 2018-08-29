@@ -47,8 +47,9 @@ final class ComposeViewController: UIViewController {
         self.viewModel = viewModel
         self.composeNavigator = composeNavigator
         super.init(nibName: "ComposeViewController", bundle: nil)
-        title = "Compose"
-        cancelButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(cancel))
+        title = NSLocalizedString("COMPOSEVIEWCONTROLLER_TITLE", comment: "")
+        cancelButton = UIBarButtonItem(title: NSLocalizedString("COMPOSEVIEWCONTROLLER_CANCELBUTTON_TITLE", comment: ""),
+                                       style: .plain, target: self, action: #selector(cancel))
         keyboardInputView.postButton.addTarget(self, action: #selector(post), for: .touchUpInside)
         keyboardInputView.linkButton.addTarget(self, action: #selector(insertLink), for: .touchUpInside)
         keyboardInputView.imageButton.addTarget(self, action: #selector(insertImage), for: .touchUpInside)
@@ -173,7 +174,7 @@ extension ComposeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.replyItem == nil ? nil : "Reply to"
+        return viewModel.replyItem == nil ? nil : NSLocalizedString("COMPOSEVIEWCONTROLLER_TABLEVIEW_HEADER_TITLE", comment: "")
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

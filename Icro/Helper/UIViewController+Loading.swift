@@ -12,7 +12,7 @@ extension UIViewController {
         let view = MessageView.viewFromNib(layout: MessageView.Layout.statusLine)
         view.backgroundColor = Color.accent
         view.bodyLabel?.font = Font().loading
-        view.bodyLabel?.text = "Loading"
+        view.bodyLabel?.text = NSLocalizedString("UIVIEWCONTROLLERLOADING_LOADING_TEXT", comment: "")
         view.bodyLabel?.textColor = .white
         var config = SwiftMessages.Config()
         config.presentationStyle = position
@@ -44,16 +44,16 @@ private extension Error {
         if let networkingError = self as? NetworkingError {
             switch networkingError {
             case .wordPressURLError:
-                return "Invalid Wordpress setup"
+                return NSLocalizedString("UIVIEWCONTROLLERLOADING_WORDPRESSURLERROR_TEXT", comment: "")
             case .micropubURLError:
-                return "Invalid micropub setup"
+                return NSLocalizedString("UIVIEWCONTROLLERLOADING_MICROPUBURLERROR_TEXT", comment: "")
             case .invalidInput:
-                return "Invalid input"
+                return NSLocalizedString("UIVIEWCONTROLLERLOADING_INVALIDINPUT_TEXT", comment: "")
             default:
-                return "Something went wrong, please try again"
+                return NSLocalizedString("UIVIEWCONTROLLERLOADING_ERROR_TEXT", comment: "")
             }
         }
 
-        return "Something went wrong, please try again"
+        return NSLocalizedString("UIVIEWCONTROLLERLOADING_ERROR_TEXT", comment: "")
     }
 }

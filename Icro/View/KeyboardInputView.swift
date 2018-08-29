@@ -40,6 +40,9 @@ class KeyboardInputView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         text = nil
+        linkButton.setTitle(NSLocalizedString("KEYBOARDINPUTVIEW_LINKBUTTON_TTILE", comment: ""), for: .normal)
+        imageButton.setTitle(NSLocalizedString("KEYBOARDINPUTVIEW_IMAGEBUTTON_TITLE", comment: ""), for: .normal)
+        postButton.setTitle(NSLocalizedString("KEYBOARDINPUTVIEW_POSTBUTTON_TITLE", comment: ""), for: .normal)
         update(for: .idle)
     }
 

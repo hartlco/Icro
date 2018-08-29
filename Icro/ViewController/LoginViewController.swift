@@ -7,8 +7,10 @@ import UIKit
 
 class LoginViewController: UIViewController {
     @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var textFieldInfo: UILabel!
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var infoLabel: UIStackView!
+    @IBOutlet private weak var infoLabelText: UILabel!
 
     private let viewModel: LoginViewModel
 
@@ -20,7 +22,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Login"
+        title = NSLocalizedString("LOGINVIEWCONTROLLER_TITLE", comment: "")
+        textField.placeholder = NSLocalizedString("LOGINVIEWCONTROLLER_TEXTFIELD_PLACEHOLDER", comment: "")
+        textFieldInfo.text = NSLocalizedString("LOGINVIEWCONTROLLER_TEXTFIELDINFO_TEXT", comment: "")
+        loginButton.setTitle( NSLocalizedString("LOGINVIEWCONTROLLER_LOGINBUTTON_TITLE", comment: ""), for: .normal)
+        infoLabelText.text = NSLocalizedString("LOGINVIEWCONTROLLER_INFOLABEL_TEXT", comment: "")
 
         updateState()
 

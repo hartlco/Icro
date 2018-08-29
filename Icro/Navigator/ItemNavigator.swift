@@ -83,15 +83,19 @@ final class ItemNavigator {
     }
 
     func openMore(item: Item, sourceView: UIView?) {
-        let alert = UIAlertController(title: "More", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title:
+            NSLocalizedString("ITEMNAVIGATOR_MOREALERT_TITLE", comment: ""),
+                                      message: nil, preferredStyle: .actionSheet)
 
-        alert.addAction(UIAlertAction(title: "Cancel",
+        alert.addAction(UIAlertAction(title: NSLocalizedString("ITEMNAVIGATOR_MOREALERT_CANCELACTION", comment: ""),
                                       style: .cancel,
                                       handler: { _ in
             alert.dismiss(animated: true, completion: nil)
         }))
 
-        alert.addAction(UIAlertAction(title: "Mute @\(item.author.username ?? "User")",
+        alert.addAction(UIAlertAction(title:
+            String(format: NSLocalizedString("ITEMNAVIGATOR_MOREALERT_MUTEACTION", comment: ""),
+                   item.author.username ?? NSLocalizedString("ITEMNAVIGATOR_MOREALERT_MUTEACTION_FALLBACK", comment: "")),
                                       style: .destructive,
                                       handler: { [weak self] _ in
             guard let strongSelf = self else { return }
@@ -106,7 +110,7 @@ final class ItemNavigator {
             strongSelf.navigationController.pushViewController(blackListViewController, animated: true)
         }))
 
-        alert.addAction(UIAlertAction(title: "Community Guidelines",
+        alert.addAction(UIAlertAction(title: NSLocalizedString("ITEMNAVIGATOR_MOREALERT_GUIDELINEACTION", comment: ""),
                                       style: .default,
                                       handler: { [weak self] _ in
             self?.openCommunityGuidlines()

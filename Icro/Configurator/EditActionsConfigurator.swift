@@ -22,7 +22,9 @@ final class EditActionsConfigurator {
         let item = viewModel.item(for: indexPath.row)
         let cell = tableView.cellForRow(at: indexPath)
 
-        let conversationAction = UIContextualAction(style: .normal, title: "Chat") { [weak self] _, _, _ in
+        let conversationAction =
+            UIContextualAction(style: .normal,
+                               title: NSLocalizedString("EDITACTIONSCONFIGURATOR_CONVERSATIONACTION", comment: "")) { [weak self] _, _, _ in
             self?.itemNavigator.openConversation(item: item)
             tableView.setEditing(false, animated: true)
         }
@@ -32,7 +34,9 @@ final class EditActionsConfigurator {
                                                            textColor: .white,
                                                            size: CGSize(width: 30, height: 30))
 
-        let shareAction = UIContextualAction(style: .normal, title: "Share") { [weak self] _, _, _ in
+        let shareAction =
+            UIContextualAction(style: .normal,
+                               title: NSLocalizedString("EDITACTIONSCONFIGURATOR_SHAREACTION", comment: "")) { [weak self] _, _, _ in
             guard let item = self?.viewModel.item(for: indexPath.row) else { return }
             self?.itemNavigator.share(item: item, sourceView: cell!)
             tableView.setEditing(false, animated: true)
@@ -48,7 +52,9 @@ final class EditActionsConfigurator {
     func leadingEditActions(at indexPath: IndexPath, in tableView: UITableView) -> UISwipeActionsConfiguration? {
         let cell = tableView.cellForRow(at: indexPath)
         let item = viewModel.item(for: indexPath.row)
-        let replyAction = UIContextualAction(style: .normal, title: "Reply") { [weak self] _, _, _ in
+        let replyAction =
+            UIContextualAction(style: .normal,
+                               title: NSLocalizedString("EDITACTIONSCONFIGURATOR_LEADINGEDITACTIONS", comment: "")) { [weak self] _, _, _ in
             self?.itemNavigator.openReply(item: item)
             self?.didModifyIndexPath?(indexPath)
             tableView.setEditing(false, animated: true)
@@ -58,7 +64,9 @@ final class EditActionsConfigurator {
                                                     textColor: .white,
                                                     size: CGSize(width: 30, height: 30))
 
-        let moreAction = UIContextualAction(style: .normal, title: "More") { [weak self] _, _, _ in
+        let moreAction =
+            UIContextualAction(style: .normal,
+                               title: NSLocalizedString("EDITACTIONSCONFIGURATOR_MOREACTION", comment: "")) { [weak self] _, _, _ in
             tableView.setEditing(false, animated: true)
             self?.itemNavigator.openMore(item: item, sourceView: cell)
         }
@@ -68,7 +76,9 @@ final class EditActionsConfigurator {
                                                    textColor: .white,
                                                    size: CGSize(width: 30, height: 30))
 
-        let title = item.isFavorite ? "Unfavorite" : "Favorite"
+        let title = item.isFavorite ?
+            NSLocalizedString("EDITACTIONSCONFIGURATOR_FAVORITEACTION_UNFAVORITE", comment: "") :
+            NSLocalizedString("EDITACTIONSCONFIGURATOR_FAVORITEACTION_FAVORITE", comment: "")
         let favoriteAction = UIContextualAction(style: .normal, title: title) { [weak self] _, _, _ in
             tableView.setEditing(false, animated: true)
             self?.viewModel.toggleFave(for: item)

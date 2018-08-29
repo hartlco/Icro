@@ -116,9 +116,9 @@ final class LoginViewModel {
     var buttonString: String {
         switch loginType {
         case .mail:
-            return "Login with mail"
+            return NSLocalizedString("LOGINVIEWMODEL_LOGINTYPE_MAIL", comment: "")
         case .token:
-            return "Login with access token"
+            return NSLocalizedString("LOGINVIEWMODEL_LOGINTYPE_TOKEN", comment: "")
         }
     }
 

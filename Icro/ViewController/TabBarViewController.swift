@@ -58,7 +58,9 @@ class TabBarViewController: UITabBarController {
 				settingsButton.accessibilityLabel = "Settings"
 				viewController.navigationItem.leftBarButtonItem = settingsButton
             case .timeline:
-                let photosButton  = UIBarButtonItem(title: "Photos", style: .plain, target: self, action: #selector(showPhotosTimeline))
+                let photosButton  = UIBarButtonItem(title:
+                    NSLocalizedString("TABBARVIEWCONTROLLER_PHOTOSBUTTON_TITLE", comment: ""),
+                                                    style: .plain, target: self, action: #selector(showPhotosTimeline))
                 viewController.navigationItem.leftBarButtonItem = photosButton
             default:
                 break
@@ -124,15 +126,15 @@ private extension ListViewModel.ListType {
     var tabTitle: String? {
         switch self {
         case .timeline:
-            return "Timeline"
+            return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_TIMELINE", comment: "")
         case .mentions:
-            return "Mentions"
+            return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_MENTIONS", comment: "")
         case .favorites:
-            return "Favorites"
+            return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_FAVORITES", comment: "")
         case .discover:
-            return "Discover"
+            return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_DISCOVER", comment: "")
         case .user, .username:
-            return "Profile"
+            return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_PROFILE", comment: "")
         case .conversation, .photos:
             return nil
         }

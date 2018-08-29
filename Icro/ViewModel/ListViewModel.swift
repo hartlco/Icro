@@ -41,21 +41,21 @@ class ListViewModel: NSObject {
         var title: String {
             switch self {
             case .timeline:
-                return "Timeline"
+                return NSLocalizedString("LISTVIEWMODEL_RESOURCETITLE_TIMELINE", comment: "")
             case .photos:
-                return "Photos"
+                return NSLocalizedString("LISTVIEWMODEL_RESOURCETITLE_PHOTOS", comment: "")
             case .mentions:
-                return "Mentions"
+                return NSLocalizedString("LISTVIEWMODEL_RESOURCETITLE_MENTIONS", comment: "")
             case .favorites:
-                return "Favorites"
+                return NSLocalizedString("LISTVIEWMODEL_RESOURCETITLE_FAVORITES", comment: "")
             case .discover:
-                return "Discover"
+                return NSLocalizedString("LISTVIEWMODEL_RESOURCETITLE_DISCOVER", comment: "")
             case .user(let user):
                 return user.username ?? ""
             case .username(let username):
                 return username
             case .conversation:
-                return "Conversation"
+                return NSLocalizedString("LISTVIEWMODEL_RESOURCETITLE_CONVERSATION", comment: "")
             }
         }
     }
@@ -177,7 +177,9 @@ class ListViewModel: NSObject {
     }
 
     func faveButtonTitle(for item: Item) -> String {
-        return item.isFavorite ? "Unfave" : "Fave"
+        return item.isFavorite ?
+            NSLocalizedString("LISTVIEWMODEL_UNFAVEBUTTON_TITLE", comment: "") :
+            NSLocalizedString("LISTVIEWMODEL_FAVEBUTTON_TITLE", comment: "")
     }
 
     func toggleFave(for item: Item) {
