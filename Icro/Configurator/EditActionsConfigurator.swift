@@ -22,7 +22,7 @@ final class EditActionsConfigurator {
         let item = viewModel.item(for: indexPath.row)
         let cell = tableView.cellForRow(at: indexPath)
 
-        let conversationAction = UIContextualAction(style: .normal, title: "Conversation") { [weak self] _, _, _ in
+        let conversationAction = UIContextualAction(style: .normal, title: "Chat") { [weak self] _, _, _ in
             self?.itemNavigator.openConversation(item: item)
             tableView.setEditing(false, animated: true)
         }
@@ -66,7 +66,7 @@ final class EditActionsConfigurator {
                                                    textColor: .white,
                                                    size: CGSize(width: 30, height: 30))
 
-        let faveTitle = (item.isFavorite ? "Unfavorite" : "Favorite")
+        let faveTitle = (item.isFavorite ? "Unfave" : "Fave")
         let favoriteAction = UIContextualAction(style: .normal, title: faveTitle) { [weak self] _, _, _ in
             tableView.setEditing(false, animated: true)
             self?.viewModel.toggleFave(for: item)

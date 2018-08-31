@@ -57,6 +57,9 @@ class ListViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(textSizeChanged),
                                                name: NSNotification.Name.UIContentSizeCategoryDidChange,
                                                object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(axPresentLinks(_:)),
+        name: NSNotification.Name(rawValue: "axActions"),
+                                               object: nil)
 
         editActionsConfigurator.didModifyIndexPath = { [weak self] indexPath in
             self?.tableView.reloadData()
@@ -102,6 +105,31 @@ class ListViewController: UIViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         rowHeightEstimate = [:]
         super.viewWillTransition(to: size, with: coordinator)
+    }
+
+    @objc private func axPresentLinks(_ notification: NSNotification) {
+        if let linkList = notification.userInfo?["links"] as? [(text: String, url: URL)] {
+            let message = notification.userInfo?["message"] as? String
+
+            let linksActionSheet = UIAlertController(title: "Links", message: message, preferredStyle: UIAlertControllerStyle.actionSheet)
+
+            for (value) in linkList {
+                let linkAction = UIAlertAction(title: value.text, style: UIAlertActionStyle.default) { (action) in
+                    self.itemNavigator.open(url: value.url)
+                }
+                linksActionSheet.addAction(linkAction)
+            }
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) in
+            }
+            linksActionSheet.addAction(cancelAction)
+
+            // support iPad
+            linksActionSheet.popoverPresentationController?.sourceView = self.view
+            linksActionSheet.popoverPresentationController?.sourceRect = self.view.bounds
+
+            self.present(linksActionSheet, animated: true, completion: nil)
+        }
     }
 
     @objc private func textSizeChanged() {
