@@ -72,7 +72,7 @@ final class ItemCellConfigurator: NSObject {
     private func accessibilityCustomActions(for item: Item,
                                             cell: ItemTableViewCell,
                                             attributedContent: NSAttributedString?) -> [UIAccessibilityCustomAction]? {
-        var accessibilityActions = [UIAccessibilityCustomAction(name: "item.author.name , @\(item.author.name)",
+        var accessibilityActions = [UIAccessibilityCustomAction(name: "\(item.author.name), @\(item.author.username!)",
                                                      target: cell,
                                                      selector: #selector(ItemTableViewCell.accessibilityDidTapAvatar))]
         let linkList = HTMLContent.textLinks(for: attributedContent)

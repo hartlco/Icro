@@ -138,7 +138,7 @@ final class ItemNavigator {
             linksActionSheet.addAction(linkAction)
         }
 
-        let cancelAction = UIAlertAction(title: "ITEMNAVIGATOR_MOREALERT_CANCELACTION", style: UIAlertActionStyle.cancel) { _ in
+        let cancelAction = UIAlertAction(title: NSLocalizedString("ITEMNAVIGATOR_MOREALERT_CANCELACTION", comment: ""), style: UIAlertActionStyle.cancel) { _ in
         }
         linksActionSheet.addAction(cancelAction)
 
