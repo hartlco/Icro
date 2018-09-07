@@ -21,6 +21,10 @@ final class HTMLContent: Codable {
         return rawHTMLString.imagesLinks().compactMap(URL.init)
     }
 
+    func imageDescs() -> [String] {
+        return rawHTMLString.imagesDescs()
+    }
+
     func attributedStringWithoutImages() -> NSAttributedString? {
         return rawHTMLString.withoutImages().htmlToAttributedString(for: itemID)
     }
@@ -158,6 +162,14 @@ private extension String {
                 return nil
             }
             return $0["src"]
+        }
+    }
+
+    func imagesDescs() -> [String] {
+        guard let doc = try? HTML(html: self, encoding: .utf8) else { return [] }
+
+        return doc.xpath("//img | //alt").compactMap {
+            return $0["alt"]
         }
     }
 

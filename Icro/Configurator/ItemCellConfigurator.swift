@@ -55,17 +55,23 @@ final class ItemCellConfigurator: NSObject {
     }
 
     private func accessibilityLabel(for item: Item, attributedContent: NSAttributedString?) -> String {
-        var accessibilityLabel = item.author.name + ": " + item.content.string + ", " + item.relativeDateString
-        let linkList = HTMLContent.textLinks(for: attributedContent)
+        var accessibilityLabel = "\(item.author.name): \(item.content.string)"
 
+        for desc in item.htmlContent.imageDescs() {
+            accessibilityLabel += ", image: \(desc)"
+        }
+
+        let linkList = HTMLContent.textLinks(for: attributedContent)
         if !linkList.isEmpty {
             accessibilityLabel += ", \(linkList.count)"
             accessibilityLabel += (linkList.count > 1) ? "links" : "link"
         }
+
         if item.isFavorite {
             accessibilityLabel += ", favorited"
         }
 
+        accessibilityLabel += ", , \(item.relativeDateString)"
         return accessibilityLabel
     }
 
