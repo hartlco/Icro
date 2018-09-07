@@ -47,19 +47,27 @@ final class ComposeViewController: UIViewController {
         self.viewModel = viewModel
         self.composeNavigator = composeNavigator
         super.init(nibName: "ComposeViewController", bundle: nil)
-        title = "Compose"
-        cancelButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(cancel))
+        title = NSLocalizedString("COMPOSEVIEWCONTROLLER_TITLE", comment: "")
+        cancelButton = UIBarButtonItem(title: NSLocalizedString("COMPOSEVIEWCONTROLLER_CANCELBUTTON_TITLE", comment: ""),
+                                       style: .plain, target: self, action: #selector(cancel))
         keyboardInputView.postButton.addTarget(self, action: #selector(post), for: .touchUpInside)
         keyboardInputView.linkButton.addTarget(self, action: #selector(insertLink), for: .touchUpInside)
         keyboardInputView.imageButton.addTarget(self, action: #selector(insertImage), for: .touchUpInside)
         keyboardInputView.cancelButton.addTarget(self, action: #selector(canelImageUpload), for: .touchUpInside)
 
         viewModel.didUpdateImages = { [weak self] in
-            self?.updateImageCollection()
+            guard let strongSelf = self else { return }
+            strongSelf.updateImageCollection()
+            strongSelf.keyboardInputView.update(for: strongSelf.textView.text,
+                                                numberOfImages: strongSelf.viewModel.numberOfImages,
+                                                imageState: strongSelf.viewModel.imageState)
         }
 
         viewModel.didChangeImageState = { [weak self] imageState in
-            self?.keyboardInputView.update(for: imageState)
+            guard let strongSelf = self else { return }
+            strongSelf.keyboardInputView.update(for: strongSelf.textView.text,
+                                                numberOfImages: strongSelf.viewModel.numberOfImages,
+                                                imageState: strongSelf.viewModel.imageState)
         }
 
         navigationItem.leftBarButtonItem = cancelButton
@@ -92,7 +100,9 @@ final class ComposeViewController: UIViewController {
     // MARK: - Private
 
     private func setupKeyboardInputView() {
-        keyboardInputView.text = viewModel.startText
+        keyboardInputView.update(for: viewModel.startText,
+                                 numberOfImages: viewModel.numberOfImages,
+                                 imageState: viewModel.imageState)
         keyboardInputView.translatesAutoresizingMaskIntoConstraints = false
         keyboardInputView.addConstraint(NSLayoutConstraint(item: keyboardInputView,
                                                            attribute: .height,
@@ -173,7 +183,7 @@ extension ComposeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.replyItem == nil ? nil : "Reply to"
+        return viewModel.replyItem == nil ? nil : NSLocalizedString("COMPOSEVIEWCONTROLLER_TABLEVIEW_HEADER_TITLE", comment: "")
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -195,7 +205,7 @@ extension ComposeViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ComposeViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        keyboardInputView.text = textView.text
+        keyboardInputView.update(for: textView.text, numberOfImages: viewModel.numberOfImages, imageState: viewModel.imageState)
     }
 }
 

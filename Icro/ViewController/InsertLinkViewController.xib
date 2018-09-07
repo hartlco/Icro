@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsertLinkViewController" customModule="Icro" customModuleProvider="target">
             <connections>
+                <outlet property="insertButton" destination="kZR-2l-wSg" id="44H-Q9-WFY"/>
                 <outlet property="linkTextField" destination="jwv-9S-GyP" id="cKN-cA-f4t"/>
                 <outlet property="titleTextField" destination="1Qf-QC-PBZ" id="3Ab-aC-rJY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

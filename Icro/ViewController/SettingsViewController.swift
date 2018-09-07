@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var outterStackView: UIStackView!
     @IBOutlet private weak var blogSetupView: UIView!
     @IBOutlet private weak var blogSetupSwitch: UISwitch!
+    @IBOutlet private weak var blogSetupSwitchLabel: UILabel!
     @IBOutlet fileprivate weak var blogUrlTextField: UITextField! {
         didSet {
             blogUrlTextField.delegate = self
@@ -41,6 +42,20 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet private weak var micropubSetupSwitch: UISwitch!
     @IBOutlet private weak var micropubSetupView: UIView!
+    @IBOutlet private weak var micropubSetupSwitchLabel: UILabel!
+    @IBOutlet private weak var blogSetupLabel: UILabel!
+    @IBOutlet private weak var blogSetupInfoLabel: UILabel!
+    @IBOutlet private weak var micropubSetupLabel: UILabel!
+    @IBOutlet private weak var micropubSetupInfoLabel: UILabel!
+    @IBOutlet private weak var accountLabel: UILabel!
+    @IBOutlet private weak var logoutButton: FakeTableCellButton!
+    @IBOutlet private weak var contentLabel: UILabel!
+    @IBOutlet private weak var blacklistButton: FakeTableCellButton!
+    @IBOutlet private weak var guidlinesButton: FakeTableCellButton!
+    @IBOutlet private weak var otherLabel: UILabel!
+    @IBOutlet private weak var hartlcoOnMicroBlogButton: FakeTableCellButton!
+    @IBOutlet private weak var supportButton: FakeTableCellButton!
+    @IBOutlet private weak var acknowledgmentsButton: FakeTableCellButton!
 
     init(navigator: SettingsNavigator,
          itemNavigator: ItemNavigator,
@@ -49,13 +64,40 @@ class SettingsViewController: UIViewController {
         self.viewModel = viewModel
         self.itemNavigator = itemNavigator
         super.init(nibName: String(describing: SettingsViewController.self), bundle: nil)
-        self.cancelButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(cancel))
+        self.cancelButton = UIBarButtonItem(title:
+            NSLocalizedString("SETTINGSVIEWCONTROLLER_CANCELBUTTON_TITLE", comment: ""),
+                                            style: .plain, target: self, action: #selector(cancel))
         navigationItem.leftBarButtonItem = cancelButton
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Settings"
+        title = NSLocalizedString("SETTINGSVIEWCONTROLLER_TITLE", comment: "")
+
+        blogSetupLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGSETUP_TITLE", comment: "")
+        blogSetupSwitchLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGSETUPSWITCH_TEXT", comment: "")
+        blogUrlTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGURLFIELD_PLACEHOLDER", comment: "")
+        usernameTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGUSERNAMEFIELD_PLACEHOLDER", comment: "")
+        passwordTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGPASSWORDFIELD_PLACEHOLDER", comment: "")
+        blogSetupInfoLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGINFO_TEXT", comment: "")
+
+        micropubSetupLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBSETUP_TITLE", comment: "")
+        micropubSetupSwitchLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBSETUPSWITCH_TEXT", comment: "")
+        micropubUrlTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBURLFIELD_PLACEHOLDER", comment: "")
+        micropubTokenTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBTOKENFIELD_PLACEHOLDER", comment: "")
+        micropubSetupInfoLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBINFO_TEXT", comment: "")
+
+        accountLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_ACCOUNT_TITLE", comment: "")
+        logoutButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_LOGOUTBUTTON_TITLE", comment: ""), for: .normal)
+
+        contentLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_CONTENT_TITLE", comment: "")
+        blacklistButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_BLACKLISTBUTTON_TITLE", comment: ""), for: .normal)
+        guidlinesButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_GUIDLINESBUTTON_TITLE", comment: ""), for: .normal)
+
+        otherLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_OTHER_TITLE", comment: "")
+        hartlcoOnMicroBlogButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_HARTLBUTTON_TITLE", comment: ""), for: .normal)
+        supportButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_SUPPORTBUTTON_TITLE", comment: ""), for: .normal)
+        acknowledgmentsButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_ACKNOWLEDGMENTSBUTTON_TITLE", comment: ""), for: .normal)
         updateState(animated: false)
     }
 

@@ -11,8 +11,8 @@ enum ImageState {
     case uploading(progress: Float)
 }
 
-class KeyboardInputView: UIView {
-    var text: String? {
+final class KeyboardInputView: UIView {
+    private var text: String? {
         didSet {
             guard let text = text, text.count > 0 else {
                 characterCountLabel.text = ""
@@ -40,15 +40,20 @@ class KeyboardInputView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         text = nil
-        update(for: .idle)
+        linkButton.setTitle(NSLocalizedString("KEYBOARDINPUTVIEW_LINKBUTTON_TTILE", comment: ""), for: .normal)
+        imageButton.setTitle(NSLocalizedString("KEYBOARDINPUTVIEW_IMAGEBUTTON_TITLE", comment: ""), for: .normal)
+        postButton.setTitle(NSLocalizedString("KEYBOARDINPUTVIEW_POSTBUTTON_TITLE", comment: ""), for: .normal)
+        update(for: "", numberOfImages: 0, imageState: .idle)
     }
 
-    func update(for imageState: ImageState) {
+    func update(for text: String, numberOfImages: Int, imageState: ImageState) {
+        self.text = text
+
         switch imageState {
         case .idle:
             cancelButton.isHidden = true
             progressView.isHidden = true
-            postButton.isEnabled = true
+            postButton.isEnabled = text.count > 0 || numberOfImages > 0
             imageButton.isEnabled = true
         case .uploading(let progress):
             postButton.isEnabled = false

@@ -36,22 +36,28 @@ class BlacklistViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addWord))
-        title = "Mute"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title:
+            NSLocalizedString("BLACKLISTVIEWCONTROLLER_ADDBUTTON_TITLE", comment: ""),
+                                                                 style: .plain, target: self, action: #selector(addWord))
+        title = NSLocalizedString("BLACKLISTVIEWCONTROLLER_TITLE", comment: "")
     }
 
     @objc private func addWord() {
-        let alertController = UIAlertController(title: "Blacklist",
-                                                message: "Add words or usernames to the blacklist",
+        let alertController = UIAlertController(title: NSLocalizedString("BLACKLISTVIEWCONTROLLER_ADDALERT_TITLE", comment: ""),
+                                                message: NSLocalizedString("BLACKLISTVIEWCONTROLLER_ADDALERT_MESSAGE", comment: ""),
                                                 preferredStyle: .alert)
         alertController.addTextField(configurationHandler: {(_ textField: UITextField) -> Void in
-            textField.placeholder = "Mute word"
+            textField.placeholder = NSLocalizedString("BLACKLISTVIEWCONTROLLER_ADDALERT_PLACEHOLDER", comment: "")
         })
-        let confirmAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] (_ action: UIAlertAction) -> Void in
+        let confirmAction = UIAlertAction(title:
+            NSLocalizedString("BLACKLISTVIEWCONTROLLER_ADDALERT_CONFIRMACTION", comment: ""),
+                                          style: .default, handler: { [weak self] (_ action: UIAlertAction) -> Void in
             self?.viewModel.add(word: alertController.textFields?[0].text)
         })
         alertController.addAction(confirmAction)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(_ action: UIAlertAction) -> Void in
+        let cancelAction = UIAlertAction(title:
+            NSLocalizedString("BLACKLISTVIEWCONTROLLER_ADDALERT_CANCELACTION", comment: ""),
+                                         style: .cancel, handler: {(_ action: UIAlertAction) -> Void in
             print("Canelled")
         })
         alertController.addAction(cancelAction)
@@ -80,7 +86,7 @@ extension BlacklistViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let button = UIButton(type: .system)
-        button.setTitle("Community guidelines / Report", for: .normal)
+        button.setTitle(NSLocalizedString("BLACKLISTVIEWCONTROLLER_GUIDELINEBUTTON_TITLE", comment: ""), for: .normal)
         button.addTarget(self, action: #selector(report), for: .touchUpInside)
         return button
     }

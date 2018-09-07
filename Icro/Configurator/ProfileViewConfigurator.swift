@@ -55,12 +55,15 @@ final class ProfileViewConfigurator: NSObject {
         view.followButton.isHidden = author.isYou
 
         if let follows = author.isFollowing {
-            view.followButton.setTitle(follows ? "Unfollow" : "Follow", for: .normal)
+            view.followButton.setTitle(follows ? NSLocalizedString("PROFILEVIEWCONFIGURATOR_UNFOLLOWBUTTON_TITLE", comment: "") :
+                NSLocalizedString("PROFILEVIEWCONFIGURATOR_FOLLOWBUTTON_TITLE", comment: ""),
+                                       for: .normal)
         } else {
             view.followButton.setTitle("", for: .normal)
         }
 
-        view.followingButton.setTitle("Following \(followingCount)", for: .normal)
+        view.followingButton.setTitle(
+            String(format: NSLocalizedString("PROFILEVIEWCONFIGURATOR_FOLLOWINGBUTTON_TITLE", comment: ""), followingCount), for: .normal)
     }
 
     private func emptyConfig(for cell: ProfileTableViewCell) {
