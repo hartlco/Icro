@@ -128,6 +128,27 @@ final class ItemNavigator {
         itemNavigator.open(url: url)
     }
 
+    func accessibilityPresentLinks(linkList: [(text: String, url: URL)], message: String, sourceView: UIView) {
+        let linksActionSheet = UIAlertController(title: "Links", message: message, preferredStyle: UIAlertControllerStyle.actionSheet)
+
+        for value in linkList {
+            let linkAction = UIAlertAction(title: value.text, style: UIAlertActionStyle.default) { [weak self] _ in
+                self?.open(url: value.url)
+            }
+            linksActionSheet.addAction(linkAction)
+        }
+
+        let cancelAction = UIAlertAction(title: "ITEMNAVIGATOR_MOREALERT_CANCELACTION", style: UIAlertActionStyle.cancel) { _ in
+        }
+        linksActionSheet.addAction(cancelAction)
+
+        // support iPad
+        linksActionSheet.popoverPresentationController?.sourceView = sourceView
+        linksActionSheet.popoverPresentationController?.sourceRect = sourceView.bounds
+
+        navigationController.present(linksActionSheet, animated: true, completion: nil)
+    }
+
     // MARK: - Private
 
     func username(from url: URL) -> String? {

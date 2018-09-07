@@ -25,6 +25,20 @@ final class HTMLContent: Codable {
         return rawHTMLString.withoutImages().htmlToAttributedString(for: itemID)
     }
 
+    static func textLinks(for attributedString: NSAttributedString?) -> [(text: String, url: URL)] {
+        guard let text = attributedString else {
+            return []
+        }
+        var links = [(text: String, url: URL)]()
+        text.enumerateAttribute(NSAttributedStringKey(rawValue: "IcroLinkAttribute"), in: NSRange(0..<text.length)) { value, range, _ in
+            let linkText = text.attributedSubstring(from: range)
+            if let linkUrl = value as? URL {
+                links.append((text: linkText.string, url: linkUrl))
+            }
+        }
+        return links
+    }
+
     private func attirbutedString() -> NSAttributedString? {
         return rawHTMLString.htmlToAttributedString(for: itemID)
     }

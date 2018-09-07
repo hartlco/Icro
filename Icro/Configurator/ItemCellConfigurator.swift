@@ -28,7 +28,8 @@ final class ItemCellConfigurator: NSObject {
         cell.avatarImageView.sd_setImage(with: item.author.avatar)
         cell.usernameLabel.text = item.author.name
         cell.isFavorite = item.isFavorite
-        cell.attributedLabel.set(attributedText: item.content)
+        let attributedString = item.content
+        cell.attributedLabel.set(attributedText: attributedString)
         cell.attributedLabel.didTapLink = { [weak self] link in
             self?.itemNavigator.open(url: link)
         }
@@ -43,6 +44,45 @@ final class ItemCellConfigurator: NSObject {
         cell.didTapImages = { [weak self] images, index in
             self?.itemNavigator.openImages(datasource: cell, at: index)
         }
+
+        cell.didSelectAccessibilityLink = { [weak self] in
+            let linkList = HTMLContent.textLinks(for: attributedString)
+            self?.itemNavigator.accessibilityPresentLinks(linkList: linkList, message: attributedString.string, sourceView: cell)
+        }
+
+        cell.accessibilityLabel = accessibilityLabel(for: item, attributedContent: attributedString)
+        cell.accessibilityCustomActions = accessibilityCustomActions(for: item, cell: cell, attributedContent: attributedString)
+    }
+
+    private func accessibilityLabel(for item: Item, attributedContent: NSAttributedString?) -> String {
+        var accessibilityLabel = item.author.name + ": " + item.content.string + ", " + item.relativeDateString
+        let linkList = HTMLContent.textLinks(for: attributedContent)
+
+        if !linkList.isEmpty {
+            accessibilityLabel += ", \(linkList.count)"
+            accessibilityLabel += (linkList.count > 1) ? "links" : "link"
+        }
+        if item.isFavorite {
+            accessibilityLabel += ", favorited"
+        }
+
+        return accessibilityLabel
+    }
+
+    private func accessibilityCustomActions(for item: Item,
+                                            cell: ItemTableViewCell,
+                                            attributedContent: NSAttributedString?) -> [UIAccessibilityCustomAction]? {
+        var accessibilityActions = [UIAccessibilityCustomAction(name: "item.author.name , @\(item.author.name)",
+                                                     target: cell,
+                                                     selector: #selector(ItemTableViewCell.accessibilityDidTapAvatar))]
+        let linkList = HTMLContent.textLinks(for: attributedContent)
+        if !linkList.isEmpty {
+            let accessibilityLinksActionTitle = "Links (\(linkList.count))"
+            accessibilityActions.append(UIAccessibilityCustomAction(name: accessibilityLinksActionTitle,
+                                                         target: cell,
+                                                         selector: #selector(ItemTableViewCell.accessibilitySelectLink)))
+        }
+        return accessibilityActions
     }
 }
 

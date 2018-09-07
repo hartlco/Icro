@@ -72,8 +72,10 @@ final class EditActionsConfigurator {
                                                     textColor: .white,
                                                     size: CGSize(width: 30, height: 30))
 
-        let moreAction = UIContextualAction(style: .normal, title: "More") { [weak self] _, _, _ in
-
+        let moreAction =
+            UIContextualAction(style: .normal,
+                               title: NSLocalizedString("EDITACTIONSCONFIGURATOR_MOREACTION",
+                                                        comment: "")) { [weak self] _, _, _ in
             tableView.setEditing(false, animated: true)
             self?.itemNavigator.openMore(item: item, sourceView: cell)
         }
