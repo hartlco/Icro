@@ -88,7 +88,15 @@ final class ComposeViewModel {
 
     func upload(image: UIImage) {
         imageState = .uploading(progress: 0.0)
-        imageUploadService.uploadImages(image: image, uploadProgress: { [weak self] progress in
+
+        let endpoint: MicropubRequestController.Endpoint
+        if let info = userSettings.micropubInfo {
+            endpoint = .custom(info: info)
+        } else {
+            endpoint = .micropub
+        }
+
+        imageUploadService.uploadImages(endpoint: endpoint, image: image, uploadProgress: { [weak self] progress in
             self?.imageState = .uploading(progress: progress)
             }, completion: { [weak self] image, _ in
             self?.imageState = .idle

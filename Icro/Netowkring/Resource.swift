@@ -22,7 +22,7 @@ let followURLString = "https://micro.blog/users/follow?username="
 let unfollowURLString = "https://micro.blog/users/unfollow?username="
 let followingURLString = "http://micro.blog/users/following/"
 
-let microblogMedia = "https://micro.blog/micropub?q=config"
+let microblogMedia = "?q=config"
 
 struct Resource<A> {
     let url: URL
@@ -264,8 +264,10 @@ extension Author {
 }
 
 extension MediaEndpoint {
-    static func get() -> Resource<MediaEndpoint> {
-        guard let url = URL(string: microblogMedia) else {
+    static func get(endpoint: MicropubRequestController.Endpoint) -> Resource<MediaEndpoint> {
+        let urlString = endpoint.urlString + microblogMedia
+
+        guard let url = URL(string: urlString) else {
             fatalError()
         }
 

@@ -73,7 +73,8 @@ class MicropubRequestController {
         currentlyRunningTask?.cancel()
     }
 
-    func uploadImages(image: UIImage,
+    func uploadImages(endpoint: Endpoint,
+                      image: UIImage,
                       uploadProgress: @escaping (Float) -> Void,
                       completion: @escaping (ComposeViewModel.Image?, Error?) -> Void) {
 
@@ -81,7 +82,7 @@ class MicropubRequestController {
             "Authorization": "Bearer \(UserSettings.shared.token)"
         ]
 
-        Webservice().load(resource: MediaEndpoint.get(), bearer: true) { endpoint in
+        Webservice().load(resource: MediaEndpoint.get(endpoint: endpoint), bearer: true) { endpoint in
             let endpointValue = endpoint.value?.mediaEndpoint
 
             guard let url = endpointValue else { return }
