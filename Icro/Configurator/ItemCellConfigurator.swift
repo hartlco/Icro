@@ -27,6 +27,7 @@ final class ItemCellConfigurator: NSObject {
         cell.itemID = item.id
         cell.avatarImageView.sd_setImage(with: item.author.avatar)
         cell.usernameLabel.text = item.author.name
+        cell.isFavorite = item.isFavorite
         cell.attributedLabel.set(attributedText: item.content)
         cell.attributedLabel.didTapLink = { [weak self] link in
             self?.itemNavigator.open(url: link)

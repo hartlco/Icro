@@ -13,6 +13,7 @@ extension Notification.Name {
 
 class ItemTableViewCell: UITableViewCell {
     static let identifer = "ItemTableViewCell"
+    var isFavorite: Bool = false
 
     @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var avatarImageView: UIImageView! {
@@ -71,6 +72,7 @@ class ItemTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         avatarImageView.image = nil
+        isFavorite = false
     }
 
     override func awakeFromNib() {
@@ -86,6 +88,55 @@ class ItemTableViewCell: UITableViewCell {
 
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+
+    // Accessibility
+
+    override var accessibilityLabel: String? {
+        get {
+            var axLabel = self.usernameLabel.text! + ": " + self.attributedLabel.text! + ", " + self.timeLabel.text!
+            if linkList.count > 0 {
+                axLabel += ", \(linkList.count)"
+                axLabel += (linkList.count > 1) ? "links" : "link"
+            }
+            if self.isFavorite { axLabel += ", favorited" }
+            return (axLabel)
+        }
+        set {}
+    }
+
+    override var accessibilityCustomActions: [UIAccessibilityCustomAction]? {
+    get {
+    var axActions = [UIAccessibilityCustomAction(name: (self.usernameLabel.text! + ", " + self.atUsernameLabel.text!),
+    target: self,
+    selector: #selector(didTapAvatarGestureRecognizer))]
+        if (linkList.count > 0) {
+            let axLinksActionTitle = "Links (\(linkList.count))"
+            axActions.append(UIAccessibilityCustomAction(name: axLinksActionTitle,
+                                                 target: self,
+                                                 selector: #selector(axSelectLink)))
+        }
+            return (axActions)
+    }
+        set {}
+    }
+
+    @objc func axSelectLink () {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "axActions"), object: nil, userInfo: ["links" : self.linkList, "message" : self.attributedLabel.text])
+    }
+
+    var linkList: [(text: String, url: URL)] {
+    get {
+        var links = [(text: String, url: URL)]()
+        let text = attributedLabel.attributedText!
+        text.enumerateAttribute(NSAttributedStringKey(rawValue: "IcroLinkAttribute"), in: NSRange(0..<text.length)) { value, range, stop in
+            let linkText = text.attributedSubstring(from: range)
+            if let linkUrl = value as? URL {
+                links.append((text: linkText.string, url: linkUrl))
+            }
+        }
+        return links
+    }
     }
 
     // MARK: - Private

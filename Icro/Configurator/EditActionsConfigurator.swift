@@ -37,7 +37,6 @@ final class EditActionsConfigurator {
             self?.itemNavigator.openConversation(item: item)
             tableView.setEditing(false, animated: true)
         }
-
         conversationAction.backgroundColor = Color.main
         conversationAction.image = UIImage.fontAwesomeIcon(name: .comments,
                                                            textColor: .white,
@@ -73,13 +72,11 @@ final class EditActionsConfigurator {
                                                     textColor: .white,
                                                     size: CGSize(width: 30, height: 30))
 
-        let moreAction =
-            UIContextualAction(style: .normal,
-                               title: NSLocalizedString("EDITACTIONSCONFIGURATOR_MOREACTION", comment: "")) { [weak self] _, _, _ in
+        let moreAction = UIContextualAction(style: .normal, title: "More") { [weak self] _, _, _ in
+
             tableView.setEditing(false, animated: true)
             self?.itemNavigator.openMore(item: item, sourceView: cell)
         }
-
         moreAction.backgroundColor = Color.separatorColor
         moreAction.image = UIImage.fontAwesomeIcon(name: .ellipsisH,
                                                    textColor: .white,
@@ -92,7 +89,6 @@ final class EditActionsConfigurator {
             tableView.setEditing(false, animated: true)
             self?.viewModel.toggleFave(for: item)
         }
-
         favoriteAction.backgroundColor = Color.yellow
 
         // swiftlint:disable line_length
