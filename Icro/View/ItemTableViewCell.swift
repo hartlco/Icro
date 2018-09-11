@@ -95,6 +95,10 @@ class ItemTableViewCell: UITableViewCell {
         didTapAvatar?()
     }
 
+    @objc func accessibilityDidTapImages() {
+        didTapImages?(imageURLs, 0)
+    }
+
     @objc func accessibilitySelectLink() {
         didSelectAccessibilityLink?()
     }

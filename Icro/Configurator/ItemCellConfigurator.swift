@@ -61,6 +61,12 @@ final class ItemCellConfigurator: NSObject {
             accessibilityLabel += ", image: \(desc)"
         }
 
+        let imageList = item.htmlContent.imageLinks()
+        if !imageList.isEmpty {
+            accessibilityLabel += ", \(imageList.count)"
+            accessibilityLabel += (imageList.count > 1) ? "images" : "image"
+        }
+
         let linkList = HTMLContent.textLinks(for: attributedContent)
         if !linkList.isEmpty {
             accessibilityLabel += ", \(linkList.count)"
@@ -81,6 +87,13 @@ final class ItemCellConfigurator: NSObject {
         var accessibilityActions = [UIAccessibilityCustomAction(name: "\(item.author.name), @\(item.author.username!)",
                                                      target: cell,
                                                      selector: #selector(ItemTableViewCell.accessibilityDidTapAvatar))]
+        let imageList = item.htmlContent.imageLinks()
+        if !imageList.isEmpty {
+            let accessibilityImagesActionTitle = "Images (\(imageList.count))"
+            accessibilityActions.append(UIAccessibilityCustomAction(name: accessibilityImagesActionTitle,
+                                                                    target: cell,
+                                                                    selector: #selector(ItemTableViewCell.accessibilityDidTapImages)))
+        }
         let linkList = HTMLContent.textLinks(for: attributedContent)
         if !linkList.isEmpty {
             let accessibilityLinksActionTitle = "Links (\(linkList.count))"
