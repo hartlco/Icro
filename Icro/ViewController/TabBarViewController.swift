@@ -43,14 +43,14 @@ class TabBarViewController: UITabBarController {
 
             navigationController.tabBarItem = UITabBarItem(title: type.tabTitle, image: type.image, selectedImage: nil)
 
-            let image = UIImage.fontAwesomeIcon(name: .edit, textColor: .white, size: CGSize(width: 30, height: 26))
+            let image = UIImage(named: "new")
             let newPostIcon = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(showComposeViewController))
 			newPostIcon.accessibilityLabel = "Compose"
             viewController.navigationItem.rightBarButtonItem = newPostIcon
 
             switch type {
             case .username:
-                let settingsImage = UIImage.fontAwesomeIcon(name: .cog, textColor: .white, size: CGSize(width: 30, height: 26))
+                let settingsImage = UIImage(named: "settings")
                 let settingsButton = UIBarButtonItem(image: settingsImage,
                                                      style: .plain,
                                                      target: self,
@@ -109,15 +109,15 @@ private extension ListViewModel.ListType {
     var image: UIImage? {
         switch self {
         case .timeline:
-            return UIImage.fontAwesomeIcon(name: .alignJustify, textColor: .black, size: CGSize(width: 30, height: 20))
+            return UIImage(named: "timeline")
         case .mentions:
-            return UIImage.fontAwesomeIcon(name: .at, textColor: .black, size: CGSize(width: 30, height: 30))
+            return UIImage(named: "mentions")
         case .favorites:
-            return UIImage.fontAwesomeIcon(name: .star, textColor: .black, size: CGSize(width: 30, height: 30))
+            return UIImage(named: "favorites")
         case .discover:
-            return UIImage.fontAwesomeIcon(name: .globe, textColor: .black, size: CGSize(width: 30, height: 30))
+            return UIImage(named: "discover")
         case .user, .username:
-            return UIImage.fontAwesomeIcon(name: .user, textColor: .black, size: CGSize(width: 30, height: 30))
+            return UIImage(named: "profile")
         case .conversation, .photos:
             return nil
         }
