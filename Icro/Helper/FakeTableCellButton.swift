@@ -14,7 +14,7 @@ class FakeTableCellButton: UIButton {
 
     private func generalInit() {
         NotificationCenter.default.addObserver(self, selector: #selector(textSizeChanged),
-                                               name: NSNotification.Name.UIContentSizeCategoryDidChange,
+                                               name: UIContentSizeCategory.didChangeNotification,
                                                object: nil)
     }
 

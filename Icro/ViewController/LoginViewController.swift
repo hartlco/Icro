@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
 
         updateState()
 
-        textField.addTarget(self, action: #selector(textFieldChanged), for: UIControlEvents.editingChanged)
+        textField.addTarget(self, action: #selector(textFieldChanged), for: UIControl.Event.editingChanged)
 
         viewModel.updateState = { [weak self] in
             self?.updateState()

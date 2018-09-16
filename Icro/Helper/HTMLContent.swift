@@ -34,7 +34,7 @@ final class HTMLContent: Codable {
             return []
         }
         var links = [(text: String, url: URL)]()
-        text.enumerateAttribute(NSAttributedStringKey(rawValue: "IcroLinkAttribute"), in: NSRange(0..<text.length)) { value, range, _ in
+        text.enumerateAttribute(NSAttributedString.Key(rawValue: "IcroLinkAttribute"), in: NSRange(0..<text.length)) { value, range, _ in
             let linkText = text.attributedSubstring(from: range)
             if let linkUrl = value as? URL {
                 links.append((text: linkText.string, url: linkUrl))
@@ -68,8 +68,8 @@ private extension String {
             links.forEach({ _, value in
                 mutableAttributedString.save_addAttributes(
                     [
-                        NSAttributedStringKey.foregroundColor: Color.main,
-                        NSAttributedStringKey(rawValue: "IcroLinkAttribute"): value
+                        .foregroundColor: Color.main,
+                        NSAttributedString.Key(rawValue: "IcroLinkAttribute"): value
                     ], range: rane)
                 return
             })
@@ -78,7 +78,7 @@ private extension String {
                 if let image = value as? DTImageTextAttachment,
                     let textAttachment = textAttachment(for: image, itemID: itemID) {
                     mutableAttributedString.save_addAttributes([
-                        NSAttributedStringKey.attachment: textAttachment
+                        .attachment: textAttachment
                         ], range: rane)
                 }
 
@@ -129,7 +129,7 @@ private extension String {
 }
 
 private extension NSMutableAttributedString {
-    func save_addAttributes(_ attributes: [NSAttributedStringKey: Any], range: NSRange) {
+    func save_addAttributes(_ attributes: [NSAttributedString.Key: Any], range: NSRange) {
         guard range.location + range.length <= self.length else { return }
         addAttributes(attributes, range: range)
     }

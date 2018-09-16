@@ -157,7 +157,7 @@ class LinkLabel: UILabel {
             guard let strongSelf = self else { return }
 
             let links = attributes.filter({ key, _ in
-                return key == NSAttributedStringKey(rawValue: "IcroLinkAttribute")
+                return key == NSAttributedString.Key(rawValue: "IcroLinkAttribute")
             })
 
             links.forEach({ _, value in

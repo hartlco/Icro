@@ -95,7 +95,7 @@ extension BlacklistViewController: UITableViewDelegate, UITableViewDataSource {
         return 40
     }
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
             viewModel.remove(at: indexPath)

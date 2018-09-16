@@ -162,10 +162,10 @@ extension String {
 
 extension UIImage {
     var jpeg: Data? {
-        return UIImageJPEGRepresentation(self, 1)   // QUALITY min = 0 / max = 1
+        return self.jpegData(compressionQuality: 1)   // QUALITY min = 0 / max = 1
     }
     var png: Data? {
-        return UIImagePNGRepresentation(self)
+        return self.pngData()
     }
 }
 

@@ -129,17 +129,17 @@ final class ItemNavigator {
     }
 
     func accessibilityPresentLinks(linkList: [(text: String, url: URL)], message: String, sourceView: UIView) {
-        let linksActionSheet = UIAlertController(title: "Links", message: message, preferredStyle: UIAlertControllerStyle.actionSheet)
+        let linksActionSheet = UIAlertController(title: "Links", message: message, preferredStyle: .actionSheet)
 
         for value in linkList {
-            let linkAction = UIAlertAction(title: value.text, style: UIAlertActionStyle.default) { [weak self] _ in
+            let linkAction = UIAlertAction(title: value.text, style: .default) { [weak self] _ in
                 self?.open(url: value.url)
             }
             linksActionSheet.addAction(linkAction)
         }
 
         let cancelAction = UIAlertAction(title: NSLocalizedString("ITEMNAVIGATOR_MOREALERT_CANCELACTION", comment: ""),
-                                         style: UIAlertActionStyle.cancel) { _ in
+                                         style: .cancel) { _ in
         }
         linksActionSheet.addAction(cancelAction)
 

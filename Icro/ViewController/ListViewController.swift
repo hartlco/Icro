@@ -15,8 +15,8 @@ class ListViewController: UIViewController {
                                forCellReuseIdentifier: ItemTableViewCell.identifer)
             tableView.register(UINib(nibName: ProfileTableViewCell.identifier, bundle: nil),
                                forCellReuseIdentifier: ProfileTableViewCell.identifier)
-            tableView.estimatedRowHeight = UITableViewAutomaticDimension
-            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.estimatedRowHeight = UITableView.automaticDimension
+            tableView.rowHeight = UITableView.automaticDimension
         }
     }
 
@@ -55,7 +55,7 @@ class ListViewController: UIViewController {
         updateUnread()
 
         NotificationCenter.default.addObserver(self, selector: #selector(textSizeChanged),
-                                               name: NSNotification.Name.UIContentSizeCategoryDidChange,
+                                               name: UIContentSizeCategory.didChangeNotification,
                                                object: nil)
 
         editActionsConfigurator.didModifyIndexPath = { [weak self] indexPath in
@@ -162,20 +162,20 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, UITabl
 
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         if case .author(_) = viewModel.viewType(for: indexPath.section, row: indexPath.row) {
-            return UITableViewAutomaticDimension
+            return UITableView.automaticDimension
         }
 
         let item = viewModel.item(for: indexPath.row)
-        return rowHeightEstimate[item.id] ?? UITableViewAutomaticDimension
+        return rowHeightEstimate[item.id] ?? UITableView.automaticDimension
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if case .author(_) = viewModel.viewType(for: indexPath.section, row: indexPath.row) {
-            return UITableViewAutomaticDimension
+            return UITableView.automaticDimension
         }
 
         let item = viewModel.item(for: indexPath.row)
-        return rowHeightEstimate[item.id] ?? UITableViewAutomaticDimension
+        return rowHeightEstimate[item.id] ?? UITableView.automaticDimension
     }
 
     private func authorCell(for author: Author, in tableView: UITableView) -> ProfileTableViewCell {
