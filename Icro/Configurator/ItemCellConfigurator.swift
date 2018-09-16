@@ -55,26 +55,47 @@ final class ItemCellConfigurator: NSObject {
     }
 
     private func accessibilityLabel(for item: Item, attributedContent: NSAttributedString?) -> String {
-        var accessibilityLabel = item.author.name + ": " + item.content.string + ", " + item.relativeDateString
-        let linkList = HTMLContent.textLinks(for: attributedContent)
+        var accessibilityLabel = "\(item.author.name): \(item.content.string)"
 
+        for desc in item.htmlContent.imageDescs() {
+            if !desc.isEmpty { // make sure its not an empty string
+                accessibilityLabel += ", image: \(desc)"
+            }
+        }
+
+        let imageList = item.htmlContent.imageLinks()
+        if !imageList.isEmpty {
+            accessibilityLabel += ", \(imageList.count)"
+            accessibilityLabel += (imageList.count > 1) ? "images" : "image"
+        }
+
+        let linkList = HTMLContent.textLinks(for: attributedContent)
         if !linkList.isEmpty {
             accessibilityLabel += ", \(linkList.count)"
             accessibilityLabel += (linkList.count > 1) ? "links" : "link"
         }
+
         if item.isFavorite {
             accessibilityLabel += ", favorited"
         }
 
+        accessibilityLabel += ", , \(item.relativeDateString)"
         return accessibilityLabel
     }
 
     private func accessibilityCustomActions(for item: Item,
                                             cell: ItemTableViewCell,
                                             attributedContent: NSAttributedString?) -> [UIAccessibilityCustomAction]? {
-        var accessibilityActions = [UIAccessibilityCustomAction(name: "item.author.name , @\(item.author.name)",
+        var accessibilityActions = [UIAccessibilityCustomAction(name: "\(item.author.name), @\(item.author.username!)",
                                                      target: cell,
                                                      selector: #selector(ItemTableViewCell.accessibilityDidTapAvatar))]
+        let imageList = item.htmlContent.imageLinks()
+        if !imageList.isEmpty {
+            let accessibilityImagesActionTitle = "Images (\(imageList.count))"
+            accessibilityActions.append(UIAccessibilityCustomAction(name: accessibilityImagesActionTitle,
+                                                                    target: cell,
+                                                                    selector: #selector(ItemTableViewCell.accessibilityDidTapImages)))
+        }
         let linkList = HTMLContent.textLinks(for: attributedContent)
         if !linkList.isEmpty {
             let accessibilityLinksActionTitle = "Links (\(linkList.count))"
