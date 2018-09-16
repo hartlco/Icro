@@ -1,6 +1,6 @@
 # Icro - a Micro.blog client
 
-<img src="https://talala.info/files/icro-screens@2x.png" height="420" width="auto" alt="Icro">
+<img src="https://talala.info/files/icro-screens@2x.png" height="500" width="auto" alt="Icro">
 
 [Icro](https://hartl.co/apps/icro/index.html) is a third-party [Micro.blog](https://micro.blog) client.
 
