@@ -28,7 +28,7 @@ PODS:
   - SDWebImage/GIF (4.3.3):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
-  - SwiftLint (0.26.0)
+  - SwiftLint (0.27.0)
   - SwiftMessages (4.1.0)
   - wpxmlrpc (0.8.3)
 
@@ -84,7 +84,7 @@ SPEC CHECKSUMS:
   "Keyboard+LayoutGuide": 4c33aa1749cee1af43c3c32a988b58ad1918bdef
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   SwiftMessages: 1bacc783c8f10bdfdc57c14860cae8a1f1fa6591
   wpxmlrpc: bfc572f62ce7ee897f6f38b098d2ba08732ecef4
 

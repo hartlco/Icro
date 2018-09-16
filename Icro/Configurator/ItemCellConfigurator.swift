@@ -57,10 +57,8 @@ final class ItemCellConfigurator: NSObject {
     private func accessibilityLabel(for item: Item, attributedContent: NSAttributedString?) -> String {
         var accessibilityLabel = "\(item.author.name): \(item.content.string)"
 
-        for desc in item.htmlContent.imageDescs() {
-            if !desc.isEmpty { // make sure its not an empty string
-                accessibilityLabel += ", image: \(desc)"
-            }
+        for imageDescription in item.htmlContent.imageDescs() where !imageDescription.isEmpty {
+            accessibilityLabel += ", image: \(imageDescription)"
         }
 
         let imageList = item.htmlContent.imageLinks()

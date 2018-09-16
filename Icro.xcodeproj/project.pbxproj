@@ -119,6 +119,7 @@
 		5BED6D02207E8147002FB9FF /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D00207E8147002FB9FF /* UserListViewController.xib */; };
 		5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */; };
 		5BED6D06207E81CC002FB9FF /* UserItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */; };
+		B21A684B81B6BD8C71078658 /* Pods_Icro_IcroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCD9BDA9C2513F911EAA9F3B /* Pods_Icro_IcroTests.framework */; };
 		BF707E742131C45600506E64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
 		C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */; };
 		C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
@@ -220,6 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B21A684B81B6BD8C71078658 /* Pods_Icro_IcroTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
