@@ -1,6 +1,6 @@
 # Icro - a Micro.blog client
 
-<img src="https://hartl.co/apps/icro/assets/images/icro-on-iphone.png" width="250">
+<img src="https://talala.info/files/icro-screens@2x.png" height="420" width="auto" alt="Icro">
 
 [Icro](https://hartl.co/apps/icro/index.html) is a third-party [Micro.blog](https://micro.blog) client.
 
