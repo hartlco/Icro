@@ -1,6 +1,6 @@
 PODS:
-  - AcknowList (1.6)
-  - Alamofire (4.7.1)
+  - AcknowList (1.7)
+  - Alamofire (4.7.3)
   - DTCoreText (1.6.21):
     - DTCoreText/Core (= 1.6.21)
     - DTFoundation/Core (~> 1.7.5)
@@ -21,9 +21,9 @@ PODS:
   - FLAnimatedImage (1.0.12)
   - FontAwesome.swift (1.3.2)
   - ImageViewer (5.0.0)
-  - Kanna (4.0.0)
-  - "Keyboard+LayoutGuide (1.2.2)"
-  - KeychainAccess (3.1.0)
+  - Kanna (4.0.2)
+  - "Keyboard+LayoutGuide (1.2.3)"
+  - KeychainAccess (3.1.1)
   - SDWebImage/Core (4.3.3)
   - SDWebImage/GIF (4.3.3):
     - FLAnimatedImage (~> 1.0)
@@ -73,16 +73,16 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MailOnline/ImageViewer.git
 
 SPEC CHECKSUMS:
-  AcknowList: 2b27ccc75110be58be37424c4b08b07bdec628b4
-  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  AcknowList: 286185b24c2c2df63a2bb4137f853e4384b4358b
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
   DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FontAwesome.swift: b4e4c8ccbbecb12f9b592bc533ff237af3706667
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
-  Kanna: d5ae2a26472f7e7a474e7f36a9cd8aa2c8c63ad3
-  "Keyboard+LayoutGuide": 4c33aa1749cee1af43c3c32a988b58ad1918bdef
-  KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
+  Kanna: c60b61d72554bf04ed1ee074f9b379855cab4892
+  "Keyboard+LayoutGuide": dd88e39e7dfaeefdf18ffcad2e11b5a90b0459bb
+  KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   SwiftMessages: 1bacc783c8f10bdfdc57c14860cae8a1f1fa6591
