@@ -30,19 +30,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-//    func application(_ application: UIApplication,
-//                     performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-//        let viewModel = ListViewModel(type: .timeline)
-//        viewModel.load()
-//        viewModel.didFinishLoading = { cached in
-//            guard !cached else { return }
-//            completionHandler(.newData)
-//        }
-//
-//        viewModel.didFinishWithError = { _ in
-//            completionHandler(.failed)
-//        }
-//    }
+    func application(_ application: UIApplication,
+                     performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        let viewModel = ListViewModel(type: .timeline)
+        viewModel.load()
+        viewModel.didFinishLoading = { cached in
+            guard !cached else { return }
+            completionHandler(.newData)
+        }
+
+        viewModel.didFinishWithError = { _ in
+            completionHandler(.failed)
+        }
+    }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         navigator?.handleDeeplink(url: url)
