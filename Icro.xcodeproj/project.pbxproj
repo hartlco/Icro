@@ -203,6 +203,7 @@
 		94EFF3BFFA6977873973D18F /* Pods-Icro-IcroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A46BBCD92B53C40E02AB78B6 /* Pods-IcroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IcroTests/Pods-IcroTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF707E772131C46500506E64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BF71E43E214287CF007E88BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C5FA2AC01EB4482C006DEB40 /* Icro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Icro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -501,6 +502,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = C5FA2AB71EB4482C006DEB40;
 			productRefGroup = C5FA2AC11EB4482C006DEB40 /* Products */;
@@ -814,6 +816,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BF707E772131C46500506E64 /* Base */,
+				BF71E43E214287CF007E88BF /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

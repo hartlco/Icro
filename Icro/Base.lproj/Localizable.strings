@@ -5,7 +5,6 @@
   Created by Florian Rott on 24.08.18.
   Copyright © 2018 Martin Hartl. All rights reserved.
 */
-//NSLocalizedString("COMPOSEVIEWCONTROLLER_TABLEVIEW_HEADER_TITLE", comment: "")
 // TabBarViewController
 "TABBARVIEWCONTROLLER_PHOTOSBUTTON_TITLE" = "Photos";
 "TABBARVIEWCONTROLLER_TABTILE_TIMELINE" = "Timeline";
