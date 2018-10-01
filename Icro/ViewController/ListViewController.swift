@@ -95,6 +95,8 @@ class ListViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        viewModel.loadFromCache()
+
         if viewModel.shouldLoad {
             viewModel.load()
         }

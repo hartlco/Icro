@@ -78,6 +78,8 @@ class ListViewModel: NSObject {
     var didFinishLoading: (Bool) -> Void = { _ in }
     var didFinishWithError: (Error) -> Void = { _ in }
 
+    private var isLoading = false
+
     init(type: ListType,
          userSettings: UserSettings = .shared) {
         self.type = type
@@ -101,10 +103,19 @@ class ListViewModel: NSObject {
         }
     }
 
+    @objc func loadFromCache() {
+        guard !isLoading else { return }
+        applyCache()
+    }
+
     @objc dynamic func load() {
         didStartLoading()
+        isLoading = true
         applyCache()
-        Webservice().load(resource: type.resource) { itemResponse in
+        Webservice().load(resource: type.resource) { [weak self] itemResponse in
+            guard let self = self else { return }
+
+            self.isLoading = false
             switch itemResponse {
             case .error(let error):
                 self.didFinishWithError(error)

@@ -40,8 +40,6 @@ public class CacheStorage {
                 try FileManager.default.removeItem(at: url)
             }
             FileManager.default.createFile(atPath: url.path, contents: data, attributes: nil)
-
-            print("saved")
         } catch {
             fatalError(error.localizedDescription)
         }
