@@ -22,14 +22,17 @@ PODS:
   - FontAwesome.swift (1.3.2)
   - ImageViewer (5.0.0)
   - Kanna (4.0.2)
-  - "Keyboard+LayoutGuide (1.2.3)"
+  - "Keyboard+LayoutGuide (1.3.0)"
   - KeychainAccess (3.1.1)
+  - Kingfisher (4.10.0)
   - SDWebImage/Core (4.3.3)
   - SDWebImage/GIF (4.3.3):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
   - SwiftLint (0.27.0)
-  - SwiftMessages (4.1.0)
+  - SwiftMessages (6.0.0):
+    - SwiftMessages/App (= 6.0.0)
+  - SwiftMessages/App (6.0.0)
   - wpxmlrpc (0.8.3)
 
 DEPENDENCIES:
@@ -41,6 +44,7 @@ DEPENDENCIES:
   - Kanna
   - "Keyboard+LayoutGuide"
   - KeychainAccess
+  - Kingfisher
   - SDWebImage/GIF
   - SwiftLint
   - SwiftMessages
@@ -57,6 +61,7 @@ SPEC REPOS:
     - Kanna
     - "Keyboard+LayoutGuide"
     - KeychainAccess
+    - Kingfisher
     - SDWebImage
     - SwiftLint
     - SwiftMessages
@@ -81,13 +86,14 @@ SPEC CHECKSUMS:
   FontAwesome.swift: b4e4c8ccbbecb12f9b592bc533ff237af3706667
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
   Kanna: c60b61d72554bf04ed1ee074f9b379855cab4892
-  "Keyboard+LayoutGuide": dd88e39e7dfaeefdf18ffcad2e11b5a90b0459bb
+  "Keyboard+LayoutGuide": a24171d454e1065bdd31f1d9f09988d6b1616e88
   KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
+  Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
-  SwiftMessages: 1bacc783c8f10bdfdc57c14860cae8a1f1fa6591
+  SwiftMessages: da7c981256a65b3e58022d9027a36584cf4eccf5
   wpxmlrpc: bfc572f62ce7ee897f6f38b098d2ba08732ecef4
 
-PODFILE CHECKSUM: b84e09aff4063bccf7ea32585f7c42e404497186
+PODFILE CHECKSUM: 573bcc88301eaeb96114098d5e81115a51a19fb3
 
 COCOAPODS: 1.5.3

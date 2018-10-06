@@ -2,7 +2,6 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'Icro' do
-	pod 'Kanna'
     pod 'SDWebImage/GIF'
     pod 'FontAwesome.swift'
     pod 'wpxmlrpc'
@@ -13,11 +12,26 @@ target 'Icro' do
     pod 'Keyboard+LayoutGuide'
     pod 'Alamofire', '~> 4.7'
 	pod 'SwiftLint'
-	pod 'KeychainAccess'
 	
 	target 'IcroTests' do
 	end
-	
-	target 'IcroKit' do
-	end
+end
+
+def kitPods
+    pod 'Kanna'
+    pod 'KeychainAccess'
+end
+
+target 'IcroKit' do
+    kitPods
+    pod 'DTCoreText'
+end
+
+target 'IcroKit-Mac' do
+    platform :osx, '10.14'
+    kitPods
+end
+
+target 'Icro-Mac' do
+    pod 'Kingfisher'
 end

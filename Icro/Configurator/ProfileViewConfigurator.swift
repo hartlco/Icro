@@ -7,6 +7,7 @@ import Foundation
 import IcroKit
 import SDWebImage
 import ImageViewer
+import IcroKit
 
 final class ProfileViewConfigurator: NSObject {
     private let itemNavigator: ItemNavigator

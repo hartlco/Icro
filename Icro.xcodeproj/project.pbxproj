@@ -8,8 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		07273D8420BE2818AE651E13 /* Pods_Icro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017321F11249BE9396D08AF6 /* Pods_Icro.framework */; };
-		0DD652B4694652F73953220D /* Pods_Icro_IcroKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD791585584689A5DBBBA5F4 /* Pods_Icro_IcroKit.framework */; };
 		56262F9E11CAD54C72679804 /* Pods_Icro_IcroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCD9BDA9C2513F911EAA9F3B /* Pods_Icro_IcroTests.framework */; };
+		5B01CBCA2168D6A90007E01D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01CBC92168D6A90007E01D /* AppDelegate.swift */; };
+		5B01CBCE2168D6AA0007E01D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B01CBCD2168D6AA0007E01D /* Assets.xcassets */; };
+		5B01CBD12168D6AA0007E01D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B01CBCF2168D6AA0007E01D /* Main.storyboard */; };
+		5B01CBE02168D6B50007E01D /* IcroKit_Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B01CBDE2168D6B50007E01D /* IcroKit_Mac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B01CBE32168D6B50007E01D /* IcroKit_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B01CBDC2168D6B50007E01D /* IcroKit_Mac.framework */; };
+		5B01CBE42168D6B50007E01D /* IcroKit_Mac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B01CBDC2168D6B50007E01D /* IcroKit_Mac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B01CBE92168D7150007E01D /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */; };
+		5B01CBEA2168D7150007E01D /* Date+ComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */; };
+		5B01CBEB2168D7150007E01D /* Date+Ago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372F2128620C0076121E /* Date+Ago.swift */; };
+		5B01CBEC2168D7150007E01D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7720A613EF00B54399 /* Font.swift */; };
+		5B01CBED2168D7150007E01D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B494E652124C0FA00C3969B /* Color.swift */; };
+		5B01CBEE2168D71A0007E01D /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF462070DF8000C51258 /* UserSettings.swift */; };
+		5B01CBEF2168D71A0007E01D /* LoginInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC347C62132960900DEB45D /* LoginInformation.swift */; };
+		5B01CBF02168D71F0007E01D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AF51EB449BC006DEB40 /* Resource.swift */; };
+		5B01CBF12168D71F0007E01D /* MicropubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B869B07214E4633000A051C /* MicropubEndpoint.swift */; };
+		5B01CBF22168D7240007E01D /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58377A212950F40076121E /* Author.swift */; };
+		5B01CBF32168D7240007E01D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58377B212950F40076121E /* Item.swift */; };
+		5B01CBF42168D7240007E01D /* HTMLContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2B001EB45213006DEB40 /* HTMLContent.swift */; };
+		5B01CBF72168DF8A0007E01D /* Pods_IcroKit_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B01CBF62168DF8A0007E01D /* Pods_IcroKit_Mac.framework */; };
+		5B01CBF92168DF9B0007E01D /* Pods_IcroKit_Mac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13B54E7197572F75267B493C /* Pods_IcroKit_Mac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B01CBFD2168E2780007E01D /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01CBFB2168E2780007E01D /* ListItemCell.swift */; };
+		5B01CBFE2168E2780007E01D /* ListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B01CBFC2168E2780007E01D /* ListItemCell.xib */; };
+		5B01CC002168E4DD0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
+		5B01CC012168E4DF0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
+		5B01CC032168E5710007E01D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01CBCB2168D6A90007E01D /* ViewController.swift */; };
+		5B01CC072168E8000007E01D /* ListItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */; };
 		5B2A5A7A20A6196700B54399 /* FakeTableCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */; };
 		5B397070207BDD9D007DE3CC /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */; };
 		5B3F68772098BB8800A24983 /* KeyboardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F68762098BB8800A24983 /* KeyboardInputView.swift */; };
@@ -27,14 +52,12 @@
 		5B5837262128616E0076121E /* ItemNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837252128616E0076121E /* ItemNavigator.swift */; };
 		5B583728212861770076121E /* SettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583727212861770076121E /* SettingsNavigator.swift */; };
 		5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837292128618B0076121E /* UserListViewModel.swift */; };
-		5B58372C2128619B0076121E /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
 		5B58372E212861F30076121E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372D212861F30076121E /* ListViewController.swift */; };
 		5B5837402128B0680076121E /* HTMLContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58373F2128B0680076121E /* HTMLContentTests.swift */; };
 		5B5837442128B3C20076121E /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
 		5B5837452128B40C0076121E /* ItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583720212861220076121E /* ItemCellConfigurator.swift */; };
 		5B5837472128B4A90076121E /* ItemNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837252128616E0076121E /* ItemNavigator.swift */; };
 		5B58374B2128B5BD0076121E /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6CFF207E8147002FB9FF /* UserListViewController.swift */; };
-		5B58374C2128B5C70076121E /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
 		5B58374F2128B5F80076121E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
 		5B5837502128B5F80076121E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372D212861F30076121E /* ListViewController.swift */; };
 		5B5837512128B5F80076121E /* ListViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754FC2070139F00018DFA /* ListViewController.xib */; };
@@ -118,13 +141,22 @@
 		5BED6D02207E8147002FB9FF /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D00207E8147002FB9FF /* UserListViewController.xib */; };
 		5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */; };
 		5BED6D06207E81CC002FB9FF /* UserItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */; };
+		84FCAE014ECEACF77C75D034 /* Pods_Icro_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 133376CF538D4FE598F0A167 /* Pods_Icro_Mac.framework */; };
 		BF707E742131C45600506E64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
 		C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */; };
 		C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		C5FA2ACE1EB4482C006DEB40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACC1EB4482C006DEB40 /* LaunchScreen.storyboard */; };
+		F6AB5415AD65DAFC35A2B6AC /* Pods_IcroKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFB35470A48E4DCFC8FF6AC /* Pods_IcroKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5B01CBE12168D6B50007E01D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5FA2AB81EB4482C006DEB40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B01CBDB2168D6B50007E01D;
+			remoteInfo = "IcroKit-Mac";
+		};
 		5B58373A2128B04A0076121E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C5FA2AB81EB4482C006DEB40 /* Project object */;
@@ -142,6 +174,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5B01CBE82168D6B50007E01D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5B01CBF92168DF9B0007E01D /* Pods_IcroKit_Mac.framework in Embed Frameworks */,
+				5B01CBE42168D6B50007E01D /* IcroKit_Mac.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BC347BA2132944900DEB45D /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,8 +201,28 @@
 
 /* Begin PBXFileReference section */
 		017321F11249BE9396D08AF6 /* Pods_Icro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		133376CF538D4FE598F0A167 /* Pods_Icro_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B54E7197572F75267B493C /* Pods_IcroKit_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IcroKit_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14B873910DAE1E815D6F7A22 /* Pods_IcroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IcroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18F889CC67CF42B6938FFF89 /* Pods-IcroKit-Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroKit-Mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-IcroKit-Mac/Pods-IcroKit-Mac.release.xcconfig"; sourceTree = "<group>"; };
+		1F2BD0E07C25F92320A828EA /* Pods-IcroKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-IcroKit/Pods-IcroKit.release.xcconfig"; sourceTree = "<group>"; };
+		2988532E03630C136C3136C6 /* Pods-Icro-Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-Mac/Pods-Icro-Mac.debug.xcconfig"; sourceTree = "<group>"; };
 		52C2D67E51BFF3B28100165E /* Pods-Icro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro.release.xcconfig"; sourceTree = "<group>"; };
+		5B01CBC72168D6A90007E01D /* Icro-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Icro-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B01CBC92168D6A90007E01D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5B01CBCB2168D6A90007E01D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5B01CBCD2168D6AA0007E01D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B01CBD02168D6AA0007E01D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5B01CBD22168D6AA0007E01D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B01CBD32168D6AA0007E01D /* Icro_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Icro_Mac.entitlements; sourceTree = "<group>"; };
+		5B01CBDC2168D6B50007E01D /* IcroKit_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IcroKit_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B01CBDE2168D6B50007E01D /* IcroKit_Mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IcroKit_Mac.h; sourceTree = "<group>"; };
+		5B01CBDF2168D6B50007E01D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B01CBF62168DF8A0007E01D /* Pods_IcroKit_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_IcroKit_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B01CBFB2168E2780007E01D /* ListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
+		5B01CBFC2168E2780007E01D /* ListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListItemCell.xib; sourceTree = "<group>"; };
+		5B01CC042168E7430007E01D /* Icro-Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Icro-Mac.entitlements"; sourceTree = "<group>"; };
+		5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCellConfigurator.swift; sourceTree = "<group>"; };
 		5B2A5A7720A613EF00B54399 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FakeTableCellButton.swift; path = Helper/FakeTableCellButton.swift; sourceTree = "<group>"; };
 		5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageDownloadManager.swift; path = Helper/ImageDownloadManager.swift; sourceTree = "<group>"; };
@@ -181,7 +245,7 @@
 		5B5837252128616E0076121E /* ItemNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemNavigator.swift; path = Navigator/ItemNavigator.swift; sourceTree = "<group>"; };
 		5B583727212861770076121E /* SettingsNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsNavigator.swift; path = Navigator/SettingsNavigator.swift; sourceTree = "<group>"; };
 		5B5837292128618B0076121E /* UserListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListViewModel.swift; path = ViewModel/UserListViewModel.swift; sourceTree = "<group>"; };
-		5B58372B2128619B0076121E /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewModel.swift; path = ViewModel/ListViewModel.swift; sourceTree = "<group>"; };
+		5B58372B2128619B0076121E /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		5B58372D212861F30076121E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ViewController/ListViewController.swift; sourceTree = "<group>"; };
 		5B58372F2128620C0076121E /* Date+Ago.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ago.swift"; sourceTree = "<group>"; };
 		5B5837352128B04A0076121E /* IcroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IcroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,7 +286,10 @@
 		5BED6D00207E8147002FB9FF /* UserListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserListViewController.xib; path = ViewController/UserListViewController.xib; sourceTree = "<group>"; };
 		5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserItemTableViewCell.swift; path = View/UserItemTableViewCell.swift; sourceTree = "<group>"; };
 		5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserItemTableViewCell.xib; path = View/UserItemTableViewCell.xib; sourceTree = "<group>"; };
+		5C5956D76539447B1A629134 /* Pods-IcroKit-Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroKit-Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroKit-Mac/Pods-IcroKit-Mac.debug.xcconfig"; sourceTree = "<group>"; };
+		5D349612C21E8935CA208791 /* Pods-Icro-Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-Mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-Mac/Pods-Icro-Mac.release.xcconfig"; sourceTree = "<group>"; };
 		62BDE592B91FF53059E2B98A /* Pods-Icro-IcroKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroKit/Pods-Icro-IcroKit.release.xcconfig"; sourceTree = "<group>"; };
+		8CFB35470A48E4DCFC8FF6AC /* Pods_IcroKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IcroKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EFF3BFFA6977873973D18F /* Pods-Icro-IcroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A46BBCD92B53C40E02AB78B6 /* Pods-IcroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IcroTests/Pods-IcroTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1016753D82E9CA15583B804 /* Pods-Icro-IcroKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroKit/Pods-Icro-IcroKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -237,12 +304,30 @@
 		C5FA2B001EB45213006DEB40 /* HTMLContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLContent.swift; sourceTree = "<group>"; };
 		CCD9BDA9C2513F911EAA9F3B /* Pods_Icro_IcroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_IcroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D426512F7548658C554240A1 /* Pods-IcroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroTests/Pods-IcroTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB83C848BB5BA5B662CD6D6C /* Pods-IcroKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroKit/Pods-IcroKit.debug.xcconfig"; sourceTree = "<group>"; };
 		E95C33C086DABED6C39EDF82 /* Pods-Icro-IcroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests.release.xcconfig"; sourceTree = "<group>"; };
 		EA46B8BCBC230D1C9A721F76 /* Pods-Icro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro.debug.xcconfig"; sourceTree = "<group>"; };
 		FD791585584689A5DBBBA5F4 /* Pods_Icro_IcroKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_IcroKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5B01CBC42168D6A90007E01D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B01CBE32168D6B50007E01D /* IcroKit_Mac.framework in Frameworks */,
+				84FCAE014ECEACF77C75D034 /* Pods_Icro_Mac.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B01CBD92168D6B50007E01D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B01CBF72168DF8A0007E01D /* Pods_IcroKit_Mac.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5B5837322128B04A0076121E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,7 +340,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DD652B4694652F73953220D /* Pods_Icro_IcroKit.framework in Frameworks */,
+				F6AB5415AD65DAFC35A2B6AC /* Pods_IcroKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,12 +359,66 @@
 		0DFA605700743A5D165A3DC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B01CBF62168DF8A0007E01D /* Pods_IcroKit_Mac.framework */,
 				017321F11249BE9396D08AF6 /* Pods_Icro.framework */,
 				14B873910DAE1E815D6F7A22 /* Pods_IcroTests.framework */,
 				CCD9BDA9C2513F911EAA9F3B /* Pods_Icro_IcroTests.framework */,
 				FD791585584689A5DBBBA5F4 /* Pods_Icro_IcroKit.framework */,
+				13B54E7197572F75267B493C /* Pods_IcroKit_Mac.framework */,
+				8CFB35470A48E4DCFC8FF6AC /* Pods_IcroKit.framework */,
+				133376CF538D4FE598F0A167 /* Pods_Icro_Mac.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B01CBC82168D6A90007E01D /* Icro-Mac */ = {
+			isa = PBXGroup;
+			children = (
+				5B01CC052168E7E30007E01D /* Configurator */,
+				5B01CC042168E7430007E01D /* Icro-Mac.entitlements */,
+				5B01CBFA2168E24E0007E01D /* Views */,
+				5B01CBC92168D6A90007E01D /* AppDelegate.swift */,
+				5B01CBCB2168D6A90007E01D /* ViewController.swift */,
+				5B01CBCD2168D6AA0007E01D /* Assets.xcassets */,
+				5B01CBCF2168D6AA0007E01D /* Main.storyboard */,
+				5B01CBD22168D6AA0007E01D /* Info.plist */,
+				5B01CBD32168D6AA0007E01D /* Icro_Mac.entitlements */,
+			);
+			path = "Icro-Mac";
+			sourceTree = "<group>";
+		};
+		5B01CBDD2168D6B50007E01D /* IcroKit-Mac */ = {
+			isa = PBXGroup;
+			children = (
+				5B01CBDE2168D6B50007E01D /* IcroKit_Mac.h */,
+				5B01CBDF2168D6B50007E01D /* Info.plist */,
+			);
+			path = "IcroKit-Mac";
+			sourceTree = "<group>";
+		};
+		5B01CBFA2168E24E0007E01D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5B01CBFB2168E2780007E01D /* ListItemCell.swift */,
+				5B01CBFC2168E2780007E01D /* ListItemCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5B01CBFF2168E4C90007E01D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5B58372B2128619B0076121E /* ListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5B01CC052168E7E30007E01D /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */,
+			);
+			path = Configurator;
 			sourceTree = "<group>";
 		};
 		5B5837362128B04A0076121E /* IcroTests */ = {
@@ -340,6 +479,7 @@
 		5BC347AF2132944900DEB45D /* IcroKit */ = {
 			isa = PBXGroup;
 			children = (
+				5B01CBFF2168E4C90007E01D /* ViewModel */,
 				5BC347CD2132A69D00DEB45D /* Helper */,
 				5BC347CC2132A68D00DEB45D /* Settings */,
 				5BC347CB2132A66A00DEB45D /* Network */,
@@ -396,6 +536,8 @@
 				C5FA2AC21EB4482C006DEB40 /* Icro */,
 				5BC347AF2132944900DEB45D /* IcroKit */,
 				5B5837362128B04A0076121E /* IcroTests */,
+				5B01CBC82168D6A90007E01D /* Icro-Mac */,
+				5B01CBDD2168D6B50007E01D /* IcroKit-Mac */,
 				C5FA2AC11EB4482C006DEB40 /* Products */,
 				D66296A63450197DD12D949D /* Pods */,
 				0DFA605700743A5D165A3DC5 /* Frameworks */,
@@ -408,6 +550,8 @@
 				C5FA2AC01EB4482C006DEB40 /* Icro.app */,
 				5B5837352128B04A0076121E /* IcroTests.xctest */,
 				5BC347AE2132944900DEB45D /* IcroKit.framework */,
+				5B01CBC72168D6A90007E01D /* Icro-Mac.app */,
+				5B01CBDC2168D6B50007E01D /* IcroKit_Mac.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -444,7 +588,6 @@
 			isa = PBXGroup;
 			children = (
 				5B5837292128618B0076121E /* UserListViewModel.swift */,
-				5B58372B2128619B0076121E /* ListViewModel.swift */,
 				5B58371A212860BA0076121E /* ComposeViewModel.swift */,
 				5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */,
 				5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */,
@@ -492,6 +635,12 @@
 				E95C33C086DABED6C39EDF82 /* Pods-Icro-IcroTests.release.xcconfig */,
 				B1016753D82E9CA15583B804 /* Pods-Icro-IcroKit.debug.xcconfig */,
 				62BDE592B91FF53059E2B98A /* Pods-Icro-IcroKit.release.xcconfig */,
+				5C5956D76539447B1A629134 /* Pods-IcroKit-Mac.debug.xcconfig */,
+				18F889CC67CF42B6938FFF89 /* Pods-IcroKit-Mac.release.xcconfig */,
+				DB83C848BB5BA5B662CD6D6C /* Pods-IcroKit.debug.xcconfig */,
+				1F2BD0E07C25F92320A828EA /* Pods-IcroKit.release.xcconfig */,
+				2988532E03630C136C3136C6 /* Pods-Icro-Mac.debug.xcconfig */,
+				5D349612C21E8935CA208791 /* Pods-Icro-Mac.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -499,6 +648,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		5B01CBD72168D6B50007E01D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B01CBE02168D6B50007E01D /* IcroKit_Mac.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BC347AB2132944900DEB45D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -510,6 +667,46 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		5B01CBC62168D6A90007E01D /* Icro-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B01CBD62168D6AA0007E01D /* Build configuration list for PBXNativeTarget "Icro-Mac" */;
+			buildPhases = (
+				EC67B8475669ED52435FE403 /* [CP] Check Pods Manifest.lock */,
+				5B01CBC32168D6A90007E01D /* Sources */,
+				5B01CBC42168D6A90007E01D /* Frameworks */,
+				5B01CBC52168D6A90007E01D /* Resources */,
+				5B01CBE82168D6B50007E01D /* Embed Frameworks */,
+				110CA084FEF44ACC62C7CB0C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B01CBE22168D6B50007E01D /* PBXTargetDependency */,
+			);
+			name = "Icro-Mac";
+			productName = "Icro-Mac";
+			productReference = 5B01CBC72168D6A90007E01D /* Icro-Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5B01CBDB2168D6B50007E01D /* IcroKit-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B01CBE52168D6B50007E01D /* Build configuration list for PBXNativeTarget "IcroKit-Mac" */;
+			buildPhases = (
+				7A25529A364EB557C1FC0966 /* [CP] Check Pods Manifest.lock */,
+				5B01CBD72168D6B50007E01D /* Headers */,
+				5B01CBD82168D6B50007E01D /* Sources */,
+				5B01CBD92168D6B50007E01D /* Frameworks */,
+				5B01CBDA2168D6B50007E01D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IcroKit-Mac";
+			productName = "IcroKit-Mac";
+			productReference = 5B01CBDC2168D6B50007E01D /* IcroKit_Mac.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		5B5837342128B04A0076121E /* IcroTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B58373C2128B04A0076121E /* Build configuration list for PBXNativeTarget "IcroTests" */;
@@ -577,10 +774,25 @@
 		C5FA2AB81EB4482C006DEB40 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Martin Hartl";
 				TargetAttributes = {
+					5B01CBC62168D6A90007E01D = {
+						CreatedOnToolsVersion = 10.0;
+						DevelopmentTeam = 9E8SXF3Y36;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					5B01CBDB2168D6B50007E01D = {
+						CreatedOnToolsVersion = 10.0;
+						DevelopmentTeam = 9E8SXF3Y36;
+						ProvisioningStyle = Automatic;
+					};
 					5B5837342128B04A0076121E = {
 						CreatedOnToolsVersion = 9.4.1;
 						DevelopmentTeam = 9E8SXF3Y36;
@@ -623,11 +835,30 @@
 				C5FA2ABF1EB4482C006DEB40 /* Icro */,
 				5B5837342128B04A0076121E /* IcroTests */,
 				5BC347AD2132944900DEB45D /* IcroKit */,
+				5B01CBC62168D6A90007E01D /* Icro-Mac */,
+				5B01CBDB2168D6B50007E01D /* IcroKit-Mac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5B01CBC52168D6A90007E01D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B01CBCE2168D6AA0007E01D /* Assets.xcassets in Resources */,
+				5B01CBD12168D6AA0007E01D /* Main.storyboard in Resources */,
+				5B01CBFE2168E2780007E01D /* ListItemCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B01CBDA2168D6B50007E01D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5B5837332128B04A0076121E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -669,6 +900,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		110CA084FEF44ACC62C7CB0C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Icro-Mac/Pods-Icro-Mac-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Kanna-macOS/Kanna.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess-macOS/KeychainAccess.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Icro-Mac/Pods-Icro-Mac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		20C3A106AC1DA7AB6DC70FC0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -680,7 +937,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Icro-IcroKit-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-IcroKit-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -737,6 +994,28 @@
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint";
 		};
+		7A25529A364EB557C1FC0966 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IcroKit-Mac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AE1FBD1F4B09763241B392B6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -751,9 +1030,7 @@
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework",
-				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/Keyboard+LayoutGuide/KeyboardLayoutGuide.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/wpxmlrpc/wpxmlrpc.framework",
@@ -767,9 +1044,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageViewer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeyboardLayoutGuide.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/wpxmlrpc.framework",
@@ -793,12 +1068,12 @@
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework",
-				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/Keyboard+LayoutGuide/KeyboardLayoutGuide.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/wpxmlrpc/wpxmlrpc.framework",
+				"${BUILT_PRODUCTS_DIR}/Kanna-iOS/Kanna.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess-iOS/KeychainAccess.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -809,21 +1084,74 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageViewer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeyboardLayoutGuide.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/wpxmlrpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Icro/Pods-Icro-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EC67B8475669ED52435FE403 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Icro-Mac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5B01CBC32168D6A90007E01D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B01CC032168E5710007E01D /* ViewController.swift in Sources */,
+				5B01CBCA2168D6A90007E01D /* AppDelegate.swift in Sources */,
+				5B01CBFD2168E2780007E01D /* ListItemCell.swift in Sources */,
+				5B01CC072168E8000007E01D /* ListItemCellConfigurator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B01CBD82168D6B50007E01D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B01CBEC2168D7150007E01D /* Font.swift in Sources */,
+				5B01CBF02168D71F0007E01D /* Resource.swift in Sources */,
+				5B01CBEE2168D71A0007E01D /* UserSettings.swift in Sources */,
+				5B01CBEA2168D7150007E01D /* Date+ComponentsFormatter.swift in Sources */,
+				5B01CBF22168D7240007E01D /* Author.swift in Sources */,
+				5B01CBE92168D7150007E01D /* CacheStorage.swift in Sources */,
+				5B01CBF32168D7240007E01D /* Item.swift in Sources */,
+				5B01CBED2168D7150007E01D /* Color.swift in Sources */,
+				5B01CBF42168D7240007E01D /* HTMLContent.swift in Sources */,
+				5B01CC012168E4DF0007E01D /* ListViewModel.swift in Sources */,
+				5B01CBEF2168D71A0007E01D /* LoginInformation.swift in Sources */,
+				5B01CBEB2168D7150007E01D /* Date+Ago.swift in Sources */,
+				5B01CBF12168D71F0007E01D /* MicropubEndpoint.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5B5837312128B04A0076121E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -874,7 +1202,6 @@
 				5B5837442128B3C20076121E /* ItemTableViewCell.swift in Sources */,
 				5B58374B2128B5BD0076121E /* UserListViewController.swift in Sources */,
 				5B5837402128B0680076121E /* HTMLContentTests.swift in Sources */,
-				5B58374C2128B5C70076121E /* ListViewModel.swift in Sources */,
 				5B5837452128B40C0076121E /* ItemCellConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -892,6 +1219,7 @@
 				5BC347C72132960900DEB45D /* LoginInformation.swift in Sources */,
 				5BC347BF2132950D00DEB45D /* UserSettings.swift in Sources */,
 				5BC347BB2132947100DEB45D /* Author.swift in Sources */,
+				5B01CC002168E4DD0007E01D /* ListViewModel.swift in Sources */,
 				5BC347C32132958600DEB45D /* Color.swift in Sources */,
 				5BC347C92132963A00DEB45D /* Date+ComponentsFormatter.swift in Sources */,
 				5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */,
@@ -903,7 +1231,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BA6D17C2087C0B300F484B2 /* LoginViewController.swift in Sources */,
-				5B58372C2128619B0076121E /* ListViewModel.swift in Sources */,
 				5B583728212861770076121E /* SettingsNavigator.swift in Sources */,
 				5B58371B212860BA0076121E /* ComposeViewModel.swift in Sources */,
 				5BE9455F2079EFCE004F9FF4 /* ItemTableViewCell.swift in Sources */,
@@ -940,6 +1267,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5B01CBE22168D6B50007E01D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B01CBDB2168D6B50007E01D /* IcroKit-Mac */;
+			targetProxy = 5B01CBE12168D6B50007E01D /* PBXContainerItemProxy */;
+		};
 		5B58373B2128B04A0076121E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C5FA2ABF1EB4482C006DEB40 /* Icro */;
@@ -953,6 +1285,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5B01CBCF2168D6AA0007E01D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B01CBD02168D6AA0007E01D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		BF707E762131C45600506E64 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -973,6 +1313,130 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5B01CBD42168D6AA0007E01D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2988532E03630C136C3136C6 /* Pods-Icro-Mac.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Icro-Mac/Icro-Mac.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Icro-Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.hartl.Icro-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		5B01CBD52168D6AA0007E01D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D349612C21E8935CA208791 /* Pods-Icro-Mac.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Icro-Mac/Icro-Mac.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Icro-Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.hartl.Icro-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		5B01CBE62168D6B50007E01D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C5956D76539447B1A629134 /* Pods-IcroKit-Mac.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "IcroKit-Mac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.hartl.IcroKit-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5B01CBE72168D6B50007E01D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18F889CC67CF42B6938FFF89 /* Pods-IcroKit-Mac.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "IcroKit-Mac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.hartl.IcroKit-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		5B58373D2128B04A0076121E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94EFF3BFFA6977873973D18F /* Pods-Icro-IcroTests.debug.xcconfig */;
@@ -1023,7 +1487,7 @@
 		};
 		5BC347B72132944900DEB45D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1016753D82E9CA15583B804 /* Pods-Icro-IcroKit.debug.xcconfig */;
+			baseConfigurationReference = DB83C848BB5BA5B662CD6D6C /* Pods-IcroKit.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1054,7 +1518,7 @@
 		};
 		5BC347B82132944900DEB45D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62BDE592B91FF53059E2B98A /* Pods-Icro-IcroKit.release.xcconfig */;
+			baseConfigurationReference = 1F2BD0E07C25F92320A828EA /* Pods-IcroKit.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1240,6 +1704,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5B01CBD62168D6AA0007E01D /* Build configuration list for PBXNativeTarget "Icro-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B01CBD42168D6AA0007E01D /* Debug */,
+				5B01CBD52168D6AA0007E01D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B01CBE52168D6B50007E01D /* Build configuration list for PBXNativeTarget "IcroKit-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B01CBE62168D6B50007E01D /* Debug */,
+				5B01CBE72168D6B50007E01D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5B58373C2128B04A0076121E /* Build configuration list for PBXNativeTarget "IcroTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

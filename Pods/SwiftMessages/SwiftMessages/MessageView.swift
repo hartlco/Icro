@@ -95,7 +95,11 @@ open class MessageView: BaseView, Identifiable, AccessibleMessage {
     open var accessibilityPrefix: String?
 
     open var accessibilityMessage: String? {
+        #if swift(>=4.1)
+        let components = [accessibilityPrefix, titleLabel?.text, bodyLabel?.text].compactMap { $0 }
+        #else
         let components = [accessibilityPrefix, titleLabel?.text, bodyLabel?.text].flatMap { $0 }
+        #endif
         guard components.count > 0 else { return nil }
         return components.joined(separator: ", ")
     }
@@ -168,12 +172,6 @@ extension MessageView {
          This view is typically used with `.center` presentation style.         
          */
         case centeredView = "CenteredView"
-
-        /**
-         A standard message view like `MessageView`, but without
-         stack views for iOS 8.
-         */
-        case messageViewIOS8 = "MessageViewIOS8"
     }
     
     /**
@@ -212,7 +210,6 @@ extension MessageView {
  */
 
 extension MessageView {
-    @available(iOS 9, *)
     /**
      Constrains the image view to a specified size. By default, the size of the
      image view is determined by its `intrinsicContentSize`.
@@ -220,7 +217,7 @@ extension MessageView {
      - Parameter size: The size to be translated into Auto Layout constraints.
      - Parameter contentMode: The optional content mode to apply.
      */
-    public func configureIcon(withSize size: CGSize, contentMode: UIViewContentMode? = nil) {
+    public func configureIcon(withSize size: CGSize, contentMode: UIView.ContentMode? = nil) {
         var views: [UIView] = []
         if let iconImageView = iconImageView { views.append(iconImageView) }
         if let iconLabel = iconLabel { views.append(iconLabel) }
@@ -293,7 +290,7 @@ extension MessageView {
         bodyLabel?.textColor = foregroundColor
         button?.backgroundColor = foregroundColor
         button?.tintColor = backgroundColor
-        button?.contentEdgeInsets = UIEdgeInsetsMake(7.0, 7.0, 7.0, 7.0)
+        button?.contentEdgeInsets = UIEdgeInsets(top: 7.0, left: 7.0, bottom: 7.0, right: 7.0)
         button?.layer.cornerRadius = 5.0
         iconImageView?.isHidden = iconImageView?.image == nil
         iconLabel?.isHidden = iconLabel?.text == nil
@@ -384,8 +381,8 @@ extension MessageView {
         bodyLabel?.text = body
         iconImageView?.image = iconImage
         iconLabel?.text = iconText
-        button?.setImage(buttonImage, for: UIControlState())
-        button?.setTitle(buttonTitle, for: UIControlState())
+        button?.setImage(buttonImage, for: .normal)
+        button?.setTitle(buttonTitle, for: .normal)
         self.buttonTapHandler = buttonTapHandler
         iconImageView?.isHidden = iconImageView?.image == nil
         iconLabel?.isHidden = iconLabel?.text == nil

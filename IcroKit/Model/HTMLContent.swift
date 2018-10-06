@@ -3,10 +3,18 @@
 //  Copyright © 2017 Martin Hartl. All rights reserved.
 //
 
-import UIKit
 import Kanna
+
+#if os(iOS)
 import DTCoreText
-import SDWebImage
+#endif
+
+#if os(iOS)
+import UIKit
+public typealias XImage = UIImage
+#elseif os(OSX)
+public typealias XImage = NSImage
+#endif
 
 public extension Notification.Name {
     static let asyncInlineImageFinishedLoading = Notification.Name(rawValue: "asyncInlineImageFinishedLoading")
@@ -53,6 +61,7 @@ public final class HTMLContent: Codable {
 }
 
 private extension String {
+    #if os(iOS)
     func htmlToAttributedString(for itemID: String) -> NSAttributedString? {
         let data = Data(trimEmptyLines.utf8)
         guard let string = NSMutableAttributedString(htmlData: data, options: nil, documentAttributes: nil) else { return nil }
@@ -79,14 +88,16 @@ private extension String {
             })
 
             for (_, value) in attributes {
+                #if os(iOS)
                 if let image = value as? DTImageTextAttachment,
                     let textAttachment = textAttachment(for: image, itemID: itemID) {
                     mutableAttributedString.save_addAttributes([
                         .attachment: textAttachment
                         ], range: rane)
                 }
+                #endif
 
-                if let font = value as? UIFont {
+                if let font = value as? XFont {
                     if font.isBold {
                         mutableAttributedString.save_addAttributes([.font: Font().boldBody], range: rane)
                     }
@@ -101,6 +112,19 @@ private extension String {
         return mutableAttributedString
 
     }
+    #elseif os(OSX)
+    func htmlToAttributedString(for itemID: String) -> NSAttributedString? {
+        let htmlData = NSString(string: self as NSString).data(using: String.Encoding.unicode.rawValue)
+        let options = [NSAttributedString.DocumentReadingOptionKey.documentType:
+            NSAttributedString.DocumentType.html]
+        let attributedString = try? NSMutableAttributedString(data: htmlData ?? Data(),
+                                                              options: options,
+                                                              documentAttributes: nil)
+        return attributedString
+
+    }
+    #endif
+
     func htmlToString(for itemID: String) -> String {
         return htmlToAttributedString(for: itemID)?.string ?? ""
     }
@@ -109,27 +133,31 @@ private extension String {
         return self.trimmingCharacters(in: CharacterSet(["\n"]))
     }
 
+    #if os(iOS)
     private func textAttachment(for textImage: DTImageTextAttachment, itemID: String) -> NSTextAttachment? {
         guard let urlString = textImage.attributes["src"] as? String,
             let url = URL(string: urlString),
             let classString = textImage.attributes["class"] as? String,
             String.inlineMiniImageClasses.contains(classString) else { return nil }
 
-        let font = UIFont.systemFont(ofSize: 16)
+        let font = XFont.systemFont(ofSize: 16)
         let textAttachment = NSTextAttachment()
 
-        SDWebImageManager.shared().loadImage(with: url, options: [], progress: nil) { (image, _, _, _, _, _) in
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            guard let data = data else { return }
+            let image = XImage(data: data)
             DispatchQueue.main.async {
                 textAttachment.image = image
                 NotificationCenter.default.post(name: .asyncInlineImageFinishedLoading, object: nil, userInfo: ["id": itemID])
             }
-        }
+        }.resume()
 
         let mid = font.descender + font.capHeight
         let width: CGFloat = 18
         textAttachment.bounds = CGRect(x: 0, y: font.descender - width / 2 + mid + 2, width: width, height: width).integral
         return textAttachment
     }
+    #endif
 }
 
 private extension NSMutableAttributedString {
@@ -192,12 +220,20 @@ private extension String {
     }
 }
 
-private extension UIFont {
+private extension XFont {
     var isBold: Bool {
+        #if os(iOS)
         return fontDescriptor.symbolicTraits.contains(.traitBold)
+        #endif
+
+        return false
     }
 
     var isItalic: Bool {
+        #if os(iOS)
         return fontDescriptor.symbolicTraits.contains(.traitItalic)
+        #endif
+
+        return false
     }
 }
