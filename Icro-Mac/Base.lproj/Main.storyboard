@@ -687,24 +687,162 @@
                     <window key="window" title="Icro" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="340" height="500"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="Aqy-SY-pZm" kind="relationship" relationship="window.shadowedContentViewController" id="ix8-fT-YKy"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
+        <!--Split View Controller-->
+        <scene sceneID="DPx-zN-WaK">
+            <objects>
+                <splitViewController id="Aqy-SY-pZm" customClass="SplitViewController" customModule="Icro_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="QLs-Qs-rcA"/>
+                        <splitViewItem id="9hq-Vz-sFh"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="pQy-hZ-Z1j">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="Aqy-SY-pZm" id="mRx-Ji-edi"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="contentPane" destination="9hq-Vz-sFh" id="kYt-UB-YwH"/>
+                        <outlet property="menuPane" destination="QLs-Qs-rcA" id="uCa-Z1-C8j"/>
+                        <outlet property="splitView" destination="pQy-hZ-Z1j" id="zlJ-xq-upi"/>
+                        <segue destination="7RZ-s4-pAc" kind="relationship" relationship="splitItems" id="IEh-xj-cxW"/>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="splitItems" id="sKV-m4-sRy"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="vCg-pv-Rgz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="903"/>
+        </scene>
+        <!--Tab View Controller-->
+        <scene sceneID="uHF-iX-NFu">
+            <objects>
+                <viewController id="7RZ-s4-pAc" customClass="TabViewController" customModule="Icro_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" misplaced="YES" id="FWN-k1-llK">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="26" horizontalPageScroll="10" verticalLineScroll="26" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1W-Cb-JK3">
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="300"/>
+                                <clipView key="contentView" drawsBackground="NO" id="XEa-x9-c4o">
+                                    <rect key="frame" x="1" y="1" width="118" height="298"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="iV8-Jd-Are" id="IjU-5l-bxz">
+                                            <rect key="frame" x="0.0" y="0.0" width="118" height="298"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn width="115" minWidth="16" maxWidth="1000" id="iV8-Jd-Are">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="A0N-bT-UDX">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView identifier="HeaderCell" id="ik6-7m-mpj">
+                                                            <rect key="frame" x="1" y="1" width="115" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPp-p3-CTo">
+                                                                    <rect key="frame" x="0.0" y="1" width="115" height="14"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="HEADER CELL" id="loe-Nn-gFR">
+                                                                        <font key="font" metaFont="smallSystemBold"/>
+                                                                        <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="textField" destination="VPp-p3-CTo" id="91S-Nb-XyO"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                        <tableCellView identifier="TabCell" id="Qb6-kC-V1a">
+                                                            <rect key="frame" x="1" y="20" width="115" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GSR-jD-tdu">
+                                                                    <rect key="frame" x="3" y="0.0" width="17" height="17"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                    <imageCell key="cell" refusesFirstResponder="YES" imageScaling="proportionallyDown" image="NSActionTemplate" id="QTL-XF-eUd"/>
+                                                                </imageView>
+                                                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4AQ-Eq-QCJ">
+                                                                    <rect key="frame" x="25" y="0.0" width="90" height="17"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="FOi-Xq-Poo">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="imageView" destination="GSR-jD-tdu" id="2Ad-Mh-ajS"/>
+                                                                <outlet property="textField" destination="4AQ-Eq-QCJ" id="oYT-Qv-gwF"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                        </outlineView>
+                                    </subviews>
+                                    <nil key="backgroundColor"/>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="NKi-T6-RLd"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Khj-rI-iZz">
+                                    <rect key="frame" x="1" y="283" width="78" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="gfy-iI-E0I">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="p1W-Cb-JK3" firstAttribute="leading" secondItem="FWN-k1-llK" secondAttribute="leading" id="Hfa-hj-IPu"/>
+                            <constraint firstAttribute="bottom" secondItem="p1W-Cb-JK3" secondAttribute="bottom" id="gWf-aF-2Kn"/>
+                            <constraint firstItem="p1W-Cb-JK3" firstAttribute="top" secondItem="FWN-k1-llK" secondAttribute="top" id="m0l-VT-Nv0"/>
+                            <constraint firstAttribute="trailing" secondItem="p1W-Cb-JK3" secondAttribute="trailing" id="wld-Ej-I3s"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="outlineView" destination="IjU-5l-bxz" id="DjD-yD-zt7"/>
+                    </connections>
+                </viewController>
+                <customObject id="1Yj-Bx-GZY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="643" y="372"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Icro_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -742,13 +880,13 @@
                             <constraint firstAttribute="trailing" secondItem="hUg-Xk-mYr" secondAttribute="trailing" id="sUW-R0-fiL"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="collectionView" destination="h3x-IN-nqP" id="0Z6-OR-RnB"/>
-                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="792" y="951"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSActionTemplate" width="14" height="14"/>
+    </resources>
 </document>

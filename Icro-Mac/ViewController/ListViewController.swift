@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ListViewController.swift
 //  Icro-Mac
 //
 //  Created by martin on 06.10.18.
@@ -9,7 +9,7 @@
 import Cocoa
 import IcroKit_Mac
 
-class ViewController: NSViewController {
+class ListViewController: NSViewController {
     @IBOutlet weak var collectionView: NSCollectionView! {
         didSet {
             collectionView.delegate = self
@@ -18,9 +18,18 @@ class ViewController: NSViewController {
         }
     }
 
-    private let viewModel = ListViewModel(type: .timeline)
+    private let viewModel: ListViewModel
     private let itemCellConfigurator = ListItemCellConfigurator()
 
+    init(listViewModel: ListViewModel) {
+        self.viewModel = listViewModel
+        super.init(nibName: "ListViewController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+       fatalError()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,12 +57,12 @@ class ViewController: NSViewController {
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
 }
 
-extension ViewController: NSCollectionViewDataSource, NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
+extension ListViewController: NSCollectionViewDataSource, NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems(in: 0)
     }

@@ -33,7 +33,6 @@
 		5B01CBFE2168E2780007E01D /* ListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B01CBFC2168E2780007E01D /* ListItemCell.xib */; };
 		5B01CC002168E4DD0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
 		5B01CC012168E4DF0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
-		5B01CC032168E5710007E01D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01CBCB2168D6A90007E01D /* ViewController.swift */; };
 		5B01CC072168E8000007E01D /* ListItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */; };
 		5B2A5A7A20A6196700B54399 /* FakeTableCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */; };
 		5B397070207BDD9D007DE3CC /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */; };
@@ -42,6 +41,11 @@
 		5B44C71420979CCC0003B35D /* BlacklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71220979CCC0003B35D /* BlacklistViewController.swift */; };
 		5B44C71520979CCC0003B35D /* BlacklistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B44C71320979CCC0003B35D /* BlacklistViewController.xib */; };
 		5B44C71720979CF20003B35D /* BlacklistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71620979CF20003B35D /* BlacklistViewModel.swift */; };
+		5B4639DD2168FE9B00200D8F /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4639DC2168FE9B00200D8F /* TabViewController.swift */; };
+		5B4639DF216901BE00200D8F /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4639DE216901BE00200D8F /* SplitViewController.swift */; };
+		5B4639E02169074200200D8F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
+		5B4639E3216908E800200D8F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4639E1216908E800200D8F /* ListViewController.swift */; };
+		5B4639E4216908E800200D8F /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4639E2216908E800200D8F /* ListViewController.xib */; };
 		5B4E4187208AF8C700FC610A /* Pods-Icro-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */; };
 		5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
 		5B58371B212860BA0076121E /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371A212860BA0076121E /* ComposeViewModel.swift */; };
@@ -210,7 +214,6 @@
 		52C2D67E51BFF3B28100165E /* Pods-Icro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro.release.xcconfig"; sourceTree = "<group>"; };
 		5B01CBC72168D6A90007E01D /* Icro-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Icro-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B01CBC92168D6A90007E01D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B01CBCB2168D6A90007E01D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5B01CBCD2168D6AA0007E01D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B01CBD02168D6AA0007E01D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B01CBD22168D6AA0007E01D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -231,6 +234,10 @@
 		5B44C71220979CCC0003B35D /* BlacklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlacklistViewController.swift; path = ViewController/BlacklistViewController.swift; sourceTree = "<group>"; };
 		5B44C71320979CCC0003B35D /* BlacklistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BlacklistViewController.xib; path = ViewController/BlacklistViewController.xib; sourceTree = "<group>"; };
 		5B44C71620979CF20003B35D /* BlacklistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlacklistViewModel.swift; path = ViewModel/BlacklistViewModel.swift; sourceTree = "<group>"; };
+		5B4639DC2168FE9B00200D8F /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		5B4639DE216901BE00200D8F /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		5B4639E1216908E800200D8F /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		5B4639E2216908E800200D8F /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		5B494E652124C0FA00C3969B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-Icro-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
 		5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicropubRequestController.swift; sourceTree = "<group>"; };
@@ -374,11 +381,11 @@
 		5B01CBC82168D6A90007E01D /* Icro-Mac */ = {
 			isa = PBXGroup;
 			children = (
+				5B4639DB2168FE8100200D8F /* ViewController */,
 				5B01CC052168E7E30007E01D /* Configurator */,
 				5B01CC042168E7430007E01D /* Icro-Mac.entitlements */,
 				5B01CBFA2168E24E0007E01D /* Views */,
 				5B01CBC92168D6A90007E01D /* AppDelegate.swift */,
-				5B01CBCB2168D6A90007E01D /* ViewController.swift */,
 				5B01CBCD2168D6AA0007E01D /* Assets.xcassets */,
 				5B01CBCF2168D6AA0007E01D /* Main.storyboard */,
 				5B01CBD22168D6AA0007E01D /* Info.plist */,
@@ -419,6 +426,17 @@
 				5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		5B4639DB2168FE8100200D8F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5B4639DC2168FE9B00200D8F /* TabViewController.swift */,
+				5B4639DE216901BE00200D8F /* SplitViewController.swift */,
+				5B4639E1216908E800200D8F /* ListViewController.swift */,
+				5B4639E2216908E800200D8F /* ListViewController.xib */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		5B5837362128B04A0076121E /* IcroTests */ = {
@@ -847,6 +865,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B01CBCE2168D6AA0007E01D /* Assets.xcassets in Resources */,
+				5B4639E02169074200200D8F /* Localizable.strings in Resources */,
+				5B4639E4216908E800200D8F /* ListViewController.xib in Resources */,
 				5B01CBD12168D6AA0007E01D /* Main.storyboard in Resources */,
 				5B01CBFE2168E2780007E01D /* ListItemCell.xib in Resources */,
 			);
@@ -1125,10 +1145,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B01CC032168E5710007E01D /* ViewController.swift in Sources */,
 				5B01CBCA2168D6A90007E01D /* AppDelegate.swift in Sources */,
 				5B01CBFD2168E2780007E01D /* ListItemCell.swift in Sources */,
+				5B4639DD2168FE9B00200D8F /* TabViewController.swift in Sources */,
 				5B01CC072168E8000007E01D /* ListItemCellConfigurator.swift in Sources */,
+				5B4639DF216901BE00200D8F /* SplitViewController.swift in Sources */,
+				5B4639E3216908E800200D8F /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
