@@ -15,4 +15,8 @@ final class ItemNavigator {
         let newWindowController = NSWindowController(window: newWindow)
         newWindowController.showWindow(nil)
     }
+
+    func openURL(_ url: URL) {
+        NSWorkspace.shared.open(url)
+    }
 }

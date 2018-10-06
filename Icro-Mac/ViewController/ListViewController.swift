@@ -83,14 +83,14 @@ extension ListViewController: NSCollectionViewDataSource, NSCollectionViewDelega
                         sizeForItemAt indexPath: IndexPath) -> NSSize {
         let string = viewModel.item(for: indexPath.item).content.string
         let someWidth: CGFloat = collectionView.bounds.size.width
-        let stringAttributes = [NSAttributedString.Key.font: NSFont.systemFont(ofSize: 12)]
+        let stringAttributes = [NSAttributedString.Key.font: Font().body]
         let attrString = NSAttributedString(string: string, attributes: stringAttributes)
         let frame: NSRect = NSMakeRect(0, 0, someWidth, CGFloat.greatestFiniteMagnitude)
         let tv = NSTextView(frame: frame)
         tv.textStorage?.setAttributedString(attrString)
         tv.isHorizontallyResizable = false
         tv.sizeToFit()
-        let height = tv.frame.size.height + 60
+        let height = tv.frame.size.height + 80
         return CGSize(width: collectionView.bounds.width, height: height)
     }
 }

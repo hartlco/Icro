@@ -117,11 +117,47 @@ private extension String {
         let htmlData = NSString(string: self as NSString).data(using: String.Encoding.unicode.rawValue)
         let options = [NSAttributedString.DocumentReadingOptionKey.documentType:
             NSAttributedString.DocumentType.html]
-        let attributedString = try? NSMutableAttributedString(data: htmlData ?? Data(),
+        guard let string = try? NSMutableAttributedString(data: htmlData ?? Data(),
                                                               options: options,
-                                                              documentAttributes: nil)
-        return attributedString
+                                                              documentAttributes: nil) else {
+                                                                return nil
+        }
 
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 1.2
+        let mutableAttributedString = NSMutableAttributedString(string: string.string.trimEmptyLines, attributes: [
+            .font: Font().body,
+            .paragraphStyle: paragraphStyle
+            ])
+
+        string.enumerateAttributes(in: NSRange(location: 0, length: string.length), options: []) { (attributes, rane, _) in
+            let links = attributes.filter({ key, _ in
+                return key == .link
+            })
+
+            links.forEach({ _, value in
+                mutableAttributedString.save_addAttributes(
+                    [
+                        .foregroundColor: Color.main,
+                        NSAttributedString.Key.link: value
+                    ], range: rane)
+                return
+            })
+
+            for (_, value) in attributes {
+                if let font = value as? XFont {
+                    if font.isBold {
+                        mutableAttributedString.save_addAttributes([.font: Font().boldBody], range: rane)
+                    }
+
+                    if font.isItalic {
+                        mutableAttributedString.save_addAttributes([.font: Font().italicBody], range: rane)
+                    }
+                }
+            }
+        }
+
+        return mutableAttributedString
     }
     #endif
 

@@ -47,6 +47,7 @@
 		5B4639E3216908E800200D8F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4639E1216908E800200D8F /* ListViewController.swift */; };
 		5B4639E4216908E800200D8F /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4639E2216908E800200D8F /* ListViewController.xib */; };
 		5B4639E821691F6E00200D8F /* ItemNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4639E721691F6E00200D8F /* ItemNavigator.swift */; };
+		5B4639E92169350600200D8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		5B4E4187208AF8C700FC610A /* Pods-Icro-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */; };
 		5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
 		5B58371B212860BA0076121E /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371A212860BA0076121E /* ComposeViewModel.swift */; };
@@ -879,6 +880,7 @@
 				5B4639E02169074200200D8F /* Localizable.strings in Resources */,
 				5B4639E4216908E800200D8F /* ListViewController.xib in Resources */,
 				5B01CBD12168D6AA0007E01D /* Main.storyboard in Resources */,
+				5B4639E92169350600200D8F /* Assets.xcassets in Resources */,
 				5B01CBFE2168E2780007E01D /* ListItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

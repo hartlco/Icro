@@ -16,7 +16,7 @@ final class ListItemCellConfigurator {
 
     func configure(_ cell: ListItemCell, forDisplaying item: Item) {
         cell.nameLabel.stringValue = item.author.name
-        cell.contentLabel.stringValue = item.content.string
+        cell.contentLabel.attributedStringValue = item.content
         cell.avatarImageView.kf.setImage(with: item.author.avatar)
 
         cell.didDoubleClick = { [weak self] in
