@@ -5,11 +5,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="ListItemCell" customModule="Icro_Mac" customModuleProvider="target">
-            <connections>
-                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
-            </connections>
-        </customObject>
+        <customObject id="-2" userLabel="File's Owner"/>
         <collectionViewItem id="Q2s-GJ-WUY" customClass="ListItemCell" customModule="Icro_Mac" customModuleProvider="target">
             <connections>
                 <outlet property="avatarImageView" destination="9Bp-L4-Ph6" id="18P-bN-UY3"/>
@@ -74,6 +70,13 @@
                 <constraint firstItem="9Bp-L4-Ph6" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="pTq-gY-KrA"/>
                 <constraint firstAttribute="trailing" secondItem="6dP-TK-6wJ" secondAttribute="trailing" constant="10" id="qpc-4Q-hXf"/>
             </constraints>
+            <gestureRecognizers>
+                <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="2" id="Ujc-rg-5QZ">
+                    <connections>
+                        <action selector="openItemAction:" target="Q2s-GJ-WUY" id="1PN-T6-Mwr"/>
+                    </connections>
+                </clickGestureRecognizer>
+            </gestureRecognizers>
         </customView>
     </objects>
 </document>

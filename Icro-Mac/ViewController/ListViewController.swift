@@ -19,10 +19,12 @@ class ListViewController: NSViewController {
     }
 
     private let viewModel: ListViewModel
-    private let itemCellConfigurator = ListItemCellConfigurator()
+    private let itemCellConfigurator: ListItemCellConfigurator
 
-    init(listViewModel: ListViewModel) {
+    init(listViewModel: ListViewModel,
+         itemNavigator: ItemNavigator) {
         self.viewModel = listViewModel
+        self.itemCellConfigurator = ListItemCellConfigurator(itemNavigator: itemNavigator)
         super.init(nibName: "ListViewController", bundle: nil)
     }
     

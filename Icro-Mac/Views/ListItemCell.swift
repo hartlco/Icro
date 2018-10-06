@@ -17,8 +17,13 @@ class ListItemCell: NSCollectionViewItem {
     @IBOutlet weak var contentLabel: NSTextField!    
     @IBOutlet weak var avatarImageView: NSImageView!
 
+    var didDoubleClick: (() -> Void)?
+
     override func prepareForReuse() {
         super.prepareForReuse()
         avatarImageView.kf.cancelDownloadTask()
+    }
+    @IBAction private func openItemAction(_ sender: Any) {
+        didDoubleClick?()
     }
 }

@@ -14,15 +14,18 @@ class SplitViewController: NSSplitViewController {
 
     private var tabViewController: TabViewController?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear() {
+        super.viewWillAppear()
+
+        let itemNavigator = ItemNavigator()
 
         tabViewController = menuPane.viewController as? TabViewController
 
         tabViewController?.didSelectTab = { [weak self] viewModel in
             guard let self = self else { return }
             self.removeChild(at: 1)
-            self.addChild(ListViewController(listViewModel: viewModel))
+            self.addChild(ListViewController(listViewModel: viewModel,
+                                             itemNavigator: itemNavigator))
         }
     }
     
