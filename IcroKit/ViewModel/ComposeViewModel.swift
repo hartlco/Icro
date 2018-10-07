@@ -13,8 +13,13 @@ public enum ImageState {
 
 public final class ComposeViewModel {
     public struct Image {
-        let title: String
-        let link: URL
+        public init(title: String, link: URL) {
+            self.title = title
+            self.link = link
+        }
+
+        public let title: String
+        public let link: URL
     }
 
     public enum Mode {
@@ -27,7 +32,7 @@ public final class ComposeViewModel {
     private let imageUploadService = MicropubRequestController()
     private let userSettings: UserSettings
 
-    private(set) var imageState = ImageState.idle {
+    private(set) public var imageState = ImageState.idle {
         didSet {
             didChangeImageState?(imageState)
         }
@@ -150,13 +155,13 @@ public final class ComposeViewModel {
         }.resume()
     }
 
-    func postHostedBlog(string: String, completion: @escaping () -> Void) {
+    public func postHostedBlog(string: String, completion: @escaping () -> Void) {
         Webservice().load(resource: Item.post(text: string), bearer: true) { _ in
             completion()
         }
     }
 
-    func reply(item: Item, string: String, completion: @escaping (Error?) -> Void) {
+    public func reply(item: Item, string: String, completion: @escaping (Error?) -> Void) {
         Webservice().load(resource: item.reply(with: string)) { response in
             switch response {
             case .error(let error):
@@ -167,7 +172,7 @@ public final class ComposeViewModel {
         }
     }
 
-    var replyItem: Item? {
+    public var replyItem: Item? {
         switch mode {
         case .reply(let item):
             return item
