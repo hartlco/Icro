@@ -76,4 +76,8 @@ extension TabViewController: NSOutlineViewDelegate {
         didSelectTab?(viewModel)
         return true
     }
+
+    func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
+        return 48
+    }
 }
