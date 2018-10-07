@@ -18,6 +18,7 @@ final class ListItemCellConfigurator {
         cell.nameLabel.stringValue = item.author.name
         cell.contentLabel.attributedStringValue = item.content
         cell.avatarImageView.kf.setImage(with: item.author.avatar)
+        cell.images = item.images
 
         cell.didDoubleClick = { [weak self] in
             print("nav: did double lcick")

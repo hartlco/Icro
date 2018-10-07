@@ -90,7 +90,11 @@ extension ListViewController: NSCollectionViewDataSource, NSCollectionViewDelega
         tv.textStorage?.setAttributedString(attrString)
         tv.isHorizontallyResizable = false
         tv.sizeToFit()
-        let height = tv.frame.size.height + 80
+
+        let item = viewModel.item(for: indexPath.item)
+        let imageHeight: CGFloat = item.images.isEmpty ? 0 : 160
+
+        let height = tv.frame.size.height + 80 + imageHeight
         return CGSize(width: collectionView.bounds.width, height: height)
     }
 }
