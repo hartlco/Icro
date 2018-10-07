@@ -61,7 +61,13 @@
                                     <items>
                                         <menuItem title="New Post" keyEquivalent="n" id="Was-JA-tGl">
                                             <connections>
-                                                <action selector="newPostWithSender:" target="Ady-hI-5gd" id="Apt-hW-PFd"/>
+                                                <action selector="newPostWithSender:" target="Ady-hI-5gd" id="5gm-mn-J1D"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="bvz-7Z-9bD"/>
+                                        <menuItem title="Refresh" keyEquivalent="R" id="BPs-8t-YP8">
+                                            <connections>
+                                                <action selector="refreshTimeline:" target="Ady-hI-5gd" id="H3P-LD-Al2"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -327,6 +333,12 @@
                                                 <action selector="replyWithSender:" target="Ady-hI-5gd" id="BTh-BM-mB1"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="F4W-wY-e17"/>
+                                        <menuItem title="Open Conversation" keyEquivalent="o" identifier="OpenConversationIdentifier" id="F6b-Pb-a9A" userLabel="Open Conversation">
+                                            <connections>
+                                                <action selector="openConversationWithSender:" target="Ady-hI-5gd" id="cmR-mt-esV"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -337,6 +349,11 @@
                                         <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
                                             <connections>
                                                 <action selector="performMiniaturize:" target="Ady-hI-5gd" id="VwT-WD-YPe"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Close" keyEquivalent="w" id="4mb-eZ-A8c">
+                                            <connections>
+                                                <action selector="performClose:" target="Ady-hI-5gd" id="MQk-lf-Qyi"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Zoom" id="R4o-n2-Eq4">
@@ -390,6 +407,20 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <toolbar key="toolbar" implicitIdentifier="B4529E68-2283-4900-BBB1-3FFF12EB88BB" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="gbd-4b-UJ8">
                             <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="B4E22E2A-0BE9-49D5-BAF1-24801D0F2135" label="Custom View" paletteLabel="Custom View" image="NSRefreshTemplate" sizingBehavior="auto" id="l9x-zR-iqe">
+                                    <nil key="toolTip"/>
+                                    <button key="view" verticalHuggingPriority="750" id="xSQ-Ju-lQ8">
+                                        <rect key="frame" x="18" y="14" width="40" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSRefreshTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="z41-4C-djg">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="refreshTimeline:" target="Oky-zY-oP4" id="SBm-0t-cnd"/>
+                                        </connections>
+                                    </button>
+                                </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="ARX-tG-4od"/>
                                 <toolbarItem implicitItemIdentifier="55092E73-40A2-4400-A374-D3AD26F788ED" label="Custom View" paletteLabel="Custom View" image="NSAddTemplate" sizingBehavior="auto" id="wXs-vW-jJ6">
                                     <nil key="toolTip"/>
@@ -404,6 +435,7 @@
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
+                                <toolbarItem reference="l9x-zR-iqe"/>
                                 <toolbarItem reference="ARX-tG-4od"/>
                                 <toolbarItem reference="wXs-vW-jJ6"/>
                             </defaultToolbarItems>
@@ -455,13 +487,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="80" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="26" horizontalPageScroll="10" verticalLineScroll="26" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1W-Cb-JK3">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="50" horizontalPageScroll="10" verticalLineScroll="50" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1W-Cb-JK3">
                                 <rect key="frame" x="0.0" y="0.0" width="80" height="300"/>
                                 <clipView key="contentView" drawsBackground="NO" id="XEa-x9-c4o">
                                     <rect key="frame" x="1" y="1" width="78" height="298"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="iV8-Jd-Are" id="IjU-5l-bxz">
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="48" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="iV8-Jd-Are" id="IjU-5l-bxz">
                                             <rect key="frame" x="0.0" y="0.0" width="78" height="298"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -470,7 +502,7 @@
                                             <tableColumns>
                                                 <tableColumn width="75" minWidth="40" maxWidth="1000" id="iV8-Jd-Are">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="systemBold" size="11"/>
+                                                        <font key="font" metaFont="smallSystemBold"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -607,5 +639,6 @@
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSRefreshTemplate" width="11" height="15"/>
     </resources>
 </document>

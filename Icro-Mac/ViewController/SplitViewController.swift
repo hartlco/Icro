@@ -32,5 +32,10 @@ class SplitViewController: NSSplitViewController {
     @IBAction private func newPost(sender: Any) {
         print("new post")
     }
+
+    @IBAction private func refreshTimeline(_ sender: Any) {
+        guard let currentListViewController = children.last as? ListViewController else { return }
+        currentListViewController.refresh()
+    }
     
 }

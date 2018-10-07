@@ -12,7 +12,8 @@ import IcroKit_Mac
 class ListViewController: NSViewController, NSMenuItemValidation {
     func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
         switch menuItem.identifier {
-        case NSUserInterfaceItemIdentifier(rawValue: "ReplyIdentifier"):
+        case NSUserInterfaceItemIdentifier(rawValue: "ReplyIdentifier"),
+             NSUserInterfaceItemIdentifier(rawValue: "OpenConversationIdentifier"):
             return !collectionView.selectionIndexes.isEmpty
         default:
             return true
@@ -30,11 +31,13 @@ class ListViewController: NSViewController, NSMenuItemValidation {
 
     private let viewModel: ListViewModel
     private let itemCellConfigurator: ListItemCellConfigurator
+    private let itemNavigator: ItemNavigator
 
     init(listViewModel: ListViewModel,
          itemNavigator: ItemNavigator) {
         self.viewModel = listViewModel
         self.itemCellConfigurator = ListItemCellConfigurator(itemNavigator: itemNavigator)
+        self.itemNavigator = itemNavigator
         super.init(nibName: "ListViewController", bundle: nil)
     }
     
@@ -67,11 +70,22 @@ class ListViewController: NSViewController, NSMenuItemValidation {
         collectionView.collectionViewLayout?.invalidateLayout()
     }
 
+    func refresh() {
+        viewModel.load()
+    }
+
     @IBAction private func reply(sender: Any) {
         print("reply")
     }
 
+    @IBAction private func openConversation(sender: Any) {
+        guard let firstIndex = collectionView.selectionIndexes.first else {
+                return
+        }
 
+        let item = viewModel.item(for: firstIndex)
+        itemNavigator.openConversation(for: item)
+    }
 }
 
 extension ListViewController: NSCollectionViewDataSource, NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
