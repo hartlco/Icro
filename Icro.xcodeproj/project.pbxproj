@@ -140,6 +140,8 @@
 		5BDE18EF216A5771001254F4 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BDE18ED216A5771001254F4 /* ComposeViewController.xib */; };
 		5BDE18F0216A57C0001254F4 /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
 		5BDE18F1216A57C0001254F4 /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
+		5BDE18F3216A76FA001254F4 /* SettingsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BDE18F2216A76FA001254F4 /* SettingsStoryboard.storyboard */; };
+		5BDE18F5216A7A47001254F4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE18F4216A7A47001254F4 /* SettingsViewController.swift */; };
 		5BE9455F2079EFCE004F9FF4 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
 		5BE945602079EFCE004F9FF4 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */; };
 		5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
@@ -293,6 +295,8 @@
 		5BD32BB82089A12E005D250A /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ViewController/SettingsViewController.xib; sourceTree = "<group>"; };
 		5BDE18EC216A5771001254F4 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		5BDE18ED216A5771001254F4 /* ComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		5BDE18F2216A76FA001254F4 /* SettingsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsStoryboard.storyboard; sourceTree = "<group>"; };
+		5BDE18F4216A7A47001254F4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = View/ItemTableViewCell.swift; sourceTree = "<group>"; };
 		5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ItemTableViewCell.xib; path = View/ItemTableViewCell.xib; sourceTree = "<group>"; };
 		5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileTableViewCell.swift; path = View/ProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -452,6 +456,8 @@
 				5B4639E2216908E800200D8F /* ListViewController.xib */,
 				5BDE18EC216A5771001254F4 /* ComposeViewController.swift */,
 				5BDE18ED216A5771001254F4 /* ComposeViewController.xib */,
+				5BDE18F2216A76FA001254F4 /* SettingsStoryboard.storyboard */,
+				5BDE18F4216A7A47001254F4 /* SettingsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -888,6 +894,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BDE18F3216A76FA001254F4 /* SettingsStoryboard.storyboard in Resources */,
 				5B01CBCE2168D6AA0007E01D /* Assets.xcassets in Resources */,
 				5B4639E02169074200200D8F /* Localizable.strings in Resources */,
 				5B4639E4216908E800200D8F /* ListViewController.xib in Resources */,
@@ -1175,6 +1182,7 @@
 				5BDE18EE216A5771001254F4 /* ComposeViewController.swift in Sources */,
 				5B01CBCA2168D6A90007E01D /* AppDelegate.swift in Sources */,
 				5B01CBFD2168E2780007E01D /* ListItemCell.swift in Sources */,
+				5BDE18F5216A7A47001254F4 /* SettingsViewController.swift in Sources */,
 				5B4639DD2168FE9B00200D8F /* TabViewController.swift in Sources */,
 				5B4639EC2169C36500200D8F /* ImageViewItem.swift in Sources */,
 				5B01CC072168E8000007E01D /* ListItemCellConfigurator.swift in Sources */,

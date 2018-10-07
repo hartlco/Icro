@@ -37,5 +37,9 @@ class SplitViewController: NSSplitViewController {
         guard let currentListViewController = children.last as? ListViewController else { return }
         currentListViewController.refresh()
     }
+
+    @IBAction private func openSettings(_ sender: Any) {
+        ItemNavigator().openSettings()
+    }
     
 }

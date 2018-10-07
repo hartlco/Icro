@@ -32,6 +32,12 @@ final class ItemNavigator {
         newWindowController.showWindow(nil)
     }
 
+    func openSettings() {
+        let storyboard = NSStoryboard(name: "SettingsStoryboard", bundle: nil)
+        guard let windowController = storyboard.instantiateInitialController() as? NSWindowController else { return }
+        windowController.showWindow(nil)
+    }
+
     func openURL(_ url: URL) {
         NSWorkspace.shared.open(url)
     }
