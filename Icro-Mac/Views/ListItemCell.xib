@@ -103,7 +103,7 @@
                 <constraint firstAttribute="trailing" secondItem="6dP-TK-6wJ" secondAttribute="trailing" constant="10" id="qpc-4Q-hXf"/>
             </constraints>
             <gestureRecognizers>
-                <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="2" id="Ujc-rg-5QZ">
+                <clickGestureRecognizer numberOfClicksRequired="2" id="Ujc-rg-5QZ">
                     <connections>
                         <action selector="openItemAction:" target="Q2s-GJ-WUY" id="1PN-T6-Mwr"/>
                     </connections>

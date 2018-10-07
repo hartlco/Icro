@@ -43,8 +43,24 @@ final class ListItemCell: NSCollectionViewItem {
         super.prepareForReuse()
         avatarImageView.kf.cancelDownloadTask()
     }
+
     @IBAction private func openItemAction(_ sender: Any) {
         didDoubleClick?()
+    }
+
+    override var isSelected: Bool {
+        willSet {
+            if newValue {
+                view.layer?.backgroundColor = Color.accentLight.cgColor
+            } else {
+                view.layer?.backgroundColor = NSColor.white.cgColor
+            }
+        }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.wantsLayer = true
     }
 }
 

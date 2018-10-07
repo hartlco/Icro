@@ -12,6 +12,7 @@ public typealias XColor = NSColor
 
 public struct Color {
     public static let main = XColor(named: "main")!
+    public static let accentLight = XColor(named: "accentLight")!
     public static let accentSuperLight = XColor(named: "accentSuperLight")!
     public static let accent = XColor(named: "accent")!
     public static let yellow = XColor(named: "yellow")

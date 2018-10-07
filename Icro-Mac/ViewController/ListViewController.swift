@@ -15,6 +15,7 @@ class ListViewController: NSViewController {
             collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.register(ListItemCell.nib, forItemWithIdentifier: ListItemCell.identifier)
+            collectionView.isSelectable = true
         }
     }
 
@@ -96,6 +97,10 @@ extension ListViewController: NSCollectionViewDataSource, NSCollectionViewDelega
 
         let height = tv.frame.size.height + 80 + imageHeight
         return CGSize(width: collectionView.bounds.width, height: height)
+    }
+
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        
     }
 }
 
