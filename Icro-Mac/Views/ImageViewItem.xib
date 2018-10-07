@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,6 +13,15 @@
             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
+                <box boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Mze-2g-DgK">
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                    <view key="contentView" id="tlk-X4-YK9">
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <color key="borderColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="fillColor" name="accentLight"/>
+                </box>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9sx-oO-O4U">
                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="V86-V5-b5y"/>
@@ -20,8 +30,12 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="9sx-oO-O4U" secondAttribute="trailing" id="93n-JG-5kl"/>
                 <constraint firstItem="9sx-oO-O4U" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="Aef-Jj-eL7"/>
+                <constraint firstAttribute="bottom" secondItem="Mze-2g-DgK" secondAttribute="bottom" id="Dle-Gt-zdd"/>
                 <constraint firstItem="9sx-oO-O4U" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="HxW-wf-F4w"/>
                 <constraint firstAttribute="bottom" secondItem="9sx-oO-O4U" secondAttribute="bottom" id="bMS-JF-Xuk"/>
+                <constraint firstItem="Mze-2g-DgK" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="ony-nh-60U"/>
+                <constraint firstAttribute="trailing" secondItem="Mze-2g-DgK" secondAttribute="trailing" id="os2-aj-2yC"/>
+                <constraint firstItem="Mze-2g-DgK" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="v7v-hc-z2I"/>
             </constraints>
         </customView>
         <collectionViewItem id="dGv-ck-qPY" customClass="ImageViewItem" customModule="Icro_Mac" customModuleProvider="target">
@@ -31,4 +45,9 @@
             </connections>
         </collectionViewItem>
     </objects>
+    <resources>
+        <namedColor name="accentLight">
+            <color red="0.99599999189376831" green="0.94499999284744263" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

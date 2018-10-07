@@ -5,6 +5,7 @@
 
 import Cocoa
 import Kingfisher
+import IcroKit_Mac
 
 final class ListItemCell: NSCollectionViewItem {
     static let nib = NSNib(nibNamed: "ListItemCell", bundle: nil)
@@ -12,12 +13,19 @@ final class ListItemCell: NSCollectionViewItem {
 
     @IBOutlet weak var nameLabel: NSTextField!
     @IBOutlet weak var contentLabel: NSTextField!    
-    @IBOutlet weak var avatarImageView: NSImageView!
+    @IBOutlet weak var avatarImageView: NSImageView! {
+        didSet {
+            avatarImageView.wantsLayer = true
+            avatarImageView.layer?.masksToBounds = true
+            avatarImageView.layer?.cornerRadius = 25
+        }
+    }
     @IBOutlet weak var imageCollectionView: NSCollectionView! {
         didSet {
             imageCollectionView.register(ImageViewItem.nib, forItemWithIdentifier: ImageViewItem.identifier)
             imageCollectionView.delegate = self
             imageCollectionView.dataSource = self
+            imageCollectionView.backgroundColors = [Color.accentSuperLight]
         }
     }
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
