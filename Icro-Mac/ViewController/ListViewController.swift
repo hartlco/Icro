@@ -9,7 +9,16 @@
 import Cocoa
 import IcroKit_Mac
 
-class ListViewController: NSViewController {
+class ListViewController: NSViewController, NSMenuItemValidation {
+    func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+        switch menuItem.identifier {
+        case NSUserInterfaceItemIdentifier(rawValue: "ReplyIdentifier"):
+            return !collectionView.selectionIndexes.isEmpty
+        default:
+            return true
+        }
+    }
+
     @IBOutlet weak var collectionView: NSCollectionView! {
         didSet {
             collectionView.delegate = self
@@ -58,11 +67,11 @@ class ListViewController: NSViewController {
         collectionView.collectionViewLayout?.invalidateLayout()
     }
 
-    override var representedObject: Any? {
-        didSet {
-            // Update the view, if already loaded.
-        }
+    @IBAction private func reply(sender: Any) {
+        print("reply")
     }
+
+
 }
 
 extension ListViewController: NSCollectionViewDataSource, NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {

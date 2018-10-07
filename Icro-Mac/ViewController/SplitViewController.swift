@@ -28,5 +28,9 @@ class SplitViewController: NSSplitViewController {
                                              itemNavigator: itemNavigator))
         }
     }
+
+    @IBAction private func newPost(sender: Any) {
+        print("new post")
+    }
     
 }
