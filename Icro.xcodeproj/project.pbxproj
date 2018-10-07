@@ -52,7 +52,6 @@
 		5B4639ED2169C36500200D8F /* ImageViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4639EB2169C36500200D8F /* ImageViewItem.xib */; };
 		5B4E4187208AF8C700FC610A /* Pods-Icro-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */; };
 		5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
-		5B58371B212860BA0076121E /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371A212860BA0076121E /* ComposeViewModel.swift */; };
 		5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371D212861220076121E /* EditActionsConfigurator.swift */; };
 		5B583722212861220076121E /* UserItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371E212861220076121E /* UserItemCellConfigurator.swift */; };
 		5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371F212861220076121E /* ProfileViewConfigurator.swift */; };
@@ -101,7 +100,6 @@
 		5B5837702128B5F80076121E /* KeyboardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F68762098BB8800A24983 /* KeyboardInputView.swift */; };
 		5B5837712128B5F80076121E /* KeyboardInputView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F68782098BBA200A24983 /* KeyboardInputView.xib */; };
 		5B5837722128B5F80076121E /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837292128618B0076121E /* UserListViewModel.swift */; };
-		5B5837732128B5F80076121E /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371A212860BA0076121E /* ComposeViewModel.swift */; };
 		5B5837742128B5F80076121E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */; };
 		5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
 		5B5837762128B5F80076121E /* BlacklistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71620979CF20003B35D /* BlacklistViewModel.swift */; };
@@ -127,8 +125,6 @@
 		5BC347BC2132947100DEB45D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58377B212950F40076121E /* Item.swift */; };
 		5BC347BD213294A900DEB45D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AF51EB449BC006DEB40 /* Resource.swift */; };
 		5BC347BF2132950D00DEB45D /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF462070DF8000C51258 /* UserSettings.swift */; };
-		5BC347C02132955900DEB45D /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
-		5BC347C12132955900DEB45D /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
 		5BC347C22132957300DEB45D /* HTMLContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2B001EB45213006DEB40 /* HTMLContent.swift */; };
 		5BC347C32132958600DEB45D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B494E652124C0FA00C3969B /* Color.swift */; };
 		5BC347C42132958600DEB45D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7720A613EF00B54399 /* Font.swift */; };
@@ -138,6 +134,12 @@
 		5BC347C92132963A00DEB45D /* Date+ComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */; };
 		5BD32BB92089A12E005D250A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD32BB72089A12E005D250A /* SettingsViewController.swift */; };
 		5BD32BBA2089A12E005D250A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BD32BB82089A12E005D250A /* SettingsViewController.xib */; };
+		5BDE18EA216A5745001254F4 /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371A212860BA0076121E /* ComposeViewModel.swift */; };
+		5BDE18EB216A5745001254F4 /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371A212860BA0076121E /* ComposeViewModel.swift */; };
+		5BDE18EE216A5771001254F4 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE18EC216A5771001254F4 /* ComposeViewController.swift */; };
+		5BDE18EF216A5771001254F4 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BDE18ED216A5771001254F4 /* ComposeViewController.xib */; };
+		5BDE18F0216A57C0001254F4 /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
+		5BDE18F1216A57C0001254F4 /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
 		5BE9455F2079EFCE004F9FF4 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
 		5BE945602079EFCE004F9FF4 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */; };
 		5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
@@ -251,7 +253,7 @@
 		5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewModel.swift; path = ViewModel/SettingsViewModel.swift; sourceTree = "<group>"; };
 		5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ComponentsFormatter.swift"; sourceTree = "<group>"; };
 		5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Icro-Bridging-Header.h"; sourceTree = "<group>"; };
-		5B58371A212860BA0076121E /* ComposeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComposeViewModel.swift; path = ViewModel/ComposeViewModel.swift; sourceTree = "<group>"; };
+		5B58371A212860BA0076121E /* ComposeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewModel.swift; sourceTree = "<group>"; };
 		5B58371D212861220076121E /* EditActionsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditActionsConfigurator.swift; path = Configurator/EditActionsConfigurator.swift; sourceTree = "<group>"; };
 		5B58371E212861220076121E /* UserItemCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserItemCellConfigurator.swift; path = Configurator/UserItemCellConfigurator.swift; sourceTree = "<group>"; };
 		5B58371F212861220076121E /* ProfileViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewConfigurator.swift; path = Configurator/ProfileViewConfigurator.swift; sourceTree = "<group>"; };
@@ -289,6 +291,8 @@
 		5BC347C62132960900DEB45D /* LoginInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInformation.swift; sourceTree = "<group>"; };
 		5BD32BB72089A12E005D250A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewController/SettingsViewController.swift; sourceTree = "<group>"; };
 		5BD32BB82089A12E005D250A /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ViewController/SettingsViewController.xib; sourceTree = "<group>"; };
+		5BDE18EC216A5771001254F4 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		5BDE18ED216A5771001254F4 /* ComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
 		5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = View/ItemTableViewCell.swift; sourceTree = "<group>"; };
 		5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ItemTableViewCell.xib; path = View/ItemTableViewCell.xib; sourceTree = "<group>"; };
 		5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileTableViewCell.swift; path = View/ProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -425,6 +429,7 @@
 		5B01CBFF2168E4C90007E01D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5B58371A212860BA0076121E /* ComposeViewModel.swift */,
 				5B58372B2128619B0076121E /* ListViewModel.swift */,
 			);
 			path = ViewModel;
@@ -445,6 +450,8 @@
 				5B4639DE216901BE00200D8F /* SplitViewController.swift */,
 				5B4639E1216908E800200D8F /* ListViewController.swift */,
 				5B4639E2216908E800200D8F /* ListViewController.xib */,
+				5BDE18EC216A5771001254F4 /* ComposeViewController.swift */,
+				5BDE18ED216A5771001254F4 /* ComposeViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -539,6 +546,7 @@
 		5BC347CB2132A66A00DEB45D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */,
 				C5FA2AF51EB449BC006DEB40 /* Resource.swift */,
 				5B869B07214E4633000A051C /* MicropubEndpoint.swift */,
 			);
@@ -615,7 +623,6 @@
 		C5FA2AF41EB4499F006DEB40 /* Netowkring */ = {
 			isa = PBXGroup;
 			children = (
-				5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */,
 			);
 			name = Netowkring;
 			sourceTree = "<group>";
@@ -624,7 +631,6 @@
 			isa = PBXGroup;
 			children = (
 				5B5837292128618B0076121E /* UserListViewModel.swift */,
-				5B58371A212860BA0076121E /* ComposeViewModel.swift */,
 				5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */,
 				5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */,
 				5B44C71620979CF20003B35D /* BlacklistViewModel.swift */,
@@ -889,6 +895,7 @@
 				5B4639E92169350600200D8F /* Assets.xcassets in Resources */,
 				5B4639ED2169C36500200D8F /* ImageViewItem.xib in Resources */,
 				5B01CBFE2168E2780007E01D /* ListItemCell.xib in Resources */,
+				5BDE18EF216A5771001254F4 /* ComposeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,16 +957,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Icro-Mac/Pods-Icro-Mac-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-macOS/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna-macOS/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess-macOS/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/wpxmlrpc-macOS/wpxmlrpc.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/wpxmlrpc.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1064,7 +1075,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework",
 				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
@@ -1073,12 +1083,10 @@
 				"${BUILT_PRODUCTS_DIR}/Keyboard+LayoutGuide/KeyboardLayoutGuide.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
-				"${BUILT_PRODUCTS_DIR}/wpxmlrpc/wpxmlrpc.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AcknowList.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTCoreText.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
@@ -1087,7 +1095,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeyboardLayoutGuide.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/wpxmlrpc.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1102,7 +1109,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Icro/Pods-Icro-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework",
 				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
@@ -1111,14 +1117,14 @@
 				"${BUILT_PRODUCTS_DIR}/Keyboard+LayoutGuide/KeyboardLayoutGuide.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
-				"${BUILT_PRODUCTS_DIR}/wpxmlrpc/wpxmlrpc.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna-iOS/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess-iOS/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/wpxmlrpc-iOS/wpxmlrpc.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AcknowList.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTCoreText.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
@@ -1127,9 +1133,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeyboardLayoutGuide.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/wpxmlrpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/wpxmlrpc.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1165,6 +1172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BDE18EE216A5771001254F4 /* ComposeViewController.swift in Sources */,
 				5B01CBCA2168D6A90007E01D /* AppDelegate.swift in Sources */,
 				5B01CBFD2168E2780007E01D /* ListItemCell.swift in Sources */,
 				5B4639DD2168FE9B00200D8F /* TabViewController.swift in Sources */,
@@ -1183,10 +1191,12 @@
 				5B01CBEC2168D7150007E01D /* Font.swift in Sources */,
 				5B01CBF02168D71F0007E01D /* Resource.swift in Sources */,
 				5B01CBEE2168D71A0007E01D /* UserSettings.swift in Sources */,
+				5BDE18EA216A5745001254F4 /* ComposeViewModel.swift in Sources */,
 				5B01CBEA2168D7150007E01D /* Date+ComponentsFormatter.swift in Sources */,
 				5B01CBF22168D7240007E01D /* Author.swift in Sources */,
 				5B01CBE92168D7150007E01D /* CacheStorage.swift in Sources */,
 				5B01CBF32168D7240007E01D /* Item.swift in Sources */,
+				5BDE18F0216A57C0001254F4 /* MicropubRequestController.swift in Sources */,
 				5B01CBED2168D7150007E01D /* Color.swift in Sources */,
 				5B01CBF42168D7240007E01D /* HTMLContent.swift in Sources */,
 				5B01CC012168E4DF0007E01D /* ListViewModel.swift in Sources */,
@@ -1220,7 +1230,6 @@
 				5B58375F2128B5F80076121E /* AppNavigator.swift in Sources */,
 				5B5837602128B5F80076121E /* ComposeNavigator.swift in Sources */,
 				5B5837612128B5F80076121E /* EditActionsConfigurator.swift in Sources */,
-				5BC347C12132955900DEB45D /* MicropubRequestController.swift in Sources */,
 				5B5837622128B5F80076121E /* ProfileViewConfigurator.swift in Sources */,
 				5B5837632128B5F80076121E /* UserItemCellConfigurator.swift in Sources */,
 				5B5837652128B5F80076121E /* ImageDownloadManager.swift in Sources */,
@@ -1237,7 +1246,6 @@
 				5B5837702128B5F80076121E /* KeyboardInputView.swift in Sources */,
 				5B5837712128B5F80076121E /* KeyboardInputView.xib in Sources */,
 				5B5837722128B5F80076121E /* UserListViewModel.swift in Sources */,
-				5B5837732128B5F80076121E /* ComposeViewModel.swift in Sources */,
 				5B5837742128B5F80076121E /* LoginViewModel.swift in Sources */,
 				5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */,
 				5B5837762128B5F80076121E /* BlacklistViewModel.swift in Sources */,
@@ -1257,10 +1265,12 @@
 				5BC347BD213294A900DEB45D /* Resource.swift in Sources */,
 				5BC347C5213295C000DEB45D /* Date+Ago.swift in Sources */,
 				5BC347C82132962200DEB45D /* CacheStorage.swift in Sources */,
+				5BDE18EB216A5745001254F4 /* ComposeViewModel.swift in Sources */,
 				5BC347BC2132947100DEB45D /* Item.swift in Sources */,
 				5BC347C42132958600DEB45D /* Font.swift in Sources */,
 				5BC347C22132957300DEB45D /* HTMLContent.swift in Sources */,
 				5BC347C72132960900DEB45D /* LoginInformation.swift in Sources */,
+				5BDE18F1216A57C0001254F4 /* MicropubRequestController.swift in Sources */,
 				5BC347BF2132950D00DEB45D /* UserSettings.swift in Sources */,
 				5BC347BB2132947100DEB45D /* Author.swift in Sources */,
 				5B01CC002168E4DD0007E01D /* ListViewModel.swift in Sources */,
@@ -1276,7 +1286,6 @@
 			files = (
 				5BA6D17C2087C0B300F484B2 /* LoginViewController.swift in Sources */,
 				5B583728212861770076121E /* SettingsNavigator.swift in Sources */,
-				5B58371B212860BA0076121E /* ComposeViewModel.swift in Sources */,
 				5BE9455F2079EFCE004F9FF4 /* ItemTableViewCell.swift in Sources */,
 				5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */,
 				5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */,
@@ -1290,7 +1299,6 @@
 				5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */,
 				5B58372E212861F30076121E /* ListViewController.swift in Sources */,
 				5B583724212861220076121E /* ItemCellConfigurator.swift in Sources */,
-				5BC347C02132955900DEB45D /* MicropubRequestController.swift in Sources */,
 				5B397070207BDD9D007DE3CC /* ImageDownloadManager.swift in Sources */,
 				5B5837262128616E0076121E /* ItemNavigator.swift in Sources */,
 				5BC1820720790C930061F261 /* SingleImageCollectionViewCell.swift in Sources */,

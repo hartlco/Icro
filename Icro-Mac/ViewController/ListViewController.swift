@@ -75,7 +75,13 @@ class ListViewController: NSViewController, NSMenuItemValidation {
     }
 
     @IBAction private func reply(sender: Any) {
-        print("reply")
+        guard let firstIndex = collectionView.selectionIndexes.first else {
+            return
+        }
+
+        let item = viewModel.item(for: firstIndex)
+
+        itemNavigator.openReply(for: item)
     }
 
     @IBAction private func openConversation(sender: Any) {

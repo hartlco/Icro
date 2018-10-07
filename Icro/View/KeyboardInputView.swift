@@ -6,11 +6,6 @@
 import UIKit
 import FontAwesome_swift
 
-enum ImageState {
-    case idle
-    case uploading(progress: Float)
-}
-
 final class KeyboardInputView: UIView {
     private var text: String? {
         didSet {

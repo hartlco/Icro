@@ -5,15 +5,19 @@
 
 import Foundation
 import wpxmlrpc
-import IcroKit
 
-final class ComposeViewModel {
-    struct Image {
+public enum ImageState {
+    case idle
+    case uploading(progress: Float)
+}
+
+public final class ComposeViewModel {
+    public struct Image {
         let title: String
         let link: URL
     }
 
-    enum Mode {
+    public enum Mode {
         case post
         case reply(item: Item)
     }
@@ -29,17 +33,17 @@ final class ComposeViewModel {
         }
     }
 
-    var didChangeImageState: ((ImageState) -> Void)?
+    public var didChangeImageState: ((ImageState) -> Void)?
 
-    var didUpdateImages: (() -> Void)?
+    public var didUpdateImages: (() -> Void)?
 
-    init(mode: Mode,
+    public init(mode: Mode,
          userSettings: UserSettings = .shared) {
         self.mode = mode
         self.userSettings = userSettings
     }
 
-    var startText: String {
+    public var startText: String {
         switch mode {
         case .post:
             return ""
@@ -48,11 +52,11 @@ final class ComposeViewModel {
         }
     }
 
-    var imageUploadEnabled: Bool {
+    public var imageUploadEnabled: Bool {
         return userSettings.wordpressInfo == nil
     }
 
-    func post(string: String, completion: @escaping (Error?) -> Void) {
+    public func post(string: String, completion: @escaping (Error?) -> Void) {
         let string = postWithImages(string: string)
 
         switch mode {
@@ -69,25 +73,25 @@ final class ComposeViewModel {
         }
     }
 
-    var numberOfImages: Int {
+    public var numberOfImages: Int {
         return images.count
     }
 
-    func image(at index: Int) -> Image {
+    public func image(at index: Int) -> Image {
         return images[index]
     }
 
-    func insertImage(image: Image) {
+    public func insertImage(image: Image) {
         images.append(image)
         didUpdateImages?()
     }
 
-    func removeImage(at index: Int) {
+    public func removeImage(at index: Int) {
         images.remove(at: index)
         didUpdateImages?()
     }
 
-    func upload(image: UIImage) {
+    public func upload(image: XImage) {
         imageState = .uploading(progress: 0.0)
 
         let endpoint: MicropubEndpoint
@@ -108,7 +112,7 @@ final class ComposeViewModel {
         })
     }
 
-    func cancelImageUpload() {
+    public func cancelImageUpload() {
         imageState = .idle
         imageUploadService.cancelImageUpload()
     }

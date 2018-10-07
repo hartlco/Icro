@@ -16,6 +16,22 @@ final class ItemNavigator {
         newWindowController.showWindow(nil)
     }
 
+    func openCompose() {
+        let viewModel = ComposeViewModel(mode: .post)
+        let viewController = ComposeViewController(composeViewModel: viewModel)
+        let newWindow = NSWindow(contentViewController: viewController)
+        let newWindowController = NSWindowController(window: newWindow)
+        newWindowController.showWindow(nil)
+    }
+
+    func openReply(for item: Item) {
+        let viewModel = ComposeViewModel(mode: .reply(item: item))
+        let viewController = ComposeViewController(composeViewModel: viewModel)
+        let newWindow = NSWindow(contentViewController: viewController)
+        let newWindowController = NSWindowController(window: newWindow)
+        newWindowController.showWindow(nil)
+    }
+
     func openURL(_ url: URL) {
         NSWorkspace.shared.open(url)
     }

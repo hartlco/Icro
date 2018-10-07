@@ -4,7 +4,6 @@
 //
 
 import Foundation
-import IcroKit
 import Alamofire
 
 class MicropubRequestController {
@@ -52,7 +51,7 @@ class MicropubRequestController {
     }
 
     func uploadImages(endpoint: MicropubEndpoint,
-                      image: UIImage,
+                      image: XImage,
                       uploadProgress: @escaping (Float) -> Void,
                       completion: @escaping (ComposeViewModel.Image?, Error?) -> Void) {
 
@@ -120,11 +119,15 @@ extension URL {
     }
 }
 
-extension UIImage {
+extension XImage {
     var jpeg: Data? {
+        #if os(OSX)
+        let cgImage = self.cgImage(forProposedRect: nil, context: nil, hints: nil)!
+        let bitmapRep = NSBitmapImageRep(cgImage: cgImage)
+        let jpegData = bitmapRep.representation(using: NSBitmapImageRep.FileType.jpeg, properties: [:])!
+        return jpegData
+        #elseif os(iOS)
         return self.jpegData(compressionQuality: 1)   // QUALITY min = 0 / max = 1
-    }
-    var png: Data? {
-        return self.pngData()
+        #endif
     }
 }

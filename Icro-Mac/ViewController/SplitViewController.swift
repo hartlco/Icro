@@ -30,7 +30,7 @@ class SplitViewController: NSSplitViewController {
     }
 
     @IBAction private func newPost(sender: Any) {
-        print("new post")
+        ItemNavigator().openCompose()
     }
 
     @IBAction private func refreshTimeline(_ sender: Any) {
