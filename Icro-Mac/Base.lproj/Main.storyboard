@@ -689,6 +689,26 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="340" height="500"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="B4529E68-2283-4900-BBB1-3FFF12EB88BB" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="gbd-4b-UJ8">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="ARX-tG-4od"/>
+                                <toolbarItem implicitItemIdentifier="DC5EACE9-1AFA-4E09-8BC1-B1A6A1785017" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="Cfq-X9-FHL">
+                                    <nil key="toolTip"/>
+                                    <button key="view" verticalHuggingPriority="750" id="Qqa-Kj-ukS">
+                                        <rect key="frame" x="0.0" y="14" width="82" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MuJ-CL-XAP">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="ARX-tG-4od"/>
+                                <toolbarItem reference="Cfq-X9-FHL"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -699,7 +719,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="355"/>
+            <point key="canvasLocation" x="74" y="404"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="DPx-zN-WaK">
