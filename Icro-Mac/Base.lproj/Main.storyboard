@@ -328,6 +328,16 @@
                                                 <action selector="showFavorites:" target="Ady-hI-5gd" id="v0z-7h-25u"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Show Discover" keyEquivalent="4" id="0ya-9T-L4F">
+                                            <connections>
+                                                <action selector="showDiscover:" target="Ady-hI-5gd" id="zFa-U0-P1m"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show Profile" keyEquivalent="5" id="sW3-88-LLM" userLabel="Show Profile">
+                                            <connections>
+                                                <action selector="showProfile:" target="Ady-hI-5gd" id="UXe-Ra-nWr"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>

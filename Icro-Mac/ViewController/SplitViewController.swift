@@ -53,4 +53,12 @@ class SplitViewController: NSSplitViewController {
     @IBAction private func showFavorites(_ sender: Any) {
         tabViewController?.selectTab(index: 2)
     }
+
+    @IBAction private func showDiscover(_ sender: Any) {
+        tabViewController?.selectTab(index: 3)
+    }
+
+    @IBAction private func showProfile(_ sender: Any) {
+        tabViewController?.selectTab(index: 4)
+    }
 }
