@@ -260,16 +260,16 @@ private extension XFont {
     var isBold: Bool {
         #if os(iOS)
         return fontDescriptor.symbolicTraits.contains(.traitBold)
-        #endif
-
+        #elseif os(OSX)
         return false
+        #endif
     }
 
     var isItalic: Bool {
         #if os(iOS)
         return fontDescriptor.symbolicTraits.contains(.traitItalic)
-        #endif
-
+        #elseif os(OSX)
         return false
+        #endif
     }
 }

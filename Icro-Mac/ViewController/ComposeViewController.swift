@@ -27,8 +27,9 @@ class ComposeViewController: NSViewController {
     }
 
     @IBAction func sendAction(_ sender: Any) {
-        viewModel.post(string: composeTextField.stringValue) { _ in
-            
+        viewModel.post(string: composeTextField.stringValue) { [weak self] _ in
+            guard let self = self else { return }
+            self.dismiss(nil)
         }
     }
 

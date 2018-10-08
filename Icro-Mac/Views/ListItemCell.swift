@@ -12,7 +12,7 @@ final class ListItemCell: NSCollectionViewItem {
     static let identifier = NSUserInterfaceItemIdentifier("ListItemCell")
 
     @IBOutlet weak var nameLabel: NSTextField!
-    @IBOutlet weak var contentLabel: NSTextField!    
+    @IBOutlet weak var contentLabel: NSTextField!
     @IBOutlet weak var avatarImageView: NSImageView! {
         didSet {
             avatarImageView.wantsLayer = true
@@ -78,11 +78,11 @@ extension ListItemCell: NSCollectionViewDelegate, NSCollectionViewDataSource, NS
         return cell
     }
 
-    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
+    func collectionView(_ collectionView: NSCollectionView,
+                        layout collectionViewLayout: NSCollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> NSSize {
         return CGSize(width: 140, height: 140)
     }
-
-
 }
 
 final class HorizontScrollViewView: NSScrollView {

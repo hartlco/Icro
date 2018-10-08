@@ -43,7 +43,7 @@ public final class ComposeViewModel {
     public var didUpdateImages: (() -> Void)?
 
     public init(mode: Mode,
-         userSettings: UserSettings = .shared) {
+                userSettings: UserSettings = .shared) {
         self.mode = mode
         self.userSettings = userSettings
     }

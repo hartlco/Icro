@@ -80,7 +80,7 @@ public class ListViewModel: NSObject {
     private var isLoading = false
 
     public init(type: ListType,
-         userSettings: UserSettings = .shared) {
+                userSettings: UserSettings = .shared) {
         self.type = type
         self.userSettings = userSettings
         super.init()

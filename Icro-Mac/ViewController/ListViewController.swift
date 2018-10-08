@@ -40,11 +40,11 @@ class ListViewController: NSViewController, NSMenuItemValidation {
         self.itemNavigator = itemNavigator
         super.init(nibName: "ListViewController", bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
        fatalError()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -115,21 +115,19 @@ extension ListViewController: NSCollectionViewDataSource, NSCollectionViewDelega
         let someWidth: CGFloat = collectionView.bounds.size.width
         let stringAttributes = [NSAttributedString.Key.font: Font().body]
         let attrString = NSAttributedString(string: string, attributes: stringAttributes)
-        let frame: NSRect = NSMakeRect(0, 0, someWidth, CGFloat.greatestFiniteMagnitude)
-        let tv = NSTextView(frame: frame)
-        tv.textStorage?.setAttributedString(attrString)
-        tv.isHorizontallyResizable = false
-        tv.sizeToFit()
+        let frame: NSRect = NSRect(x: 0, y: 0, width: someWidth, height: CGFloat.greatestFiniteMagnitude)
+        let textView = NSTextView(frame: frame)
+        textView.textStorage?.setAttributedString(attrString)
+        textView.isHorizontallyResizable = false
+        textView.sizeToFit()
 
         let item = viewModel.item(for: indexPath.item)
         let imageHeight: CGFloat = item.images.isEmpty ? 0 : 160
 
-        let height = tv.frame.size.height + 80 + imageHeight
+        let height = textView.frame.size.height + 80 + imageHeight
         return CGSize(width: collectionView.bounds.width, height: height)
     }
 
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
-        
     }
 }
-

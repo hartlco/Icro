@@ -41,5 +41,4 @@ class SplitViewController: NSSplitViewController {
     @IBAction private func openSettings(_ sender: Any) {
         ItemNavigator().openSettings()
     }
-    
 }
