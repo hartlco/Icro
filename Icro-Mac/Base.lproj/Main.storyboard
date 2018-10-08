@@ -313,16 +313,19 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="hB3-LF-h0Y"/>
-                                        <menuItem title="Show Sidebar" keyEquivalent="s" id="kIP-vf-haE">
-                                            <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                        <menuItem title="Show Timeline" keyEquivalent="1" id="oMF-6y-8X5">
                                             <connections>
-                                                <action selector="toggleSourceList:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
+                                                <action selector="showTimeline:" target="Ady-hI-5gd" id="Ahi-bg-65h"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
-                                            <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                        <menuItem title="Show Mentions" keyEquivalent="2" id="oKh-pi-bIJ">
                                             <connections>
-                                                <action selector="toggleFullScreen:" target="Ady-hI-5gd" id="dU3-MA-1Rq"/>
+                                                <action selector="showMentions:" target="Ady-hI-5gd" id="EsV-Wh-Q5F"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show Favorites" keyEquivalent="3" id="VZz-7k-DX9">
+                                            <connections>
+                                                <action selector="showFavorites:" target="Ady-hI-5gd" id="v0z-7h-25u"/>
                                             </connections>
                                         </menuItem>
                                     </items>

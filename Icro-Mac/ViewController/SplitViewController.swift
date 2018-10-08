@@ -41,4 +41,16 @@ class SplitViewController: NSSplitViewController {
     @IBAction private func openSettings(_ sender: Any) {
         ItemNavigator().openSettings()
     }
+
+    @IBAction private func showTimeline(_ sender: Any) {
+        tabViewController?.selectTab(index: 0)
+    }
+
+    @IBAction private func showMentions(_ sender: Any) {
+        tabViewController?.selectTab(index: 1)
+    }
+
+    @IBAction private func showFavorites(_ sender: Any) {
+        tabViewController?.selectTab(index: 2)
+    }
 }

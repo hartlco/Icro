@@ -33,6 +33,11 @@ class TabViewController: NSViewController {
     override func viewDidAppear() {
         didSelectTab?(viewModels[0])
     }
+
+    func selectTab(index: Int) {
+        outlineView.selectRowIndexes([index], byExtendingSelection: false)
+        didSelectTab?(viewModels[index])
+    }
 }
 
 extension TabViewController: NSOutlineViewDataSource {
