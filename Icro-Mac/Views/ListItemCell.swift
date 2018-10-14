@@ -12,7 +12,21 @@ final class ListItemCell: NSCollectionViewItem {
     static let identifier = NSUserInterfaceItemIdentifier("ListItemCell")
 
     @IBOutlet weak var nameLabel: NSTextField!
-    @IBOutlet weak var contentLabel: NSTextField!
+    @IBOutlet weak var usernameLabel: NSTextField!
+    @IBOutlet weak var timeLabel: NSTextField!
+    @IBOutlet weak var separatorView: NSView! {
+        didSet {
+            separatorView.wantsLayer = true
+            separatorView.layer?.backgroundColor = NSColor.lightGray.cgColor
+        }
+    }
+    @IBOutlet weak var contentLabel: ContentLabel! {
+        didSet {
+            contentLabel.allowsEditingTextAttributes = true
+            contentLabel.isSelectable = true
+        }
+    }
+
     @IBOutlet weak var avatarImageView: NSImageView! {
         didSet {
             avatarImageView.wantsLayer = true
@@ -20,6 +34,7 @@ final class ListItemCell: NSCollectionViewItem {
             avatarImageView.layer?.cornerRadius = 25
         }
     }
+
     @IBOutlet weak var imageCollectionView: NSCollectionView! {
         didSet {
             imageCollectionView.register(ImageViewItem.nib, forItemWithIdentifier: ImageViewItem.identifier)
@@ -28,6 +43,7 @@ final class ListItemCell: NSCollectionViewItem {
             imageCollectionView.backgroundColors = [Color.accentSuperLight]
         }
     }
+
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
 
     var didDoubleClick: (() -> Void)?
@@ -93,5 +109,11 @@ final class HorizontScrollViewView: NSScrollView {
         }
 
         super.scrollWheel(with: event)
+    }
+}
+
+final class ContentLabel: NSTextField {
+    override func resetCursorRects() {
+        addCursorRect(bounds, cursor: .pointingHand)
     }
 }

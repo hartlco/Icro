@@ -11,22 +11,28 @@ public typealias XFont = NSFont
 #endif
 
 public struct Font {
+    #if os(iOS)
+    let bodySize: CGFloat = 16
+    #elseif os(OSX)
+    let bodySize: CGFloat = 13
+    #endif
+
     public init() { }
 
     public var body: XFont {
-        let font = XFont.systemFont(ofSize: 16)
+        let font = XFont.systemFont(ofSize: bodySize)
         let fontMetrics = UIFontMetrics(forTextStyle: .body)
         return fontMetrics.scaledFont(for: font)
     }
 
     public var boldBody: XFont {
-        let font = XFont.boldSystemFont(ofSize: 16)
+        let font = XFont.boldSystemFont(ofSize: bodySize)
         let fontMetrics = UIFontMetrics(forTextStyle: .body)
         return fontMetrics.scaledFont(for: font)
     }
 
     public var italicBody: XFont {
-        let font = XFont.italicSystemFont(ofSize: 16)
+        let font = XFont.italicSystemFont(ofSize: bodySize)
         let fontMetrics = UIFontMetrics(forTextStyle: .body)
         return fontMetrics.scaledFont(for: font)
     }

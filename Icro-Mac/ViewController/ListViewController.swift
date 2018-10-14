@@ -111,20 +111,18 @@ extension ListViewController: NSCollectionViewDataSource, NSCollectionViewDelega
     func collectionView(_ collectionView: NSCollectionView,
                         layout collectionViewLayout: NSCollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> NSSize {
-        let string = viewModel.item(for: indexPath.item).content.string
-        let someWidth: CGFloat = collectionView.bounds.size.width
-        let stringAttributes = [NSAttributedString.Key.font: Font().body]
-        let attrString = NSAttributedString(string: string, attributes: stringAttributes)
+        let item = viewModel.item(for: indexPath.item)
+        let someWidth: CGFloat = collectionView.bounds.size.width - 80
         let frame: NSRect = NSRect(x: 0, y: 0, width: someWidth, height: CGFloat.greatestFiniteMagnitude)
         let textView = NSTextView(frame: frame)
-        textView.textStorage?.setAttributedString(attrString)
+
+        textView.textStorage?.setAttributedString(item.content)
         textView.isHorizontallyResizable = false
         textView.sizeToFit()
 
-        let item = viewModel.item(for: indexPath.item)
         let imageHeight: CGFloat = item.images.isEmpty ? 0 : 160
 
-        let height = textView.frame.size.height + 80 + imageHeight
+        let height = textView.frame.size.height + 60 + imageHeight
         return CGSize(width: collectionView.bounds.width, height: height)
     }
 

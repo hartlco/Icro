@@ -124,7 +124,7 @@ private extension String {
         }
 
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 1.2
+        paragraphStyle.lineSpacing = 1.1
         let mutableAttributedString = NSMutableAttributedString(string: string.string.trimEmptyLines, attributes: [
             .font: Font().body,
             .paragraphStyle: paragraphStyle

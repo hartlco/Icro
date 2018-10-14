@@ -16,6 +16,13 @@ final class ListItemCellConfigurator {
 
     func configure(_ cell: ListItemCell, forDisplaying item: Item) {
         cell.nameLabel.stringValue = item.author.name
+        if let username = item.author.username {
+            cell.usernameLabel.stringValue = "@\(username)"
+        } else {
+            cell.usernameLabel.stringValue = ""
+        }
+        
+        cell.timeLabel.stringValue = item.relativeDateString
         cell.contentLabel.attributedStringValue = item.content
         cell.avatarImageView.kf.setImage(with: item.author.avatar)
         cell.images = item.images

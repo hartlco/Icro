@@ -26,7 +26,7 @@
                             <collectionView id="BI1-Y2-X8i">
                                 <rect key="frame" x="0.0" y="0.0" width="478" height="158"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="k8Z-AH-Ydh">
+                                <collectionViewFlowLayout key="collectionViewLayout" id="k8Z-AH-Ydh">
                                     <size key="itemSize" width="50" height="50"/>
                                 </collectionViewFlowLayout>
                                 <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
