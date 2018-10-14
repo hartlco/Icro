@@ -23,7 +23,7 @@ final class ListItemCellConfigurator {
         }
         
         cell.timeLabel.stringValue = item.relativeDateString
-        cell.contentLabel.attributedStringValue = item.content
+        cell.contentLabel.set(attributedText: item.content)
         cell.avatarImageView.kf.setImage(with: item.author.avatar)
         cell.images = item.images
 
@@ -32,5 +32,11 @@ final class ListItemCellConfigurator {
             guard let self = self else { return }
             self.itemNavigator.openConversation(for: item)
         }
+
+        cell.contentLabel.didTapLink = { [weak self] url in
+            guard let self = self else { return }
+            self.itemNavigator.openURL(url)
+        }
+
     }
 }

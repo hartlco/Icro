@@ -139,7 +139,7 @@ private extension String {
                 mutableAttributedString.save_addAttributes(
                     [
                         .foregroundColor: Color.main,
-                        NSAttributedString.Key.link: value
+                        NSAttributedString.Key(rawValue: "IcroLinkAttribute"): value
                     ], range: rane)
                 return
             })

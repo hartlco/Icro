@@ -17,21 +17,16 @@ final class ListItemCell: NSCollectionViewItem {
     @IBOutlet weak var separatorView: NSView! {
         didSet {
             separatorView.wantsLayer = true
-            separatorView.layer?.backgroundColor = NSColor.lightGray.cgColor
+            separatorView.layer?.backgroundColor = NSColor(calibratedRed: 0, green: 0, blue: 0, alpha: 0.1).cgColor
         }
     }
-    @IBOutlet weak var contentLabel: ContentLabel! {
-        didSet {
-            contentLabel.allowsEditingTextAttributes = true
-            contentLabel.isSelectable = true
-        }
-    }
+    @IBOutlet weak var contentLabel: ContentLabel!
 
     @IBOutlet weak var avatarImageView: NSImageView! {
         didSet {
             avatarImageView.wantsLayer = true
             avatarImageView.layer?.masksToBounds = true
-            avatarImageView.layer?.cornerRadius = 25
+            avatarImageView.layer?.cornerRadius = 20
         }
     }
 
@@ -115,5 +110,61 @@ final class HorizontScrollViewView: NSScrollView {
 final class ContentLabel: NSTextField {
     override func resetCursorRects() {
         addCursorRect(bounds, cursor: .pointingHand)
+    }
+
+    var didTapLink: ((URL) -> Void)?
+    private var touchRecognizer: NSClickGestureRecognizer?
+
+    func set(attributedText: NSAttributedString) {
+        self.attributedStringValue = attributedText
+        if touchRecognizer == nil {
+            touchRecognizer  = NSClickGestureRecognizer(target: self, action: #selector(didTapText(recognizer:)))
+            addGestureRecognizer(touchRecognizer!)
+        }
+    }
+
+    @objc private func didTapText(recognizer: NSClickGestureRecognizer) {
+        attributedStringValue.enumerateAttributes(in: NSRange(location: 0, length: attributedStringValue.length), options: []) { [weak self] (attributes, rane, _) in
+            guard let strongSelf = self else { return }
+
+            let links = attributes.filter({ key, _ in
+                return key == NSAttributedString.Key(rawValue: "IcroLinkAttribute")
+            })
+
+            links.forEach({ _, value in
+                if recognizer.didTapAttributedTextInLabel(label: strongSelf, inRange: rane),
+                    let url = value as? URL {
+                    strongSelf.didTapLink?(url)
+                }
+            })
+        }
+    }
+}
+
+extension NSClickGestureRecognizer {
+    func didTapAttributedTextInLabel(label: ContentLabel, inRange targetRange: NSRange) -> Bool {
+        // Create instances of NSLayoutManager, NSTextContainer and NSTextStorage
+        let layoutManager = NSLayoutManager()
+        let textContainer = NSTextContainer(size: CGSize.zero)
+        let textStorage = NSTextStorage(attributedString: label.attributedStringValue)
+
+        // Configure layoutManager and textStorage
+        layoutManager.addTextContainer(textContainer)
+        textStorage.addLayoutManager(layoutManager)
+
+        // Configure textContainer
+        textContainer.lineFragmentPadding = 0.0
+        textContainer.lineBreakMode = label.lineBreakMode
+        let labelSize = label.bounds.size
+        textContainer.size = labelSize
+
+        // Find the tapped character location and compare it to the specified range
+        let locationOfTouchInLabel = self.location(in: label)
+        let indexOfCharacter = layoutManager.characterIndex(for: locationOfTouchInLabel,
+                                                            in: textContainer,
+                                                            fractionOfDistanceBetweenInsertionPoints: nil)
+
+        print(NSLocationInRange(indexOfCharacter, targetRange))
+        return NSLocationInRange(indexOfCharacter, targetRange)
     }
 }

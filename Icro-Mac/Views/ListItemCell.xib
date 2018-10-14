@@ -26,10 +26,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Bp-L4-Ph6">
-                    <rect key="frame" x="10" y="159" width="50" height="50"/>
+                    <rect key="frame" x="10" y="169" width="40" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="A59-3U-BFu"/>
-                        <constraint firstAttribute="width" constant="50" id="TGU-Lx-kat"/>
+                        <constraint firstAttribute="height" constant="40" id="A59-3U-BFu"/>
+                        <constraint firstAttribute="width" constant="40" id="TGU-Lx-kat"/>
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="bWN-qk-gdp"/>
                 </imageView>
@@ -42,7 +42,7 @@
                     </textFieldCell>
                 </textField>
                 <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6dP-TK-6wJ">
-                    <rect key="frame" x="70" y="6" width="414" height="203"/>
+                    <rect key="frame" x="60" y="6" width="424" height="203"/>
                     <subviews>
                         <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fq7-a5-Lym">
                             <rect key="frame" x="0.0" y="185" width="62" height="18"/>
