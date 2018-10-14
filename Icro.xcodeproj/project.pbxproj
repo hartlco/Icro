@@ -107,6 +107,8 @@
 		5B60CF4E2072A66C00C51258 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */; };
 		5B60CF4F2072A66C00C51258 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */; };
 		5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
+		5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
+		5B6A565E21735A69003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B869B07214E4633000A051C /* MicropubEndpoint.swift */; };
 		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
 		5B8754FE2070139F00018DFA /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8754FC2070139F00018DFA /* ListViewController.xib */; };
@@ -275,6 +277,7 @@
 		5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComposeViewController.swift; path = ViewController/ComposeViewController.swift; sourceTree = "<group>"; };
 		5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ComposeViewController.xib; path = ViewController/ComposeViewController.xib; sourceTree = "<group>"; };
 		5B689BAB20837ECE005B9874 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TabBarViewController.xib; path = ViewController/TabBarViewController.xib; sourceTree = "<group>"; };
+		5B6A565C21735A4F003C4D92 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
 		5B869B07214E4633000A051C /* MicropubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicropubEndpoint.swift; sourceTree = "<group>"; };
 		5B8754F92070137300018DFA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
@@ -576,6 +579,7 @@
 				5B58372F2128620C0076121E /* Date+Ago.swift */,
 				5B2A5A7720A613EF00B54399 /* Font.swift */,
 				5B494E652124C0FA00C3969B /* Color.swift */,
+				5B6A565C21735A4F003C4D92 /* Functions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1199,6 +1203,7 @@
 				5B01CBEC2168D7150007E01D /* Font.swift in Sources */,
 				5B01CBF02168D71F0007E01D /* Resource.swift in Sources */,
 				5B01CBEE2168D71A0007E01D /* UserSettings.swift in Sources */,
+				5B6A565E21735A69003C4D92 /* Functions.swift in Sources */,
 				5BDE18EA216A5745001254F4 /* ComposeViewModel.swift in Sources */,
 				5B01CBEA2168D7150007E01D /* Date+ComponentsFormatter.swift in Sources */,
 				5B01CBF22168D7240007E01D /* Author.swift in Sources */,
@@ -1271,6 +1276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC347BD213294A900DEB45D /* Resource.swift in Sources */,
+				5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */,
 				5BC347C5213295C000DEB45D /* Date+Ago.swift in Sources */,
 				5BC347C82132962200DEB45D /* CacheStorage.swift in Sources */,
 				5BDE18EB216A5745001254F4 /* ComposeViewModel.swift in Sources */,

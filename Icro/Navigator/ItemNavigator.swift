@@ -150,13 +150,4 @@ final class ItemNavigator {
 
         navigationController.present(linksActionSheet, animated: true, completion: nil)
     }
-
-    // MARK: - Private
-
-    func username(from url: URL) -> String? {
-        guard url.host == "micro.blog",
-            url.pathComponents.count == 2,
-            let username = url.pathComponents.last else { return nil }
-        return username
-    }
 }

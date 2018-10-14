@@ -32,6 +32,15 @@ final class ItemNavigator {
         newWindowController.showWindow(nil)
     }
 
+    func open(authorName: String) {
+        let viewModel = ListViewModel(type: .username(username: authorName))
+        let viewController = ListViewController(listViewModel: viewModel, itemNavigator: self)
+        let newWindow = NSWindow(contentViewController: viewController)
+        let newWindowController = NSWindowController(window: newWindow)
+        viewController.title = authorName
+        newWindowController.showWindow(nil)
+    }
+
     func openSettings() {
         let storyboard = NSStoryboard(name: "SettingsStoryboard", bundle: nil)
         guard let windowController = storyboard.instantiateInitialController() as? NSWindowController else { return }
@@ -39,6 +48,11 @@ final class ItemNavigator {
     }
 
     func openURL(_ url: URL) {
+        if let username = username(from: url) {
+            open(authorName: username)
+            return
+        }
+
         NSWorkspace.shared.open(url)
     }
 }
