@@ -7,12 +7,14 @@
 //
 
 import Cocoa
+import IcroKit_Mac
 
 class SplitViewController: NSSplitViewController {
     @IBOutlet weak var menuPane: NSSplitViewItem!
     @IBOutlet weak var contentPane: NSSplitViewItem!
 
     private var tabViewController: TabViewController?
+    private var viewControllersByViewModel = [ListViewModel: ListViewController]()
 
     override func viewWillAppear() {
         super.viewWillAppear()
@@ -24,8 +26,7 @@ class SplitViewController: NSSplitViewController {
         tabViewController?.didSelectTab = { [weak self] viewModel in
             guard let self = self else { return }
             self.removeChild(at: 1)
-            self.addChild(ListViewController(listViewModel: viewModel,
-                                             itemNavigator: itemNavigator))
+            self.addChild(self.viewController(for: viewModel, itemNavigator: itemNavigator))
         }
     }
 
@@ -60,5 +61,17 @@ class SplitViewController: NSSplitViewController {
 
     @IBAction private func showProfile(_ sender: Any) {
         tabViewController?.selectTab(index: 4)
+    }
+
+    // MARK: - Private
+
+    private func viewController(for viewModel: ListViewModel, itemNavigator: ItemNavigator) -> ListViewController {
+        if let viewController = viewControllersByViewModel[viewModel] {
+            return viewController
+        }
+
+        let viewController = ListViewController(listViewModel: viewModel, itemNavigator: itemNavigator)
+        viewControllersByViewModel[viewModel] = viewController
+        return viewController
     }
 }

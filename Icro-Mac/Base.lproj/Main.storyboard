@@ -424,6 +424,13 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <toolbar key="toolbar" implicitIdentifier="B4529E68-2283-4900-BBB1-3FFF12EB88BB" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="gbd-4b-UJ8">
                             <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="6BE60939-B939-41FF-A133-68A14243FF8E" label="Custom View" paletteLabel="Custom View" tag="-1" sizingBehavior="auto" id="Bbr-Ub-wJJ">
+                                    <nil key="toolTip"/>
+                                    <progressIndicator key="view" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="Oa4-z2-UmE">
+                                        <rect key="frame" x="30" y="14" width="16" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </progressIndicator>
+                                </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="B4E22E2A-0BE9-49D5-BAF1-24801D0F2135" label="Custom View" paletteLabel="Custom View" image="NSRefreshTemplate" sizingBehavior="auto" id="l9x-zR-iqe">
                                     <nil key="toolTip"/>
                                     <button key="view" verticalHuggingPriority="750" id="xSQ-Ju-lQ8">
