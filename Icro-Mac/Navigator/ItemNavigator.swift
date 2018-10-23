@@ -20,6 +20,10 @@ final class ItemNavigator {
         let viewModel = ComposeViewModel(mode: .post)
         let viewController = ComposeViewController(composeViewModel: viewModel)
         let newWindow = NSWindow(contentViewController: viewController)
+        newWindow.titlebarAppearsTransparent = true
+        newWindow.isMovableByWindowBackground  = true
+        newWindow.styleMask.insert(.fullSizeContentView)
+        newWindow.title = "New Post"
         let newWindowController = NSWindowController(window: newWindow)
         newWindowController.showWindow(nil)
     }

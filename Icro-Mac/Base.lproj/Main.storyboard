@@ -422,48 +422,6 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="340" height="500"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="B4529E68-2283-4900-BBB1-3FFF12EB88BB" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="gbd-4b-UJ8">
-                            <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="6BE60939-B939-41FF-A133-68A14243FF8E" label="Custom View" paletteLabel="Custom View" tag="-1" sizingBehavior="auto" id="Bbr-Ub-wJJ">
-                                    <nil key="toolTip"/>
-                                    <progressIndicator key="view" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="Oa4-z2-UmE">
-                                        <rect key="frame" x="30" y="14" width="16" height="16"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    </progressIndicator>
-                                </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="B4E22E2A-0BE9-49D5-BAF1-24801D0F2135" label="Custom View" paletteLabel="Custom View" image="NSRefreshTemplate" sizingBehavior="auto" id="l9x-zR-iqe">
-                                    <nil key="toolTip"/>
-                                    <button key="view" verticalHuggingPriority="750" id="xSQ-Ju-lQ8">
-                                        <rect key="frame" x="18" y="14" width="40" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSRefreshTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="z41-4C-djg">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="refreshTimeline:" target="Oky-zY-oP4" id="SBm-0t-cnd"/>
-                                        </connections>
-                                    </button>
-                                </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="ARX-tG-4od"/>
-                                <toolbarItem implicitItemIdentifier="55092E73-40A2-4400-A374-D3AD26F788ED" label="Custom View" paletteLabel="Custom View" image="NSAddTemplate" sizingBehavior="auto" id="wXs-vW-jJ6">
-                                    <nil key="toolTip"/>
-                                    <button key="view" verticalHuggingPriority="750" id="hiF-0s-v9O">
-                                        <rect key="frame" x="18" y="14" width="40" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="Udd-kQ-7zA">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
-                                </toolbarItem>
-                            </allowedToolbarItems>
-                            <defaultToolbarItems>
-                                <toolbarItem reference="l9x-zR-iqe"/>
-                                <toolbarItem reference="ARX-tG-4od"/>
-                                <toolbarItem reference="wXs-vW-jJ6"/>
-                            </defaultToolbarItems>
-                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -512,13 +470,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="50" horizontalPageScroll="10" verticalLineScroll="50" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1W-Cb-JK3">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="270"/>
                                 <clipView key="contentView" drawsBackground="NO" id="XEa-x9-c4o">
-                                    <rect key="frame" x="1" y="1" width="78" height="298"/>
+                                    <rect key="frame" x="1" y="1" width="78" height="268"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="48" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="iV8-Jd-Are" id="IjU-5l-bxz">
-                                            <rect key="frame" x="0.0" y="0.0" width="78" height="298"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="78" height="268"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -601,7 +559,7 @@
                         <constraints>
                             <constraint firstItem="p1W-Cb-JK3" firstAttribute="leading" secondItem="FWN-k1-llK" secondAttribute="leading" id="Hfa-hj-IPu"/>
                             <constraint firstAttribute="bottom" secondItem="p1W-Cb-JK3" secondAttribute="bottom" id="gWf-aF-2Kn"/>
-                            <constraint firstItem="p1W-Cb-JK3" firstAttribute="top" secondItem="FWN-k1-llK" secondAttribute="top" id="m0l-VT-Nv0"/>
+                            <constraint firstItem="p1W-Cb-JK3" firstAttribute="top" secondItem="FWN-k1-llK" secondAttribute="top" constant="30" id="m0l-VT-Nv0"/>
                             <constraint firstAttribute="trailing" secondItem="p1W-Cb-JK3" secondAttribute="trailing" id="wld-Ej-I3s"/>
                         </constraints>
                     </view>
@@ -621,14 +579,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUg-Xk-mYr">
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUg-Xk-mYr">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <clipView key="contentView" id="hB8-tz-hcc">
                                     <rect key="frame" x="1" y="1" width="478" height="268"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="h3x-IN-nqP">
-                                            <rect key="frame" x="0.0" y="0.0" width="478" height="158"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="268"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="Rce-T4-o5Z">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -638,11 +596,11 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="yIv-gL-Y1j">
-                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="lAR-aL-v3K">
-                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <rect key="frame" x="463" y="1" width="16" height="228"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -662,7 +620,5 @@
     </scenes>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
-        <image name="NSAddTemplate" width="11" height="11"/>
-        <image name="NSRefreshTemplate" width="11" height="15"/>
     </resources>
 </document>

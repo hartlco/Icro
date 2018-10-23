@@ -1,7 +1,4 @@
 //
-//  SplitViewController.swift
-//  Icro-Mac
-//
 //  Created by martin on 06.10.18.
 //  Copyright © 2018 Martin Hartl. All rights reserved.
 //
