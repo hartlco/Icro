@@ -10,6 +10,8 @@ import Cocoa
 import IcroKit_Mac
 
 class ListViewController: NSViewController, NSMenuItemValidation {
+    private var resizingTextView = NSTextView()
+
     func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
         switch menuItem.identifier {
         case NSUserInterfaceItemIdentifier(rawValue: "ReplyIdentifier"),
@@ -114,7 +116,8 @@ extension ListViewController: NSCollectionViewDataSource, NSCollectionViewDelega
         let item = viewModel.item(for: indexPath.item)
         let someWidth: CGFloat = collectionView.bounds.size.width - 70
         let frame: NSRect = NSRect(x: 0, y: 0, width: someWidth, height: CGFloat.greatestFiniteMagnitude)
-        let textView = NSTextView(frame: frame)
+        let textView = resizingTextView
+        resizingTextView.frame = frame
 
         textView.textStorage?.setAttributedString(item.content)
         textView.isHorizontallyResizable = false

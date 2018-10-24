@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -442,7 +443,7 @@
                         <splitViewItem id="QLs-Qs-rcA"/>
                         <splitViewItem id="9hq-Vz-sFh"/>
                     </splitViewItems>
-                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="pQy-hZ-Z1j">
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="pQy-hZ-Z1j" customClass="NoDividerSplitView" customModule="Icro_Mac" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
@@ -452,7 +453,7 @@
                     <connections>
                         <outlet property="contentPane" destination="9hq-Vz-sFh" id="kYt-UB-YwH"/>
                         <outlet property="menuPane" destination="QLs-Qs-rcA" id="uCa-Z1-C8j"/>
-                        <outlet property="splitView" destination="pQy-hZ-Z1j" id="zlJ-xq-upi"/>
+                        <outlet property="splitView" destination="pQy-hZ-Z1j" id="LpD-UY-SAD"/>
                         <segue destination="7RZ-s4-pAc" kind="relationship" relationship="splitItems" id="IEh-xj-cxW"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="splitItems" id="sKV-m4-sRy"/>
                     </connections>
@@ -470,16 +471,16 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="50" horizontalPageScroll="10" verticalLineScroll="50" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1W-Cb-JK3">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="264"/>
                                 <clipView key="contentView" drawsBackground="NO" id="XEa-x9-c4o">
-                                    <rect key="frame" x="1" y="1" width="78" height="268"/>
+                                    <rect key="frame" x="1" y="1" width="78" height="262"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="48" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="iV8-Jd-Are" id="IjU-5l-bxz">
-                                            <rect key="frame" x="0.0" y="0.0" width="78" height="268"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="78" height="262"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
-                                            <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="separatorColor"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn width="75" minWidth="40" maxWidth="1000" id="iV8-Jd-Are">
@@ -559,7 +560,7 @@
                         <constraints>
                             <constraint firstItem="p1W-Cb-JK3" firstAttribute="leading" secondItem="FWN-k1-llK" secondAttribute="leading" id="Hfa-hj-IPu"/>
                             <constraint firstAttribute="bottom" secondItem="p1W-Cb-JK3" secondAttribute="bottom" id="gWf-aF-2Kn"/>
-                            <constraint firstItem="p1W-Cb-JK3" firstAttribute="top" secondItem="FWN-k1-llK" secondAttribute="top" constant="30" id="m0l-VT-Nv0"/>
+                            <constraint firstItem="p1W-Cb-JK3" firstAttribute="top" secondItem="FWN-k1-llK" secondAttribute="top" constant="36" id="m0l-VT-Nv0"/>
                             <constraint firstAttribute="trailing" secondItem="p1W-Cb-JK3" secondAttribute="trailing" id="wld-Ej-I3s"/>
                         </constraints>
                     </view>
@@ -620,5 +621,8 @@
     </scenes>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
+        <namedColor name="separatorColor">
+            <color white="0.83899998664855957" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
     </resources>
 </document>

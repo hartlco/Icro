@@ -24,6 +24,9 @@ final class ItemNavigator {
         newWindow.isMovableByWindowBackground  = true
         newWindow.styleMask.insert(.fullSizeContentView)
         newWindow.title = "New Post"
+        let customToolbar = NSToolbar()
+        newWindow.titleVisibility = .hidden
+        newWindow.toolbar = customToolbar
         let newWindowController = NSWindowController(window: newWindow)
         newWindowController.showWindow(nil)
     }

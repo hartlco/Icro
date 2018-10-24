@@ -12,6 +12,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window?.titlebarAppearsTransparent = true
         window?.isMovableByWindowBackground  = true
         window?.styleMask.insert(.fullSizeContentView)
+        let customToolbar = NSToolbar()
+        window?.titleVisibility = .hidden
+        window?.toolbar = customToolbar
     }
 
     func applicationWillTerminate(_ aNotification: Notification) { }

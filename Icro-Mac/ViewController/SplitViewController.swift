@@ -72,3 +72,10 @@ class SplitViewController: NSSplitViewController {
         return viewController
     }
 }
+
+
+final class NoDividerSplitView: NSSplitView {
+    override var dividerThickness: CGFloat {
+        return 0.0
+    }
+}

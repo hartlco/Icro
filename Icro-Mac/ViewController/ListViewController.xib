@@ -18,13 +18,13 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeo-w2-M9t">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="242"/>
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="236"/>
                     <clipView key="contentView" id="bXW-Dy-aIc">
-                        <rect key="frame" x="1" y="1" width="478" height="240"/>
+                        <rect key="frame" x="1" y="1" width="478" height="234"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView id="BI1-Y2-X8i">
-                                <rect key="frame" x="0.0" y="0.0" width="478" height="240"/>
+                                <rect key="frame" x="0.0" y="0.0" width="478" height="234"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" id="k8Z-AH-Ydh">
                                     <size key="itemSize" width="50" height="50"/>
@@ -38,13 +38,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="PeP-e9-Hgt">
-                        <rect key="frame" x="234" y="1" width="15" height="143"/>
+                        <rect key="frame" x="463" y="1" width="16" height="226"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
             </subviews>
             <constraints>
-                <constraint firstItem="jeo-w2-M9t" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="30" id="AYk-Qg-VJD"/>
+                <constraint firstItem="jeo-w2-M9t" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="36" id="AYk-Qg-VJD"/>
                 <constraint firstAttribute="trailing" secondItem="jeo-w2-M9t" secondAttribute="trailing" id="V6J-Dq-rvI"/>
                 <constraint firstItem="jeo-w2-M9t" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="aiF-zr-ff9"/>
                 <constraint firstAttribute="bottom" secondItem="jeo-w2-M9t" secondAttribute="bottom" id="dhd-dg-BjH"/>
