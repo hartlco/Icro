@@ -7,7 +7,7 @@ import Cocoa
 import Kingfisher
 import IcroKit_Mac
 
-final class ListItemCell: NSCollectionViewItem {
+final class ListItemCell: NSTableCellView {
     static let nib = NSNib(nibNamed: "ListItemCell", bundle: nil)
     static let identifier = NSUserInterfaceItemIdentifier("ListItemCell")
 
@@ -20,7 +20,13 @@ final class ListItemCell: NSCollectionViewItem {
             separatorView.layer?.backgroundColor = NSColor(calibratedRed: 0, green: 0, blue: 0, alpha: 0.1).cgColor
         }
     }
-    @IBOutlet weak var contentLabel: ContentLabel!
+//    @IBOutlet weak var contentLabel: ContentLabel!
+    @IBOutlet var contentTextView: NSTextView! {
+        didSet {
+            contentTextView.isAutomaticLinkDetectionEnabled = true
+        }
+    }
+    
 
     @IBOutlet weak var avatarImageView: NSImageView! {
         didSet {
@@ -40,8 +46,7 @@ final class ListItemCell: NSCollectionViewItem {
     }
 
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
-
-    var didDoubleClick: (() -> Void)?
+    
     var images = [URL]() {
         didSet {
             imageCollectionView.reloadData()
@@ -55,23 +60,9 @@ final class ListItemCell: NSCollectionViewItem {
         avatarImageView.kf.cancelDownloadTask()
     }
 
-    @IBAction private func openItemAction(_ sender: Any) {
-        didDoubleClick?()
-    }
-
-    override var isSelected: Bool {
-        willSet {
-            if newValue {
-                view.layer?.backgroundColor = Color.accentLight.cgColor
-            } else {
-                view.layer?.backgroundColor = NSColor.white.cgColor
-            }
-        }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.wantsLayer = true
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        wantsLayer = true
     }
 }
 
@@ -107,64 +98,57 @@ final class HorizontScrollViewView: NSScrollView {
     }
 }
 
-final class ContentLabel: NSTextField {
+class HyperlinkTextView: NSTextView {
+    override func mouseDown(with event: NSEvent) {
+        super.mouseDown(with: event)
+        if !openClickedHyperlink(with: event) {
+            nextResponder?.nextResponder?.nextResponder?.mouseDown(with: event)
+        }
+    }
+
+    override func scrollWheel(with event: NSEvent) {
+        nextResponder?.nextResponder?.nextResponder?.scrollWheel(with: event)
+    }
+
     override func resetCursorRects() {
-        addCursorRect(bounds, cursor: .pointingHand)
+        super.resetCursorRects()
+        addHyperlinkCursorRects()
     }
 
-    var didTapLink: ((URL) -> Void)?
-    private var touchRecognizer: NSClickGestureRecognizer?
+    private func addHyperlinkCursorRects() {
+        guard let layoutManager = layoutManager, let textContainer = textContainer else {
+            return
+        }
 
-    func set(attributedText: NSAttributedString) {
-        self.attributedStringValue = attributedText
-        if touchRecognizer == nil {
-            touchRecognizer  = NSClickGestureRecognizer(target: self, action: #selector(didTapText(recognizer:)))
-            addGestureRecognizer(touchRecognizer!)
+        let attributedStringValue = attributedString()
+        let range = NSRange(location: 0, length: attributedStringValue.length)
+
+        attributedStringValue.enumerateAttribute(.link, in: range) { value, range, _ in
+            guard value != nil else {
+                return
+            }
+
+            let rect = layoutManager.boundingRect(forGlyphRange: range, in: textContainer)
+            addCursorRect(rect, cursor: .pointingHand)
         }
     }
 
-    @objc private func didTapText(recognizer: NSClickGestureRecognizer) {
-        attributedStringValue.enumerateAttributes(in: NSRange(location: 0, length: attributedStringValue.length), options: []) { [weak self] (attributes, rane, _) in
-            guard let strongSelf = self else { return }
+    private func openClickedHyperlink(with event: NSEvent) -> Bool {
+        let attributedStringValue = attributedString()
+        let point = convert(event.locationInWindow, from: nil)
+        let characterIndex = characterIndexForInsertion(at: point)
 
-            let links = attributes.filter({ key, _ in
-                return key == NSAttributedString.Key(rawValue: "IcroLinkAttribute")
-            })
-
-            links.forEach({ _, value in
-                if recognizer.didTapAttributedTextInLabel(label: strongSelf, inRange: rane),
-                    let url = value as? URL {
-                    strongSelf.didTapLink?(url)
-                }
-            })
+        guard characterIndex < attributedStringValue.length else {
+            return false
         }
-    }
-}
 
-extension NSClickGestureRecognizer {
-    func didTapAttributedTextInLabel(label: ContentLabel, inRange targetRange: NSRange) -> Bool {
-        // Create instances of NSLayoutManager, NSTextContainer and NSTextStorage
-        let layoutManager = NSLayoutManager()
-        let textContainer = NSTextContainer(size: CGSize.zero)
-        let textStorage = NSTextStorage(attributedString: label.attributedStringValue)
+        let attributes = attributedStringValue.attributes(at: characterIndex, effectiveRange: nil)
+        print(attributes)
+        guard let url = attributes[.link] as? URL else {
+            return false
+        }
 
-        // Configure layoutManager and textStorage
-        layoutManager.addTextContainer(textContainer)
-        textStorage.addLayoutManager(layoutManager)
-
-        // Configure textContainer
-        textContainer.lineFragmentPadding = 0.0
-        textContainer.lineBreakMode = label.lineBreakMode
-        let labelSize = label.bounds.size
-        textContainer.size = labelSize
-
-        // Find the tapped character location and compare it to the specified range
-        let locationOfTouchInLabel = self.location(in: label)
-        let indexOfCharacter = layoutManager.characterIndex(for: locationOfTouchInLabel,
-                                                            in: textContainer,
-                                                            fractionOfDistanceBetweenInsertionPoints: nil)
-
-        print(NSLocationInRange(indexOfCharacter, targetRange))
-        return NSLocationInRange(indexOfCharacter, targetRange)
+        NSWorkspace.shared.open(url)
+        return true
     }
 }

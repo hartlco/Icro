@@ -2,9 +2,6 @@
 //  ListViewController.swift
 //  Icro-Mac
 //
-//  Created by martin on 06.10.18.
-//  Copyright © 2018 Martin Hartl. All rights reserved.
-//
 
 import Cocoa
 import IcroKit_Mac
@@ -16,20 +13,22 @@ class ListViewController: NSViewController, NSMenuItemValidation {
         switch menuItem.identifier {
         case NSUserInterfaceItemIdentifier(rawValue: "ReplyIdentifier"),
              NSUserInterfaceItemIdentifier(rawValue: "OpenConversationIdentifier"):
-            return !collectionView.selectionIndexes.isEmpty
+            return !tableView.selectedRowIndexes.isEmpty
         default:
             return true
         }
     }
 
-    @IBOutlet weak var collectionView: NSCollectionView! {
+    @IBOutlet weak var tableView: NSTableView! {
         didSet {
-            collectionView.delegate = self
-            collectionView.dataSource = self
-            collectionView.register(ListItemCell.nib, forItemWithIdentifier: ListItemCell.identifier)
-            collectionView.isSelectable = true
+            tableView.register(ListItemCell.nib, forIdentifier: ListItemCell.identifier)
+            tableView.delegate = self
+            tableView.dataSource = self
+            tableView.doubleAction = #selector(doubleClick)
         }
     }
+
+
 
     private let viewModel: ListViewModel
     private let itemCellConfigurator: ListItemCellConfigurator
@@ -52,24 +51,15 @@ class ListViewController: NSViewController, NSMenuItemValidation {
 
         viewModel.didFinishLoading = { [weak self] _ in
             guard let self = self else { return }
-            self.collectionView.reloadData()
+            self.tableView.reloadData()
         }
 
         viewModel.load()
     }
 
-    override func viewWillAppear() {
-        super.viewWillAppear()
-        collectionView.collectionViewLayout?.invalidateLayout()
-
-    }
-
-    override func viewWillLayout() {
-        super.viewWillLayout()
-
-        // When we're invalidating the collection view layout
-        // it will call `collectionView(_:layout:sizeForItemAt:)` method
-        collectionView.collectionViewLayout?.invalidateLayout()
+    override func viewDidLayout() {
+        super.viewDidLayout()
+        tableView.reloadData()
     }
 
     func refresh() {
@@ -77,7 +67,7 @@ class ListViewController: NSViewController, NSMenuItemValidation {
     }
 
     @IBAction private func reply(sender: Any) {
-        guard let firstIndex = collectionView.selectionIndexes.first else {
+        guard let firstIndex = tableView.selectedRowIndexes.first else {
             return
         }
 
@@ -87,34 +77,40 @@ class ListViewController: NSViewController, NSMenuItemValidation {
     }
 
     @IBAction private func openConversation(sender: Any) {
-        guard let firstIndex = collectionView.selectionIndexes.first else {
+        guard let firstIndex = tableView.selectedRowIndexes.first else {
                 return
         }
 
         let item = viewModel.item(for: firstIndex)
         itemNavigator.openConversation(for: item)
     }
+
+    @objc private func doubleClick() {
+        itemNavigator.openConversation(for: viewModel.item(for: tableView.clickedRow))
+    }
 }
 
-extension ListViewController: NSCollectionViewDataSource, NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+extension ListViewController: NSTableViewDelegate, NSTableViewDataSource {
+    func numberOfRows(in tableView: NSTableView) -> Int {
         return viewModel.numberOfItems(in: 0)
     }
 
-    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        guard let itemCell = collectionView.makeItem(withIdentifier: ListItemCell.identifier, for: indexPath) as? ListItemCell else {
+    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
+        return viewModel.item(for: row)
+    }
+
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        guard let itemCell = tableView.makeView(withIdentifier: ListItemCell.identifier, owner: self) as? ListItemCell else {
             fatalError("Cell could not be dequed")
         }
-        let item = viewModel.item(for: indexPath.item)
+        let item = viewModel.item(for: row)
         itemCellConfigurator.configure(itemCell, forDisplaying: item)
         return itemCell
     }
 
-    func collectionView(_ collectionView: NSCollectionView,
-                        layout collectionViewLayout: NSCollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> NSSize {
-        let item = viewModel.item(for: indexPath.item)
-        let someWidth: CGFloat = collectionView.bounds.size.width - 70
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        let item = viewModel.item(for: row)
+        let someWidth: CGFloat = tableView.bounds.size.width - 70
         let frame: NSRect = NSRect(x: 0, y: 0, width: someWidth, height: CGFloat.greatestFiniteMagnitude)
         let textView = resizingTextView
         resizingTextView.frame = frame
@@ -126,9 +122,6 @@ extension ListViewController: NSCollectionViewDataSource, NSCollectionViewDelega
         let imageHeight: CGFloat = item.images.isEmpty ? 0 : 160
 
         let height = textView.frame.size.height + 40 + imageHeight
-        return CGSize(width: collectionView.bounds.width, height: height)
-    }
-
-    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        return height
     }
 }

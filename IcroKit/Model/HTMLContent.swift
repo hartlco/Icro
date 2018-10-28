@@ -135,11 +135,11 @@ private extension String {
                 return key == .link
             })
 
-            links.forEach({ _, value in
+            links.forEach({ key, value in
                 mutableAttributedString.save_addAttributes(
                     [
                         .foregroundColor: Color.main,
-                        NSAttributedString.Key(rawValue: "IcroLinkAttribute"): value
+                        key: value
                     ], range: rane)
                 return
             })

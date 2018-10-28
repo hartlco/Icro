@@ -6,27 +6,14 @@
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner"/>
-        <collectionViewItem id="Q2s-GJ-WUY" customClass="ListItemCell" customModule="Icro_Mac" customModuleProvider="target">
-            <connections>
-                <outlet property="avatarImageView" destination="9Bp-L4-Ph6" id="18P-bN-UY3"/>
-                <outlet property="collectionViewHeight" destination="XhT-eR-7Ka" id="iek-72-aSN"/>
-                <outlet property="contentLabel" destination="MZh-Ib-2XE" id="HWC-WT-JCp"/>
-                <outlet property="imageCollectionView" destination="80F-xD-FhP" id="X9G-P8-fZI"/>
-                <outlet property="nameLabel" destination="URO-Wa-R9c" id="Kwp-xV-pD1"/>
-                <outlet property="separatorView" destination="A2T-uk-lWd" id="px7-TV-VgC"/>
-                <outlet property="timeLabel" destination="RZf-H2-tWp" id="dDj-Yw-bBx"/>
-                <outlet property="usernameLabel" destination="vhM-cY-RhJ" id="0HQ-Yx-iqo"/>
-                <outlet property="view" destination="Hz6-mo-xeY" id="IaX-fl-baR"/>
-            </connections>
-        </collectionViewItem>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView identifier="ListItemCell" id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="494" height="215"/>
+        <customView identifier="ListItemCell" id="Hz6-mo-xeY" customClass="ListItemCell" customModule="Icro_Mac" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="494" height="333"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Bp-L4-Ph6">
-                    <rect key="frame" x="10" y="169" width="40" height="40"/>
+                    <rect key="frame" x="10" y="287" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="A59-3U-BFu"/>
                         <constraint firstAttribute="width" constant="40" id="TGU-Lx-kat"/>
@@ -34,7 +21,7 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="bWN-qk-gdp"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RZf-H2-tWp">
-                    <rect key="frame" x="453" y="191" width="33" height="14"/>
+                    <rect key="frame" x="453" y="309" width="33" height="14"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="iis-ud-ETD">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -42,10 +29,10 @@
                     </textFieldCell>
                 </textField>
                 <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6dP-TK-6wJ">
-                    <rect key="frame" x="60" y="6" width="424" height="203"/>
+                    <rect key="frame" x="60" y="6" width="424" height="321"/>
                     <subviews>
                         <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fq7-a5-Lym">
-                            <rect key="frame" x="0.0" y="185" width="62" height="18"/>
+                            <rect key="frame" x="0.0" y="303" width="62" height="18"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="URO-Wa-R9c">
                                     <rect key="frame" x="-2" y="0.0" width="33" height="18"/>
@@ -58,7 +45,7 @@
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vhM-cY-RhJ">
                                     <rect key="frame" x="31" y="2" width="33" height="14"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="M5Z-a0-3Ib">
-                                        <font key="font" metaFont="system" size="11"/>
+                                        <font key="font" metaFont="smallSystem"/>
                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -76,14 +63,29 @@
                                 <real value="3.4028234663852886e+38"/>
                             </customSpacing>
                         </stackView>
-                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MZh-Ib-2XE" customClass="ContentLabel" customModule="Icro_Mac" customModuleProvider="target">
-                            <rect key="frame" x="-2" y="164" width="37" height="17"/>
-                            <textFieldCell key="cell" title="Label" id="ral-GR-dt4">
-                                <font key="font" metaFont="system"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            </textFieldCell>
-                        </textField>
+                        <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="JIs-ES-CS2">
+                            <rect key="frame" x="0.0" y="164" width="240" height="135"/>
+                            <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="NYt-BB-VPT">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="135"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <textView editable="NO" selectable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="9AD-Eb-jHp" customClass="HyperlinkTextView" customModule="Icro_Mac" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="135"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="minSize" width="240" height="135"/>
+                                        <size key="maxSize" width="240" height="10000000"/>
+                                        <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </clipView>
+                            <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="cSB-bI-LcB">
+                                <rect key="frame" x="-100" y="-100" width="16" height="135"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </scroller>
+                        </scrollView>
                         <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="8ET-33-Bz5" customClass="HorizontScrollViewView" customModule="Icro_Mac" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="404" height="160"/>
                             <clipView key="contentView" id="cys-Fo-VUV">
@@ -145,13 +147,16 @@
                 <constraint firstItem="9Bp-L4-Ph6" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="pTq-gY-KrA"/>
                 <constraint firstAttribute="trailing" secondItem="6dP-TK-6wJ" secondAttribute="trailing" constant="10" id="qpc-4Q-hXf"/>
             </constraints>
-            <gestureRecognizers>
-                <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="2" id="Ujc-rg-5QZ">
-                    <connections>
-                        <action selector="openItemAction:" target="Q2s-GJ-WUY" id="1PN-T6-Mwr"/>
-                    </connections>
-                </clickGestureRecognizer>
-            </gestureRecognizers>
+            <connections>
+                <outlet property="avatarImageView" destination="9Bp-L4-Ph6" id="C8n-sp-RyA"/>
+                <outlet property="collectionViewHeight" destination="XhT-eR-7Ka" id="Xm1-x8-eLT"/>
+                <outlet property="contentTextView" destination="9AD-Eb-jHp" id="src-6A-zsI"/>
+                <outlet property="imageCollectionView" destination="80F-xD-FhP" id="Nax-Yq-Gb9"/>
+                <outlet property="nameLabel" destination="URO-Wa-R9c" id="bPG-y7-qwn"/>
+                <outlet property="separatorView" destination="A2T-uk-lWd" id="JcB-FZ-5s8"/>
+                <outlet property="timeLabel" destination="RZf-H2-tWp" id="bX0-rF-Ln8"/>
+                <outlet property="usernameLabel" destination="vhM-cY-RhJ" id="0iU-eX-lVT"/>
+            </connections>
             <point key="canvasLocation" x="139" y="193.5"/>
         </customView>
     </objects>

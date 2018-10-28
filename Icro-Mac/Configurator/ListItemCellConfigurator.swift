@@ -23,20 +23,14 @@ final class ListItemCellConfigurator {
         }
         
         cell.timeLabel.stringValue = item.relativeDateString
-        cell.contentLabel.set(attributedText: item.content)
+        cell.contentTextView.textStorage?.setAttributedString(item.content)
         cell.avatarImageView.kf.setImage(with: item.author.avatar)
         cell.images = item.images
-
-        cell.didDoubleClick = { [weak self] in
-            print("nav: did double lcick")
-            guard let self = self else { return }
-            self.itemNavigator.openConversation(for: item)
-        }
-
-        cell.contentLabel.didTapLink = { [weak self] url in
-            guard let self = self else { return }
-            self.itemNavigator.openURL(url)
-        }
+        
+//        cell.contentLabel.didTapLink = { [weak self] url in
+//            guard let self = self else { return }
+//            self.itemNavigator.openURL(url)
+//        }
 
     }
 }
