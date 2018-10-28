@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let customToolbar = NSToolbar()
         window?.titleVisibility = .hidden
         window?.toolbar = customToolbar
+        window?.toolbar?.showsBaselineSeparator = false
     }
 
     func applicationWillTerminate(_ aNotification: Notification) { }

@@ -27,6 +27,7 @@ final class ItemNavigator {
         let customToolbar = NSToolbar()
         newWindow.titleVisibility = .hidden
         newWindow.toolbar = customToolbar
+        newWindow.toolbar?.showsBaselineSeparator = false
         let newWindowController = NSWindowController(window: newWindow)
         newWindowController.showWindow(nil)
     }
