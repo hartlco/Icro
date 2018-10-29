@@ -19,6 +19,8 @@ class SettingsViewController: NSViewController {
         microblogTokenTextField.stringValue = settings.token
         micropubURLTextField.stringValue = settings.micropubUrlString ?? ""
         micropubTokenTextField.stringValue = settings.micropubToken ?? ""
+
+        preferredContentSize = NSSize(width: 400, height: 120)
     }
 
     override func viewWillDisappear() {

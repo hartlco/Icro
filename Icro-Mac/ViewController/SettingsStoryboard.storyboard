@@ -10,7 +10,7 @@
             <objects>
                 <windowController id="sS7-KG-ZYk" sceneMemberID="viewController">
                     <window key="window" title="Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="YQP-la-MzW">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="294" y="359" width="480" height="273"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
@@ -24,14 +24,14 @@
                 </windowController>
                 <customObject id="zIx-Hf-o7e" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-254" y="137"/>
+            <point key="canvasLocation" x="-254" y="136.5"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="HI2-fC-3J1">
             <objects>
                 <tabViewController tabStyle="toolbar" id="Pn7-Yh-egr" sceneMemberID="viewController">
                     <tabViewItems>
-                        <tabViewItem id="dnY-ej-FJQ"/>
+                        <tabViewItem image="NSNetwork" id="dnY-ej-FJQ"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="Eh0-48-a1z">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -55,11 +55,11 @@
             <objects>
                 <viewController title="Connection" id="yNJ-nh-OE0" customClass="SettingsViewController" customModule="Icro_Mac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="NaF-aX-QRz">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="100"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <gridView xPlacement="leading" yPlacement="bottom" rowAlignment="none" translatesAutoresizingMaskIntoConstraints="NO" id="y9L-8j-162">
-                                <rect key="frame" x="20" y="96" width="440" height="78"/>
+                                <rect key="frame" x="20" y="11" width="440" height="78"/>
                                 <constraints>
                                     <constraint firstItem="3L3-yf-5KG" firstAttribute="trailing" secondItem="i9S-iy-85r" secondAttribute="trailing" id="cL5-9w-g1d"/>
                                     <constraint firstItem="3L3-yf-5KG" firstAttribute="trailing" secondItem="W5Y-aS-led" secondAttribute="trailing" id="tvY-b9-Ig1"/>
@@ -154,4 +154,7 @@
             <point key="canvasLocation" x="896" y="135"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSNetwork" width="128" height="128"/>
+    </resources>
 </document>

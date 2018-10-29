@@ -89,7 +89,7 @@ extension ListItemCell: NSCollectionViewDelegate, NSCollectionViewDataSource, NS
 
 final class HorizontScrollViewView: NSScrollView {
     override func scrollWheel(with event: NSEvent) {
-        if event.scrollingDeltaX != 0 {
+        if event.deltaY > 0 {
             nextResponder?.scrollWheel(with: event)
             return
         }

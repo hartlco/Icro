@@ -54,12 +54,13 @@ class ListViewController: NSViewController, NSMenuItemValidation {
             self.tableView.reloadData()
         }
 
+        
         viewModel.load()
     }
 
-    override func viewDidLayout() {
-        super.viewDidLayout()
-        tableView.reloadData()
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        view.window?.delegate = self
     }
 
     func refresh() {
@@ -123,5 +124,11 @@ extension ListViewController: NSTableViewDelegate, NSTableViewDataSource {
 
         let height = textView.frame.size.height + 40 + imageHeight
         return height
+    }
+}
+
+extension ListViewController: NSWindowDelegate {
+    func windowDidEndLiveResize(_ notification: Notification) {
+        tableView.reloadData()
     }
 }

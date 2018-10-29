@@ -545,7 +545,7 @@
                                     <nil key="backgroundColor"/>
                                 </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="NKi-T6-RLd"/>
+                                    <constraint firstAttribute="width" constant="80" id="NKi-T6-RLd"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Khj-rI-iZz">
                                     <rect key="frame" x="1" y="283" width="78" height="16"/>
