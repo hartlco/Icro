@@ -26,17 +26,30 @@ class TabViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         outlineView.reloadData()
-        outlineView.selectionHighlightStyle = .sourceList
+        outlineView.selectionHighlightStyle = .none
         outlineView.selectRowIndexes([0], byExtendingSelection: false)
     }
 
     override func viewDidAppear() {
         didSelectTab?(viewModels[0])
+        highlightTab(at: 0)
     }
 
     func selectTab(index: Int) {
         outlineView.selectRowIndexes([index], byExtendingSelection: false)
         didSelectTab?(viewModels[index])
+        highlightTab(at: index)
+    }
+
+    fileprivate func highlightTab(at index: Int) {
+        for viewModelIndex in 0..<viewModels.count {
+            guard let cell = outlineView.view(atColumn: 0, row: viewModelIndex, makeIfNecessary: false) as? NSTableCellView else { return }
+            if viewModelIndex == index {
+                cell.textField?.textColor = Color.main
+            } else {
+                cell.textField?.textColor = .black
+            }
+        }
     }
 }
 
@@ -70,6 +83,7 @@ extension TabViewController: NSOutlineViewDelegate {
 
         let cell = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TabCell"), owner: self) as? NSTableCellView
         cell?.textField?.stringValue = viewModel.title
+        cell?.textField?.textColor = .black
         return cell
     }
 
@@ -78,6 +92,8 @@ extension TabViewController: NSOutlineViewDelegate {
             return false
         }
 
+        let row = outlineView.row(forItem: item)
+        highlightTab(at: row)
         didSelectTab?(viewModel)
         return true
     }

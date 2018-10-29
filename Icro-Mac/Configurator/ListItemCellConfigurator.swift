@@ -27,10 +27,10 @@ final class ListItemCellConfigurator {
         cell.avatarImageView.kf.setImage(with: item.author.avatar)
         cell.images = item.images
         
-//        cell.contentLabel.didTapLink = { [weak self] url in
-//            guard let self = self else { return }
-//            self.itemNavigator.openURL(url)
-//        }
+        cell.contentTextView.didTapLink = { [weak self] url in
+            guard let self = self else { return }
+            self.itemNavigator.openURL(url)
+        }
 
     }
 }

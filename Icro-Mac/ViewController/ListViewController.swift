@@ -93,6 +93,9 @@ class ListViewController: NSViewController, NSMenuItemValidation {
 
 extension ListViewController: NSTableViewDelegate, NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
+        if viewModel.numberOfSections > 1 {
+            return viewModel.numberOfItems(in: 1)
+        }
         return viewModel.numberOfItems(in: 0)
     }
 

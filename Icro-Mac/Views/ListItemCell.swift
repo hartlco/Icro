@@ -20,8 +20,8 @@ final class ListItemCell: NSTableCellView {
             separatorView.layer?.backgroundColor = NSColor(calibratedRed: 0, green: 0, blue: 0, alpha: 0.1).cgColor
         }
     }
-//    @IBOutlet weak var contentLabel: ContentLabel!
-    @IBOutlet var contentTextView: NSTextView! {
+
+    @IBOutlet var contentTextView: HyperlinkTextView! {
         didSet {
             contentTextView.isAutomaticLinkDetectionEnabled = true
         }
@@ -99,6 +99,8 @@ final class HorizontScrollViewView: NSScrollView {
 }
 
 class HyperlinkTextView: NSTextView {
+    var didTapLink: ((URL) -> Void) = { _ in }
+
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
         if !openClickedHyperlink(with: event) {
@@ -148,7 +150,7 @@ class HyperlinkTextView: NSTextView {
             return false
         }
 
-        NSWorkspace.shared.open(url)
+        didTapLink(url)
         return true
     }
 }
