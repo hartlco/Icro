@@ -13,6 +13,7 @@ public class ListViewModel: NSObject {
         case mentions
         case favorites
         case discover
+        case discoverCollection(category: DiscoveryCategory)
         case user(user: Author)
         case username(username: String)
         case conversation(item: Item)
@@ -29,6 +30,8 @@ public class ListViewModel: NSObject {
                 return Item.favorites
             case .discover:
                 return Item.discover
+            case .discoverCollection(let category):
+                return Item.discoverCollection(for: category)
             case .user(let user):
                 return Item.resource(forAuthor: user)
             case .conversation(let item):
@@ -50,6 +53,8 @@ public class ListViewModel: NSObject {
                 return NSLocalizedString("LISTVIEWMODEL_RESOURCETITLE_FAVORITES", comment: "")
             case .discover:
                 return NSLocalizedString("LISTVIEWMODEL_RESOURCETITLE_DISCOVER", comment: "")
+            case .discoverCollection(let category):
+                return NSLocalizedString("LISTVIEWMODEL_RESOURCETITLE_DISCOVER", comment: "") + " - " + category.emoji
             case .user(let user):
                 return user.username ?? ""
             case .username(let username):
@@ -69,6 +74,7 @@ public class ListViewModel: NSObject {
     private var loadedAuthor: Author?
     private let type: ListType
     private let userSettings: UserSettings
+    private let discoveryMananger: DiscoveryCategoryManager
 
     private var unreadItems = Set<Int>()
     private var blacklistChangedObserver: Any?
@@ -80,9 +86,11 @@ public class ListViewModel: NSObject {
     private var isLoading = false
 
     public init(type: ListType,
-                userSettings: UserSettings = .shared) {
+                userSettings: UserSettings = .shared,
+                discoveryMananger: DiscoveryCategoryManager = .shared) {
         self.type = type
         self.userSettings = userSettings
+        self.discoveryMananger = discoveryMananger
         super.init()
 
         blacklistChangedObserver = NotificationCenter.default.addObserver(forName: .blackListChanged,
@@ -289,6 +297,21 @@ public class ListViewModel: NSObject {
             item.resetContent()
         }
     }
+
+    public var showsDiscoverySections: Bool {
+        switch type {
+        case .discover where !discoveryMananger.categories.isEmpty:
+            return true
+        default:
+            return false
+        }
+    }
+
+    public var discoveryCategories: [DiscoveryCategory] {
+        return discoveryMananger.categories
+    }
+
+    public let discoverySubtitle = NSLocalizedString("LISTVIEWMODEL_DISCOVER_SUBTITLE", comment: "")
 
     // MARK: - Private
 

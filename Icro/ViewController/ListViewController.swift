@@ -6,6 +6,7 @@
 import UIKit
 import SwiftMessages
 import IcroKit
+import DropdownTitleView
 
 class ListViewController: UIViewController {
     @IBOutlet fileprivate weak var tableView: UITableView! {
@@ -102,6 +103,12 @@ class ListViewController: UIViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        updateDiscoverySectionsIfNeeded()
+    }
+
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         rowHeightEstimate = [:]
         super.viewWillTransition(to: size, with: coordinator)
@@ -111,6 +118,23 @@ class ListViewController: UIViewController {
         viewModel.resetContent()
         rowHeightEstimate = [:]
         tableView.reloadData()
+    }
+
+    private func updateDiscoverySectionsIfNeeded() {
+        guard viewModel.showsDiscoverySections else { return }
+
+        let titleView = DropdownTitleView()
+        titleView.configure(title: viewModel.title, subtitle: viewModel.discoverySubtitle)
+        navigationItem.titleView = titleView
+        titleView.addTarget(
+            self,
+            action: #selector(onTitle),
+            for: .touchUpInside
+        )
+    }
+
+    @objc private func onTitle() {
+        itemNavigator.showDiscoveryCategories(categories: viewModel.discoveryCategories)
     }
 }
 

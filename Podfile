@@ -9,6 +9,7 @@ target 'Icro' do
     pod 'AcknowList'
     pod 'Keyboard+LayoutGuide'
 	pod 'SwiftLint'
+    pod 'DropdownTitleView'
 	
 	target 'IcroTests' do
 	end
@@ -33,4 +34,14 @@ end
 
 target 'Icro-Mac' do
     pod 'Kingfisher'
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        if ['ImageViewer'].include? target.name
+            target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '4.0'
+            end
+        end
+    end
 end

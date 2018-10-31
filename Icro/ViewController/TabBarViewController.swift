@@ -118,7 +118,7 @@ private extension ListViewModel.ListType {
             return UIImage(named: "discover")
         case .user, .username:
             return UIImage(named: "profile")
-        case .conversation, .photos:
+        case .conversation, .photos, .discoverCollection:
             return nil
         }
     }
@@ -135,7 +135,7 @@ private extension ListViewModel.ListType {
             return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_DISCOVER", comment: "")
         case .user, .username:
             return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_PROFILE", comment: "")
-        case .conversation, .photos:
+        case .conversation, .photos, .discoverCollection:
             return nil
         }
     }

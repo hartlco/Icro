@@ -150,4 +150,26 @@ final class ItemNavigator {
 
         navigationController.present(linksActionSheet, animated: true, completion: nil)
     }
+
+    func showDiscoveryCategories(categories: [DiscoveryCategory]) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        for category in categories {
+            let action = UIAlertAction(title: "\(category.emoji) - \(category.title)",
+            style: .default) { [weak self] _ in
+                guard let self = self else { return }
+                let viewModel = ListViewModel(type: .discoverCollection(category: category))
+                let viewController = ListViewController(viewModel: viewModel, itemNavigator: self)
+                self.navigationController.pushViewController(viewController, animated: true)
+            }
+
+            alertController.addAction(action)
+        }
+
+        alertController.addAction(UIAlertAction(title:
+            NSLocalizedString("ITEMNAVIGATOR_MOREALERT_CANCELACTION", comment: ""),
+                                                style: .cancel,
+                                                handler: nil))
+
+        navigationController.present(alertController, animated: true, completion: nil)
+    }
 }

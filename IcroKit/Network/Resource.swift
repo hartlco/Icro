@@ -137,6 +137,11 @@ public extension Item {
 
     static let discover = resource(for: discoverURL)
 
+    static func discoverCollection(for category: DiscoveryCategory) -> Resource<ItemResponse> {
+        let url = discoverURL.appendingPathComponent(category.category)
+        return resource(for: url)
+    }
+
     static let photos = resource(for: photosURL)
 
     static func usernamePostURL(for username: String) -> Resource<ItemResponse> {

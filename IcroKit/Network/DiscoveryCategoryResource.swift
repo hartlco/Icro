@@ -5,7 +5,8 @@
 
 import Foundation
 
-private let discoveryCategoriesResource = URL(string: "https://raw.githubusercontent.com/hartlco/Icro/549acf5d7ae22c00a182cef0f14e1391a3b4cf3f/discoverCategories/discoverCategories.json")!
+// swiftlint:disable line_length
+private let discoveryCategoriesResource = URL(string: "https://raw.githubusercontent.com/hartlco/Icro/master/discoverCategories/discoverCategories.json")!
 
 public extension DiscoveryCategory {
     public static func all() -> Resource<[DiscoveryCategory]> {

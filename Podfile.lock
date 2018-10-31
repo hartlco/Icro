@@ -1,6 +1,7 @@
 PODS:
   - AcknowList (1.7)
   - Alamofire (4.7.3)
+  - DropdownTitleView (0.1.0)
   - DTCoreText (1.6.21):
     - DTCoreText/Core (= 1.6.21)
     - DTFoundation/Core (~> 1.7.5)
@@ -37,6 +38,7 @@ PODS:
 DEPENDENCIES:
   - AcknowList
   - Alamofire (~> 4.7)
+  - DropdownTitleView
   - DTCoreText
   - ImageViewer (from `https://github.com/MailOnline/ImageViewer.git`, commit `a4de06a08a78c4b0a65a48aa891f755b64ff03a8`)
   - Kanna
@@ -52,6 +54,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AcknowList
     - Alamofire
+    - DropdownTitleView
     - DTCoreText
     - DTFoundation
     - FLAnimatedImage
@@ -77,6 +80,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AcknowList: 286185b24c2c2df63a2bb4137f853e4384b4358b
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  DropdownTitleView: e02e559243efb248dd0e8a50665b0acc5f6f2413
   DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
   DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
@@ -90,6 +94,6 @@ SPEC CHECKSUMS:
   SwiftMessages: da7c981256a65b3e58022d9027a36584cf4eccf5
   wpxmlrpc: bfc572f62ce7ee897f6f38b098d2ba08732ecef4
 
-PODFILE CHECKSUM: 49b82a19e7c2889fbe0853fd1b59930e8ff6d1bc
+PODFILE CHECKSUM: a26344c6b9f9f75fd5f159d0b5f9074065801de4
 
 COCOAPODS: 1.5.3
