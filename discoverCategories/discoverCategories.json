@@ -1,0 +1,47 @@
+[
+    {
+        "title": "books",
+        "category": "books",
+        "emoji": "📚"
+    },
+    {
+        "title": "football",
+        "category": "football",
+        "emoji": "🏈"
+    },
+    {
+        "title": "music",
+        "category": "music",
+        "emoji": "🎵"
+    },
+    {
+        "title": "basketball",
+        "category": "basketball",
+        "emoji": "🏀"
+    },
+    {
+        "title": "podcasts",
+        "category": "podcasts",
+        "emoji": "🎙"
+    },
+    {
+        "title": "photos",
+        "category": "photos",
+        "emoji": "📷"
+    },
+    {
+        "title": "soccer",
+        "category": "soccer",
+        "emoji": "⚽️"
+    },
+    {
+        "title": "baseball",
+        "category": "baseball",
+        "emoji": "⚾️"
+    },
+    {
+        "title": "movies",
+        "category": "movies",
+        "emoji": "🍿"
+    }
+]
