@@ -1,0 +1,6 @@
+framework module wpxmlrpc {
+  umbrella header "wpxmlrpc-macOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

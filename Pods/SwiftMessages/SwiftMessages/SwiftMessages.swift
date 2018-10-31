@@ -53,7 +53,7 @@ open class SwiftMessages {
         /**
          Displays the message view under navigation bars and tab bars if an
          appropriate one is found. Otherwise, it is displayed in a new window
-         at level `UIWindowLevelNormal`. Use this option to automatically display
+         at level `UIWindow.Level.normal`. Use this option to automatically display
          under bars, where applicable. Because this option involves a top-down
          search, an approrpiate context might not be found when the view controller
          heirarchy incorporates custom containers. If this is the case, the
@@ -63,12 +63,12 @@ open class SwiftMessages {
 
         /**
          Displays the message in a new window at the specified window level. Use
-         `UIWindowLevelNormal` to display under the status bar and `UIWindowLevelStatusBar`
+         `UIWindow.Level.normal` to display under the status bar and `UIWindow.Level.statusBar`
          to display over. When displaying under the status bar, SwiftMessages automatically
          increases the top margins of any message view that adopts the `MarginInsetting`
          protocol (as `MessageView` does) to account for the status bar.
         */
-        case window(windowLevel: UIWindowLevel)
+        case window(windowLevel: UIWindow.Level)
         
         /**
          Displays the message view under navigation bars and tab bars if an
@@ -178,7 +178,7 @@ open class SwiftMessages {
          - `interactive`: Specifies whether or not tapping the
          dimmed area dismisses the message view.
          */
-        case blur(style: UIBlurEffectStyle, alpha: CGFloat, interactive: Bool)
+        case blur(style: UIBlurEffect.Style, alpha: CGFloat, interactive: Bool)
 
         public var interactive: Bool {
             switch self {
@@ -263,7 +263,7 @@ open class SwiftMessages {
         /**
          Specifies the preferred status bar style when the view is displayed
          directly behind the status bar, such as when using `.Window`
-         presentation context with a `UIWindowLevelNormal` window level
+         presentation context with a `UIWindow.Level.normal` window level
          and `.Top` presentation style. This option is useful if the message
          view has a background color that needs a different status bar style than
          the current one. The default is `.Default`.
@@ -309,6 +309,13 @@ open class SwiftMessages {
          label, e.g. "dismiss" when the `interactive` option is used.
         */
         public var dimModeAccessibilityLabel: String = "dismiss"
+
+        /**
+         If specified, SwiftMessages calls this closure when an instance of
+         `WindowViewController` is needed. Use this if you need to supply a custom subclass
+         of `WindowViewController`.
+         */
+        public var windowViewController: ((_ windowLevel: UIWindow.Level?, _ config: SwiftMessages.Config) -> WindowViewController)?
     }
     
     /**
@@ -405,7 +412,7 @@ open class SwiftMessages {
      */
     open func hide(id: String) {
         messageQueue.sync {
-            if id == current?.id {
+            if id == _current?.id {
                 hideCurrent()
             }
             queue = queue.filter { $0.id != id }
@@ -429,7 +436,7 @@ open class SwiftMessages {
                     return
                 }
             }
-            if id == current?.id {
+            if id == _current?.id {
                 hideCurrent()
             }
             queue = queue.filter { $0.id != id }
@@ -482,11 +489,17 @@ open class SwiftMessages {
         }
     }
 
+    func show(presenter: Presenter) {
+        messageQueue.sync {
+            enqueue(presenter: presenter)
+        }
+    }
+
     fileprivate let messageQueue = DispatchQueue(label: "it.swiftkick.SwiftMessages", attributes: [])
     fileprivate var queue: [Presenter] = []
     fileprivate var delays = Delays()
     fileprivate var counts: [String : Int] = [:]
-    fileprivate var current: Presenter? = nil {
+    fileprivate var _current: Presenter? = nil {
         didSet {
             if oldValue != nil {
                 let delayTime = DispatchTime.now() + pauseBetweenMessages
@@ -500,7 +513,7 @@ open class SwiftMessages {
     fileprivate func enqueue(presenter: Presenter) {
         if presenter.config.ignoreDuplicates {
             counts[presenter.id] = (counts[presenter.id] ?? 0) + 1
-            if current?.id == presenter.id && current?.isHiding == false { return }
+            if _current?.id == presenter.id && _current?.isHiding == false { return }
             if queue.filter({ $0.id == presenter.id }).count > 0 { return }
         }
         func doEnqueue() {
@@ -520,9 +533,9 @@ open class SwiftMessages {
     }
     
     fileprivate func dequeueNext() {
-        guard self.current == nil, queue.count > 0 else { return }
+        guard self._current == nil, queue.count > 0 else { return }
         let current = queue.removeFirst()
-        self.current = current
+        self._current = current
         // Set `autohideToken` before the animation starts in case
         // the dismiss gesture begins before we've queued the autohide
         // block on animation completion.
@@ -545,14 +558,14 @@ open class SwiftMessages {
                 }
             } catch {
                 strongSelf.messageQueue.sync {
-                    strongSelf.current = nil
+                    strongSelf._current = nil
                 }
             }
         }
     }
 
     fileprivate func internalHide(id: String) {
-        if id == current?.id {
+        if id == _current?.id {
             hideCurrent()
         }
         queue = queue.filter { $0.id != id }
@@ -560,16 +573,16 @@ open class SwiftMessages {
     }
 
     fileprivate func hideCurrent() {
-        guard let current = current, !current.isHiding else { return }
+        guard let current = _current, !current.isHiding else { return }
         let delay = current.delayHide ?? 0
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self, weak current] in
             guard let strongCurrent = current else { return }
             strongCurrent.hide { (completed) in
                 guard completed, let strongSelf = self, let strongCurrent = current else { return }
                 strongSelf.messageQueue.sync {
-                    guard strongSelf.current === strongCurrent else { return }
+                    guard strongSelf._current === strongCurrent else { return }
                     strongSelf.counts[strongCurrent.id] = nil
-                    strongSelf.current = nil
+                    strongSelf._current = nil
                 }
             }
         }
@@ -578,7 +591,7 @@ open class SwiftMessages {
     fileprivate weak var autohideToken: AnyObject?
     
     fileprivate func queueAutoHide() {
-        guard let current = current else { return }
+        guard let current = _current else { return }
         autohideToken = current
         if let pauseDuration = current.pauseDuration {
             let delayTime = DispatchTime.now() + pauseDuration
@@ -599,6 +612,19 @@ open class SwiftMessages {
 extension SwiftMessages {
 
     /**
+     Returns the message view of type `T` if it is currently being shown or hidden.
+
+     - Returns: The view of type `T` if it is currently being shown or hidden.
+     */
+    public func current<T: UIView>() -> T? {
+        var view: T?
+        messageQueue.sync {
+            view = _current?.view as? T
+        }
+        return view
+    }
+
+    /**
      Returns a message view with the given `id` if it is currently being shown or hidden.
 
      - Parameter id: The id of a message that adopts `Identifiable`.
@@ -607,7 +633,7 @@ extension SwiftMessages {
     public func current<T: UIView>(id: String) -> T? {
         var view: T?
         messageQueue.sync {
-            if let current = current, current.id == id {
+            if let current = _current, current.id == id {
                 view = current.view as? T
             }
         }
@@ -670,7 +696,7 @@ extension SwiftMessages: PresenterDelegate {
     }
 
     private func presenter(forAnimator animator: Animator) -> Presenter? {
-        if let current = current, animator === current.animator {
+        if let current = _current, animator === current.animator {
             return current
         }
         let queued = queue.filter { $0.animator === animator }
@@ -756,7 +782,11 @@ extension SwiftMessages {
             }
         }
         let arrayOfViews = resolvedBundle.loadNibNamed(name, owner: filesOwner, options: nil) ?? []
+        #if swift(>=4.1)
+        guard let view = arrayOfViews.compactMap( { $0 as? T} ).first else { throw SwiftMessagesError.cannotLoadViewFromNib(nibName: name) }
+        #else
         guard let view = arrayOfViews.flatMap( { $0 as? T} ).first else { throw SwiftMessagesError.cannotLoadViewFromNib(nibName: name) }
+        #endif
         return view
     }
 }
