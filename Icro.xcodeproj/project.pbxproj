@@ -155,6 +155,11 @@
 		5BED6D02207E8147002FB9FF /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D00207E8147002FB9FF /* UserListViewController.xib */; };
 		5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */; };
 		5BED6D06207E81CC002FB9FF /* UserItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */; };
+		5BF6637F218961AB00ABA671 /* DiscoveryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */; };
+		5BF663812189628300ABA671 /* DiscoveryCategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */; };
+		5BF663822189628F00ABA671 /* DiscoveryCategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */; };
+		5BF663832189629200ABA671 /* DiscoveryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */; };
+		5BF663852189673100ABA671 /* DiscoveryCategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663842189673100ABA671 /* DiscoveryCategoryManager.swift */; };
 		84FCAE014ECEACF77C75D034 /* Pods_Icro_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 133376CF538D4FE598F0A167 /* Pods_Icro_Mac.framework */; };
 		BF707E742131C45600506E64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
 		C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */; };
@@ -311,6 +316,9 @@
 		5BED6D00207E8147002FB9FF /* UserListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserListViewController.xib; path = ViewController/UserListViewController.xib; sourceTree = "<group>"; };
 		5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserItemTableViewCell.swift; path = View/UserItemTableViewCell.swift; sourceTree = "<group>"; };
 		5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserItemTableViewCell.xib; path = View/UserItemTableViewCell.xib; sourceTree = "<group>"; };
+		5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategory.swift; sourceTree = "<group>"; };
+		5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryResource.swift; sourceTree = "<group>"; };
+		5BF663842189673100ABA671 /* DiscoveryCategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryManager.swift; sourceTree = "<group>"; };
 		5C5956D76539447B1A629134 /* Pods-IcroKit-Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroKit-Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroKit-Mac/Pods-IcroKit-Mac.debug.xcconfig"; sourceTree = "<group>"; };
 		5D349612C21E8935CA208791 /* Pods-Icro-Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-Mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-Mac/Pods-Icro-Mac.release.xcconfig"; sourceTree = "<group>"; };
 		62BDE592B91FF53059E2B98A /* Pods-Icro-IcroKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroKit/Pods-Icro-IcroKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -531,6 +539,7 @@
 		5BC347AF2132944900DEB45D /* IcroKit */ = {
 			isa = PBXGroup;
 			children = (
+				5BF6637D2189618600ABA671 /* Manager */,
 				5B01CBFF2168E4C90007E01D /* ViewModel */,
 				5BC347CD2132A69D00DEB45D /* Helper */,
 				5BC347CC2132A68D00DEB45D /* Settings */,
@@ -548,6 +557,7 @@
 				5B58377A212950F40076121E /* Author.swift */,
 				5B58377B212950F40076121E /* Item.swift */,
 				C5FA2B001EB45213006DEB40 /* HTMLContent.swift */,
+				5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -558,6 +568,7 @@
 				5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */,
 				C5FA2AF51EB449BC006DEB40 /* Resource.swift */,
 				5B869B07214E4633000A051C /* MicropubEndpoint.swift */,
+				5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -582,6 +593,14 @@
 				5B6A565C21735A4F003C4D92 /* Functions.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		5BF6637D2189618600ABA671 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5BF663842189673100ABA671 /* DiscoveryCategoryManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		C5FA2AB71EB4482C006DEB40 = {
@@ -1204,9 +1223,11 @@
 				5B01CBEA2168D7150007E01D /* Date+ComponentsFormatter.swift in Sources */,
 				5B01CBF22168D7240007E01D /* Author.swift in Sources */,
 				5B01CBE92168D7150007E01D /* CacheStorage.swift in Sources */,
+				5BF663832189629200ABA671 /* DiscoveryCategory.swift in Sources */,
 				5B01CBF32168D7240007E01D /* Item.swift in Sources */,
 				5BDE18F0216A57C0001254F4 /* MicropubRequestController.swift in Sources */,
 				5B01CBED2168D7150007E01D /* Color.swift in Sources */,
+				5BF663822189628F00ABA671 /* DiscoveryCategoryResource.swift in Sources */,
 				5B01CBF42168D7240007E01D /* HTMLContent.swift in Sources */,
 				5B01CC012168E4DF0007E01D /* ListViewModel.swift in Sources */,
 				5B01CBEF2168D71A0007E01D /* LoginInformation.swift in Sources */,
@@ -1271,6 +1292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BF663852189673100ABA671 /* DiscoveryCategoryManager.swift in Sources */,
 				5BC347BD213294A900DEB45D /* Resource.swift in Sources */,
 				5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */,
 				5BC347C5213295C000DEB45D /* Date+Ago.swift in Sources */,
@@ -1280,6 +1302,8 @@
 				5BC347C42132958600DEB45D /* Font.swift in Sources */,
 				5BC347C22132957300DEB45D /* HTMLContent.swift in Sources */,
 				5BC347C72132960900DEB45D /* LoginInformation.swift in Sources */,
+				5BF6637F218961AB00ABA671 /* DiscoveryCategory.swift in Sources */,
+				5BF663812189628300ABA671 /* DiscoveryCategoryResource.swift in Sources */,
 				5BDE18F1216A57C0001254F4 /* MicropubRequestController.swift in Sources */,
 				5BC347BF2132950D00DEB45D /* UserSettings.swift in Sources */,
 				5BC347BB2132947100DEB45D /* Author.swift in Sources */,

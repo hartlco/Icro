@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigator?.setup()
         }
 
+        DiscoveryCategoryManager.shared.update()
+
         return true
     }
 
