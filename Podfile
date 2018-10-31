@@ -3,7 +3,6 @@ inhibit_all_warnings!
 
 target 'Icro' do
     pod 'SDWebImage/GIF'
-    pod 'FontAwesome.swift'
     pod 'SwiftMessages'
     pod 'ImageViewer', :git => 'https://github.com/MailOnline/ImageViewer.git', :commit => 'a4de06a08a78c4b0a65a48aa891f755b64ff03a8'
     pod 'DTCoreText'

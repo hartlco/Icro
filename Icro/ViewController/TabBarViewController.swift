@@ -4,7 +4,6 @@
 //
 
 import UIKit
-import FontAwesome_swift
 import IcroKit
 
 class TabBarViewController: UITabBarController {

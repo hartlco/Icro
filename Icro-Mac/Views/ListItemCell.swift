@@ -26,7 +26,6 @@ final class ListItemCell: NSTableCellView {
             contentTextView.isAutomaticLinkDetectionEnabled = true
         }
     }
-    
 
     @IBOutlet weak var avatarImageView: NSImageView! {
         didSet {
@@ -46,7 +45,7 @@ final class ListItemCell: NSTableCellView {
     }
 
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
-    
+
     var images = [URL]() {
         didSet {
             imageCollectionView.reloadData()

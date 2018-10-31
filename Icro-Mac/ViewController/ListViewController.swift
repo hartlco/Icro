@@ -28,8 +28,6 @@ class ListViewController: NSViewController, NSMenuItemValidation {
         }
     }
 
-
-
     private let viewModel: ListViewModel
     private let itemCellConfigurator: ListItemCellConfigurator
     private let itemNavigator: ItemNavigator
@@ -54,7 +52,6 @@ class ListViewController: NSViewController, NSMenuItemValidation {
             self.tableView.reloadData()
         }
 
-        
         viewModel.load()
     }
 

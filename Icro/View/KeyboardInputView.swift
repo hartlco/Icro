@@ -5,7 +5,6 @@
 
 import UIKit
 import IcroKit
-import FontAwesome_swift
 
 final class KeyboardInputView: UIView {
     private var text: String? {

@@ -19,11 +19,10 @@ PODS:
   - DTFoundation/UIKit (1.7.13):
     - DTFoundation/Core
   - FLAnimatedImage (1.0.12)
-  - FontAwesome.swift (1.3.2)
   - ImageViewer (5.0.0)
   - Kanna (4.0.2)
   - "Keyboard+LayoutGuide (1.3.0)"
-  - KeychainAccess (3.1.1)
+  - KeychainAccess (3.1.2)
   - Kingfisher (4.10.0)
   - SDWebImage/Core (4.3.3)
   - SDWebImage/GIF (4.3.3):
@@ -39,7 +38,6 @@ DEPENDENCIES:
   - AcknowList
   - Alamofire (~> 4.7)
   - DTCoreText
-  - FontAwesome.swift
   - ImageViewer (from `https://github.com/MailOnline/ImageViewer.git`, commit `a4de06a08a78c4b0a65a48aa891f755b64ff03a8`)
   - Kanna
   - "Keyboard+LayoutGuide"
@@ -57,7 +55,6 @@ SPEC REPOS:
     - DTCoreText
     - DTFoundation
     - FLAnimatedImage
-    - FontAwesome.swift
     - Kanna
     - "Keyboard+LayoutGuide"
     - KeychainAccess
@@ -83,17 +80,16 @@ SPEC CHECKSUMS:
   DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
   DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  FontAwesome.swift: b4e4c8ccbbecb12f9b592bc533ff237af3706667
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
   Kanna: c60b61d72554bf04ed1ee074f9b379855cab4892
   "Keyboard+LayoutGuide": a24171d454e1065bdd31f1d9f09988d6b1616e88
-  KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
+  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   SwiftMessages: da7c981256a65b3e58022d9027a36584cf4eccf5
   wpxmlrpc: bfc572f62ce7ee897f6f38b098d2ba08732ecef4
 
-PODFILE CHECKSUM: 3071bb73e44128fee03d6ca75a1dc923561c0206
+PODFILE CHECKSUM: 49b82a19e7c2889fbe0853fd1b59930e8ff6d1bc
 
 COCOAPODS: 1.5.3
