@@ -39,9 +39,7 @@ final class EditActionsConfigurator {
             tableView.setEditing(false, animated: true)
         }
         conversationAction.backgroundColor = Color.main
-        conversationAction.image = UIImage.fontAwesomeIcon(name: .comments,
-                                                           textColor: .white,
-                                                           size: CGSize(width: 30, height: 30))
+        conversationAction.image = UIImage(named: "conversation")
 
         let shareAction =
             UIContextualAction(style: .normal,
@@ -51,9 +49,7 @@ final class EditActionsConfigurator {
             tableView.setEditing(false, animated: true)
         }
         shareAction.backgroundColor = Color.accent
-        shareAction.image = UIImage.fontAwesomeIcon(name: .shareSquareO,
-                                                    textColor: .white,
-                                                    size: CGSize(width: 30, height: 30))
+        shareAction.image = UIImage(named: "share")
 
         return UISwipeActionsConfiguration(actions: [conversationAction, shareAction])
     }
@@ -69,9 +65,7 @@ final class EditActionsConfigurator {
             tableView.setEditing(false, animated: true)
         }
         replyAction.backgroundColor = Color.accentDark
-        replyAction.image = UIImage.fontAwesomeIcon(name: .reply,
-                                                    textColor: .white,
-                                                    size: CGSize(width: 30, height: 30))
+        replyAction.image = UIImage(named: "reply")
 
         let moreAction =
             UIContextualAction(style: .normal,
@@ -81,9 +75,7 @@ final class EditActionsConfigurator {
             self?.itemNavigator.openMore(item: item, sourceView: cell)
         }
         moreAction.backgroundColor = Color.separatorColor
-        moreAction.image = UIImage.fontAwesomeIcon(name: .ellipsisH,
-                                                   textColor: .white,
-                                                   size: CGSize(width: 30, height: 30))
+        moreAction.image = UIImage(named: "more")
 
         let title = item.isFavorite ?
             NSLocalizedString("EDITACTIONSCONFIGURATOR_FAVORITEACTION_UNFAVORITE", comment: "") :
@@ -94,8 +86,7 @@ final class EditActionsConfigurator {
         }
         favoriteAction.backgroundColor = Color.yellow
 
-        // swiftlint:disable line_length
-        let image = item.isFavorite ? UIImage.fontAwesomeIcon(name: .star, textColor: .white, size: CGSize(width: 30, height: 30)) : UIImage.fontAwesomeIcon(name: .starO, textColor: .white, size: CGSize(width: 30, height: 30))
+        let image = item.isFavorite ? UIImage(named: "unfavorite") : UIImage(named: "favorite")
 
         favoriteAction.image = image
 
