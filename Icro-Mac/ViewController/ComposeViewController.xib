@@ -31,7 +31,7 @@
                                 <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="Insert Post" drawsBackground="YES" id="blE-GZ-7td">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nBp-wD-4qw">
@@ -54,8 +54,8 @@
                             <constraint firstAttribute="trailing" secondItem="eIc-Od-PgQ" secondAttribute="trailing" constant="20" id="x39-pt-c7x"/>
                         </constraints>
                     </view>
-                    <color key="borderColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <color key="fillColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="borderColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    <color key="fillColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                 </box>
             </subviews>
             <constraints>

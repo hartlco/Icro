@@ -28,6 +28,7 @@ class TabViewController: NSViewController {
         outlineView.reloadData()
         outlineView.selectionHighlightStyle = .none
         outlineView.selectRowIndexes([0], byExtendingSelection: false)
+        outlineView.backgroundColor = NSColor.controlBackgroundColor
     }
 
     override func viewDidAppear() {
@@ -46,8 +47,10 @@ class TabViewController: NSViewController {
             guard let cell = outlineView.view(atColumn: 0, row: viewModelIndex, makeIfNecessary: false) as? NSTableCellView else { return }
             if viewModelIndex == index {
                 cell.textField?.textColor = Color.main
+                cell.imageView?.contentTintColor = Color.main
             } else {
-                cell.textField?.textColor = .black
+                cell.textField?.textColor = .controlTextColor
+                cell.imageView?.contentTintColor = .controlTextColor
             }
         }
     }
@@ -83,7 +86,8 @@ extension TabViewController: NSOutlineViewDelegate {
 
         let cell = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TabCell"), owner: self) as? NSTableCellView
         cell?.textField?.stringValue = viewModel.title
-        cell?.textField?.textColor = .black
+        cell?.imageView?.image = viewModel.icon
+        cell?.textField?.textColor = .controlColor
         return cell
     }
 
@@ -99,6 +103,6 @@ extension TabViewController: NSOutlineViewDelegate {
     }
 
     func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
-        return 48
+        return 60
     }
 }

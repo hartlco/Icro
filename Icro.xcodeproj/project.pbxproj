@@ -112,6 +112,7 @@
 		5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B869B07214E4633000A051C /* MicropubEndpoint.swift */; };
 		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
 		5B8754FE2070139F00018DFA /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8754FC2070139F00018DFA /* ListViewController.xib */; };
+		5BA333752189ADAF000FA900 /* DiscoveryCategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663842189673100ABA671 /* DiscoveryCategoryManager.swift */; };
 		5BA6D1792087ACF900F484B2 /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */; };
 		5BA6D17C2087C0B300F484B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17A2087C0B300F484B2 /* LoginViewController.swift */; };
 		5BA6D17D2087C0B300F484B2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA6D17B2087C0B300F484B2 /* LoginViewController.xib */; };
@@ -1219,6 +1220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA333752189ADAF000FA900 /* DiscoveryCategoryManager.swift in Sources */,
 				5B01CBEC2168D7150007E01D /* Font.swift in Sources */,
 				5B01CBF02168D71F0007E01D /* Resource.swift in Sources */,
 				5B01CBEE2168D71A0007E01D /* UserSettings.swift in Sources */,

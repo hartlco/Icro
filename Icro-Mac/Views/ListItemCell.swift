@@ -7,7 +7,7 @@ import Cocoa
 import Kingfisher
 import IcroKit_Mac
 
-final class ListItemCell: NSTableCellView {
+final class ListItemCell: NSTableRowView {
     static let nib = NSNib(nibNamed: "ListItemCell", bundle: nil)
     static let identifier = NSUserInterfaceItemIdentifier("ListItemCell")
 
@@ -24,6 +24,7 @@ final class ListItemCell: NSTableCellView {
     @IBOutlet var contentTextView: HyperlinkTextView! {
         didSet {
             contentTextView.isAutomaticLinkDetectionEnabled = true
+            contentTextView.linkTextAttributes = [.foregroundColor: Color.main]
         }
     }
 
@@ -62,6 +63,18 @@ final class ListItemCell: NSTableCellView {
     override func awakeFromNib() {
         super.awakeFromNib()
         wantsLayer = true
+    }
+
+    override func drawSelection(in dirtyRect: NSRect) {
+        if self.selectionHighlightStyle != .none {
+            Color.accentSuperLight.setFill()
+            let selectionPath = NSBezierPath.init(roundedRect: bounds, xRadius: 0, yRadius: 0)
+            selectionPath.fill()
+        }
+    }
+
+    override var interiorBackgroundStyle: NSView.BackgroundStyle {
+        return .light
     }
 }
 

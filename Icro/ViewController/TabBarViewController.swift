@@ -105,42 +105,6 @@ class TabBarViewController: UITabBarController {
     }
 }
 
-private extension ListViewModel.ListType {
-    var image: UIImage? {
-        switch self {
-        case .timeline:
-            return UIImage(named: "timeline")
-        case .mentions:
-            return UIImage(named: "mentions")
-        case .favorites:
-            return UIImage(named: "favorites")
-        case .discover:
-            return UIImage(named: "discover")
-        case .user, .username:
-            return UIImage(named: "profile")
-        case .conversation, .photos, .discoverCollection:
-            return nil
-        }
-    }
-
-    var tabTitle: String? {
-        switch self {
-        case .timeline:
-            return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_TIMELINE", comment: "")
-        case .mentions:
-            return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_MENTIONS", comment: "")
-        case .favorites:
-            return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_FAVORITES", comment: "")
-        case .discover:
-            return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_DISCOVER", comment: "")
-        case .user, .username:
-            return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_PROFILE", comment: "")
-        case .conversation, .photos, .discoverCollection:
-            return nil
-        }
-    }
-}
-
 protocol ScrollToTop {
     func scrollToTop()
 }

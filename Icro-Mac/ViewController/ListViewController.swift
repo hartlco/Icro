@@ -100,7 +100,7 @@ extension ListViewController: NSTableViewDelegate, NSTableViewDataSource {
         return viewModel.item(for: row)
     }
 
-    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
         guard let itemCell = tableView.makeView(withIdentifier: ListItemCell.identifier, owner: self) as? ListItemCell else {
             fatalError("Cell could not be dequed")
         }

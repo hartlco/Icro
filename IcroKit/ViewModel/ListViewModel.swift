@@ -195,6 +195,10 @@ public class ListViewModel: NSObject {
         return type.title
     }
 
+    public var icon: XImage? {
+        return type.image
+    }
+
     public func faveButtonTitle(for item: Item) -> String {
         return item.isFavorite ?
             NSLocalizedString("LISTVIEWMODEL_UNFAVEBUTTON_TITLE", comment: "") :
@@ -355,6 +359,42 @@ public class ListViewModel: NSObject {
         let lastReadIndex = self.lastReadIndex ?? (self.items.count - 1)
         for index in 0..<lastReadIndex {
             self.unreadItems.insert(index)
+        }
+    }
+}
+
+public extension ListViewModel.ListType {
+    public var image: XImage? {
+        switch self {
+        case .timeline:
+            return XImage(named: "timeline")
+        case .mentions:
+            return XImage(named: "mentions")
+        case .favorites:
+            return XImage(named: "favorites")
+        case .discover:
+            return XImage(named: "discover")
+        case .user, .username:
+            return XImage(named: "profile")
+        case .conversation, .photos, .discoverCollection:
+            return nil
+        }
+    }
+
+    public var tabTitle: String? {
+        switch self {
+        case .timeline:
+            return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_TIMELINE", comment: "")
+        case .mentions:
+            return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_MENTIONS", comment: "")
+        case .favorites:
+            return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_FAVORITES", comment: "")
+        case .discover:
+            return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_DISCOVER", comment: "")
+        case .user, .username:
+            return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_PROFILE", comment: "")
+        case .conversation, .photos, .discoverCollection:
+            return nil
         }
     }
 }

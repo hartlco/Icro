@@ -470,17 +470,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="80" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="50" horizontalPageScroll="10" verticalLineScroll="50" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1W-Cb-JK3">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="62" horizontalPageScroll="10" verticalLineScroll="62" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1W-Cb-JK3">
                                 <rect key="frame" x="0.0" y="0.0" width="80" height="264"/>
                                 <clipView key="contentView" drawsBackground="NO" id="XEa-x9-c4o">
                                     <rect key="frame" x="1" y="1" width="78" height="262"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="48" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="iV8-Jd-Are" id="IjU-5l-bxz">
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="60" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="iV8-Jd-Are" id="IjU-5l-bxz">
                                             <rect key="frame" x="0.0" y="0.0" width="78" height="262"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
-                                            <color key="backgroundColor" name="separatorColor"/>
+                                            <color key="backgroundColor" name="accentSuperLight"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn width="75" minWidth="40" maxWidth="1000" id="iV8-Jd-Are">
@@ -497,18 +497,22 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="TabCell" id="Qb6-kC-V1a">
-                                                            <rect key="frame" x="1" y="1" width="75" height="48"/>
+                                                            <rect key="frame" x="1" y="1" width="75" height="60"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iKl-sQ-g1F">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="69" height="48"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="69" height="60"/>
                                                                     <subviews>
                                                                         <imageView translatesAutoresizingMaskIntoConstraints="NO" id="GSR-jD-tdu">
-                                                                            <rect key="frame" x="28" y="18" width="14" height="30"/>
+                                                                            <rect key="frame" x="25" y="30" width="20" height="30"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="20" id="naJ-bG-Lls"/>
+                                                                                <constraint firstAttribute="height" constant="30" id="p6c-Pr-jWF"/>
+                                                                            </constraints>
                                                                             <imageCell key="cell" refusesFirstResponder="YES" imageScaling="proportionallyDown" image="NSActionTemplate" id="QTL-XF-eUd"/>
                                                                         </imageView>
                                                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4AQ-Eq-QCJ">
-                                                                            <rect key="frame" x="21" y="0.0" width="28" height="14"/>
+                                                                            <rect key="frame" x="21" y="0.0" width="28" height="26"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Test" id="FOi-Xq-Poo">
                                                                                 <font key="font" metaFont="systemSemibold" size="11"/>
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -516,6 +520,9 @@
                                                                             </textFieldCell>
                                                                         </textField>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="60" id="ne6-Gv-UeL"/>
+                                                                    </constraints>
                                                                     <visibilityPriorities>
                                                                         <integer value="1000"/>
                                                                         <integer value="1000"/>
@@ -542,7 +549,6 @@
                                             </tableColumns>
                                         </outlineView>
                                     </subviews>
-                                    <nil key="backgroundColor"/>
                                 </clipView>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="NKi-T6-RLd"/>
@@ -621,8 +627,8 @@
     </scenes>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
-        <namedColor name="separatorColor">
-            <color white="0.83899998664855957" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <namedColor name="accentSuperLight">
+            <color red="0.99199998378753662" green="0.98000001907348633" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

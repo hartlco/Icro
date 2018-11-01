@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,7 +20,7 @@
             <subviews>
                 <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJT-HT-16C">
                     <rect key="frame" x="0.0" y="0.0" width="280" height="236"/>
-                    <clipView key="contentView" id="22W-aD-2q4">
+                    <clipView key="contentView" drawsBackground="NO" id="22W-aD-2q4">
                         <rect key="frame" x="1" y="1" width="278" height="234"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -46,6 +47,7 @@
                                 </tableColumns>
                             </tableView>
                         </subviews>
+                        <nil key="backgroundColor"/>
                     </clipView>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="bDz-35-cKq"/>
@@ -67,9 +69,26 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="MrT-0g-95U">
+                    <rect key="frame" x="232" y="242" width="38" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="38" id="Xj7-Gu-dsa"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="new" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="VKm-iV-p12">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <color key="contentTintColor" name="main"/>
+                    <connections>
+                        <action selector="newPostWithSender:" target="-1" id="W48-Jy-qrh"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="MrT-0g-95U" secondAttribute="trailing" constant="10" id="4to-kd-5e3"/>
                 <constraint firstItem="Eqj-mI-YXD" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="11" id="8HS-fH-pmJ"/>
+                <constraint firstItem="CJT-HT-16C" firstAttribute="top" secondItem="MrT-0g-95U" secondAttribute="bottom" constant="6" id="NLm-Js-AsE"/>
+                <constraint firstItem="MrT-0g-95U" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="6" id="hJg-HQ-mvz"/>
                 <constraint firstItem="Eqj-mI-YXD" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" constant="-40" id="lch-WC-YgB"/>
                 <constraint firstItem="CJT-HT-16C" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="36" id="oX3-OF-9rJ"/>
                 <constraint firstAttribute="trailing" secondItem="CJT-HT-16C" secondAttribute="trailing" id="t8v-tN-faw"/>
@@ -78,4 +97,10 @@
             </constraints>
         </customView>
     </objects>
+    <resources>
+        <image name="new" width="28" height="28"/>
+        <namedColor name="main">
+            <color red="0.98000001907348633" green="0.45899999141693115" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
