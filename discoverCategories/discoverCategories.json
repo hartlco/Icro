@@ -43,5 +43,10 @@
         "title": "movies",
         "category": "movies",
         "emoji": "🍿"
+    },
+    {
+        "title": "nanowrimo",
+        "category": "nanowrimo",
+        "emoji": "📝"
     }
 ]
