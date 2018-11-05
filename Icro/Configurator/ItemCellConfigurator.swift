@@ -14,16 +14,6 @@ final class ItemCellConfigurator: NSObject {
         self.itemNavigator = itemNavigator
     }
 
-    func prefetchCells(for items: [Item]) {
-        let images = items.map { item in
-            item.author.avatar
-        }
-
-        for image in images {
-            SDWebImageDownloader.shared().downloadImage(with: image, options: [], progress: nil, completed: nil)
-        }
-    }
-
     func configure(_ cell: ItemTableViewCell, forDisplaying item: Item) {
         cell.itemID = item.id
         cell.avatarImageView.sd_setImage(with: item.author.avatar)

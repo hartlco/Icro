@@ -119,6 +119,8 @@
 		5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */; };
 		5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D180208904D300F484B2 /* AppNavigator.swift */; };
 		5BB73F0C212C9E0B00120FAB /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB73F0B212C9E0B00120FAB /* ListViewModelTests.swift */; };
+		5BBC6704218EB0150090629C /* LoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC6702218EB0150090629C /* LoadMoreTableViewCell.swift */; };
+		5BBC6705218EB0150090629C /* LoadMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BBC6703218EB0150090629C /* LoadMoreTableViewCell.xib */; };
 		5BC1820720790C930061F261 /* SingleImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */; };
 		5BC1820820790C930061F261 /* SingleImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */; };
 		5BC347B22132944900DEB45D /* IcroKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC347B02132944900DEB45D /* IcroKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -294,6 +296,8 @@
 		5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = ViewModel/LoginViewModel.swift; sourceTree = "<group>"; };
 		5BA6D180208904D300F484B2 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppNavigator.swift; path = Navigator/AppNavigator.swift; sourceTree = "<group>"; };
 		5BB73F0B212C9E0B00120FAB /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
+		5BBC6702218EB0150090629C /* LoadMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadMoreTableViewCell.swift; path = View/LoadMoreTableViewCell.swift; sourceTree = "<group>"; };
+		5BBC6703218EB0150090629C /* LoadMoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoadMoreTableViewCell.xib; path = View/LoadMoreTableViewCell.xib; sourceTree = "<group>"; };
 		5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SingleImageCollectionViewCell.swift; path = View/SingleImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SingleImageCollectionViewCell.xib; path = View/SingleImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		5BC347AE2132944900DEB45D /* IcroKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IcroKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -681,6 +685,8 @@
 				5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */,
 				5B3F68762098BB8800A24983 /* KeyboardInputView.swift */,
 				5B3F68782098BBA200A24983 /* KeyboardInputView.xib */,
+				5BBC6702218EB0150090629C /* LoadMoreTableViewCell.swift */,
+				5BBC6703218EB0150090629C /* LoadMoreTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -955,6 +961,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BBC6705218EB0150090629C /* LoadMoreTableViewCell.xib in Resources */,
 				BF707E742131C45600506E64 /* Localizable.strings in Resources */,
 				5B8754FE2070139F00018DFA /* ListViewController.xib in Resources */,
 				5BC1820820790C930061F261 /* SingleImageCollectionViewCell.xib in Resources */,
@@ -1336,6 +1343,7 @@
 				5B44C71420979CCC0003B35D /* BlacklistViewController.swift in Sources */,
 				5BED6D01207E8147002FB9FF /* UserListViewController.swift in Sources */,
 				5BA6D1792087ACF900F484B2 /* UIViewController+Loading.swift in Sources */,
+				5BBC6704218EB0150090629C /* LoadMoreTableViewCell.swift in Sources */,
 				5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */,
 				5B58372E212861F30076121E /* ListViewController.swift in Sources */,
 				5B583724212861220076121E /* ItemCellConfigurator.swift in Sources */,

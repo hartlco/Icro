@@ -19,8 +19,8 @@ final class EditActionsConfigurator {
     }
 
     func canEdit(at indexPath: IndexPath) -> Bool {
-        switch viewModel.viewType(for: indexPath.section, row: indexPath.row) {
-        case .author:
+        switch viewModel.viewType(forRow: indexPath.row) {
+        case .author, .loadMore:
             return false
         case .item:
             return true
@@ -28,7 +28,7 @@ final class EditActionsConfigurator {
     }
 
     func tralingEditActions(at indexPath: IndexPath, in tableView: UITableView) -> UISwipeActionsConfiguration? {
-        let item = viewModel.item(for: indexPath.row)
+        guard case .item(let item) = viewModel.viewType(forRow: indexPath.row) else { return nil }
         let cell = tableView.cellForRow(at: indexPath)
 
         let conversationAction =
@@ -43,7 +43,6 @@ final class EditActionsConfigurator {
         let shareAction =
             UIContextualAction(style: .normal,
                                title: NSLocalizedString("EDITACTIONSCONFIGURATOR_SHAREACTION", comment: "")) { [weak self] _, _, _ in
-            guard let item = self?.viewModel.item(for: indexPath.row) else { return }
             self?.itemNavigator.share(item: item, sourceView: cell!)
             tableView.setEditing(false, animated: true)
         }
@@ -55,7 +54,7 @@ final class EditActionsConfigurator {
 
     func leadingEditActions(at indexPath: IndexPath, in tableView: UITableView) -> UISwipeActionsConfiguration? {
         let cell = tableView.cellForRow(at: indexPath)
-        let item = viewModel.item(for: indexPath.row)
+        guard case .item(let item) = viewModel.viewType(forRow: indexPath.row) else { return nil }
         let replyAction =
             UIContextualAction(style: .normal,
                                title: NSLocalizedString("EDITACTIONSCONFIGURATOR_LEADINGEDITACTIONS", comment: "")) { [weak self] _, _, _ in

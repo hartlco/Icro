@@ -9,7 +9,6 @@ public typealias JSONDictionary = [String: Any]
 
 let itemURL = URL(string: "https://micro.blog/posts/all")!
 let photosURL = URL(string: "https://micro.blog/posts/photos")!
-let itemSinceURLString = "https://micro.blog/posts/all?since_id="
 let mentionsURL = URL(string: "https://micro.blog/posts/mentions")!
 let favoritesURL = URL(string: "https://micro.blog/posts/favorites")!
 let discoverURL = URL(string: "https://micro.blog/posts/discover")!
@@ -110,8 +109,7 @@ public extension Item {
     private static let allItems = resource(for: itemURL, cacheName: "homestream")
 
     private static func allSince(items: [Item]) -> Resource<ItemResponse> {
-        let urlString = itemSinceURLString + (items.first?.id ?? "")
-        let url = URL(string: urlString)!
+        let url = itemURL
 
         return Resource<ItemResponse>(url: url, parseJSON: { json in
             guard let jsonDictionary = json as? JSONDictionary,
@@ -132,6 +130,16 @@ public extension Item {
     }
 
     static let mentions = resource(for: mentionsURL)
+
+    static func resourceBefore(oldResource: Resource<ItemResponse>, item: Item) -> Resource<ItemResponse> {
+        let url = urlWithBeforeParameter(url: oldResource.url, item: item)
+        return resource(for: url)
+
+    }
+
+    private static func urlWithBeforeParameter(url: URL, item: Item) -> URL {
+        return url.appendingQueryParameters(["before_id": item.id])
+    }
 
     static let favorites = resource(for: favoritesURL)
 

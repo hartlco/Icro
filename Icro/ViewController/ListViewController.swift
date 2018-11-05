@@ -17,6 +17,8 @@ class ListViewController: UIViewController {
                                forCellReuseIdentifier: ItemTableViewCell.identifer)
             tableView.register(UINib(nibName: ProfileTableViewCell.identifier, bundle: nil),
                                forCellReuseIdentifier: ProfileTableViewCell.identifier)
+            tableView.register(UINib(nibName: LoadMoreTableViewCell.identifier, bundle: nil),
+                               forCellReuseIdentifier: LoadMoreTableViewCell.identifier)
             tableView.estimatedRowHeight = UITableView.automaticDimension
             tableView.rowHeight = UITableView.automaticDimension
         }
@@ -138,71 +140,62 @@ class ListViewController: UIViewController {
     }
 }
 
-extension ListViewController: UITableViewDataSource, UITableViewDelegate, UITableViewDataSourcePrefetching {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.numberOfSections
-    }
-
+extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfItems(in: section)
-    }
-
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        let items = indexPaths.compactMap { [weak self] indexPath in
-            self?.viewModel.item(for: indexPath.row)
-        }
-        cellConfigurator.prefetchCells(for: items)
+        return viewModel.numberOfItems()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if case .author(let author) = viewModel.viewType(for: indexPath.section, row: indexPath.row) {
+        switch viewModel.viewType(forRow: indexPath.row) {
+        case .author(let author):
             return authorCell(for: author, in: tableView)
+        case .loadMore:
+            return loadMoreCell(at: indexPath, in: tableView)
+        case .item(let item):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ItemTableViewCell.identifer,
+                                                           for: indexPath) as? ItemTableViewCell else {
+                                                            fatalError("Could not deque right cell")
+            }
+
+            cell.layer.shouldRasterize = true
+            cell.layer.rasterizationScale = UIScreen.main.scale
+            cellConfigurator.configure(cell, forDisplaying: item)
+
+            return cell
         }
-
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ItemTableViewCell.identifer,
-                                                       for: indexPath) as? ItemTableViewCell else {
-            fatalError("Could not deque right cell")
-        }
-
-        cell.layer.shouldRasterize = true
-        cell.layer.rasterizationScale = UIScreen.main.scale
-        let item = viewModel.item(for: indexPath.row)
-        cellConfigurator.configure(cell, forDisplaying: item)
-
-        return cell
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if case .author(_) = viewModel.viewType(for: indexPath.section, row: indexPath.row) {
+        switch viewModel.viewType(forRow: indexPath.row) {
+        case .author, .loadMore:
             return
+        case .item(let item):
+            if isLoading == false {
+                viewModel.set(lastReadRow: indexPath.row)
+            }
+
+            rowHeightEstimate[item.id] = cell.bounds.size.height
+
+            updateUnread()
         }
-
-        if isLoading == false {
-            viewModel.set(lastReadRow: indexPath.row)
-        }
-
-        let item = viewModel.item(for: indexPath.row)
-        rowHeightEstimate[item.id] = cell.bounds.size.height
-
-        updateUnread()
     }
 
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        if case .author(_) = viewModel.viewType(for: indexPath.section, row: indexPath.row) {
+        switch viewModel.viewType(forRow: indexPath.row) {
+        case .author, .loadMore:
             return UITableView.automaticDimension
+        case .item(let item):
+            return rowHeightEstimate[item.id] ?? UITableView.automaticDimension
         }
-
-        let item = viewModel.item(for: indexPath.row)
-        return rowHeightEstimate[item.id] ?? UITableView.automaticDimension
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if case .author(_) = viewModel.viewType(for: indexPath.section, row: indexPath.row) {
+        switch viewModel.viewType(forRow: indexPath.row) {
+        case .author, .loadMore:
             return UITableView.automaticDimension
+        case .item(let item):
+            return rowHeightEstimate[item.id] ?? UITableView.automaticDimension
         }
-
-        let item = viewModel.item(for: indexPath.row)
-        return rowHeightEstimate[item.id] ?? UITableView.automaticDimension
     }
 
     private func authorCell(for author: Author, in tableView: UITableView) -> ProfileTableViewCell {
@@ -211,6 +204,18 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, UITabl
             fatalError()
         }
         profileViewConfigurator.configure(cell, using: author)
+        return cell
+    }
+
+    private func loadMoreCell(at indexPath: IndexPath, in tableView: UITableView) -> LoadMoreTableViewCell {
+        let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: LoadMoreTableViewCell.identifier)
+        guard let cell = dequeuedCell as? LoadMoreTableViewCell else {
+            fatalError()
+        }
+        cell.didPressLoadMore = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.loadMore(afterItemAtIndex: indexPath.row - 1)
+        }
         return cell
     }
 

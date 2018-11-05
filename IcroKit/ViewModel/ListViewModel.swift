@@ -67,7 +67,8 @@ public class ListViewModel: NSObject {
 
     public enum ViewType {
         case author(author: Author)
-        case item
+        case item(item: Item)
+        case loadMore
     }
 
     private var items = [Item]()
@@ -84,6 +85,22 @@ public class ListViewModel: NSObject {
     public var didFinishWithError: (Error) -> Void = { _ in }
 
     private var isLoading = false
+
+    private lazy var showLoadMore: Bool = {
+        if case .mentions = type {
+            return true
+        }
+
+        if case .favorites = type {
+            return true
+        }
+
+        if case .timeline = type {
+            return true
+        }
+
+        return false
+    }()
 
     public init(type: ListType,
                 userSettings: UserSettings = .shared,
@@ -135,40 +152,36 @@ public class ListViewModel: NSObject {
         }
     }
 
+    public func loadMore(afterItemAtIndex index: Int) {
+        guard index < items.count,
+        case .item(let lastItem) = viewTypes[index] else { return }
+
+        didStartLoading()
+        isLoading = true
+        Webservice().load(resource: Item.resourceBefore(oldResource: type.resource, item: lastItem)) { [weak self] itemResponse in
+            guard let self = self else { return }
+            switch itemResponse {
+            case .error(let error):
+                self.didFinishWithError(error)
+            case .result(let value):
+                self.updateShowLoadMore(loadedNewItems: value.items)
+                self.appendMoreLoadedItem(moreItems: value.items, after: lastItem)
+                self.updateUnreadItems()
+                self.didFinishLoading(false)
+            }
+        }
+    }
+
     public var shouldLoad: Bool {
         return items.count == 0
     }
 
-    public func numberOfItems(in section: Int) -> Int {
-        if shouldShowProfileHeader, section == 0, author != nil {
-            return 1
-        }
-
-        return items.count
+    public func numberOfItems() -> Int {
+        return viewTypes.count
     }
 
-    public var numberOfSections: Int {
-        if shouldShowProfileHeader, author != nil {
-            return 2
-        }
-
-        return 1
-    }
-
-    public func viewType(for section: Int, row: Int) -> ViewType {
-        if shouldShowProfileHeader, section == 0, let author = author {
-            return .author(author: author)
-        }
-
-        return .item
-    }
-
-    public func item(for index: Int) -> Item {
-        return items[index]
-    }
-
-    public func firstItem() -> Item? {
-        return items.first
+    public func viewType(forRow row: Int) -> ViewType {
+        return viewTypes[row]
     }
 
     public var shouldShowProfileHeader: Bool {
@@ -360,6 +373,49 @@ public class ListViewModel: NSObject {
         for index in 0..<lastReadIndex {
             self.unreadItems.insert(index)
         }
+    }
+
+    private func appendMoreLoadedItem(moreItems: [Item], after item: Item) {
+        guard let firstMoreItem = moreItems.first,
+            !items.contains(firstMoreItem) else { return }
+
+        guard let index = items.firstIndex(where: { indexItem in
+            indexItem == item
+        }) else { return }
+
+        items.insert(contentsOf: moreItems, at: index + 1)
+    }
+
+    private func updateShowLoadMore(loadedNewItems: [Item] = []) {
+        if items.count == 0 || loadedNewItems.count == 0 {
+            showLoadMore = false
+            return
+        }
+
+        if let firstNewItem = loadedNewItems.first,
+            items.contains(firstNewItem) {
+            showLoadMore = false
+            return
+        }
+
+        showLoadMore = true
+    }
+
+    private var viewTypes: [ViewType] {
+        var viewTypes = [ViewType]()
+        if shouldShowProfileHeader, let author = author {
+            viewTypes.append(.author(author: author))
+        }
+
+        viewTypes.append(contentsOf: items.map({
+            return ViewType.item(item: $0)
+        }))
+
+        if showLoadMore {
+            viewTypes.append(.loadMore)
+        }
+
+        return viewTypes
     }
 }
 
