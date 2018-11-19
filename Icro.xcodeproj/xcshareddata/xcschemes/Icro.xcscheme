@@ -97,5 +97,14 @@
    <ArchiveAction
       buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "# Type echo &quot;Bumping build number...&quot;&#10;plist=${PROJECT_DIR}/${INFOPLIST_FILE}&#10;&#10;# increment the build number (ie 115 to 116)&#10;buildnum=$(/usr/libexec/PlistBuddy -c &quot;Print CFBundleVersion&quot; &quot;${plist}&quot;)&#10;if [[ &quot;${buildnum}&quot; == &quot;&quot; ]]; then&#10;echo &quot;No build number in $plist&quot;&#10;exit 2&#10;fi&#10;&#10;buildnum=$(expr $buildnum + 1)&#10;/usr/libexec/Plistbuddy -c &quot;Set CFBundleVersion $buildnum&quot; &quot;${plist}&quot;&#10;echo &quot;Bumped build number to $buildnum&quot;a script or drag a script file from your workspace to insert its path.&#10;">
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
    </ArchiveAction>
 </Scheme>

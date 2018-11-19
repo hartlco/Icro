@@ -22,6 +22,7 @@ class ListViewController: NSViewController, NSMenuItemValidation {
     @IBOutlet weak var tableView: NSTableView! {
         didSet {
             tableView.register(ListItemCell.nib, forIdentifier: ListItemCell.identifier)
+            tableView.register(LoadMoreCell.nib, forIdentifier: LoadMoreCell.identifier)
             tableView.delegate = self
             tableView.dataSource = self
             tableView.doubleAction = #selector(doubleClick)
@@ -65,65 +66,76 @@ class ListViewController: NSViewController, NSMenuItemValidation {
     }
 
     @IBAction private func reply(sender: Any) {
-        guard let firstIndex = tableView.selectedRowIndexes.first else {
+        guard let firstIndex = tableView.selectedRowIndexes.first,
+        case .item(let item) = viewModel.viewType(forRow: firstIndex) else {
             return
         }
-
-        let item = viewModel.item(for: firstIndex)
 
         itemNavigator.openReply(for: item)
     }
 
     @IBAction private func openConversation(sender: Any) {
-        guard let firstIndex = tableView.selectedRowIndexes.first else {
+        guard let firstIndex = tableView.selectedRowIndexes.first,
+        case .item(let item) = viewModel.viewType(forRow: firstIndex) else {
                 return
         }
 
-        let item = viewModel.item(for: firstIndex)
         itemNavigator.openConversation(for: item)
     }
 
     @objc private func doubleClick() {
-        itemNavigator.openConversation(for: viewModel.item(for: tableView.clickedRow))
+        guard case .item(let item) = viewModel.viewType(forRow: tableView.clickedRow) else { return }
+
+        itemNavigator.openConversation(for: item)
     }
 }
 
 extension ListViewController: NSTableViewDelegate, NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        if viewModel.numberOfSections > 1 {
-            return viewModel.numberOfItems(in: 1)
-        }
-        return viewModel.numberOfItems(in: 0)
+        return viewModel.numberOfItems()
     }
 
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-        return viewModel.item(for: row)
+        return viewModel.viewType(forRow: row)
     }
 
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
-        guard let itemCell = tableView.makeView(withIdentifier: ListItemCell.identifier, owner: self) as? ListItemCell else {
-            fatalError("Cell could not be dequed")
+        switch viewModel.viewType(forRow: row) {
+        case .item(let item):
+            guard let itemCell = tableView.makeView(withIdentifier: ListItemCell.identifier, owner: self) as? ListItemCell else {
+                fatalError("Cell could not be dequed")
+            }
+            itemCellConfigurator.configure(itemCell, forDisplaying: item)
+            return itemCell
+        case .loadMore:
+            guard let loadMoreCell = tableView.makeView(withIdentifier: LoadMoreCell.identifier, owner: self) as? LoadMoreCell else {
+                fatalError("Cell could not be dequed")
+            }
+            return loadMoreCell
+        case .author(let author):
+            fatalError()
         }
-        let item = viewModel.item(for: row)
-        itemCellConfigurator.configure(itemCell, forDisplaying: item)
-        return itemCell
     }
 
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        let item = viewModel.item(for: row)
-        let someWidth: CGFloat = tableView.bounds.size.width - 70
-        let frame: NSRect = NSRect(x: 0, y: 0, width: someWidth, height: CGFloat.greatestFiniteMagnitude)
-        let textView = resizingTextView
-        resizingTextView.frame = frame
+        switch viewModel.viewType(forRow: row) {
+        case .item(let item):
+            let someWidth: CGFloat = tableView.bounds.size.width - 70
+            let frame: NSRect = NSRect(x: 0, y: 0, width: someWidth, height: CGFloat.greatestFiniteMagnitude)
+            let textView = resizingTextView
+            resizingTextView.frame = frame
 
-        textView.textStorage?.setAttributedString(item.content)
-        textView.isHorizontallyResizable = false
-        textView.sizeToFit()
+            textView.textStorage?.setAttributedString(item.content)
+            textView.isHorizontallyResizable = false
+            textView.sizeToFit()
 
-        let imageHeight: CGFloat = item.images.isEmpty ? 0 : 160
+            let imageHeight: CGFloat = item.images.isEmpty ? 0 : 160
 
-        let height = textView.frame.size.height + 40 + imageHeight
-        return height
+            let height = textView.frame.size.height + 40 + imageHeight
+            return height
+        default:
+            return 60
+        }
     }
 }
 

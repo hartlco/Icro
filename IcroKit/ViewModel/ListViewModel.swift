@@ -87,20 +87,19 @@ public class ListViewModel: NSObject {
     private var isLoading = false
 
     private lazy var showLoadMore: Bool = {
-        if case .mentions = type {
-            return true
-        }
-
-        if case .favorites = type {
-            return true
-        }
-
-        if case .timeline = type {
-            return true
-        }
-
-        return false
+        return supportedLodMoreTypes
     }()
+
+    private lazy var supportedLodMoreTypes: Bool = {
+        switch type {
+        case .mentions, .timeline, .favorites:
+            return true
+        default:
+            return false
+        }
+    }()
+
+    private var showLoadMoreInBetween = 0
 
     public init(type: ListType,
                 userSettings: UserSettings = .shared,
@@ -144,6 +143,7 @@ public class ListViewModel: NSObject {
             case .error(let error):
                 self.didFinishWithError(error)
             case .result(let value):
+                self.updateShowLoadMoreInBetweenAfterLoad(loadedNewItems: value.items)
                 self.items = value.items
                 self.loadedAuthor = value.author ?? self.loadedAuthor
                 self.updateUnreadItems()
@@ -153,8 +153,10 @@ public class ListViewModel: NSObject {
     }
 
     public func loadMore(afterItemAtIndex index: Int) {
-        guard index < items.count,
+        guard index <= items.count,
         case .item(let lastItem) = viewTypes[index] else { return }
+        userSettings.lastread_timeline = lastItem.id
+        let isLoadMoreInTheEnd = index == items.count - 1
 
         didStartLoading()
         isLoading = true
@@ -164,7 +166,11 @@ public class ListViewModel: NSObject {
             case .error(let error):
                 self.didFinishWithError(error)
             case .result(let value):
-                self.updateShowLoadMore(loadedNewItems: value.items)
+                if isLoadMoreInTheEnd {
+                    self.updateShowLoadMore(loadedNewItems: value.items)
+                } else {
+                    self.updateShowLoadMoreInBetweenAfterLoadMore(loadedNewItems: value.items)
+                }
                 self.appendMoreLoadedItem(moreItems: value.items, after: lastItem)
                 self.updateUnreadItems()
                 self.didFinishLoading(false)
@@ -401,6 +407,31 @@ public class ListViewModel: NSObject {
         showLoadMore = true
     }
 
+    private func updateShowLoadMoreInBetweenAfterLoad(loadedNewItems: [Item] = []) {
+        guard let firstOldOne = items.first,
+            let indexOfFirstOldOne = loadedNewItems.index(of: firstOldOne) else {
+                showLoadMoreInBetween = 0
+                return
+        }
+
+        showLoadMoreInBetween = indexOfFirstOldOne
+    }
+
+    private func updateShowLoadMoreInBetweenAfterLoadMore(loadedNewItems: [Item] = []) {
+        if items.count == 0 || loadedNewItems.count == 0 {
+            showLoadMoreInBetween = 0
+            return
+        }
+
+        if let firstNewItem = loadedNewItems.first,
+            items.contains(firstNewItem) {
+            showLoadMoreInBetween = 0
+            return
+        }
+
+        showLoadMoreInBetween += loadedNewItems.count
+    }
+
     private var viewTypes: [ViewType] {
         var viewTypes = [ViewType]()
         if shouldShowProfileHeader, let author = author {
@@ -411,8 +442,12 @@ public class ListViewModel: NSObject {
             return ViewType.item(item: $0)
         }))
 
-        if showLoadMore {
+        if showLoadMore, items.count != 0, supportedLodMoreTypes {
             viewTypes.append(.loadMore)
+        }
+
+        if showLoadMoreInBetween != 0, supportedLodMoreTypes {
+            viewTypes.insert(.loadMore, at: showLoadMoreInBetween)
         }
 
         return viewTypes

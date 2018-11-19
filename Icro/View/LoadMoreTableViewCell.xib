@@ -21,6 +21,9 @@
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWf-CV-NGx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="43.5" id="lKh-HK-H4u"/>
+                        </constraints>
                         <state key="normal" title="Load more"/>
                         <connections>
                             <action selector="loadMorePressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="x8Y-A5-Sbb"/>

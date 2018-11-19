@@ -109,6 +109,8 @@
 		5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
 		5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B6A565E21735A69003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
+		5B6BCC3121A2F215007225C2 /* LoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */; };
+		5B6BCC3321A2F233007225C2 /* LoadMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6BCC3221A2F233007225C2 /* LoadMoreCell.xib */; };
 		5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B869B07214E4633000A051C /* MicropubEndpoint.swift */; };
 		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
 		5B8754FE2070139F00018DFA /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8754FC2070139F00018DFA /* ListViewController.xib */; };
@@ -286,6 +288,8 @@
 		5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ComposeViewController.xib; path = ViewController/ComposeViewController.xib; sourceTree = "<group>"; };
 		5B689BAB20837ECE005B9874 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TabBarViewController.xib; path = ViewController/TabBarViewController.xib; sourceTree = "<group>"; };
 		5B6A565C21735A4F003C4D92 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
+		5B6BCC3221A2F233007225C2 /* LoadMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadMoreCell.xib; sourceTree = "<group>"; };
 		5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
 		5B869B07214E4633000A051C /* MicropubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicropubEndpoint.swift; sourceTree = "<group>"; };
 		5B8754F92070137300018DFA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
@@ -442,6 +446,8 @@
 				5B01CBFC2168E2780007E01D /* ListItemCell.xib */,
 				5B4639EA2169C36500200D8F /* ImageViewItem.swift */,
 				5B4639EB2169C36500200D8F /* ImageViewItem.xib */,
+				5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */,
+				5B6BCC3221A2F233007225C2 /* LoadMoreCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -930,6 +936,7 @@
 				5B4639E4216908E800200D8F /* ListViewController.xib in Resources */,
 				5B01CBD12168D6AA0007E01D /* Main.storyboard in Resources */,
 				5B4639E92169350600200D8F /* Assets.xcassets in Resources */,
+				5B6BCC3321A2F233007225C2 /* LoadMoreCell.xib in Resources */,
 				5B4639ED2169C36500200D8F /* ImageViewItem.xib in Resources */,
 				5B01CBFE2168E2780007E01D /* ListItemCell.xib in Resources */,
 				5BDE18EF216A5771001254F4 /* ComposeViewController.xib in Resources */,
@@ -1219,6 +1226,7 @@
 				5B01CC072168E8000007E01D /* ListItemCellConfigurator.swift in Sources */,
 				5B4639DF216901BE00200D8F /* SplitViewController.swift in Sources */,
 				5B4639E821691F6E00200D8F /* ItemNavigator.swift in Sources */,
+				5B6BCC3121A2F215007225C2 /* LoadMoreCell.swift in Sources */,
 				5B4639E3216908E800200D8F /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

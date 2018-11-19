@@ -92,7 +92,7 @@ public extension Item {
 
         }
 
-        CacheStorage.store(response, to: CacheStorage.Directory.caches, as: "homestream")
+//        CacheStorage.store(response, to: CacheStorage.Directory.caches, as: "homestream")
     }
 
     static func all() -> Resource<ItemResponse> {
