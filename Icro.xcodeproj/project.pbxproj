@@ -841,6 +841,7 @@
 				EABA67040489353A359E8CCF /* [CP] Embed Pods Frameworks */,
 				5B494E642123590E00C3969B /* SwiftLint */,
 				5BC347BA2132944900DEB45D /* Embed Frameworks */,
+				5B6BCC3621A2F80A007225C2 /* Bump build number */,
 			);
 			buildRules = (
 			);
@@ -1089,6 +1090,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint";
+		};
+		5B6BCC3621A2F80A007225C2 /* Bump build number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Bump build number";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
 		};
 		7A25529A364EB557C1FC0966 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

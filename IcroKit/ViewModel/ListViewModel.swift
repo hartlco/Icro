@@ -155,7 +155,11 @@ public class ListViewModel: NSObject {
     public func loadMore(afterItemAtIndex index: Int) {
         guard index <= items.count,
         case .item(let lastItem) = viewTypes[index] else { return }
-        userSettings.lastread_timeline = lastItem.id
+
+        if items.count > index + 1 {
+            let nextItem = items[index + 1]
+            userSettings.lastread_timeline = nextItem.id
+        }
         let isLoadMoreInTheEnd = index == items.count - 1
 
         didStartLoading()
