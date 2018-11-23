@@ -143,8 +143,8 @@ public class ListViewModel: NSObject {
             case .error(let error):
                 self.didFinishWithError(error)
             case .result(let value):
-                self.updateShowLoadMoreInBetweenAfterLoad(loadedNewItems: value.items)
-                self.items = value.items
+                self.updateShowLoadMoreInBetweenAfterLoadMore(loadedNewItems: value.items)
+                self.insertNewItems(newItems: value.items)
                 self.loadedAuthor = value.author ?? self.loadedAuthor
                 self.updateUnreadItems()
                 self.didFinishLoading(false)
@@ -175,7 +175,7 @@ public class ListViewModel: NSObject {
                 } else {
                     self.updateShowLoadMoreInBetweenAfterLoadMore(loadedNewItems: value.items)
                 }
-                self.appendMoreLoadedItem(moreItems: value.items, after: lastItem)
+                self.insertNewItems(newItems: value.items)
                 self.updateUnreadItems()
                 self.didFinishLoading(false)
             }
@@ -276,7 +276,10 @@ public class ListViewModel: NSObject {
         switch type {
         case .timeline:
             guard let lastReadID = userSettings.lastread_timeline,
-                let index = index(for: lastReadID) else { return nil }
+                let index = index(for: lastReadID) else {
+                    userSettings.lastread_timeline = items.first?.id
+                    return 0
+            }
             return index
         default:
             return nil
@@ -411,16 +414,6 @@ public class ListViewModel: NSObject {
         showLoadMore = true
     }
 
-    private func updateShowLoadMoreInBetweenAfterLoad(loadedNewItems: [Item] = []) {
-        guard let firstOldOne = items.first,
-            let indexOfFirstOldOne = loadedNewItems.index(of: firstOldOne) else {
-                showLoadMoreInBetween = 0
-                return
-        }
-
-        showLoadMoreInBetween = indexOfFirstOldOne
-    }
-
     private func updateShowLoadMoreInBetweenAfterLoadMore(loadedNewItems: [Item] = []) {
         if items.count == 0 || loadedNewItems.count == 0 {
             showLoadMoreInBetween = 0
@@ -491,5 +484,17 @@ public extension ListViewModel.ListType {
         case .conversation, .photos, .discoverCollection:
             return nil
         }
+    }
+}
+
+extension ListViewModel {
+    func insertNewItems(newItems: [Item]) {
+        let allItemsSet = Set<Item>(newItems + items)
+        let allItems = Array(allItemsSet).sorted(by: {
+            return ($0.date_published >= $1.date_published)
+        })
+
+        items = allItems
+        saveCache()
     }
 }

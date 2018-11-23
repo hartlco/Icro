@@ -71,6 +71,12 @@ public class Item: Codable {
     }
 }
 
+extension Item: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        return id
+    }
+}
+
 extension Item {
     convenience init?(dictionary: JSONDictionary) {
         guard let id = dictionary["id"] as? String,

@@ -85,6 +85,13 @@ public extension Item {
         CacheStorage.remove("homestream", from: .caches)
     }
 
+    static func deleteTop(number: Int) {
+        let response = CacheStorage.retrieve("homestream", from: CacheStorage.Directory.caches, as: ItemResponse.self)!
+        var array = response.items
+        array.removeSubrange(0...number)
+        saveAllCached(itemResponse: ItemResponse(author: response.author, items: array))
+    }
+
     static func saveAllCached(itemResponse: ItemResponse) {
         var response = itemResponse
         if response.items.count > 400 {
@@ -96,38 +103,10 @@ public extension Item {
     }
 
     static func all() -> Resource<ItemResponse> {
-        if let itemResponse = CacheStorage.retrieve("homestream",
-                                                    from: CacheStorage.Directory.caches,
-                                                    as: ItemResponse.self),
-            itemResponse.items.count > 0 {
-            return allSince(items: itemResponse.items)
-        }
-
         return allItems
     }
 
     private static let allItems = resource(for: itemURL, cacheName: "homestream")
-
-    private static func allSince(items: [Item]) -> Resource<ItemResponse> {
-        let url = itemURL
-
-        return Resource<ItemResponse>(url: url, parseJSON: { json in
-            guard let jsonDictionary = json as? JSONDictionary,
-                let jsonItems = jsonDictionary["items"] as? [JSONDictionary] else {
-                    return nil
-            }
-
-            let newItems = jsonItems.compactMap(Item.init)
-            // Only add new items to the array
-            let allItemsSet = Set<Item>(newItems + items)
-            let allItems = Array(allItemsSet).sorted(by: {
-                return ($0.date_published >= $1.date_published)
-            })
-            let response = ItemResponse(author: nil, items: filtered(items: allItems))
-            Item.saveAllCached(itemResponse: response)
-            return response
-        })
-    }
 
     static let mentions = resource(for: mentionsURL)
 
