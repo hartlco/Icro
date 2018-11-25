@@ -50,6 +50,8 @@
 		5B4639E92169350600200D8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		5B4639EC2169C36500200D8F /* ImageViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4639EA2169C36500200D8F /* ImageViewItem.swift */; };
 		5B4639ED2169C36500200D8F /* ImageViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4639EB2169C36500200D8F /* ImageViewItem.xib */; };
+		5B4DF0EE21AA8496008CEB58 /* LoadMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BBC6703218EB0150090629C /* LoadMoreTableViewCell.xib */; };
+		5B4DF0EF21AA84A4008CEB58 /* LoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC6702218EB0150090629C /* LoadMoreTableViewCell.swift */; };
 		5B4E4187208AF8C700FC610A /* Pods-Icro-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */; };
 		5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
 		5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371D212861220076121E /* EditActionsConfigurator.swift */; };
@@ -955,6 +957,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B4DF0EE21AA8496008CEB58 /* LoadMoreTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1288,6 +1291,7 @@
 				5B5837542128B5F80076121E /* UserListViewController.xib in Sources */,
 				5B5837552128B5F80076121E /* TabBarViewController.xib in Sources */,
 				5B5837562128B5F80076121E /* LoginViewController.swift in Sources */,
+				5B4DF0EF21AA84A4008CEB58 /* LoadMoreTableViewCell.swift in Sources */,
 				5B5837572128B5F80076121E /* LoginViewController.xib in Sources */,
 				5B5837582128B5F80076121E /* SettingsViewController.swift in Sources */,
 				5B5837592128B5F80076121E /* SettingsViewController.xib in Sources */,
