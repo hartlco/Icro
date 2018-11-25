@@ -24,3 +24,11 @@ public extension DiscoveryCategory {
         self.emoji = emoji
     }
 }
+
+struct DiscoveryResponse: Codable {
+    let categories: [DiscoveryCategory]
+
+    init(categories: [DiscoveryCategory]) {
+        self.categories = categories
+    }
+}
