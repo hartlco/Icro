@@ -50,6 +50,9 @@ class ListViewController: NSViewController, NSMenuItemValidation {
 
         viewModel.didFinishLoading = { [weak self] _ in
             guard let self = self else { return }
+            if let newIndex = self.viewModel.numberOfUnreadItems {
+                self.tableView.scrollRowToVisible(newIndex)
+            }
             self.tableView.reloadData()
         }
 
@@ -135,6 +138,15 @@ extension ListViewController: NSTableViewDelegate, NSTableViewDataSource {
             return height
         default:
             return 60
+        }
+    }
+
+    func tableView(_ tableView: NSTableView, willDisplayCell cell: Any, for tableColumn: NSTableColumn?, row: Int) {
+        switch viewModel.viewType(forRow: row) {
+        case .item:
+            viewModel.set(lastReadRow: row)
+        default:
+            return
         }
     }
 }
