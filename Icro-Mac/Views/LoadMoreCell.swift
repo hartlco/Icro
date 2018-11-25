@@ -8,5 +8,4 @@ import Cocoa
 final class LoadMoreCell: NSTableRowView {
     static let nib = NSNib(nibNamed: "LoadMoreCell", bundle: nil)
     static let identifier = NSUserInterfaceItemIdentifier("LoadMoreCell")
-    
 }

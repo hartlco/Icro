@@ -52,6 +52,8 @@
 		5B4639ED2169C36500200D8F /* ImageViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4639EB2169C36500200D8F /* ImageViewItem.xib */; };
 		5B4DF0EE21AA8496008CEB58 /* LoadMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BBC6703218EB0150090629C /* LoadMoreTableViewCell.xib */; };
 		5B4DF0EF21AA84A4008CEB58 /* LoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC6702218EB0150090629C /* LoadMoreTableViewCell.swift */; };
+		5B4DF0F121AA8818008CEB58 /* ListViewModelListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DF0F021AA8818008CEB58 /* ListViewModelListType.swift */; };
+		5B4DF0F221AA8818008CEB58 /* ListViewModelListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DF0F021AA8818008CEB58 /* ListViewModelListType.swift */; };
 		5B4E4187208AF8C700FC610A /* Pods-Icro-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */; };
 		5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
 		5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371D212861220076121E /* EditActionsConfigurator.swift */; };
@@ -264,6 +266,7 @@
 		5B4639EA2169C36500200D8F /* ImageViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewItem.swift; sourceTree = "<group>"; };
 		5B4639EB2169C36500200D8F /* ImageViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewItem.xib; sourceTree = "<group>"; };
 		5B494E652124C0FA00C3969B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		5B4DF0F021AA8818008CEB58 /* ListViewModelListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelListType.swift; sourceTree = "<group>"; };
 		5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-Icro-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
 		5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicropubRequestController.swift; sourceTree = "<group>"; };
 		5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewModel.swift; path = ViewModel/SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -459,6 +462,7 @@
 			children = (
 				5B58371A212860BA0076121E /* ComposeViewModel.swift */,
 				5B58372B2128619B0076121E /* ListViewModel.swift */,
+				5B4DF0F021AA8818008CEB58 /* ListViewModelListType.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1269,6 +1273,7 @@
 				5BF663832189629200ABA671 /* DiscoveryCategory.swift in Sources */,
 				5B01CBF32168D7240007E01D /* Item.swift in Sources */,
 				5BDE18F0216A57C0001254F4 /* MicropubRequestController.swift in Sources */,
+				5B4DF0F221AA8818008CEB58 /* ListViewModelListType.swift in Sources */,
 				5B01CBED2168D7150007E01D /* Color.swift in Sources */,
 				5BF663822189628F00ABA671 /* DiscoveryCategoryResource.swift in Sources */,
 				5B01CBF42168D7240007E01D /* HTMLContent.swift in Sources */,
@@ -1348,6 +1353,7 @@
 				5BC347C72132960900DEB45D /* LoginInformation.swift in Sources */,
 				5BF6637F218961AB00ABA671 /* DiscoveryCategory.swift in Sources */,
 				5BF663812189628300ABA671 /* DiscoveryCategoryResource.swift in Sources */,
+				5B4DF0F121AA8818008CEB58 /* ListViewModelListType.swift in Sources */,
 				5BDE18F1216A57C0001254F4 /* MicropubRequestController.swift in Sources */,
 				5BC347BF2132950D00DEB45D /* UserSettings.swift in Sources */,
 				5BC347BB2132947100DEB45D /* Author.swift in Sources */,
