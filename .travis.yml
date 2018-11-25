@@ -4,4 +4,4 @@ xcode_scheme: Icro
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone X
 osx_image: xcode10
 script:
-  - ./Pods/SwiftLint/swiftlint
+  - ./Pods/SwiftLint/swiftlint --strict
