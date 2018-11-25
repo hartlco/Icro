@@ -110,3 +110,6 @@ fastlane/test_output
 *.xcuserstate
 *.xcbkptlist
 xcuserstate
+
+# Fastlane
+fastlane/Appfile
