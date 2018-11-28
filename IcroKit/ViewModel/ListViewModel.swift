@@ -374,10 +374,11 @@ public class ListViewModel: NSObject {
             return
         }
 
-        if let firstNewItem = loadedNewItems.first,
-            items.contains(firstNewItem) {
-            showLoadMoreInBetween = 0
-            return
+        for loadedItem in loadedNewItems {
+            if items.contains(loadedItem) {
+                showLoadMoreInBetween = 0
+                return
+            }
         }
 
         showLoadMoreInBetween += loadedNewItems.count
