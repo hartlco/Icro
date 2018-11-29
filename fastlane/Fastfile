@@ -16,6 +16,13 @@
 default_platform(:ios)
 
 platform :ios do
+  desc "Run unit tests"
+  lane :tests do
+    run_tests(workspace: "Icro.xcworkspace",
+            devices: ["iPhone X"],
+            scheme: "Icro")
+  end
+
   desc "Push a new beta build to TestFlight"
   lane :beta do
     enable_automatic_code_signing
