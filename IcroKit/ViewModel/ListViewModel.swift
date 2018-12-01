@@ -86,6 +86,8 @@ public class ListViewModel: NSObject {
     }
 
     @objc public func load() {
+        guard !isLoading else { return }
+
         didStartLoading()
         isLoading = true
         applyCache()
@@ -107,6 +109,8 @@ public class ListViewModel: NSObject {
     }
 
     public func loadMore(afterItemAtIndex index: Int) {
+        guard !isLoading else { return }
+
         guard index <= items.count,
         case .item(let lastItem) = viewTypes[index] else { return }
 
@@ -120,6 +124,8 @@ public class ListViewModel: NSObject {
         isLoading = true
         Webservice().load(resource: Item.resourceBefore(oldResource: type.resource, item: lastItem)) { [weak self] itemResponse in
             guard let self = self else { return }
+            self.isLoading = false
+
             switch itemResponse {
             case .error(let error):
                 self.didFinishWithError(error)
