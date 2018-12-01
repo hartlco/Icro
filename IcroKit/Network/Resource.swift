@@ -298,12 +298,15 @@ public final class Webservice {
         }
 
         URLSession.shared.dataTask(with: request) { (data, _, error) in
-            DispatchQueue.main.async {
-                guard let data = data else {
+            guard let data = data else {
+                DispatchQueue.main.async {
                     completion(.error(error: NetworkingError.cannotParse))
-                    return
                 }
-                let finalData = resource.parse(data)
+                return
+            }
+
+            let finalData = resource.parse(data)
+            DispatchQueue.main.async {
                 completion(finalData)
             }
         }.resume()

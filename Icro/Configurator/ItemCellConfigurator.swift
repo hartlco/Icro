@@ -41,35 +41,8 @@ final class ItemCellConfigurator: NSObject {
             self?.itemNavigator.accessibilityPresentLinks(linkList: linkList, message: attributedString.string, sourceView: cell)
         }
 
-        cell.accessibilityLabel = accessibilityLabel(for: item, attributedContent: attributedString)
+        cell.accessibilityLabel = item.accessibilityContent
         cell.accessibilityCustomActions = accessibilityCustomActions(for: item, cell: cell, attributedContent: attributedString)
-    }
-
-    private func accessibilityLabel(for item: Item, attributedContent: NSAttributedString?) -> String {
-        var accessibilityLabel = "\(item.author.name): \(item.content.string)"
-
-        for imageDescription in item.htmlContent.imageDescs() where !imageDescription.isEmpty {
-            accessibilityLabel += ", image: \(imageDescription)"
-        }
-
-        let imageList = item.htmlContent.imageLinks()
-        if !imageList.isEmpty {
-            accessibilityLabel += ", \(imageList.count)"
-            accessibilityLabel += (imageList.count > 1) ? "images" : "image"
-        }
-
-        let linkList = HTMLContent.textLinks(for: attributedContent)
-        if !linkList.isEmpty {
-            accessibilityLabel += ", \(linkList.count)"
-            accessibilityLabel += (linkList.count > 1) ? "links" : "link"
-        }
-
-        if item.isFavorite {
-            accessibilityLabel += ", favorited"
-        }
-
-        accessibilityLabel += ", , \(item.relativeDateString)"
-        return accessibilityLabel
     }
 
     private func accessibilityCustomActions(for item: Item,

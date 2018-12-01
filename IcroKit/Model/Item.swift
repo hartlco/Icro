@@ -49,6 +49,10 @@ public class Item: Codable {
         return date_published.timeAgo
     }()
 
+    public lazy var accessibilityContent: String = {
+        return accessibilityLabel(for: self, attributedContent: content)
+    }()
+
     public var author: Author
     public var isFavorite: Bool
 
@@ -68,6 +72,7 @@ public class Item: Codable {
 
     public func resetContent() {
         content = htmlContent.attributedStringWithoutImages() ?? NSAttributedString(string: "")
+        accessibilityContent = accessibilityLabel(for: self, attributedContent: content)
     }
 }
 
@@ -109,11 +114,41 @@ extension Item {
         _ = images
         _ = content
         _ = relativeDateString
+        _ = accessibilityContent
     }
 }
 
 extension Item: Equatable {
     public static func == (lhs: Item, rhs: Item) -> Bool {
         return lhs.id == rhs.id
+    }
+}
+
+extension Item {
+    private func accessibilityLabel(for item: Item, attributedContent: NSAttributedString?) -> String {
+        var accessibilityLabel = "\(item.author.name): \(item.content.string)"
+
+        for imageDescription in item.htmlContent.imageDescs() where !imageDescription.isEmpty {
+            accessibilityLabel += ", image: \(imageDescription)"
+        }
+
+        let imageList = item.htmlContent.imageLinks()
+        if !imageList.isEmpty {
+            accessibilityLabel += ", \(imageList.count)"
+            accessibilityLabel += (imageList.count > 1) ? "images" : "image"
+        }
+
+        let linkList = HTMLContent.textLinks(for: attributedContent)
+        if !linkList.isEmpty {
+            accessibilityLabel += ", \(linkList.count)"
+            accessibilityLabel += (linkList.count > 1) ? "links" : "link"
+        }
+
+        if item.isFavorite {
+            accessibilityLabel += ", favorited"
+        }
+
+        accessibilityLabel += ", , \(item.relativeDateString)"
+        return accessibilityLabel
     }
 }
