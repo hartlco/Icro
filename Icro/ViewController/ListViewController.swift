@@ -29,6 +29,7 @@ class ListViewController: UIViewController {
     fileprivate let itemNavigator: ItemNavigator
     fileprivate let profileViewConfigurator: ProfileViewConfigurator
     fileprivate let editActionsConfigurator: EditActionsConfigurator
+    private var titleView: DropdownTitleView?
 
     @IBOutlet private weak var unreadView: UIView!
     @IBOutlet weak var unreadLabel: UILabel!
@@ -125,10 +126,10 @@ class ListViewController: UIViewController {
     private func updateDiscoverySectionsIfNeeded() {
         guard viewModel.showsDiscoverySections else { return }
 
-        let titleView = DropdownTitleView()
-        titleView.configure(title: viewModel.title, subtitle: viewModel.discoverySubtitle)
+        titleView = DropdownTitleView()
+        titleView?.configure(title: viewModel.title, subtitle: viewModel.discoverySubtitle)
         navigationItem.titleView = titleView
-        titleView.addTarget(
+        titleView?.addTarget(
             self,
             action: #selector(onTitle),
             for: .touchUpInside
@@ -136,7 +137,7 @@ class ListViewController: UIViewController {
     }
 
     @objc private func onTitle() {
-        itemNavigator.showDiscoveryCategories(categories: viewModel.discoveryCategories)
+        itemNavigator.showDiscoveryCategories(categories: viewModel.discoveryCategories, sourceView: titleView ?? view)
     }
 }
 

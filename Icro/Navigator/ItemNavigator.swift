@@ -151,7 +151,7 @@ final class ItemNavigator {
         navigationController.present(linksActionSheet, animated: true, completion: nil)
     }
 
-    func showDiscoveryCategories(categories: [DiscoveryCategory]) {
+    func showDiscoveryCategories(categories: [DiscoveryCategory], sourceView: UIView) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         for category in categories {
             let action = UIAlertAction(title: "\(category.emoji) - \(category.title)",
@@ -169,6 +169,9 @@ final class ItemNavigator {
             NSLocalizedString("ITEMNAVIGATOR_MOREALERT_CANCELACTION", comment: ""),
                                                 style: .cancel,
                                                 handler: nil))
+
+        alertController.popoverPresentationController?.sourceView = sourceView
+        alertController.popoverPresentationController?.sourceRect = sourceView.bounds
 
         navigationController.present(alertController, animated: true, completion: nil)
     }
