@@ -42,7 +42,7 @@ public final class UserSettings {
     private let notificationCenter: NotificationCenter
     private let keychain = Keychain(service: "co.hartl.icro")
 
-    public init(userDefaults: UserDefaults = .standard,
+    public init(userDefaults: UserDefaults = UserDefaults(suiteName: "group.hartl.co.icro")!,
                 notificationCenter: NotificationCenter = .default) {
         self.userDefaults = userDefaults
         self.notificationCenter = notificationCenter

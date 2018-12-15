@@ -5,6 +5,7 @@
 
 import UIKit
 import IcroKit
+import IcroUIKit
 
 class TabBarViewController: UITabBarController {
     private let userSettings: UserSettings
@@ -78,18 +79,19 @@ class TabBarViewController: UITabBarController {
     @objc private func showComposeViewController() {
         let navController = UINavigationController()
         let viewModel = ComposeViewModel(mode: .post)
+        let itemNavigator = ItemNavigator(navigationController: navController)
         let navigator = ComposeNavigator(navigationController: navController, viewModel: viewModel)
-        let viewController = ComposeViewController(viewModel: viewModel, composeNavigator: navigator)
+        let viewController = ComposeViewController(viewModel: viewModel, composeNavigator: navigator, itemNavigator: itemNavigator)
         navController.viewControllers = [viewController]
         present(navController, animated: true, completion: nil)
     }
 
     @objc private func showSettingsViewController() {
         let navigationController = UINavigationController()
-        let itemNavigator = ItemNavigator(navigationController: navigationController)
+        let mainNavigator = MainNavigator(navigationController: navigationController)
         let settingsNavigator = SettingsNavigator(navigationController: navigationController, appNavigator: appNavigator)
         let viewController = SettingsViewController(navigator: settingsNavigator,
-                                                    itemNavigator: itemNavigator,
+                                                    mainNavigator: mainNavigator,
                                                     viewModel: SettingsViewModel(userSettings: userSettings))
         navigationController.viewControllers = [viewController]
         present(navigationController, animated: true, completion: nil)

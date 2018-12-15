@@ -4,8 +4,9 @@
 //
 
 import UIKit
+import IcroUIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, LoadingViewController {
     @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var textFieldInfo: UILabel!
     @IBOutlet private weak var loginButton: UIButton!
@@ -37,7 +38,7 @@ class LoginViewController: UIViewController {
         }
 
         viewModel.didStartLoading = { [weak self] in
-            self?.showLoading(position: .top)
+            self?.showLoading()
         }
 
         viewModel.didFinishLoading = { [weak self] in
@@ -45,7 +46,7 @@ class LoginViewController: UIViewController {
         }
 
         viewModel.didFinishWithError = { [weak self] error in
-            self?.showError(position: .top, error: error)
+            self?.showError(error: error)
 
         }
     }

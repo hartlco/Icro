@@ -50,8 +50,8 @@ final class ProfileViewConfigurator: NSObject {
         }
 
         view.avatarPressed = { [weak self] in
-            self?.itemNavigator.openImages(datasource: AuthorImageGalleryDataSource(author: author),
-                                           at: 0)
+            let dataSource = GalleryDataSource(index: 0, imageURLs: [author.avatar])
+            self?.itemNavigator.openImages(datasource: dataSource)
         }
 
         view.followButton.isHidden = author.isYou
