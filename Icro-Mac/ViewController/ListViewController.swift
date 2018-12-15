@@ -32,12 +32,15 @@ class ListViewController: NSViewController, NSMenuItemValidation {
     private let viewModel: ListViewModel
     private let itemCellConfigurator: ListItemCellConfigurator
     private let itemNavigator: ItemNavigator
+    private let notificationCenter: NotificationCenter
 
     init(listViewModel: ListViewModel,
-         itemNavigator: ItemNavigator) {
+         itemNavigator: ItemNavigator,
+         notificationCenter: NotificationCenter = .default) {
         self.viewModel = listViewModel
         self.itemCellConfigurator = ListItemCellConfigurator(itemNavigator: itemNavigator)
         self.itemNavigator = itemNavigator
+        self.notificationCenter = notificationCenter
         super.init(nibName: "ListViewController", bundle: nil)
     }
 
@@ -57,6 +60,10 @@ class ListViewController: NSViewController, NSMenuItemValidation {
         }
 
         viewModel.load()
+        notificationCenter.addObserver(self,
+                                       selector: #selector(boundsDidChange(notification:)),
+                                       name: NSView.boundsDidChangeNotification,
+                                       object: tableView.enclosingScrollView?.contentView)
     }
 
     override func viewDidAppear() {
@@ -91,6 +98,19 @@ class ListViewController: NSViewController, NSMenuItemValidation {
 
         itemNavigator.openConversation(for: item)
     }
+
+    @objc private func boundsDidChange(notification: Notification) {
+        let visibleRect = tableView.visibleRect
+        let rows = tableView.rows(in: visibleRect)
+        let index = rows.location
+
+        switch viewModel.viewType(forRow: index) {
+        case .item:
+            viewModel.set(lastReadRow: index)
+        default:
+            return
+        }
+    }
 }
 
 extension ListViewController: NSTableViewDelegate, NSTableViewDataSource {
@@ -115,7 +135,7 @@ extension ListViewController: NSTableViewDelegate, NSTableViewDataSource {
                 fatalError("Cell could not be dequed")
             }
             return loadMoreCell
-        case .author(let author):
+        case .author:
             fatalError()
         }
     }
@@ -138,15 +158,6 @@ extension ListViewController: NSTableViewDelegate, NSTableViewDataSource {
             return height
         default:
             return 60
-        }
-    }
-
-    func tableView(_ tableView: NSTableView, willDisplayCell cell: Any, for tableColumn: NSTableColumn?, row: Int) {
-        switch viewModel.viewType(forRow: row) {
-        case .item:
-            viewModel.set(lastReadRow: row)
-        default:
-            return
         }
     }
 }
