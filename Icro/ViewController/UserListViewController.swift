@@ -4,8 +4,9 @@
 //
 
 import UIKit
+import IcroUIKit
 
-class UserListViewController: UIViewController {
+class UserListViewController: UIViewController, LoadingViewController {
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.register(UINib(nibName: UserItemTableViewCell.identifier, bundle: nil),
@@ -28,7 +29,7 @@ class UserListViewController: UIViewController {
         title = NSLocalizedString("USERLISTVIEWCONTROLLER_TITLE", comment: "")
 
         viewModel.didStartLoading = { [weak self] in
-            self?.showLoading(position: .bottom)
+            self?.showLoading()
         }
 
         viewModel.didFinishLoading = { [weak self] in
@@ -37,7 +38,7 @@ class UserListViewController: UIViewController {
         }
 
         viewModel.didFinishWithError = { [weak self] error in
-            self?.showError(position: .bottom, error: error)
+            self?.showError(error: error)
         }
 
         viewModel.load()

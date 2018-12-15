@@ -24,6 +24,9 @@ public final class ComposeViewModel {
 
     public enum Mode {
         case post
+        case shareURL(url: URL, title: String)
+        case shareImage(image: Image)
+        case shareText(text: String)
         case reply(item: Item)
     }
 
@@ -48,12 +51,28 @@ public final class ComposeViewModel {
         self.userSettings = userSettings
     }
 
+    public var canUploadImage: Bool {
+        switch mode {
+        case .shareText, .shareURL:
+            return false
+        case .post, .reply, .shareImage:
+            return true
+        }
+    }
+
     public var startText: String {
         switch mode {
         case .post:
             return ""
         case .reply(let item):
             return "@" + (item.author.username ?? "") + " "
+        case .shareURL(let url, let title):
+            return linkText(url: url, title: title)
+        case .shareImage(let image):
+            images.append(image)
+            return ""
+        case .shareText(let text):
+            return text
         }
     }
 
@@ -65,7 +84,7 @@ public final class ComposeViewModel {
         let string = postWithImages(string: string)
 
         switch mode {
-        case .post:
+        case .post, .shareURL, .shareImage, .shareText:
             if userSettings.wordpressInfo != nil {
                 postXMLRPC(string: string, completion: completion)
             } else if let info = userSettings.micropubInfo {
@@ -89,6 +108,10 @@ public final class ComposeViewModel {
     public func insertImage(image: Image) {
         images.append(image)
         didUpdateImages?()
+    }
+
+    public func linkText(url: URL, title: String) -> String {
+        return "[\(title)](\(url))"
     }
 
     public func removeImage(at index: Int) {
@@ -120,6 +143,12 @@ public final class ComposeViewModel {
     public func cancelImageUpload() {
         imageState = .idle
         imageUploadService.cancelImageUpload()
+    }
+
+    public func galleryDataSource(for index: Int) -> GalleryDataSource {
+        return GalleryDataSource(index: index, imageURLs: images.map({
+            return $0.link
+        }))
     }
 
     // MARK: - Private
@@ -176,7 +205,7 @@ public final class ComposeViewModel {
         switch mode {
         case .reply(let item):
             return item
-        case .post:
+        case .post, .shareURL, .shareImage, .shareText:
             return nil
         }
     }

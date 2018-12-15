@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j1y-V4-xli">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Share View Controller-->
+        <scene sceneID="ceB-am-kn3">
+            <objects>
+                <viewController id="j1y-V4-xli" customClass="ShareViewController" customModule="Icro_Share" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="wbc-yd-nQP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bty-n5-8Z9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.59692451584507034" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ISX-WE-dW2">
+                                <rect key="frame" x="20" y="40" width="335" height="607"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bty-n5-8Z9" firstAttribute="leading" secondItem="1Xd-am-t49" secondAttribute="leading" id="2gw-uu-G08"/>
+                            <constraint firstItem="1Xd-am-t49" firstAttribute="bottom" secondItem="ISX-WE-dW2" secondAttribute="bottom" constant="20" id="NbR-CH-X26"/>
+                            <constraint firstAttribute="bottom" secondItem="bty-n5-8Z9" secondAttribute="bottom" id="Nm2-7W-ae9"/>
+                            <constraint firstItem="ISX-WE-dW2" firstAttribute="leading" secondItem="1Xd-am-t49" secondAttribute="leading" constant="20" id="TkM-V7-lKX"/>
+                            <constraint firstItem="1Xd-am-t49" firstAttribute="trailing" secondItem="bty-n5-8Z9" secondAttribute="trailing" id="dvE-Hf-TRD"/>
+                            <constraint firstItem="ISX-WE-dW2" firstAttribute="top" secondItem="1Xd-am-t49" secondAttribute="top" constant="20" id="iuD-Je-I6M"/>
+                            <constraint firstItem="1Xd-am-t49" firstAttribute="trailing" secondItem="ISX-WE-dW2" secondAttribute="trailing" constant="20" id="sNU-Zi-7Ff"/>
+                            <constraint firstItem="bty-n5-8Z9" firstAttribute="top" secondItem="wbc-yd-nQP" secondAttribute="top" id="tI6-uF-QJg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1Xd-am-t49"/>
+                    </view>
+                    <connections>
+                        <outlet property="container" destination="ISX-WE-dW2" id="k8E-uo-hmZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CEy-Cv-SGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="main"/>
+</document>

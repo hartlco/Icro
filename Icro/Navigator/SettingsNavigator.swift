@@ -42,15 +42,15 @@ final class SettingsNavigator: NSObject {
     }
 
     func openMicroBlog() {
-        let itemNavigator = ItemNavigator(navigationController: navigationController)
-        itemNavigator.openMicroBlog()
+        let mainNavigator = MainNavigator(navigationController: navigationController)
+        mainNavigator.openMicroBlog()
     }
 
     func openBlacklist() {
         let viewModel = BlacklistViewModel(userSettings: UserSettings.shared)
-        let itemNavigator = ItemNavigator(navigationController: navigationController)
+        let mainNavigator = MainNavigator(navigationController: navigationController)
         let viewController = BlacklistViewController(viewModel: viewModel,
-                                                     itemNavigator: itemNavigator)
+                                                     mainNavigator: mainNavigator)
         navigationController.pushViewController(viewController, animated: true)
     }
 

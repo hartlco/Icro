@@ -10,7 +10,7 @@ import UIKit
 
 class BlacklistViewController: UIViewController {
     fileprivate let viewModel: BlacklistViewModel
-    fileprivate let itemNavigator: ItemNavigator
+    fileprivate let mainNavigator: MainNavigator
 
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
@@ -21,9 +21,9 @@ class BlacklistViewController: UIViewController {
     }
 
     init(viewModel: BlacklistViewModel,
-         itemNavigator: ItemNavigator) {
+         mainNavigator: MainNavigator) {
         self.viewModel = viewModel
-        self.itemNavigator = itemNavigator
+        self.mainNavigator = mainNavigator
         super.init(nibName: "BlacklistViewController", bundle: nil)
 
         viewModel.update = { [weak self] in
@@ -105,6 +105,6 @@ extension BlacklistViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     @objc private func report() {
-        itemNavigator.openCommunityGuidlines()
+        mainNavigator.openCommunityGuidlines()
     }
 }

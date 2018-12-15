@@ -22,7 +22,6 @@ PODS:
   - FLAnimatedImage (1.0.12)
   - ImageViewer (5.0.0)
   - Kanna (4.0.2)
-  - "Keyboard+LayoutGuide (1.3.0)"
   - KeychainAccess (3.1.2)
   - Kingfisher (4.10.0)
   - SDWebImage/Core (4.3.3)
@@ -30,9 +29,6 @@ PODS:
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
   - SwiftLint (0.27.0)
-  - SwiftMessages (6.0.0):
-    - SwiftMessages/App (= 6.0.0)
-  - SwiftMessages/App (6.0.0)
   - wpxmlrpc (0.8.3)
 
 DEPENDENCIES:
@@ -42,12 +38,10 @@ DEPENDENCIES:
   - DTCoreText
   - ImageViewer (from `https://github.com/MailOnline/ImageViewer.git`, commit `a4de06a08a78c4b0a65a48aa891f755b64ff03a8`)
   - Kanna
-  - "Keyboard+LayoutGuide"
   - KeychainAccess
   - Kingfisher
   - SDWebImage/GIF
   - SwiftLint
-  - SwiftMessages
   - wpxmlrpc
 
 SPEC REPOS:
@@ -59,12 +53,10 @@ SPEC REPOS:
     - DTFoundation
     - FLAnimatedImage
     - Kanna
-    - "Keyboard+LayoutGuide"
     - KeychainAccess
     - Kingfisher
     - SDWebImage
     - SwiftLint
-    - SwiftMessages
     - wpxmlrpc
 
 EXTERNAL SOURCES:
@@ -86,14 +78,12 @@ SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
   Kanna: c60b61d72554bf04ed1ee074f9b379855cab4892
-  "Keyboard+LayoutGuide": a24171d454e1065bdd31f1d9f09988d6b1616e88
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
-  SwiftMessages: da7c981256a65b3e58022d9027a36584cf4eccf5
   wpxmlrpc: bfc572f62ce7ee897f6f38b098d2ba08732ecef4
 
-PODFILE CHECKSUM: a26344c6b9f9f75fd5f159d0b5f9074065801de4
+PODFILE CHECKSUM: 5f9b42bbc4c5f08e46432b0288c8fd3491e2a9bf
 
 COCOAPODS: 1.5.3

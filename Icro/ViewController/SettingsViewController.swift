@@ -5,10 +5,11 @@
 
 import UIKit
 import IcroKit
+import IcroUIKit
 
 class SettingsViewController: UIViewController {
     private let navigator: SettingsNavigator
-    private let itemNavigator: ItemNavigator
+    private let mainNavigator: MainNavigator
     private let viewModel: SettingsViewModel
     private var cancelButton: UIBarButtonItem?
     @IBOutlet weak var outterStackView: UIStackView!
@@ -59,11 +60,11 @@ class SettingsViewController: UIViewController {
     @IBOutlet private weak var acknowledgmentsButton: FakeTableCellButton!
 
     init(navigator: SettingsNavigator,
-         itemNavigator: ItemNavigator,
+         mainNavigator: MainNavigator,
          viewModel: SettingsViewModel) {
         self.navigator = navigator
         self.viewModel = viewModel
-        self.itemNavigator = itemNavigator
+        self.mainNavigator = mainNavigator
         super.init(nibName: String(describing: SettingsViewController.self), bundle: nil)
         self.cancelButton = UIBarButtonItem(title:
             NSLocalizedString("SETTINGSVIEWCONTROLLER_CANCELBUTTON_TITLE", comment: ""),
@@ -213,7 +214,7 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction private func communityGuidlinesPressed(_ sender: Any) {
-        itemNavigator.openCommunityGuidlines()
+        mainNavigator.openCommunityGuidlines()
     }
 
     fileprivate func saveWordPressInfo() {
