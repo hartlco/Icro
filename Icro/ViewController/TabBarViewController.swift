@@ -37,6 +37,11 @@ class TabBarViewController: UITabBarController {
         let viewControllers: [UINavigationController] = types.map { type in
             let viewModel = ListViewModel(type: type)
             let navigationController = UINavigationController()
+            navigationController.navigationBar.barTintColor = Color.backgroundColor
+            navigationController.navigationBar.isTranslucent = false
+            navigationController.navigationBar.titleTextAttributes = [
+                .foregroundColor: Color.textColor
+            ]
             let itemNavigator = ItemNavigator(navigationController: navigationController)
             let viewController = ListViewController(viewModel: viewModel, itemNavigator: itemNavigator)
             viewController.view.tintColor = Color.main
@@ -69,6 +74,9 @@ class TabBarViewController: UITabBarController {
 
             return navigationController
         }
+
+        tabBar.barTintColor = Color.backgroundColor
+        tabBar.isTranslucent = false
 
         setViewControllers(viewControllers, animated: false)
         previousViewController = viewControllers.first

@@ -33,7 +33,7 @@ public enum Theme {
     case gray
     case black
 
-    static let currentTheme = Theme.black
+    static let currentTheme = Theme.light
 
     static var colorTheme: ColorTheme.Type {
         switch currentTheme {
