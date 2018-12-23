@@ -18,21 +18,33 @@ public final class ItemTableViewCell: UITableViewCell {
             avatarImageView.clipsToBounds = true
         }
     }
-    @IBOutlet weak var attributedLabel: LinkLabel!
+    @IBOutlet weak var attributedLabel: LinkLabel! {
+        didSet {
+            attributedLabel.isOpaque = true
+            attributedLabel.backgroundColor = Color.backgroundColor
+        }
+    }
     @IBOutlet weak var usernameLabel: UILabel! {
         didSet {
+            usernameLabel.isOpaque = true
+            usernameLabel.textColor = Color.textColor
+            usernameLabel.backgroundColor = Color.backgroundColor
             usernameLabel.adjustsFontForContentSizeCategory = true
             usernameLabel.font = Font().name
         }
     }
     @IBOutlet weak var atUsernameLabel: UILabel! {
         didSet {
+            atUsernameLabel.isOpaque = true
+            atUsernameLabel.backgroundColor = Color.backgroundColor
             atUsernameLabel.adjustsFontForContentSizeCategory = true
             atUsernameLabel.font = Font().username
         }
     }
     @IBOutlet weak var timeLabel: UILabel! {
         didSet {
+            timeLabel.isOpaque = true
+            timeLabel.backgroundColor = Color.backgroundColor
             timeLabel.adjustsFontForContentSizeCategory = true
             timeLabel.font = Font().username
         }
@@ -82,6 +94,7 @@ public final class ItemTableViewCell: UITableViewCell {
                                                selector: #selector(asyncInlineImageFinishedLoading),
                                                name: .asyncInlineImageFinishedLoading,
                                                object: nil)
+        backgroundColor = Color.backgroundColor
     }
 
     deinit {

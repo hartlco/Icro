@@ -70,6 +70,7 @@ private extension String {
         paragraphStyle.lineSpacing = 1.2
         let mutableAttributedString = NSMutableAttributedString(string: string.string.trimEmptyLines, attributes: [
                 .font: Font().body,
+                .foregroundColor: Color.textColor,
                 .paragraphStyle: paragraphStyle
             ])
 
