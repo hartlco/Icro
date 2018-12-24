@@ -33,9 +33,9 @@ public enum Theme {
     case gray
     case black
 
-    static let currentTheme = Theme.light
+    public static let currentTheme = Theme.gray
 
-    static var colorTheme: ColorTheme.Type {
+    public static var colorTheme: ColorTheme.Type {
         switch currentTheme {
         case .black:
             return BlackTheme.self
@@ -47,7 +47,7 @@ public enum Theme {
     }
 }
 
-protocol ColorTheme {
+public protocol ColorTheme {
     static var textColor: XColor { get }
     static var backgroundColor: XColor { get }
 }
@@ -78,6 +78,6 @@ struct GrayTheme: ColorTheme {
     }
 
     static var backgroundColor: XColor {
-        return .darkGray
+        return XColor(named: "gray-backgroundColor")!
     }
 }
