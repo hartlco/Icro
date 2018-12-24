@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         DiscoveryCategoryManager.shared.update()
+        AppearanceManager().applyAppearance()
 
         return true
     }

@@ -37,6 +37,7 @@
 		5B01CC012168E4DF0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
 		5B01CC072168E8000007E01D /* ListItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */; };
 		5B397070207BDD9D007DE3CC /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */; };
+		5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */; };
 		5B3C798121C4DFAF00F699B8 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C798021C4DFAF00F699B8 /* ShareViewController.swift */; };
 		5B3C798421C4DFAF00F699B8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3C798221C4DFAF00F699B8 /* MainInterface.storyboard */; };
 		5B3C798821C4DFAF00F699B8 /* Icro-Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -292,6 +293,7 @@
 		5B2A5A7720A613EF00B54399 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableCellButton.swift; sourceTree = "<group>"; };
 		5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageDownloadManager.swift; path = Helper/ImageDownloadManager.swift; sourceTree = "<group>"; };
+		5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppearanceManager.swift; path = Helper/AppearanceManager.swift; sourceTree = "<group>"; };
 		5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Icro-Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3C798021C4DFAF00F699B8 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		5B3C798321C4DFAF00F699B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -867,6 +869,7 @@
 				5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */,
 				5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */,
 				5BD9690B21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift */,
+				5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -1674,6 +1677,7 @@
 				5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */,
 				5B3C79BA21C50A6200F699B8 /* ListViewController.swift in Sources */,
 				5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */,
+				5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
