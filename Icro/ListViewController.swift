@@ -108,6 +108,7 @@ class ListViewController: UIViewController, LoadingViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateAppearance()
 
         updateDiscoverySectionsIfNeeded()
     }
@@ -127,6 +128,7 @@ class ListViewController: UIViewController, LoadingViewController {
         guard viewModel.showsDiscoverySections else { return }
 
         titleView = DropdownTitleView()
+        titleView?.titleColor = Color.textColor
         titleView?.configure(title: viewModel.title, subtitle: viewModel.discoverySubtitle)
         navigationItem.titleView = titleView
         titleView?.addTarget(
@@ -138,6 +140,11 @@ class ListViewController: UIViewController, LoadingViewController {
 
     @objc private func onTitle() {
         itemNavigator.showDiscoveryCategories(categories: viewModel.discoveryCategories, sourceView: titleView ?? view)
+    }
+
+    private func updateAppearance() {
+        titleView?.titleColor = Color.textColor
+        view.backgroundColor = Color.backgroundColor
     }
 }
 

@@ -28,6 +28,7 @@ PODS:
   - SDWebImage/GIF (4.3.3):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
+  - SwiftGen (6.0.2)
   - SwiftLint (0.27.0)
   - wpxmlrpc (0.8.3)
 
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - KeychainAccess
   - Kingfisher
   - SDWebImage/GIF
+  - SwiftGen
   - SwiftLint
   - wpxmlrpc
 
@@ -56,6 +58,7 @@ SPEC REPOS:
     - KeychainAccess
     - Kingfisher
     - SDWebImage
+    - SwiftGen
     - SwiftLint
     - wpxmlrpc
 
@@ -81,9 +84,10 @@ SPEC CHECKSUMS:
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   wpxmlrpc: bfc572f62ce7ee897f6f38b098d2ba08732ecef4
 
-PODFILE CHECKSUM: 5f9b42bbc4c5f08e46432b0288c8fd3491e2a9bf
+PODFILE CHECKSUM: c4a2ed0bc306f49ae39dc3d2cc4e89d138e305de
 
 COCOAPODS: 1.5.3

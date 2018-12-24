@@ -1,0 +1,7 @@
+xcassets:
+  publicAccess: true
+  inputs:
+    - Icro/Assets.xcassets
+  outputs:
+    - templateName: swift4
+      output: Generated/assets-images.swift

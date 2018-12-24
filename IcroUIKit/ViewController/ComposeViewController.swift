@@ -25,7 +25,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
-            tableView.register(UINib(nibName: ItemTableViewCell.identifer, bundle: nil),
+            tableView.register(UINib(nibName: ItemTableViewCell.identifer, bundle: Bundle(for: ComposeViewController.self)),
                                forCellReuseIdentifier: ItemTableViewCell.identifer)
             tableView.delegate = self
             tableView.dataSource = self
@@ -196,6 +196,12 @@ extension ComposeViewController: UITableViewDelegate, UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.replyItem == nil ? nil : localizedString(key: "COMPOSEVIEWCONTROLLER_TABLEVIEW_HEADER_TITLE")
+    }
+
+    public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = Color.backgroundColor
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.textColor = Color.textColor
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

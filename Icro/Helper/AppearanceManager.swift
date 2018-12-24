@@ -5,6 +5,7 @@
 
 import UIKit
 import IcroKit
+import IcroUIKit
 
 final class AppearanceManager {
     func applyAppearance() {
@@ -13,6 +14,21 @@ final class AppearanceManager {
         UINavigationBar.appearance().titleTextAttributes = [
             .foregroundColor: Color.textColor
         ]
-        UITableView.appearance().backgroundColor = Theme.colorTheme.backgroundColor
+
+        let listTableViewAppearance = UITableView.appearance(whenContainedInInstancesOf: [ListViewController.self])
+        listTableViewAppearance.backgroundColor = Theme.colorTheme.backgroundColor
+        listTableViewAppearance.sectionIndexBackgroundColor = .green
+        listTableViewAppearance.separatorColor = Theme.colorTheme.separatorColor
+        
+        UITextView.appearance().backgroundColor = Theme.colorTheme.backgroundColor
+        UITextView.appearance().textColor = Theme.colorTheme.textColor
+        UIScrollView.appearance(whenContainedInInstancesOf: [ComposeViewController.self]).backgroundColor = Theme.colorTheme.backgroundColor
+
+        switch Theme.currentTheme {
+        case .light:
+            UINavigationBar.appearance().barStyle = .default
+        case .gray, .black:
+            UINavigationBar.appearance().barStyle = .black
+        }
     }
 }

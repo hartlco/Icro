@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -84,7 +83,6 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERN-64-qSe">
                                                 <rect key="frame" x="0.0" y="0.0" width="158" height="33"/>
-                                                <color key="backgroundColor" name="whiteTransparent"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                 <state key="normal" title="Follow"/>
                                                 <userDefinedRuntimeAttributes>
@@ -98,7 +96,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYu-U3-4XF">
                                                 <rect key="frame" x="178" y="0.0" width="158" height="33"/>
-                                                <color key="backgroundColor" name="whiteTransparent"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                 <state key="normal" title="Following"/>
                                                 <userDefinedRuntimeAttributes>
@@ -116,7 +113,6 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" name="accentLight"/>
                         <constraints>
                             <constraint firstItem="6k2-tr-gM5" firstAttribute="leading" secondItem="HjY-Tf-ZHh" secondAttribute="leading" constant="10" id="HcA-dG-3tw"/>
                             <constraint firstItem="6k2-tr-gM5" firstAttribute="top" secondItem="HjY-Tf-ZHh" secondAttribute="top" constant="10" id="Vnj-qE-cVq"/>
@@ -125,7 +121,6 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" name="accentSuperLight"/>
                 <constraints>
                     <constraint firstItem="HjY-Tf-ZHh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5dU-lg-8w9"/>
                     <constraint firstAttribute="trailing" secondItem="HjY-Tf-ZHh" secondAttribute="trailing" id="AgS-BZ-uhg"/>
@@ -137,6 +132,7 @@
             <connections>
                 <outlet property="avatarImageView" destination="C01-tG-0Ky" id="JBJ-2u-hVF"/>
                 <outlet property="bioLabel" destination="sKl-ph-c2z" id="KUO-wo-RNe"/>
+                <outlet property="contentContainer" destination="HjY-Tf-ZHh" id="Ydg-eb-dGA"/>
                 <outlet property="followButton" destination="ERN-64-qSe" id="nlz-fx-J6a"/>
                 <outlet property="followingButton" destination="YYu-U3-4XF" id="7G9-UP-7Lp"/>
                 <outlet property="nameLabel" destination="eGO-ec-f8y" id="hQG-1F-f1B"/>
@@ -146,15 +142,4 @@
             <point key="canvasLocation" x="142" y="145"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <namedColor name="accentLight">
-            <color red="0.99599999189376831" green="0.94499999284744263" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="accentSuperLight">
-            <color red="0.99199998378753662" green="0.98000001907348633" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="whiteTransparent">
-            <color red="1" green="1" blue="1" alpha="0.94999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>
