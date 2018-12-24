@@ -25,7 +25,3 @@ Feel free to contribute to this project at any time with any improvement. In the
 ## License
 
 Icro is free and the source code is available under MIT license. **Please do not ship this App under your own account.**
-
-## Support me
-
-<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/K8rIJMa5S"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px">Buy me a coffee</span></a>
