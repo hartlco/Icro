@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController" customModule="Icro" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController" customModule="IcroUIKit" customModuleProvider="target">
             <connections>
                 <outlet property="collectionViewHeightConstraint" destination="d1h-6w-P92" id="bQD-2T-95D"/>
                 <outlet property="imageCollectionView" destination="3KW-Jp-SbQ" id="jI2-5g-ZzG"/>
@@ -30,7 +31,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="839-X8-Kby">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="166.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="166"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0G0-gY-AQB">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
@@ -47,7 +48,7 @@
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="0G0-gY-AQB" secondAttribute="trailing" id="0Lp-zI-LVw"/>
                                 <constraint firstItem="xIu-jL-66e" firstAttribute="top" secondItem="0G0-gY-AQB" secondAttribute="bottom" id="Ijm-9Q-CTy"/>
@@ -59,7 +60,7 @@
                             </constraints>
                         </view>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3KW-Jp-SbQ">
-                            <rect key="frame" x="10" y="176.5" width="355" height="140"/>
+                            <rect key="frame" x="10" y="176" width="355" height="140"/>
                             <color key="backgroundColor" name="accentSuperLight"/>
                             <constraints>
                                 <constraint firstAttribute="height" priority="750" constant="140" id="d1h-6w-P92"/>
@@ -102,7 +103,7 @@
     </objects>
     <resources>
         <namedColor name="accentSuperLight">
-            <color red="0.99199998379999998" green="0.98000001910000001" blue="0.976000011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.99199998378753662" green="0.98000001907348633" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

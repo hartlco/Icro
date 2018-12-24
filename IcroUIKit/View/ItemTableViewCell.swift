@@ -27,8 +27,6 @@ public final class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel! {
         didSet {
             usernameLabel.isOpaque = true
-            usernameLabel.textColor = Color.textColor
-            usernameLabel.backgroundColor = Color.backgroundColor
             usernameLabel.adjustsFontForContentSizeCategory = true
             usernameLabel.font = Font().name
         }
@@ -36,7 +34,6 @@ public final class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var atUsernameLabel: UILabel! {
         didSet {
             atUsernameLabel.isOpaque = true
-            atUsernameLabel.backgroundColor = Color.backgroundColor
             atUsernameLabel.adjustsFontForContentSizeCategory = true
             atUsernameLabel.font = Font().username
         }
@@ -44,7 +41,6 @@ public final class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel! {
         didSet {
             timeLabel.isOpaque = true
-            timeLabel.backgroundColor = Color.backgroundColor
             timeLabel.adjustsFontForContentSizeCategory = true
             timeLabel.font = Font().username
         }
@@ -81,12 +77,14 @@ public final class ItemTableViewCell: UITableViewCell {
 
     override public func prepareForReuse() {
         super.prepareForReuse()
+        updateAppearance()
         avatarImageView.image = nil
         isFavorite = false
     }
 
     override public func awakeFromNib() {
         super.awakeFromNib()
+        updateAppearance()
         let avatarGestureRecognizer = UITapGestureRecognizer(target: self,
                                                              action: #selector(didTapAvatarGestureRecognizer))
         avatarImageView.addGestureRecognizer(avatarGestureRecognizer)
@@ -125,6 +123,14 @@ public final class ItemTableViewCell: UITableViewCell {
 
         attributedLabel.setNeedsDisplay()
         attributedLabel.layoutIfNeeded()
+    }
+
+    private func updateAppearance() {
+        atUsernameLabel.backgroundColor = Color.backgroundColor
+        usernameLabel.textColor = Color.textColor
+        usernameLabel.backgroundColor = Color.backgroundColor
+        timeLabel.backgroundColor = Color.backgroundColor
+        imageCollectionView.backgroundColor = Color.accentSuperLight
     }
 }
 

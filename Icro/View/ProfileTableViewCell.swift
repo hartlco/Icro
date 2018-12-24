@@ -44,6 +44,8 @@ class ProfileTableViewCell: UITableViewCell {
         }
     }
 
+    @IBOutlet private weak var contentContainer: UIView!
+
     var followPressed: (() -> Void)?
     var followingPressed: (() -> Void)?
     var profilePressed: (() -> Void)?
@@ -51,6 +53,7 @@ class ProfileTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        appearanceSetup()
         let avatarTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(avatarImageViewPressed(_:)))
         avatarImageView.addGestureRecognizer(avatarTapRecognizer)
         followButton.setTitle(NSLocalizedString("PROFILETABLEVIEWCELL_FOLLOWBUTTON_TITLE", comment: ""), for: .normal)
@@ -59,6 +62,7 @@ class ProfileTableViewCell: UITableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
+        appearanceSetup()
         followButton.isHidden = false
         followingButton.isHidden = false
         followButton.isEnabled = false
@@ -79,5 +83,15 @@ class ProfileTableViewCell: UITableViewCell {
 
     @objc private func avatarImageViewPressed(_ sender: Any) {
         avatarPressed?()
+    }
+
+    private func appearanceSetup() {
+        backgroundColor = Color.backgroundColor
+        contentContainer.backgroundColor = Color.accentLight
+        usernameLabel.textColor = Color.textColor
+        nameLabel.textColor = Color.textColor
+        bioLabel.textColor = Color.textColor
+        followButton.backgroundColor = Color.buttonColor
+        followingButton.backgroundColor = Color.buttonColor
     }
 }

@@ -8,6 +8,7 @@ target 'Icro' do
     pod 'AcknowList'
 	pod 'SwiftLint'
     pod 'DropdownTitleView'
+    pod 'SwiftGen'
 	
 	target 'IcroTests' do
 	end
