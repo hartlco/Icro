@@ -128,7 +128,9 @@ class ListViewController: UIViewController, LoadingViewController {
         guard viewModel.showsDiscoverySections else { return }
 
         titleView = DropdownTitleView()
-        titleView?.titleColor = Color.textColor
+
+        updateAppearance()
+
         titleView?.configure(title: viewModel.title, subtitle: viewModel.discoverySubtitle)
         navigationItem.titleView = titleView
         titleView?.addTarget(
@@ -144,6 +146,7 @@ class ListViewController: UIViewController, LoadingViewController {
 
     private func updateAppearance() {
         titleView?.titleColor = Color.textColor
+        titleView?.subtitleColor = Color.secondaryTextColor
         view.backgroundColor = Color.backgroundColor
     }
 }

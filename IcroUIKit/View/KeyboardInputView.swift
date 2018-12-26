@@ -18,13 +18,32 @@ final class KeyboardInputView: UIView {
         }
     }
 
-    @IBOutlet weak var postButton: UIButton!
-    @IBOutlet weak var linkButton: UIButton!
-    @IBOutlet weak var imageButton: UIButton!
+    @IBOutlet weak var postButton: UIButton! {
+        didSet {
+            postButton.backgroundColor = Color.buttonColor
+        }
+    }
+
+    @IBOutlet weak var linkButton: UIButton! {
+        didSet {
+            linkButton.backgroundColor = Color.buttonColor
+        }
+    }
+
+    @IBOutlet weak var imageButton: UIButton! {
+        didSet {
+            imageButton.backgroundColor = Color.buttonColor
+        }
+    }
+
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var progressView: UIProgressView!
 
-    @IBOutlet private weak var characterCountLabel: UILabel!
+    @IBOutlet private weak var characterCountLabel: UILabel! {
+        didSet {
+            characterCountLabel.textColor = Color.secondaryTextColor
+        }
+    }
 
     class func instanceFromNib() -> KeyboardInputView {
         let nib = UINib(nibName: "KeyboardInputView", bundle: Bundle(for: KeyboardInputView.self))
@@ -34,6 +53,7 @@ final class KeyboardInputView: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        backgroundColor = Color.accentSuperLight
         text = nil
         linkButton.setTitle(localizedString(key: "KEYBOARDINPUTVIEW_LINKBUTTON_TTILE"), for: .normal)
         imageButton.setTitle(localizedString(key: "KEYBOARDINPUTVIEW_IMAGEBUTTON_TITLE"), for: .normal)

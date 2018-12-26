@@ -22,4 +22,24 @@ class UserItemTableViewCell: UITableViewCell {
             atUsernameLabel.font = Font().username
         }
     }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        applyAppearance()
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        applyAppearance()
+    }
+
+    private func applyAppearance() {
+        usernameLabel.isOpaque = true
+        atUsernameLabel.isOpaque = true
+        usernameLabel.backgroundColor = Color.backgroundColor
+        atUsernameLabel.backgroundColor = Color.backgroundColor
+        usernameLabel.textColor = Color.textColor
+        atUsernameLabel.textColor = Color.secondaryTextColor
+        backgroundColor = Color.backgroundColor
+    }
 }

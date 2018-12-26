@@ -33,6 +33,7 @@ public final class ItemTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var atUsernameLabel: UILabel! {
         didSet {
+            atUsernameLabel.textColor = Color.secondaryTextColor
             atUsernameLabel.isOpaque = true
             atUsernameLabel.adjustsFontForContentSizeCategory = true
             atUsernameLabel.font = Font().username
@@ -40,6 +41,7 @@ public final class ItemTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var timeLabel: UILabel! {
         didSet {
+            timeLabel.textColor = Color.secondaryTextColor
             timeLabel.isOpaque = true
             timeLabel.adjustsFontForContentSizeCategory = true
             timeLabel.font = Font().username
@@ -127,9 +129,11 @@ public final class ItemTableViewCell: UITableViewCell {
 
     private func updateAppearance() {
         atUsernameLabel.backgroundColor = Color.backgroundColor
+        atUsernameLabel.textColor = Color.secondaryTextColor
         usernameLabel.textColor = Color.textColor
         usernameLabel.backgroundColor = Color.backgroundColor
         timeLabel.backgroundColor = Color.backgroundColor
+        timeLabel.textColor = Color.secondaryTextColor
         imageCollectionView.backgroundColor = Color.accentSuperLight
     }
 }

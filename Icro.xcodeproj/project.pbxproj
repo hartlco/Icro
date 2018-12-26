@@ -156,6 +156,7 @@
 		5BC347C72132960900DEB45D /* LoginInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC347C62132960900DEB45D /* LoginInformation.swift */; };
 		5BC347C82132962200DEB45D /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */; };
 		5BC347C92132963A00DEB45D /* Date+ComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */; };
+		5BC5A5A621D377B300B9A8D1 /* Theme+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A5A521D377B300B9A8D1 /* Theme+Extenstions.swift */; };
 		5BD32BB92089A12E005D250A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD32BB72089A12E005D250A /* SettingsViewController.swift */; };
 		5BD32BBA2089A12E005D250A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BD32BB82089A12E005D250A /* SettingsViewController.xib */; };
 		5BD499CF21CA1D8C007EF47C /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79C121C518B700F699B8 /* MainNavigator.swift */; };
@@ -374,6 +375,7 @@
 		5BC347B02132944900DEB45D /* IcroKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IcroKit.h; sourceTree = "<group>"; };
 		5BC347B12132944900DEB45D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BC347C62132960900DEB45D /* LoginInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInformation.swift; sourceTree = "<group>"; };
+		5BC5A5A521D377B300B9A8D1 /* Theme+Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Extenstions.swift"; sourceTree = "<group>"; };
 		5BD32BB72089A12E005D250A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewController/SettingsViewController.swift; sourceTree = "<group>"; };
 		5BD32BB82089A12E005D250A /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ViewController/SettingsViewController.xib; sourceTree = "<group>"; };
 		5BD9690921C8CBFB00313795 /* GalleryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDataSource.swift; sourceTree = "<group>"; };
@@ -640,6 +642,7 @@
 				5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */,
 				5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */,
 				5BC1384221C6332B0040353C /* LocalizedString.swift */,
+				5BC5A5A521D377B300B9A8D1 /* Theme+Extenstions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1608,6 +1611,7 @@
 				5B3C79A621C4E51000F699B8 /* InsertLinkViewController.swift in Sources */,
 				5B3C79C621C51B4900F699B8 /* ItemNavigatorProtocol.swift in Sources */,
 				5B3C79AA21C4E55300F699B8 /* ItemTableViewCell.swift in Sources */,
+				5BC5A5A621D377B300B9A8D1 /* Theme+Extenstions.swift in Sources */,
 				5B3C79A821C4E53900F699B8 /* KeyboardInputView.swift in Sources */,
 				5B3C79D621C52D2C00F699B8 /* KeyboardLayoutGuide.swift in Sources */,
 				5B3C79B221C5087C00F699B8 /* UIViewController+Loading.swift in Sources */,
