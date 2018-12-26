@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import IcroKit
 
 class LoadMoreTableViewCell: UITableViewCell {
     static let identifier = "LoadMoreTableViewCell"
@@ -12,5 +13,19 @@ class LoadMoreTableViewCell: UITableViewCell {
 
     @IBAction func loadMorePressed(_ sender: Any) {
         didPressLoadMore?()
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        applyAppearance()
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        applyAppearance()
+    }
+
+    private func applyAppearance() {
+        backgroundColor = Color.backgroundColor
     }
 }

@@ -31,6 +31,10 @@ public struct Color {
         return Theme.colorTheme.textColor
     }
 
+    public static var secondaryTextColor: XColor {
+        return Theme.colorTheme.secondaryTextColor
+    }
+
     public static var buttonColor: XColor {
         return Theme.colorTheme.buttonColor
     }
@@ -57,6 +61,7 @@ public enum Theme {
 
 public protocol ColorTheme {
     static var textColor: XColor { get }
+    static var secondaryTextColor: XColor { get }
     static var backgroundColor: XColor { get }
     static var buttonColor: XColor { get }
     static var accentLightColor: XColor { get }
@@ -65,6 +70,10 @@ public protocol ColorTheme {
 }
 
 struct BlackTheme: ColorTheme {
+    static var secondaryTextColor: XColor {
+        return Asset.blackSecondaryTextColor.color
+    }
+
     static var separatorColor: XColor {
         return Asset.blackSeparatorColor.color
     }
@@ -91,6 +100,10 @@ struct BlackTheme: ColorTheme {
 }
 
 struct LightTheme: ColorTheme {
+    static var secondaryTextColor: XColor {
+        return Asset.secondaryTextColor.color
+    }
+
     static var separatorColor: XColor {
         return UIColor.gray
     }
@@ -117,6 +130,10 @@ struct LightTheme: ColorTheme {
 }
 
 struct GrayTheme: ColorTheme {
+    static var secondaryTextColor: XColor {
+        return Asset.blackSecondaryTextColor.color
+    }
+
     static var separatorColor: XColor {
         return UIColor.darkGray
     }
