@@ -45,7 +45,7 @@ public enum Theme {
     case gray
     case black
 
-    public static let currentTheme = Theme.black
+    public static var currentTheme = Theme.light
 
     public static var colorTheme: ColorTheme.Type {
         switch currentTheme {
@@ -141,7 +141,7 @@ struct GrayTheme: ColorTheme {
     static var buttonColor: XColor {
         return .black
     }
-    
+
     static var accentSuperLightColor: XColor {
         return Asset.blackAccentSuperLight.color
     }

@@ -21,7 +21,6 @@ public final class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var attributedLabel: LinkLabel! {
         didSet {
             attributedLabel.isOpaque = true
-            attributedLabel.backgroundColor = Color.backgroundColor
         }
     }
     @IBOutlet weak var usernameLabel: UILabel! {
@@ -135,6 +134,8 @@ public final class ItemTableViewCell: UITableViewCell {
         timeLabel.backgroundColor = Color.backgroundColor
         timeLabel.textColor = Color.secondaryTextColor
         imageCollectionView.backgroundColor = Color.accentSuperLight
+        attributedLabel.backgroundColor = Color.backgroundColor
+        backgroundColor = Color.backgroundColor
     }
 }
 
