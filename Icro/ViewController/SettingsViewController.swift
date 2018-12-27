@@ -217,6 +217,10 @@ class SettingsViewController: UIViewController {
         mainNavigator.openCommunityGuidlines()
     }
 
+    @IBAction func useDarkModeSwitchChanged(_ sender: Any) {
+        AppearanceManager.shared.switchTheme(to: .black)
+    }
+
     fileprivate func saveWordPressInfo() {
         guard let username = usernameTextField.nonEmptyText,
             let password = passwordTextField.nonEmptyText, let urlString = blogUrlTextField.nonEmptyText else { return }

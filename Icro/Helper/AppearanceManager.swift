@@ -8,6 +8,8 @@ import IcroKit
 import IcroUIKit
 
 final class AppearanceManager {
+    static let shared = AppearanceManager()
+
     func applyAppearance() {
         UITabBar.appearance().barTintColor = Theme.colorTheme.backgroundColor
         UINavigationBar.appearance().barTintColor = Theme.colorTheme.backgroundColor
@@ -36,5 +38,10 @@ final class AppearanceManager {
         case .gray, .black:
             UINavigationBar.appearance().barStyle = .black
         }
+    }
+
+    func switchTheme(to newTheme: Theme) {
+        Theme.currentTheme = newTheme
+        applyAppearance()
     }
 }

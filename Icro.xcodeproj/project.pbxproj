@@ -157,6 +157,7 @@
 		5BC347C82132962200DEB45D /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */; };
 		5BC347C92132963A00DEB45D /* Date+ComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */; };
 		5BC5A5A621D377B300B9A8D1 /* Theme+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A5A521D377B300B9A8D1 /* Theme+Extenstions.swift */; };
+		5BC5A5A721D4E1F200B9A8D1 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */; };
 		5BD32BB92089A12E005D250A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD32BB72089A12E005D250A /* SettingsViewController.swift */; };
 		5BD32BBA2089A12E005D250A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BD32BB82089A12E005D250A /* SettingsViewController.xib */; };
 		5BD499CF21CA1D8C007EF47C /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79C121C518B700F699B8 /* MainNavigator.swift */; };
@@ -1651,6 +1652,7 @@
 				5B58376E2128B5F80076121E /* UserItemTableViewCell.swift in Sources */,
 				5B58376F2128B5F80076121E /* UserItemTableViewCell.xib in Sources */,
 				5B5837722128B5F80076121E /* UserListViewModel.swift in Sources */,
+				5BC5A5A721D4E1F200B9A8D1 /* AppearanceManager.swift in Sources */,
 				5B5837742128B5F80076121E /* LoginViewModel.swift in Sources */,
 				5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */,
 				5B5837762128B5F80076121E /* BlacklistViewModel.swift in Sources */,
