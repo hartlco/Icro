@@ -40,12 +40,14 @@ public struct Color {
     }
 }
 
-public enum Theme {
+public enum Theme: String, CaseIterable {
     case light
     case gray
     case black
 
-    public static var currentTheme = Theme.light
+    public static var currentTheme: Theme = {
+        UserSettings.shared.theme
+    }()
 
     public static var colorTheme: ColorTheme.Type {
         switch currentTheme {
@@ -131,7 +133,7 @@ struct LightTheme: ColorTheme {
 
 struct GrayTheme: ColorTheme {
     static var secondaryTextColor: XColor {
-        return Asset.blackSecondaryTextColor.color
+        return Asset.graySecondaryTextColor.color
     }
 
     static var separatorColor: XColor {
@@ -139,7 +141,7 @@ struct GrayTheme: ColorTheme {
     }
 
     static var buttonColor: XColor {
-        return .black
+        return Asset.blackTransparent.color
     }
 
     static var accentSuperLightColor: XColor {
@@ -151,7 +153,7 @@ struct GrayTheme: ColorTheme {
     }
 
     static var textColor: XColor {
-        return .lightGray
+        return Asset.grayTextColor.color
     }
 
     static var backgroundColor: XColor {
