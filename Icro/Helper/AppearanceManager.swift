@@ -58,6 +58,7 @@ final class AppearanceManager {
 
     func switchTheme(to newTheme: Theme) {
         Theme.currentTheme = newTheme
+        UserSettings.shared.theme = newTheme
         applyAppearance()
     }
 
@@ -91,7 +92,8 @@ final class AppearanceManager {
         UILabel.appearance(whenContainedInInstancesOf: [SettingsTextInputView.self]).textColor = Color.secondaryTextColor
 
         SettingsInlineSeparatorView.appearance().backgroundColor = Color.backgroundColor
-
+        SettingsButtonWithLabelView.appearance().backgroundColor = Color.backgroundColor
+        SettingsButtonWithLabelView.SecondaryTextLabel.appearance().textColor = Color.secondaryTextColor
     }
 
     private func refreshView() {

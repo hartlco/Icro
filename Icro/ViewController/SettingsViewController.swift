@@ -18,26 +18,31 @@ class SettingsViewController: UIViewController {
     @IBOutlet private weak var blogSetupSwitchLabel: UILabel!
     @IBOutlet fileprivate weak var blogUrlTextField: UITextField! {
         didSet {
+            blogUrlTextField.keyboardAppearance = Theme.currentTheme.keyboardAppearance
             blogUrlTextField.delegate = self
         }
     }
     @IBOutlet fileprivate weak var usernameTextField: UITextField! {
         didSet {
+            usernameTextField.keyboardAppearance = Theme.currentTheme.keyboardAppearance
             usernameTextField.delegate = self
         }
     }
     @IBOutlet fileprivate weak var passwordTextField: UITextField! {
         didSet {
+            passwordTextField.keyboardAppearance = Theme.currentTheme.keyboardAppearance
             passwordTextField.delegate = self
         }
     }
     @IBOutlet weak var micropubUrlTextField: UITextField! {
         didSet {
+            micropubUrlTextField.keyboardAppearance = Theme.currentTheme.keyboardAppearance
             micropubTokenTextField.delegate = self
         }
     }
     @IBOutlet weak var micropubTokenTextField: UITextField! {
         didSet {
+            micropubTokenTextField.keyboardAppearance = Theme.currentTheme.keyboardAppearance
             micropubTokenTextField.delegate = self
         }
     }
@@ -58,6 +63,23 @@ class SettingsViewController: UIViewController {
     @IBOutlet private weak var hartlcoOnMicroBlogButton: FakeTableCellButton!
     @IBOutlet private weak var supportButton: FakeTableCellButton!
     @IBOutlet private weak var acknowledgmentsButton: FakeTableCellButton!
+    @IBOutlet private weak var appearanceLabel: UILabel!
+    @IBOutlet private weak var appearanceButtonWithText: SettingsButtonWithLabelView! {
+        didSet {
+            appearanceButtonWithText.buttonText = localizedString(key: "SETTINGSVIEWCONTROLLER_THEME_TITLE")
+            appearanceButtonWithText.text = localizedString(key: UserSettings.shared.theme.rawValue)
+            appearanceButtonWithText.didTap = { [weak self] in
+                guard let self = self else { return }
+                self.view.endEditing(true)
+                self.navigator.openThemeSelector(sourceView: self.appearanceButtonWithText,
+                                                  completion: { theme in
+                                                    AppearanceManager.shared.switchTheme(to: theme)
+                                                    self.appearanceButtonWithText.text = localizedString(key: theme.rawValue)
+
+                })
+            }
+        }
+    }
 
     init(navigator: SettingsNavigator,
          mainNavigator: MainNavigator,
@@ -100,6 +122,7 @@ class SettingsViewController: UIViewController {
         hartlcoOnMicroBlogButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_HARTLBUTTON_TITLE", comment: ""), for: .normal)
         supportButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_SUPPORTBUTTON_TITLE", comment: ""), for: .normal)
         acknowledgmentsButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_ACKNOWLEDGMENTSBUTTON_TITLE", comment: ""), for: .normal)
+        appearanceLabel.text = localizedString(key: "SETTINGSVIEWCONTROLLER_APPEARANCE_TITLE")
         updateState(animated: false)
     }
 
@@ -217,10 +240,6 @@ class SettingsViewController: UIViewController {
         mainNavigator.openCommunityGuidlines()
     }
 
-    @IBAction func useDarkModeSwitchChanged(_ sender: Any) {
-        AppearanceManager.shared.switchTheme(to: .black)
-    }
-
     fileprivate func saveWordPressInfo() {
         guard let username = usernameTextField.nonEmptyText,
             let password = passwordTextField.nonEmptyText, let urlString = blogUrlTextField.nonEmptyText else { return }
@@ -305,3 +324,59 @@ class SettingsInlineSeparatorView: UIView {
 }
 
 class SettingsScrollView: UIScrollView { }
+
+final class SettingsButtonWithLabelView: UIView {
+    class SecondaryTextLabel: UILabel { }
+    private var button: UIButton!
+    private var label: SecondaryTextLabel!
+
+    var didTap: (() -> Void) = { }
+    var text = "" {
+        didSet {
+            label.text = text
+        }
+    }
+
+    var buttonText = "" {
+        didSet {
+            button.setTitle(buttonText, for: .normal)
+        }
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    private func setup() {
+        backgroundColor = Color.backgroundColor
+        label = SecondaryTextLabel(frame: CGRect.zero)
+        button = UIButton(frame: CGRect.zero)
+        addSubview(label)
+        addSubview(button)
+        translatesAutoresizingMaskIntoConstraints = false
+        button.translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.textColor = Color.secondaryTextColor
+        button.contentHorizontalAlignment = .left
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14).isActive = true
+        button.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        button.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        button.trailingAnchor.constraint(equalTo: label.leadingAnchor).isActive = true
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        label.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        label.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+    }
+
+    @objc private func didTapButton() {
+        didTap()
+    }
+}

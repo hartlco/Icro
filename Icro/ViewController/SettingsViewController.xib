@@ -14,11 +14,13 @@
             <connections>
                 <outlet property="accountLabel" destination="Dr7-5z-rwZ" id="2p7-dF-QPe"/>
                 <outlet property="acknowledgmentsButton" destination="BvW-1v-Kdg" id="JhY-no-XLS"/>
+                <outlet property="appearanceButtonWithText" destination="eiP-NT-0DL" id="JO7-ry-oOp"/>
+                <outlet property="appearanceLabel" destination="7Wp-Y8-2Jw" id="GR1-9B-6HK"/>
                 <outlet property="blacklistButton" destination="dKE-Cq-VEE" id="Aph-lk-1uw"/>
                 <outlet property="blogSetupInfoLabel" destination="oBm-rI-ndn" id="WXx-aO-qy7"/>
-                <outlet property="blogSetupLabel" destination="7Wp-Y8-2Jw" id="hrg-Xo-qPj"/>
+                <outlet property="blogSetupLabel" destination="oT2-VK-Ovd" id="vCt-tR-kd8"/>
                 <outlet property="blogSetupSwitch" destination="HJL-Zr-8zw" id="7jM-JM-EdN"/>
-                <outlet property="blogSetupSwitchLabel" destination="n70-w5-3lV" id="0Rl-Ox-hsL"/>
+                <outlet property="blogSetupSwitchLabel" destination="jgz-kR-SmV" id="Ho1-ul-nP1"/>
                 <outlet property="blogSetupView" destination="evc-Yc-fPN" id="xR0-mT-Qv1"/>
                 <outlet property="blogUrlTextField" destination="t7R-m1-ISl" id="0g4-9A-WCZ"/>
                 <outlet property="contentLabel" destination="LIS-qY-yDS" id="LbV-Ff-Diy"/>
@@ -80,33 +82,11 @@
                                                 <constraint firstAttribute="height" constant="1" id="TWV-4z-xuZ"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiP-NT-0DL" customClass="SettingsCellView" customModule="Icro" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiP-NT-0DL" customClass="SettingsButtonWithLabelView" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="51" width="1024" height="40"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use dark mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n70-w5-3lV">
-                                                    <rect key="frame" x="14" y="0.0" width="970" height="40"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nvF-0J-VFA">
-                                                    <rect key="frame" x="965" y="5" width="51" height="31"/>
-                                                    <color key="tintColor" name="accent"/>
-                                                    <connections>
-                                                        <action selector="useDarkModeSwitchChanged:" destination="-1" eventType="valueChanged" id="VYj-kI-cfl"/>
-                                                    </connections>
-                                                </switch>
-                                            </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="n70-w5-3lV" firstAttribute="top" secondItem="eiP-NT-0DL" secondAttribute="top" id="81b-2n-xlH"/>
-                                                <constraint firstAttribute="bottom" secondItem="n70-w5-3lV" secondAttribute="bottom" id="B4I-ND-Iow"/>
-                                                <constraint firstItem="nvF-0J-VFA" firstAttribute="top" secondItem="eiP-NT-0DL" secondAttribute="top" constant="5" id="DBz-hR-wrC"/>
-                                                <constraint firstAttribute="trailing" secondItem="nvF-0J-VFA" secondAttribute="trailing" constant="10" id="Wta-Nn-6YY"/>
                                                 <constraint firstAttribute="height" constant="40" id="YbK-Zo-bZe"/>
-                                                <constraint firstAttribute="bottom" secondItem="nvF-0J-VFA" secondAttribute="bottom" constant="4" id="Zpx-IY-YOD"/>
-                                                <constraint firstItem="n70-w5-3lV" firstAttribute="leading" secondItem="eiP-NT-0DL" secondAttribute="leading" constant="14" id="cEO-KL-4is"/>
-                                                <constraint firstAttribute="trailing" secondItem="n70-w5-3lV" secondAttribute="trailing" constant="40" id="qqO-KL-deg"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geq-Xq-uiJ" userLabel="Separator">

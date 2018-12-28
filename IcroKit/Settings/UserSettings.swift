@@ -52,7 +52,6 @@ public final class UserSettings {
     public var lastread_timeline: String? {
         set {
             userDefaults.set(newValue, forKey: #function)
-            userDefaults.synchronize()
         }
         get {
             guard let data = userDefaults.value(forKey: #function) as? String else { return "" }
@@ -63,7 +62,6 @@ public final class UserSettings {
     public var username: String {
         set {
             userDefaults.set(newValue, forKey: #function)
-            userDefaults.synchronize()
         }
         get {
             guard let data = userDefaults.value(forKey: #function) as? String else { return "" }
@@ -74,7 +72,6 @@ public final class UserSettings {
     public var token: String {
         set {
             userDefaults.set(newValue, forKey: #function)
-            userDefaults.synchronize()
         }
         get {
             guard let data = userDefaults.value(forKey: #function) as? String else { return "" }
@@ -85,7 +82,6 @@ public final class UserSettings {
     public var defaultSite: String {
         set {
             userDefaults.set(newValue, forKey: #function)
-            userDefaults.synchronize()
         }
         get {
             guard let data = userDefaults.value(forKey: #function) as? String else { return "micro.blog" }
@@ -210,13 +206,23 @@ public final class UserSettings {
         set {
             if newValue != blacklist {
                 userDefaults.set(newValue, forKey: #function)
-                userDefaults.synchronize()
                 notificationCenter.post(name: .blackListChanged, object: nil)
             }
         }
         get {
             guard let data = userDefaults.value(forKey: #function) as? [String] else { return [] }
             return data
+        }
+    }
+
+    public var theme: Theme {
+        set {
+            userDefaults.set(newValue.rawValue, forKey: #function)
+        }
+        get {
+            guard let themeString = userDefaults.string(forKey: #function),
+                let theme = Theme(rawValue: themeString) else { return .light }
+            return theme
         }
     }
 }
