@@ -273,3 +273,35 @@ fileprivate extension UITextField {
         return text
     }
 }
+
+class SettingsTitleView: UIView { }
+class SettingsSectionSubtitleView: UIView { }
+class SettingsCellView: UIView { }
+class SettingsTextInputView: UIView { }
+
+class SettingsInlineSeparatorView: UIView {
+    private let separator = UIView()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    private func setup() {
+        translatesAutoresizingMaskIntoConstraints = false
+        separator.translatesAutoresizingMaskIntoConstraints = false
+        separator.backgroundColor = Color.separatorColor
+        addSubview(separator)
+        separator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
+        separator.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        separator.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        separator.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    }
+}
+
+class SettingsScrollView: UIScrollView { }
