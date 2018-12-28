@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -42,23 +42,23 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaB-qn-9DE">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaB-qn-9DE" customClass="SettingsScrollView" customModule="Icro" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="20" width="1024" height="1346"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDG-p0-dhL">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="1020"/>
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="1020"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M9s-jG-emT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1020"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="1020"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ps9-BN-M78">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ps9-BN-M78" customClass="SettingsTitleView" customModule="Icro" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appearance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wp-Y8-2Jw">
-                                                    <rect key="frame" x="10" y="6" width="365" height="44"/>
+                                                    <rect key="frame" x="10" y="6" width="1014" height="44"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -74,23 +74,23 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWm-yM-JcI" userLabel="Separator">
-                                            <rect key="frame" x="0.0" y="50" width="375" height="1"/>
+                                            <rect key="frame" x="0.0" y="50" width="1024" height="1"/>
                                             <color key="backgroundColor" name="separatorColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="TWV-4z-xuZ"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiP-NT-0DL">
-                                            <rect key="frame" x="0.0" y="51" width="375" height="40"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiP-NT-0DL" customClass="SettingsCellView" customModule="Icro" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="51" width="1024" height="40"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use dark mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n70-w5-3lV">
-                                                    <rect key="frame" x="14" y="0.0" width="321" height="40"/>
+                                                    <rect key="frame" x="14" y="0.0" width="970" height="40"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nvF-0J-VFA">
-                                                    <rect key="frame" x="316" y="5" width="51" height="31"/>
+                                                    <rect key="frame" x="965" y="5" width="51" height="31"/>
                                                     <color key="tintColor" name="accent"/>
                                                     <connections>
                                                         <action selector="useDarkModeSwitchChanged:" destination="-1" eventType="valueChanged" id="VYj-kI-cfl"/>
@@ -110,17 +110,17 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geq-Xq-uiJ" userLabel="Separator">
-                                            <rect key="frame" x="0.0" y="91" width="375" height="1"/>
+                                            <rect key="frame" x="0.0" y="91" width="1024" height="1"/>
                                             <color key="backgroundColor" name="separatorColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="hko-pb-QOD"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3n5-JO-M3J">
-                                            <rect key="frame" x="0.0" y="92" width="375" height="50"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3n5-JO-M3J" customClass="SettingsTitleView" customModule="Icro" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="92" width="1024" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wordpress setup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oT2-VK-Ovd">
-                                                    <rect key="frame" x="10" y="6" width="365" height="44"/>
+                                                    <rect key="frame" x="10" y="6" width="1014" height="44"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -136,23 +136,23 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afw-8e-CNU" userLabel="Separator">
-                                            <rect key="frame" x="0.0" y="142" width="375" height="1"/>
+                                            <rect key="frame" x="0.0" y="142" width="1024" height="1"/>
                                             <color key="backgroundColor" name="separatorColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="dzS-iO-91W"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MuP-eV-lRZ">
-                                            <rect key="frame" x="0.0" y="143" width="375" height="40"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MuP-eV-lRZ" customClass="SettingsCellView" customModule="Icro" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="143" width="1024" height="40"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post to Wordpress site" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgz-kR-SmV">
-                                                    <rect key="frame" x="14" y="0.0" width="321" height="40"/>
+                                                    <rect key="frame" x="14" y="0.0" width="970" height="40"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HJL-Zr-8zw">
-                                                    <rect key="frame" x="316" y="5" width="51" height="31"/>
+                                                    <rect key="frame" x="965" y="5" width="51" height="31"/>
                                                     <color key="tintColor" name="accent"/>
                                                     <connections>
                                                         <action selector="blogSetupSwitchChanged:" destination="-1" eventType="valueChanged" id="qvt-Ba-dLJ"/>
@@ -172,35 +172,23 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evc-Yc-fPN" userLabel="Blog setup stackview">
-                                            <rect key="frame" x="0.0" y="183" width="375" height="123"/>
+                                            <rect key="frame" x="0.0" y="183" width="1024" height="123"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lhu-uR-vXx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="123"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBA-my-bPn" userLabel="Inline Separator">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
-                                                            <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZ3-PU-CUw" userLabel="Separator">
-                                                                    <rect key="frame" x="12" y="0.0" width="363" height="1"/>
-                                                                    <color key="backgroundColor" name="separatorColor"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="1" id="Upv-Cf-bgy"/>
-                                                                    </constraints>
-                                                                </view>
-                                                            </subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBA-my-bPn" userLabel="Inline Separator" customClass="SettingsInlineSeparatorView" customModule="Icro" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="1"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstItem="aZ3-PU-CUw" firstAttribute="top" secondItem="LBA-my-bPn" secondAttribute="top" id="IoP-ls-sgs"/>
-                                                                <constraint firstAttribute="trailing" secondItem="aZ3-PU-CUw" secondAttribute="trailing" id="iFN-Gs-OBP"/>
-                                                                <constraint firstAttribute="bottom" secondItem="aZ3-PU-CUw" secondAttribute="bottom" id="ig8-rr-QNo"/>
-                                                                <constraint firstItem="aZ3-PU-CUw" firstAttribute="leading" secondItem="LBA-my-bPn" secondAttribute="leading" constant="12" id="nnb-ZX-UJJ"/>
+                                                                <constraint firstAttribute="height" constant="1" id="89e-C8-cC7"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9h-Oh-yfL" userLabel="Blog-URL">
-                                                            <rect key="frame" x="0.0" y="1" width="375" height="40"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9h-Oh-yfL" userLabel="Blog-URL" customClass="SettingsTextInputView" customModule="Icro" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="1" width="1024" height="40"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Blog-URL" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t7R-m1-ISl">
-                                                                    <rect key="frame" x="14" y="0.0" width="361" height="40"/>
+                                                                    <rect key="frame" x="14" y="0.0" width="1010" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="EI2-8h-LYM"/>
                                                                     </constraints>
@@ -217,30 +205,18 @@
                                                                 <constraint firstItem="t7R-m1-ISl" firstAttribute="leading" secondItem="x9h-Oh-yfL" secondAttribute="leading" constant="14" id="hSe-4W-BqR"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omx-A1-Twg" userLabel="Inline Separator">
-                                                            <rect key="frame" x="0.0" y="41" width="375" height="1"/>
-                                                            <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2h-eb-ide" userLabel="Separator">
-                                                                    <rect key="frame" x="12" y="0.0" width="363" height="1"/>
-                                                                    <color key="backgroundColor" name="separatorColor"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="1" id="5Mo-9U-waS"/>
-                                                                    </constraints>
-                                                                </view>
-                                                            </subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omx-A1-Twg" userLabel="Inline Separator" customClass="SettingsInlineSeparatorView" customModule="Icro" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="41" width="1024" height="1"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="k2h-eb-ide" secondAttribute="bottom" id="7si-ju-gV0"/>
-                                                                <constraint firstItem="k2h-eb-ide" firstAttribute="top" secondItem="omx-A1-Twg" secondAttribute="top" id="9hr-xv-Kcc"/>
-                                                                <constraint firstItem="k2h-eb-ide" firstAttribute="leading" secondItem="omx-A1-Twg" secondAttribute="leading" constant="12" id="Tny-Rn-4o6"/>
-                                                                <constraint firstAttribute="trailing" secondItem="k2h-eb-ide" secondAttribute="trailing" id="n3e-WD-AlI"/>
+                                                                <constraint firstAttribute="height" constant="1" id="vLT-P2-PLh"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UbE-JQ-uf5" userLabel="Username">
-                                                            <rect key="frame" x="0.0" y="42" width="375" height="40"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UbE-JQ-uf5" userLabel="Username" customClass="SettingsTextInputView" customModule="Icro" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="42" width="1024" height="40"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="efE-wO-EOt">
-                                                                    <rect key="frame" x="14" y="0.0" width="361" height="40"/>
+                                                                    <rect key="frame" x="14" y="0.0" width="1010" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="u19-5m-kEd"/>
                                                                     </constraints>
@@ -257,30 +233,18 @@
                                                                 <constraint firstItem="efE-wO-EOt" firstAttribute="top" secondItem="UbE-JQ-uf5" secondAttribute="top" id="iLH-jR-LPe"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ib-75-EZJ" userLabel="Inline Separator">
-                                                            <rect key="frame" x="0.0" y="82" width="375" height="1"/>
-                                                            <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ufg-jR-SCT" userLabel="Separator">
-                                                                    <rect key="frame" x="12" y="0.0" width="363" height="1"/>
-                                                                    <color key="backgroundColor" name="separatorColor"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="1" id="c1a-4a-aGr"/>
-                                                                    </constraints>
-                                                                </view>
-                                                            </subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ib-75-EZJ" userLabel="Inline Separator" customClass="SettingsInlineSeparatorView" customModule="Icro" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="82" width="1024" height="1"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="Ufg-jR-SCT" secondAttribute="trailing" id="4Cz-8U-MKD"/>
-                                                                <constraint firstItem="Ufg-jR-SCT" firstAttribute="leading" secondItem="1ib-75-EZJ" secondAttribute="leading" constant="12" id="Iid-sZ-5Qv"/>
-                                                                <constraint firstItem="Ufg-jR-SCT" firstAttribute="top" secondItem="1ib-75-EZJ" secondAttribute="top" id="Svk-NN-R8j"/>
-                                                                <constraint firstAttribute="bottom" secondItem="Ufg-jR-SCT" secondAttribute="bottom" id="bZZ-UY-h9T"/>
+                                                                <constraint firstAttribute="height" constant="1" id="ZbU-yB-rbD"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYU-NA-UKs" userLabel="Password">
-                                                            <rect key="frame" x="0.0" y="83" width="375" height="40"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYU-NA-UKs" userLabel="Password" customClass="SettingsTextInputView" customModule="Icro" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="83" width="1024" height="40"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h3J-of-geq">
-                                                                    <rect key="frame" x="14" y="0.0" width="361" height="40"/>
+                                                                    <rect key="frame" x="14" y="0.0" width="1010" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="n4z-83-TQA"/>
                                                                     </constraints>
@@ -309,20 +273,20 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPX-Ft-JM6" userLabel="Separator">
-                                            <rect key="frame" x="0.0" y="306" width="375" height="1"/>
+                                            <rect key="frame" x="0.0" y="306" width="1024" height="1"/>
                                             <color key="backgroundColor" name="separatorColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="NJk-OW-dzb"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdp-oI-L5X">
-                                            <rect key="frame" x="0.0" y="307" width="375" height="50"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdp-oI-L5X" customClass="SettingsSectionSubtitleView" customModule="Icro" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="307" width="1024" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Blog-URL needs to be entered with the correct scheme (https:// or http://)." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBm-rI-ndn">
-                                                    <rect key="frame" x="10" y="2" width="355" height="38"/>
+                                                    <rect key="frame" x="10" y="2" width="1004" height="38"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -334,11 +298,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="oBm-rI-ndn" secondAttribute="trailing" constant="10" id="wb1-cK-cFf"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTR-pn-Icg">
-                                            <rect key="frame" x="0.0" y="357" width="375" height="50"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTR-pn-Icg" customClass="SettingsTitleView" customModule="Icro" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="357" width="1024" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Micropub setup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L07-eM-QCf">
-                                                    <rect key="frame" x="10" y="6" width="365" height="44"/>
+                                                    <rect key="frame" x="10" y="6" width="1014" height="44"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -354,23 +318,23 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-bf-Exl" userLabel="Separator">
-                                            <rect key="frame" x="0.0" y="407" width="375" height="1"/>
+                                            <rect key="frame" x="0.0" y="407" width="1024" height="1"/>
                                             <color key="backgroundColor" name="separatorColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="Gnt-es-PgD"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RzQ-v8-Ydf">
-                                            <rect key="frame" x="0.0" y="408" width="375" height="40"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RzQ-v8-Ydf" customClass="SettingsCellView" customModule="Icro" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="408" width="1024" height="40"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post to Micropub site" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxa-Tr-YYc">
-                                                    <rect key="frame" x="14" y="0.0" width="321" height="40"/>
+                                                    <rect key="frame" x="14" y="0.0" width="970" height="40"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vQ4-Cj-ecL">
-                                                    <rect key="frame" x="316" y="5" width="51" height="31"/>
+                                                    <rect key="frame" x="965" y="5" width="51" height="31"/>
                                                     <color key="tintColor" name="accent"/>
                                                     <connections>
                                                         <action selector="micropubSwitchChanged:" destination="-1" eventType="valueChanged" id="ECw-nx-iXy"/>
@@ -390,35 +354,23 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4A-3P-gFE" userLabel="Blog setup stackview">
-                                            <rect key="frame" x="0.0" y="448" width="375" height="82"/>
+                                            <rect key="frame" x="0.0" y="448" width="1024" height="82"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gla-Rk-QPY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="82"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SvN-xZ-8q3" userLabel="Inline Separator">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
-                                                            <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4K-dR-zJ7" userLabel="Separator">
-                                                                    <rect key="frame" x="12" y="0.0" width="363" height="1"/>
-                                                                    <color key="backgroundColor" name="separatorColor"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="1" id="dDO-Y4-gkn"/>
-                                                                    </constraints>
-                                                                </view>
-                                                            </subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SvN-xZ-8q3" userLabel="Inline Separator" customClass="SettingsInlineSeparatorView" customModule="Icro" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="1"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="R4K-dR-zJ7" secondAttribute="trailing" id="6Dj-NS-7Sz"/>
-                                                                <constraint firstItem="R4K-dR-zJ7" firstAttribute="top" secondItem="SvN-xZ-8q3" secondAttribute="top" id="8yI-wR-4WY"/>
-                                                                <constraint firstAttribute="bottom" secondItem="R4K-dR-zJ7" secondAttribute="bottom" id="UpW-tM-kWJ"/>
-                                                                <constraint firstItem="R4K-dR-zJ7" firstAttribute="leading" secondItem="SvN-xZ-8q3" secondAttribute="leading" constant="12" id="WpQ-0g-R18"/>
+                                                                <constraint firstAttribute="height" constant="1" id="iJ6-jb-6ps"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dy-y6-fJM" userLabel="Blog-URL">
-                                                            <rect key="frame" x="0.0" y="1" width="375" height="40"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dy-y6-fJM" userLabel="Blog-URL" customClass="SettingsTextInputView" customModule="Icro" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="1" width="1024" height="40"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Micropub Endpoint URL" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UIe-Fy-LUd">
-                                                                    <rect key="frame" x="14" y="0.0" width="361" height="40"/>
+                                                                    <rect key="frame" x="14" y="0.0" width="1010" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="fcV-9k-FwK"/>
                                                                     </constraints>
@@ -435,30 +387,18 @@
                                                                 <constraint firstItem="UIe-Fy-LUd" firstAttribute="leading" secondItem="7dy-y6-fJM" secondAttribute="leading" constant="14" id="zC8-ZS-rlt"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaV-ga-WfV" userLabel="Inline Separator">
-                                                            <rect key="frame" x="0.0" y="41" width="375" height="1"/>
-                                                            <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHu-y9-POe" userLabel="Separator">
-                                                                    <rect key="frame" x="12" y="0.0" width="363" height="1"/>
-                                                                    <color key="backgroundColor" name="separatorColor"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="1" id="08k-Ap-NEE"/>
-                                                                    </constraints>
-                                                                </view>
-                                                            </subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaV-ga-WfV" userLabel="Inline Separator" customClass="SettingsInlineSeparatorView" customModule="Icro" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="41" width="1024" height="1"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstItem="sHu-y9-POe" firstAttribute="leading" secondItem="IaV-ga-WfV" secondAttribute="leading" constant="12" id="0S5-3X-qDv"/>
-                                                                <constraint firstAttribute="bottom" secondItem="sHu-y9-POe" secondAttribute="bottom" id="4Ic-qt-oET"/>
-                                                                <constraint firstItem="sHu-y9-POe" firstAttribute="top" secondItem="IaV-ga-WfV" secondAttribute="top" id="ZEL-gV-1pK"/>
-                                                                <constraint firstAttribute="trailing" secondItem="sHu-y9-POe" secondAttribute="trailing" id="fay-vI-yxK"/>
+                                                                <constraint firstAttribute="height" constant="1" id="3zs-lP-WOJ"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvP-gm-PPl" userLabel="Password">
-                                                            <rect key="frame" x="0.0" y="42" width="375" height="40"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvP-gm-PPl" userLabel="Password" customClass="SettingsTextInputView" customModule="Icro" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="42" width="1024" height="40"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Access token" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pja-zR-TPH">
-                                                                    <rect key="frame" x="14" y="0.0" width="361" height="40"/>
+                                                                    <rect key="frame" x="14" y="0.0" width="1010" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="kAu-ZP-6OI"/>
                                                                     </constraints>
@@ -487,20 +427,20 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wX7-Bw-uyX" userLabel="Separator">
-                                            <rect key="frame" x="0.0" y="530" width="375" height="1"/>
+                                            <rect key="frame" x="0.0" y="530" width="1024" height="1"/>
                                             <color key="backgroundColor" name="separatorColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="f7Y-IH-rPn"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75q-N9-MIb">
-                                            <rect key="frame" x="0.0" y="531" width="375" height="50"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75q-N9-MIb" customClass="SettingsSectionSubtitleView" customModule="Icro" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="531" width="1024" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your public micropub endpoint URL and a valid token." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMd-JN-0y4">
-                                                    <rect key="frame" x="10" y="2" width="355" height="38"/>
+                                                    <rect key="frame" x="10" y="2" width="1004" height="38"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -512,11 +452,11 @@
                                                 <constraint firstItem="BMd-JN-0y4" firstAttribute="top" secondItem="75q-N9-MIb" secondAttribute="top" constant="2" id="eAn-l1-888"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbL-U0-WnO">
-                                            <rect key="frame" x="0.0" y="581" width="375" height="50"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbL-U0-WnO" customClass="SettingsTitleView" customModule="Icro" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="581" width="1024" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dr7-5z-rwZ">
-                                                    <rect key="frame" x="10" y="6" width="365" height="44"/>
+                                                    <rect key="frame" x="10" y="6" width="1014" height="44"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -532,14 +472,14 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sM-LC-GYz" userLabel="Separator">
-                                            <rect key="frame" x="0.0" y="631" width="375" height="1"/>
+                                            <rect key="frame" x="0.0" y="631" width="1024" height="1"/>
                                             <color key="backgroundColor" name="separatorColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="dok-V7-ODM"/>
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pII-iB-fBa" customClass="FakeTableCellButton" customModule="Icro" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="632" width="375" height="40"/>
+                                            <rect key="frame" x="0.0" y="632" width="1024" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="LI8-Fy-Rge"/>
@@ -554,17 +494,17 @@
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aXV-RT-JXf" userLabel="Separator">
-                                            <rect key="frame" x="0.0" y="672" width="375" height="1"/>
+                                            <rect key="frame" x="0.0" y="672" width="1024" height="1"/>
                                             <color key="backgroundColor" name="separatorColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="i8e-vh-Z85"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xx1-55-aey">
-                                            <rect key="frame" x="0.0" y="673" width="375" height="50"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xx1-55-aey" customClass="SettingsTitleView" customModule="Icro" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="673" width="1024" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIS-qY-yDS">
-                                                    <rect key="frame" x="10" y="6" width="365" height="44"/>
+                                                    <rect key="frame" x="10" y="6" width="1014" height="44"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -580,14 +520,14 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rdp-zE-9CE" userLabel="Separator">
-                                            <rect key="frame" x="0.0" y="723" width="375" height="1"/>
+                                            <rect key="frame" x="0.0" y="723" width="1024" height="1"/>
                                             <color key="backgroundColor" name="separatorColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="hfL-hY-cfk"/>
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKE-Cq-VEE" customClass="FakeTableCellButton" customModule="Icro" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="724" width="375" height="40"/>
+                                            <rect key="frame" x="0.0" y="724" width="1024" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="xcy-Ot-crP"/>
@@ -601,27 +541,15 @@
                                                 <action selector="blacklistButtonPressed:" destination="-1" eventType="touchUpInside" id="8l5-kq-aQ8"/>
                                             </connections>
                                         </button>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04F-EI-LtB" userLabel="Inline Separator">
-                                            <rect key="frame" x="0.0" y="764" width="375" height="1"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZ7-AN-Abp" userLabel="Separator">
-                                                    <rect key="frame" x="12" y="0.0" width="363" height="1"/>
-                                                    <color key="backgroundColor" name="separatorColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="pYa-4p-i31"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04F-EI-LtB" userLabel="Inline Separator" customClass="SettingsInlineSeparatorView" customModule="Icro" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="764" width="1024" height="1"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="aZ7-AN-Abp" secondAttribute="trailing" id="Pe4-Vt-4NE"/>
-                                                <constraint firstItem="aZ7-AN-Abp" firstAttribute="top" secondItem="04F-EI-LtB" secondAttribute="top" id="VhK-Mk-Z0e"/>
-                                                <constraint firstItem="aZ7-AN-Abp" firstAttribute="leading" secondItem="04F-EI-LtB" secondAttribute="leading" constant="12" id="WDo-Ny-x5A"/>
-                                                <constraint firstAttribute="bottom" secondItem="aZ7-AN-Abp" secondAttribute="bottom" id="pCK-Ex-yXR"/>
+                                                <constraint firstAttribute="height" constant="1" id="8CY-zk-odQ"/>
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sx-Lm-3dU" customClass="FakeTableCellButton" customModule="Icro" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="765" width="375" height="40"/>
+                                            <rect key="frame" x="0.0" y="765" width="1024" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="yXp-Kn-96q"/>
@@ -636,17 +564,17 @@
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3y-WW-il8" userLabel="Separator">
-                                            <rect key="frame" x="0.0" y="805" width="375" height="1"/>
+                                            <rect key="frame" x="0.0" y="805" width="1024" height="1"/>
                                             <color key="backgroundColor" name="separatorColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="Umv-Ks-FYT"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3M-JM-Wxb">
-                                            <rect key="frame" x="0.0" y="806" width="375" height="50"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3M-JM-Wxb" customClass="SettingsTitleView" customModule="Icro" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="806" width="1024" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFm-hM-gli">
-                                                    <rect key="frame" x="10" y="6" width="365" height="44"/>
+                                                    <rect key="frame" x="10" y="6" width="1014" height="44"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -662,14 +590,14 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Mc-Rs-rMW" userLabel="Separator">
-                                            <rect key="frame" x="0.0" y="856" width="375" height="1"/>
+                                            <rect key="frame" x="0.0" y="856" width="1024" height="1"/>
                                             <color key="backgroundColor" name="separatorColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="jMp-8t-eWA"/>
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlX-ag-V85" customClass="FakeTableCellButton" customModule="Icro" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="857" width="375" height="40"/>
+                                            <rect key="frame" x="0.0" y="857" width="1024" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="xRC-aq-1bh"/>
@@ -683,27 +611,15 @@
                                                 <action selector="hartlcoOnMicroBlogButtonPressed:" destination="-1" eventType="touchUpInside" id="Ig4-HP-8BR"/>
                                             </connections>
                                         </button>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJx-UW-k5S" userLabel="Inline Separator">
-                                            <rect key="frame" x="0.0" y="897" width="375" height="1"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41I-Wx-4Qh" userLabel="Separator">
-                                                    <rect key="frame" x="12" y="0.0" width="363" height="1"/>
-                                                    <color key="backgroundColor" name="separatorColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="NYw-Zq-WVC"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJx-UW-k5S" userLabel="Inline Separator" customClass="SettingsInlineSeparatorView" customModule="Icro" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="897" width="1024" height="1"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="41I-Wx-4Qh" firstAttribute="leading" secondItem="HJx-UW-k5S" secondAttribute="leading" constant="12" id="R7X-Bg-ibN"/>
-                                                <constraint firstAttribute="trailing" secondItem="41I-Wx-4Qh" secondAttribute="trailing" id="eYy-Yt-Pah"/>
-                                                <constraint firstItem="41I-Wx-4Qh" firstAttribute="top" secondItem="HJx-UW-k5S" secondAttribute="top" id="p9S-Uv-X4U"/>
-                                                <constraint firstAttribute="bottom" secondItem="41I-Wx-4Qh" secondAttribute="bottom" id="wMF-kA-x9B"/>
+                                                <constraint firstAttribute="height" constant="1" id="9a7-lT-Pd9"/>
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJ0-eB-xT0" customClass="FakeTableCellButton" customModule="Icro" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="898" width="375" height="40"/>
+                                            <rect key="frame" x="0.0" y="898" width="1024" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="qvu-MI-dIA"/>
@@ -717,27 +633,15 @@
                                                 <action selector="supportButtonPressed:" destination="-1" eventType="touchUpInside" id="SnU-Lt-wUb"/>
                                             </connections>
                                         </button>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ubp-2U-Xpc" userLabel="Inline Separator">
-                                            <rect key="frame" x="0.0" y="938" width="375" height="1"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OnA-hE-gPH" userLabel="Separator">
-                                                    <rect key="frame" x="12" y="0.0" width="363" height="1"/>
-                                                    <color key="backgroundColor" name="separatorColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="6U9-mZ-cDw"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ubp-2U-Xpc" userLabel="Inline Separator" customClass="SettingsInlineSeparatorView" customModule="Icro" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="938" width="1024" height="1"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="OnA-hE-gPH" firstAttribute="top" secondItem="Ubp-2U-Xpc" secondAttribute="top" id="Ab0-t2-9jT"/>
-                                                <constraint firstAttribute="trailing" secondItem="OnA-hE-gPH" secondAttribute="trailing" id="Ojs-Gu-HJl"/>
-                                                <constraint firstAttribute="bottom" secondItem="OnA-hE-gPH" secondAttribute="bottom" id="gDq-Kk-tHc"/>
-                                                <constraint firstItem="OnA-hE-gPH" firstAttribute="leading" secondItem="Ubp-2U-Xpc" secondAttribute="leading" constant="12" id="pH9-xI-nFy"/>
+                                                <constraint firstAttribute="height" constant="1" id="ibS-RA-RdA"/>
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvW-1v-Kdg" customClass="FakeTableCellButton" customModule="Icro" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="939" width="375" height="40"/>
+                                            <rect key="frame" x="0.0" y="939" width="1024" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="fK1-lM-BSg"/>
@@ -752,14 +656,14 @@
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gc3-BS-07D" userLabel="Separator">
-                                            <rect key="frame" x="0.0" y="979" width="375" height="1"/>
+                                            <rect key="frame" x="0.0" y="979" width="1024" height="1"/>
                                             <color key="backgroundColor" name="separatorColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="pQM-70-kNk"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="th2-sD-kYv" userLabel="empty space">
-                                            <rect key="frame" x="0.0" y="980" width="375" height="40"/>
+                                            <rect key="frame" x="0.0" y="980" width="1024" height="40"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="cCc-kX-xPx"/>

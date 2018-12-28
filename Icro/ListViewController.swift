@@ -59,8 +59,12 @@ class ListViewController: UIViewController, LoadingViewController {
 
         updateUnread()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(textSizeChanged),
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshContent),
                                                name: UIContentSizeCategory.didChangeNotification,
+                                               object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshContent),
+                                               name: .appearanceDidChange,
                                                object: nil)
 
         editActionsConfigurator.didModifyIndexPath = { [weak self] indexPath in
@@ -118,7 +122,7 @@ class ListViewController: UIViewController, LoadingViewController {
         super.viewWillTransition(to: size, with: coordinator)
     }
 
-    @objc private func textSizeChanged() {
+    @objc private func refreshContent() {
         viewModel.resetContent()
         rowHeightEstimate = [:]
         tableView.reloadData()
