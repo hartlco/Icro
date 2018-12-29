@@ -51,7 +51,6 @@ final class AppearanceManager {
         }
 
         applySettingsAppearance()
-        refreshView()
 
         notificationCenter.post(name: .appearanceDidChange, object: nil)
     }
@@ -94,15 +93,5 @@ final class AppearanceManager {
         SettingsInlineSeparatorView.appearance().backgroundColor = Color.backgroundColor
         SettingsButtonWithLabelView.appearance().backgroundColor = Color.backgroundColor
         SettingsButtonWithLabelView.SecondaryTextLabel.appearance().textColor = Color.secondaryTextColor
-    }
-
-    private func refreshView() {
-        let windows = UIApplication.shared.windows
-        for window in windows {
-            for view in window.subviews {
-                view.removeFromSuperview()
-                window.addSubview(view)
-            }
-        }
     }
 }

@@ -35,6 +35,7 @@ internal enum Asset {
   internal static let blackSeparatorColor = ColorAsset(name: "black-separatorColor")
   internal static let blackTextColor = ColorAsset(name: "black-textColor")
   internal static let grayBackgroundColor = ColorAsset(name: "gray-backgroundColor")
+  internal static let grayButtonColor = ColorAsset(name: "gray-buttonColor")
   internal static let graySecondaryTextColor = ColorAsset(name: "gray-secondaryTextColor")
   internal static let grayTextColor = ColorAsset(name: "gray-textColor")
   internal static let conversation = ImageAsset(name: "conversation")

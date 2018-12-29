@@ -141,7 +141,7 @@ struct GrayTheme: ColorTheme {
     }
 
     static var buttonColor: XColor {
-        return Asset.blackTransparent.color
+        return Asset.grayButtonColor.color
     }
 
     static var accentSuperLightColor: XColor {

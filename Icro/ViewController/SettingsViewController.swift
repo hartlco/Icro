@@ -75,7 +75,6 @@ class SettingsViewController: UIViewController {
                                                   completion: { theme in
                                                     AppearanceManager.shared.switchTheme(to: theme)
                                                     self.appearanceButtonWithText.text = localizedString(key: theme.rawValue)
-
                 })
             }
         }

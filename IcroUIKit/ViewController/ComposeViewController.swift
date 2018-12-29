@@ -85,6 +85,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
 
     override public func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = Color.backgroundColor
         textView.text = viewModel.startText
 
         let layoutGuide = KeyboardLayoutGuide(parentView: view).topGuide
