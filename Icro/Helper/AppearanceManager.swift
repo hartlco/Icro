@@ -62,10 +62,10 @@ final class AppearanceManager {
     }
 
     private func applySettingsAppearance() {
-        let sectionHeaderViewAppearance = UIView.appearance(whenContainedInInstancesOf: [SettingsTitleView.self])
+        let sectionHeaderViewAppearance = UIView.appearance(whenContainedInInstancesOf: [SettingsSectionHeaderView.self])
         sectionHeaderViewAppearance.backgroundColor = Color.accentSuperLight
 
-        let sectionHeaderLabelAppearance = UILabel.appearance(whenContainedInInstancesOf: [SettingsTitleView.self])
+        let sectionHeaderLabelAppearance = UILabel.appearance(whenContainedInInstancesOf: [SettingsSectionHeaderView.self])
         sectionHeaderLabelAppearance.backgroundColor = Color.accentSuperLight
         sectionHeaderLabelAppearance.textColor = Color.textColor
 

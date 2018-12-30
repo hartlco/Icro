@@ -12,29 +12,29 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Icro" customModuleProvider="target">
             <connections>
-                <outlet property="accountLabel" destination="Dr7-5z-rwZ" id="2p7-dF-QPe"/>
+                <outlet property="accountSectionHeaderView" destination="bbL-U0-WnO" id="7hQ-a1-bnS"/>
                 <outlet property="acknowledgmentsButton" destination="BvW-1v-Kdg" id="JhY-no-XLS"/>
                 <outlet property="appearanceButtonWithText" destination="eiP-NT-0DL" id="JO7-ry-oOp"/>
-                <outlet property="appearanceLabel" destination="7Wp-Y8-2Jw" id="GR1-9B-6HK"/>
+                <outlet property="appearanceHeaderView" destination="Ps9-BN-M78" id="skh-F3-mzI"/>
                 <outlet property="blacklistButton" destination="dKE-Cq-VEE" id="Aph-lk-1uw"/>
+                <outlet property="blogSectionHeaderView" destination="3n5-JO-M3J" id="2Lp-lc-7ou"/>
                 <outlet property="blogSetupInfoLabel" destination="oBm-rI-ndn" id="WXx-aO-qy7"/>
-                <outlet property="blogSetupLabel" destination="oT2-VK-Ovd" id="vCt-tR-kd8"/>
                 <outlet property="blogSetupSwitch" destination="HJL-Zr-8zw" id="7jM-JM-EdN"/>
                 <outlet property="blogSetupSwitchLabel" destination="jgz-kR-SmV" id="Ho1-ul-nP1"/>
                 <outlet property="blogSetupView" destination="evc-Yc-fPN" id="xR0-mT-Qv1"/>
                 <outlet property="blogUrlTextField" destination="t7R-m1-ISl" id="0g4-9A-WCZ"/>
-                <outlet property="contentLabel" destination="LIS-qY-yDS" id="LbV-Ff-Diy"/>
+                <outlet property="contentSectionHeaderView" destination="xx1-55-aey" id="kUT-U4-IZa"/>
                 <outlet property="guidlinesButton" destination="2Sx-Lm-3dU" id="D9q-rf-9KO"/>
                 <outlet property="hartlcoOnMicroBlogButton" destination="HlX-ag-V85" id="5Y1-em-Wl7"/>
                 <outlet property="logoutButton" destination="pII-iB-fBa" id="Win-S8-khh"/>
                 <outlet property="micropubSetupInfoLabel" destination="BMd-JN-0y4" id="EhO-3V-Uoo"/>
-                <outlet property="micropubSetupLabel" destination="L07-eM-QCf" id="rTE-pI-fu6"/>
+                <outlet property="micropubSetupSectionHeaderView" destination="PTR-pn-Icg" id="oWz-9R-eDc"/>
                 <outlet property="micropubSetupSwitch" destination="vQ4-Cj-ecL" id="LZH-P6-25Q"/>
                 <outlet property="micropubSetupSwitchLabel" destination="zxa-Tr-YYc" id="BRV-sg-Kw2"/>
                 <outlet property="micropubSetupView" destination="H4A-3P-gFE" id="esh-Lz-PjV"/>
                 <outlet property="micropubTokenTextField" destination="pja-zR-TPH" id="rK1-6w-hVP"/>
                 <outlet property="micropubUrlTextField" destination="UIe-Fy-LUd" id="kyu-u6-U66"/>
-                <outlet property="otherLabel" destination="CFm-hM-gli" id="R2L-t1-vx0"/>
+                <outlet property="otherSectionHeaderView" destination="U3M-JM-Wxb" id="zFe-dW-D5y"/>
                 <outlet property="outterStackView" destination="M9s-jG-emT" id="MH2-rP-e1r"/>
                 <outlet property="passwordTextField" destination="h3J-of-geq" id="mCM-lm-UqY"/>
                 <outlet property="supportButton" destination="TJ0-eB-xT0" id="E2T-28-l0T"/>
@@ -56,23 +56,11 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M9s-jG-emT">
                                     <rect key="frame" x="0.0" y="0.0" width="1024" height="1020"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ps9-BN-M78" customClass="SettingsTitleView" customModule="Icro" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ps9-BN-M78" customClass="SettingsSectionHeaderView" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appearance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wp-Y8-2Jw">
-                                                    <rect key="frame" x="10" y="6" width="1014" height="44"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="7Wp-Y8-2Jw" firstAttribute="leading" secondItem="Ps9-BN-M78" secondAttribute="leading" constant="10" id="6cN-0a-Isd"/>
-                                                <constraint firstAttribute="bottom" secondItem="7Wp-Y8-2Jw" secondAttribute="bottom" id="WS9-FL-Ut9"/>
                                                 <constraint firstAttribute="height" constant="50" id="hHL-Vo-MrF"/>
-                                                <constraint firstItem="7Wp-Y8-2Jw" firstAttribute="top" secondItem="Ps9-BN-M78" secondAttribute="top" constant="6" id="lba-Ed-SdM"/>
-                                                <constraint firstAttribute="trailing" secondItem="7Wp-Y8-2Jw" secondAttribute="trailing" id="paN-u4-kdG"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWm-yM-JcI" userLabel="Separator">
@@ -96,23 +84,11 @@
                                                 <constraint firstAttribute="height" constant="1" id="hko-pb-QOD"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3n5-JO-M3J" customClass="SettingsTitleView" customModule="Icro" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3n5-JO-M3J" customClass="SettingsSectionHeaderView" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="92" width="1024" height="50"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wordpress setup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oT2-VK-Ovd">
-                                                    <rect key="frame" x="10" y="6" width="1014" height="44"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="1oe-37-PYS"/>
-                                                <constraint firstItem="oT2-VK-Ovd" firstAttribute="top" secondItem="3n5-JO-M3J" secondAttribute="top" constant="6" id="DDR-6t-faf"/>
-                                                <constraint firstAttribute="trailing" secondItem="oT2-VK-Ovd" secondAttribute="trailing" id="e3K-20-Vcr"/>
-                                                <constraint firstAttribute="bottom" secondItem="oT2-VK-Ovd" secondAttribute="bottom" id="pfX-Ce-WIV"/>
-                                                <constraint firstItem="oT2-VK-Ovd" firstAttribute="leading" secondItem="3n5-JO-M3J" secondAttribute="leading" constant="10" id="vYZ-ZA-1IB"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afw-8e-CNU" userLabel="Separator">
@@ -278,23 +254,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="oBm-rI-ndn" secondAttribute="trailing" constant="10" id="wb1-cK-cFf"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTR-pn-Icg" customClass="SettingsTitleView" customModule="Icro" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTR-pn-Icg" customClass="SettingsSectionHeaderView" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="357" width="1024" height="50"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Micropub setup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L07-eM-QCf">
-                                                    <rect key="frame" x="10" y="6" width="1014" height="44"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="0FW-pD-CEJ"/>
-                                                <constraint firstAttribute="trailing" secondItem="L07-eM-QCf" secondAttribute="trailing" id="BAP-e9-m8L"/>
-                                                <constraint firstAttribute="bottom" secondItem="L07-eM-QCf" secondAttribute="bottom" id="Mkj-W1-lRA"/>
-                                                <constraint firstItem="L07-eM-QCf" firstAttribute="top" secondItem="PTR-pn-Icg" secondAttribute="top" constant="6" id="Qjp-uo-MRX"/>
-                                                <constraint firstItem="L07-eM-QCf" firstAttribute="leading" secondItem="PTR-pn-Icg" secondAttribute="leading" constant="10" id="pQ2-3H-yy3"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-bf-Exl" userLabel="Separator">
@@ -432,23 +396,11 @@
                                                 <constraint firstItem="BMd-JN-0y4" firstAttribute="top" secondItem="75q-N9-MIb" secondAttribute="top" constant="2" id="eAn-l1-888"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbL-U0-WnO" customClass="SettingsTitleView" customModule="Icro" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbL-U0-WnO" customClass="SettingsSectionHeaderView" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="581" width="1024" height="50"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dr7-5z-rwZ">
-                                                    <rect key="frame" x="10" y="6" width="1014" height="44"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="3ub-Ja-Olo"/>
-                                                <constraint firstItem="Dr7-5z-rwZ" firstAttribute="top" secondItem="bbL-U0-WnO" secondAttribute="top" constant="6" id="QEC-6M-8ts"/>
-                                                <constraint firstAttribute="trailing" secondItem="Dr7-5z-rwZ" secondAttribute="trailing" id="cNL-vX-m12"/>
-                                                <constraint firstAttribute="bottom" secondItem="Dr7-5z-rwZ" secondAttribute="bottom" id="uWX-hi-udl"/>
-                                                <constraint firstItem="Dr7-5z-rwZ" firstAttribute="leading" secondItem="bbL-U0-WnO" secondAttribute="leading" constant="10" id="yaY-pk-x7w"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sM-LC-GYz" userLabel="Separator">
@@ -480,22 +432,10 @@
                                                 <constraint firstAttribute="height" constant="1" id="i8e-vh-Z85"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xx1-55-aey" customClass="SettingsTitleView" customModule="Icro" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xx1-55-aey" customClass="SettingsSectionHeaderView" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="673" width="1024" height="50"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIS-qY-yDS">
-                                                    <rect key="frame" x="10" y="6" width="1014" height="44"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="LIS-qY-yDS" secondAttribute="bottom" id="Cxl-Rk-2qF"/>
-                                                <constraint firstItem="LIS-qY-yDS" firstAttribute="top" secondItem="xx1-55-aey" secondAttribute="top" constant="6" id="pv1-RU-sqD"/>
-                                                <constraint firstItem="LIS-qY-yDS" firstAttribute="leading" secondItem="xx1-55-aey" secondAttribute="leading" constant="10" id="ssU-8C-urr"/>
-                                                <constraint firstAttribute="trailing" secondItem="LIS-qY-yDS" secondAttribute="trailing" id="stC-bN-6s5"/>
                                                 <constraint firstAttribute="height" constant="50" id="za3-1o-tjz"/>
                                             </constraints>
                                         </view>
@@ -550,22 +490,10 @@
                                                 <constraint firstAttribute="height" constant="1" id="Umv-Ks-FYT"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3M-JM-Wxb" customClass="SettingsTitleView" customModule="Icro" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3M-JM-Wxb" customClass="SettingsSectionHeaderView" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="806" width="1024" height="50"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFm-hM-gli">
-                                                    <rect key="frame" x="10" y="6" width="1014" height="44"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="CFm-hM-gli" secondAttribute="trailing" id="17g-bT-uYx"/>
-                                                <constraint firstAttribute="bottom" secondItem="CFm-hM-gli" secondAttribute="bottom" id="S4v-Xv-4KF"/>
-                                                <constraint firstItem="CFm-hM-gli" firstAttribute="leading" secondItem="U3M-JM-Wxb" secondAttribute="leading" constant="10" id="dO9-Mx-b3c"/>
-                                                <constraint firstItem="CFm-hM-gli" firstAttribute="top" secondItem="U3M-JM-Wxb" secondAttribute="top" constant="6" id="dTc-FO-dnU"/>
                                                 <constraint firstAttribute="height" constant="50" id="euz-SR-UdL"/>
                                             </constraints>
                                         </view>

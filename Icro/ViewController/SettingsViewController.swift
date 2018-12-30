@@ -50,20 +50,49 @@ class SettingsViewController: UIViewController {
     @IBOutlet private weak var micropubSetupSwitch: UISwitch!
     @IBOutlet private weak var micropubSetupView: UIView!
     @IBOutlet private weak var micropubSetupSwitchLabel: UILabel!
-    @IBOutlet private weak var blogSetupLabel: UILabel!
+    @IBOutlet private weak var blogSectionHeaderView: SettingsSectionHeaderView! {
+        didSet {
+            blogSectionHeaderView.title = localizedString(key: "SETTINGSVIEWCONTROLLER_BLOGSETUP_TITLE")
+        }
+    }
     @IBOutlet private weak var blogSetupInfoLabel: UILabel!
-    @IBOutlet private weak var micropubSetupLabel: UILabel!
+
+    @IBOutlet private weak var micropubSetupSectionHeaderView: SettingsSectionHeaderView! {
+        didSet {
+            micropubSetupSectionHeaderView.title = localizedString(key: "SETTINGSVIEWCONTROLLER_MICROPUBSETUP_TITLE")
+        }
+    }
     @IBOutlet private weak var micropubSetupInfoLabel: UILabel!
-    @IBOutlet private weak var accountLabel: UILabel!
+
+    @IBOutlet private weak var accountSectionHeaderView: SettingsSectionHeaderView! {
+        didSet {
+            accountSectionHeaderView.title = localizedString(key: "SETTINGSVIEWCONTROLLER_ACCOUNT_TITLE")
+        }
+    }
     @IBOutlet private weak var logoutButton: FakeTableCellButton!
-    @IBOutlet private weak var contentLabel: UILabel!
+    @IBOutlet private weak var contentSectionHeaderView: SettingsSectionHeaderView! {
+        didSet {
+            contentSectionHeaderView.title = localizedString(key: "SETTINGSVIEWCONTROLLER_CONTENT_TITLE")
+        }
+    }
+
     @IBOutlet private weak var blacklistButton: FakeTableCellButton!
     @IBOutlet private weak var guidlinesButton: FakeTableCellButton!
-    @IBOutlet private weak var otherLabel: UILabel!
+    @IBOutlet private weak var otherSectionHeaderView: SettingsSectionHeaderView! {
+        didSet {
+            otherSectionHeaderView.title = localizedString(key: "SETTINGSVIEWCONTROLLER_OTHER_TITLE")
+        }
+    }
+
     @IBOutlet private weak var hartlcoOnMicroBlogButton: FakeTableCellButton!
     @IBOutlet private weak var supportButton: FakeTableCellButton!
     @IBOutlet private weak var acknowledgmentsButton: FakeTableCellButton!
-    @IBOutlet private weak var appearanceLabel: UILabel!
+
+    @IBOutlet private weak var appearanceHeaderView: SettingsSectionHeaderView! {
+        didSet {
+            appearanceHeaderView.title = localizedString(key: "SETTINGSVIEWCONTROLLER_APPEARANCE_TITLE")
+        }
+    }
     @IBOutlet private weak var appearanceButtonWithText: SettingsButtonWithLabelView! {
         didSet {
             appearanceButtonWithText.buttonText = localizedString(key: "SETTINGSVIEWCONTROLLER_THEME_TITLE")
@@ -96,32 +125,23 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = NSLocalizedString("SETTINGSVIEWCONTROLLER_TITLE", comment: "")
-
-        blogSetupLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGSETUP_TITLE", comment: "")
         blogSetupSwitchLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGSETUPSWITCH_TEXT", comment: "")
         blogUrlTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGURLFIELD_PLACEHOLDER", comment: "")
         usernameTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGUSERNAMEFIELD_PLACEHOLDER", comment: "")
         passwordTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGPASSWORDFIELD_PLACEHOLDER", comment: "")
         blogSetupInfoLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGINFO_TEXT", comment: "")
-
-        micropubSetupLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBSETUP_TITLE", comment: "")
         micropubSetupSwitchLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBSETUPSWITCH_TEXT", comment: "")
         micropubUrlTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBURLFIELD_PLACEHOLDER", comment: "")
         micropubTokenTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBTOKENFIELD_PLACEHOLDER", comment: "")
         micropubSetupInfoLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBINFO_TEXT", comment: "")
 
-        accountLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_ACCOUNT_TITLE", comment: "")
         logoutButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_LOGOUTBUTTON_TITLE", comment: ""), for: .normal)
 
-        contentLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_CONTENT_TITLE", comment: "")
         blacklistButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_BLACKLISTBUTTON_TITLE", comment: ""), for: .normal)
         guidlinesButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_GUIDLINESBUTTON_TITLE", comment: ""), for: .normal)
-
-        otherLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_OTHER_TITLE", comment: "")
         hartlcoOnMicroBlogButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_HARTLBUTTON_TITLE", comment: ""), for: .normal)
         supportButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_SUPPORTBUTTON_TITLE", comment: ""), for: .normal)
         acknowledgmentsButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_ACKNOWLEDGMENTSBUTTON_TITLE", comment: ""), for: .normal)
-        appearanceLabel.text = localizedString(key: "SETTINGSVIEWCONTROLLER_APPEARANCE_TITLE")
         updateState(animated: false)
     }
 
@@ -292,7 +312,6 @@ fileprivate extension UITextField {
     }
 }
 
-class SettingsTitleView: UIView { }
 class SettingsSectionSubtitleView: UIView { }
 class SettingsCellView: UIView { }
 class SettingsTextInputView: UIView { }
@@ -377,5 +396,36 @@ final class SettingsButtonWithLabelView: UIView {
 
     @objc private func didTapButton() {
         didTap()
+    }
+}
+
+final class SettingsSectionHeaderView: UIView {
+    private let label = UILabel(frame: CGRect.zero)
+
+    var title = "" {
+        didSet {
+            label.text = title
+        }
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    private func setup() {
+        translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
+        addSubview(label)
+        label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
+        label.topAnchor.constraint(equalTo: topAnchor, constant: 6).isActive = true
+        label.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        label.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 }
