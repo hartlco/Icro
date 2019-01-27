@@ -93,5 +93,8 @@ final class AppearanceManager {
         SettingsInlineSeparatorView.appearance().backgroundColor = Color.backgroundColor
         SettingsButtonWithLabelView.appearance().backgroundColor = Color.backgroundColor
         SettingsButtonWithLabelView.SecondaryTextLabel.appearance().textColor = Color.secondaryTextColor
+
+        let insertLinksTextViewAppearance = UITextField.appearance(whenContainedInInstancesOf: [InsertLinkViewController.self])
+        insertLinksTextViewAppearance.textColor = Color.textColor
     }
 }

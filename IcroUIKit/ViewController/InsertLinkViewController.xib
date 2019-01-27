@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsertLinkViewController" customModule="Icro" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsertLinkViewController" customModule="IcroUIKit" customModuleProvider="target">
             <connections>
                 <outlet property="insertButton" destination="kZR-2l-wSg" id="44H-Q9-WFY"/>
                 <outlet property="linkTextField" destination="jwv-9S-GyP" id="cKN-cA-f4t"/>
+                <outlet property="scrollView" destination="kXm-mM-vGc" id="FMj-pJ-Ik1"/>
                 <outlet property="titleTextField" destination="1Qf-QC-PBZ" id="3Ab-aC-rJY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -46,7 +48,7 @@
                                                 <constraint firstAttribute="height" constant="1" id="uVn-kr-vyi"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32C-R0-g8q">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32C-R0-g8q" customClass="SettingsTextInputView" customModule="Icro">
                                             <rect key="frame" x="0.0" y="31" width="375" height="40"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="1Qf-QC-PBZ">
@@ -77,7 +79,7 @@
                                                 <constraint firstAttribute="height" constant="1" id="76T-7P-jD6"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cgs-Ae-jRd">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cgs-Ae-jRd" customClass="SettingsTextInputView" customModule="Icro">
                                             <rect key="frame" x="0.0" y="72" width="375" height="40"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Link" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jwv-9S-GyP">
@@ -122,7 +124,7 @@
                                                 <constraint firstAttribute="height" constant="1" id="rYI-CW-XBn"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZR-2l-wSg" customClass="FakeTableCellButton" customModule="Icro" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZR-2l-wSg" customClass="FakeTableCellButton" customModule="IcroUIKit" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="129" width="375" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -157,7 +159,6 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" name="accentSuperLight"/>
                     <constraints>
                         <constraint firstItem="YCf-Jq-RZq" firstAttribute="width" secondItem="kXm-mM-vGc" secondAttribute="width" id="ERW-AN-xhO"/>
                         <constraint firstItem="xU2-dd-4hV" firstAttribute="top" secondItem="kXm-mM-vGc" secondAttribute="top" id="VL6-1Y-GHJ"/>
@@ -167,7 +168,6 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kXm-mM-vGc" secondAttribute="bottom" id="I04-xD-pSQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kXm-mM-vGc" secondAttribute="trailing" id="T6Z-dl-qMY"/>
@@ -179,9 +179,6 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="accentSuperLight">
-            <color red="0.99199998378753662" green="0.98000001907348633" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="main">
             <color red="0.98000001907348633" green="0.45899999141693115" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

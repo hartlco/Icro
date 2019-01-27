@@ -4,13 +4,23 @@
 //
 
 import UIKit
+import IcroKit
 
 public class InsertLinkViewController: UIViewController, UITextFieldDelegate {
     public var completion: ((String?, URL?) -> Void)?
 
     @IBOutlet private weak var titleTextField: UITextField!
     @IBOutlet private weak var linkTextField: UITextField!
-    @IBOutlet private weak var insertButton: FakeTableCellButton!
+    @IBOutlet private weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.backgroundColor = Color.accentSuperLight
+        }
+    }
+    @IBOutlet private weak var insertButton: FakeTableCellButton! {
+        didSet {
+            insertButton.backgroundColor = Color.buttonColor
+        }
+    }
 
     public init() {
         super.init(nibName: "InsertLinkViewController", bundle: Bundle(for: InsertLinkViewController.self))
