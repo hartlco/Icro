@@ -10,6 +10,8 @@ import SDWebImage
 public final class ComposeViewController: UIViewController, LoadingViewController {
     public var didClose: () -> Void = { }
 
+    private var layoutGuide: KeyboardLayoutGuide?
+
     @IBOutlet private weak var textView: UITextView! {
         didSet {
             textView.delegate = self
@@ -88,8 +90,10 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
         view.backgroundColor = Color.backgroundColor
         textView.text = viewModel.startText
 
-        let layoutGuide = KeyboardLayoutGuide(parentView: view).topGuide
-        scrollView.bottomAnchor.constraint(equalTo: layoutGuide.topAnchor).isActive = true
+        layoutGuide = KeyboardLayoutGuide(parentView: view)
+        if let layoutGuide = layoutGuide {
+            scrollView.bottomAnchor.constraint(equalTo: layoutGuide.topGuide.topAnchor).isActive = true
+        }
 
         tableView.reloadData()
         tableView.layoutIfNeeded()
