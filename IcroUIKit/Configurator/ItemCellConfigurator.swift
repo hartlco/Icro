@@ -52,7 +52,7 @@ public final class ItemCellConfigurator: NSObject {
         var accessibilityActions = [UIAccessibilityCustomAction(name: "\(item.author.name), @\(item.author.username!)",
                                                      target: cell,
                                                      selector: #selector(ItemTableViewCell.accessibilityDidTapAvatar))]
-        let imageList = item.htmlContent.imageLinks()
+        let imageList = item.htmlContent.imageLinks
         if !imageList.isEmpty {
             let accessibilityImagesActionTitle = "Images (\(imageList.count))"
             accessibilityActions.append(UIAccessibilityCustomAction(name: accessibilityImagesActionTitle,

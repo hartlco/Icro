@@ -38,7 +38,7 @@ public class Item: Codable {
     }()
 
     public lazy var images: [URL] = {
-        return htmlContent.imageLinks()
+        return htmlContent.imageLinks
     }()
 
     public let url: URL
@@ -132,7 +132,7 @@ extension Item {
             accessibilityLabel += ", image: \(imageDescription)"
         }
 
-        let imageList = item.htmlContent.imageLinks()
+        let imageList = item.htmlContent.imageLinks
         if !imageList.isEmpty {
             accessibilityLabel += ", \(imageList.count)"
             accessibilityLabel += (imageList.count > 1) ? "images" : "image"

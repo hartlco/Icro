@@ -25,7 +25,12 @@ public class ListViewModel: NSObject {
         case loadMore
     }
 
-    private var items = [Item]()
+    private var items = [Item]() {
+        didSet {
+            updateViewTypes()
+        }
+    }
+
     private var loadedAuthor: Author?
     private let type: ListType
     private let userSettings: UserSettings
@@ -390,7 +395,9 @@ public class ListViewModel: NSObject {
         showLoadMoreInBetween += loadedNewItems.count
     }
 
-    private var viewTypes: [ViewType] {
+    private var viewTypes: [ViewType] = []
+
+    private func updateViewTypes() {
         var viewTypes = [ViewType]()
         if shouldShowProfileHeader, let author = author {
             viewTypes.append(.author(author: author))
@@ -408,7 +415,7 @@ public class ListViewModel: NSObject {
             viewTypes.insert(.loadMore, at: showLoadMoreInBetween)
         }
 
-        return viewTypes
+        self.viewTypes = viewTypes
     }
 }
 

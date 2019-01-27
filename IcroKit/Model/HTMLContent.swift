@@ -24,13 +24,12 @@ public final class HTMLContent: Codable {
     private let rawHTMLString: String
     private let itemID: String
 
+    public let imageLinks: [URL]
+
     init(rawHTMLString: String, itemID: String) {
         self.rawHTMLString = rawHTMLString
         self.itemID = itemID
-    }
-
-    public func imageLinks() -> [URL] {
-        return rawHTMLString.imagesLinks().compactMap(URL.init)
+        self.imageLinks = rawHTMLString.imagesLinks().compactMap(URL.init)
     }
 
     public func imageDescs() -> [String] {
