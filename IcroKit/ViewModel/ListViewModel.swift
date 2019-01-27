@@ -105,8 +105,8 @@ public class ListViewModel: NSObject {
                 self.didFinishWithError(error)
             case .result(let value):
                 self.updateShowLoadMoreInBetweenAfterLoadMore(loadedNewItems: value.items)
-                self.insertNewItems(newItems: value.items)
                 self.loadedAuthor = value.author ?? self.loadedAuthor
+                self.insertNewItems(newItems: value.items)
                 self.updateUnreadItems()
                 self.didFinishLoading(false)
             }

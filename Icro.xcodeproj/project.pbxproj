@@ -36,6 +36,15 @@
 		5B01CC002168E4DD0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
 		5B01CC012168E4DF0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
 		5B01CC072168E8000007E01D /* ListItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */; };
+		5B38475D21FDFEC900F082AD /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475C21FDFEC900F082AD /* TipJarView.swift */; };
+		5B38475F21FDFEFD00F082AD /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */; };
+		5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B38476021FE035900F082AD /* StoreKit.framework */; };
+		5B38476421FE048900F082AD /* TipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476221FE048900F082AD /* TipCollectionViewCell.swift */; };
+		5B38476521FE048900F082AD /* TipCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B38476321FE048900F082AD /* TipCollectionViewCell.xib */; };
+		5B38476621FE06B200F082AD /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */; };
+		5B38476721FE06F500F082AD /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475C21FDFEC900F082AD /* TipJarView.swift */; };
+		5B38476921FE073800F082AD /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476821FE073800F082AD /* UIView+Contraints.swift */; };
+		5B38476A21FE077A00F082AD /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476821FE073800F082AD /* UIView+Contraints.swift */; };
 		5B397070207BDD9D007DE3CC /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */; };
 		5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */; };
 		5B3B4C3521D0CBE300F511A6 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C3421D0CBE300F511A6 /* assets-images.swift */; };
@@ -298,6 +307,12 @@
 		5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCellConfigurator.swift; sourceTree = "<group>"; };
 		5B2A5A7720A613EF00B54399 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableCellButton.swift; sourceTree = "<group>"; };
+		5B38475C21FDFEC900F082AD /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
+		5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarViewModel.swift; sourceTree = "<group>"; };
+		5B38476021FE035900F082AD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		5B38476221FE048900F082AD /* TipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TipCollectionViewCell.swift; path = View/TipCollectionViewCell.swift; sourceTree = "<group>"; };
+		5B38476321FE048900F082AD /* TipCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TipCollectionViewCell.xib; path = View/TipCollectionViewCell.xib; sourceTree = "<group>"; };
+		5B38476821FE073800F082AD /* UIView+Contraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Contraints.swift"; path = "Helper/UIView+Contraints.swift"; sourceTree = "<group>"; };
 		5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageDownloadManager.swift; path = Helper/ImageDownloadManager.swift; sourceTree = "<group>"; };
 		5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppearanceManager.swift; path = Helper/AppearanceManager.swift; sourceTree = "<group>"; };
 		5B3B4C3421D0CBE300F511A6 /* assets-images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "assets-images.swift"; path = "Generated/assets-images.swift"; sourceTree = "<group>"; };
@@ -488,6 +503,7 @@
 				5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */,
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
 				07273D8420BE2818AE651E13 /* Pods_Icro.framework in Frameworks */,
+				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +513,7 @@
 		0DFA605700743A5D165A3DC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B38476021FE035900F082AD /* StoreKit.framework */,
 				5B3C79A121C4E3E000F699B8 /* Pods_IcroKit.framework */,
 				5B01CBF62168DF8A0007E01D /* Pods_IcroKit_Mac.framework */,
 				017321F11249BE9396D08AF6 /* Pods_Icro.framework */,
@@ -864,6 +881,7 @@
 				5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */,
 				5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */,
 				5B44C71620979CF20003B35D /* BlacklistViewModel.swift */,
+				5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -877,6 +895,9 @@
 				5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */,
 				5BBC6702218EB0150090629C /* LoadMoreTableViewCell.swift */,
 				5BBC6703218EB0150090629C /* LoadMoreTableViewCell.xib */,
+				5B38475C21FDFEC900F082AD /* TipJarView.swift */,
+				5B38476221FE048900F082AD /* TipCollectionViewCell.swift */,
+				5B38476321FE048900F082AD /* TipCollectionViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -888,6 +909,7 @@
 				5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */,
 				5BD9690B21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift */,
 				5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */,
+				5B38476821FE073800F082AD /* UIView+Contraints.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -1153,6 +1175,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -1263,6 +1288,7 @@
 				5B4E4187208AF8C700FC610A /* Pods-Icro-acknowledgements.plist in Resources */,
 				C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */,
 				5BED6D06207E81CC002FB9FF /* UserItemTableViewCell.xib in Resources */,
+				5B38476521FE048900F082AD /* TipCollectionViewCell.xib in Resources */,
 				5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1630,6 +1656,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B58374F2128B5F80076121E /* TabBarViewController.swift in Sources */,
+				5B38476A21FE077A00F082AD /* UIView+Contraints.swift in Sources */,
 				5B5837542128B5F80076121E /* UserListViewController.xib in Sources */,
 				5B5837552128B5F80076121E /* TabBarViewController.xib in Sources */,
 				5B5837562128B5F80076121E /* LoginViewController.swift in Sources */,
@@ -1641,6 +1668,8 @@
 				5B58375A2128B5F80076121E /* BlacklistViewController.swift in Sources */,
 				5BB73F0C212C9E0B00120FAB /* ListViewModelTests.swift in Sources */,
 				5B58375B2128B5F80076121E /* BlacklistViewController.xib in Sources */,
+				5B38476721FE06F500F082AD /* TipJarView.swift in Sources */,
+				5B38476621FE06B200F082AD /* TipJarViewModel.swift in Sources */,
 				5B58375E2128B5F80076121E /* SettingsNavigator.swift in Sources */,
 				5BD499CF21CA1D8C007EF47C /* MainNavigator.swift in Sources */,
 				5B58375F2128B5F80076121E /* AppNavigator.swift in Sources */,
@@ -1702,14 +1731,17 @@
 				5B3C79C721C51BD900F699B8 /* ItemNavigator.swift in Sources */,
 				5BA6D17C2087C0B300F484B2 /* LoginViewController.swift in Sources */,
 				5BD9690C21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift in Sources */,
+				5B38475D21FDFEC900F082AD /* TipJarView.swift in Sources */,
 				5B583728212861770076121E /* SettingsNavigator.swift in Sources */,
 				5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */,
 				5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */,
 				5B44C71720979CF20003B35D /* BlacklistViewModel.swift in Sources */,
 				5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */,
+				5B38476421FE048900F082AD /* TipCollectionViewCell.swift in Sources */,
 				5B583722212861220076121E /* UserItemCellConfigurator.swift in Sources */,
 				5B3C79C221C518B700F699B8 /* MainNavigator.swift in Sources */,
 				5BD9690F21C8D55400313795 /* ComposeNavigator.swift in Sources */,
+				5B38476921FE073800F082AD /* UIView+Contraints.swift in Sources */,
 				5B44C71420979CCC0003B35D /* BlacklistViewController.swift in Sources */,
 				5BED6D01207E8147002FB9FF /* UserListViewController.swift in Sources */,
 				5BBC6704218EB0150090629C /* LoadMoreTableViewCell.swift in Sources */,
@@ -1724,6 +1756,7 @@
 				5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */,
 				5B3C79BA21C50A6200F699B8 /* ListViewController.swift in Sources */,
 				5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */,
+				5B38475F21FDFEFD00F082AD /* TipJarViewModel.swift in Sources */,
 				5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

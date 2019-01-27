@@ -109,6 +109,14 @@ class SettingsViewController: UIViewController {
         }
     }
 
+    @IBOutlet private weak var tipJarSectionHeader: SettingsSectionHeaderView! {
+        didSet {
+            tipJarSectionHeader.title = "Tip Jar"
+        }
+    }
+
+    @IBOutlet private weak var tipJarContainer: UIView!
+
     init(navigator: SettingsNavigator,
          mainNavigator: MainNavigator,
          viewModel: SettingsViewModel) {
@@ -143,6 +151,10 @@ class SettingsViewController: UIViewController {
         supportButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_SUPPORTBUTTON_TITLE", comment: ""), for: .normal)
         acknowledgmentsButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_ACKNOWLEDGMENTSBUTTON_TITLE", comment: ""), for: .normal)
         updateState(animated: false)
+
+        let tipJarView = TipJarView(viewModel: viewModel.tipJarViewModel)
+        tipJarContainer.addSubview(tipJarView)
+        tipJarView.pin(to: tipJarContainer)
     }
 
     func updateState(animated: Bool) {

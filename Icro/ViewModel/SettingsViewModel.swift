@@ -7,6 +7,8 @@ import Foundation
 import IcroKit
 
 final class SettingsViewModel {
+    let tipJarViewModel = TipJarViewModel()
+
     private let userSettings: UserSettings
 
     init(userSettings: UserSettings) {
