@@ -375,8 +375,8 @@ final class SettingsButtonWithLabelView: UIView {
         backgroundColor = Color.backgroundColor
         label = SecondaryTextLabel(frame: CGRect.zero)
         button = UIButton(frame: CGRect.zero)
-        addSubview(label)
         addSubview(button)
+        addSubview(label)
         translatesAutoresizingMaskIntoConstraints = false
         button.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -387,7 +387,7 @@ final class SettingsButtonWithLabelView: UIView {
         button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14).isActive = true
         button.topAnchor.constraint(equalTo: topAnchor).isActive = true
         button.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        button.trailingAnchor.constraint(equalTo: label.leadingAnchor).isActive = true
+        button.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         label.topAnchor.constraint(equalTo: topAnchor).isActive = true
         label.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
