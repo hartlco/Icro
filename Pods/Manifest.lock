@@ -24,6 +24,15 @@ PODS:
   - Kanna (4.0.2)
   - KeychainAccess (3.1.2)
   - Kingfisher (4.10.0)
+  - PromiseKit (6.8.0):
+    - PromiseKit/CorePromise (= 6.8.0)
+    - PromiseKit/Foundation (= 6.8.0)
+    - PromiseKit/UIKit (= 6.8.0)
+  - PromiseKit/CorePromise (6.8.0)
+  - PromiseKit/Foundation (6.8.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.8.0):
+    - PromiseKit/CorePromise
   - SDWebImage/Core (4.3.3)
   - SDWebImage/GIF (4.3.3):
     - FLAnimatedImage (~> 1.0)
@@ -41,6 +50,7 @@ DEPENDENCIES:
   - Kanna
   - KeychainAccess
   - Kingfisher
+  - PromiseKit (~> 6.8)
   - SDWebImage/GIF
   - SwiftGen
   - SwiftLint
@@ -57,6 +67,7 @@ SPEC REPOS:
     - Kanna
     - KeychainAccess
     - Kingfisher
+    - PromiseKit
     - SDWebImage
     - SwiftGen
     - SwiftLint
@@ -83,11 +94,12 @@ SPEC CHECKSUMS:
   Kanna: c60b61d72554bf04ed1ee074f9b379855cab4892
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
+  PromiseKit: 02c93833283c37ce94ef7d25de63d48d62b0754e
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   wpxmlrpc: bfc572f62ce7ee897f6f38b098d2ba08732ecef4
 
-PODFILE CHECKSUM: c4a2ed0bc306f49ae39dc3d2cc4e89d138e305de
+PODFILE CHECKSUM: 9ad8906e151644fdda239c3e08150f9c7fe78571
 
 COCOAPODS: 1.5.3

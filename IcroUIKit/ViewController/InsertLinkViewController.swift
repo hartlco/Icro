@@ -8,7 +8,6 @@ import UIKit
 public class InsertLinkViewController: UIViewController, UITextFieldDelegate {
     public var completion: ((String?, URL?) -> Void)?
 
-    private var cancelButton: UIBarButtonItem?
     @IBOutlet private weak var titleTextField: UITextField!
     @IBOutlet private weak var linkTextField: UITextField!
     @IBOutlet private weak var insertButton: FakeTableCellButton!
@@ -16,7 +15,6 @@ public class InsertLinkViewController: UIViewController, UITextFieldDelegate {
     public init() {
         super.init(nibName: "InsertLinkViewController", bundle: Bundle(for: InsertLinkViewController.self))
         title = localizedString(key: "INSERTLINKVIEWCONTROLLER_TITLE")
-        navigationItem.leftBarButtonItem = cancelButton
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -49,6 +47,6 @@ public class InsertLinkViewController: UIViewController, UITextFieldDelegate {
         let title = titleTextField.text ?? ""
         let url = linkTextField.text ?? ""
         completion?(title, URL(string: url))
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }

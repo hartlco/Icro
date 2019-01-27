@@ -23,6 +23,7 @@ def kitPods
     pod 'KeychainAccess'
     pod 'wpxmlrpc'
     pod 'Alamofire', '~> 4.7'
+    pod 'PromiseKit', '~> 6.8'
 end
 
 target 'IcroKit' do

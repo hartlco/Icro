@@ -154,10 +154,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Kanna-iOS/Kanna.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeychainAccess-iOS/KeychainAccess.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/wpxmlrpc-iOS/wpxmlrpc.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Kanna-iOS/Kanna.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeychainAccess-iOS/KeychainAccess.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/wpxmlrpc-iOS/wpxmlrpc.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -172,10 +174,12 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Kanna-iOS/Kanna.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeychainAccess-iOS/KeychainAccess.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/wpxmlrpc-iOS/wpxmlrpc.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Kanna-iOS/Kanna.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeychainAccess-iOS/KeychainAccess.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/wpxmlrpc-iOS/wpxmlrpc.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
