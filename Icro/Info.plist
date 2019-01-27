@@ -33,20 +33,6 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>102</string>
-	<key>Fabric</key>
-	<dict>
-		<key>APIKey</key>
-		<string>ccff19719f999400dcb3e964fc65628d3d5f9d75</string>
-		<key>Kits</key>
-		<array>
-			<dict>
-				<key>KitInfo</key>
-				<dict/>
-				<key>KitName</key>
-				<string>Crashlytics</string>
-			</dict>
-		</array>
-	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

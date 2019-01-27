@@ -69,6 +69,13 @@ class ShareViewController: UIViewController {
         }
         navigationController.viewControllers = [composeViewController]
         add(navigationController, view: container)
+
+        switch Theme.currentTheme {
+        case .black, .gray:
+            navigationController.navigationBar.barStyle = .black
+        case .light:
+            navigationController.navigationBar.barStyle = .default
+        }
     }
 
 }

@@ -9,8 +9,18 @@ import IcroKit
 public class InsertLinkViewController: UIViewController, UITextFieldDelegate {
     public var completion: ((String?, URL?) -> Void)?
 
-    @IBOutlet private weak var titleTextField: UITextField!
-    @IBOutlet private weak var linkTextField: UITextField!
+    @IBOutlet private weak var titleTextField: UITextField! {
+        didSet {
+            titleTextField.keyboardAppearance = Theme.currentTheme.keyboardAppearance
+        }
+    }
+
+    @IBOutlet private weak var linkTextField: UITextField! {
+        didSet {
+            linkTextField.keyboardAppearance = Theme.currentTheme.keyboardAppearance
+        }
+    }
+
     @IBOutlet private weak var scrollView: UIScrollView! {
         didSet {
             scrollView.backgroundColor = Color.accentSuperLight

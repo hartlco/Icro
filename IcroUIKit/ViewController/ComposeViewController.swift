@@ -16,6 +16,8 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
         didSet {
             textView.delegate = self
             textView.font = Font().body
+            textView.backgroundColor = Color.backgroundColor
+            textView.textColor = Color.textColor
             textView.keyboardAppearance = Theme.currentTheme.keyboardAppearance
         }
     }
