@@ -27,6 +27,7 @@ internal enum Asset {
   internal static let main = ColorAsset(name: "main")
   internal static let secondaryTextColor = ColorAsset(name: "secondaryTextColor")
   internal static let separatorColor = ColorAsset(name: "separatorColor")
+  internal static let success = ColorAsset(name: "success")
   internal static let whiteTransparent = ColorAsset(name: "whiteTransparent")
   internal static let yellow = ColorAsset(name: "yellow")
   internal static let blackAccentLight = ColorAsset(name: "black-accentLight")

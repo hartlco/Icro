@@ -10,6 +10,8 @@ final class TipJarView: UIView {
     private let viewModel: TipJarViewModel
     private let collectionView: UICollectionView
 
+    var purchaseStateChanged: ((TipJarViewModel.State) -> Void)?
+
     init(viewModel: TipJarViewModel) {
         self.viewModel = viewModel
         let layout = UICollectionViewFlowLayout()
@@ -31,7 +33,17 @@ final class TipJarView: UIView {
 
         viewModel.stateChanged = { [weak self] state in
             guard let self = self else { return }
-            self.collectionView.reloadData()
+
+            switch state {
+            case .loaded, .unloaded:
+                self.collectionView.reloadData()
+            case .purchasing:
+                self.collectionView.isUserInteractionEnabled = false
+            case .loading, .purchased, .purchasingError:
+                self.collectionView.isUserInteractionEnabled = true
+            }
+
+            self.purchaseStateChanged?(state)
         }
     }
 

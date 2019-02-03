@@ -137,6 +137,8 @@
 		5B6A565E21735A69003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B6BCC3121A2F215007225C2 /* LoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */; };
 		5B6BCC3321A2F233007225C2 /* LoadMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6BCC3221A2F233007225C2 /* LoadMoreCell.xib */; };
+		5B81E79A2206C62E008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
+		5B81E79B2206C63A008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
 		5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B869B07214E4633000A051C /* MicropubEndpoint.swift */; };
 		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
 		5BA333752189ADAF000FA900 /* DiscoveryCategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663842189673100ABA671 /* DiscoveryCategoryManager.swift */; };
@@ -371,6 +373,7 @@
 		5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
 		5B6BCC3221A2F233007225C2 /* LoadMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadMoreCell.xib; sourceTree = "<group>"; };
 		5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
+		5B81E7992206C62E008BEA16 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		5B869B07214E4633000A051C /* MicropubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicropubEndpoint.swift; sourceTree = "<group>"; };
 		5B8754F92070137300018DFA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
 		5B8754FC2070139F00018DFA /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
@@ -803,6 +806,7 @@
 				5B2A5A7720A613EF00B54399 /* Font.swift */,
 				5B494E652124C0FA00C3969B /* Color.swift */,
 				5B6A565C21735A4F003C4D92 /* Functions.swift */,
+				5B81E7992206C62E008BEA16 /* Error.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1612,6 +1616,7 @@
 				5BD9691221C8D61800313795 /* GalleryDataSource.swift in Sources */,
 				5BDE18F0216A57C0001254F4 /* MicropubRequestController.swift in Sources */,
 				5B4DF0F221AA8818008CEB58 /* ListViewModelListType.swift in Sources */,
+				5B81E79B2206C63A008BEA16 /* Error.swift in Sources */,
 				5B01CBED2168D7150007E01D /* Color.swift in Sources */,
 				5BF663822189628F00ABA671 /* DiscoveryCategoryResource.swift in Sources */,
 				5B01CBF42168D7240007E01D /* HTMLContent.swift in Sources */,
@@ -1701,6 +1706,7 @@
 			files = (
 				5BF663852189673100ABA671 /* DiscoveryCategoryManager.swift in Sources */,
 				5BC347BD213294A900DEB45D /* Resource.swift in Sources */,
+				5B81E79A2206C62E008BEA16 /* Error.swift in Sources */,
 				5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */,
 				5BC347C5213295C000DEB45D /* Date+Ago.swift in Sources */,
 				5B3B4C3621D0CBE300F511A6 /* assets-images.swift in Sources */,

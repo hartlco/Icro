@@ -133,3 +133,9 @@
 
 // BlacklistViewModel
 "BLACKLISTVIEWMODEL_TITLE" = "Add words/usernames to your mute filter";
+
+// In-App-Purchase
+"IN-APP-PURCHASE-TIP-JAR" = "Tip Jar";
+"IN-APP-PURCHASE-STATE-PURCHASED" = "Thank you for your support!";
+"IN-APP-PURCHASE-STATE-PURCHASING" = "Purchase in progress";
+"IN-APP-PURCHASE-STATE-PURCHASE-ERROR" = "Something went wrong during the purchase";

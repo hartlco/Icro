@@ -38,6 +38,10 @@ public struct Color {
     public static var buttonColor: XColor {
         return Theme.colorTheme.buttonColor
     }
+
+    public static var successColor: XColor {
+        return Asset.success.color
+    }
 }
 
 public enum Theme: String, CaseIterable {

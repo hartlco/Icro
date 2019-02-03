@@ -64,7 +64,7 @@ public extension LoadingViewController where Self: UIViewController {
 
             UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
                 loadingView.alpha = 0
-                loadingView.anchor?.constant = self.loadingView?.frame.size.height ?? 0
+                loadingView.anchor?.constant = loadingView.position == .top ? -loadingView.frame.size.height : loadingView.frame.size.height
                 self.view.layoutIfNeeded()
             }, completion: { completed in
                 guard completed else { return }
@@ -74,14 +74,15 @@ public extension LoadingViewController where Self: UIViewController {
         }
     }
 
-    private func showMessage(text: String,
-                             color: UIColor,
-                             position: LoadingPosition,
-                             dismissalTime: LoadingIndicatorDismissalTime) {
+    public func showMessage(text: String,
+                            color: UIColor,
+                            position: LoadingPosition,
+                            dismissalTime: LoadingIndicatorDismissalTime) {
         reset()
 
         let loadingView = LoadingView(text: text,
-                                      color: color)
+                                      color: color,
+                                      position: position)
         loadingView.alpha = 0
         view.addSubview(loadingView)
         loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -129,7 +130,7 @@ public enum LoadingPosition {
     case bottom
 }
 
-private enum LoadingIndicatorDismissalTime {
+public enum LoadingIndicatorDismissalTime {
     case forever
     case seconds(_ : TimeInterval)
 }
@@ -137,9 +138,11 @@ private enum LoadingIndicatorDismissalTime {
 private class LoadingView: UIView {
     private let label: UILabel
     var anchor: NSLayoutConstraint?
+    var position: LoadingPosition
 
-    init(text: String, color: UIColor) {
+    init(text: String, color: UIColor, position: LoadingPosition) {
         self.label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        self.position = position
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -175,6 +178,13 @@ public extension Error {
                 return localizedString(key: "UIVIEWCONTROLLERLOADING_INVALIDINPUT_TEXT")
             default:
                 return localizedString(key: "UIVIEWCONTROLLERLOADING_ERROR_TEXT")
+            }
+        }
+
+        if let purchaseError = self as? PurchaseError {
+            switch purchaseError {
+            case .paymentError:
+                return localizedString(key: "IN-APP-PURCHASE-STATE-PURCHASE-ERROR")
             }
         }
 

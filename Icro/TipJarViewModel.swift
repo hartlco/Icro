@@ -5,6 +5,7 @@
 
 import Foundation
 import StoreKit
+import IcroKit
 
 final class TipJarViewModel: NSObject {
     private(set) var state = State.unloaded {
@@ -19,7 +20,9 @@ final class TipJarViewModel: NSObject {
         case unloaded
         case loading
         case loaded(products: [InAppPurchaseProduct])
-        case error
+        case purchasing(message: String)
+        case purchased(message: String)
+        case purchasingError(error: Error)
     }
 
     var stateChanged: ((State) -> Void) = { _ in }
@@ -33,10 +36,11 @@ final class TipJarViewModel: NSObject {
     }
 
     func load() {
-        let identifiers = ["nice_tip"]
+        let identifiers = ["nice_tip", "big_tip", "huge_tip"]
         let request = SKProductsRequest(productIdentifiers: Set(identifiers))
         request.delegate = self
         request.start()
+        state = .loading
     }
 
     func purchaseProduct(at index: Int) {
@@ -45,7 +49,7 @@ final class TipJarViewModel: NSObject {
             let payment = SKPayment(product: purchase)
             SKPaymentQueue.default().add(self)
             SKPaymentQueue.default().add(payment)
-            print("Purchase: \(purchase.productIdentifier)")
+
         }
     }
 
@@ -59,13 +63,11 @@ extension TipJarViewModel: SKProductsRequestDelegate, SKPaymentTransactionObserv
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchased:
-                print("Purchased")
+                state = .purchased(message: NSLocalizedString("IN-APP-PURCHASE-STATE-PURCHASED", comment: ""))
             case .purchasing:
-                print("Purchasing")
-            case .failed:
-                print("failed")
+                state = .purchasing(message: NSLocalizedString("IN-APP-PURCHASE-STATE-PURCHASING", comment: ""))
             default:
-                print("default error")
+                state = .purchasingError(error: PurchaseError.paymentError)
             }
         }
     }
@@ -76,12 +78,14 @@ extension TipJarViewModel: SKProductsRequestDelegate, SKPaymentTransactionObserv
                                         title: $0.localizedTitle,
                                         price: priceOf(product: $0),
                                         product: $0)
+        }.sorted {
+            return $0.price < $1.price
         }
         state = .loaded(products: products)
     }
 
     func request(_ request: SKRequest, didFailWithError error: Error) {
-       state = .error
+       state = .purchasingError(error: error)
     }
 
     private func priceOf(product: SKProduct) -> String {

@@ -7,7 +7,8 @@ import UIKit
 import IcroKit
 import IcroUIKit
 
-class SettingsViewController: UIViewController {
+// swiftlint:disable type_body_length
+final class SettingsViewController: UIViewController, LoadingViewController {
     private let navigator: SettingsNavigator
     private let mainNavigator: MainNavigator
     private let viewModel: SettingsViewModel
@@ -111,7 +112,7 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet private weak var tipJarSectionHeader: SettingsSectionHeaderView! {
         didSet {
-            tipJarSectionHeader.title = "Tip Jar"
+            tipJarSectionHeader.title = localizedString(key: "IN-APP-PURCHASE-TIP-JAR")
         }
     }
 
@@ -153,6 +154,10 @@ class SettingsViewController: UIViewController {
         updateState(animated: false)
 
         let tipJarView = TipJarView(viewModel: viewModel.tipJarViewModel)
+        tipJarView.purchaseStateChanged = { [weak self] state in
+            guard let self = self else { return }
+            self.tipJarStateUpdated(state: state)
+        }
         tipJarContainer.addSubview(tipJarView)
         tipJarView.pin(to: tipJarContainer)
     }
@@ -291,6 +296,24 @@ class SettingsViewController: UIViewController {
         passwordTextField.text = ""
         micropubUrlTextField.text = ""
         micropubTokenTextField.text = ""
+    }
+
+    private func tipJarStateUpdated(state: TipJarViewModel.State) {
+        switch state {
+        case .unloaded:
+            return
+        case .loading, .purchasing:
+            showLoading(position: .top)
+        case .loaded:
+            hideMessage()
+        case .purchased(let message):
+            showMessage(text: message,
+                        color: Color.successColor,
+                        position: .top,
+                        dismissalTime: .seconds(4))
+        case .purchasingError(let error):
+            showError(error: error, position: .top)
+        }
     }
 
 }

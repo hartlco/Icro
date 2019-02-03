@@ -9,7 +9,12 @@ import IcroKit
 final class TipCollectionViewCell: UICollectionViewCell {
     static let identifier = "TipCollectionViewCell"
 
-    @IBOutlet weak var productTitleLabel: UILabel!
+    @IBOutlet weak var productTitleLabel: UILabel! {
+        didSet {
+            productTitleLabel.textColor = Color.textColor
+        }
+    }
+
     @IBOutlet weak var productPriceLabel: UILabel! {
         didSet {
             productPriceLabel.textColor = Color.main
