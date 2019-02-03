@@ -7,7 +7,7 @@ import UIKit
 import IcroKit
 
 public protocol LoadingViewController: class {
-    func showLoading(position: LoadingPosition)
+    func showLoading(position: LoadingPosition, dismissalTime: LoadingIndicatorDismissalTime)
     func showError(error: Error, position: LoadingPosition)
     func hideMessage()
 }
@@ -40,11 +40,11 @@ public extension LoadingViewController where Self: UIViewController {
         }
     }
 
-    func showLoading(position: LoadingPosition = .bottom) {
+    func showLoading(position: LoadingPosition = .bottom, dismissalTime: LoadingIndicatorDismissalTime = .forever) {
         showMessage(text: localizedString(key: "UIVIEWCONTROLLERLOADING_LOADING_TEXT"),
                     color: Color.accent,
                     position: position,
-                    dismissalTime: .forever)
+                    dismissalTime: dismissalTime)
 
     }
 
