@@ -23,6 +23,7 @@ final class TipJarViewModel: NSObject {
         case purchasing(message: String)
         case purchased(message: String)
         case purchasingError(error: Error)
+        case cancelled
     }
 
     var stateChanged: ((State) -> Void) = { _ in }
@@ -64,10 +65,21 @@ extension TipJarViewModel: SKProductsRequestDelegate, SKPaymentTransactionObserv
             switch transaction.transactionState {
             case .purchased:
                 state = .purchased(message: NSLocalizedString("IN-APP-PURCHASE-STATE-PURCHASED", comment: ""))
-            case .purchasing:
-                state = .purchasing(message: NSLocalizedString("IN-APP-PURCHASE-STATE-PURCHASING", comment: ""))
-            default:
+                queue.finishTransaction(transaction)
+            case .deferred, .purchasing:
+                state = .loading
+            case .failed:
+                if let error = transaction.error as? SKError,
+                    error.code == SKError.paymentCancelled {
+                    state = .cancelled
+                    return
+                }
+
                 state = .purchasingError(error: PurchaseError.paymentError)
+                queue.finishTransaction(transaction)
+            case .restored:
+                queue.finishTransaction(transaction)
+                return
             }
         }
     }

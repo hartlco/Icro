@@ -39,7 +39,7 @@ final class TipJarView: UIView {
                 self.collectionView.reloadData()
             case .purchasing:
                 self.collectionView.isUserInteractionEnabled = false
-            case .loading, .purchased, .purchasingError:
+            case .loading, .purchased, .purchasingError, .cancelled:
                 self.collectionView.isUserInteractionEnabled = true
             }
 

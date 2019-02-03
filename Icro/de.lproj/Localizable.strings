@@ -136,6 +136,6 @@
 
 // In-App-Purchase
 "IN-APP-PURCHASE-TIP-JAR" = "Trinkgeldbüchse";
-"IN-APP-PURCHASE-STATE-PURCHASED" = "Danke für die Unterstützung!";
+"IN-APP-PURCHASE-STATE-PURCHASED" = "Danke für die Unterstützung!  🎉";
 "IN-APP-PURCHASE-STATE-PURCHASING" = "Kauf im Gange";
 "IN-APP-PURCHASE-STATE-PURCHASE-ERROR" = "Etwas ist während dem Kauf schief gegangen";

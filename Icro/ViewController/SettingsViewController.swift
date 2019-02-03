@@ -303,16 +303,18 @@ final class SettingsViewController: UIViewController, LoadingViewController {
         case .unloaded:
             return
         case .loading, .purchasing:
-            showLoading(position: .top, dismissalTime: .seconds(4))
+            showLoading(position: .top)
         case .loaded:
             hideMessage()
         case .purchased(let message):
             showMessage(text: message,
                         color: Color.successColor,
                         position: .top,
-                        dismissalTime: .seconds(4))
+                        dismissalTime: .seconds(10))
         case .purchasingError(let error):
             showError(error: error, position: .top)
+        case .cancelled:
+            hideMessage()
         }
     }
 
