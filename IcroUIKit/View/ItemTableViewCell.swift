@@ -56,7 +56,7 @@ public final class ItemTableViewCell: UITableViewCell {
         didSet {
             if imageURLs.count == 1 {
                 // 4/3 ratio for single image
-                collectionViewHeightConstraint.constant = imageCollectionView.frame.size.width / 1.33
+                collectionViewHeightConstraint.constant = 240
             } else if imageURLs.count > 1 {
                 collectionViewHeightConstraint.constant = 140
             } else {
@@ -81,10 +81,11 @@ public final class ItemTableViewCell: UITableViewCell {
     var didTapImages: (([URL], Int) -> Void)?
 
     override public func prepareForReuse() {
-        super.prepareForReuse()
+        imageURLs = []
         updateAppearance()
         avatarImageView.image = nil
         isFavorite = false
+        super.prepareForReuse()
     }
 
     override public func awakeFromNib() {
