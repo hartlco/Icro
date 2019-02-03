@@ -417,6 +417,10 @@ public class ListViewModel: NSObject {
         }
 
         self.viewTypes = viewTypes
+
+        if case .conversation = type {
+            self.viewTypes = self.viewTypes.reversed()
+        }
     }
 }
 
