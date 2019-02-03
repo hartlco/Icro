@@ -17,7 +17,7 @@ class HTMLContentTests: XCTestCase {
                                   "http://share.hartl.co/micro/2302C8AE-5672-450C-8A16-B365048B7412.jpg",
                                   "http://share.hartl.co/micro/37C4E25F-FA48-48B4-BBEC-A64509D010E1.jpg"
                                   ].compactMap(URL.init)
-        XCTAssert(expectedURLStrings == htmlContent.imageLinks(), "Parsed images links no equal")
+        XCTAssert(expectedURLStrings == htmlContent.imageLinks, "Parsed images links no equal")
     }
 
     func test_attributedStringWihthoutImages_hasCorrectText() {
