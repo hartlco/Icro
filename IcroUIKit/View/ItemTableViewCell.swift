@@ -12,6 +12,7 @@ public final class ItemTableViewCell: UITableViewCell {
     var isFavorite: Bool = false
 
     @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!
+
     @IBOutlet weak var avatarImageView: UIImageView! {
         didSet {
             avatarImageView.layer.cornerRadius = 20
@@ -53,7 +54,10 @@ public final class ItemTableViewCell: UITableViewCell {
 
     var imageURLs = [URL]() {
         didSet {
-            if imageURLs.count != 0 {
+            if imageURLs.count == 1 {
+                // 4/3 ratio for single image
+                collectionViewHeightConstraint.constant = imageCollectionView.frame.size.width / 1.33
+            } else if imageURLs.count > 1 {
                 collectionViewHeightConstraint.constant = 140
             } else {
                 collectionViewHeightConstraint.constant = 0
@@ -139,7 +143,7 @@ public final class ItemTableViewCell: UITableViewCell {
     }
 }
 
-extension ItemTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ItemTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageURLs.count
     }
@@ -165,5 +169,18 @@ extension ItemTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         didTapImages?(imageURLs, indexPath.row)
+    }
+
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch imageURLs.count {
+        case 1:
+            return collectionView.frame.size
+        case 1...:
+            return CGSize(width: 140, height: 140)
+        default:
+            return CGSize.zero
+        }
     }
 }
