@@ -216,7 +216,7 @@ public class ListViewModel: NSObject {
     }
 
     public func toggleFollowForLoadedAuthor() {
-        guard let author = loadedAuthor,
+        guard let author = author,
         let following = author.isFollowing else { return }
         let resource = following ? author.unfollowResource() : author.followResource()
 
@@ -231,6 +231,7 @@ public class ListViewModel: NSObject {
                                    isFollowing: !following,
                                    isYou: author.isYou)
             self?.loadedAuthor = newAuthor
+            self?.updateViewTypes()
             self?.didFinishLoading(false)
         }
     }

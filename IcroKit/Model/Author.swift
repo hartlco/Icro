@@ -25,6 +25,7 @@ public struct Author: Codable {
                 isYou: Bool = false) {
         self.url = url
         self.avatar = avatar
+        self.username = username
         self.name = name
         self.bio = bio
         self.followingCount = followingCount
