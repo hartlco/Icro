@@ -55,7 +55,6 @@ public final class ItemTableViewCell: UITableViewCell {
     var imageURLs = [URL]() {
         didSet {
             if imageURLs.count == 1 {
-                // 4/3 ratio for single image
                 collectionViewHeightConstraint.constant = 240
             } else if imageURLs.count > 1 {
                 collectionViewHeightConstraint.constant = 140

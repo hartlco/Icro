@@ -21,6 +21,7 @@ class ListViewController: UIViewController, LoadingViewController {
                                forCellReuseIdentifier: LoadMoreTableViewCell.identifier)
             tableView.estimatedRowHeight = UITableView.automaticDimension
             tableView.rowHeight = UITableView.automaticDimension
+            tableView.separatorColor = Color.separatorColor
         }
     }
 
