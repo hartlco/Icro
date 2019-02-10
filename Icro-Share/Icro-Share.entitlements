@@ -6,5 +6,9 @@
 	<array>
 		<string>group.hartl.co.icro</string>
 	</array>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>9E8SXF3Y36.co.hartl.Icro</string>
+	</array>
 </dict>
 </plist>

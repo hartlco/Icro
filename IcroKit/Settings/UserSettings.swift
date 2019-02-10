@@ -40,7 +40,7 @@ public final class UserSettings {
 
     private let userDefaults: UserDefaults
     private let notificationCenter: NotificationCenter
-    private let keychain = Keychain(service: "co.hartl.icro")
+    private let keychain = Keychain(service: "co.hartl.icro", accessGroup: "9E8SXF3Y36.co.hartl.Icro")
 
     public init(userDefaults: UserDefaults = UserDefaults(suiteName: "group.hartl.co.icro")!,
                 notificationCenter: NotificationCenter = .default) {
