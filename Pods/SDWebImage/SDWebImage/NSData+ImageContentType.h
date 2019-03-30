@@ -17,7 +17,8 @@ typedef NS_ENUM(NSInteger, SDImageFormat) {
     SDImageFormatGIF,
     SDImageFormatTIFF,
     SDImageFormatWebP,
-    SDImageFormatHEIC
+    SDImageFormatHEIC,
+    SDImageFormatHEIF
 };
 
 @interface NSData (ImageContentType)
@@ -32,11 +33,19 @@ typedef NS_ENUM(NSInteger, SDImageFormat) {
 + (SDImageFormat)sd_imageFormatForImageData:(nullable NSData *)data;
 
 /**
- Convert SDImageFormat to UTType
-
- @param format Format as SDImageFormat
- @return The UTType as CFStringRef
+ *  Convert SDImageFormat to UTType
+ *
+ *  @param format Format as SDImageFormat
+ *  @return The UTType as CFStringRef
  */
 + (nonnull CFStringRef)sd_UTTypeFromSDImageFormat:(SDImageFormat)format;
+
+/**
+ *  Convert UTTyppe to SDImageFormat
+ *
+ *  @param uttype The UTType as CFStringRef
+ *  @return The Format as SDImageFormat
+ */
++ (SDImageFormat)sd_imageFormatFromUTType:(nonnull CFStringRef)uttype;
 
 @end

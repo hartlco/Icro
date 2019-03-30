@@ -39,6 +39,27 @@
 @interface FLAnimatedImageView (WebCache)
 
 /**
+ * Optimal frame cache size of FLAnimatedImage during initializer. (1.0.11 version later)
+ * This value will help you set `optimalFrameCacheSize` arg of FLAnimatedImage initializer after image load.
+ * Defaults to 0.
+ */
+@property (nonatomic, assign) NSUInteger sd_optimalFrameCacheSize;
+
+/**
+ * Predrawing control of FLAnimatedImage during initializer. (1.0.11 version later)
+ * This value will help you set `predrawingEnabled` arg of FLAnimatedImage initializer after image load.
+ * Defaults to YES.
+ */
+@property (nonatomic, assign) BOOL sd_predrawingEnabled;
+
+/**
+ * Cache control for associated FLAnimatedImage object for memory cache. When enabled, we will bind created FLAnimatedImage instance to UIImage, and store it into memory cache to avoid create this instance cause decoding performance. See `UIImage+FLAnimatedImage`.
+ * When enabled, this may consume more memory, if you are facing memory issue, disable it and let FLAnimatedImage been created just in time and dealloced as it not been used. However, when disabled, this may impact performance since we need query disk cache, create FLAnimatedImage and decoding even when the current GIF url is cached.
+ * Defatuls to YES;
+ */
+@property (nonatomic, assign) BOOL sd_cacheFLAnimatedImage;
+
+/**
  * Load the image at the given url (either from cache or download) and load it in this imageView. It works with both static and dynamic images
  * The download is asynchronous and cached.
  *

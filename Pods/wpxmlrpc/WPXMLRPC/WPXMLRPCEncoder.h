@@ -21,7 +21,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @warning The response encoder is for testing purposes only, and hasn't been tested to implement a XML-RPC server
 
- @param parameters an array containing the result parameters for the response
+ @param params an array containing the result parameters for the response
 
  @return The newly-initialized XML-RPC response
  */
@@ -88,8 +88,6 @@ NS_ASSUME_NONNULL_BEGIN
  
  You should pass this to `[NSMutableRequest setHTTPBody:]`
  @warning This method is now deprecated you should use dataEncodedWithError:(NSError *)error;
- 
- @param error On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
  
  @return A NSData object with the encoded method and paramaters, nil if there was an error.
  */

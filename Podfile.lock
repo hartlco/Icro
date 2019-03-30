@@ -1,6 +1,6 @@
 PODS:
-  - AcknowList (1.7)
-  - Alamofire (4.7.3)
+  - AcknowList (1.8)
+  - Alamofire (4.8.2)
   - DropdownTitleView (0.1.0)
   - DTCoreText (1.6.21):
     - DTCoreText/Core (= 1.6.21)
@@ -21,25 +21,25 @@ PODS:
     - DTFoundation/Core
   - FLAnimatedImage (1.0.12)
   - ImageViewer (5.0.0)
-  - Kanna (4.0.2)
+  - Kanna (4.0.3)
   - KeychainAccess (3.1.2)
-  - Kingfisher (4.10.0)
-  - PromiseKit (6.8.0):
-    - PromiseKit/CorePromise (= 6.8.0)
-    - PromiseKit/Foundation (= 6.8.0)
-    - PromiseKit/UIKit (= 6.8.0)
-  - PromiseKit/CorePromise (6.8.0)
-  - PromiseKit/Foundation (6.8.0):
+  - Kingfisher (5.3.1)
+  - PromiseKit (6.8.3):
+    - PromiseKit/CorePromise (= 6.8.3)
+    - PromiseKit/Foundation (= 6.8.3)
+    - PromiseKit/UIKit (= 6.8.3)
+  - PromiseKit/CorePromise (6.8.3)
+  - PromiseKit/Foundation (6.8.3):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.8.0):
+  - PromiseKit/UIKit (6.8.3):
     - PromiseKit/CorePromise
-  - SDWebImage/Core (4.3.3)
-  - SDWebImage/GIF (4.3.3):
+  - SDWebImage/Core (4.4.6)
+  - SDWebImage/GIF (4.4.6):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
-  - SwiftGen (6.0.2)
-  - SwiftLint (0.27.0)
-  - wpxmlrpc (0.8.3)
+  - SwiftGen (6.1.0)
+  - SwiftLint (0.31.0)
+  - wpxmlrpc (0.8.4)
 
 DEPENDENCIES:
   - AcknowList
@@ -84,22 +84,22 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MailOnline/ImageViewer.git
 
 SPEC CHECKSUMS:
-  AcknowList: 286185b24c2c2df63a2bb4137f853e4384b4358b
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  AcknowList: 5b8820004d019d0a8d6a091ea2392dcb54bd3ad2
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   DropdownTitleView: e02e559243efb248dd0e8a50665b0acc5f6f2413
   DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
   DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
-  Kanna: c60b61d72554bf04ed1ee074f9b379855cab4892
+  Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
-  Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
-  PromiseKit: 02c93833283c37ce94ef7d25de63d48d62b0754e
-  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
-  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
-  wpxmlrpc: bfc572f62ce7ee897f6f38b098d2ba08732ecef4
+  Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
+  PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
+  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
+  wpxmlrpc: 6ba55c773cfa27083ae4a2173e69b19f46da98e2
 
 PODFILE CHECKSUM: 9ad8906e151644fdda239c3e08150f9c7fe78571
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.0.beta.3

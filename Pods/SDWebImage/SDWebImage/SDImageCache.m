@@ -9,18 +9,13 @@
 #import "SDImageCache.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "NSImage+WebCache.h"
+#import "UIImage+MemoryCacheCost.h"
 #import "SDWebImageCodersManager.h"
+
+#define SD_MAX_FILE_EXTENSION_LENGTH (NAME_MAX - CC_MD5_DIGEST_LENGTH * 2 - 1)
 
 #define LOCK(lock) dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
 #define UNLOCK(lock) dispatch_semaphore_signal(lock);
-
-FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
-#if SD_MAC
-    return image.size.height * image.size.width;
-#elif SD_UIKIT || SD_WATCH
-    return image.size.height * image.size.width * image.scale * image.scale;
-#endif
-}
 
 // A memory cache which auto purge the cache on memory warning and support weak cache.
 @interface SDMemoryCache <KeyType, ObjectType> : NSCache <KeyType, ObjectType>
@@ -30,8 +25,12 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
 // Private
 @interface SDMemoryCache <KeyType, ObjectType> ()
 
+@property (nonatomic, strong, nonnull) SDImageCacheConfig *config;
 @property (nonatomic, strong, nonnull) NSMapTable<KeyType, ObjectType> *weakCache; // strong-weak cache
 @property (nonatomic, strong, nonnull) dispatch_semaphore_t weakCacheLock; // a lock to keep the access to `weakCache` thread-safe
+
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithConfig:(nonnull SDImageCacheConfig *)config;
 
 @end
 
@@ -45,7 +44,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
 }
 
-- (instancetype)init {
+- (instancetype)initWithConfig:(SDImageCacheConfig *)config {
     self = [super init];
     if (self) {
         // Use a strong-weak maptable storing the secondary cache. Follow the doc that NSCache does not copy keys
@@ -53,6 +52,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
         // At this case, we can sync weak cache back and do not need to load from disk cache
         self.weakCache = [[NSMapTable alloc] initWithKeyOptions:NSPointerFunctionsStrongMemory valueOptions:NSPointerFunctionsWeakMemory capacity:0];
         self.weakCacheLock = dispatch_semaphore_create(1);
+        self.config = config;
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(didReceiveMemoryWarning:)
                                                      name:UIApplicationDidReceiveMemoryWarningNotification
@@ -69,16 +69,24 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
 // `setObject:forKey:` just call this with 0 cost. Override this is enough
 - (void)setObject:(id)obj forKey:(id)key cost:(NSUInteger)g {
     [super setObject:obj forKey:key cost:g];
+    if (!self.config.shouldUseWeakMemoryCache) {
+        return;
+    }
     if (key && obj) {
         // Store weak cache
         LOCK(self.weakCacheLock);
-        [self.weakCache setObject:obj forKey:key];
+        // Do the real copy of the key and only let NSMapTable manage the key's lifetime
+        // Fixes issue #2507 https://github.com/SDWebImage/SDWebImage/issues/2507
+        [self.weakCache setObject:obj forKey:[[key mutableCopy] copy]];
         UNLOCK(self.weakCacheLock);
     }
 }
 
 - (id)objectForKey:(id)key {
     id obj = [super objectForKey:key];
+    if (!self.config.shouldUseWeakMemoryCache) {
+        return obj;
+    }
     if (key && !obj) {
         // Check weak cache
         LOCK(self.weakCacheLock);
@@ -88,7 +96,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
             // Sync cache
             NSUInteger cost = 0;
             if ([obj isKindOfClass:[UIImage class]]) {
-                cost = SDCacheCostForImage(obj);
+                cost = [(UIImage *)obj sd_memoryCost];
             }
             [super setObject:obj forKey:key cost:cost];
         }
@@ -98,6 +106,9 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
 
 - (void)removeObjectForKey:(id)key {
     [super removeObjectForKey:key];
+    if (!self.config.shouldUseWeakMemoryCache) {
+        return;
+    }
     if (key) {
         // Remove weak cache
         LOCK(self.weakCacheLock);
@@ -108,10 +119,20 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
 
 - (void)removeAllObjects {
     [super removeAllObjects];
+    if (!self.config.shouldUseWeakMemoryCache) {
+        return;
+    }
     // Manually remove should also remove weak cache
     LOCK(self.weakCacheLock);
     [self.weakCache removeAllObjects];
     UNLOCK(self.weakCacheLock);
+}
+
+#else
+
+- (instancetype)initWithConfig:(SDImageCacheConfig *)config {
+    self = [super init];
+    return self;
 }
 
 #endif
@@ -163,7 +184,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
         _config = [[SDImageCacheConfig alloc] init];
         
         // Init the memory cache
-        _memCache = [[SDMemoryCache alloc] init];
+        _memCache = [[SDMemoryCache alloc] initWithConfig:_config];
         _memCache.name = fullNamespace;
 
         // Init the disk cache
@@ -229,6 +250,10 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
     CC_MD5(str, (CC_LONG)strlen(str), r);
     NSURL *keyURL = [NSURL URLWithString:key];
     NSString *ext = keyURL ? keyURL.pathExtension : key.pathExtension;
+    // File system has file name length limit, we need to check if ext is too long, we don't add it to the filename
+    if (ext.length > SD_MAX_FILE_EXTENSION_LENGTH) {
+        ext = nil;
+    }
     NSString *filename = [NSString stringWithFormat:@"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%@",
                           r[0], r[1], r[2], r[3], r[4], r[5], r[6], r[7], r[8], r[9], r[10],
                           r[11], r[12], r[13], r[14], r[15], ext.length == 0 ? @"" : [NSString stringWithFormat:@".%@", ext]];
@@ -268,7 +293,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
     }
     // if memory cache is enabled
     if (self.config.shouldCacheImagesInMemory) {
-        NSUInteger cost = SDCacheCostForImage(image);
+        NSUInteger cost = image.sd_memoryCost;
         [self.memCache setObject:image forKey:key cost:cost];
     }
     
@@ -366,13 +391,25 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
     }
     BOOL exists = [self.fileManager fileExistsAtPath:[self defaultCachePathForKey:key]];
     
-    // fallback because of https://github.com/rs/SDWebImage/pull/976 that added the extension to the disk file name
+    // fallback because of https://github.com/SDWebImage/SDWebImage/pull/976 that added the extension to the disk file name
     // checking the key with and without the extension
     if (!exists) {
         exists = [self.fileManager fileExistsAtPath:[self defaultCachePathForKey:key].stringByDeletingPathExtension];
     }
     
     return exists;
+}
+
+- (nullable NSData *)diskImageDataForKey:(nullable NSString *)key {
+    if (!key) {
+        return nil;
+    }
+    __block NSData *imageData = nil;
+    dispatch_sync(self.ioQueue, ^{
+        imageData = [self diskImageDataBySearchingAllPathsForKey:key];
+    });
+    
+    return imageData;
 }
 
 - (nullable UIImage *)imageFromMemoryCacheForKey:(nullable NSString *)key {
@@ -382,7 +419,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
 - (nullable UIImage *)imageFromDiskCacheForKey:(nullable NSString *)key {
     UIImage *diskImage = [self diskImageForKey:key];
     if (diskImage && self.config.shouldCacheImagesInMemory) {
-        NSUInteger cost = SDCacheCostForImage(diskImage);
+        NSUInteger cost = diskImage.sd_memoryCost;
         [self.memCache setObject:diskImage forKey:key cost:cost];
     }
 
@@ -408,7 +445,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
         return data;
     }
 
-    // fallback because of https://github.com/rs/SDWebImage/pull/976 that added the extension to the disk file name
+    // fallback because of https://github.com/SDWebImage/SDWebImage/pull/976 that added the extension to the disk file name
     // checking the key with and without the extension
     data = [NSData dataWithContentsOfFile:defaultPath.stringByDeletingPathExtension options:self.config.diskCacheReadingOptions error:nil];
     if (data) {
@@ -423,7 +460,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
             return imageData;
         }
 
-        // fallback because of https://github.com/rs/SDWebImage/pull/976 that added the extension to the disk file name
+        // fallback because of https://github.com/SDWebImage/SDWebImage/pull/976 that added the extension to the disk file name
         // checking the key with and without the extension
         imageData = [NSData dataWithContentsOfFile:filePath.stringByDeletingPathExtension options:self.config.diskCacheReadingOptions error:nil];
         if (imageData) {
@@ -435,16 +472,21 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
 }
 
 - (nullable UIImage *)diskImageForKey:(nullable NSString *)key {
-    NSData *data = [self diskImageDataBySearchingAllPathsForKey:key];
+    NSData *data = [self diskImageDataForKey:key];
     return [self diskImageForKey:key data:data];
 }
 
 - (nullable UIImage *)diskImageForKey:(nullable NSString *)key data:(nullable NSData *)data {
+    return [self diskImageForKey:key data:data options:0];
+}
+
+- (nullable UIImage *)diskImageForKey:(nullable NSString *)key data:(nullable NSData *)data options:(SDImageCacheOptions)options {
     if (data) {
         UIImage *image = [[SDWebImageCodersManager sharedInstance] decodedImageWithData:data];
         image = [self scaledImageForKey:key image:image];
         if (self.config.shouldDecompressImages) {
-            image = [[SDWebImageCodersManager sharedInstance] decompressedImageWithImage:image data:&data options:@{SDWebImageCoderScaleDownLargeImagesKey: @(NO)}];
+            BOOL shouldScaleDown = options & SDImageCacheScaleDownLargeImages;
+            image = [[SDWebImageCodersManager sharedInstance] decompressedImageWithImage:image data:&data options:@{SDWebImageCoderScaleDownLargeImagesKey: @(shouldScaleDown)}];
         }
         return image;
     } else {
@@ -488,16 +530,17 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
         @autoreleasepool {
             NSData *diskData = [self diskImageDataBySearchingAllPathsForKey:key];
             UIImage *diskImage;
-            SDImageCacheType cacheType = SDImageCacheTypeDisk;
+            SDImageCacheType cacheType = SDImageCacheTypeNone;
             if (image) {
                 // the image is from in-memory cache
                 diskImage = image;
                 cacheType = SDImageCacheTypeMemory;
             } else if (diskData) {
+                cacheType = SDImageCacheTypeDisk;
                 // decode image data only if in-memory cache missed
-                diskImage = [self diskImageForKey:key data:diskData];
+                diskImage = [self diskImageForKey:key data:diskData options:options];
                 if (diskImage && self.config.shouldCacheImagesInMemory) {
-                    NSUInteger cost = SDCacheCostForImage(diskImage);
+                    NSUInteger cost = diskImage.sd_memoryCost;
                     [self.memCache setObject:diskImage forKey:key cost:cost];
                 }
             }
@@ -601,7 +644,23 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
 - (void)deleteOldFilesWithCompletionBlock:(nullable SDWebImageNoParamsBlock)completionBlock {
     dispatch_async(self.ioQueue, ^{
         NSURL *diskCacheURL = [NSURL fileURLWithPath:self.diskCachePath isDirectory:YES];
-        NSArray<NSString *> *resourceKeys = @[NSURLIsDirectoryKey, NSURLContentModificationDateKey, NSURLTotalFileAllocatedSizeKey];
+
+        // Compute content date key to be used for tests
+        NSURLResourceKey cacheContentDateKey = NSURLContentModificationDateKey;
+        switch (self.config.diskCacheExpireType) {
+            case SDImageCacheConfigExpireTypeAccessDate:
+                cacheContentDateKey = NSURLContentAccessDateKey;
+                break;
+
+            case SDImageCacheConfigExpireTypeModificationDate:
+                cacheContentDateKey = NSURLContentModificationDateKey;
+                break;
+
+            default:
+                break;
+        }
+        
+        NSArray<NSString *> *resourceKeys = @[NSURLIsDirectoryKey, cacheContentDateKey, NSURLTotalFileAllocatedSizeKey];
 
         // This enumerator prefetches useful properties for our cache files.
         NSDirectoryEnumerator *fileEnumerator = [self.fileManager enumeratorAtURL:diskCacheURL
@@ -628,12 +687,12 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
             }
 
             // Remove files that are older than the expiration date;
-            NSDate *modificationDate = resourceValues[NSURLContentModificationDateKey];
-            if ([[modificationDate laterDate:expirationDate] isEqualToDate:expirationDate]) {
+            NSDate *modifiedDate = resourceValues[cacheContentDateKey];
+            if ([[modifiedDate laterDate:expirationDate] isEqualToDate:expirationDate]) {
                 [urlsToDelete addObject:fileURL];
                 continue;
             }
-
+            
             // Store a reference to this file and account for its total size.
             NSNumber *totalAllocatedSize = resourceValues[NSURLTotalFileAllocatedSizeKey];
             currentCacheSize += totalAllocatedSize.unsignedIntegerValue;
@@ -650,10 +709,10 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
             // Target half of our maximum cache size for this cleanup pass.
             const NSUInteger desiredCacheSize = self.config.maxCacheSize / 2;
 
-            // Sort the remaining cache files by their last modification time (oldest first).
+            // Sort the remaining cache files by their last modification time or last access time (oldest first).
             NSArray<NSURL *> *sortedFiles = [cacheFiles keysSortedByValueWithOptions:NSSortConcurrent
                                                                      usingComparator:^NSComparisonResult(id obj1, id obj2) {
-                                                                         return [obj1[NSURLContentModificationDateKey] compare:obj2[NSURLContentModificationDateKey]];
+                                                                         return [obj1[cacheContentDateKey] compare:obj2[cacheContentDateKey]];
                                                                      }];
 
             // Delete files until we fall below our desired cache size.

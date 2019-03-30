@@ -199,6 +199,7 @@
 		5BF663852189673100ABA671 /* DiscoveryCategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663842189673100ABA671 /* DiscoveryCategoryManager.swift */; };
 		84FCAE014ECEACF77C75D034 /* Pods_Icro_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 133376CF538D4FE598F0A167 /* Pods_Icro_Mac.framework */; };
 		B2B69843485BA7ABCD1344D5 /* Pods_IcroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5357A92C8879999C322FA253 /* Pods_IcroUIKit.framework */; };
+		B8283DABDE5124E5EB2DA52D /* Pods_IcroKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3C79A121C4E3E000F699B8 /* Pods_IcroKit.framework */; };
 		BF707E742131C45600506E64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
 		C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */; };
 		C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
@@ -495,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6AB5415AD65DAFC35A2B6AC /* Pods_IcroKit.framework in Frameworks */,
+				B8283DABDE5124E5EB2DA52D /* Pods_IcroKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1313,10 +1315,8 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Icro-Mac/Pods-Icro-Mac-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Icro-Mac/Pods-Icro-Mac-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna-macOS/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-macOS/Alamofire.framework",
@@ -1325,8 +1325,6 @@
 				"${BUILT_PRODUCTS_DIR}/wpxmlrpc-macOS/wpxmlrpc.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
@@ -1337,7 +1335,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Icro-Mac/Pods-Icro-Mac-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Icro-Mac/Pods-Icro-Mac-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		20C3A106AC1DA7AB6DC70FC0 /* [CP] Check Pods Manifest.lock */ = {
@@ -1498,7 +1496,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
 				"${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework",
 				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
@@ -1519,7 +1517,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EABA67040489353A359E8CCF /* [CP] Embed Pods Frameworks */ = {
@@ -1528,7 +1526,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Icro/Pods-Icro-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Icro/Pods-Icro-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
 				"${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework",
 				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
@@ -1559,7 +1557,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Icro/Pods-Icro-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Icro/Pods-Icro-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC67B8475669ED52435FE403 /* [CP] Check Pods Manifest.lock */ = {
@@ -2105,7 +2103,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Icro.app/Icro";
 			};
@@ -2129,7 +2127,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Icro.app/Icro";
 			};
