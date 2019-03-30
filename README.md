@@ -6,7 +6,7 @@
 
 [Download from the App Store](https://itunes.apple.com/us/app/icro/id1375296597?ls=1&mt=8)
 
-![](https://travis-ci.com/hartlco/Icro.svg?branch=master)
+[![Build Status](https://app.bitrise.io/app/223288add6631ac7/status.svg?token=sh5Rb02EXVs8bgD2fl0XWA&branch=master)](https://app.bitrise.io/app/223288add6631ac7)
 
 ## About
 Icro does not serve the purpose of a showcase project. Many parts were hacked together as I wanted to ship this App as quickly as possible.
