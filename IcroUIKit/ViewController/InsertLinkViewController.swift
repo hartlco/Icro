@@ -55,7 +55,7 @@ public class InsertLinkViewController: UIViewController, UITextFieldDelegate {
         if textField == titleTextField {
             linkTextField.becomeFirstResponder()
         } else {
-            insertButtonPressed(linkTextField)
+            insertButtonPressed(linkTextField as Any)
         }
 
         return true

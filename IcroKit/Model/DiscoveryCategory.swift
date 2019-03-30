@@ -12,7 +12,7 @@ public struct DiscoveryCategory: Codable {
 }
 
 public extension DiscoveryCategory {
-    public init?(dictionary: JSONDictionary) {
+    init?(dictionary: JSONDictionary) {
         guard let title = dictionary["title"] as? String,
             let category = dictionary["category"] as? String,
             let emoji = dictionary["emoji"] as? String else {

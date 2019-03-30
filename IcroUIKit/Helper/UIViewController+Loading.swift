@@ -74,10 +74,10 @@ public extension LoadingViewController where Self: UIViewController {
         }
     }
 
-    public func showMessage(text: String,
-                            color: UIColor,
-                            position: LoadingPosition,
-                            dismissalTime: LoadingIndicatorDismissalTime) {
+    func showMessage(text: String,
+                     color: UIColor,
+                     position: LoadingPosition,
+                     dismissalTime: LoadingIndicatorDismissalTime) {
         reset()
 
         let loadingView = LoadingView(text: text,

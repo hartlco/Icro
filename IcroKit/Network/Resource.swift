@@ -268,7 +268,7 @@ extension MediaEndpoint {
 }
 
 public extension MediaEndpoint {
-    public static func get(endpoint: MicropubEndpoint) -> Resource<MediaEndpoint> {
+    static func get(endpoint: MicropubEndpoint) -> Resource<MediaEndpoint> {
         let urlString = endpoint.urlString + microblogMedia
 
         guard let url = URL(string: urlString) else {

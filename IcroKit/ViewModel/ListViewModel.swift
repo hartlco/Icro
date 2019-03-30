@@ -202,7 +202,7 @@ public class ListViewModel: NSObject {
 
         switch type {
         case .favorites:
-            if item.isFavorite, let index = items.index(of: item) {
+            if item.isFavorite, let index = items.firstIndex(of: item) {
                 items.remove(at: index)
                 didFinishLoading(false)
             }
@@ -212,7 +212,7 @@ public class ListViewModel: NSObject {
     }
 
     public func index(for item: Item) -> Int? {
-        return items.index(of: item)
+        return items.firstIndex(of: item)
     }
 
     public func toggleFollowForLoadedAuthor() {

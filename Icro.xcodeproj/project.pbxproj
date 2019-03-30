@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		07273D8420BE2818AE651E13 /* Pods_Icro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017321F11249BE9396D08AF6 /* Pods_Icro.framework */; };
 		1EFC751935EEE6A0CE325D31 /* Pods_Icro_Share.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5514B35BA6B9FEDDD467AC7 /* Pods_Icro_Share.framework */; };
-		405DE04708582F3E600AC087 /* Pods_IcroKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3C79A121C4E3E000F699B8 /* Pods_IcroKit.framework */; };
 		56262F9E11CAD54C72679804 /* Pods_Icro_IcroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCD9BDA9C2513F911EAA9F3B /* Pods_Icro_IcroTests.framework */; };
 		5B01CBCA2168D6A90007E01D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01CBC92168D6A90007E01D /* AppDelegate.swift */; };
 		5B01CBCE2168D6AA0007E01D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B01CBCD2168D6AA0007E01D /* Assets.xcassets */; };
@@ -496,7 +495,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6AB5415AD65DAFC35A2B6AC /* Pods_IcroKit.framework in Frameworks */,
-				405DE04708582F3E600AC087 /* Pods_IcroKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1123,7 +1121,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Martin Hartl";
 				TargetAttributes = {
 					5B01CBC62168D6A90007E01D = {
@@ -1144,6 +1142,7 @@
 					5B3C797D21C4DFAF00F699B8 = {
 						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = 9E8SXF3Y36;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -1157,6 +1156,7 @@
 					5B3C799121C4E31100F699B8 = {
 						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = 9E8SXF3Y36;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					5B5837342128B04A0076121E = {
@@ -1169,12 +1169,13 @@
 					5BC347AD2132944900DEB45D = {
 						CreatedOnToolsVersion = 9.4.1;
 						DevelopmentTeam = 9E8SXF3Y36;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					C5FA2ABF1EB4482C006DEB40 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 9E8SXF3Y36;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -1195,7 +1196,7 @@
 			};
 			buildConfigurationList = C5FA2ABB1EB4482C006DEB40 /* Build configuration list for PBXProject "Icro" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -1906,7 +1907,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 107;
@@ -1942,7 +1943,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 107;
@@ -1989,7 +1990,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.hartl.Icro.Icro-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2014,7 +2015,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.hartl.Icro.Icro-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -2028,7 +2029,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 107;
 				DEFINES_MODULE = YES;
@@ -2046,7 +2047,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2062,7 +2063,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 107;
 				DEFINES_MODULE = YES;
@@ -2079,7 +2080,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2143,7 +2144,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 107;
 				DEFINES_MODULE = YES;
@@ -2159,7 +2160,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2175,7 +2176,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 107;
 				DEFINES_MODULE = YES;
@@ -2191,7 +2192,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2202,6 +2203,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -2261,6 +2263,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -2328,7 +2331,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Icro/Icro-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -2350,7 +2353,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Icro/Icro-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

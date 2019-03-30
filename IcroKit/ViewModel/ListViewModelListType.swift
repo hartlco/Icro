@@ -6,7 +6,7 @@
 import Foundation
 
 public extension ListViewModel.ListType {
-    public var resource: Resource<ItemResponse> {
+    var resource: Resource<ItemResponse> {
         switch self {
         case .timeline:
             return Item.all()
@@ -29,7 +29,7 @@ public extension ListViewModel.ListType {
         }
     }
 
-    public var title: String {
+    var title: String {
         switch self {
         case .timeline:
             return NSLocalizedString("LISTVIEWMODEL_RESOURCETITLE_TIMELINE", comment: "")
@@ -52,7 +52,7 @@ public extension ListViewModel.ListType {
         }
     }
 
-    public var image: XImage? {
+    var image: XImage? {
         switch self {
         case .timeline:
             return XImage(named: "timeline")
@@ -69,7 +69,7 @@ public extension ListViewModel.ListType {
         }
     }
 
-    public var tabTitle: String? {
+    var tabTitle: String? {
         switch self {
         case .timeline:
             return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_TIMELINE", comment: "")

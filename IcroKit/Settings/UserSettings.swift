@@ -7,7 +7,7 @@ import Foundation
 import KeychainAccess
 
 public extension Notification.Name {
-    public static let blackListChanged = Notification.Name(rawValue: "blackListChanged")
+    static let blackListChanged = Notification.Name(rawValue: "blackListChanged")
 }
 
 public final class UserSettings {
