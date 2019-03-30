@@ -36,5 +36,9 @@ final class TipCollectionViewCell: UICollectionViewCell {
         layer.shadowRadius = 1.0
         layer.shadowOpacity = 1.0
         layer.masksToBounds = false
+        widthAnchor.constraint(equalToConstant: 120).isActive = true
     }
+
+    //forces the system to do one layout pass
+    var isHeightCalculated: Bool = false
 }

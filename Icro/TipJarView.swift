@@ -15,7 +15,8 @@ final class TipJarView: UIView {
     init(viewModel: TipJarViewModel) {
         self.viewModel = viewModel
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 120, height: 120)
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 120, height: 160)
         self.collectionView = UICollectionView(frame: CGRect.zero,
                                                collectionViewLayout: layout)
         collectionView.contentInset = UIEdgeInsets(top: 2, left: 10, bottom: 10, right: 10)
