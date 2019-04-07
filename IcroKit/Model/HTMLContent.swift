@@ -25,11 +25,16 @@ public final class HTMLContent: Codable {
     private let itemID: String
 
     public let imageLinks: [URL]
+    public let videoLinks: [URL]
 
     init(rawHTMLString: String, itemID: String) {
         self.rawHTMLString = rawHTMLString
         self.itemID = itemID
-        self.imageLinks = rawHTMLString.imagesLinks().compactMap(URL.init)
+
+        let htmlDocument = try? HTML(html: rawHTMLString, encoding: .utf8)
+
+        self.imageLinks = rawHTMLString.imagesLinks(from: htmlDocument).compactMap(URL.init)
+        self.videoLinks = rawHTMLString.videoLinks(from: htmlDocument).compactMap(URL.init)
     }
 
     public func imageDescs() -> [String] {
@@ -219,14 +224,21 @@ private extension String {
         })
     }
 
-    func htmlImgSources() -> [String] {
-        return "src=\\\"([^\"]+)\"".matchesIn(string: self as NSString, atRangeIndex: 1)
+    func videoLinks(from document: HTMLDocument?) -> [String] {
+        guard let document = document else { return [] }
+
+        return document.xpath("//video | //src").compactMap {
+            if let htmlClass = $0["class"], String.inlineMiniImageClasses.contains(htmlClass) {
+                return nil
+            }
+            return $0["src"]
+        }
     }
 
-    func imagesLinks() -> [String] {
-        guard let doc = try? HTML(html: self, encoding: .utf8) else { return [] }
+    func imagesLinks(from document: HTMLDocument?) -> [String] {
+        guard let document = document else { return [] }
 
-        return doc.xpath("//img | //src").compactMap {
+        return document.xpath("//img | //src").compactMap {
             if let htmlClass = $0["class"], String.inlineMiniImageClasses.contains(htmlClass) {
                 return nil
             }

@@ -163,64 +163,7 @@ extension KingfisherWrapper where Base: ImageView {
 }
 #endif
 
-#if canImport(UIKit) && !os(watchOS)
-// MARK: - Deprecated
-extension KingfisherWrapper where Base: UIButton {
-    @available(*, deprecated, message: "Use `Result` based callback instead.")
-    @discardableResult
-    public func setImage(
-        with resource: Resource?,
-        for state: UIControl.State,
-        placeholder: UIImage? = nil,
-        options: KingfisherOptionsInfo? = nil,
-        progressBlock: DownloadProgressBlock? = nil,
-        completionHandler: CompletionHandler?) -> DownloadTask?
-    {
-        return setImage(
-            with: resource,
-            for: state,
-            placeholder: placeholder,
-            options: options,
-            progressBlock: progressBlock)
-        {
-            result in
-            switch result {
-            case .success(let value):
-                completionHandler?(value.image, nil, value.cacheType, value.source.url)
-            case .failure(let error):
-                completionHandler?(nil, error as NSError, .none, nil)
-            }
-        }
-    }
-    
-    @available(*, deprecated, message: "Use `Result` based callback instead.")
-    @discardableResult
-    public func setBackgroundImage(
-        with resource: Resource?,
-        for state: UIControl.State,
-        placeholder: UIImage? = nil,
-        options: KingfisherOptionsInfo? = nil,
-        progressBlock: DownloadProgressBlock? = nil,
-        completionHandler: CompletionHandler?) -> DownloadTask?
-    {
-        return setBackgroundImage(
-            with: resource,
-            for: state,
-            placeholder: placeholder,
-            options: options,
-            progressBlock: progressBlock)
-        {
-            result in
-            switch result {
-            case .success(let value):
-                completionHandler?(value.image, nil, value.cacheType, value.source.url)
-            case .failure(let error):
-                completionHandler?(nil, error as NSError, .none, nil)
-            }
-        }
-    }
-}
-#endif
+
 
 #if os(watchOS)
 import WatchKit

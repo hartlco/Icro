@@ -44,7 +44,6 @@
 		5B38476721FE06F500F082AD /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475C21FDFEC900F082AD /* TipJarView.swift */; };
 		5B38476921FE073800F082AD /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476821FE073800F082AD /* UIView+Contraints.swift */; };
 		5B38476A21FE077A00F082AD /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476821FE073800F082AD /* UIView+Contraints.swift */; };
-		5B397070207BDD9D007DE3CC /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */; };
 		5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */; };
 		5B3B4C3521D0CBE300F511A6 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C3421D0CBE300F511A6 /* assets-images.swift */; };
 		5B3B4C3621D0CBE300F511A6 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C3421D0CBE300F511A6 /* assets-images.swift */; };
@@ -120,7 +119,6 @@
 		5B5837612128B5F80076121E /* EditActionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371D212861220076121E /* EditActionsConfigurator.swift */; };
 		5B5837622128B5F80076121E /* ProfileViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371F212861220076121E /* ProfileViewConfigurator.swift */; };
 		5B5837632128B5F80076121E /* UserItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371E212861220076121E /* UserItemCellConfigurator.swift */; };
-		5B5837652128B5F80076121E /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */; };
 		5B5837662128B5F80076121E /* Icro-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */; };
 		5B58376C2128B5F80076121E /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
 		5B58376D2128B5F80076121E /* ProfileTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */; };
@@ -169,6 +167,9 @@
 		5BC347C92132963A00DEB45D /* Date+ComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */; };
 		5BC5A5A621D377B300B9A8D1 /* Theme+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A5A521D377B300B9A8D1 /* Theme+Extenstions.swift */; };
 		5BC5A5A721D4E1F200B9A8D1 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */; };
+		5BD2FE5F2259D15100591490 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2FE5E2259D15100591490 /* Media.swift */; };
+		5BD2FE602259D2EC00591490 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2FE5E2259D15100591490 /* Media.swift */; };
+		5BD2FE682259E0DC00591490 /* VideoThumbnailImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */; };
 		5BD32BB92089A12E005D250A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD32BB72089A12E005D250A /* SettingsViewController.swift */; };
 		5BD32BBA2089A12E005D250A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BD32BB82089A12E005D250A /* SettingsViewController.xib */; };
 		5BD499CF21CA1D8C007EF47C /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79C121C518B700F699B8 /* MainNavigator.swift */; };
@@ -316,7 +317,6 @@
 		5B38476221FE048900F082AD /* TipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TipCollectionViewCell.swift; path = View/TipCollectionViewCell.swift; sourceTree = "<group>"; };
 		5B38476321FE048900F082AD /* TipCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TipCollectionViewCell.xib; path = View/TipCollectionViewCell.xib; sourceTree = "<group>"; };
 		5B38476821FE073800F082AD /* UIView+Contraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Contraints.swift"; path = "Helper/UIView+Contraints.swift"; sourceTree = "<group>"; };
-		5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageDownloadManager.swift; path = Helper/ImageDownloadManager.swift; sourceTree = "<group>"; };
 		5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppearanceManager.swift; path = Helper/AppearanceManager.swift; sourceTree = "<group>"; };
 		5B3B4C3421D0CBE300F511A6 /* assets-images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "assets-images.swift"; path = "Generated/assets-images.swift"; sourceTree = "<group>"; };
 		5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Icro-Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -396,6 +396,8 @@
 		5BC347B12132944900DEB45D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BC347C62132960900DEB45D /* LoginInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInformation.swift; sourceTree = "<group>"; };
 		5BC5A5A521D377B300B9A8D1 /* Theme+Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Extenstions.swift"; sourceTree = "<group>"; };
+		5BD2FE5E2259D15100591490 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailImageProvider.swift; sourceTree = "<group>"; };
 		5BD32BB72089A12E005D250A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewController/SettingsViewController.swift; sourceTree = "<group>"; };
 		5BD32BB82089A12E005D250A /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ViewController/SettingsViewController.xib; sourceTree = "<group>"; };
 		5BD9690921C8CBFB00313795 /* GalleryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDataSource.swift; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 				5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */,
 				5BC1384221C6332B0040353C /* LocalizedString.swift */,
 				5BC5A5A521D377B300B9A8D1 /* Theme+Extenstions.swift */,
+				5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 				5B58377B212950F40076121E /* Item.swift */,
 				C5FA2B001EB45213006DEB40 /* HTMLContent.swift */,
 				5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */,
+				5BD2FE5E2259D15100591490 /* Media.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -910,7 +914,6 @@
 		C5FA2AFF1EB451F9006DEB40 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				5B39706F207BDD9D007DE3CC /* ImageDownloadManager.swift */,
 				5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */,
 				5BD9690B21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift */,
 				5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */,
@@ -1317,7 +1320,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Icro-Mac/Pods-Icro-Mac-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher-macOS/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna-macOS/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-macOS/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess-macOS/KeychainAccess.framework",
@@ -1501,9 +1504,8 @@
 				"${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework",
 				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/DropdownTitleView/DropdownTitleView.framework",
-				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher-iOS/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1511,9 +1513,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTCoreText.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropdownTitleView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageViewer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1531,9 +1532,8 @@
 				"${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework",
 				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/DropdownTitleView/DropdownTitleView.framework",
-				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher-iOS/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna-iOS/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess-iOS/KeychainAccess.framework",
@@ -1546,9 +1546,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTCoreText.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropdownTitleView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageViewer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
@@ -1614,6 +1613,7 @@
 				5B01CBEE2168D71A0007E01D /* UserSettings.swift in Sources */,
 				5B6A565E21735A69003C4D92 /* Functions.swift in Sources */,
 				5BDE18EA216A5745001254F4 /* ComposeViewModel.swift in Sources */,
+				5BD2FE602259D2EC00591490 /* Media.swift in Sources */,
 				5B01CBEA2168D7150007E01D /* Date+ComponentsFormatter.swift in Sources */,
 				5B01CBF22168D7240007E01D /* Author.swift in Sources */,
 				5B01CBE92168D7150007E01D /* CacheStorage.swift in Sources */,
@@ -1658,6 +1658,7 @@
 				5B3C79D621C52D2C00F699B8 /* KeyboardLayoutGuide.swift in Sources */,
 				5B3C79B221C5087C00F699B8 /* UIViewController+Loading.swift in Sources */,
 				5B3C799E21C4E33000F699B8 /* ComposeViewController.swift in Sources */,
+				5BD2FE682259E0DC00591490 /* VideoThumbnailImageProvider.swift in Sources */,
 				5BD9690E21C8D44000313795 /* ComposeNavigatorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1689,7 +1690,6 @@
 				5B3C79C821C51BDA00F699B8 /* ItemNavigator.swift in Sources */,
 				5B5837632128B5F80076121E /* UserItemCellConfigurator.swift in Sources */,
 				5BD9691021C8D55400313795 /* ComposeNavigator.swift in Sources */,
-				5B5837652128B5F80076121E /* ImageDownloadManager.swift in Sources */,
 				5B5837662128B5F80076121E /* Icro-Bridging-Header.h in Sources */,
 				5B58376C2128B5F80076121E /* ProfileTableViewCell.swift in Sources */,
 				5B58376D2128B5F80076121E /* ProfileTableViewCell.xib in Sources */,
@@ -1725,6 +1725,7 @@
 				5BC347C72132960900DEB45D /* LoginInformation.swift in Sources */,
 				5BF6637F218961AB00ABA671 /* DiscoveryCategory.swift in Sources */,
 				5BD9691121C8D61800313795 /* GalleryDataSource.swift in Sources */,
+				5BD2FE5F2259D15100591490 /* Media.swift in Sources */,
 				5BF663812189628300ABA671 /* DiscoveryCategoryResource.swift in Sources */,
 				5B4DF0F121AA8818008CEB58 /* ListViewModelListType.swift in Sources */,
 				5BDE18F1216A57C0001254F4 /* MicropubRequestController.swift in Sources */,
@@ -1759,7 +1760,6 @@
 				5BED6D01207E8147002FB9FF /* UserListViewController.swift in Sources */,
 				5BBC6704218EB0150090629C /* LoadMoreTableViewCell.swift in Sources */,
 				5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */,
-				5B397070207BDD9D007DE3CC /* ImageDownloadManager.swift in Sources */,
 				5B3B4C3521D0CBE300F511A6 /* assets-images.swift in Sources */,
 				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
 				C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */,

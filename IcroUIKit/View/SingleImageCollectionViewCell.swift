@@ -10,9 +10,11 @@ class SingleImageCollectionViewCell: UICollectionViewCell {
     static let identifier = "SingleImageCollectionViewCell"
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var videoPlayImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        videoPlayImage.isHidden = true
         updateAppearance()
     }
 

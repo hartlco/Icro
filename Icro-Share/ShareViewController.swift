@@ -117,7 +117,7 @@ private class EmptyItemNavigator: ItemNavigatorProtocol {
 
     }
 
-    func openImages(datasource: GalleryDataSource) {
+    func openMedia(media: Media) {
 
     }
 

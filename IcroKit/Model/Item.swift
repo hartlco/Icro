@@ -37,8 +37,16 @@ public class Item: Codable {
         return htmlContent.attributedStringWithoutImages() ?? NSAttributedString(string: "")
     }()
 
-    public lazy var images: [URL] = {
-        return htmlContent.imageLinks
+    public lazy var media: [Media] = {
+        let imageMedia = htmlContent.imageLinks.map {
+            return Media(url: $0, isVideo: false)
+        }
+
+        let videoMedia = htmlContent.videoLinks.map {
+            return Media(url: $0, isVideo: true)
+        }
+
+        return imageMedia + videoMedia
     }()
 
     public let url: URL
@@ -111,7 +119,7 @@ extension Item {
                   author: author,
                   isFavorite: fav)
 
-        _ = images
+        _ = media
         _ = content
         _ = relativeDateString
         _ = accessibilityContent

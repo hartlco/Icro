@@ -5,8 +5,8 @@
 
 import Foundation
 import IcroKit
-import SDWebImage
 import ImageViewer
+import Kingfisher
 
 final class ProfileViewConfigurator: NSObject {
     private let itemNavigator: ItemNavigator
@@ -27,7 +27,7 @@ final class ProfileViewConfigurator: NSObject {
 
         view.nameLabel.text = author.name
         view.usernameLabel.text = "@" + username
-        view.avatarImageView.sd_setImage(with: author.avatar)
+        view.avatarImageView.kf.setImage(with: author.avatar)
         view.profileButton.setTitle((author.url?.absoluteString ?? ""), for: .normal)
         view.profilePressed = { [weak self] in
             if let url = author.url {
@@ -49,8 +49,8 @@ final class ProfileViewConfigurator: NSObject {
         }
 
         view.avatarPressed = { [weak self] in
-            let dataSource = GalleryDataSource(index: 0, imageURLs: [author.avatar])
-            self?.itemNavigator.openImages(datasource: dataSource)
+            let media = Media(url: author.avatar, isVideo: false)
+            self?.itemNavigator.openMedia(media: media)
         }
 
         view.followButton.isHidden = author.isYou
@@ -92,9 +92,14 @@ private class AuthorImageGalleryDataSource: GalleryItemsDataSource {
 
     func provideGalleryItem(_ index: Int) -> GalleryItem {
         return GalleryItem.image { completion in
-            SDWebImageDownloader().downloadImage(with: self.author.avatar, options: [], progress: nil, completed: { image, _, _, _ in
-                DispatchQueue.main.async {
-                    completion(image)
+            KingfisherManager.shared.downloader.downloadImage(with: self.author.avatar, completionHandler: { result in
+                switch result {
+                case .success(let imageLoadingResult):
+                    DispatchQueue.main.async {
+                        completion(imageLoadingResult.image)
+                    }
+                default:
+                    return
                 }
             })
         }

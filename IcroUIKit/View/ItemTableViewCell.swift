@@ -5,7 +5,8 @@
 
 import UIKit
 import IcroKit
-import SDWebImage
+import AVFoundation
+import Kingfisher
 
 public final class ItemTableViewCell: UITableViewCell {
     public static let identifer = "ItemTableViewCell"
@@ -52,11 +53,11 @@ public final class ItemTableViewCell: UITableViewCell {
 
     var itemID: String?
 
-    var imageURLs = [URL]() {
+    var media = [Media]() {
         didSet {
-            if imageURLs.count == 1 {
+            if media.count == 1 {
                 collectionViewHeightConstraint.constant = 240
-            } else if imageURLs.count > 1 {
+            } else if media.count > 1 {
                 collectionViewHeightConstraint.constant = 140
             } else {
                 collectionViewHeightConstraint.constant = 0
@@ -77,10 +78,10 @@ public final class ItemTableViewCell: UITableViewCell {
 
     var didTapAvatar: (() -> Void)?
     var didSelectAccessibilityLink :(() -> Void)?
-    var didTapImages: (([URL], Int) -> Void)?
+    var didTapMedia: ((Media) -> Void)?
 
     override public func prepareForReuse() {
-        imageURLs = []
+        media = []
         updateAppearance()
         avatarImageView.image = nil
         isFavorite = false
@@ -109,7 +110,7 @@ public final class ItemTableViewCell: UITableViewCell {
     }
 
     @objc func accessibilityDidTapImages() {
-        didTapImages?(imageURLs, 0)
+        didTapMedia?(media[0])
     }
 
     @objc func accessibilitySelectLink() {
@@ -145,7 +146,7 @@ public final class ItemTableViewCell: UITableViewCell {
 
 extension ItemTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageURLs.count
+        return media.count
     }
 
     public func collectionView(_ collectionView: UICollectionView,
@@ -155,26 +156,28 @@ extension ItemTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
             fatalError("Could not deque SingleImageCollectionViewCell")
         }
 
-        let image = imageURLs[indexPath.row]
-        cell.imageView.sd_setImage(with: image)
+        let mediaItem = media[indexPath.row]
+
+        if mediaItem.isVideo {
+            let imageProvider = VideoThumbnailImageProvider(url: mediaItem.url)
+            cell.imageView.kf.setImage(with: imageProvider)
+            cell.videoPlayImage.isHidden = false
+        } else {
+            cell.imageView.kf.setImage(with: mediaItem.url)
+            cell.videoPlayImage.isHidden = true
+        }
+
         return cell
     }
 
-    public func collectionView(_ collectionView: UICollectionView,
-                               didEndDisplaying cell: UICollectionViewCell,
-                               forItemAt indexPath: IndexPath) {
-        guard let cell = cell as? SingleImageCollectionViewCell else { return }
-        cell.imageView.sd_cancelCurrentImageLoad()
-    }
-
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        didTapImages?(imageURLs, indexPath.row)
+        didTapMedia?(media[indexPath.row])
     }
 
     public func collectionView(_ collectionView: UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch imageURLs.count {
+        switch media.count {
         case 1:
             return collectionView.frame.size
         case 1...:

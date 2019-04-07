@@ -19,7 +19,6 @@ PODS:
     - DTFoundation/Core
   - DTFoundation/UIKit (1.7.13):
     - DTFoundation/Core
-  - FLAnimatedImage (1.0.12)
   - ImageViewer (5.0.0)
   - Kanna (4.0.3)
   - KeychainAccess (3.1.2)
@@ -33,10 +32,6 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.8.3):
     - PromiseKit/CorePromise
-  - SDWebImage/Core (4.4.6)
-  - SDWebImage/GIF (4.4.6):
-    - FLAnimatedImage (~> 1.0)
-    - SDWebImage/Core
   - SwiftGen (6.1.0)
   - SwiftLint (0.31.0)
   - wpxmlrpc (0.8.4)
@@ -51,7 +46,6 @@ DEPENDENCIES:
   - KeychainAccess
   - Kingfisher
   - PromiseKit (~> 6.8)
-  - SDWebImage/GIF
   - SwiftGen
   - SwiftLint
   - wpxmlrpc
@@ -63,12 +57,10 @@ SPEC REPOS:
     - DropdownTitleView
     - DTCoreText
     - DTFoundation
-    - FLAnimatedImage
     - Kanna
     - KeychainAccess
     - Kingfisher
     - PromiseKit
-    - SDWebImage
     - SwiftGen
     - SwiftLint
     - wpxmlrpc
@@ -89,17 +81,15 @@ SPEC CHECKSUMS:
   DropdownTitleView: e02e559243efb248dd0e8a50665b0acc5f6f2413
   DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
   DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
-  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
   Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
   PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
-  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   wpxmlrpc: 6ba55c773cfa27083ae4a2173e69b19f46da98e2
 
-PODFILE CHECKSUM: 9ad8906e151644fdda239c3e08150f9c7fe78571
+PODFILE CHECKSUM: 394ae3658c9ff2a2b8b05eedcb66e0b602a2dd12
 
 COCOAPODS: 1.7.0.beta.3

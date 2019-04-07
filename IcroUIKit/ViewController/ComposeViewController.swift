@@ -5,7 +5,7 @@
 
 import UIKit
 import IcroKit
-import SDWebImage
+import Kingfisher
 
 public final class ComposeViewController: UIViewController, LoadingViewController {
     public var didClose: () -> Void = { }
@@ -246,7 +246,7 @@ extension ComposeViewController: UICollectionViewDelegate, UICollectionViewDataS
         }
 
         let image = viewModel.image(at: indexPath.row)
-        cell.imageView.sd_setImage(with: image.link)
+        cell.imageView.kf.setImage(with: image.link)
 
         return cell
     }

@@ -5,7 +5,7 @@
 
 import Foundation
 import ImageViewer
-import SDWebImage
+import Kingfisher
 import IcroKit
 
 extension GalleryDataSource: GalleryItemsDataSource {
@@ -17,8 +17,10 @@ extension GalleryDataSource: GalleryItemsDataSource {
         let imageURL = imageURLs[index]
 
         return GalleryItem.image { completion in
-            SDWebImageDownloader().downloadImage(with: imageURL, options: [], progress: nil, completed: { (image, _, _, _) in
-                completion(image)
+            KingfisherManager.shared.downloader.downloadImage(with: imageURL, completionHandler: { result in
+                if case .success(let imageResult) = result {
+                    completion(imageResult.image)
+                }
             })
         }
     }

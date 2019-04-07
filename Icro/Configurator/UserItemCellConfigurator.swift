@@ -4,13 +4,13 @@
 //
 
 import Foundation
-import SDWebImage
+import Kingfisher
 import IcroKit
 
 final class UserItemCellConfigurator {
     func configure(cell: UserItemTableViewCell, for user: Author) {
         cell.usernameLabel.text = user.name
         cell.atUsernameLabel.text = "@" + (user.username ?? "")
-        cell.avatarImageView.sd_setImage(with: user.avatar)
+        cell.avatarImageView.kf.setImage(with: user.avatar)
     }
 }

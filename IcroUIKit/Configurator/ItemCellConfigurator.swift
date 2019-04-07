@@ -4,7 +4,7 @@
 //
 
 import Foundation
-import SDWebImage
+import Kingfisher
 import IcroKit
 
 public final class ItemCellConfigurator: NSObject {
@@ -16,7 +16,7 @@ public final class ItemCellConfigurator: NSObject {
 
     public func configure(_ cell: ItemTableViewCell, forDisplaying item: Item) {
         cell.itemID = item.id
-        cell.avatarImageView.sd_setImage(with: item.author.avatar)
+        cell.avatarImageView.kf.setImage(with: item.author.avatar)
         cell.usernameLabel.text = item.author.name
         cell.isFavorite = item.isFavorite
         let attributedString = item.content
@@ -25,16 +25,16 @@ public final class ItemCellConfigurator: NSObject {
             self?.itemNavigator.open(url: link)
         }
 
-        cell.imageURLs = item.images
+        cell.media = item.media
         cell.didTapAvatar = { [weak self] in
             self?.itemNavigator.open(author: item.author)
         }
         cell.faveView.isHidden = true
         cell.timeLabel.text = item.relativeDateString
         cell.atUsernameLabel.text = "@" + (item.author.username ?? "")
-        cell.didTapImages = { [weak self] images, index in
-            let dataSource = GalleryDataSource(index: index, imageURLs: images)
-            self?.itemNavigator.openImages(datasource: dataSource)
+
+        cell.didTapMedia = { [weak self] media in
+            self?.itemNavigator.openMedia(media: media)
         }
 
         cell.didSelectAccessibilityLink = { [weak self] in

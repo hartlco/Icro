@@ -8,6 +8,7 @@ import SafariServices
 import IcroKit
 import IcroUIKit
 import ImageViewer
+import AVKit
 
 final class ItemNavigator: ItemNavigatorProtocol {
     private let navigationController: UINavigationController
@@ -55,11 +56,21 @@ final class ItemNavigator: ItemNavigatorProtocol {
         navigationController.pushViewController(viewController, animated: true)
     }
 
-    func openImages(datasource: GalleryDataSource) {
-        let gallery = GalleryViewController(startIndex: datasource.index,
-                                            itemsDataSource: datasource,
-                                            configuration: [GalleryConfigurationItem.deleteButtonMode(.none)])
-        navigationController.presentImageGallery(gallery)
+    func openMedia(media: Media) {
+        if media.isVideo {
+            let player = AVPlayer(url: media.url)
+            let playerViewController = AVPlayerViewController()
+            playerViewController.player = player
+            navigationController.present(playerViewController, animated: true) {
+                player.play()
+            }
+        } else {
+            let dataSource = GalleryDataSource(index: 0, imageURLs: [media.url])
+            let gallery = GalleryViewController(startIndex: 0,
+                                                itemsDataSource: dataSource,
+                                                configuration: [GalleryConfigurationItem.deleteButtonMode(.none)])
+            navigationController.presentImageGallery(gallery)
+        }
     }
 
     func openReply(item: Item) {
