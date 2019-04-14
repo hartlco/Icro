@@ -20,17 +20,17 @@ PODS:
   - DTFoundation/UIKit (1.7.13):
     - DTFoundation/Core
   - ImageViewer (5.0.0)
-  - Kanna (4.0.3)
-  - KeychainAccess (3.1.2)
+  - Kanna (5.0.0)
+  - KeychainAccess (3.2.0)
   - Kingfisher (5.3.1)
-  - PromiseKit (6.8.3):
-    - PromiseKit/CorePromise (= 6.8.3)
-    - PromiseKit/Foundation (= 6.8.3)
-    - PromiseKit/UIKit (= 6.8.3)
-  - PromiseKit/CorePromise (6.8.3)
-  - PromiseKit/Foundation (6.8.3):
+  - PromiseKit (6.8.4):
+    - PromiseKit/CorePromise (= 6.8.4)
+    - PromiseKit/Foundation (= 6.8.4)
+    - PromiseKit/UIKit (= 6.8.4)
+  - PromiseKit/CorePromise (6.8.4)
+  - PromiseKit/Foundation (6.8.4):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.8.3):
+  - PromiseKit/UIKit (6.8.4):
     - PromiseKit/CorePromise
   - SwiftGen (6.1.0)
   - SwiftLint (0.31.0)
@@ -82,10 +82,10 @@ SPEC CHECKSUMS:
   DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
   DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
-  Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
-  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
+  Kanna: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
+  KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
   Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
-  PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
+  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   wpxmlrpc: 6ba55c773cfa27083ae4a2173e69b19f46da98e2
