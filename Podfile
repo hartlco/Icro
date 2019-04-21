@@ -5,13 +5,16 @@ target 'Icro' do
     pod 'ImageViewer', :git => 'https://github.com/MailOnline/ImageViewer.git', :commit => 'a4de06a08a78c4b0a65a48aa891f755b64ff03a8'
     pod 'DTCoreText'
     pod 'AcknowList'
-	pod 'SwiftLint'
+    pod 'SwiftLint'
     pod 'DropdownTitleView'
     pod 'SwiftGen'
     pod 'Kingfisher'
 	
 	target 'IcroTests' do
 	end
+end
+
+target 'IcroScreenshotsTests' do
 end
 
 target 'Icro-Share' do

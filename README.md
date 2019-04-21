@@ -18,6 +18,11 @@ A structure with issues, planned features will be added using the GitHub tools.
 Open `Icro.xcworkspace` in Xcode 9 and compile it. All required dependencies are checked in and can be found in the `Podfile`.
 In order to fix signing, please change the development team during development.
 
+## Generating Screenshots
+
+To generate screenshots, go to `IcroScreenshotsTests` and modify `accessToken` constant with a valid Micro.blog access token.
+Afterwards run `fastlane snapshot`.
+
 ## Contributing
 
 Feel free to contribute to this project at any time with any improvement. In the coming days I plan to generate some issue I want to tackle for upcoming versions of Icro, some would be perfect starter tasks.

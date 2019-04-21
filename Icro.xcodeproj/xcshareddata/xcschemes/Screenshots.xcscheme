@@ -9,14 +9,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5FA2ABF1EB4482C006DEB40"
-               BuildableName = "Icro.app"
-               BlueprintName = "Icro"
+               BlueprintIdentifier = "5BB3E46C226C514C00C1B6BB"
+               BuildableName = "IcroScreenshotsTests.xctest"
+               BlueprintName = "IcroScreenshotsTests"
                ReferencedContainer = "container:Icro.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5B5837342128B04A0076121E"
-               BuildableName = "IcroTests.xctest"
-               BlueprintName = "IcroTests"
-               ReferencedContainer = "container:Icro.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
@@ -90,16 +80,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C5FA2ABF1EB4482C006DEB40"
-            BuildableName = "Icro.app"
-            BlueprintName = "Icro"
+            BlueprintIdentifier = "5BB3E46C226C514C00C1B6BB"
+            BuildableName = "IcroScreenshotsTests.xctest"
+            BlueprintName = "IcroScreenshotsTests"
             ReferencedContainer = "container:Icro.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
