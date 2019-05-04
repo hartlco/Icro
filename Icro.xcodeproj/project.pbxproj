@@ -127,6 +127,9 @@
 		5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
 		5B5837762128B5F80076121E /* BlacklistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71620979CF20003B35D /* BlacklistViewModel.swift */; };
 		5B5837772128B5F80076121E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */; };
+		5B66EE6A227D6C8300317FE3 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE69227D6C8300317FE3 /* Client.swift */; };
+		5B66EE6C227D700A00317FE3 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE6B227D700A00317FE3 /* HttpMethod.swift */; };
+		5B66EE6E227D734800317FE3 /* MediaEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE6D227D734800317FE3 /* MediaEndpoint.swift */; };
 		5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
 		5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B6A565E21735A69003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
@@ -377,6 +380,9 @@
 		5B60CF462070DF8000C51258 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		5B66EE69227D6C8300317FE3 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		5B66EE6B227D700A00317FE3 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		5B66EE6D227D734800317FE3 /* MediaEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEndpoint.swift; sourceTree = "<group>"; };
 		5B689BAB20837ECE005B9874 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TabBarViewController.xib; path = ViewController/TabBarViewController.xib; sourceTree = "<group>"; };
 		5B6A565C21735A4F003C4D92 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
@@ -820,6 +826,9 @@
 				C5FA2AF51EB449BC006DEB40 /* Resource.swift */,
 				5B869B07214E4633000A051C /* MicropubEndpoint.swift */,
 				5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */,
+				5B66EE69227D6C8300317FE3 /* Client.swift */,
+				5B66EE6B227D700A00317FE3 /* HttpMethod.swift */,
+				5B66EE6D227D734800317FE3 /* MediaEndpoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1815,7 +1824,9 @@
 			files = (
 				5BF663852189673100ABA671 /* DiscoveryCategoryManager.swift in Sources */,
 				5BC347BD213294A900DEB45D /* Resource.swift in Sources */,
+				5B66EE6C227D700A00317FE3 /* HttpMethod.swift in Sources */,
 				5B81E79A2206C62E008BEA16 /* Error.swift in Sources */,
+				5B66EE6A227D6C8300317FE3 /* Client.swift in Sources */,
 				5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */,
 				5BC347C5213295C000DEB45D /* Date+Ago.swift in Sources */,
 				5B3B4C3621D0CBE300F511A6 /* assets-images.swift in Sources */,
@@ -1827,6 +1838,7 @@
 				5BC347C72132960900DEB45D /* LoginInformation.swift in Sources */,
 				5BF6637F218961AB00ABA671 /* DiscoveryCategory.swift in Sources */,
 				5BD9691121C8D61800313795 /* GalleryDataSource.swift in Sources */,
+				5B66EE6E227D734800317FE3 /* MediaEndpoint.swift in Sources */,
 				5BD2FE5F2259D15100591490 /* Media.swift in Sources */,
 				5BF663812189628300ABA671 /* DiscoveryCategoryResource.swift in Sources */,
 				5B4DF0F121AA8818008CEB58 /* ListViewModelListType.swift in Sources */,

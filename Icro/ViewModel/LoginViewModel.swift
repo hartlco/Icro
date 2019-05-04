@@ -30,9 +30,12 @@ final class LoginViewModel {
     }
 
     private let userSettings: UserSettings
+    private let client: Client
 
-    init(userSettings: UserSettings = .shared) {
+    init(userSettings: UserSettings = .shared,
+         client: Client = URLSession.shared) {
         self.userSettings = userSettings
+        self.client = client
     }
 
     func login() {
@@ -57,7 +60,7 @@ final class LoginViewModel {
             return
         }
 
-        Webservice().load(resource: emailRequestResource) { _ in
+        client.load(resource: emailRequestResource) { _ in
             self.isLoading = false
             self.didRequest = true
             self.didFinishLoading()
@@ -78,7 +81,7 @@ final class LoginViewModel {
             return
         }
 
-        Webservice().load(resource: loginRequestResource) { info in
+        client.load(resource: loginRequestResource) { info in
             self.isLoading = false
             self.didRequest = true
             self.didFinishLoading()
@@ -116,7 +119,7 @@ final class LoginViewModel {
         guard let url = URL(string: baseURLString) else {
             return nil
         }
-        return Resource<Empty>(url: url, httpMethod: "POST", parseJSON: { _ in
+        return Resource<Empty>(url: url, httpMethod: .post(nil), parseJSON: { _ in
             return Empty()
         })
     }
@@ -126,7 +129,7 @@ final class LoginViewModel {
         guard let url = URL(string: baseURLString) else {
             return nil
         }
-        return Resource<LoginInformation>(url: url, httpMethod: "POST", parseJSON: { json in
+        return Resource<LoginInformation>(url: url, httpMethod: .post(nil), parseJSON: { json in
             guard let json = json as? JSONDictionary else { return nil }
             return LoginInformation(json: json)
         })

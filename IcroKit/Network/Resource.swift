@@ -23,9 +23,13 @@ let followingURLString = "http://micro.blog/users/following/"
 
 public let microblogMedia = "?q=config"
 
+public enum HttpAuthoriztation {
+    case bearer(token: String)
+    case plain(token: String)
+}
+
 public struct Resource<A> {
-    let url: URL
-    let httpMethod: String
+    var urlRequest: URLRequest
     let parse: (Data) -> Result<A>
 }
 
@@ -39,20 +43,20 @@ public enum NetworkingError: Error {
 
 public enum Result<A> {
     case error(error: Error)
-    case result(value: A)
+    case success(value: A)
 
     public var value: A? {
         switch self {
         case .error:
             return nil
-        case .result(let value):
+        case .success(let value):
             return value
         }
     }
 
     public init(value: A?, error: Error) {
         if let value = value {
-            self = .result(value: value)
+            self = .success(value: value)
         } else {
             self = .error(error: error)
         }
@@ -60,14 +64,32 @@ public enum Result<A> {
 }
 
 public extension Resource {
-    init(url: URL, httpMethod: String = "GET", parseJSON: @escaping (Any) -> A?) {
-        self.url = url
+    init(url: URL, httpMethod: HttpMethod = .get,
+         authorization: HttpAuthoriztation? = .plain(token: UserSettings.shared.token),
+         parseJSON: @escaping (Any) -> A?) {
+        self.urlRequest = URLRequest(url: url)
+        self.urlRequest.httpMethod = httpMethod.method
+
+        switch authorization {
+        case .some(.bearer(let token)):
+            self.urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        case .some(.plain(let token)):
+            self.urlRequest.addValue(token, forHTTPHeaderField: "Authorization")
+        case .none:
+            break
+        }
+
+        switch httpMethod {
+        case .get, .delete: ()
+        case .post(let body):
+            self.urlRequest.httpBody = body
+        }
+
         self.parse = { data in
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
 
             return Result(value: json.flatMap(parseJSON), error: NetworkingError.cannotParse)
         }
-        self.httpMethod = httpMethod
     }
 }
 
@@ -111,8 +133,12 @@ public extension Item {
     static let mentions = resource(for: mentionsURL)
 
     static func resourceBefore(oldResource: Resource<ItemResponse>, item: Item) -> Resource<ItemResponse> {
-        let url = urlWithBeforeParameter(url: oldResource.url, item: item)
-        return resource(for: url)
+        guard let url = oldResource.urlRequest.url else {
+            return oldResource
+        }
+
+        let newURL = urlWithBeforeParameter(url: url, item: item)
+        return resource(for: newURL)
 
     }
 
@@ -187,7 +213,7 @@ public extension Item {
     }
 
     func toggleFave() -> Resource<Empty> {
-        let httpMethod = isFavorite ? "DELETE" : "POST"
+        let httpMethod: HttpMethod = isFavorite ? .delete : .post(nil)
 
         let baseUrl = isFavorite ? unfaveURLString : faveURLString
         let urlString = baseUrl + id
@@ -198,7 +224,7 @@ public extension Item {
     func reply(with text: String) -> Resource<Empty> {
         let encodedText = text.stringByAddingPercentEncodingForFormData() ?? ""
         let url = URL(string: replyURLString + "?id=\(id)&text=\(encodedText)")!
-        return Resource<Empty>(url: url, httpMethod: "POST", parseJSON: { _ in return Empty() })
+        return Resource<Empty>(url: url, httpMethod: .post(nil), parseJSON: { _ in return Empty() })
     }
 
     var conversation: Resource<ItemResponse> {
@@ -213,7 +239,10 @@ public extension Item {
 
         let urlString = "https://" + UserSettings.shared.defaultSite + "/micropub?h=entry&content=\(content)"
         let url = URL(string: urlString)!
-        return Resource<Empty>(url: url, httpMethod: "POST", parseJSON: { _ in
+        return Resource<Empty>(url: url,
+                               httpMethod: .post(nil),
+                               authorization: .bearer(token: UserSettings.shared.token),
+            parseJSON: { _ in
             return Empty()
         })
     }
@@ -225,7 +254,7 @@ public extension Author {
             fatalError()
         }
         let url = URL(string: followURLString + username)!
-        return Resource<Empty>(url: url, httpMethod: "POST", parseJSON: { _ in
+        return Resource<Empty>(url: url, httpMethod: .post(nil), parseJSON: { _ in
             return Empty()
         })
     }
@@ -235,7 +264,7 @@ public extension Author {
             fatalError()
         }
         let url = URL(string: unfollowURLString + username)!
-        return Resource<Empty>(url: url, httpMethod: "POST", parseJSON: { _ in
+        return Resource<Empty>(url: url, httpMethod: .post(nil), parseJSON: { _ in
             return Empty()
         })
     }
@@ -245,25 +274,13 @@ public extension Author {
             fatalError()
         }
         let url = URL(string: followingURLString + username)!
-        return Resource<[Author]>(url: url, httpMethod: "GET", parseJSON: { json in
+        return Resource<[Author]>(url: url, httpMethod: .get, parseJSON: { json in
             guard let jsonItems = json as? [JSONDictionary] else {
                     return nil
             }
 
             return jsonItems.compactMap(Author.init(dictionary:))
         })
-    }
-}
-
-public struct MediaEndpoint: Codable {
-    public let mediaEndpoint: URL
-}
-
-extension MediaEndpoint {
-    init?(dictionary: JSONDictionary) {
-        guard let endpointString = dictionary["media-endpoint"] as? String,
-            let url = URL(string: endpointString) else { return nil }
-        self.mediaEndpoint = url
     }
 }
 
@@ -275,41 +292,15 @@ public extension MediaEndpoint {
             fatalError()
         }
 
-        return Resource<MediaEndpoint>(url: url, parseJSON: { json in
+        return Resource<MediaEndpoint>(url: url,
+                                       authorization: .bearer(token: UserSettings.shared.token),
+                                       parseJSON: { json in
             guard let json = json as? JSONDictionary else {
                 return nil
             }
 
             return MediaEndpoint(dictionary: json)
         })
-    }
-}
-
-public final class Webservice {
-    public init() { }
-
-    public func load<A: Codable>(resource: Resource<A>, bearer: Bool = false, completion: @escaping (Result<A>) -> Void) {
-        var request = URLRequest(url: resource.url)
-        request.httpMethod = resource.httpMethod
-        if bearer {
-            request.addValue("Bearer \(UserSettings.shared.token)", forHTTPHeaderField: "Authorization")
-        } else {
-            request.addValue(UserSettings.shared.token, forHTTPHeaderField: "Authorization")
-        }
-
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
-            guard let data = data else {
-                DispatchQueue.main.async {
-                    completion(.error(error: NetworkingError.cannotParse))
-                }
-                return
-            }
-
-            let finalData = resource.parse(data)
-            DispatchQueue.main.async {
-                completion(finalData)
-            }
-        }.resume()
     }
 }
 
