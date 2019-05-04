@@ -39,16 +39,6 @@
                ReferencedContainer = "container:Icro.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5BB3E46C226C514C00C1B6BB"
-               BuildableName = "IcroScreenshotsTests.xctest"
-               BlueprintName = "IcroScreenshotsTests"
-               ReferencedContainer = "container:Icro.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
