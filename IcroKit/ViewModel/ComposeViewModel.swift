@@ -180,11 +180,11 @@ public final class ComposeViewModel {
         request.httpMethod = "POST"
         let encoder = WPXMLRPCEncoder(method: "wp.newPost", andParameters: params)
         request.httpBody = try? encoder.dataEncoded()
-        client.dataTask(with: request) { (_, _, error) in
+        client.loadData(with: request) { (_, _, error) in
             DispatchQueue.main.async {
                 completion(error)
             }
-        }.resume()
+        }
     }
 
     public func postHostedBlog(string: String, completion: @escaping () -> Void) {

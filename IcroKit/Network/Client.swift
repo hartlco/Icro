@@ -7,11 +7,15 @@ import Foundation
 
 public protocol Client {
     func load<A: Codable>(resource: Resource<A>, completion: @escaping (Result<A>) -> Void)
-    func dataTask(with request: URLRequest,
-                  completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+    func loadData(with request: URLRequest,
+                  completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
 }
 
 extension URLSession: Client {
+    public func loadData(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        dataTask(with: request, completionHandler: completionHandler).resume()
+    }
+
     public func load<A: Codable>(resource: Resource<A>, completion: @escaping (Result<A>) -> Void) {
         dataTask(with: resource.urlRequest) { (data, _, error) in
             guard let data = data else {

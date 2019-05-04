@@ -130,6 +130,9 @@
 		5B66EE6A227D6C8300317FE3 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE69227D6C8300317FE3 /* Client.swift */; };
 		5B66EE6C227D700A00317FE3 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE6B227D700A00317FE3 /* HttpMethod.swift */; };
 		5B66EE6E227D734800317FE3 /* MediaEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE6D227D734800317FE3 /* MediaEndpoint.swift */; };
+		5B66EE71227D73E400317FE3 /* HTTPMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE70227D73E400317FE3 /* HTTPMethodTests.swift */; };
+		5B66EE74227D74DF00317FE3 /* MockClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE73227D74DF00317FE3 /* MockClient.swift */; };
+		5B66EE76227D780300317FE3 /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE75227D780300317FE3 /* UserListViewModelTests.swift */; };
 		5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
 		5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B6A565E21735A69003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
@@ -383,6 +386,9 @@
 		5B66EE69227D6C8300317FE3 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		5B66EE6B227D700A00317FE3 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		5B66EE6D227D734800317FE3 /* MediaEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEndpoint.swift; sourceTree = "<group>"; };
+		5B66EE70227D73E400317FE3 /* HTTPMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodTests.swift; sourceTree = "<group>"; };
+		5B66EE73227D74DF00317FE3 /* MockClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockClient.swift; sourceTree = "<group>"; };
+		5B66EE75227D780300317FE3 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
 		5B689BAB20837ECE005B9874 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TabBarViewController.xib; path = ViewController/TabBarViewController.xib; sourceTree = "<group>"; };
 		5B6A565C21735A4F003C4D92 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
@@ -734,11 +740,30 @@
 		5B5837362128B04A0076121E /* IcroTests */ = {
 			isa = PBXGroup;
 			children = (
+				5B66EE72227D74CC00317FE3 /* Mocks */,
+				5B66EE6F227D73C600317FE3 /* Network */,
 				5B58373F2128B0680076121E /* HTMLContentTests.swift */,
 				5B5837392128B04A0076121E /* Info.plist */,
 				5BB73F0B212C9E0B00120FAB /* ListViewModelTests.swift */,
+				5B66EE75227D780300317FE3 /* UserListViewModelTests.swift */,
 			);
 			path = IcroTests;
+			sourceTree = "<group>";
+		};
+		5B66EE6F227D73C600317FE3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5B66EE70227D73E400317FE3 /* HTTPMethodTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5B66EE72227D74CC00317FE3 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5B66EE73227D74DF00317FE3 /* MockClient.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		5B8754F4206FE95200018DFA /* Configurator */ = {
@@ -1769,8 +1794,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B66EE71227D73E400317FE3 /* HTTPMethodTests.swift in Sources */,
 				5B58374F2128B5F80076121E /* TabBarViewController.swift in Sources */,
 				5B38476A21FE077A00F082AD /* UIView+Contraints.swift in Sources */,
+				5B66EE74227D74DF00317FE3 /* MockClient.swift in Sources */,
 				5B5837542128B5F80076121E /* UserListViewController.xib in Sources */,
 				5B5837552128B5F80076121E /* TabBarViewController.xib in Sources */,
 				5B5837562128B5F80076121E /* LoginViewController.swift in Sources */,
@@ -1792,6 +1819,7 @@
 				5B3C79C821C51BDA00F699B8 /* ItemNavigator.swift in Sources */,
 				5B5837632128B5F80076121E /* UserItemCellConfigurator.swift in Sources */,
 				5BD9691021C8D55400313795 /* ComposeNavigator.swift in Sources */,
+				5B66EE76227D780300317FE3 /* UserListViewModelTests.swift in Sources */,
 				5B5837662128B5F80076121E /* Icro-Bridging-Header.h in Sources */,
 				5B58376C2128B5F80076121E /* ProfileTableViewCell.swift in Sources */,
 				5B58376D2128B5F80076121E /* ProfileTableViewCell.xib in Sources */,
