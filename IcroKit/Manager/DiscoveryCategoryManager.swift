@@ -11,6 +11,12 @@ public final class DiscoveryCategoryManager {
 
     private static let cacheKey = "DiscoveryCategoryManager.list"
 
+    private let client: Client
+
+    init(client: Client = URLSession.shared) {
+        self.client = client
+    }
+
     public func update() {
         if let cachedCategories = CacheStorage.retrieve(DiscoveryCategoryManager.cacheKey,
                                                         from: .caches,
@@ -18,7 +24,7 @@ public final class DiscoveryCategoryManager {
             categories = cachedCategories
         }
 
-        Webservice().load(resource: DiscoveryCategory.all()) { [weak self] result in
+        client.load(resource: DiscoveryCategory.all()) { [weak self] result in
             guard let categories = result.value else { return }
             self?.categories = categories
             let response = DiscoveryResponse(categories: categories)

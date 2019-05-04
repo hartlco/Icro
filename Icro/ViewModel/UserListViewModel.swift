@@ -13,18 +13,21 @@ final class UserListViewModel {
 
     private var users = [Author]()
     private let resource: Resource<[Author]>
+    private let client: Client
 
-    init(resource: Resource<[Author]>) {
+    init(resource: Resource<[Author]>,
+         client: Client = URLSession.shared) {
         self.resource = resource
+        self.client = client
     }
 
     func load() {
         didStartLoading()
-        Webservice().load(resource: resource) { [weak self] users in
+        client.load(resource: resource) { [weak self] users in
             switch users {
             case .error(let error):
                 self?.didFinishWithError(error)
-            case .result(let value):
+            case .success(let value):
                 self?.users = value
                 self?.didFinishLoading()
             }

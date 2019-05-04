@@ -6,8 +6,14 @@
 import Foundation
 import Alamofire
 
-class MicropubRequestController {
+final class MicropubRequestController {
     private var currentlyRunningTask: Request?
+
+    private let client: Client
+
+    init(client: Client = URLSession.shared) {
+        self.client = client
+    }
 
     func post(endpoint: MicropubEndpoint, message: String, completion: @escaping (Error?) -> Void) {
         let sessionConfig = URLSessionConfiguration.default
@@ -59,7 +65,7 @@ class MicropubRequestController {
             "Authorization": "Bearer \(UserSettings.shared.token)"
         ]
 
-        Webservice().load(resource: MediaEndpoint.get(endpoint: endpoint), bearer: true) { endpoint in
+        client.load(resource: MediaEndpoint.get(endpoint: endpoint)) { endpoint in
             let endpointValue = endpoint.value?.mediaEndpoint
 
             guard let url = endpointValue else { return }

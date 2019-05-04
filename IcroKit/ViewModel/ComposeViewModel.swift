@@ -34,6 +34,7 @@ public final class ComposeViewModel {
     private var images = [Image]()
     private let imageUploadService = MicropubRequestController()
     private let userSettings: UserSettings
+    private let client: Client
 
     private(set) public var imageState = ImageState.idle {
         didSet {
@@ -46,9 +47,11 @@ public final class ComposeViewModel {
     public var didUpdateImages: (() -> Void)?
 
     public init(mode: Mode,
-                userSettings: UserSettings = .shared) {
+                userSettings: UserSettings = .shared,
+                client: Client = URLSession.shared) {
         self.mode = mode
         self.userSettings = userSettings
+        self.client = client
     }
 
     public var canUploadImage: Bool {
@@ -177,7 +180,7 @@ public final class ComposeViewModel {
         request.httpMethod = "POST"
         let encoder = WPXMLRPCEncoder(method: "wp.newPost", andParameters: params)
         request.httpBody = try? encoder.dataEncoded()
-        URLSession.shared.dataTask(with: request) { (_, _, error) in
+        client.dataTask(with: request) { (_, _, error) in
             DispatchQueue.main.async {
                 completion(error)
             }
@@ -185,17 +188,17 @@ public final class ComposeViewModel {
     }
 
     public func postHostedBlog(string: String, completion: @escaping () -> Void) {
-        Webservice().load(resource: Item.post(text: string), bearer: true) { _ in
+        client.load(resource: Item.post(text: string)) { _ in
             completion()
         }
     }
 
     public func reply(item: Item, string: String, completion: @escaping (Error?) -> Void) {
-        Webservice().load(resource: item.reply(with: string)) { response in
+        client.load(resource: item.reply(with: string)) { response in
             switch response {
             case .error(let error):
                 completion(error)
-            case .result:
+            case .success:
                 completion(nil)
             }
         }

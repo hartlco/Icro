@@ -35,6 +35,7 @@ public class ListViewModel: NSObject {
     private let type: ListType
     private let userSettings: UserSettings
     private let discoveryMananger: DiscoveryCategoryManager
+    private let client: Client
 
     private var unreadItems = Set<Int>()
     private var blacklistChangedObserver: Any?
@@ -62,10 +63,12 @@ public class ListViewModel: NSObject {
 
     public init(type: ListType,
                 userSettings: UserSettings = .shared,
-                discoveryMananger: DiscoveryCategoryManager = .shared) {
+                discoveryMananger: DiscoveryCategoryManager = .shared,
+                client: Client = URLSession.shared) {
         self.type = type
         self.userSettings = userSettings
         self.discoveryMananger = discoveryMananger
+        self.client = client
         super.init()
 
         blacklistChangedObserver = NotificationCenter.default.addObserver(forName: .blackListChanged,
@@ -96,14 +99,14 @@ public class ListViewModel: NSObject {
         didStartLoading()
         isLoading = true
         applyCache()
-        Webservice().load(resource: type.resource) { [weak self] itemResponse in
+        client.load(resource: type.resource) { [weak self] itemResponse in
             guard let self = self else { return }
 
             self.isLoading = false
             switch itemResponse {
             case .error(let error):
                 self.didFinishWithError(error)
-            case .result(let value):
+            case .success(let value):
                 self.updateShowLoadMoreInBetweenAfterLoadMore(loadedNewItems: value.items)
                 self.loadedAuthor = value.author ?? self.loadedAuthor
                 self.insertNewItems(newItems: value.items)
@@ -127,14 +130,14 @@ public class ListViewModel: NSObject {
 
         didStartLoading()
         isLoading = true
-        Webservice().load(resource: Item.resourceBefore(oldResource: type.resource, item: lastItem)) { [weak self] itemResponse in
+        client.load(resource: Item.resourceBefore(oldResource: type.resource, item: lastItem)) { [weak self] itemResponse in
             guard let self = self else { return }
             self.isLoading = false
 
             switch itemResponse {
             case .error(let error):
                 self.didFinishWithError(error)
-            case .result(let value):
+            case .success(let value):
                 if isLoadMoreInTheEnd {
                     self.updateShowLoadMore(loadedNewItems: value.items)
                 } else {
@@ -195,7 +198,7 @@ public class ListViewModel: NSObject {
 
     public func toggleFave(for item: Item) {
         didStartLoading()
-        Webservice().load(resource: item.toggleFave()) { [weak self] _ in
+        client.load(resource: item.toggleFave()) { [weak self] _ in
             self?.saveCache()
             self?.didFinishLoading(false)
         }
@@ -221,7 +224,7 @@ public class ListViewModel: NSObject {
         let resource = following ? author.unfollowResource() : author.followResource()
 
         didStartLoading()
-        Webservice().load(resource: resource) { [weak self] _ in
+        client.load(resource: resource) { [weak self] _ in
             let newAuthor = Author(name: author.name,
                                    url: author.url,
                                    avatar: author.avatar,
