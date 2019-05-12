@@ -199,6 +199,10 @@
 		5BED6D02207E8147002FB9FF /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D00207E8147002FB9FF /* UserListViewController.xib */; };
 		5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */; };
 		5BED6D06207E81CC002FB9FF /* UserItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */; };
+		5BF2DA992287E8860055240D /* SettingsSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DA982287E8860055240D /* SettingsSectionHeaderView.swift */; };
+		5BF2DA9B2287E91A0055240D /* SettingsButtonWithLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DA9A2287E91A0055240D /* SettingsButtonWithLabelView.swift */; };
+		5BF2DA9D2287E97B0055240D /* SettingsInlineSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DA9C2287E97B0055240D /* SettingsInlineSeparatorView.swift */; };
+		5BF2DAA22287F4DB0055240D /* NavigatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA12287F4DB0055240D /* NavigatorComponent.swift */; };
 		5BF6637F218961AB00ABA671 /* DiscoveryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */; };
 		5BF663812189628300ABA671 /* DiscoveryCategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */; };
 		5BF663822189628F00ABA671 /* DiscoveryCategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */; };
@@ -443,6 +447,10 @@
 		5BED6D00207E8147002FB9FF /* UserListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserListViewController.xib; path = ViewController/UserListViewController.xib; sourceTree = "<group>"; };
 		5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserItemTableViewCell.swift; path = View/UserItemTableViewCell.swift; sourceTree = "<group>"; };
 		5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserItemTableViewCell.xib; path = View/UserItemTableViewCell.xib; sourceTree = "<group>"; };
+		5BF2DA982287E8860055240D /* SettingsSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsSectionHeaderView.swift; path = View/Settings/SettingsSectionHeaderView.swift; sourceTree = "<group>"; };
+		5BF2DA9A2287E91A0055240D /* SettingsButtonWithLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsButtonWithLabelView.swift; path = View/Settings/SettingsButtonWithLabelView.swift; sourceTree = "<group>"; };
+		5BF2DA9C2287E97B0055240D /* SettingsInlineSeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsInlineSeparatorView.swift; path = View/Settings/SettingsInlineSeparatorView.swift; sourceTree = "<group>"; };
+		5BF2DAA12287F4DB0055240D /* NavigatorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorComponent.swift; sourceTree = "<group>"; };
 		5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategory.swift; sourceTree = "<group>"; };
 		5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryResource.swift; sourceTree = "<group>"; };
 		5BF663842189673100ABA671 /* DiscoveryCategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryManager.swift; sourceTree = "<group>"; };
@@ -882,6 +890,24 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		5BF2DA972287E85D0055240D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5BF2DA982287E8860055240D /* SettingsSectionHeaderView.swift */,
+				5BF2DA9A2287E91A0055240D /* SettingsButtonWithLabelView.swift */,
+				5BF2DA9C2287E97B0055240D /* SettingsInlineSeparatorView.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		5BF2DAA02287F4A50055240D /* AppDelegateComponents */ = {
+			isa = PBXGroup;
+			children = (
+				5BF2DAA12287F4DB0055240D /* NavigatorComponent.swift */,
+			);
+			path = AppDelegateComponents;
+			sourceTree = "<group>";
+		};
 		5BF6637D2189618600ABA671 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -935,6 +961,7 @@
 				C5FA2AF71EB44F2F006DEB40 /* ViewModel */,
 				C5FA2AF41EB4499F006DEB40 /* Netowkring */,
 				C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */,
+				5BF2DAA02287F4A50055240D /* AppDelegateComponents */,
 				C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */,
 				C5FA2ACC1EB4482C006DEB40 /* LaunchScreen.storyboard */,
 				C5FA2ACF1EB4482C006DEB40 /* Info.plist */,
@@ -966,6 +993,7 @@
 		C5FA2AFC1EB45164006DEB40 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5BF2DA972287E85D0055240D /* Settings */,
 				5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */,
 				5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */,
 				5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */,
@@ -1426,6 +1454,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Icro/Pods-Icro-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
+				"${BUILT_PRODUCTS_DIR}/AppDelegateComponent/AppDelegateComponent.framework",
 				"${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework",
 				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/DropdownTitleView/DropdownTitleView.framework",
@@ -1440,6 +1469,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AcknowList.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppDelegateComponent.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTCoreText.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropdownTitleView.framework",
@@ -1644,6 +1674,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
+				"${BUILT_PRODUCTS_DIR}/AppDelegateComponent/AppDelegateComponent.framework",
 				"${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework",
 				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/DropdownTitleView/DropdownTitleView.framework",
@@ -1653,6 +1684,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AcknowList.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppDelegateComponent.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTCoreText.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropdownTitleView.framework",
@@ -1886,11 +1918,14 @@
 			files = (
 				5B3C79C721C51BD900F699B8 /* ItemNavigator.swift in Sources */,
 				5BA6D17C2087C0B300F484B2 /* LoginViewController.swift in Sources */,
+				5BF2DAA22287F4DB0055240D /* NavigatorComponent.swift in Sources */,
+				5BF2DA9B2287E91A0055240D /* SettingsButtonWithLabelView.swift in Sources */,
 				5BD9690C21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift in Sources */,
 				5B38475D21FDFEC900F082AD /* TipJarView.swift in Sources */,
 				5B583728212861770076121E /* SettingsNavigator.swift in Sources */,
 				5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */,
 				5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */,
+				5BF2DA9D2287E97B0055240D /* SettingsInlineSeparatorView.swift in Sources */,
 				5B44C71720979CF20003B35D /* BlacklistViewModel.swift in Sources */,
 				5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */,
 				5B38476421FE048900F082AD /* TipCollectionViewCell.swift in Sources */,
@@ -1910,6 +1945,7 @@
 				5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */,
 				5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */,
 				5B3C79BA21C50A6200F699B8 /* ListViewController.swift in Sources */,
+				5BF2DA992287E8860055240D /* SettingsSectionHeaderView.swift in Sources */,
 				5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */,
 				5B38475F21FDFEFD00F082AD /* TipJarViewModel.swift in Sources */,
 				5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */,

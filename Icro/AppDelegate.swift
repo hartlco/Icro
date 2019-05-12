@@ -5,13 +5,12 @@
 
 import UIKit
 import IcroKit
+import AppDelegateComponent
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
-
-    var navigator: AppNavigator?
+class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore {
+    let storedComponents: [AppDelegateComponent] = [NavigatorComponent()]
+    private let componentRunner = AppDelegateComponentRunner()
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -19,13 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         application.setMinimumBackgroundFetchInterval(1800)
 
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.tintColor = Color.main
-
-        if let window = window {
-            navigator = AppNavigator(window: window, userSettings: UserSettings.shared)
-            navigator?.setup()
-        }
+        componentRunner.componentStore(self,
+                                       application: application,
+                                       didFinishLaunchingWithOptions: launchOptions)
 
         DiscoveryCategoryManager.shared.update()
         AppearanceManager().applyAppearance()
@@ -48,8 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        navigator?.handleDeeplink(url: url)
-        return true
+        return componentRunner.componentStore(self,
+                                              app: app, open: url)
     }
 }
 

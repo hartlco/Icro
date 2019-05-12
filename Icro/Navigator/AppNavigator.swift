@@ -32,6 +32,7 @@ final class AppNavigator {
             window.rootViewController = UINavigationController(rootViewController: loginViewController)
         }
 
+        window.tintColor = Color.main
         window.makeKeyAndVisible()
     }
 

@@ -9,6 +9,7 @@ target 'Icro' do
     pod 'DropdownTitleView'
     pod 'SwiftGen'
     pod 'Kingfisher'
+    pod 'AppDelegateComponent'
 	
 	target 'IcroTests' do
 	end
