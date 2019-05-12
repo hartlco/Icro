@@ -204,6 +204,7 @@
 		5BF2DA9D2287E97B0055240D /* SettingsInlineSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DA9C2287E97B0055240D /* SettingsInlineSeparatorView.swift */; };
 		5BF2DAA22287F4DB0055240D /* NavigatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA12287F4DB0055240D /* NavigatorComponent.swift */; };
 		5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
+		5BF2DAA6228802000055240D /* UserDefaultsMigrationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */; };
 		5BF6637F218961AB00ABA671 /* DiscoveryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */; };
 		5BF663812189628300ABA671 /* DiscoveryCategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */; };
 		5BF663822189628F00ABA671 /* DiscoveryCategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */; };
@@ -453,6 +454,7 @@
 		5BF2DA9C2287E97B0055240D /* SettingsInlineSeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsInlineSeparatorView.swift; path = View/Settings/SettingsInlineSeparatorView.swift; sourceTree = "<group>"; };
 		5BF2DAA12287F4DB0055240D /* NavigatorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorComponent.swift; sourceTree = "<group>"; };
 		5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryComponent.swift; sourceTree = "<group>"; };
+		5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMigrationComponent.swift; sourceTree = "<group>"; };
 		5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategory.swift; sourceTree = "<group>"; };
 		5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryResource.swift; sourceTree = "<group>"; };
 		5BF663842189673100ABA671 /* DiscoveryCategoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryStore.swift; sourceTree = "<group>"; };
@@ -907,6 +909,7 @@
 			children = (
 				5BF2DAA12287F4DB0055240D /* NavigatorComponent.swift */,
 				5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */,
+				5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */,
 			);
 			path = AppDelegateComponents;
 			sourceTree = "<group>";
@@ -1950,6 +1953,7 @@
 				5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */,
 				5B3C79BA21C50A6200F699B8 /* ListViewController.swift in Sources */,
 				5BF2DA992287E8860055240D /* SettingsSectionHeaderView.swift in Sources */,
+				5BF2DAA6228802000055240D /* UserDefaultsMigrationComponent.swift in Sources */,
 				5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */,
 				5B38475F21FDFEFD00F082AD /* TipJarViewModel.swift in Sources */,
 				5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */,

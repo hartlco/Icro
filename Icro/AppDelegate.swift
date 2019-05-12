@@ -10,13 +10,12 @@ import AppDelegateComponent
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore {
     let storedComponents: [AppDelegateComponent] = [NavigatorComponent(),
-                                                    DiscoveryCategoryComponent()]
+                                                    DiscoveryCategoryComponent(),
+                                                    UserDefaultsMigrationComponent()]
     private let componentRunner = AppDelegateComponentRunner()
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        migrateUserDefaultsToAppGroups()
-
         application.setMinimumBackgroundFetchInterval(1800)
 
         componentRunner.componentStore(self,
@@ -46,31 +45,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore
         return componentRunner.componentStore(self,
                                               app: app, open: url)
     }
-}
-
-func migrateUserDefaultsToAppGroups() {
-    // User Defaults - Old
-    let userDefaults = UserDefaults.standard
-
-    // App Groups Default - New
-    let groupDefaults = UserDefaults(suiteName: "group.hartl.co.icro")
-
-    // Key to track if we migrated
-    let didMigrateToAppGroups = "DidMigrateToAppGroups"
-
-    if let groupDefaults = groupDefaults {
-        if !groupDefaults.bool(forKey: didMigrateToAppGroups) {
-            for key in userDefaults.dictionaryRepresentation().keys {
-                groupDefaults.set(userDefaults.dictionaryRepresentation()[key], forKey: key)
-            }
-            groupDefaults.set(true, forKey: didMigrateToAppGroups)
-            groupDefaults.synchronize()
-            print("Successfully migrated defaults")
-        } else {
-            print("No need to migrate defaults")
-        }
-    } else {
-        print("Unable to create NSUserDefaults with given app group")
-    }
-
 }
