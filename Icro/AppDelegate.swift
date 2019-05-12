@@ -9,7 +9,8 @@ import AppDelegateComponent
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore {
-    let storedComponents: [AppDelegateComponent] = [NavigatorComponent()]
+    let storedComponents: [AppDelegateComponent] = [NavigatorComponent(),
+                                                    DiscoveryCategoryComponent()]
     private let componentRunner = AppDelegateComponentRunner()
 
     func application(_ application: UIApplication,
@@ -22,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore
                                        application: application,
                                        didFinishLaunchingWithOptions: launchOptions)
 
-        DiscoveryCategoryManager.shared.update()
         AppearanceManager().applyAppearance()
 
         return true

@@ -34,7 +34,7 @@ public class ListViewModel: NSObject {
     private var loadedAuthor: Author?
     private let type: ListType
     private let userSettings: UserSettings
-    private let discoveryMananger: DiscoveryCategoryManager
+    private let discoveryMananger: DiscoveryCategoryStore
     private let client: Client
 
     private var unreadItems = Set<Int>()
@@ -63,7 +63,7 @@ public class ListViewModel: NSObject {
 
     public init(type: ListType,
                 userSettings: UserSettings = .shared,
-                discoveryMananger: DiscoveryCategoryManager = .shared,
+                discoveryMananger: DiscoveryCategoryStore = DiscoveryCategoryStore(),
                 client: Client = URLSession.shared) {
         self.type = type
         self.userSettings = userSettings

@@ -143,7 +143,7 @@
 		5B81E79C2206D000008BEA16 /* TipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476221FE048900F082AD /* TipCollectionViewCell.swift */; };
 		5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B869B07214E4633000A051C /* MicropubEndpoint.swift */; };
 		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
-		5BA333752189ADAF000FA900 /* DiscoveryCategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663842189673100ABA671 /* DiscoveryCategoryManager.swift */; };
+		5BA333752189ADAF000FA900 /* DiscoveryCategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663842189673100ABA671 /* DiscoveryCategoryStore.swift */; };
 		5BA6D17C2087C0B300F484B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17A2087C0B300F484B2 /* LoginViewController.swift */; };
 		5BA6D17D2087C0B300F484B2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA6D17B2087C0B300F484B2 /* LoginViewController.xib */; };
 		5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */; };
@@ -203,11 +203,12 @@
 		5BF2DA9B2287E91A0055240D /* SettingsButtonWithLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DA9A2287E91A0055240D /* SettingsButtonWithLabelView.swift */; };
 		5BF2DA9D2287E97B0055240D /* SettingsInlineSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DA9C2287E97B0055240D /* SettingsInlineSeparatorView.swift */; };
 		5BF2DAA22287F4DB0055240D /* NavigatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA12287F4DB0055240D /* NavigatorComponent.swift */; };
+		5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
 		5BF6637F218961AB00ABA671 /* DiscoveryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */; };
 		5BF663812189628300ABA671 /* DiscoveryCategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */; };
 		5BF663822189628F00ABA671 /* DiscoveryCategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */; };
 		5BF663832189629200ABA671 /* DiscoveryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */; };
-		5BF663852189673100ABA671 /* DiscoveryCategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663842189673100ABA671 /* DiscoveryCategoryManager.swift */; };
+		5BF663852189673100ABA671 /* DiscoveryCategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663842189673100ABA671 /* DiscoveryCategoryStore.swift */; };
 		61B772A049E74A71B8194FCD /* Pods_Icro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B8B79BF11C171B505D9E7F /* Pods_Icro.framework */; };
 		8DCD1F043AA7A42B38373800 /* Pods_IcroScreenshotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4216F55176FDD95FB7B918F8 /* Pods_IcroScreenshotsTests.framework */; };
 		B245F2C9D523BD3360877DF8 /* Pods_IcroKit_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B54E7197572F75267B493C /* Pods_IcroKit_Mac.framework */; };
@@ -451,9 +452,10 @@
 		5BF2DA9A2287E91A0055240D /* SettingsButtonWithLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsButtonWithLabelView.swift; path = View/Settings/SettingsButtonWithLabelView.swift; sourceTree = "<group>"; };
 		5BF2DA9C2287E97B0055240D /* SettingsInlineSeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsInlineSeparatorView.swift; path = View/Settings/SettingsInlineSeparatorView.swift; sourceTree = "<group>"; };
 		5BF2DAA12287F4DB0055240D /* NavigatorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorComponent.swift; sourceTree = "<group>"; };
+		5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryComponent.swift; sourceTree = "<group>"; };
 		5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategory.swift; sourceTree = "<group>"; };
 		5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryResource.swift; sourceTree = "<group>"; };
-		5BF663842189673100ABA671 /* DiscoveryCategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryManager.swift; sourceTree = "<group>"; };
+		5BF663842189673100ABA671 /* DiscoveryCategoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryStore.swift; sourceTree = "<group>"; };
 		5C5956D76539447B1A629134 /* Pods-IcroKit-Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroKit-Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroKit-Mac/Pods-IcroKit-Mac.debug.xcconfig"; sourceTree = "<group>"; };
 		5D349612C21E8935CA208791 /* Pods-Icro-Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-Mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-Mac/Pods-Icro-Mac.release.xcconfig"; sourceTree = "<group>"; };
 		62BDE592B91FF53059E2B98A /* Pods-Icro-IcroKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroKit/Pods-Icro-IcroKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -904,6 +906,7 @@
 			isa = PBXGroup;
 			children = (
 				5BF2DAA12287F4DB0055240D /* NavigatorComponent.swift */,
+				5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */,
 			);
 			path = AppDelegateComponents;
 			sourceTree = "<group>";
@@ -911,7 +914,7 @@
 		5BF6637D2189618600ABA671 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				5BF663842189673100ABA671 /* DiscoveryCategoryManager.swift */,
+				5BF663842189673100ABA671 /* DiscoveryCategoryStore.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1766,7 +1769,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BA333752189ADAF000FA900 /* DiscoveryCategoryManager.swift in Sources */,
+				5BA333752189ADAF000FA900 /* DiscoveryCategoryStore.swift in Sources */,
 				5B01CBEC2168D7150007E01D /* Font.swift in Sources */,
 				5B01CBF02168D71F0007E01D /* Resource.swift in Sources */,
 				5B01CBEE2168D71A0007E01D /* UserSettings.swift in Sources */,
@@ -1882,7 +1885,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BF663852189673100ABA671 /* DiscoveryCategoryManager.swift in Sources */,
+				5BF663852189673100ABA671 /* DiscoveryCategoryStore.swift in Sources */,
 				5BC347BD213294A900DEB45D /* Resource.swift in Sources */,
 				5B66EE6C227D700A00317FE3 /* HttpMethod.swift in Sources */,
 				5B81E79A2206C62E008BEA16 /* Error.swift in Sources */,
@@ -1940,6 +1943,7 @@
 				5B3B4C3521D0CBE300F511A6 /* assets-images.swift in Sources */,
 				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
 				C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */,
+				5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */,
 				5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */,
 				5BD32BB92089A12E005D250A /* SettingsViewController.swift in Sources */,
 				5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */,
