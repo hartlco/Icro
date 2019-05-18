@@ -11,7 +11,8 @@ import AppDelegateComponent
 class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore {
     let storedComponents: [AppDelegateComponent] = [NavigatorComponent(),
                                                     DiscoveryCategoryComponent(),
-                                                    UserDefaultsMigrationComponent()]
+                                                    UserDefaultsMigrationComponent(),
+                                                    BackgroundFetchComponent()]
     private let componentRunner = AppDelegateComponentRunner()
 
     func application(_ application: UIApplication,
@@ -29,16 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore
 
     func application(_ application: UIApplication,
                      performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        let viewModel = ListViewModel(type: .timeline)
-        viewModel.load()
-        viewModel.didFinishLoading = { cached in
-            guard !cached else { return }
-            completionHandler(.newData)
-        }
-
-        viewModel.didFinishWithError = { _ in
-            completionHandler(.failed)
-        }
+        componentRunner.componentStore(self,
+                                       app: application,
+                                       performFetchWithCompletionHandler: completionHandler)
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {

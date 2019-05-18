@@ -179,6 +179,7 @@
 		5BD32BB92089A12E005D250A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD32BB72089A12E005D250A /* SettingsViewController.swift */; };
 		5BD32BBA2089A12E005D250A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BD32BB82089A12E005D250A /* SettingsViewController.xib */; };
 		5BD499CF21CA1D8C007EF47C /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79C121C518B700F699B8 /* MainNavigator.swift */; };
+		5BD95AF4228FE85600C74C52 /* BackgroundFetchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD95AF3228FE85600C74C52 /* BackgroundFetchComponent.swift */; };
 		5BD9690C21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD9690B21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift */; };
 		5BD9690E21C8D44000313795 /* ComposeNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD9690D21C8D44000313795 /* ComposeNavigatorProtocol.swift */; };
 		5BD9690F21C8D55400313795 /* ComposeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BECC33C20A8021A00EC63F2 /* ComposeNavigator.swift */; };
@@ -431,6 +432,7 @@
 		5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailImageProvider.swift; sourceTree = "<group>"; };
 		5BD32BB72089A12E005D250A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewController/SettingsViewController.swift; sourceTree = "<group>"; };
 		5BD32BB82089A12E005D250A /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ViewController/SettingsViewController.xib; sourceTree = "<group>"; };
+		5BD95AF3228FE85600C74C52 /* BackgroundFetchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundFetchComponent.swift; sourceTree = "<group>"; };
 		5BD9690921C8CBFB00313795 /* GalleryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDataSource.swift; sourceTree = "<group>"; };
 		5BD9690B21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryDataSource+ImageViewer.swift"; sourceTree = "<group>"; };
 		5BD9690D21C8D44000313795 /* ComposeNavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeNavigatorProtocol.swift; sourceTree = "<group>"; };
@@ -910,6 +912,7 @@
 				5BF2DAA12287F4DB0055240D /* NavigatorComponent.swift */,
 				5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */,
 				5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */,
+				5BD95AF3228FE85600C74C52 /* BackgroundFetchComponent.swift */,
 			);
 			path = AppDelegateComponents;
 			sourceTree = "<group>";
@@ -1924,6 +1927,7 @@
 			files = (
 				5B3C79C721C51BD900F699B8 /* ItemNavigator.swift in Sources */,
 				5BA6D17C2087C0B300F484B2 /* LoginViewController.swift in Sources */,
+				5BD95AF4228FE85600C74C52 /* BackgroundFetchComponent.swift in Sources */,
 				5BF2DAA22287F4DB0055240D /* NavigatorComponent.swift in Sources */,
 				5BF2DA9B2287E91A0055240D /* SettingsButtonWithLabelView.swift in Sources */,
 				5BD9690C21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift in Sources */,
