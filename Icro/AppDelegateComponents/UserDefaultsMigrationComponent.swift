@@ -13,8 +13,8 @@ final class UserDefaultsMigrationComponent: AppDelegateComponent {
         self.userDefaults = userDefaults
     }
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // App Groups Default - New
         let groupDefaults = UserDefaults(suiteName: "group.hartl.co.icro")
 
@@ -35,5 +35,7 @@ final class UserDefaultsMigrationComponent: AppDelegateComponent {
         } else {
             print("Unable to create NSUserDefaults with given app group")
         }
+
+        return true
     }
 }

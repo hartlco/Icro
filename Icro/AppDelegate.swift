@@ -9,7 +9,8 @@ import AppDelegateComponent
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore {
-    let storedComponents: [AppDelegateComponent] = [NavigatorComponent(),
+    let storedComponents: [AppDelegateComponent] = [AppearanceComponent(),
+                                                    NavigatorComponent(),
                                                     DiscoveryCategoryComponent(),
                                                     UserDefaultsMigrationComponent(),
                                                     BackgroundFetchComponent()]
@@ -17,15 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        application.setMinimumBackgroundFetchInterval(1800)
-
-        componentRunner.componentStore(self,
+        return componentRunner.componentStore(self,
                                        application: application,
                                        didFinishLaunchingWithOptions: launchOptions)
-
-        AppearanceManager().applyAppearance()
-
-        return true
     }
 
     func application(_ application: UIApplication,

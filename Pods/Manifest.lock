@@ -1,7 +1,7 @@
 PODS:
   - AcknowList (1.8)
   - Alamofire (4.8.2)
-  - AppDelegateComponent (0.0.3)
+  - AppDelegateComponent (1.0.1)
   - DropdownTitleView (0.1.0)
   - DTCoreText (1.6.21):
     - DTCoreText/Core (= 1.6.21)
@@ -81,7 +81,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AcknowList: 5b8820004d019d0a8d6a091ea2392dcb54bd3ad2
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  AppDelegateComponent: 2bbf00ff6f070c20c59b2c7db238563c6ec6fe14
+  AppDelegateComponent: b462d799a3e3de605dc194966f41bc332ce1537d
   DropdownTitleView: e02e559243efb248dd0e8a50665b0acc5f6f2413
   DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
   DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df

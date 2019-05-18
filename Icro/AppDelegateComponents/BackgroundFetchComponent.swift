@@ -10,6 +10,12 @@ import AppDelegateComponent
 final class BackgroundFetchComponent: AppDelegateComponent {
     private let viewModel = ListViewModel(type: .timeline)
 
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        application.setMinimumBackgroundFetchInterval(1800)
+        return true
+    }
+
     func application(_ app: UIApplication,
                      performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         viewModel.load()
