@@ -22,7 +22,7 @@ public struct VideoThumbnailImageProvider: ImageDataProvider {
 
     public var cacheKey: String { return "\(url.absoluteString)_\(size)" }
 
-    public func data(handler: @escaping (Kingfisher.Result<Data, Error>) -> Void) {
+    public func data(handler: @escaping (Result<Data, Error>) -> Void) {
 
         DispatchQueue.global(qos: .userInitiated).async {
             let asset = AVAsset(url: self.url)

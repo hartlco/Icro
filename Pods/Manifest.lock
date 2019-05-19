@@ -1,5 +1,5 @@
 PODS:
-  - AcknowList (1.8)
+  - AcknowList (1.9)
   - Alamofire (4.8.2)
   - AppDelegateComponent (1.0.1)
   - Dequeueable (0.1.0)
@@ -24,7 +24,7 @@ PODS:
   - ImageViewer (5.0.0)
   - Kanna (5.0.0)
   - KeychainAccess (3.2.0)
-  - Kingfisher (5.3.1)
+  - Kingfisher (5.5.0)
   - PromiseKit (6.8.4):
     - PromiseKit/CorePromise (= 6.8.4)
     - PromiseKit/Foundation (= 6.8.4)
@@ -35,7 +35,7 @@ PODS:
   - PromiseKit/UIKit (6.8.4):
     - PromiseKit/CorePromise
   - SwiftGen (6.1.0)
-  - SwiftLint (0.31.0)
+  - SwiftLint (0.32.0)
   - wpxmlrpc (0.8.4)
 
 DEPENDENCIES:
@@ -82,7 +82,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MailOnline/ImageViewer.git
 
 SPEC CHECKSUMS:
-  AcknowList: 5b8820004d019d0a8d6a091ea2392dcb54bd3ad2
+  AcknowList: 06fde3319971dfd517ea1b1c194d78eb8cd774a2
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AppDelegateComponent: b462d799a3e3de605dc194966f41bc332ce1537d
   Dequeueable: 9ae3656cfa523e4963fa4b53b118b5df1dbb11c8
@@ -92,10 +92,10 @@ SPEC CHECKSUMS:
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
   Kanna: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
   KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
-  Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
+  Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
   PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
-  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
+  SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
   wpxmlrpc: 6ba55c773cfa27083ae4a2173e69b19f46da98e2
 
 PODFILE CHECKSUM: 645d82c67b3de36644e77453fc47967779121447

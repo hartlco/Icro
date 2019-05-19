@@ -14,7 +14,7 @@ final class AppearanceComponent: AppDelegateComponent {
     }
 
     func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         appearanceManager.applyAppearance()
         return true
     }

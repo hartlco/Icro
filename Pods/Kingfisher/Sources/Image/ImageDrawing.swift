@@ -149,10 +149,12 @@ extension KingfisherWrapper where Base: Image {
                 rectPath.fill()
             }
             
-            let path = UIBezierPath(roundedRect: rect,
-                                    byRoundingCorners: corners.uiRectCorner,
-                                    cornerRadii: CGSize(width: radius, height: radius)).cgPath
-            context.addPath(path)
+            let path = UIBezierPath(
+                roundedRect: rect,
+                byRoundingCorners: corners.uiRectCorner,
+                cornerRadii: CGSize(width: radius, height: radius)
+            )
+            context.addPath(path.cgPath)
             context.clip()
             base.draw(in: rect)
             #endif
@@ -499,7 +501,7 @@ extension KingfisherWrapper where Base: Image {
         #endif
     }
     
-    func draw(to size: CGSize, inverting: Bool = false, scale: CGFloat? = nil, draw: (CGContext) -> Void) -> Image {
+    func draw(to size: CGSize, inverting: Bool = false, scale: CGFloat? = nil, refImage: Image? = nil, draw: (CGContext) -> Void) -> Image {
         let targetScale = scale ?? self.scale
         guard let context = beginContext(size: size, scale: targetScale, inverting: inverting) else {
             assertionFailure("[Kingfisher] Failed to create CG context for blurring image.")
@@ -510,7 +512,7 @@ extension KingfisherWrapper where Base: Image {
         guard let cgImage = context.makeImage() else {
             return base
         }
-        return KingfisherWrapper.image(cgImage: cgImage, scale: targetScale, refImage: base)
+        return KingfisherWrapper.image(cgImage: cgImage, scale: targetScale, refImage: refImage ?? base)
     }
     
     #if os(macOS)
