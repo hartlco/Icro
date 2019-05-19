@@ -5,12 +5,12 @@
 
 import UIKit
 import IcroUIKit
+import Dequeueable
 
 class UserListViewController: UIViewController, LoadingViewController {
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
-            tableView.register(UINib(nibName: UserItemTableViewCell.identifier, bundle: nil),
-                               forCellReuseIdentifier: UserItemTableViewCell.identifier)
+            tableView.register(cellType: UserItemTableViewCell.self)
             tableView.delegate = self
             tableView.dataSource = self
         }
@@ -59,10 +59,7 @@ extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserItemTableViewCell.identifier,
-                                                       for: indexPath) as? UserItemTableViewCell else {
-            fatalError()
-        }
+        let cell = tableView.dequeueCell(ofType: UserItemTableViewCell.self, for: indexPath)
         let user = viewModel.user(for: indexPath.row)
         cellConfigurator.configure(cell: cell, for: user)
         return cell

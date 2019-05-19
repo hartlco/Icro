@@ -5,9 +5,13 @@
 
 import UIKit
 import IcroKit
+import Dequeueable
 
-class SingleImageCollectionViewCell: UICollectionViewCell {
-    static let identifier = "SingleImageCollectionViewCell"
+final class SingleImageCollectionViewCell: UICollectionViewCell, NibReusable {
+    public static var nib: UINib {
+        return UINib(nibName: String(describing: self),
+                     bundle: Bundle(for: SingleImageCollectionViewCell.self))
+    }
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var videoPlayImage: UIImageView!

@@ -7,9 +7,14 @@ import UIKit
 import IcroKit
 import AVFoundation
 import Kingfisher
+import Dequeueable
 
-public final class ItemTableViewCell: UITableViewCell {
-    public static let identifer = "ItemTableViewCell"
+public final class ItemTableViewCell: UITableViewCell, NibReusable {
+    public static var nib: UINib {
+        return UINib(nibName: String(describing: self),
+                     bundle: Bundle(for: ItemTableViewCell.self))
+    }
+
     var isFavorite: Bool = false
 
     @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!
@@ -68,9 +73,7 @@ public final class ItemTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageCollectionView: UICollectionView! {
         didSet {
-            imageCollectionView.register(UINib(nibName: SingleImageCollectionViewCell.identifier,
-                                               bundle: Bundle(for: SingleImageCollectionViewCell.self)),
-                                         forCellWithReuseIdentifier: SingleImageCollectionViewCell.identifier)
+            imageCollectionView.register(cellType: SingleImageCollectionViewCell.self)
             imageCollectionView.delegate = self
             imageCollectionView.dataSource = self
         }
@@ -151,10 +154,7 @@ extension ItemTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
 
     public func collectionView(_ collectionView: UICollectionView,
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SingleImageCollectionViewCell.identifier,
-                                                            for: indexPath) as? SingleImageCollectionViewCell else {
-            fatalError("Could not deque SingleImageCollectionViewCell")
-        }
+        let cell = collectionView.dequeueCell(ofType: SingleImageCollectionViewCell.self, for: indexPath)
 
         let mediaItem = media[indexPath.row]
 

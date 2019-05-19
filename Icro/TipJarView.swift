@@ -5,6 +5,7 @@
 
 import Foundation
 import IcroKit
+import Dequeueable
 
 final class TipJarView: UIView {
     private let viewModel: TipJarViewModel
@@ -26,8 +27,7 @@ final class TipJarView: UIView {
         addSubview(collectionView)
         collectionView.pin(to: self)
         collectionView.backgroundColor = Color.accentSuperLight
-        collectionView.register(UINib(nibName: TipCollectionViewCell.identifier, bundle: nil),
-                                forCellWithReuseIdentifier: TipCollectionViewCell.identifier)
+        collectionView.register(cellType: TipCollectionViewCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
         viewModel.load()
@@ -59,11 +59,7 @@ extension TipJarView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TipCollectionViewCell.identifier,
-                                                            for: indexPath) as? TipCollectionViewCell else {
-            fatalError("Could not deque TipJar collection view cell")
-        }
-
+        let cell = collectionView.dequeueCell(ofType: TipCollectionViewCell.self, for: indexPath)
         let item = viewModel.product(at: indexPath.row)
 
         cell.productTitleLabel.text = item.title

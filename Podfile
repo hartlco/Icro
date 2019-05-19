@@ -38,6 +38,7 @@ end
 target 'IcroUIKit' do
     kitPods
     pod 'Kingfisher'
+    pod 'Dequeueable'
 end
 
 target 'IcroKit-Mac' do

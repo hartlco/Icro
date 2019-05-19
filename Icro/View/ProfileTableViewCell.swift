@@ -5,10 +5,9 @@
 
 import UIKit
 import IcroKit
+import Dequeueable
 
-class ProfileTableViewCell: UITableViewCell {
-    static let identifier = "ProfileTableViewCell"
-
+class ProfileTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel! {
         didSet {

@@ -7,18 +7,16 @@ import UIKit
 import IcroKit
 import IcroUIKit
 import DropdownTitleView
+import Dequeueable
 
 class ListViewController: UIViewController, LoadingViewController {
     @IBOutlet fileprivate weak var tableView: UITableView! {
         didSet {
             tableView.refreshControl = UIRefreshControl()
             tableView.refreshControl?.addTarget(viewModel, action: #selector(ListViewModel.load), for: .valueChanged)
-            tableView.register(UINib(nibName: ItemTableViewCell.identifer, bundle: Bundle(for: ItemTableViewCell.self)),
-                               forCellReuseIdentifier: ItemTableViewCell.identifer)
-            tableView.register(UINib(nibName: ProfileTableViewCell.identifier, bundle: nil),
-                               forCellReuseIdentifier: ProfileTableViewCell.identifier)
-            tableView.register(UINib(nibName: LoadMoreTableViewCell.identifier, bundle: nil),
-                               forCellReuseIdentifier: LoadMoreTableViewCell.identifier)
+            tableView.register(cellType: ItemTableViewCell.self)
+            tableView.register(cellType: ProfileTableViewCell.self)
+            tableView.register(cellType: LoadMoreTableViewCell.self)
             tableView.estimatedRowHeight = UITableView.automaticDimension
             tableView.rowHeight = UITableView.automaticDimension
             tableView.separatorColor = Color.separatorColor
@@ -164,15 +162,11 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch viewModel.viewType(forRow: indexPath.row) {
         case .author(let author):
-            return authorCell(for: author, in: tableView)
+            return authorCell(for: author, in: tableView, at: indexPath)
         case .loadMore:
             return loadMoreCell(at: indexPath, in: tableView)
         case .item(let item):
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ItemTableViewCell.identifer,
-                                                           for: indexPath) as? ItemTableViewCell else {
-                                                            fatalError("Could not deque right cell")
-            }
-
+            let cell = tableView.dequeueCell(ofType: ItemTableViewCell.self, for: indexPath)
             cell.layer.shouldRasterize = true
             cell.layer.rasterizationScale = UIScreen.main.scale
             cellConfigurator.configure(cell, forDisplaying: item)
@@ -214,20 +208,16 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 
-    private func authorCell(for author: Author, in tableView: UITableView) -> ProfileTableViewCell {
-        let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier)
-        guard let cell = dequeuedCell as? ProfileTableViewCell else {
-            fatalError()
-        }
+    private func authorCell(for author: Author,
+                            in tableView: UITableView,
+                            at indexPath: IndexPath) -> ProfileTableViewCell {
+        let cell = tableView.dequeueCell(ofType: ProfileTableViewCell.self, for: indexPath)
         profileViewConfigurator.configure(cell, using: author)
         return cell
     }
 
     private func loadMoreCell(at indexPath: IndexPath, in tableView: UITableView) -> LoadMoreTableViewCell {
-        let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: LoadMoreTableViewCell.identifier)
-        guard let cell = dequeuedCell as? LoadMoreTableViewCell else {
-            fatalError()
-        }
+        let cell = tableView.dequeueCell(ofType: LoadMoreTableViewCell.self, for: indexPath)
         cell.didPressLoadMore = { [weak self] in
             guard let self = self else { return }
             self.viewModel.loadMore(afterItemAtIndex: indexPath.row - 1)

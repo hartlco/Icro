@@ -5,10 +5,9 @@
 
 import UIKit
 import IcroKit
+import Dequeueable
 
-final class TipCollectionViewCell: UICollectionViewCell {
-    static let identifier = "TipCollectionViewCell"
-
+final class TipCollectionViewCell: UICollectionViewCell, NibReusable {
     @IBOutlet weak var productTitleLabel: UILabel! {
         didSet {
             productTitleLabel.textColor = Color.textColor

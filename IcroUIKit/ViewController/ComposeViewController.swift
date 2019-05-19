@@ -6,6 +6,7 @@
 import UIKit
 import IcroKit
 import Kingfisher
+import Dequeueable
 
 public final class ComposeViewController: UIViewController, LoadingViewController {
     public var didClose: () -> Void = { }
@@ -30,8 +31,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
-            tableView.register(UINib(nibName: ItemTableViewCell.identifer, bundle: Bundle(for: ComposeViewController.self)),
-                               forCellReuseIdentifier: ItemTableViewCell.identifer)
+            tableView.register(cellType: ItemTableViewCell.self)
             tableView.delegate = self
             tableView.dataSource = self
         }
@@ -40,9 +40,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
 
     @IBOutlet weak var imageCollectionView: UICollectionView! {
         didSet {
-            imageCollectionView.register(UINib(nibName: SingleImageCollectionViewCell.identifier,
-                                               bundle: Bundle(for: ComposeViewController.self)),
-                                        forCellWithReuseIdentifier: SingleImageCollectionViewCell.identifier)
+            imageCollectionView.register(cellType: SingleImageCollectionViewCell.self)
             imageCollectionView.delegate = self
             imageCollectionView.dataSource = self
         }
@@ -213,9 +211,9 @@ extension ComposeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ItemTableViewCell.identifer, for: indexPath) as? ItemTableViewCell,
-        let item = viewModel.replyItem else {
-            fatalError("Could not deque right cell")
+        let cell = tableView.dequeueCell(ofType: ItemTableViewCell.self, for: indexPath)
+        guard let item = viewModel.replyItem else {
+            fatalError("Could not deque right item")
         }
 
         let cellConfigurator = ItemCellConfigurator(itemNavigator: itemNavigator)
@@ -240,11 +238,7 @@ extension ComposeViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SingleImageCollectionViewCell.identifier,
-                                                            for: indexPath) as? SingleImageCollectionViewCell else {
-            fatalError("Could not deque SingleImageCollectionViewCell")
-        }
-
+        let cell = collectionView.dequeueCell(ofType: SingleImageCollectionViewCell.self, for: indexPath)
         let image = viewModel.image(at: indexPath.row)
         cell.imageView.kf.setImage(with: image.link)
 

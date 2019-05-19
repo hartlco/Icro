@@ -5,10 +5,9 @@
 
 import UIKit
 import IcroKit
+import Dequeueable
 
-class LoadMoreTableViewCell: UITableViewCell {
-    static let identifier = "LoadMoreTableViewCell"
-
+class LoadMoreTableViewCell: UITableViewCell, NibReusable {
     var didPressLoadMore: (() -> Void)?
 
     @IBAction func loadMorePressed(_ sender: Any) {
