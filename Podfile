@@ -10,6 +10,7 @@ target 'Icro' do
     pod 'SwiftGen'
     pod 'Kingfisher'
     pod 'AppDelegateComponent'
+    pod 'Dequeueable'
 	
 	target 'IcroTests' do
 	end
