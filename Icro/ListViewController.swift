@@ -262,4 +262,35 @@ extension ListViewController: ScrollToTop {
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
+
+    override var keyCommands: [UIKeyCommand]? {
+        let refreshCommand = UIKeyCommand(input: "r",
+                                          modifierFlags: .command,
+                                          action: #selector(refreshFromCommand),
+                                          discoverabilityTitle: "Refresh")
+
+        let scrollUpCommand = UIKeyCommand(input: UIKeyCommand.inputUpArrow,
+                                           modifierFlags: .command,
+                                           action: #selector(scrollUpFromCommand),
+                                           discoverabilityTitle: "Scroll up")
+
+        let scrollDownCommand = UIKeyCommand(input: UIKeyCommand.inputDownArrow,
+                                           modifierFlags: .command,
+                                           action: #selector(scrollDownFromCommand),
+                                           discoverabilityTitle: "Scroll down")
+
+        return [refreshCommand, scrollUpCommand, scrollDownCommand]
+    }
+
+    @objc private func refreshFromCommand() {
+        viewModel.load()
+    }
+
+    @objc private func scrollUpFromCommand() {
+        tableView.scroll(action: .up)
+    }
+
+    @objc private func scrollDownFromCommand() {
+        tableView.scroll(action: .down)
+    }
 }

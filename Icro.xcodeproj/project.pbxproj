@@ -143,6 +143,8 @@
 		5B81E79C2206D000008BEA16 /* TipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476221FE048900F082AD /* TipCollectionViewCell.swift */; };
 		5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B869B07214E4633000A051C /* MicropubEndpoint.swift */; };
 		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
+		5B99C67A229FB47200437552 /* UITableView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99C679229FB47200437552 /* UITableView+Keyboard.swift */; };
+		5B99C67B229FB5CD00437552 /* UITableView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99C679229FB47200437552 /* UITableView+Keyboard.swift */; };
 		5BA333752189ADAF000FA900 /* DiscoveryCategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663842189673100ABA671 /* DiscoveryCategoryStore.swift */; };
 		5BA6D17C2087C0B300F484B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17A2087C0B300F484B2 /* LoginViewController.swift */; };
 		5BA6D17D2087C0B300F484B2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA6D17B2087C0B300F484B2 /* LoginViewController.xib */; };
@@ -415,6 +417,7 @@
 		5B869B07214E4633000A051C /* MicropubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicropubEndpoint.swift; sourceTree = "<group>"; };
 		5B8754F92070137300018DFA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
 		5B8754FC2070139F00018DFA /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		5B99C679229FB47200437552 /* UITableView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+Keyboard.swift"; path = "Helper/UITableView+Keyboard.swift"; sourceTree = "<group>"; };
 		5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Loading.swift"; sourceTree = "<group>"; };
 		5BA6D17A2087C0B300F484B2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewController/LoginViewController.swift; sourceTree = "<group>"; };
 		5BA6D17B2087C0B300F484B2 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ViewController/LoginViewController.xib; sourceTree = "<group>"; };
@@ -1034,6 +1037,7 @@
 				5BD9690B21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift */,
 				5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */,
 				5B38476821FE073800F082AD /* UIView+Contraints.swift */,
+				5B99C679229FB47200437552 /* UITableView+Keyboard.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -1850,6 +1854,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B99C67B229FB5CD00437552 /* UITableView+Keyboard.swift in Sources */,
 				5B66EE71227D73E400317FE3 /* HTTPMethodTests.swift in Sources */,
 				5B58374F2128B5F80076121E /* TabBarViewController.swift in Sources */,
 				5B38476A21FE077A00F082AD /* UIView+Contraints.swift in Sources */,
@@ -1974,6 +1979,7 @@
 				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
 				C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */,
 				5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */,
+				5B99C67A229FB47200437552 /* UITableView+Keyboard.swift in Sources */,
 				5BD95AFD2290A16100C74C52 /* AppearanceComponent.swift in Sources */,
 				5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */,
 				5BD32BB92089A12E005D250A /* SettingsViewController.swift in Sources */,

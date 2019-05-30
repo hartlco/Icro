@@ -10,12 +10,20 @@ import IcroUIKit
 class TabBarViewController: UITabBarController {
     private let userSettings: UserSettings
     private let appNavigator: AppNavigator
+    private let types: [ListViewModel.ListType]
     fileprivate var previousViewController: UIViewController?
 
     init(userSettings: UserSettings,
          appNavigator: AppNavigator) {
         self.userSettings = userSettings
         self.appNavigator = appNavigator
+        self.types = [ListViewModel.ListType.timeline,
+                 ListViewModel.ListType.mentions,
+                 ListViewModel.ListType.favorites,
+                 ListViewModel.ListType.discover,
+                 ListViewModel.ListType.username(username: userSettings.username)
+        ]
+
         super.init(nibName: "TabBarViewController2", bundle: nil)
         commonInit()
         view.tintColor = Color.main
@@ -27,13 +35,6 @@ class TabBarViewController: UITabBarController {
     }
 
     private func commonInit() {
-        let types = [ListViewModel.ListType.timeline,
-                               ListViewModel.ListType.mentions,
-                               ListViewModel.ListType.favorites,
-                               ListViewModel.ListType.discover,
-                               ListViewModel.ListType.username(username: userSettings.username)
-        ]
-
         let viewControllers: [UINavigationController] = types.map { type in
             let viewModel = ListViewModel(type: type)
             let navigationController = UINavigationController()
@@ -122,5 +123,31 @@ extension TabBarViewController: UITabBarControllerDelegate {
             scrollToTop.scrollToTop()
         }
         previousViewController = viewController
+    }
+}
+
+// MARK: - Keyboard shortcuts
+
+extension TabBarViewController {
+    override var keyCommands: [UIKeyCommand]? {
+        let composeCommand = UIKeyCommand(input: "n",
+                                          modifierFlags: .command,
+                                          action: #selector(showComposeViewController),
+                                          discoverabilityTitle: "Compose")
+
+        return types.enumerated().map { index, type in
+            return UIKeyCommand(input: "\(index + 1)",
+                modifierFlags: .command,
+                action: #selector(selectType(sender:)),
+                discoverabilityTitle: type.tabTitle ?? type.title)
+        } + [composeCommand]
+    }
+
+    @objc private func selectType(sender: UIKeyCommand) {
+        guard let input = sender.input,
+            let index = Int(input),
+            index > 0,
+            index < types.count + 1 else { return }
+        selectedIndex = index - 1
     }
 }
