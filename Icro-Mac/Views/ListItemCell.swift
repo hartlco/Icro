@@ -47,11 +47,11 @@ final class ListItemCell: NSTableRowView {
 
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
 
-    var images = [URL]() {
+    var media = [Media]() {
         didSet {
             imageCollectionView.reloadData()
-            imageCollectionView.isHidden = images.isEmpty
-            collectionViewHeight.constant = images.isEmpty ? 0 : 160
+            imageCollectionView.isHidden = media.isEmpty
+            collectionViewHeight.constant = media.isEmpty ? 0 : 160
         }
     }
 
@@ -80,14 +80,14 @@ final class ListItemCell: NSTableRowView {
 
 extension ListItemCell: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return media.count
     }
 
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         guard let cell = collectionView.makeItem(withIdentifier: ImageViewItem.identifier, for: indexPath) as? ImageViewItem else {
             fatalError()
         }
-        let imageURL = images[indexPath.item]
+        let imageURL = media[indexPath.item].url
         cell.cellImageView.kf.setImage(with: imageURL)
         return cell
     }

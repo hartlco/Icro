@@ -111,7 +111,7 @@ struct LightTheme: ColorTheme {
     }
 
     static var separatorColor: XColor {
-        return UIColor.gray
+        return XColor.gray
     }
 
     static var buttonColor: XColor {
@@ -127,7 +127,7 @@ struct LightTheme: ColorTheme {
     }
 
     static var textColor: XColor {
-        return .darkText
+        return Asset.textColor.color
     }
 
     static var backgroundColor: XColor {
@@ -141,7 +141,7 @@ struct GrayTheme: ColorTheme {
     }
 
     static var separatorColor: XColor {
-        return UIColor.darkGray
+        return XColor.darkGray
     }
 
     static var buttonColor: XColor {

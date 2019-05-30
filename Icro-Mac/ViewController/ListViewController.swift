@@ -152,7 +152,7 @@ extension ListViewController: NSTableViewDelegate, NSTableViewDataSource {
             textView.isHorizontallyResizable = false
             textView.sizeToFit()
 
-            let imageHeight: CGFloat = item.images.isEmpty ? 0 : 160
+            let imageHeight: CGFloat = item.media.isEmpty ? 0 : 160
 
             let height = textView.frame.size.height + 40 + imageHeight
             return height

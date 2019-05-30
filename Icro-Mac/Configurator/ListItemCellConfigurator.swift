@@ -25,7 +25,7 @@ final class ListItemCellConfigurator {
         cell.timeLabel.stringValue = item.relativeDateString
         cell.contentTextView.textStorage?.setAttributedString(item.content)
         cell.avatarImageView.kf.setImage(with: item.author.avatar)
-        cell.images = item.images
+        cell.media = item.media
 
         cell.contentTextView.didTapLink = { [weak self] url in
             guard let self = self else { return }

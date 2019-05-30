@@ -145,6 +145,11 @@
 		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
 		5B99C67A229FB47200437552 /* UITableView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99C679229FB47200437552 /* UITableView+Keyboard.swift */; };
 		5B99C67B229FB5CD00437552 /* UITableView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99C679229FB47200437552 /* UITableView+Keyboard.swift */; };
+		5B99C67C229FB9F100437552 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE69227D6C8300317FE3 /* Client.swift */; };
+		5B99C67D229FB9F800437552 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE6B227D700A00317FE3 /* HttpMethod.swift */; };
+		5B99C67E229FBA0800437552 /* MediaEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE6D227D734800317FE3 /* MediaEndpoint.swift */; };
+		5B99C67F229FBA2A00437552 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C3421D0CBE300F511A6 /* assets-images.swift */; };
+		5B99C680229FBDAE00437552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		5BA333752189ADAF000FA900 /* DiscoveryCategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663842189673100ABA671 /* DiscoveryCategoryStore.swift */; };
 		5BA6D17C2087C0B300F484B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17A2087C0B300F484B2 /* LoginViewController.swift */; };
 		5BA6D17D2087C0B300F484B2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA6D17B2087C0B300F484B2 /* LoginViewController.xib */; };
@@ -1396,6 +1401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B99C680229FBDAE00437552 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1618,7 +1624,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint";
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 		6BB6F2EC9E7BCFAEF0530F66 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1799,6 +1805,8 @@
 				5B01CBF02168D71F0007E01D /* Resource.swift in Sources */,
 				5B01CBEE2168D71A0007E01D /* UserSettings.swift in Sources */,
 				5B6A565E21735A69003C4D92 /* Functions.swift in Sources */,
+				5B99C67E229FBA0800437552 /* MediaEndpoint.swift in Sources */,
+				5B99C67F229FBA2A00437552 /* assets-images.swift in Sources */,
 				5BDE18EA216A5745001254F4 /* ComposeViewModel.swift in Sources */,
 				5BD2FE602259D2EC00591490 /* Media.swift in Sources */,
 				5B01CBEA2168D7150007E01D /* Date+ComponentsFormatter.swift in Sources */,
@@ -1808,6 +1816,7 @@
 				5B01CBF32168D7240007E01D /* Item.swift in Sources */,
 				5BD9691221C8D61800313795 /* GalleryDataSource.swift in Sources */,
 				5BDE18F0216A57C0001254F4 /* MicropubRequestController.swift in Sources */,
+				5B99C67C229FB9F100437552 /* Client.swift in Sources */,
 				5B4DF0F221AA8818008CEB58 /* ListViewModelListType.swift in Sources */,
 				5B81E79B2206C63A008BEA16 /* Error.swift in Sources */,
 				5B01CBED2168D7150007E01D /* Color.swift in Sources */,
@@ -1815,6 +1824,7 @@
 				5B01CBF42168D7240007E01D /* HTMLContent.swift in Sources */,
 				5B01CC012168E4DF0007E01D /* ListViewModel.swift in Sources */,
 				5B01CBEF2168D71A0007E01D /* LoginInformation.swift in Sources */,
+				5B99C67D229FB9F800437552 /* HttpMethod.swift in Sources */,
 				5B01CBEB2168D7150007E01D /* Date+Ago.swift in Sources */,
 				5B01CBF12168D71F0007E01D /* MicropubEndpoint.swift in Sources */,
 			);
