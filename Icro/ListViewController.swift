@@ -9,7 +9,7 @@ import IcroUIKit
 import DropdownTitleView
 import Dequeueable
 
-class ListViewController: UIViewController, LoadingViewController {
+final class ListViewController: UIViewController, LoadingViewController {
     @IBOutlet fileprivate weak var tableView: UITableView! {
         didSet {
             tableView.refreshControl = UIRefreshControl()
@@ -256,13 +256,11 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension ListViewController: ScrollToTop {
     func scrollToTop() {
-        guard tableView.numberOfRows(inSection: 0) > 0 else { return }
-        viewModel.resetScrollPosition()
-        updateUnread()
-        let indexPath = IndexPath(row: 0, section: 0)
-        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        tableView.scroll(action: .top)
     }
+}
 
+extension ListViewController {
     override var keyCommands: [UIKeyCommand]? {
         let refreshCommand = UIKeyCommand(input: "r",
                                           modifierFlags: .command,
@@ -275,11 +273,21 @@ extension ListViewController: ScrollToTop {
                                            discoverabilityTitle: "Scroll up")
 
         let scrollDownCommand = UIKeyCommand(input: UIKeyCommand.inputDownArrow,
-                                           modifierFlags: .command,
-                                           action: #selector(scrollDownFromCommand),
-                                           discoverabilityTitle: "Scroll down")
+                                             modifierFlags: .command,
+                                             action: #selector(scrollDownFromCommand),
+                                             discoverabilityTitle: "Scroll down")
 
-        return [refreshCommand, scrollUpCommand, scrollDownCommand]
+        let scrollToTopCommand = UIKeyCommand(input: UIKeyCommand.inputUpArrow,
+                                              modifierFlags: [.shift, .command],
+                                              action: #selector(scrollToTopFromCommand),
+                                              discoverabilityTitle: "Scroll to top")
+
+        let scrollToBottomCommand = UIKeyCommand(input: UIKeyCommand.inputDownArrow,
+                                                 modifierFlags: [.shift, .command],
+                                                 action: #selector(scrollToBottomFromCommand),
+                                                 discoverabilityTitle: "Scroll to bottom")
+
+        return [refreshCommand, scrollUpCommand, scrollDownCommand, scrollToTopCommand, scrollToBottomCommand]
     }
 
     @objc private func refreshFromCommand() {
@@ -292,5 +300,13 @@ extension ListViewController: ScrollToTop {
 
     @objc private func scrollDownFromCommand() {
         tableView.scroll(action: .down)
+    }
+
+    @objc private func scrollToTopFromCommand() {
+        tableView.scroll(action: .top)
+    }
+
+    @objc private func scrollToBottomFromCommand() {
+        tableView.scroll(action: .bottom)
     }
 }

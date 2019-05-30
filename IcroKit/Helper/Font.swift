@@ -38,13 +38,13 @@ public struct Font {
     }
 
     public var name: XFont {
-        let font = XFont.systemFont(ofSize: 17, weight: .medium)
+        let font = XFont.systemFont(ofSize: 17, weight: .semibold)
         let fontMetrics = UIFontMetrics(forTextStyle: .headline)
         return fontMetrics.scaledFont(for: font)
     }
 
     public var username: XFont {
-        let font = XFont.systemFont(ofSize: 13)
+        let font = XFont.systemFont(ofSize: 14, weight: .medium)
         let fontMetrics = UIFontMetrics(forTextStyle: .headline)
         return fontMetrics.scaledFont(for: font)
     }

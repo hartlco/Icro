@@ -6,6 +6,7 @@
 import UIKit
 
 enum TableViewScrollAction {
+    // swiftlint:disable identifier_name
     case up
     case down
     case top
@@ -19,8 +20,10 @@ extension UITableView {
             scrollUp()
         case .down:
             scrollDown()
-        default:
-            return
+        case .top:
+            scrollToTop()
+        case .bottom:
+            scrollToBottom()
         }
     }
 
@@ -40,5 +43,17 @@ extension UITableView {
         let previousIndexPath = IndexPath(row: lastVisibleIndexPath.row + 1, section: lastVisibleIndexPath.section)
 
         scrollToRow(at: previousIndexPath, at: .top, animated: true)
+    }
+
+    private func scrollToTop() {
+        scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+    }
+
+    private func scrollToBottom() {
+        let lastSection = numberOfSections - 1
+        guard lastSection > -1 else { return }
+        let lastRow = numberOfRows(inSection: lastSection) - 1
+        guard lastRow > -1 else { return }
+        scrollToRow(at: IndexPath(row: lastRow, section: lastSection), at: .top, animated: true)
     }
 }
