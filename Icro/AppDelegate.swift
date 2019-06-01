@@ -9,6 +9,7 @@ import AppDelegateComponent
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore {
+    var window: UIWindow?
     let storedComponents: [AppDelegateComponent] = [AppearanceComponent(),
                                                     NavigatorComponent(),
                                                     DiscoveryCategoryComponent(),

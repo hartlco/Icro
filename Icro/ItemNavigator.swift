@@ -56,21 +56,12 @@ final class ItemNavigator: ItemNavigatorProtocol {
         navigationController.pushViewController(viewController, animated: true)
     }
 
-    func openMedia(media: Media) {
-        if media.isVideo {
-            let player = AVPlayer(url: media.url)
-            let playerViewController = AVPlayerViewController()
-            playerViewController.player = player
-            navigationController.present(playerViewController, animated: true) {
-                player.play()
-            }
-        } else {
-            let dataSource = GalleryDataSource(index: 0, imageURLs: [media.url])
-            let gallery = GalleryViewController(startIndex: 0,
-                                                itemsDataSource: dataSource,
-                                                configuration: [GalleryConfigurationItem.deleteButtonMode(.none)])
-            navigationController.presentImageGallery(gallery)
-        }
+    func openMedia(media: [Media], index: Int) {
+        let dataSource = GalleryDataSource(index: index, media: media)
+        let gallery = GalleryViewController(startIndex: index,
+                                            itemsDataSource: dataSource,
+                                            configuration: [GalleryConfigurationItem.deleteButtonMode(.none)])
+        navigationController.presentImageGallery(gallery)
     }
 
     func openReply(item: Item) {

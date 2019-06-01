@@ -117,7 +117,7 @@ private class EmptyItemNavigator: ItemNavigatorProtocol {
 
     }
 
-    func openMedia(media: Media) {
+    func openMedia(media: [Media], index: Int) {
 
     }
 

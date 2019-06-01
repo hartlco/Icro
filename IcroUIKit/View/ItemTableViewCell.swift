@@ -81,7 +81,7 @@ public final class ItemTableViewCell: UITableViewCell, NibReusable {
 
     var didTapAvatar: (() -> Void)?
     var didSelectAccessibilityLink :(() -> Void)?
-    var didTapMedia: ((Media) -> Void)?
+    var didTapMedia: (([Media], Int) -> Void)?
 
     override public func prepareForReuse() {
         media = []
@@ -113,7 +113,7 @@ public final class ItemTableViewCell: UITableViewCell, NibReusable {
     }
 
     @objc func accessibilityDidTapImages() {
-        didTapMedia?(media[0])
+        didTapMedia?(media, 0)
     }
 
     @objc func accessibilitySelectLink() {
@@ -171,7 +171,7 @@ extension ItemTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     }
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        didTapMedia?(media[indexPath.row])
+        didTapMedia?(media, indexPath.row)
     }
 
     public func collectionView(_ collectionView: UICollectionView,

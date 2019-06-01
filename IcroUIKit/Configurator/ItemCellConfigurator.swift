@@ -33,8 +33,8 @@ public final class ItemCellConfigurator: NSObject {
         cell.timeLabel.text = item.relativeDateString
         cell.atUsernameLabel.text = "@" + (item.author.username ?? "")
 
-        cell.didTapMedia = { [weak self] media in
-            self?.itemNavigator.openMedia(media: media)
+        cell.didTapMedia = { [weak self] media, index in
+            self?.itemNavigator.openMedia(media: media, index: index)
         }
 
         cell.didSelectAccessibilityLink = { [weak self] in

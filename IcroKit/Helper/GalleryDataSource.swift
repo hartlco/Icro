@@ -7,13 +7,13 @@ import Foundation
 
 public class GalleryDataSource {
     public let index: Int
-    public let imageURLs: [URL]
+    public let media: [Media]
 
     public var removeAtIndex: (Int) -> Void = { _ in }
 
     public init(index: Int,
-                imageURLs: [URL]) {
+                media: [Media]) {
         self.index = index
-        self.imageURLs = imageURLs
+        self.media = media
     }
 }

@@ -17,7 +17,7 @@ public protocol ItemNavigatorProtocol {
 
     func openConversation(item: Item)
 
-    func openMedia(media: Media)
+    func openMedia(media: [Media], index: Int)
 
     func openReply(item: Item)
 

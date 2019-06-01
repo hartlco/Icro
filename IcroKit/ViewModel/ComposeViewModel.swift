@@ -149,8 +149,8 @@ public final class ComposeViewModel {
     }
 
     public func galleryDataSource(for index: Int) -> GalleryDataSource {
-        return GalleryDataSource(index: index, imageURLs: images.map({
-            return $0.link
+        return GalleryDataSource(index: index, media: images.map({
+            return Media(url: $0.link, isVideo: false)
         }))
     }
 

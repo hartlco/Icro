@@ -50,7 +50,7 @@ final class ProfileViewConfigurator: NSObject {
 
         view.avatarPressed = { [weak self] in
             let media = Media(url: author.avatar, isVideo: false)
-            self?.itemNavigator.openMedia(media: media)
+            self?.itemNavigator.openMedia(media: [media], index: 0)
         }
 
         view.followButton.isHidden = author.isYou
