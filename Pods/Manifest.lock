@@ -45,7 +45,7 @@ DEPENDENCIES:
   - Dequeueable
   - DropdownTitleView
   - DTCoreText
-  - ImageViewer (from `https://github.com/MailOnline/ImageViewer.git`, commit `a4de06a08a78c4b0a65a48aa891f755b64ff03a8`)
+  - ImageViewer (from `https://github.com/hartlco/ImageViewer.git`, branch `master`)
   - Kanna
   - KeychainAccess
   - Kingfisher
@@ -73,13 +73,13 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   ImageViewer:
-    :commit: a4de06a08a78c4b0a65a48aa891f755b64ff03a8
-    :git: https://github.com/MailOnline/ImageViewer.git
+    :branch: master
+    :git: https://github.com/hartlco/ImageViewer.git
 
 CHECKOUT OPTIONS:
   ImageViewer:
-    :commit: a4de06a08a78c4b0a65a48aa891f755b64ff03a8
-    :git: https://github.com/MailOnline/ImageViewer.git
+    :commit: d9ec56f76dce1f9bd998bcdba782d6a071c7d620
+    :git: https://github.com/hartlco/ImageViewer.git
 
 SPEC CHECKSUMS:
   AcknowList: 06fde3319971dfd517ea1b1c194d78eb8cd774a2
@@ -98,6 +98,6 @@ SPEC CHECKSUMS:
   SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
   wpxmlrpc: 6ba55c773cfa27083ae4a2173e69b19f46da98e2
 
-PODFILE CHECKSUM: 41e919839cdf1b315bfa8d5365046f9b53728651
+PODFILE CHECKSUM: 41fbe9ea025ebfb16f6ca8acb2fede73e9f71189
 
 COCOAPODS: 1.7.0.beta.3
