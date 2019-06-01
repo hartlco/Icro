@@ -9,12 +9,9 @@ import SafariServices
 
 final class MainNavigator {
     private let navigationController: UINavigationController
-    private let userSettings: UserSettings
 
-    init(navigationController: UINavigationController,
-         userSettings: UserSettings = .shared) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.userSettings = userSettings
     }
 
     func openMicroBlog() {
@@ -26,7 +23,7 @@ final class MainNavigator {
     func openCommunityGuidlines() {
         guard let url = URL(string: "http://help.micro.blog/2017/community-guidelines/") else { return }
 
-        let itemNavigator = ItemNavigator(navigationController: navigationController)
-        itemNavigator.open(url: url)
+        let safariViewController = SFSafariViewController(url: url)
+        navigationController.present(safariViewController, animated: true, completion: nil)
     }
 }

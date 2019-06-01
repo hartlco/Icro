@@ -225,4 +225,12 @@ public final class UserSettings {
             return theme
         }
     }
+
+    public func logout() {
+        token = ""
+        username = ""
+        lastread_timeline = nil
+        setWordpressInfo(info: nil)
+        setMicropubInfo(info: nil)
+    }
 }

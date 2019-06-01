@@ -7,7 +7,7 @@ import Foundation
 
 // swiftlint:disable type_body_length
 public class ListViewModel: NSObject {
-    public enum ListType {
+    public enum ListType: Equatable {
         case timeline
         case photos
         case mentions
@@ -94,7 +94,7 @@ public class ListViewModel: NSObject {
     }
 
     @objc public func load() {
-        guard !isLoading else { return }
+        guard !isLoading, !showsLoginView else { return }
 
         didStartLoading()
         isLoading = true
@@ -311,6 +311,19 @@ public class ListViewModel: NSObject {
     }
 
     public let discoverySubtitle = NSLocalizedString("LISTVIEWMODEL_DISCOVER_SUBTITLE", comment: "")
+
+    public var showsLoginView: Bool {
+        switch type {
+        case .discover, .discoverCollection, .user:
+            return false
+        default:
+            return !userSettings.loggedIn
+        }
+    }
+
+    public var barButtonEnabled: Bool {
+        return userSettings.loggedIn
+    }
 
     // MARK: - Private
 

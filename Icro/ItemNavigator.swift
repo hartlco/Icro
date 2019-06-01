@@ -14,12 +14,15 @@ final class ItemNavigator: ItemNavigatorProtocol {
     private let navigationController: UINavigationController
     private let userSettings: UserSettings
     private let mainNavigator: MainNavigator
+    private var appNavigator: AppNavigator
 
     init(navigationController: UINavigationController,
+         appNavigator: AppNavigator,
          userSettings: UserSettings = .shared) {
         self.navigationController = navigationController
         self.userSettings = userSettings
-        self.mainNavigator = MainNavigator(navigationController: navigationController, userSettings: userSettings)
+        self.mainNavigator = MainNavigator(navigationController: navigationController)
+        self.appNavigator = appNavigator
     }
 
     func open(url: URL) {
@@ -83,6 +86,10 @@ final class ItemNavigator: ItemNavigatorProtocol {
         activityViewController.popoverPresentationController?.sourceView = sourceView
 
         navigationController.present(activityViewController, animated: true, completion: nil)
+    }
+
+    func showLogin() {
+        appNavigator.showLogin()
     }
 
     func accessibilityPresentLinks(linkList: [(text: String, url: URL)], message: String, sourceView: UIView) {
@@ -153,7 +160,7 @@ final class ItemNavigator: ItemNavigatorProtocol {
             style: .default) { [weak self] _ in
                 guard let self = self else { return }
                 let viewModel = ListViewModel(type: .discoverCollection(category: category))
-                let itemNavigator = ItemNavigator(navigationController: self.navigationController)
+                let itemNavigator = ItemNavigator(navigationController: self.navigationController, appNavigator: self.appNavigator)
                 let viewController = ListViewController(viewModel: viewModel, itemNavigator: itemNavigator)
                 self.navigationController.pushViewController(viewController, animated: true)
             }

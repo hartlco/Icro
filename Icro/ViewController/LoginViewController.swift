@@ -29,6 +29,11 @@ class LoginViewController: UIViewController, LoadingViewController {
         loginButton.setTitle( NSLocalizedString("LOGINVIEWCONTROLLER_LOGINBUTTON_TITLE", comment: ""), for: .normal)
         infoLabelText.text = NSLocalizedString("LOGINVIEWCONTROLLER_INFOLABEL_TEXT", comment: "")
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel",
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(cancelPressed))
+
         updateState()
 
         textField.addTarget(self, action: #selector(textFieldChanged), for: UIControl.Event.editingChanged)
@@ -72,5 +77,9 @@ class LoginViewController: UIViewController, LoadingViewController {
 
     @objc private func textFieldChanged() {
         viewModel.loginString = textField.text ?? ""
+    }
+
+    @objc private func cancelPressed() {
+        dismiss(animated: true, completion: nil)
     }
 }

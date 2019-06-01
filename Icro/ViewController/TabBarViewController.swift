@@ -10,7 +10,7 @@ import IcroUIKit
 class TabBarViewController: UITabBarController {
     private let userSettings: UserSettings
     private let appNavigator: AppNavigator
-    private let types: [ListViewModel.ListType]
+    private var types: [ListViewModel.ListType]
     fileprivate var previousViewController: UIViewController?
 
     init(userSettings: UserSettings,
@@ -24,7 +24,7 @@ class TabBarViewController: UITabBarController {
                  ListViewModel.ListType.username(username: userSettings.username)
         ]
 
-        super.init(nibName: "TabBarViewController2", bundle: nil)
+        super.init(nibName: "TabBarViewController", bundle: nil)
         commonInit()
         view.tintColor = Color.main
         delegate = self
@@ -34,12 +34,17 @@ class TabBarViewController: UITabBarController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func select(type: ListViewModel.ListType) {
+        guard let index = types.firstIndex(of: type) else { return }
+        selectedIndex = index
+    }
+
     private func commonInit() {
         let viewControllers: [UINavigationController] = types.map { type in
             let viewModel = ListViewModel(type: type)
             let navigationController = UINavigationController()
             navigationController.navigationBar.isTranslucent = false
-            let itemNavigator = ItemNavigator(navigationController: navigationController)
+            let itemNavigator = ItemNavigator(navigationController: navigationController, appNavigator: appNavigator)
             let viewController = ListViewController(viewModel: viewModel, itemNavigator: itemNavigator)
             viewController.view.tintColor = Color.main
             navigationController.viewControllers = [viewController]
@@ -78,12 +83,21 @@ class TabBarViewController: UITabBarController {
         previousViewController = viewControllers.first
     }
 
+    func reload() {
+        self.types = [ListViewModel.ListType.timeline,
+                      ListViewModel.ListType.mentions,
+                      ListViewModel.ListType.favorites,
+                      ListViewModel.ListType.discover,
+                      ListViewModel.ListType.username(username: userSettings.username)]
+        commonInit()
+    }
+
     // MARK: - Private
 
     @objc private func showComposeViewController() {
         let navController = UINavigationController()
         let viewModel = ComposeViewModel(mode: .post)
-        let itemNavigator = ItemNavigator(navigationController: navController)
+        let itemNavigator = ItemNavigator(navigationController: navController, appNavigator: appNavigator)
         let navigator = ComposeNavigator(navigationController: navController, viewModel: viewModel)
         let viewController = ComposeViewController(viewModel: viewModel, composeNavigator: navigator, itemNavigator: itemNavigator)
         navController.viewControllers = [viewController]
@@ -105,7 +119,7 @@ class TabBarViewController: UITabBarController {
         guard let navigationController = selectedViewController as? UINavigationController else { return }
 
         let viewModel = ListViewModel(type: .photos)
-        let itemNavigator = ItemNavigator(navigationController: navigationController)
+        let itemNavigator = ItemNavigator(navigationController: navigationController, appNavigator: appNavigator)
         let viewController = ListViewController(viewModel: viewModel, itemNavigator: itemNavigator)
         navigationController.pushViewController(viewController, animated: true)
     }

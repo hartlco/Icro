@@ -26,7 +26,7 @@ final class SettingsNavigator: NSObject {
 
     func openHartlCoOnMicroBlog() {
         let viewModel = ListViewModel(type: .username(username: "hartlco"))
-        let itemNavigator = ItemNavigator(navigationController: navigationController)
+        let itemNavigator = ItemNavigator(navigationController: navigationController, appNavigator: appNavigator)
         let viewController = ListViewController(viewModel: viewModel, itemNavigator: itemNavigator)
         navigationController.pushViewController(viewController, animated: true)
     }
@@ -77,6 +77,7 @@ final class SettingsNavigator: NSObject {
     }
 
     func logout() {
+        navigationController.dismiss(animated: true, completion: nil)
         appNavigator.logout()
     }
 }

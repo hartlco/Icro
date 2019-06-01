@@ -10,6 +10,7 @@ final class AppNavigator {
     private let window: UIWindow
     private let userSettings: UserSettings
     private let loginViewController: LoginViewController
+    private var tabBarViewController: TabBarViewController?
     private let loginViewModel = LoginViewModel()
 
     init(window: UIWindow,
@@ -20,16 +21,23 @@ final class AppNavigator {
         self.loginViewController = LoginViewController(viewModel: loginViewModel)
 
         loginViewModel.didLogin = { [weak self] _ in
-            guard let strongSelf = self else { return }
-            strongSelf.setup()
+            guard let self = self else { return }
+            self.loginViewController.dismiss(animated: true, completion: nil)
+            self.tabBarViewController?.reload()
         }
     }
 
+    func showLogin() {
+        let navigationController = UINavigationController(rootViewController: loginViewController)
+        window.rootViewController?.present(navigationController, animated: true, completion: nil)
+    }
+
     func setup() {
-        if userSettings.loggedIn {
-            window.rootViewController = TabBarViewController(userSettings: userSettings, appNavigator: self)
-        } else {
-            window.rootViewController = UINavigationController(rootViewController: loginViewController)
+        tabBarViewController = TabBarViewController(userSettings: userSettings, appNavigator: self)
+        window.rootViewController = tabBarViewController
+
+        if !userSettings.loggedIn {
+            tabBarViewController?.select(type: .discover)
         }
 
         window.tintColor = Color.main
@@ -37,19 +45,13 @@ final class AppNavigator {
     }
 
     func logout() {
+        tabBarViewController?.reload()
         Item.deleteAllCached()
-        userSettings.token = ""
-        userSettings.username = ""
-        userSettings.lastread_timeline = nil
-        userSettings.setWordpressInfo(info: nil)
-        userSettings.setMicropubInfo(info: nil)
-        window.rootViewController = UINavigationController(rootViewController: loginViewController)
+        userSettings.logout()
     }
 
     func handleDeeplink(url: URL) {
-        guard let navigation = window.rootViewController as? UINavigationController,
-            navigation.viewControllers.first == loginViewController else { return }
-
+        showLogin()
         let token = url.absoluteString.replacingOccurrences(of: "icro://", with: "")
         loginViewController.verify(token: token)
     }

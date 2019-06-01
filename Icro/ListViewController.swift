@@ -32,6 +32,8 @@ final class ListViewController: UIViewController, LoadingViewController {
 
     @IBOutlet private weak var unreadView: UIView!
     @IBOutlet weak var unreadLabel: UILabel!
+    @IBOutlet private weak var loginLabel: UILabel!
+    @IBOutlet private weak var loginView: UIView!
     private var isLoading = false
     private var rowHeightEstimate = [String: CGFloat]()
     private let notificationCenter: NotificationCenter
@@ -115,8 +117,10 @@ final class ListViewController: UIViewController, LoadingViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateAppearance()
-
         updateDiscoverySectionsIfNeeded()
+        loginView.isHidden = !viewModel.showsLoginView
+        navigationItem.rightBarButtonItem?.isEnabled = viewModel.barButtonEnabled
+        navigationItem.leftBarButtonItem?.isEnabled = viewModel.barButtonEnabled
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -128,6 +132,10 @@ final class ListViewController: UIViewController, LoadingViewController {
         viewModel.resetContent()
         rowHeightEstimate = [:]
         tableView.reloadData()
+    }
+
+    @IBAction private func loginPressed(_ sender: Any) {
+        itemNavigator.showLogin()
     }
 
     private func updateDiscoverySectionsIfNeeded() {

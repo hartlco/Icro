@@ -65,6 +65,9 @@ final class ProfileViewConfigurator: NSObject {
 
         view.followingButton.setTitle(
             String(format: NSLocalizedString("PROFILEVIEWCONFIGURATOR_FOLLOWINGBUTTON_TITLE", comment: ""), followingCount), for: .normal)
+
+        view.followButton.isEnabled = viewModel.barButtonEnabled
+        view.followingButton.isEnabled = viewModel.barButtonEnabled
     }
 
     private func emptyConfig(for cell: ProfileTableViewCell) {

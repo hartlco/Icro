@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct DiscoveryCategory: Codable {
+public struct DiscoveryCategory: Codable, Equatable {
     public let title: String
     public let category: String
     public let emoji: String
