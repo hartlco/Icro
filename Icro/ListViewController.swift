@@ -32,17 +32,19 @@ final class ListViewController: UIViewController, LoadingViewController {
 
     @IBOutlet private weak var unreadView: UIView!
     @IBOutlet weak var unreadLabel: UILabel!
-    var isLoading = false
-
-    fileprivate var rowHeightEstimate = [String: CGFloat]()
+    private var isLoading = false
+    private var rowHeightEstimate = [String: CGFloat]()
+    private let notificationCenter: NotificationCenter
 
     init(viewModel: ListViewModel,
-         itemNavigator: ItemNavigator) {
+         itemNavigator: ItemNavigator,
+         notificationCenter: NotificationCenter = .default) {
         self.viewModel = viewModel
         self.itemNavigator = itemNavigator
         cellConfigurator = ItemCellConfigurator(itemNavigator: itemNavigator)
         profileViewConfigurator = ProfileViewConfigurator(itemNavigator: itemNavigator, viewModel: viewModel)
         editActionsConfigurator = EditActionsConfigurator(itemNavigator: itemNavigator, viewModel: viewModel)
+        self.notificationCenter = notificationCenter
 
         super.init(nibName: "ListViewController", bundle: nil)
 
@@ -58,11 +60,11 @@ final class ListViewController: UIViewController, LoadingViewController {
 
         updateUnread()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshContent),
+        notificationCenter.addObserver(self, selector: #selector(refreshContent),
                                                name: UIContentSizeCategory.didChangeNotification,
                                                object: nil)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshContent),
+        notificationCenter.addObserver(self, selector: #selector(refreshContent),
                                                name: .appearanceDidChange,
                                                object: nil)
 
@@ -70,7 +72,8 @@ final class ListViewController: UIViewController, LoadingViewController {
             self?.tableView.reloadData()
         }
 
-        viewModel.didStartLoading = {
+        viewModel.didStartLoading = { [weak self] in
+            guard let self = self else { return }
             self.isLoading = true
             self.showLoading()
         }
@@ -96,7 +99,7 @@ final class ListViewController: UIViewController, LoadingViewController {
     }
 
     deinit {
-        NotificationCenter.default.removeObserver(self)
+        notificationCenter.removeObserver(self)
     }
 
     override func viewDidAppear(_ animated: Bool) {
