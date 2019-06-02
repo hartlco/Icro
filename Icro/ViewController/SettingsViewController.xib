@@ -18,14 +18,14 @@
                 <outlet property="appearanceHeaderView" destination="Ps9-BN-M78" id="skh-F3-mzI"/>
                 <outlet property="blacklistButton" destination="dOk-MB-Zvn" id="Wvi-Uq-wYM"/>
                 <outlet property="blogSectionHeaderView" destination="3n5-JO-M3J" id="2Lp-lc-7ou"/>
-                <outlet property="blogSetupInfoLabel" destination="oBm-rI-ndn" id="WXx-aO-qy7"/>
+                <outlet property="blogSetupInfoLabel" destination="qdp-oI-L5X" id="ebV-kR-EIE"/>
                 <outlet property="blogSetupView" destination="evc-Yc-fPN" id="xR0-mT-Qv1"/>
                 <outlet property="contentSectionHeaderView" destination="xx1-55-aey" id="kUT-U4-IZa"/>
                 <outlet property="guidlinesButton" destination="AhY-av-IXf" id="DJ7-AT-yHw"/>
                 <outlet property="hartlcoOnMicroBlogButton" destination="YwQ-Ai-MiT" id="R7t-uy-7WQ"/>
                 <outlet property="logoutButton" destination="IPq-QQ-G1D" id="vPX-6I-JLo"/>
                 <outlet property="micropubSettingsSwitchLabel" destination="RzQ-v8-Ydf" id="kMq-6F-OPx"/>
-                <outlet property="micropubSetupInfoLabel" destination="BMd-JN-0y4" id="EhO-3V-Uoo"/>
+                <outlet property="micropubSetupInfoLabel" destination="75q-N9-MIb" id="JPh-mi-iJo"/>
                 <outlet property="micropubSetupSectionHeaderView" destination="PTR-pn-Icg" id="oWz-9R-eDc"/>
                 <outlet property="micropubSetupView" destination="H4A-3P-gFE" id="esh-Lz-PjV"/>
                 <outlet property="micropubTokenTextInput" destination="wvP-gm-PPl" id="My2-RT-9Y9"/>
@@ -173,21 +173,9 @@
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdp-oI-L5X" customClass="SettingsSectionSubtitleView" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="307" width="1024" height="50"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Blog-URL needs to be entered with the correct scheme (https:// or http://)." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBm-rI-ndn">
-                                                    <rect key="frame" x="10" y="2" width="1004" height="38"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="oBm-rI-ndn" firstAttribute="top" secondItem="qdp-oI-L5X" secondAttribute="top" constant="2" id="CrW-TG-zDD"/>
-                                                <constraint firstAttribute="bottom" secondItem="oBm-rI-ndn" secondAttribute="bottom" constant="10" id="TQ3-0t-0Ra"/>
-                                                <constraint firstItem="oBm-rI-ndn" firstAttribute="leading" secondItem="qdp-oI-L5X" secondAttribute="leading" constant="10" id="gEo-za-m9E"/>
-                                                <constraint firstAttribute="trailing" secondItem="oBm-rI-ndn" secondAttribute="trailing" constant="10" id="wb1-cK-cFf"/>
+                                                <constraint firstAttribute="height" constant="50" id="IDi-Ga-V3e"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTR-pn-Icg" customClass="SettingsSectionHeaderView" customModule="Icro" customModuleProvider="target">
@@ -265,21 +253,9 @@
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75q-N9-MIb" customClass="SettingsSectionSubtitleView" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="531" width="1024" height="50"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your public micropub endpoint URL and a valid token." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMd-JN-0y4">
-                                                    <rect key="frame" x="10" y="2" width="1004" height="38"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="BMd-JN-0y4" secondAttribute="trailing" constant="10" id="CGl-AU-YZT"/>
-                                                <constraint firstAttribute="bottom" secondItem="BMd-JN-0y4" secondAttribute="bottom" constant="10" id="FIs-g7-crk"/>
-                                                <constraint firstItem="BMd-JN-0y4" firstAttribute="leading" secondItem="75q-N9-MIb" secondAttribute="leading" constant="10" id="ISJ-vU-JHc"/>
-                                                <constraint firstItem="BMd-JN-0y4" firstAttribute="top" secondItem="75q-N9-MIb" secondAttribute="top" constant="2" id="eAn-l1-888"/>
+                                                <constraint firstAttribute="height" constant="50" id="VpE-Tq-AHH"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbL-U0-WnO" customClass="SettingsSectionHeaderView" customModule="Icro" customModuleProvider="target">

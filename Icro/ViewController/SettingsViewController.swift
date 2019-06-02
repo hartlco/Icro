@@ -103,14 +103,22 @@ final class SettingsViewController: UIViewController, LoadingViewController {
             blogSectionHeaderView.title = localizedString(key: "SETTINGSVIEWCONTROLLER_BLOGSETUP_TITLE")
         }
     }
-    @IBOutlet private weak var blogSetupInfoLabel: UILabel!
+    @IBOutlet private weak var blogSetupInfoLabel: SettingsSectionSubtitleView! {
+        didSet {
+            blogSetupInfoLabel.title = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGINFO_TEXT", comment: "")
+        }
+    }
 
     @IBOutlet private weak var micropubSetupSectionHeaderView: SettingsSectionHeaderView! {
         didSet {
             micropubSetupSectionHeaderView.title = localizedString(key: "SETTINGSVIEWCONTROLLER_MICROPUBSETUP_TITLE")
         }
     }
-    @IBOutlet private weak var micropubSetupInfoLabel: UILabel!
+    @IBOutlet private weak var micropubSetupInfoLabel: SettingsSectionSubtitleView! {
+        didSet {
+            micropubSetupInfoLabel.title = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBINFO_TEXT", comment: "")
+        }
+    }
 
     @IBOutlet private weak var accountSectionHeaderView: SettingsSectionHeaderView! {
         didSet {
@@ -234,8 +242,6 @@ final class SettingsViewController: UIViewController, LoadingViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = NSLocalizedString("SETTINGSVIEWCONTROLLER_TITLE", comment: "")
-        blogSetupInfoLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGINFO_TEXT", comment: "")
-        micropubSetupInfoLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBINFO_TEXT", comment: "")
 
         updateState(animated: false)
 
@@ -420,6 +426,5 @@ extension String {
     }
 }
 
-class SettingsSectionSubtitleView: UIView { }
 class SettingsCellView: UIView { }
 class SettingsScrollView: UIScrollView { }
