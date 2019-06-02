@@ -34,6 +34,12 @@
 		5B01CC012168E4DF0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
 		5B01CC072168E8000007E01D /* ListItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */; };
 		5B0D272E22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D272D22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift */; };
+		5B0D273022A3B58400C0EA53 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D272F22A3B58400C0EA53 /* SettingsView.swift */; };
+		5B0D273122A3B84C00C0EA53 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D272F22A3B58400C0EA53 /* SettingsView.swift */; };
+		5B0D273222A3B85000C0EA53 /* SettingsTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B722A3A558008E38B6 /* SettingsTextInputView.swift */; };
+		5B0D273322A3B85300C0EA53 /* SettingsSectionSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D272D22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift */; };
+		5B0D273422A3B85600C0EA53 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B522A39D5C008E38B6 /* SettingsButton.swift */; };
+		5B0D273522A3B87000C0EA53 /* SettingsSwitchWithLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B322A3953D008E38B6 /* SettingsSwitchWithLabelView.swift */; };
 		5B38475D21FDFEC900F082AD /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475C21FDFEC900F082AD /* TipJarView.swift */; };
 		5B38475F21FDFEFD00F082AD /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */; };
 		5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B38476021FE035900F082AD /* StoreKit.framework */; };
@@ -352,6 +358,7 @@
 		5B01CC042168E7430007E01D /* Icro-Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Icro-Mac.entitlements"; sourceTree = "<group>"; };
 		5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCellConfigurator.swift; sourceTree = "<group>"; };
 		5B0D272D22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsSectionSubtitleView.swift; path = View/Settings/SettingsSectionSubtitleView.swift; sourceTree = "<group>"; };
+		5B0D272F22A3B58400C0EA53 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = View/Settings/SettingsView.swift; sourceTree = "<group>"; };
 		5B2A5A7720A613EF00B54399 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableCellButton.swift; sourceTree = "<group>"; };
 		5B38475C21FDFEC900F082AD /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
@@ -932,6 +939,7 @@
 				5BB388B522A39D5C008E38B6 /* SettingsButton.swift */,
 				5BB388B722A3A558008E38B6 /* SettingsTextInputView.swift */,
 				5B0D272D22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift */,
+				5B0D272F22A3B58400C0EA53 /* SettingsView.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1878,6 +1886,7 @@
 			files = (
 				5B99C67B229FB5CD00437552 /* UITableView+Keyboard.swift in Sources */,
 				5B66EE71227D73E400317FE3 /* HTTPMethodTests.swift in Sources */,
+				5B0D273422A3B85600C0EA53 /* SettingsButton.swift in Sources */,
 				5B58374F2128B5F80076121E /* TabBarViewController.swift in Sources */,
 				5B38476A21FE077A00F082AD /* UIView+Contraints.swift in Sources */,
 				5B66EE74227D74DF00317FE3 /* MockClient.swift in Sources */,
@@ -1891,9 +1900,11 @@
 				5B5837582128B5F80076121E /* SettingsViewController.swift in Sources */,
 				5B5837592128B5F80076121E /* SettingsViewController.xib in Sources */,
 				5B3C79BB21C50A6200F699B8 /* ListViewController.swift in Sources */,
+				5B0D273122A3B84C00C0EA53 /* SettingsView.swift in Sources */,
 				5B58375A2128B5F80076121E /* BlacklistViewController.swift in Sources */,
 				5BB73F0C212C9E0B00120FAB /* ListViewModelTests.swift in Sources */,
 				5B58375B2128B5F80076121E /* BlacklistViewController.xib in Sources */,
+				5B0D273222A3B85000C0EA53 /* SettingsTextInputView.swift in Sources */,
 				5B38476721FE06F500F082AD /* TipJarView.swift in Sources */,
 				5B38476621FE06B200F082AD /* TipJarViewModel.swift in Sources */,
 				5B58375E2128B5F80076121E /* SettingsNavigator.swift in Sources */,
@@ -1919,12 +1930,14 @@
 				5B5837742128B5F80076121E /* LoginViewModel.swift in Sources */,
 				5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */,
 				5BD95AF52290A10600C74C52 /* NavigatorComponent.swift in Sources */,
+				5B0D273522A3B87000C0EA53 /* SettingsSwitchWithLabelView.swift in Sources */,
 				5B5837762128B5F80076121E /* BlacklistViewModel.swift in Sources */,
 				5B81E79C2206D000008BEA16 /* TipCollectionViewCell.swift in Sources */,
 				5B5837772128B5F80076121E /* AppDelegate.swift in Sources */,
 				5B58374B2128B5BD0076121E /* UserListViewController.swift in Sources */,
 				5B5837402128B0680076121E /* HTMLContentTests.swift in Sources */,
 				5BD95AFB2290A13200C74C52 /* SettingsButtonWithLabelView.swift in Sources */,
+				5B0D273322A3B85300C0EA53 /* SettingsSectionSubtitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1987,6 +2000,7 @@
 				5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */,
 				5BF2DA9D2287E97B0055240D /* SettingsInlineSeparatorView.swift in Sources */,
 				5BB388B822A3A558008E38B6 /* SettingsTextInputView.swift in Sources */,
+				5B0D273022A3B58400C0EA53 /* SettingsView.swift in Sources */,
 				5B44C71720979CF20003B35D /* BlacklistViewModel.swift in Sources */,
 				5B0D272E22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift in Sources */,
 				5BB388B622A39D5C008E38B6 /* SettingsButton.swift in Sources */,
