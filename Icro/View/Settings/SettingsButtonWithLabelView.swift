@@ -38,6 +38,7 @@ final class SettingsButtonWithLabelView: UIView {
         backgroundColor = Color.backgroundColor
         label = SecondaryTextLabel(frame: CGRect.zero)
         button = UIButton(frame: CGRect.zero)
+        button.setTitleColor(Color.textColor, for: .normal)
         addSubview(button)
         addSubview(label)
         translatesAutoresizingMaskIntoConstraints = false

@@ -1,12 +1,12 @@
 //
-//  Created by Martin Hartl on 12.05.19.
+//  Created by Martin Hartl on 02.06.19.
 //  Copyright © 2019 Martin Hartl. All rights reserved.
 //
 
 import UIKit
 import IcroKit
 
-final class SettingsInlineSeparatorView: UIView {
+final class SettingsSeparatorView: UIView {
     private let separator = UIView()
 
     override init(frame: CGRect) {
@@ -24,10 +24,7 @@ final class SettingsInlineSeparatorView: UIView {
         separator.translatesAutoresizingMaskIntoConstraints = false
         separator.backgroundColor = Color.separatorColor
         addSubview(separator)
-        separator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
-        separator.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        separator.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        separator.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         separator.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        separator.pin(to: self)
     }
 }

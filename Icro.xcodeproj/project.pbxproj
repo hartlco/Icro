@@ -40,6 +40,9 @@
 		5B0D273322A3B85300C0EA53 /* SettingsSectionSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D272D22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift */; };
 		5B0D273422A3B85600C0EA53 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B522A39D5C008E38B6 /* SettingsButton.swift */; };
 		5B0D273522A3B87000C0EA53 /* SettingsSwitchWithLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B322A3953D008E38B6 /* SettingsSwitchWithLabelView.swift */; };
+		5B0D273822A3BA1F00C0EA53 /* Settings2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D273622A3BA1F00C0EA53 /* Settings2ViewController.swift */; };
+		5B0D273922A3BA1F00C0EA53 /* Settings2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B0D273722A3BA1F00C0EA53 /* Settings2ViewController.xib */; };
+		5B0D273B22A3D46400C0EA53 /* SettingsSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */; };
 		5B38475D21FDFEC900F082AD /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475C21FDFEC900F082AD /* TipJarView.swift */; };
 		5B38475F21FDFEFD00F082AD /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */; };
 		5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B38476021FE035900F082AD /* StoreKit.framework */; };
@@ -359,6 +362,9 @@
 		5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCellConfigurator.swift; sourceTree = "<group>"; };
 		5B0D272D22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsSectionSubtitleView.swift; path = View/Settings/SettingsSectionSubtitleView.swift; sourceTree = "<group>"; };
 		5B0D272F22A3B58400C0EA53 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = View/Settings/SettingsView.swift; sourceTree = "<group>"; };
+		5B0D273622A3BA1F00C0EA53 /* Settings2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Settings2ViewController.swift; path = ViewController/Settings2ViewController.swift; sourceTree = "<group>"; };
+		5B0D273722A3BA1F00C0EA53 /* Settings2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Settings2ViewController.xib; path = ViewController/Settings2ViewController.xib; sourceTree = "<group>"; };
+		5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsSeparatorView.swift; path = View/Settings/SettingsSeparatorView.swift; sourceTree = "<group>"; };
 		5B2A5A7720A613EF00B54399 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableCellButton.swift; sourceTree = "<group>"; };
 		5B38475C21FDFEC900F082AD /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
@@ -850,6 +856,8 @@
 				5BD32BB82089A12E005D250A /* SettingsViewController.xib */,
 				5B44C71220979CCC0003B35D /* BlacklistViewController.swift */,
 				5B44C71320979CCC0003B35D /* BlacklistViewController.xib */,
+				5B0D273622A3BA1F00C0EA53 /* Settings2ViewController.swift */,
+				5B0D273722A3BA1F00C0EA53 /* Settings2ViewController.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -940,6 +948,7 @@
 				5BB388B722A3A558008E38B6 /* SettingsTextInputView.swift */,
 				5B0D272D22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift */,
 				5B0D272F22A3B58400C0EA53 /* SettingsView.swift */,
+				5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1476,6 +1485,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B0D273922A3BA1F00C0EA53 /* Settings2ViewController.xib in Resources */,
 				5BBC6705218EB0150090629C /* LoadMoreTableViewCell.xib in Resources */,
 				BF707E742131C45600506E64 /* Localizable.strings in Resources */,
 				5B44C71520979CCC0003B35D /* BlacklistViewController.xib in Resources */,
@@ -2002,6 +2012,7 @@
 				5BB388B822A3A558008E38B6 /* SettingsTextInputView.swift in Sources */,
 				5B0D273022A3B58400C0EA53 /* SettingsView.swift in Sources */,
 				5B44C71720979CF20003B35D /* BlacklistViewModel.swift in Sources */,
+				5B0D273822A3BA1F00C0EA53 /* Settings2ViewController.swift in Sources */,
 				5B0D272E22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift in Sources */,
 				5BB388B622A39D5C008E38B6 /* SettingsButton.swift in Sources */,
 				5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */,
@@ -2030,6 +2041,7 @@
 				5BF2DAA6228802000055240D /* UserDefaultsMigrationComponent.swift in Sources */,
 				5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */,
 				5B38475F21FDFEFD00F082AD /* TipJarViewModel.swift in Sources */,
+				5B0D273B22A3D46400C0EA53 /* SettingsSeparatorView.swift in Sources */,
 				5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

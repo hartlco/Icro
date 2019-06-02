@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import IcroKit
 
 final class SettingsSectionSubtitleView: UIView {
     private let label = UILabel(frame: CGRect.zero)
@@ -26,10 +27,12 @@ final class SettingsSectionSubtitleView: UIView {
 
     private func setup() {
         translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = Color.secondaryTextColor
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.preferredFont(forTextStyle: .footnote)
         addSubview(label)
-        label.pin(to: self, inset: UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10))
+        label.pin(to: self, inset: UIEdgeInsets(top: 4, left: 10, bottom: 10, right: 10))
     }
 
 }

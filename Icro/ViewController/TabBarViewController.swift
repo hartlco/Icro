@@ -108,7 +108,7 @@ class TabBarViewController: UITabBarController {
         let navigationController = UINavigationController()
         let mainNavigator = MainNavigator(navigationController: navigationController)
         let settingsNavigator = SettingsNavigator(navigationController: navigationController, appNavigator: appNavigator)
-        let viewController = SettingsViewController(navigator: settingsNavigator,
+        let viewController = Settings2ViewController(navigator: settingsNavigator,
                                                     mainNavigator: mainNavigator,
                                                     viewModel: SettingsViewModel(userSettings: userSettings))
         navigationController.viewControllers = [viewController]

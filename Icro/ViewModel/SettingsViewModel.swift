@@ -15,6 +15,18 @@ final class SettingsViewModel {
         self.userSettings = userSettings
     }
 
+    let title = NSLocalizedString("SETTINGSVIEWCONTROLLER_TITLE", comment: "")
+    let appearanceTitle = NSLocalizedString( "SETTINGSVIEWCONTROLLER_APPEARANCE_TITLE", comment: "")
+    let appearanceButtonText = NSLocalizedString("SETTINGSVIEWCONTROLLER_THEME_TITLE", comment: "")
+
+    var appearanceText: String {
+        return NSLocalizedString(userSettings.theme.rawValue, comment: "")
+    }
+
+    let wordpressTitle = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGSETUP_TITLE", comment: "")
+    let wordpressSubTitle = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGINFO_TEXT", comment: "")
+    let wordpressSwitchTitle = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGSETUPSWITCH_TEXT", comment: "")
+
     var wordPressSetup: UserSettings.WordpressInfo? {
         get {
             return userSettings.wordpressInfo

@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import IcroKit
 
 final class SettingsSectionHeaderView: UIView {
     private let label = UILabel(frame: CGRect.zero)
@@ -26,6 +27,7 @@ final class SettingsSectionHeaderView: UIView {
 
     private func setup() {
         translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = Color.textColor
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.preferredFont(forTextStyle: .headline)
         addSubview(label)

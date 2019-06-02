@@ -15,7 +15,9 @@ final class SettingsTextInputView: UIView {
         }
 
         set {
-            textField.placeholder = newValue
+            textField.attributedPlaceholder =
+                NSAttributedString(string: newValue ?? "",
+                                   attributes: [NSAttributedString.Key.foregroundColor: Color.secondaryTextColor])
         }
     }
 

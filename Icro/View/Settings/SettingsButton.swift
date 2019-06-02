@@ -5,6 +5,7 @@
 
 import UIKit
 import IcroUIKit
+import IcroKit
 
 final class SettingsButton: UIView {
     private let button = FakeTableCellButton(frame: .zero)
@@ -28,8 +29,10 @@ final class SettingsButton: UIView {
     }
 
     private func setup() {
+        backgroundColor = Color.backgroundColor
         addSubview(button)
         button.titleLabel?.font = .preferredFont(forTextStyle: .subheadline)
+        button.setTitleColor(Color.textColor, for: .normal)
         button.contentHorizontalAlignment = .left
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 0)
         button.translatesAutoresizingMaskIntoConstraints = false

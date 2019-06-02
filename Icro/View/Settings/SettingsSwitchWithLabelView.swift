@@ -38,6 +38,7 @@ final class SettingsSwitchWithLabelView: UIView {
         backgroundColor = Color.backgroundColor
         translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = Color.textColor
         label.font = UIFont.preferredFont(forTextStyle: .subheadline)
         addSubview(label)
         label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14).isActive = true
