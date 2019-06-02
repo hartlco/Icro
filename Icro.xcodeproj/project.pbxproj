@@ -156,6 +156,8 @@
 		5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */; };
 		5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D180208904D300F484B2 /* AppNavigator.swift */; };
 		5BB388B422A3953D008E38B6 /* SettingsSwitchWithLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B322A3953D008E38B6 /* SettingsSwitchWithLabelView.swift */; };
+		5BB388B622A39D5C008E38B6 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B522A39D5C008E38B6 /* SettingsButton.swift */; };
+		5BB388B822A3A558008E38B6 /* SettingsTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B722A3A558008E38B6 /* SettingsTextInputView.swift */; };
 		5BB3E470226C514C00C1B6BB /* IcroScreenshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB3E46F226C514C00C1B6BB /* IcroScreenshotsTests.swift */; };
 		5BB3E478226C518100C1B6BB /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB3E477226C518000C1B6BB /* SnapshotHelper.swift */; };
 		5BB73F0C212C9E0B00120FAB /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB73F0B212C9E0B00120FAB /* ListViewModelTests.swift */; };
@@ -430,6 +432,8 @@
 		5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = ViewModel/LoginViewModel.swift; sourceTree = "<group>"; };
 		5BA6D180208904D300F484B2 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppNavigator.swift; path = Navigator/AppNavigator.swift; sourceTree = "<group>"; };
 		5BB388B322A3953D008E38B6 /* SettingsSwitchWithLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsSwitchWithLabelView.swift; path = View/Settings/SettingsSwitchWithLabelView.swift; sourceTree = "<group>"; };
+		5BB388B522A39D5C008E38B6 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsButton.swift; path = View/Settings/SettingsButton.swift; sourceTree = "<group>"; };
+		5BB388B722A3A558008E38B6 /* SettingsTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsTextInputView.swift; path = View/Settings/SettingsTextInputView.swift; sourceTree = "<group>"; };
 		5BB3E46D226C514C00C1B6BB /* IcroScreenshotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IcroScreenshotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB3E46F226C514C00C1B6BB /* IcroScreenshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcroScreenshotsTests.swift; sourceTree = "<group>"; };
 		5BB3E471226C514C00C1B6BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -923,6 +927,8 @@
 				5BF2DA9A2287E91A0055240D /* SettingsButtonWithLabelView.swift */,
 				5BF2DA9C2287E97B0055240D /* SettingsInlineSeparatorView.swift */,
 				5BB388B322A3953D008E38B6 /* SettingsSwitchWithLabelView.swift */,
+				5BB388B522A39D5C008E38B6 /* SettingsButton.swift */,
+				5BB388B722A3A558008E38B6 /* SettingsTextInputView.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1977,7 +1983,9 @@
 				5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */,
 				5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */,
 				5BF2DA9D2287E97B0055240D /* SettingsInlineSeparatorView.swift in Sources */,
+				5BB388B822A3A558008E38B6 /* SettingsTextInputView.swift in Sources */,
 				5B44C71720979CF20003B35D /* BlacklistViewModel.swift in Sources */,
+				5BB388B622A39D5C008E38B6 /* SettingsButton.swift in Sources */,
 				5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */,
 				5B38476421FE048900F082AD /* TipCollectionViewCell.swift in Sources */,
 				5B583722212861220076121E /* UserItemCellConfigurator.swift in Sources */,

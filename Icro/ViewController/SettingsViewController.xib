@@ -13,33 +13,33 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Icro" customModuleProvider="target">
             <connections>
                 <outlet property="accountSectionHeaderView" destination="bbL-U0-WnO" id="7hQ-a1-bnS"/>
-                <outlet property="acknowledgmentsButton" destination="BvW-1v-Kdg" id="JhY-no-XLS"/>
+                <outlet property="acknowledgmentsButton" destination="0iX-hX-48R" id="Jfw-aB-dcl"/>
                 <outlet property="appearanceButtonWithText" destination="eiP-NT-0DL" id="JO7-ry-oOp"/>
                 <outlet property="appearanceHeaderView" destination="Ps9-BN-M78" id="skh-F3-mzI"/>
-                <outlet property="blacklistButton" destination="dKE-Cq-VEE" id="Aph-lk-1uw"/>
+                <outlet property="blacklistButton" destination="dOk-MB-Zvn" id="Wvi-Uq-wYM"/>
                 <outlet property="blogSectionHeaderView" destination="3n5-JO-M3J" id="2Lp-lc-7ou"/>
                 <outlet property="blogSetupInfoLabel" destination="oBm-rI-ndn" id="WXx-aO-qy7"/>
                 <outlet property="blogSetupView" destination="evc-Yc-fPN" id="xR0-mT-Qv1"/>
-                <outlet property="blogUrlTextField" destination="t7R-m1-ISl" id="0g4-9A-WCZ"/>
                 <outlet property="contentSectionHeaderView" destination="xx1-55-aey" id="kUT-U4-IZa"/>
-                <outlet property="guidlinesButton" destination="2Sx-Lm-3dU" id="D9q-rf-9KO"/>
-                <outlet property="hartlcoOnMicroBlogButton" destination="HlX-ag-V85" id="5Y1-em-Wl7"/>
-                <outlet property="logoutButton" destination="pII-iB-fBa" id="Win-S8-khh"/>
+                <outlet property="guidlinesButton" destination="AhY-av-IXf" id="DJ7-AT-yHw"/>
+                <outlet property="hartlcoOnMicroBlogButton" destination="YwQ-Ai-MiT" id="R7t-uy-7WQ"/>
+                <outlet property="logoutButton" destination="IPq-QQ-G1D" id="vPX-6I-JLo"/>
                 <outlet property="micropubSettingsSwitchLabel" destination="RzQ-v8-Ydf" id="kMq-6F-OPx"/>
                 <outlet property="micropubSetupInfoLabel" destination="BMd-JN-0y4" id="EhO-3V-Uoo"/>
                 <outlet property="micropubSetupSectionHeaderView" destination="PTR-pn-Icg" id="oWz-9R-eDc"/>
                 <outlet property="micropubSetupView" destination="H4A-3P-gFE" id="esh-Lz-PjV"/>
-                <outlet property="micropubTokenTextField" destination="pja-zR-TPH" id="rK1-6w-hVP"/>
-                <outlet property="micropubUrlTextField" destination="UIe-Fy-LUd" id="kyu-u6-U66"/>
+                <outlet property="micropubTokenTextInput" destination="wvP-gm-PPl" id="My2-RT-9Y9"/>
+                <outlet property="micropubURLTextInput" destination="7dy-y6-fJM" id="6ao-IU-2pD"/>
                 <outlet property="otherSectionHeaderView" destination="U3M-JM-Wxb" id="zFe-dW-D5y"/>
                 <outlet property="outterStackView" destination="M9s-jG-emT" id="MH2-rP-e1r"/>
-                <outlet property="passwordTextField" destination="h3J-of-geq" id="mCM-lm-UqY"/>
-                <outlet property="supportButton" destination="TJ0-eB-xT0" id="E2T-28-l0T"/>
+                <outlet property="supportButton" destination="9kj-L6-vTo" id="Sha-pD-4Tf"/>
                 <outlet property="tipJarContainer" destination="VCC-VE-986" id="V0d-mb-Uz1"/>
                 <outlet property="tipJarSectionHeader" destination="OXk-t4-1pR" id="UMs-vA-WDs"/>
-                <outlet property="usernameTextField" destination="efE-wO-EOt" id="jt4-fo-I6p"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wordpressPasswordTextInput" destination="JYU-NA-UKs" id="RPX-bn-lck"/>
                 <outlet property="wordpressSettingsSwitchLabel" destination="MuP-eV-lRZ" id="G7L-e3-GkX"/>
+                <outlet property="wordpressURLTextInput" destination="x9h-Oh-yfL" id="km5-Kb-bxs"/>
+                <outlet property="wordpressUsernameTextInput" destination="UbE-JQ-uf5" id="Djp-Sc-0Xf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -120,23 +120,9 @@
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9h-Oh-yfL" userLabel="Blog-URL" customClass="SettingsTextInputView" customModule="Icro" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="1" width="1024" height="40"/>
-                                                            <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Blog-URL" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t7R-m1-ISl">
-                                                                    <rect key="frame" x="14" y="0.0" width="1010" height="40"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="40" id="EI2-8h-LYM"/>
-                                                                    </constraints>
-                                                                    <nil key="textColor"/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                    <textInputTraits key="textInputTraits" textContentType="url"/>
-                                                                </textField>
-                                                            </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="t7R-m1-ISl" secondAttribute="trailing" id="AlE-MB-oTn"/>
-                                                                <constraint firstAttribute="bottom" secondItem="t7R-m1-ISl" secondAttribute="bottom" id="UH6-r0-m8q"/>
-                                                                <constraint firstItem="t7R-m1-ISl" firstAttribute="top" secondItem="x9h-Oh-yfL" secondAttribute="top" id="bMX-Kk-HyX"/>
-                                                                <constraint firstItem="t7R-m1-ISl" firstAttribute="leading" secondItem="x9h-Oh-yfL" secondAttribute="leading" constant="14" id="hSe-4W-BqR"/>
+                                                                <constraint firstAttribute="height" constant="40" id="YiX-tX-hid"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omx-A1-Twg" userLabel="Inline Separator" customClass="SettingsInlineSeparatorView" customModule="Icro" customModuleProvider="target">
@@ -148,23 +134,9 @@
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UbE-JQ-uf5" userLabel="Username" customClass="SettingsTextInputView" customModule="Icro" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="42" width="1024" height="40"/>
-                                                            <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="efE-wO-EOt">
-                                                                    <rect key="frame" x="14" y="0.0" width="1010" height="40"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="40" id="u19-5m-kEd"/>
-                                                                    </constraints>
-                                                                    <nil key="textColor"/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                    <textInputTraits key="textInputTraits" textContentType="username"/>
-                                                                </textField>
-                                                            </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="efE-wO-EOt" secondAttribute="bottom" id="38a-A0-N74"/>
-                                                                <constraint firstAttribute="trailing" secondItem="efE-wO-EOt" secondAttribute="trailing" id="MOM-2D-BKj"/>
-                                                                <constraint firstItem="efE-wO-EOt" firstAttribute="leading" secondItem="UbE-JQ-uf5" secondAttribute="leading" constant="14" id="gX3-dg-BES"/>
-                                                                <constraint firstItem="efE-wO-EOt" firstAttribute="top" secondItem="UbE-JQ-uf5" secondAttribute="top" id="iLH-jR-LPe"/>
+                                                                <constraint firstAttribute="height" constant="40" id="iqC-Af-pSc"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ib-75-EZJ" userLabel="Inline Separator" customClass="SettingsInlineSeparatorView" customModule="Icro" customModuleProvider="target">
@@ -176,23 +148,9 @@
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYU-NA-UKs" userLabel="Password" customClass="SettingsTextInputView" customModule="Icro" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="83" width="1024" height="40"/>
-                                                            <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h3J-of-geq">
-                                                                    <rect key="frame" x="14" y="0.0" width="1010" height="40"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="40" id="n4z-83-TQA"/>
-                                                                    </constraints>
-                                                                    <nil key="textColor"/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                    <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
-                                                                </textField>
-                                                            </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstItem="h3J-of-geq" firstAttribute="top" secondItem="JYU-NA-UKs" secondAttribute="top" id="1o2-1v-zFP"/>
-                                                                <constraint firstAttribute="trailing" secondItem="h3J-of-geq" secondAttribute="trailing" id="BMP-xq-zKL"/>
-                                                                <constraint firstItem="h3J-of-geq" firstAttribute="leading" secondItem="JYU-NA-UKs" secondAttribute="leading" constant="14" id="tLH-TC-XAC"/>
-                                                                <constraint firstAttribute="bottom" secondItem="h3J-of-geq" secondAttribute="bottom" id="tjL-SU-CTr"/>
+                                                                <constraint firstAttribute="height" constant="40" id="bE0-Dd-TC2"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -268,23 +226,9 @@
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dy-y6-fJM" userLabel="Blog-URL" customClass="SettingsTextInputView" customModule="Icro" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="1" width="1024" height="40"/>
-                                                            <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Micropub Endpoint URL" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UIe-Fy-LUd">
-                                                                    <rect key="frame" x="14" y="0.0" width="1010" height="40"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="40" id="fcV-9k-FwK"/>
-                                                                    </constraints>
-                                                                    <nil key="textColor"/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                    <textInputTraits key="textInputTraits" textContentType="url"/>
-                                                                </textField>
-                                                            </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstItem="UIe-Fy-LUd" firstAttribute="top" secondItem="7dy-y6-fJM" secondAttribute="top" id="Jdv-QH-nI9"/>
-                                                                <constraint firstAttribute="trailing" secondItem="UIe-Fy-LUd" secondAttribute="trailing" id="O5k-xC-bRC"/>
-                                                                <constraint firstAttribute="bottom" secondItem="UIe-Fy-LUd" secondAttribute="bottom" id="gYa-Lu-Zj9"/>
-                                                                <constraint firstItem="UIe-Fy-LUd" firstAttribute="leading" secondItem="7dy-y6-fJM" secondAttribute="leading" constant="14" id="zC8-ZS-rlt"/>
+                                                                <constraint firstAttribute="height" constant="40" id="0Fm-S9-fNM"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaV-ga-WfV" userLabel="Inline Separator" customClass="SettingsInlineSeparatorView" customModule="Icro" customModuleProvider="target">
@@ -296,23 +240,9 @@
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvP-gm-PPl" userLabel="Password" customClass="SettingsTextInputView" customModule="Icro" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="42" width="1024" height="40"/>
-                                                            <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Access token" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pja-zR-TPH">
-                                                                    <rect key="frame" x="14" y="0.0" width="1010" height="40"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="40" id="kAu-ZP-6OI"/>
-                                                                    </constraints>
-                                                                    <nil key="textColor"/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                    <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
-                                                                </textField>
-                                                            </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="pja-zR-TPH" secondAttribute="bottom" id="ApH-sX-8ZW"/>
-                                                                <constraint firstItem="pja-zR-TPH" firstAttribute="leading" secondItem="wvP-gm-PPl" secondAttribute="leading" constant="14" id="BTl-zY-J3H"/>
-                                                                <constraint firstItem="pja-zR-TPH" firstAttribute="top" secondItem="wvP-gm-PPl" secondAttribute="top" id="FXk-3Q-2sa"/>
-                                                                <constraint firstAttribute="trailing" secondItem="pja-zR-TPH" secondAttribute="trailing" id="mG8-b9-0QD"/>
+                                                                <constraint firstAttribute="height" constant="40" id="5Jl-74-68H"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -366,21 +296,13 @@
                                                 <constraint firstAttribute="height" constant="1" id="dok-V7-ODM"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pII-iB-fBa" customClass="FakeTableCellButton" customModule="Icro" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPq-QQ-G1D" customClass="SettingsButton" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="632" width="1024" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="LI8-Fy-Rge"/>
+                                                <constraint firstAttribute="height" constant="40" id="G74-f5-W2e"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <inset key="contentEdgeInsets" minX="14" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Logout">
-                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="logoutButtonPressed:" destination="-1" eventType="touchUpInside" id="KUZ-hk-882"/>
-                                            </connections>
-                                        </button>
+                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aXV-RT-JXf" userLabel="Separator">
                                             <rect key="frame" x="0.0" y="672" width="1024" height="1"/>
                                             <color key="backgroundColor" name="separatorColor"/>
@@ -402,21 +324,13 @@
                                                 <constraint firstAttribute="height" constant="1" id="hfL-hY-cfk"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKE-Cq-VEE" customClass="FakeTableCellButton" customModule="Icro" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOk-MB-Zvn" customClass="SettingsButton" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="724" width="1024" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="xcy-Ot-crP"/>
+                                                <constraint firstAttribute="height" constant="40" id="nfO-KK-iH2"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <inset key="contentEdgeInsets" minX="14" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Mute">
-                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="blacklistButtonPressed:" destination="-1" eventType="touchUpInside" id="8l5-kq-aQ8"/>
-                                            </connections>
-                                        </button>
+                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04F-EI-LtB" userLabel="Inline Separator" customClass="SettingsInlineSeparatorView" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="764" width="1024" height="1"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -424,21 +338,13 @@
                                                 <constraint firstAttribute="height" constant="1" id="8CY-zk-odQ"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sx-Lm-3dU" customClass="FakeTableCellButton" customModule="Icro" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AhY-av-IXf" customClass="SettingsButton" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="765" width="1024" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="yXp-Kn-96q"/>
+                                                <constraint firstAttribute="height" constant="40" id="dnY-9j-Mzo"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <inset key="contentEdgeInsets" minX="14" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="micro.blog community guidelines">
-                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="communityGuidlinesPressed:" destination="-1" eventType="touchUpInside" id="VHy-b2-uG8"/>
-                                            </connections>
-                                        </button>
+                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3y-WW-il8" userLabel="Separator">
                                             <rect key="frame" x="0.0" y="805" width="1024" height="1"/>
                                             <color key="backgroundColor" name="separatorColor"/>
@@ -460,21 +366,13 @@
                                                 <constraint firstAttribute="height" constant="1" id="jMp-8t-eWA"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlX-ag-V85" customClass="FakeTableCellButton" customModule="Icro" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YwQ-Ai-MiT" customClass="SettingsButton" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="857" width="1024" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="xRC-aq-1bh"/>
+                                                <constraint firstAttribute="height" constant="40" id="DdO-SW-QWE"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <inset key="contentEdgeInsets" minX="14" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="hartlco on micro.blog">
-                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="hartlcoOnMicroBlogButtonPressed:" destination="-1" eventType="touchUpInside" id="Ig4-HP-8BR"/>
-                                            </connections>
-                                        </button>
+                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJx-UW-k5S" userLabel="Inline Separator" customClass="SettingsInlineSeparatorView" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="897" width="1024" height="1"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -482,21 +380,13 @@
                                                 <constraint firstAttribute="height" constant="1" id="9a7-lT-Pd9"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJ0-eB-xT0" customClass="FakeTableCellButton" customModule="Icro" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kj-L6-vTo" customClass="SettingsButton" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="898" width="1024" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="qvu-MI-dIA"/>
+                                                <constraint firstAttribute="height" constant="40" id="gH1-qE-IzX"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <inset key="contentEdgeInsets" minX="14" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Icro Support">
-                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="supportButtonPressed:" destination="-1" eventType="touchUpInside" id="SnU-Lt-wUb"/>
-                                            </connections>
-                                        </button>
+                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ubp-2U-Xpc" userLabel="Inline Separator" customClass="SettingsInlineSeparatorView" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="938" width="1024" height="1"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -504,21 +394,13 @@
                                                 <constraint firstAttribute="height" constant="1" id="ibS-RA-RdA"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvW-1v-Kdg" customClass="FakeTableCellButton" customModule="Icro" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0iX-hX-48R" customClass="SettingsButton" customModule="Icro" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="939" width="1024" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="fK1-lM-BSg"/>
+                                                <constraint firstAttribute="height" constant="40" id="EIM-qC-W07"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <inset key="contentEdgeInsets" minX="14" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Acknowledgements">
-                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="acknowledgmentsButtonPressed:" destination="-1" eventType="touchUpInside" id="ufh-ft-hq1"/>
-                                            </connections>
-                                        </button>
+                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gc3-BS-07D" userLabel="Separator">
                                             <rect key="frame" x="0.0" y="979" width="1024" height="1"/>
                                             <color key="backgroundColor" name="separatorColor"/>

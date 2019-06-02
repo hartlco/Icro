@@ -25,35 +25,65 @@ final class SettingsViewController: UIViewController, LoadingViewController {
             }
         }
     }
+    @IBOutlet weak var wordpressURLTextInput: SettingsTextInputView! {
+        didSet {
+            wordpressURLTextInput.autocorrectionType = .no
+            wordpressURLTextInput.contentType = .URL
+            wordpressURLTextInput.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGURLFIELD_PLACEHOLDER", comment: "")
+            wordpressURLTextInput.shouldReturn = { [weak self] input in
+                guard let self = self else { return true }
+                return self.textInputShouldReturn(input: input)
+            }
+        }
+    }
 
-    @IBOutlet fileprivate weak var blogUrlTextField: UITextField! {
+    @IBOutlet weak var wordpressUsernameTextInput: SettingsTextInputView! {
         didSet {
-            blogUrlTextField.keyboardAppearance = Theme.currentTheme.keyboardAppearance
-            blogUrlTextField.delegate = self
+            wordpressUsernameTextInput.autocorrectionType = .no
+            wordpressUsernameTextInput.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGUSERNAMEFIELD_PLACEHOLDER", comment: "")
+            wordpressUsernameTextInput.shouldReturn = { [weak self] input in
+                guard let self = self else { return true }
+                return self.textInputShouldReturn(input: input)
+            }
         }
     }
-    @IBOutlet fileprivate weak var usernameTextField: UITextField! {
+
+    @IBOutlet weak var wordpressPasswordTextInput: SettingsTextInputView! {
         didSet {
-            usernameTextField.keyboardAppearance = Theme.currentTheme.keyboardAppearance
-            usernameTextField.delegate = self
+            wordpressPasswordTextInput.contentType = .password
+            wordpressPasswordTextInput.isSecureTextEntry = true
+            wordpressPasswordTextInput.autocorrectionType = .no
+            wordpressPasswordTextInput.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGPASSWORDFIELD_PLACEHOLDER", comment: "")
+            wordpressPasswordTextInput.shouldReturn = { [weak self] input in
+                guard let self = self else { return true }
+                return self.textInputShouldReturn(input: input)
+            }
+
         }
     }
-    @IBOutlet fileprivate weak var passwordTextField: UITextField! {
+
+    @IBOutlet weak var micropubURLTextInput: SettingsTextInputView! {
         didSet {
-            passwordTextField.keyboardAppearance = Theme.currentTheme.keyboardAppearance
-            passwordTextField.delegate = self
+            micropubURLTextInput.autocorrectionType = .no
+            micropubURLTextInput.contentType = .URL
+            micropubURLTextInput.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBURLFIELD_PLACEHOLDER", comment: "")
+            micropubURLTextInput.shouldReturn = { [weak self] input in
+                guard let self = self else { return true }
+                return self.textInputShouldReturn(input: input)
+            }
         }
     }
-    @IBOutlet weak var micropubUrlTextField: UITextField! {
+
+    @IBOutlet weak var micropubTokenTextInput: SettingsTextInputView! {
         didSet {
-            micropubUrlTextField.keyboardAppearance = Theme.currentTheme.keyboardAppearance
-            micropubTokenTextField.delegate = self
-        }
-    }
-    @IBOutlet weak var micropubTokenTextField: UITextField! {
-        didSet {
-            micropubTokenTextField.keyboardAppearance = Theme.currentTheme.keyboardAppearance
-            micropubTokenTextField.delegate = self
+            micropubTokenTextInput.contentType = .password
+            micropubTokenTextInput.isSecureTextEntry = true
+            micropubTokenTextInput.autocorrectionType = .no
+            micropubTokenTextInput.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBTOKENFIELD_PLACEHOLDER", comment: "")
+            micropubTokenTextInput.shouldReturn = { [weak self] input in
+                guard let self = self else { return true }
+                return self.textInputShouldReturn(input: input)
+            }
         }
     }
 
@@ -87,24 +117,77 @@ final class SettingsViewController: UIViewController, LoadingViewController {
             accountSectionHeaderView.title = localizedString(key: "SETTINGSVIEWCONTROLLER_ACCOUNT_TITLE")
         }
     }
-    @IBOutlet private weak var logoutButton: FakeTableCellButton!
+    @IBOutlet private weak var logoutButton: SettingsButton! {
+        didSet {
+            logoutButton.title = NSLocalizedString("SETTINGSVIEWCONTROLLER_LOGOUTBUTTON_TITLE", comment: "")
+            logoutButton.didTap = { [weak self] in
+                guard let self = self else { return }
+                self.navigator.logout()
+            }
+        }
+    }
+
     @IBOutlet private weak var contentSectionHeaderView: SettingsSectionHeaderView! {
         didSet {
             contentSectionHeaderView.title = localizedString(key: "SETTINGSVIEWCONTROLLER_CONTENT_TITLE")
         }
     }
 
-    @IBOutlet private weak var blacklistButton: FakeTableCellButton!
-    @IBOutlet private weak var guidlinesButton: FakeTableCellButton!
+    @IBOutlet private weak var blacklistButton: SettingsButton! {
+        didSet {
+            blacklistButton.title = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLACKLISTBUTTON_TITLE", comment: "")
+            blacklistButton.didTap = { [weak self] in
+                guard let self = self else { return }
+                self.navigator.openBlacklist()
+            }
+        }
+    }
+
+    @IBOutlet private weak var guidlinesButton: SettingsButton! {
+        didSet {
+            guidlinesButton.title = NSLocalizedString("SETTINGSVIEWCONTROLLER_GUIDLINESBUTTON_TITLE", comment: "")
+            guidlinesButton.didTap = { [weak self] in
+                guard let self = self else { return }
+                self.mainNavigator.openCommunityGuidlines()
+            }
+        }
+    }
+
     @IBOutlet private weak var otherSectionHeaderView: SettingsSectionHeaderView! {
         didSet {
             otherSectionHeaderView.title = localizedString(key: "SETTINGSVIEWCONTROLLER_OTHER_TITLE")
         }
     }
 
-    @IBOutlet private weak var hartlcoOnMicroBlogButton: FakeTableCellButton!
-    @IBOutlet private weak var supportButton: FakeTableCellButton!
-    @IBOutlet private weak var acknowledgmentsButton: FakeTableCellButton!
+    @IBOutlet private weak var hartlcoOnMicroBlogButton: SettingsButton! {
+        didSet {
+            hartlcoOnMicroBlogButton.title = NSLocalizedString("SETTINGSVIEWCONTROLLER_HARTLBUTTON_TITLE", comment: "")
+            hartlcoOnMicroBlogButton.didTap = { [weak self] in
+                guard let self = self else { return }
+                self.navigator.openHartlCoOnMicroBlog()
+            }
+        }
+    }
+
+    @IBOutlet private weak var supportButton: SettingsButton! {
+        didSet {
+            supportButton.title = NSLocalizedString("SETTINGSVIEWCONTROLLER_SUPPORTBUTTON_TITLE", comment: "")
+            supportButton.didTap = { [weak self] in
+                guard let self = self else { return }
+                self.navigator.openSupportMail()
+            }
+        }
+    }
+
+    @IBOutlet private weak var acknowledgmentsButton: SettingsButton! {
+        didSet {
+            acknowledgmentsButton.title = NSLocalizedString("SETTINGSVIEWCONTROLLER_ACKNOWLEDGMENTSBUTTON_TITLE", comment: "")
+            acknowledgmentsButton.didTap = { [weak self] in
+                guard let self = self else { return }
+                self.navigator.openAcknowledgements()
+            }
+        }
+    }
 
     @IBOutlet private weak var appearanceHeaderView: SettingsSectionHeaderView! {
         didSet {
@@ -151,21 +234,9 @@ final class SettingsViewController: UIViewController, LoadingViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = NSLocalizedString("SETTINGSVIEWCONTROLLER_TITLE", comment: "")
-        blogUrlTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGURLFIELD_PLACEHOLDER", comment: "")
-        usernameTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGUSERNAMEFIELD_PLACEHOLDER", comment: "")
-        passwordTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGPASSWORDFIELD_PLACEHOLDER", comment: "")
         blogSetupInfoLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGINFO_TEXT", comment: "")
-        micropubUrlTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBURLFIELD_PLACEHOLDER", comment: "")
-        micropubTokenTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBTOKENFIELD_PLACEHOLDER", comment: "")
         micropubSetupInfoLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBINFO_TEXT", comment: "")
 
-        logoutButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_LOGOUTBUTTON_TITLE", comment: ""), for: .normal)
-
-        blacklistButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_BLACKLISTBUTTON_TITLE", comment: ""), for: .normal)
-        guidlinesButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_GUIDLINESBUTTON_TITLE", comment: ""), for: .normal)
-        hartlcoOnMicroBlogButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_HARTLBUTTON_TITLE", comment: ""), for: .normal)
-        supportButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_SUPPORTBUTTON_TITLE", comment: ""), for: .normal)
-        acknowledgmentsButton.setTitle(NSLocalizedString("SETTINGSVIEWCONTROLLER_ACKNOWLEDGMENTSBUTTON_TITLE", comment: ""), for: .normal)
         updateState(animated: false)
 
         let tipJarView = TipJarView(viewModel: viewModel.tipJarViewModel)
@@ -182,15 +253,15 @@ final class SettingsViewController: UIViewController, LoadingViewController {
             wordpressSettingsSwitchLabel.isOn = true
             micropubSettingsSwitchLabel.isOn = false
             showBlogSetupView(show: true, animated: animated)
-            blogUrlTextField.text = wordPressSetup.urlString
-            usernameTextField.text = wordPressSetup.username
-            passwordTextField.text = wordPressSetup.password
+            wordpressURLTextInput.text = wordPressSetup.urlString
+            wordpressUsernameTextInput.text = wordPressSetup.username
+            wordpressPasswordTextInput.text = wordPressSetup.password
         } else if let micropubSetup = viewModel.micropubSetup {
             wordpressSettingsSwitchLabel.isOn = false
             micropubSettingsSwitchLabel.isOn = true
             showMicropubSetupView(show: true)
-            micropubUrlTextField.text = micropubSetup.urlString
-            micropubTokenTextField.text = micropubSetup.micropubToken
+            micropubURLTextInput.text = micropubSetup.urlString
+            micropubTokenTextInput.text = micropubSetup.micropubToken
         } else {
             wordpressSettingsSwitchLabel.isOn = false
             micropubSettingsSwitchLabel.isOn = false
@@ -241,9 +312,6 @@ final class SettingsViewController: UIViewController, LoadingViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    @IBAction func acknowledgmentsButtonPressed(_ sender: Any) {
-        navigator.openAcknowledgements()
-    }
 
     @objc private func cancel() {
         saveWordPressInfo()
@@ -267,50 +335,31 @@ final class SettingsViewController: UIViewController, LoadingViewController {
         showMicropubSetupView(show: isOn)
     }
 
-    @IBAction private func hartlcoOnMicroBlogButtonPressed(_ sender: Any) {
-        navigator.openHartlCoOnMicroBlog()
-    }
-
     @IBAction private func microBlogButtonPressed(_ sender: Any) {
         navigator.openMicroBlog()
     }
 
-    @IBAction private func supportButtonPressed(_ sender: Any) {
-        navigator.openSupportMail()
-    }
-
-    @IBAction private func logoutButtonPressed(_ sender: Any) {
-        navigator.logout()
-    }
-
-    @IBAction private func blacklistButtonPressed(_ sender: Any) {
-        navigator.openBlacklist()
-    }
-
-    @IBAction private func communityGuidlinesPressed(_ sender: Any) {
-        mainNavigator.openCommunityGuidlines()
-    }
-
     fileprivate func saveWordPressInfo() {
-        guard let username = usernameTextField.nonEmptyText,
-            let password = passwordTextField.nonEmptyText, let urlString = blogUrlTextField.nonEmptyText else { return }
+        guard let username = wordpressUsernameTextInput.text.nonEmptyString,
+            let password = wordpressPasswordTextInput.text.nonEmptyString,
+            let urlString = wordpressURLTextInput.text.nonEmptyString else { return }
         let info = UserSettings.WordpressInfo(urlString: urlString, username: username, password: password)
         viewModel.wordPressSetup = info
     }
 
     fileprivate func saveMicropubInfo() {
-        guard let urlString = micropubUrlTextField.nonEmptyText,
-            let token = micropubTokenTextField.nonEmptyText else { return }
+        guard let urlString = micropubURLTextInput.text.nonEmptyString,
+            let token = micropubTokenTextInput.text.nonEmptyString else { return }
         let info = UserSettings.MicropubInfo(urlString: urlString, micropubToken: token)
         viewModel.micropubSetup = info
     }
 
     private func resetInputs() {
-        blogUrlTextField.text = ""
-        usernameTextField.text = ""
-        passwordTextField.text = ""
-        micropubUrlTextField.text = ""
-        micropubTokenTextField.text = ""
+        wordpressURLTextInput.text = ""
+        wordpressUsernameTextInput.text = ""
+        wordpressPasswordTextInput.text = ""
+        micropubURLTextInput.text = ""
+        micropubTokenTextInput.text = ""
     }
 
     private func tipJarStateUpdated(state: TipJarViewModel.State) {
@@ -335,21 +384,21 @@ final class SettingsViewController: UIViewController, LoadingViewController {
 
 }
 
-extension SettingsViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == blogUrlTextField {
-            usernameTextField.becomeFirstResponder()
-        } else if textField == usernameTextField {
-            passwordTextField.becomeFirstResponder()
-        } else if textField == passwordTextField {
-            passwordTextField.resignFirstResponder()
+extension SettingsViewController {
+    func textInputShouldReturn(input: SettingsTextInputView) -> Bool {
+        if input == wordpressURLTextInput {
+            wordpressUsernameTextInput.becomeFirstResponder()
+        } else if input == wordpressUsernameTextInput {
+            wordpressPasswordTextInput.becomeFirstResponder()
+        } else if input == wordpressPasswordTextInput {
+            wordpressPasswordTextInput.resignFirstResponder()
             saveWordPressInfo()
         }
 
-        if textField == micropubUrlTextField {
-            micropubTokenTextField.becomeFirstResponder()
-        } else if textField == micropubTokenTextField {
-            micropubTokenTextField.resignFirstResponder()
+        if input == micropubURLTextInput {
+            micropubTokenTextInput.becomeFirstResponder()
+        } else if input == micropubTokenTextInput {
+            micropubTokenTextInput.resignFirstResponder()
             saveMicropubInfo()
         }
 
@@ -364,7 +413,13 @@ fileprivate extension UITextField {
     }
 }
 
+extension String {
+    var nonEmptyString: String? {
+        guard self != "" else { return nil }
+        return self
+    }
+}
+
 class SettingsSectionSubtitleView: UIView { }
 class SettingsCellView: UIView { }
-class SettingsTextInputView: UIView { }
 class SettingsScrollView: UIScrollView { }

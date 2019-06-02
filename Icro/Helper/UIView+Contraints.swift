@@ -12,4 +12,11 @@ extension UIView {
         topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
+
+    func pin(to view: UIView, inset: UIEdgeInsets) {
+        leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: inset.left).isActive = true
+        trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -inset.right).isActive = true
+        topAnchor.constraint(equalTo: view.topAnchor, constant: inset.top).isActive = true
+        bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -inset.bottom).isActive = true
+    }
 }

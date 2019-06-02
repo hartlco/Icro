@@ -6,13 +6,18 @@
 import UIKit
 
 public class FakeTableCellButton: UIButton {
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        generalInit()
+    }
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        titleLabel?.adjustsFontForContentSizeCategory = true
         generalInit()
     }
 
     private func generalInit() {
+        titleLabel?.adjustsFontForContentSizeCategory = true
         NotificationCenter.default.addObserver(self, selector: #selector(textSizeChanged),
                                                name: UIContentSizeCategory.didChangeNotification,
                                                object: nil)
