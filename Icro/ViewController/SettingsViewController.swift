@@ -15,8 +15,17 @@ final class SettingsViewController: UIViewController, LoadingViewController {
     private var cancelButton: UIBarButtonItem?
     @IBOutlet weak var outterStackView: UIStackView!
     @IBOutlet private weak var blogSetupView: UIView!
-    @IBOutlet private weak var blogSetupSwitch: UISwitch!
-    @IBOutlet private weak var blogSetupSwitchLabel: UILabel!
+
+    @IBOutlet private weak var wordpressSettingsSwitchLabel: SettingsSwitchWithLabelView! {
+        didSet {
+            wordpressSettingsSwitchLabel.title = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGSETUPSWITCH_TEXT", comment: "")
+            wordpressSettingsSwitchLabel.didSwitch = { [weak self] isOn in
+                guard let self = self else { return }
+                self.wordpressSwitchChanged(isOn: isOn)
+            }
+        }
+    }
+
     @IBOutlet fileprivate weak var blogUrlTextField: UITextField! {
         didSet {
             blogUrlTextField.keyboardAppearance = Theme.currentTheme.keyboardAppearance
@@ -48,9 +57,17 @@ final class SettingsViewController: UIViewController, LoadingViewController {
         }
     }
 
-    @IBOutlet private weak var micropubSetupSwitch: UISwitch!
+    @IBOutlet private weak var micropubSettingsSwitchLabel: SettingsSwitchWithLabelView! {
+        didSet {
+            micropubSettingsSwitchLabel.title = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBSETUPSWITCH_TEXT", comment: "")
+            micropubSettingsSwitchLabel.didSwitch = { [weak self] isOn in
+                guard let self = self else { return }
+                self.micropubSwitchChanged(isOn: isOn)
+            }
+        }
+    }
+
     @IBOutlet private weak var micropubSetupView: UIView!
-    @IBOutlet private weak var micropubSetupSwitchLabel: UILabel!
     @IBOutlet private weak var blogSectionHeaderView: SettingsSectionHeaderView! {
         didSet {
             blogSectionHeaderView.title = localizedString(key: "SETTINGSVIEWCONTROLLER_BLOGSETUP_TITLE")
@@ -134,12 +151,10 @@ final class SettingsViewController: UIViewController, LoadingViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = NSLocalizedString("SETTINGSVIEWCONTROLLER_TITLE", comment: "")
-        blogSetupSwitchLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGSETUPSWITCH_TEXT", comment: "")
         blogUrlTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGURLFIELD_PLACEHOLDER", comment: "")
         usernameTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGUSERNAMEFIELD_PLACEHOLDER", comment: "")
         passwordTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGPASSWORDFIELD_PLACEHOLDER", comment: "")
         blogSetupInfoLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGINFO_TEXT", comment: "")
-        micropubSetupSwitchLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBSETUPSWITCH_TEXT", comment: "")
         micropubUrlTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBURLFIELD_PLACEHOLDER", comment: "")
         micropubTokenTextField.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBTOKENFIELD_PLACEHOLDER", comment: "")
         micropubSetupInfoLabel.text = NSLocalizedString("SETTINGSVIEWCONTROLLER_MICROPUBINFO_TEXT", comment: "")
@@ -164,21 +179,21 @@ final class SettingsViewController: UIViewController, LoadingViewController {
 
     func updateState(animated: Bool) {
         if let wordPressSetup = viewModel.wordPressSetup {
-            blogSetupSwitch.isOn = true
-            micropubSetupSwitch.isOn = false
+            wordpressSettingsSwitchLabel.isOn = true
+            micropubSettingsSwitchLabel.isOn = false
             showBlogSetupView(show: true, animated: animated)
             blogUrlTextField.text = wordPressSetup.urlString
             usernameTextField.text = wordPressSetup.username
             passwordTextField.text = wordPressSetup.password
         } else if let micropubSetup = viewModel.micropubSetup {
-            blogSetupSwitch.isOn = false
-            micropubSetupSwitch.isOn = true
+            wordpressSettingsSwitchLabel.isOn = false
+            micropubSettingsSwitchLabel.isOn = true
             showMicropubSetupView(show: true)
             micropubUrlTextField.text = micropubSetup.urlString
             micropubTokenTextField.text = micropubSetup.micropubToken
         } else {
-            blogSetupSwitch.isOn = false
-            micropubSetupSwitch.isOn = false
+            wordpressSettingsSwitchLabel.isOn = false
+            micropubSettingsSwitchLabel.isOn = false
             showBlogSetupView(show: false, animated: animated)
             showMicropubSetupView(show: false)
             resetInputs()
@@ -236,20 +251,20 @@ final class SettingsViewController: UIViewController, LoadingViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    @IBAction private func blogSetupSwitchChanged(_ sender: Any) {
+    private func wordpressSwitchChanged(isOn: Bool) {
         viewModel.wordPressSetup = nil
         resetInputs()
 
-        micropubSetupSwitch.isOn = false
-        showBlogSetupView(show: blogSetupSwitch.isOn)
+        micropubSettingsSwitchLabel.isOn = false
+        showBlogSetupView(show: isOn)
     }
 
-    @IBAction func micropubSwitchChanged(_ sender: Any) {
+    private func micropubSwitchChanged(isOn: Bool) {
         viewModel.micropubSetup = nil
         resetInputs()
 
-        blogSetupSwitch.isOn = false
-        showMicropubSetupView(show: micropubSetupSwitch.isOn)
+        wordpressSettingsSwitchLabel.isOn = false
+        showMicropubSetupView(show: isOn)
     }
 
     @IBAction private func hartlcoOnMicroBlogButtonPressed(_ sender: Any) {
