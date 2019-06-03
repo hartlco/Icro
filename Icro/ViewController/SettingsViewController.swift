@@ -9,7 +9,6 @@ import IcroUIKit
 
 // swiftlint:disable type_body_length
 final class SettingsViewController: UIViewController, LoadingViewController {
-    @IBOutlet private weak var contentView: UIView!
     private let navigator: SettingsNavigator
     private let mainNavigator: MainNavigator
     private let viewModel: SettingsViewModel
@@ -102,6 +101,11 @@ final class SettingsViewController: UIViewController, LoadingViewController {
     @IBOutlet private weak var blogSectionHeaderView: SettingsSectionHeaderView! {
         didSet {
             blogSectionHeaderView.title = localizedString(key: "SETTINGSVIEWCONTROLLER_BLOGSETUP_TITLE")
+        }
+    }
+    @IBOutlet private weak var blogSetupInfoLabel: SettingsSectionSubtitleView! {
+        didSet {
+            blogSetupInfoLabel.title = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGINFO_TEXT", comment: "")
         }
     }
 
@@ -237,6 +241,7 @@ final class SettingsViewController: UIViewController, LoadingViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = NSLocalizedString("SETTINGSVIEWCONTROLLER_TITLE", comment: "")
 
         updateState(animated: false)
 

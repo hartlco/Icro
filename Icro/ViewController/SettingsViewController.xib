@@ -21,7 +21,6 @@
                 <outlet property="blogSetupInfoLabel" destination="qdp-oI-L5X" id="ebV-kR-EIE"/>
                 <outlet property="blogSetupView" destination="evc-Yc-fPN" id="xR0-mT-Qv1"/>
                 <outlet property="contentSectionHeaderView" destination="xx1-55-aey" id="kUT-U4-IZa"/>
-                <outlet property="contentView" destination="sDG-p0-dhL" id="zul-Tk-cG2"/>
                 <outlet property="guidlinesButton" destination="AhY-av-IXf" id="DJ7-AT-yHw"/>
                 <outlet property="hartlcoOnMicroBlogButton" destination="YwQ-Ai-MiT" id="R7t-uy-7WQ"/>
                 <outlet property="logoutButton" destination="IPq-QQ-G1D" id="vPX-6I-JLo"/>
