@@ -19,6 +19,8 @@ class Settings2ViewController: UIViewController {
     private weak var wordpressSwitchView: SettingsSwitchWithLabelView?
     private weak var wordpressURLTextInput: SettingsTextInputView?
 
+    var showInput = false
+
     init(navigator: SettingsNavigator,
          mainNavigator: MainNavigator,
          viewModel: SettingsViewModel) {
@@ -76,6 +78,14 @@ class Settings2ViewController: UIViewController {
     }
 
     private var wordpressSection: SettingsSection {
+        let inputSettingsView = SettingsView(config: .init(appearance: .groupedFullWidth, hideTopBottomSeparators: true))
+        let section = SettingsSection(title: nil, subTitle: nil, cellTypes: [
+            .inputView(configBlock: { view in
+                view.text = "Test"
+            })
+            ])
+        inputSettingsView.sections = [section]
+
         return SettingsSection(title: viewModel.wordpressTitle,
                                subTitle: viewModel.wordpressSubTitle,
                                cellTypes: [
@@ -86,6 +96,8 @@ class Settings2ViewController: UIViewController {
                                     view.didSwitch = { [weak self] isOn in
                                         guard let self = self else { return }
                                         self.wordpressSwitchChanged(isOn: isOn)
+                                        self.settingsView.update()
+                                        self.showInput = isOn
                                     }
                                 }),
                                 .inputView(configBlock: { [weak self] view in
@@ -93,11 +105,14 @@ class Settings2ViewController: UIViewController {
                                     self.wordpressURLTextInput = view
                                     view.autocorrectionType = .no
                                     view.contentType = .URL
-                                    view.placeholder = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGURLFIELD_PLACEHOLDER", comment: "")
+                                    view.placeholder = Date().debugDescription
                                     view.shouldReturn = { [weak self] input in
                                         guard let self = self else { return true }
                                         return self.textInputShouldReturn(input: input)
                                     }
+                                }),
+                                .internalSettingsView(view: inputSettingsView, config: { view in
+                                    view.isHidden = self.showInput
                                 })
 
             ])

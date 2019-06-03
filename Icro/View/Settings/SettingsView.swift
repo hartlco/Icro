@@ -11,7 +11,7 @@ enum SettingsCellType {
     case labelWithSwitch(configBlock: (SettingsSwitchWithLabelView) -> Void)
     case button(configBlock: (SettingsButton) -> Void)
     case inputView(configBlock: (SettingsTextInputView) -> Void)
-    case internalSettingsView(view: SettingsView)
+    case internalSettingsView(view: SettingsView, config: (SettingsView) -> Void)
     case custom(view: UIView)
 }
 
@@ -54,6 +54,8 @@ final class SettingsView: UIView {
 
     private let stackView = UIStackView(frame: .zero)
 
+    private var configs: [() -> Void] = []
+
     var config = Config.default {
         didSet {
             updateAppearance()
@@ -74,6 +76,12 @@ final class SettingsView: UIView {
     var sections: [SettingsSection] = [] {
         didSet {
             updateSections()
+        }
+    }
+
+    func update() {
+        for config in configs {
+            config()
         }
     }
 
@@ -141,8 +149,6 @@ final class SettingsView: UIView {
                 } else if index == section.cellTypes.endIndex - 1, case .groupedRounded = config.appearance {
                     viewForType.round(corners: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
                 }
-
-
             }
 
             if case .groupedFullWidth = config.appearance, !config.hideTopBottomSeparators {
@@ -175,6 +181,9 @@ final class SettingsView: UIView {
         case .inputView(let configBlock):
             let input = SettingsTextInputView(frame: .zero)
             configBlock(input)
+            configs.append({
+                configBlock(input)
+            })
             input.heightAnchor.constraint(equalToConstant: config.minimumCellHeight).isActive = true
             return input
         case .labelWithButton(let configBlock):
@@ -189,7 +198,11 @@ final class SettingsView: UIView {
             return view
         case .custom(let view):
             return view
-        case .internalSettingsView(let view):
+        case .internalSettingsView(let view, let configBlock):
+            configBlock(view)
+            configs.append({
+                configBlock(view)
+            })
             view.heightAnchor.constraint(equalToConstant: view.fittingSize.height).isActive = true
             return view
         }
