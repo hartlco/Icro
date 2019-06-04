@@ -19,9 +19,9 @@ final class NavigatorComponent: AppDelegateComponent {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let appDelegate = application.delegate as? AppDelegate
-        appDelegate?.window = window
-        navigator.setup()
+//        let appDelegate = application.delegate as? AppDelegate
+//        appDelegate?.window = window
+//        navigator.setup()
         return true
     }
 

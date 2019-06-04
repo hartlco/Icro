@@ -10,8 +10,7 @@ import AppDelegateComponent
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore {
     var window: UIWindow?
-    let storedComponents: [AppDelegateComponent] = [AppearanceComponent(),
-                                                    NavigatorComponent(),
+    let storedComponents: [AppDelegateComponent] = [NavigatorComponent(),
                                                     DiscoveryCategoryComponent(),
                                                     UserDefaultsMigrationComponent(),
                                                     BackgroundFetchComponent()]
@@ -19,6 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let navigator = AppNavigator(window: window!, userSettings: UserSettings.shared)
+        navigator.setup()
+//        let tabBarViewController = TabBarViewController(userSettings: UserSettings.shared, appNavigator: AppNavigator(window: window!, userSettings: UserSettings.shared))
+//        window?.rootViewController = tabBarViewController
+//
+//        if !UserSettings.shared.loggedIn {
+//            tabBarViewController.select(type: .discover)
+//        }
+//
+//        window?.tintColor = Color.main
+        window?.makeKeyAndVisible()
         return componentRunner.componentStore(self,
                                        application: application,
                                        didFinishLaunchingWithOptions: launchOptions)
