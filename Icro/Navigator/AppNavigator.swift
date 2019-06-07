@@ -5,6 +5,7 @@
 
 import UIKit
 import IcroKit
+import AppKit
 
 final class AppNavigator {
     private let window: UIWindow
@@ -39,6 +40,12 @@ final class AppNavigator {
         if !userSettings.loggedIn {
             tabBarViewController?.select(type: .discover)
         }
+
+        #if targetEnvironment(UIKitForMac)
+        let helper = WindowToolbarHelper()
+        helper.applyStyle(toWindow: window.windowScene!)
+        #endif
+
 
         window.tintColor = Color.main
         window.makeKeyAndVisible()
