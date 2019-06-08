@@ -21,18 +21,18 @@ public struct Color {
     public static let accent = XColor(named: "accent")!
     public static let yellow = XColor(named: "yellow")
     public static let accentDark = XColor(named: "accentDark")!
-    public static let separatorColor = XColor(named: "separatorColor")!
+    public static let separatorColor = UIColor.separator
 
     public static var backgroundColor: XColor {
-        return Theme.colorTheme.backgroundColor
+        return UIColor.systemBackground
     }
 
     public static var textColor: XColor {
-        return Theme.colorTheme.textColor
+        return UIColor.label
     }
 
     public static var secondaryTextColor: XColor {
-        return Theme.colorTheme.secondaryTextColor
+        return UIColor.secondaryLabel
     }
 
     public static var buttonColor: XColor {

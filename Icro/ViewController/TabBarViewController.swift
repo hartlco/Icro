@@ -52,7 +52,7 @@ class TabBarViewController: UITabBarController {
 
             navigationController.tabBarItem = UITabBarItem(title: type.tabTitle, image: type.image, selectedImage: nil)
 
-            let image = UIImage(named: "new")
+            let image = UIImage(systemName: "square.and.pencil")
             let newPostIcon = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(showComposeViewController))
 			newPostIcon.accessibilityLabel = "Compose"
             viewController.navigationItem.rightBarButtonItem = newPostIcon

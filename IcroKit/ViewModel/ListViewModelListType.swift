@@ -55,15 +55,15 @@ public extension ListViewModel.ListType {
     var image: XImage? {
         switch self {
         case .timeline:
-            return XImage(named: "timeline")
+            return UIImage(systemName: "text.justify")
         case .mentions:
-            return XImage(named: "mentions")
+            return UIImage(systemName: "text.bubble.fill")
         case .favorites:
-            return XImage(named: "favorites")
+            return UIImage(systemName: "star.fill")
         case .discover:
-            return XImage(named: "discover")
+            return UIImage(systemName: "safari.fill")
         case .user, .username:
-            return XImage(named: "profile")
+            return UIImage(systemName: "person.fill")
         case .conversation, .photos, .discoverCollection:
             return nil
         }

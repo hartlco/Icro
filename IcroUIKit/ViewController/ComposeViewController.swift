@@ -115,6 +115,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
         keyboardInputView.update(for: viewModel.startText,
                                  numberOfImages: viewModel.numberOfImages,
                                  imageState: viewModel.imageState)
+        keyboardInputView.backgroundColor = Color.accentSuperLight
         keyboardInputView.translatesAutoresizingMaskIntoConstraints = false
         keyboardInputView.addConstraint(NSLayoutConstraint(item: keyboardInputView,
                                                            attribute: .height,
