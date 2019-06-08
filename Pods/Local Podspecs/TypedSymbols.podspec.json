@@ -1,0 +1,24 @@
+{
+  "name": "TypedSymbols",
+  "version": "0.1.0",
+  "summary": "Typed wrapper around UIImage(systemName:)",
+  "homepage": "https://github.com/hartlco/TypedSymbols",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "hartlco": "martin@hartl.co"
+  },
+  "source": {
+    "git": "https://github.com/hartlco/TypedSymbols.git",
+    "tag": "0.1.0"
+  },
+  "social_media_url": "https://twitter.com/hartlco",
+  "platforms": {
+    "ios": "13.0"
+  },
+  "source_files": "TypedSymbols/Classes/**/*",
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
+}

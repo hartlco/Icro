@@ -1,0 +1,6 @@
+framework module Dequeueable {
+  umbrella header "Dequeueable-umbrella.h"
+
+  export *
+  module * { export * }
+}

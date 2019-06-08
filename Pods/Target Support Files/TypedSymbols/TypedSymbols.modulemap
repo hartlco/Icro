@@ -1,0 +1,6 @@
+framework module TypedSymbols {
+  umbrella header "TypedSymbols-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -62,7 +62,6 @@ struct SettingsContentView: View {
             }
             .listStyle(.grouped)
             .navigationBarTitle(Text("Settings"))
-            
         }
     }
 }

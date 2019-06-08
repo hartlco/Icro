@@ -5,6 +5,7 @@
 
 import UIKit
 import IcroKit
+import TypedSymbols
 
 final class EditActionsConfigurator {
     private let itemNavigator: ItemNavigator
@@ -38,7 +39,7 @@ final class EditActionsConfigurator {
             tableView.setEditing(false, animated: true)
         }
         conversationAction.backgroundColor = Color.main
-        conversationAction.image = UIImage(named: "conversation")
+        conversationAction.image = UIImage(symbol: .bubble_left_and_bubble_right)
 
         let shareAction =
             UIContextualAction(style: .normal,
@@ -47,7 +48,7 @@ final class EditActionsConfigurator {
             tableView.setEditing(false, animated: true)
         }
         shareAction.backgroundColor = Color.accent
-        shareAction.image = UIImage(named: "share")
+        shareAction.image = UIImage(symbol: .square_and_arrow_up)
 
         return UISwipeActionsConfiguration(actions: [conversationAction, shareAction])
     }
@@ -63,7 +64,7 @@ final class EditActionsConfigurator {
             tableView.setEditing(false, animated: true)
         }
         replyAction.backgroundColor = Color.accentDark
-        replyAction.image = UIImage(named: "reply")
+        replyAction.image = UIImage(symbol: .arrowshape_turn_up_left)
 
         let moreAction =
             UIContextualAction(style: .normal,
@@ -73,7 +74,7 @@ final class EditActionsConfigurator {
             self?.itemNavigator.openMore(item: item, sourceView: cell)
         }
         moreAction.backgroundColor = Color.separatorColor
-        moreAction.image = UIImage(named: "more")
+        moreAction.image = UIImage(symbol: .ellipsis)
 
         let title = item.isFavorite ?
             NSLocalizedString("EDITACTIONSCONFIGURATOR_FAVORITEACTION_UNFAVORITE", comment: "") :
@@ -84,7 +85,7 @@ final class EditActionsConfigurator {
         }
         favoriteAction.backgroundColor = Color.yellow
 
-        let image = item.isFavorite ? UIImage(named: "unfavorite") : UIImage(named: "favorite")
+        let image = item.isFavorite ? UIImage(symbol: .star_fill) : UIImage(symbol: .star)
 
         favoriteAction.image = image
 

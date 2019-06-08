@@ -7,6 +7,7 @@ import UIKit
 import IcroKit
 import IcroUIKit
 import SwiftUI
+import TypedSymbols
 
 class TabBarViewController: UITabBarController {
     private let userSettings: UserSettings
@@ -52,14 +53,14 @@ class TabBarViewController: UITabBarController {
 
             navigationController.tabBarItem = UITabBarItem(title: type.tabTitle, image: type.image, selectedImage: nil)
 
-            let image = UIImage(systemName: "square.and.pencil")
+            let image = UIImage(symbol: .square_and_pencil)
             let newPostIcon = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(showComposeViewController))
 			newPostIcon.accessibilityLabel = "Compose"
             viewController.navigationItem.rightBarButtonItem = newPostIcon
 
             switch type {
             case .username:
-                let settingsImage = UIImage(named: "settings")
+                let settingsImage = UIImage(symbol: .gear)
                 let settingsButton = UIBarButtonItem(image: settingsImage,
                                                      style: .plain,
                                                      target: self,
@@ -67,9 +68,10 @@ class TabBarViewController: UITabBarController {
 				settingsButton.accessibilityLabel = "Settings"
 				viewController.navigationItem.leftBarButtonItem = settingsButton
             case .timeline:
-                let photosButton  = UIBarButtonItem(title:
-                    NSLocalizedString("TABBARVIEWCONTROLLER_PHOTOSBUTTON_TITLE", comment: ""),
-                                                    style: .plain, target: self, action: #selector(showPhotosTimeline))
+                let photosButton  = UIBarButtonItem(image: UIImage(symbol: .photo),
+                                                    style: .plain,
+                                                    target: self,
+                                                    action: #selector(showPhotosTimeline))
                 viewController.navigationItem.leftBarButtonItem = photosButton
             default:
                 break
@@ -107,11 +109,6 @@ class TabBarViewController: UITabBarController {
 
     @objc private func showSettingsViewController() {
         let navigationController = UINavigationController()
-        let mainNavigator = MainNavigator(navigationController: navigationController)
-        let settingsNavigator = SettingsNavigator(navigationController: navigationController, appNavigator: appNavigator)
-        let viewController = SettingsViewController(navigator: settingsNavigator,
-                                                    mainNavigator: mainNavigator,
-                                                    viewModel: SettingsViewModel(userSettings: userSettings))
         let settingsContentView = SettingsContentView(store: SettingsStore())
         navigationController.viewControllers = [UIHostingController(rootView: settingsContentView)]
         present(navigationController, animated: true, completion: nil)
@@ -146,13 +143,12 @@ extension TabBarViewController: UITabBarControllerDelegate {
 
 extension TabBarViewController {
     override var keyCommands: [UIKeyCommand]? {
-        let composeCommand = UIKeyCommand(input: "n",
-                                          modifierFlags: .command,
-                                          action: #selector(showComposeViewController),
-                                          discoverabilityTitle: "Compose")
+        let composeCommand = UIMutableKeyCommand(input: "n", modifierFlags: .command, action: #selector(showComposeViewController))
+        composeCommand.title = "Compose"
+        composeCommand.discoverabilityTitle = "Compose"
 
         return types.enumerated().map { index, type in
-            return UIKeyCommand(input: "\(index + 1)",
+            return UIMutableKeyCommand(input: "\(index + 1)",
                 modifierFlags: .command,
                 action: #selector(selectType(sender:)),
                 discoverabilityTitle: type.tabTitle ?? type.title)

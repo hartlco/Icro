@@ -1307,7 +1307,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Martin Hartl";
 				TargetAttributes = {
 					5B01CBC62168D6A90007E01D = {
@@ -1519,14 +1519,14 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Icro/Pods-Icro-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
 				"${BUILT_PRODUCTS_DIR}/AppDelegateComponent/AppDelegateComponent.framework",
-				"${BUILT_PRODUCTS_DIR}/DTCoreText-iOS13.0/DTCoreText.framework",
-				"${BUILT_PRODUCTS_DIR}/DTFoundation-iOS13.0/DTFoundation.framework",
-				"${BUILT_PRODUCTS_DIR}/Dequeueable-iOS13.0/Dequeueable.framework",
+				"${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework",
+				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
+				"${BUILT_PRODUCTS_DIR}/Dequeueable/Dequeueable.framework",
 				"${BUILT_PRODUCTS_DIR}/DropdownTitleView/DropdownTitleView.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher-iOS13.0/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/Kanna-iOS13.0/Kanna.framework",
-				"${BUILT_PRODUCTS_DIR}/Kanna-iOS11.0/Kanna.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher-iOS/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/TypedSymbols/TypedSymbols.framework",
+				"${BUILT_PRODUCTS_DIR}/Kanna-iOS/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess-iOS/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/wpxmlrpc-iOS/wpxmlrpc.framework",
@@ -1541,6 +1541,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropdownTitleView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageViewer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TypedSymbols.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
@@ -1666,8 +1667,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Icro-Mac/Pods-Icro-Mac-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher-macOS10.14/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/Kanna-macOS10.14/Kanna.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher-macOS/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Kanna-macOS/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-macOS/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess-macOS/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/wpxmlrpc-macOS/wpxmlrpc.framework",
@@ -1738,12 +1739,13 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
 				"${BUILT_PRODUCTS_DIR}/AppDelegateComponent/AppDelegateComponent.framework",
-				"${BUILT_PRODUCTS_DIR}/DTCoreText-iOS13.0/DTCoreText.framework",
-				"${BUILT_PRODUCTS_DIR}/DTFoundation-iOS13.0/DTFoundation.framework",
-				"${BUILT_PRODUCTS_DIR}/Dequeueable-iOS13.0/Dequeueable.framework",
+				"${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework",
+				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
+				"${BUILT_PRODUCTS_DIR}/Dequeueable/Dequeueable.framework",
 				"${BUILT_PRODUCTS_DIR}/DropdownTitleView/DropdownTitleView.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher-iOS13.0/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher-iOS/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/TypedSymbols/TypedSymbols.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1755,6 +1757,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropdownTitleView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageViewer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TypedSymbols.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2136,6 +2139,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Icro-Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -2164,6 +2168,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Icro-Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

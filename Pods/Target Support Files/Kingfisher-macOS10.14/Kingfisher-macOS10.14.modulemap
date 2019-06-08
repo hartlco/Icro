@@ -1,6 +1,0 @@
-framework module Kingfisher {
-  umbrella header "Kingfisher-macOS10.14-umbrella.h"
-
-  export *
-  module * { export * }
-}

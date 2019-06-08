@@ -163,22 +163,24 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AppDelegateComponent/AppDelegateComponent.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DTCoreText-iOS13.0/DTCoreText.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DTFoundation-iOS13.0/DTFoundation.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Dequeueable-iOS13.0/Dequeueable.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Dequeueable/Dequeueable.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DropdownTitleView/DropdownTitleView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher-iOS13.0/Kingfisher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher-iOS/Kingfisher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TypedSymbols/TypedSymbols.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AppDelegateComponent/AppDelegateComponent.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DTCoreText-iOS13.0/DTCoreText.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DTFoundation-iOS13.0/DTFoundation.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Dequeueable-iOS13.0/Dequeueable.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Dequeueable/Dequeueable.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DropdownTitleView/DropdownTitleView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher-iOS13.0/Kingfisher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher-iOS/Kingfisher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TypedSymbols/TypedSymbols.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
