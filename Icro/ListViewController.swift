@@ -164,7 +164,7 @@ final class ListViewController: UIViewController, LoadingViewController {
 
     private func applySnapshot() {
         let snapshop = viewModel.snapshot
-        dataSource?.apply(snapshop, animatingDifferences: true)
+        dataSource?.apply(snapshop, animatingDifferences: false)
     }
 
     private func updateDiscoverySectionsIfNeeded() {

@@ -26,7 +26,7 @@ public class ListViewModel: NSObject {
     public enum ViewType: Hashable {
         case author(author: Author)
         case item(item: Item)
-        case loadMore
+        case loadMore(index: Int)
     }
 
     private var items = [Item]() {
@@ -436,11 +436,11 @@ public class ListViewModel: NSObject {
         }))
 
         if showLoadMore, items.count != 0, supportedLodMoreTypes {
-            viewTypes.append(.loadMore)
+            viewTypes.append(.loadMore(index: items.count - 1))
         }
 
         if showLoadMoreInBetween != 0, supportedLodMoreTypes {
-            viewTypes.insert(.loadMore, at: showLoadMoreInBetween)
+            viewTypes.insert(.loadMore(index: showLoadMoreInBetween), at: showLoadMoreInBetween)
         }
 
         self.viewTypes = viewTypes
