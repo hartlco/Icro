@@ -6,6 +6,7 @@
 import UIKit
 import IcroKit
 import IcroUIKit
+import SwiftUI
 
 class TabBarViewController: UITabBarController {
     private let userSettings: UserSettings
@@ -111,7 +112,8 @@ class TabBarViewController: UITabBarController {
         let viewController = SettingsViewController(navigator: settingsNavigator,
                                                     mainNavigator: mainNavigator,
                                                     viewModel: SettingsViewModel(userSettings: userSettings))
-        navigationController.viewControllers = [viewController]
+        let settingsContentView = SettingsContentView(store: SettingsStore())
+        navigationController.viewControllers = [UIHostingController(rootView: settingsContentView)]
         present(navigationController, animated: true, completion: nil)
     }
 

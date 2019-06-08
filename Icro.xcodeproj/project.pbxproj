@@ -144,6 +144,8 @@
 		5B66EE74227D74DF00317FE3 /* MockClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE73227D74DF00317FE3 /* MockClient.swift */; };
 		5B66EE76227D780300317FE3 /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE75227D780300317FE3 /* UserListViewModelTests.swift */; };
 		5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
+		5B69E65122AA16310081CDFB /* SettingsView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsView2.swift */; };
+		5B69E65222AA170D0081CDFB /* SettingsSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */; };
 		5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B6A565E21735A69003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B6BCC3121A2F215007225C2 /* LoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */; };
@@ -431,6 +433,7 @@
 		5B66EE73227D74DF00317FE3 /* MockClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockClient.swift; sourceTree = "<group>"; };
 		5B66EE75227D780300317FE3 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
 		5B689BAB20837ECE005B9874 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TabBarViewController.xib; path = ViewController/TabBarViewController.xib; sourceTree = "<group>"; };
+		5B69E65022AA16310081CDFB /* SettingsView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView2.swift; path = View/Settings/SettingsView2.swift; sourceTree = "<group>"; };
 		5B6A565C21735A4F003C4D92 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
 		5B6BCC3221A2F233007225C2 /* LoadMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadMoreCell.xib; sourceTree = "<group>"; };
@@ -949,6 +952,7 @@
 				5B0D272D22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift */,
 				5B0D272F22A3B58400C0EA53 /* SettingsView.swift */,
 				5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */,
+				5B69E65022AA16310081CDFB /* SettingsView2.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1919,6 +1923,7 @@
 				5B58375F2128B5F80076121E /* AppNavigator.swift in Sources */,
 				5BD95AF72290A10600C74C52 /* UserDefaultsMigrationComponent.swift in Sources */,
 				5B5837612128B5F80076121E /* EditActionsConfigurator.swift in Sources */,
+				5B69E65222AA170D0081CDFB /* SettingsSeparatorView.swift in Sources */,
 				5BD95AF82290A10600C74C52 /* BackgroundFetchComponent.swift in Sources */,
 				5B5837622128B5F80076121E /* ProfileViewConfigurator.swift in Sources */,
 				5B3C79C821C51BDA00F699B8 /* ItemNavigator.swift in Sources */,
@@ -2003,6 +2008,7 @@
 				5BD9690C21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift in Sources */,
 				5B38475D21FDFEC900F082AD /* TipJarView.swift in Sources */,
 				5B583728212861770076121E /* SettingsNavigator.swift in Sources */,
+				5B69E65122AA16310081CDFB /* SettingsView2.swift in Sources */,
 				5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */,
 				5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */,
 				5BF2DA9D2287E97B0055240D /* SettingsInlineSeparatorView.swift in Sources */,
@@ -2316,7 +2322,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IcroUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -2350,7 +2356,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IcroUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroUIKit;
@@ -2377,7 +2383,7 @@
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IcroTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2401,7 +2407,7 @@
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IcroTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
