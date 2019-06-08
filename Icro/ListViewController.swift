@@ -38,6 +38,8 @@ final class ListViewController: UIViewController, LoadingViewController {
     private var rowHeightEstimate = [String: CGFloat]()
     private let notificationCenter: NotificationCenter
 
+    private var dataSource: UITableViewDiffableDataSource<ListViewModel.Section, ListViewModel.ViewType>?
+
     init(viewModel: ListViewModel,
          itemNavigator: ItemNavigator,
          notificationCenter: NotificationCenter = .default) {
@@ -60,6 +62,7 @@ final class ListViewController: UIViewController, LoadingViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupDataSource()
         updateUnread()
 
         notificationCenter.addObserver(self, selector: #selector(refreshContent),
@@ -86,6 +89,7 @@ final class ListViewController: UIViewController, LoadingViewController {
                 self?.hideMessage()
             }
 
+            self?.applySnapshot()
             self?.tableView.reloadData()
             if let newIndex = self?.viewModel.numberOfUnreadItems {
                 self?.updateUnread()
@@ -138,6 +142,31 @@ final class ListViewController: UIViewController, LoadingViewController {
         itemNavigator.showLogin()
     }
 
+    private func setupDataSource() {
+        dataSource =
+            UITableViewDiffableDataSource<ListViewModel.Section, ListViewModel.ViewType>(tableView: tableView, cellProvider: { [weak self] tableView, indexPath, item -> UITableViewCell? in
+            guard let self = self else { return nil }
+            switch item {
+            case .author(let author):
+                return self.authorCell(for: author, in: tableView, at: indexPath)
+            case .loadMore:
+                return self.loadMoreCell(at: indexPath, in: tableView)
+            case .item(let item):
+                let cell = tableView.dequeueCell(ofType: ItemTableViewCell.self, for: indexPath)
+                cell.layer.shouldRasterize = true
+                cell.layer.rasterizationScale = UIScreen.main.scale
+                self.cellConfigurator.configure(cell, forDisplaying: item)
+
+                return cell
+            }
+        })
+    }
+
+    private func applySnapshot() {
+        let snapshop = viewModel.snapshot
+        dataSource?.apply(snapshop, animatingDifferences: true)
+    }
+
     private func updateDiscoverySectionsIfNeeded() {
         guard viewModel.showsDiscoverySections else { return }
 
@@ -165,27 +194,7 @@ final class ListViewController: UIViewController, LoadingViewController {
     }
 }
 
-extension ListViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfItems()
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch viewModel.viewType(forRow: indexPath.row) {
-        case .author(let author):
-            return authorCell(for: author, in: tableView, at: indexPath)
-        case .loadMore:
-            return loadMoreCell(at: indexPath, in: tableView)
-        case .item(let item):
-            let cell = tableView.dequeueCell(ofType: ItemTableViewCell.self, for: indexPath)
-            cell.layer.shouldRasterize = true
-            cell.layer.rasterizationScale = UIScreen.main.scale
-            cellConfigurator.configure(cell, forDisplaying: item)
-
-            return cell
-        }
-    }
-
+extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         switch viewModel.viewType(forRow: indexPath.row) {
         case .author, .loadMore:

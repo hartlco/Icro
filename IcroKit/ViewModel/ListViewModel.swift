@@ -7,6 +7,10 @@ import Foundation
 
 // swiftlint:disable type_body_length
 public class ListViewModel: NSObject {
+    public enum Section {
+        case main
+    }
+
     public enum ListType: Equatable {
         case timeline
         case photos
@@ -19,7 +23,7 @@ public class ListViewModel: NSObject {
         case conversation(item: Item)
     }
 
-    public enum ViewType {
+    public enum ViewType: Hashable {
         case author(author: Author)
         case item(item: Item)
         case loadMore
@@ -148,6 +152,13 @@ public class ListViewModel: NSObject {
                 self.didFinishLoading(false)
             }
         }
+    }
+
+    public var snapshot: NSDiffableDataSourceSnapshot<Section, ListViewModel.ViewType> {
+        let snapshot = NSDiffableDataSourceSnapshot<Section, ListViewModel.ViewType>()
+        snapshot.appendSections([.main  ])
+        snapshot.appendItems(viewTypes)
+        return snapshot
     }
 
     public var shouldLoad: Bool {

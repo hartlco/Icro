@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct Author: Codable, Equatable {
+public struct Author: Codable, Equatable, Hashable {
     public let name: String
     public let url: URL?
     public let avatar: URL

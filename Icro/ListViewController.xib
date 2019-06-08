@@ -28,7 +28,6 @@
                     <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <color key="separatorColor" name="separatorColor"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="hyl-Dt-QjB"/>
                         <outlet property="delegate" destination="-1" id="U23-59-Afg"/>
                     </connections>
                 </tableView>
