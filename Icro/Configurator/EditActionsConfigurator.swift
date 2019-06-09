@@ -91,4 +91,19 @@ final class EditActionsConfigurator {
 
         return UISwipeActionsConfiguration(actions: [replyAction, favoriteAction, moreAction])
     }
+
+    func contextMenu(at indexPath: IndexPath) -> UIContextMenuConfiguration? {
+//        return UIContextMenuConfiguration(identifier: nil,
+//                                   previewProvider: nil) { (element) -> UIMenu<UIAction>? in
+//
+//
+//        }
+
+//        UIContextMenuConfiguration(identifier: nil,
+//                                   previewProvider: nil) { (elements) -> UIMenu<UIAction>? in
+//                                    return UIMenu<UIAction>(title: "Test", children: [])
+//        }
+
+        return nil
+    }
 }

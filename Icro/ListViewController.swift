@@ -195,7 +195,9 @@ final class ListViewController: UIViewController, LoadingViewController {
         #if targetEnvironment(UIKitForMac)
         tabBarController?.tabBar.isHidden = true
         extendedLayoutIncludesOpaqueBars = true
-        navigationController?.navigationBar.isHidden = true
+        if let navigationController = navigationController {
+            navigationController.navigationBar.isHidden = navigationController.viewControllers.count > 1 ? false : true
+        }
         #endif
     }
 }
@@ -277,6 +279,10 @@ extension ListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return editActionsConfigurator.canEdit(at: indexPath)
+    }
+
+    func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        return editActionsConfigurator.contextMenu(at: indexPath)
     }
 }
 

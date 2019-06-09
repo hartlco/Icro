@@ -115,9 +115,11 @@ extension ToolbarDelegate: NSToolbarDelegate {
             let group = NSToolbarItemGroup(itemIdentifier: segmentedControlIdentifier,
                                            images: toolbarImages,
                                            selectionMode: .selectOne,
-                                           labels: ["1","1","1","1","1"],
+                                           labels: nil,
                                            target: self,
                                            action: #selector(didToggle(group:)))
+
+            group.controlRepresentation = NSToolbarItemGroupControlRepresentation.expanded
             group.setSelected(true, at: 0)
             selectIndexBlock = { index in
                 group.setSelected(true, at: index)
