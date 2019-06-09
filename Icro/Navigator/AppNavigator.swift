@@ -5,7 +5,10 @@
 
 import UIKit
 import IcroKit
+
+#if targetEnvironment(UIKitForMac)
 import AppKit
+#endif
 
 final class AppNavigator {
     private let window: UIWindow

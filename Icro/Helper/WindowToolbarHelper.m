@@ -12,7 +12,9 @@
 @implementation WindowToolbarHelper
 
 - (void)applyStyleToWindow:(UIWindowScene *)windowScene {
+#if TARGET_OS_UIKITFORMAC
     windowScene.titlebar.titleVisibility = UITitlebarTitleVisibilityHidden;
+#endif
 }
 
 @end
