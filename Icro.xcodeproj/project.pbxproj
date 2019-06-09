@@ -150,7 +150,6 @@
 		5B6A565E21735A69003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B6BCC3121A2F215007225C2 /* LoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */; };
 		5B6BCC3321A2F233007225C2 /* LoadMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6BCC3221A2F233007225C2 /* LoadMoreCell.xib */; };
-		5B719AE222A8CD4D004B5C95 /* WindowToolbarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B719AE122A8CD4D004B5C95 /* WindowToolbarHelper.m */; };
 		5B81E79A2206C62E008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
 		5B81E79B2206C63A008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
 		5B81E79C2206D000008BEA16 /* TipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476221FE048900F082AD /* TipCollectionViewCell.swift */; };
@@ -226,6 +225,7 @@
 		5BDE18F1216A57C0001254F4 /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
 		5BDE18F3216A76FA001254F4 /* SettingsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BDE18F2216A76FA001254F4 /* SettingsStoryboard.storyboard */; };
 		5BDE18F5216A7A47001254F4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE18F4216A7A47001254F4 /* SettingsViewController.swift */; };
+		5BE633AF22ACC09F005296AB /* SettingsView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsView2.swift */; };
 		5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
 		5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */; };
 		5BED6D01207E8147002FB9FF /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6CFF207E8147002FB9FF /* UserListViewController.swift */; };
@@ -439,8 +439,6 @@
 		5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
 		5B6BCC3221A2F233007225C2 /* LoadMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadMoreCell.xib; sourceTree = "<group>"; };
 		5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
-		5B719AE022A8CD4D004B5C95 /* WindowToolbarHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WindowToolbarHelper.h; path = Helper/WindowToolbarHelper.h; sourceTree = "<group>"; };
-		5B719AE122A8CD4D004B5C95 /* WindowToolbarHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WindowToolbarHelper.m; path = Helper/WindowToolbarHelper.m; sourceTree = "<group>"; };
 		5B744A4C8329D56FBB21833D /* Pods-IcroScreenshotsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroScreenshotsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroScreenshotsTests/Pods-IcroScreenshotsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B81E7992206C62E008BEA16 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		5B869B07214E4633000A051C /* MicropubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicropubEndpoint.swift; sourceTree = "<group>"; };
@@ -1087,8 +1085,6 @@
 				5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */,
 				5B38476821FE073800F082AD /* UIView+Contraints.swift */,
 				5B99C679229FB47200437552 /* UITableView+Keyboard.swift */,
-				5B719AE022A8CD4D004B5C95 /* WindowToolbarHelper.h */,
-				5B719AE122A8CD4D004B5C95 /* WindowToolbarHelper.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -1939,6 +1935,7 @@
 				5B58375F2128B5F80076121E /* AppNavigator.swift in Sources */,
 				5BD95AF72290A10600C74C52 /* UserDefaultsMigrationComponent.swift in Sources */,
 				5B5837612128B5F80076121E /* EditActionsConfigurator.swift in Sources */,
+				5BE633AF22ACC09F005296AB /* SettingsView2.swift in Sources */,
 				5B69E65222AA170D0081CDFB /* SettingsSeparatorView.swift in Sources */,
 				5BD95AF82290A10600C74C52 /* BackgroundFetchComponent.swift in Sources */,
 				5B5837622128B5F80076121E /* ProfileViewConfigurator.swift in Sources */,
@@ -2021,7 +2018,6 @@
 				5BD95AF4228FE85600C74C52 /* BackgroundFetchComponent.swift in Sources */,
 				5BF2DAA22287F4DB0055240D /* NavigatorComponent.swift in Sources */,
 				5BF2DA9B2287E91A0055240D /* SettingsButtonWithLabelView.swift in Sources */,
-				5B719AE222A8CD4D004B5C95 /* WindowToolbarHelper.m in Sources */,
 				5BD9690C21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift in Sources */,
 				5B38475D21FDFEC900F082AD /* TipJarView.swift in Sources */,
 				5B583728212861770076121E /* SettingsNavigator.swift in Sources */,

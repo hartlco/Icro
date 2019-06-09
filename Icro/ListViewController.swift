@@ -191,6 +191,12 @@ final class ListViewController: UIViewController, LoadingViewController {
         titleView?.titleColor = Color.textColor
         titleView?.subtitleColor = Color.secondaryTextColor
         view.backgroundColor = Color.backgroundColor
+
+        #if targetEnvironment(UIKitForMac)
+        tabBarController?.tabBar.isHidden = true
+        extendedLayoutIncludesOpaqueBars = true
+        navigationController?.navigationBar.isHidden = true
+        #endif
     }
 }
 

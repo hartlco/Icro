@@ -53,11 +53,12 @@ struct SettingsContentView: View {
                             Text("Post to Wordpress Site")
                         }
                         TextField($store.wordpressURL,
-                        placeholder: Text("Wordpress URL"))
+                                  placeholder: Text("Wordpress URL"))
                         TextField($store.wordpressUserName,
                                   placeholder: Text("Username"))
                         TextField($store.wordpressPassword,
                                   placeholder: Text("Password"))
+                            .textContentType(.password)
                 }
             }
             .listStyle(.grouped)

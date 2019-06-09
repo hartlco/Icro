@@ -15,6 +15,8 @@ class TabBarViewController: UITabBarController {
     private var types: [ListViewModel.ListType]
     fileprivate var previousViewController: UIViewController?
 
+    var didSwitchToIndexByCommand: (Int) -> Void = { _ in }
+
     init(userSettings: UserSettings,
          appNavigator: AppNavigator) {
         self.userSettings = userSettings
@@ -161,5 +163,6 @@ extension TabBarViewController {
             index > 0,
             index < types.count + 1 else { return }
         selectedIndex = index - 1
+        didSwitchToIndexByCommand(selectedIndex)
     }
 }
