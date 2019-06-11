@@ -6,7 +6,10 @@
 import Foundation
 
 extension Date {
+    private static let relativeDateFormatter = RelativeDateTimeFormatter()
+
     var timeAgo: String {
-        return self.formattedDateComponents() ?? ""
+        Date.relativeDateFormatter.unitsStyle = .abbreviated
+        return Date.relativeDateFormatter.localizedString(for: self, relativeTo: Date())
     }
 }

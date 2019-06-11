@@ -111,9 +111,14 @@ class TabBarViewController: UITabBarController {
 
     @objc private func showSettingsViewController() {
         let navigationController = UINavigationController()
-        let settingsContentView = SettingsContentView(store: SettingsStore())
-        navigationController.viewControllers = [UIHostingController(rootView: settingsContentView)]
-        present(navigationController, animated: true, completion: nil)
+        let itemNavigator = ItemNavigator(navigationController: navigationController, appNavigator: appNavigator)
+        let settingsContentView = SettingsContentView(itemNavigator: itemNavigator,
+                                                      dismissAction: { [weak self] in
+                                                        guard let self = self else { return }
+                                                        self.presentedViewController?.dismiss(animated: true, completion: nil)
+        },
+                                                      store: SettingsStore())
+        present(UIHostingController(rootView: settingsContentView), animated: true, completion: nil)
     }
 
     @objc private func showPhotosTimeline() {
@@ -149,12 +154,16 @@ extension TabBarViewController {
         composeCommand.title = "Compose"
         composeCommand.discoverabilityTitle = "Compose"
 
+        let settingsCommand = UIMutableKeyCommand(input: ",", modifierFlags: .command, action: #selector(showSettingsViewController))
+        settingsCommand.title = "Settings"
+        settingsCommand.discoverabilityTitle = "Settings"
+
         return types.enumerated().map { index, type in
             return UIMutableKeyCommand(input: "\(index + 1)",
                 modifierFlags: .command,
                 action: #selector(selectType(sender:)),
                 discoverabilityTitle: type.tabTitle ?? type.title)
-        } + [composeCommand]
+        } + [composeCommand, settingsCommand]
     }
 
     @objc private func selectType(sender: UIKeyCommand) {

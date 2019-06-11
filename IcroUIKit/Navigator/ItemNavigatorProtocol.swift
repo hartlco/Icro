@@ -28,4 +28,6 @@ public protocol ItemNavigatorProtocol {
     func openMore(item: Item, sourceView: UIView?)
 
     func showDiscoveryCategories(categories: [DiscoveryCategory], sourceView: UIView)
+
+    func showLogin()
 }

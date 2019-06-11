@@ -5,14 +5,15 @@
 
 import Foundation
 import IcroKit
+import IcroUIKit
 import ImageViewer
 import Kingfisher
 
 final class ProfileViewConfigurator: NSObject {
-    private let itemNavigator: ItemNavigator
+    private let itemNavigator: ItemNavigatorProtocol
     private let viewModel: ListViewModel
 
-    init(itemNavigator: ItemNavigator,
+    init(itemNavigator: ItemNavigatorProtocol,
          viewModel: ListViewModel) {
         self.itemNavigator = itemNavigator
         self.viewModel = viewModel

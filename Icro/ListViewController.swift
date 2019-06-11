@@ -25,7 +25,7 @@ final class ListViewController: UIViewController, LoadingViewController {
 
     fileprivate let viewModel: ListViewModel
     fileprivate let cellConfigurator: ItemCellConfigurator
-    fileprivate let itemNavigator: ItemNavigator
+    fileprivate let itemNavigator: ItemNavigatorProtocol
     fileprivate let profileViewConfigurator: ProfileViewConfigurator
     fileprivate let editActionsConfigurator: EditActionsConfigurator
     private var titleView: DropdownTitleView?
@@ -41,7 +41,7 @@ final class ListViewController: UIViewController, LoadingViewController {
     private var dataSource: UITableViewDiffableDataSource<ListViewModel.Section, ListViewModel.ViewType>?
 
     init(viewModel: ListViewModel,
-         itemNavigator: ItemNavigator,
+         itemNavigator: ItemNavigatorProtocol,
          notificationCenter: NotificationCenter = .default) {
         self.viewModel = viewModel
         self.itemNavigator = itemNavigator

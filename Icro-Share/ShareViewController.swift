@@ -97,6 +97,10 @@ class ShareViewController: UIViewController {
 }
 
 private class EmptyItemNavigator: ItemNavigatorProtocol {
+    func showLogin() {
+
+    }
+
     func open(url: URL) {
 
     }

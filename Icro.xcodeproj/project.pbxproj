@@ -16,7 +16,6 @@
 		5B01CBE32168D6B50007E01D /* IcroKit_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B01CBDC2168D6B50007E01D /* IcroKit_Mac.framework */; };
 		5B01CBE42168D6B50007E01D /* IcroKit_Mac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B01CBDC2168D6B50007E01D /* IcroKit_Mac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B01CBE92168D7150007E01D /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */; };
-		5B01CBEA2168D7150007E01D /* Date+ComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */; };
 		5B01CBEB2168D7150007E01D /* Date+Ago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372F2128620C0076121E /* Date+Ago.swift */; };
 		5B01CBEC2168D7150007E01D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7720A613EF00B54399 /* Font.swift */; };
 		5B01CBED2168D7150007E01D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B494E652124C0FA00C3969B /* Color.swift */; };
@@ -52,6 +51,7 @@
 		5B38476721FE06F500F082AD /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475C21FDFEC900F082AD /* TipJarView.swift */; };
 		5B38476921FE073800F082AD /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476821FE073800F082AD /* UIView+Contraints.swift */; };
 		5B38476A21FE077A00F082AD /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476821FE073800F082AD /* UIView+Contraints.swift */; };
+		5B39B7BE22AD504A004D5134 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39B7BD22AD504A004D5134 /* ListView.swift */; };
 		5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */; };
 		5B3B4C3521D0CBE300F511A6 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C3421D0CBE300F511A6 /* assets-images.swift */; };
 		5B3B4C3621D0CBE300F511A6 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C3421D0CBE300F511A6 /* assets-images.swift */; };
@@ -192,7 +192,6 @@
 		5BC347C5213295C000DEB45D /* Date+Ago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372F2128620C0076121E /* Date+Ago.swift */; };
 		5BC347C72132960900DEB45D /* LoginInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC347C62132960900DEB45D /* LoginInformation.swift */; };
 		5BC347C82132962200DEB45D /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */; };
-		5BC347C92132963A00DEB45D /* Date+ComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */; };
 		5BC5A5A621D377B300B9A8D1 /* Theme+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A5A521D377B300B9A8D1 /* Theme+Extenstions.swift */; };
 		5BC5A5A721D4E1F200B9A8D1 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */; };
 		5BD2FE5F2259D15100591490 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2FE5E2259D15100591490 /* Media.swift */; };
@@ -376,6 +375,7 @@
 		5B38476221FE048900F082AD /* TipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TipCollectionViewCell.swift; path = View/TipCollectionViewCell.swift; sourceTree = "<group>"; };
 		5B38476321FE048900F082AD /* TipCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TipCollectionViewCell.xib; path = View/TipCollectionViewCell.xib; sourceTree = "<group>"; };
 		5B38476821FE073800F082AD /* UIView+Contraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Contraints.swift"; path = "Helper/UIView+Contraints.swift"; sourceTree = "<group>"; };
+		5B39B7BD22AD504A004D5134 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = View/ListView.swift; sourceTree = "<group>"; };
 		5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppearanceManager.swift; path = Helper/AppearanceManager.swift; sourceTree = "<group>"; };
 		5B3B4C3421D0CBE300F511A6 /* assets-images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "assets-images.swift"; path = "Generated/assets-images.swift"; sourceTree = "<group>"; };
 		5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Icro-Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -406,7 +406,6 @@
 		5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-Icro-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
 		5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicropubRequestController.swift; sourceTree = "<group>"; };
 		5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewModel.swift; path = ViewModel/SettingsViewModel.swift; sourceTree = "<group>"; };
-		5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ComponentsFormatter.swift"; sourceTree = "<group>"; };
 		5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Icro-Bridging-Header.h"; sourceTree = "<group>"; };
 		5B58371A212860BA0076121E /* ComposeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewModel.swift; sourceTree = "<group>"; };
 		5B58371D212861220076121E /* EditActionsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditActionsConfigurator.swift; path = Configurator/EditActionsConfigurator.swift; sourceTree = "<group>"; };
@@ -794,13 +793,6 @@
 			path = Navigator;
 			sourceTree = "<group>";
 		};
-		5B54C2ED22A6F85400C59E30 /* SwiftU */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = SwiftU;
-			sourceTree = "<group>";
-		};
 		5B5837362128B04A0076121E /* IcroTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -938,7 +930,6 @@
 			children = (
 				5BD9690921C8CBFB00313795 /* GalleryDataSource.swift */,
 				5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */,
-				5B4E418C208C44FB00FC610A /* Date+ComponentsFormatter.swift */,
 				5B58372F2128620C0076121E /* Date+Ago.swift */,
 				5B2A5A7720A613EF00B54399 /* Font.swift */,
 				5B494E652124C0FA00C3969B /* Color.swift */,
@@ -1021,7 +1012,6 @@
 		C5FA2AC21EB4482C006DEB40 /* Icro */ = {
 			isa = PBXGroup;
 			children = (
-				5B54C2ED22A6F85400C59E30 /* SwiftU */,
 				5BC1384121C632FF0040353C /* Icro.entitlements */,
 				5B8754F82070129400018DFA /* ViewController */,
 				5B8754F5206FEC6800018DFA /* Navigator */,
@@ -1073,6 +1063,7 @@
 				5B38475C21FDFEC900F082AD /* TipJarView.swift */,
 				5B38476221FE048900F082AD /* TipCollectionViewCell.swift */,
 				5B38476321FE048900F082AD /* TipCollectionViewCell.xib */,
+				5B39B7BD22AD504A004D5134 /* ListView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1852,7 +1843,6 @@
 				5B99C67F229FBA2A00437552 /* assets-images.swift in Sources */,
 				5BDE18EA216A5745001254F4 /* ComposeViewModel.swift in Sources */,
 				5BD2FE602259D2EC00591490 /* Media.swift in Sources */,
-				5B01CBEA2168D7150007E01D /* Date+ComponentsFormatter.swift in Sources */,
 				5B01CBF22168D7240007E01D /* Author.swift in Sources */,
 				5B01CBE92168D7150007E01D /* CacheStorage.swift in Sources */,
 				5BF663832189629200ABA671 /* DiscoveryCategory.swift in Sources */,
@@ -2004,7 +1994,6 @@
 				5BC347BB2132947100DEB45D /* Author.swift in Sources */,
 				5B01CC002168E4DD0007E01D /* ListViewModel.swift in Sources */,
 				5BC347C32132958600DEB45D /* Color.swift in Sources */,
-				5BC347C92132963A00DEB45D /* Date+ComponentsFormatter.swift in Sources */,
 				5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2023,6 +2012,7 @@
 				5B583728212861770076121E /* SettingsNavigator.swift in Sources */,
 				5B69E65122AA16310081CDFB /* SettingsView2.swift in Sources */,
 				5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */,
+				5B39B7BE22AD504A004D5134 /* ListView.swift in Sources */,
 				5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */,
 				5BF2DA9D2287E97B0055240D /* SettingsInlineSeparatorView.swift in Sources */,
 				5BB388B822A3A558008E38B6 /* SettingsTextInputView.swift in Sources */,

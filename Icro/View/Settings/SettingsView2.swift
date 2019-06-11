@@ -9,6 +9,8 @@
 import SwiftUI
 import Combine
 import SafariServices
+import IcroUIKit
+import IcroKit
 
 class SettingsStore: BindableObject {
     var didChange = PassthroughSubject<SettingsStore, Never>()
@@ -41,7 +43,12 @@ class SettingsStore: BindableObject {
 }
 
 struct SettingsContentView: View {
+    let itemNavigator: ItemNavigatorProtocol
+    let dismissAction: () -> Void
+
     @ObjectBinding var store: SettingsStore
+
+    private let hartlcoViewModel = ListViewModel(type: .username(username: "hartlco"))
 
     var body: some View {
         NavigationView {
@@ -60,9 +67,33 @@ struct SettingsContentView: View {
                                   placeholder: Text("Password"))
                             .textContentType(.password)
                 }
+                Section(header: Text("Other")
+                    .font(.headline)
+                    .fontWeight(.bold)) {
+                        hartlcoListView
+                        NavigationButton(destination: MuteView()) {
+                            Text("Icro Support")
+                        }
+                        NavigationButton(destination: MuteView()) {
+                            Text("Acknowledgements")
+                        }
+                }
             }
             .listStyle(.grouped)
             .navigationBarTitle(Text("Settings"))
+            .navigationBarItems(leading: Button(action: {
+                self.dismissAction()
+            }, label: {
+                Image(systemName: "gift")
+            }))
+        }
+    }
+
+    var hartlcoListView: some View {
+        NavigationButton(destination: ListView(itemNavigator: itemNavigator,
+                                               viewModel: hartlcoViewModel)
+            .navigationBarTitle(Text("hartlco"), displayMode: .inline)) {
+                                                Text("hartlco on Micro.blog")
         }
     }
 }
@@ -76,7 +107,59 @@ struct MuteView: View {
 #if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsContentView(store: SettingsStore())
+        SettingsContentView(itemNavigator: EmptyItemNavigator(),
+                            dismissAction: {},
+                            store: SettingsStore())
+    }
+}
+
+private class EmptyItemNavigator: ItemNavigatorProtocol {
+    func showLogin() {
+
+    }
+
+    func open(url: URL) {
+
+    }
+
+    func open(author: Author) {
+
+    }
+
+    func open(authorName: String) {
+
+    }
+
+    func openFollowing(for user: Author) {
+
+    }
+
+    func openConversation(item: Item) {
+
+    }
+
+    func openMedia(media: [Media], index: Int) {
+
+    }
+
+    func openReply(item: Item) {
+
+    }
+
+    func share(item: Item, sourceView: UIView?) {
+
+    }
+
+    func accessibilityPresentLinks(linkList: [(text: String, url: URL)], message: String, sourceView: UIView) {
+
+    }
+
+    func openMore(item: Item, sourceView: UIView?) {
+
+    }
+
+    func showDiscoveryCategories(categories: [DiscoveryCategory], sourceView: UIView) {
+
     }
 }
 #endif

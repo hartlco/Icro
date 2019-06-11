@@ -92,8 +92,10 @@ final class ToolbarDelegate: NSObject {
 
     private var selectIndexBlock: (Int) -> Void = { _ in }
 
-    let mainToolbarIdentifier = NSToolbar.Identifier("MAIN_TOOLBAR")
-    let segmentedControlIdentifier = NSToolbarItem.Identifier("MAIN_TABBAR")
+    #if targetEnvironment(UIKitForMac)
+    let segmentedControlIdentifier = NSToolbarItem.Identifier("tabbar")
+    let composeIdentifier = NSToolbarItem.Identifier("compose")
+    #endif
 
     var didSelectIndex: ((Int) -> Void) = { _ in }
 
@@ -127,6 +129,12 @@ extension ToolbarDelegate: NSToolbarDelegate {
             toolbarItem = group
         case NSToolbarItem.Identifier.flexibleSpace:
             toolbarItem = NSToolbarItem(itemIdentifier: itemIdentifier)
+        case composeIdentifier:
+            let item = NSToolbarItem(itemIdentifier: composeIdentifier, barButtonItem: UIBarButtonItem(image: UIImage(named: "compose"),
+                                                                                                       style: .plain,
+                                                                                                       target: nil,
+                                                                                                       action: nil))
+            toolbarItem = item
         default:
             fatalError()
         }
@@ -135,11 +143,11 @@ extension ToolbarDelegate: NSToolbarDelegate {
     }
 
     public func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        return [segmentedControlIdentifier, NSToolbarItem.Identifier.flexibleSpace]
+        return [segmentedControlIdentifier, NSToolbarItem.Identifier.flexibleSpace, composeIdentifier]
     }
 
     public func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        return [NSToolbarItem.Identifier.flexibleSpace, segmentedControlIdentifier, NSToolbarItem.Identifier.flexibleSpace]
+        return [.flexibleSpace, segmentedControlIdentifier, .flexibleSpace, composeIdentifier]
     }
 
     private var toolbarImages: [UIImage] {

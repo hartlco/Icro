@@ -5,15 +5,16 @@
 
 import UIKit
 import IcroKit
+import IcroUIKit
 import TypedSymbols
 
 final class EditActionsConfigurator {
-    private let itemNavigator: ItemNavigator
+    private let itemNavigator: ItemNavigatorProtocol
     private let viewModel: ListViewModel
 
     var didModifyIndexPath: ((IndexPath) -> Void)?
 
-    init(itemNavigator: ItemNavigator,
+    init(itemNavigator: ItemNavigatorProtocol,
          viewModel: ListViewModel) {
         self.itemNavigator = itemNavigator
         self.viewModel = viewModel
