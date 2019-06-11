@@ -94,17 +94,34 @@ final class EditActionsConfigurator {
     }
 
     func contextMenu(at indexPath: IndexPath) -> UIContextMenuConfiguration? {
-//        return UIContextMenuConfiguration(identifier: nil,
-//                                   previewProvider: nil) { (element) -> UIMenu<UIAction>? in
-//
-//
-//        }
+        return UIContextMenuConfiguration(identifier: nil,
+                                          previewProvider: nil,
+                                          actionProvider: { _ in
+            return self.makeContextMenu(indexPath: indexPath)
+        })
+    }
 
-//        UIContextMenuConfiguration(identifier: nil,
-//                                   previewProvider: nil) { (elements) -> UIMenu<UIAction>? in
-//                                    return UIMenu<UIAction>(title: "Test", children: [])
-//        }
+    private func makeContextMenu(indexPath: IndexPath) -> UIMenu<UIAction> {
+        guard case .item(let item) = viewModel.viewType(forRow: indexPath.row) else {
+            return UIMenu<UIAction>.create(title: "Main Menu", children: [])
+        }
 
-        return nil
+        let share = UIAction(__title: NSLocalizedString("EDITACTIONSCONFIGURATOR_LEADINGEDITACTIONS", comment: ""),
+                             image: UIImage(symbol: .arrowshape_turn_up_left),
+                             options: []) { [weak self] _ in
+                                self?.itemNavigator.openReply(item: item)
+        }
+
+        let favoriteTitle = item.isFavorite ?
+            NSLocalizedString("EDITACTIONSCONFIGURATOR_FAVORITEACTION_UNFAVORITE", comment: "") :
+            NSLocalizedString("EDITACTIONSCONFIGURATOR_FAVORITEACTION_FAVORITE", comment: "")
+        let favoriteImage = item.isFavorite ? UIImage(symbol: .star_fill) : UIImage(symbol: .star)
+        let favorite = UIAction(__title: favoriteTitle,
+                             image: favoriteImage,
+                             options: []) { [weak self] _ in
+                                self?.viewModel.toggleFave(for: item)
+        }
+
+        return UIMenu<UIAction>.create(title: "Main Menu", children: [share, favorite])
     }
 }

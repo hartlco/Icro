@@ -9,7 +9,7 @@ extension Date {
     private static let relativeDateFormatter = RelativeDateTimeFormatter()
 
     var timeAgo: String {
-        Date.relativeDateFormatter.unitsStyle = .abbreviated
+        Date.relativeDateFormatter.unitsStyle = .short
         return Date.relativeDateFormatter.localizedString(for: self, relativeTo: Date())
     }
 }
