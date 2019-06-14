@@ -61,7 +61,7 @@ class LoginViewController: UIViewController, LoadingViewController {
     }
 
     func verify(token: String) {
-        viewModel.login(withToken: token)
+//        viewModel.login(withToken: token)
     }
 
     private func updateState() {

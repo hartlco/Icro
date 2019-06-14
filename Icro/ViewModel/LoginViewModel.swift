@@ -5,8 +5,12 @@
 
 import Foundation
 import IcroKit
+import SwiftUI
+import Combine
 
-final class LoginViewModel {
+final class LoginViewModel: BindableObject {
+    let didChange = PassthroughSubject<LoginViewModel, Never>()
+
     enum LoginType {
         case mail
         case token
@@ -24,7 +28,7 @@ final class LoginViewModel {
 
     var loginString = "" {
         didSet {
-            updateState()
+            didChange.send(self)
             didRequest = false
         }
     }
@@ -47,7 +51,7 @@ final class LoginViewModel {
         }
     }
 
-    func requestLoginMail() {
+    private func requestLoginMail() {
         isLoading = true
         updateState()
         didStartLoading()
@@ -68,7 +72,7 @@ final class LoginViewModel {
         }
     }
 
-    func login(withToken token: String) {
+    private func login(withToken token: String) {
         isLoading = true
         updateState()
         didStartLoading()
@@ -96,7 +100,7 @@ final class LoginViewModel {
         return loginString.count > 0 && !isLoading && !didRequest
     }
 
-    var loginType: LoginType {
+    private var loginType: LoginType {
         return loginString.contains("@") ? .mail : .token
     }
 
@@ -113,7 +117,7 @@ final class LoginViewModel {
         return didRequest
     }
 
-    var emailRequestResource: Resource<Empty>? {
+    private var emailRequestResource: Resource<Empty>? {
         let mail = loginString.replacingOccurrences(of: " ", with: "")
         let baseURLString = "https://micro.blog/account/signin?email=\(mail)&app_name=Icro&redirect_url=icro://"
         guard let url = URL(string: baseURLString) else {
@@ -124,7 +128,7 @@ final class LoginViewModel {
         })
     }
 
-    func loginRequestResource(token: String) -> Resource<LoginInformation>? {
+    private func loginRequestResource(token: String) -> Resource<LoginInformation>? {
         let baseURLString = "https://micro.blog/account/verify?token=\(token)"
         guard let url = URL(string: baseURLString) else {
             return nil

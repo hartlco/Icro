@@ -70,7 +70,6 @@ struct SettingsContentView: View {
                 Section(header: Text("Other")
                     .font(.headline)
                     .fontWeight(.bold)) {
-                        hartlcoListView
                         NavigationButton(destination: MuteView()) {
                             Text("Icro Support")
                         }
@@ -86,14 +85,6 @@ struct SettingsContentView: View {
             }, label: {
                 Image(systemName: "gift")
             }))
-        }
-    }
-
-    var hartlcoListView: some View {
-        NavigationButton(destination: ListView(itemNavigator: itemNavigator,
-                                               viewModel: hartlcoViewModel)
-            .navigationBarTitle(Text("hartlco"), displayMode: .inline)) {
-                                                Text("hartlco on Micro.blog")
         }
     }
 }

@@ -5,6 +5,7 @@
 
 import UIKit
 import IcroKit
+import SwiftUI
 
 #if targetEnvironment(UIKitForMac)
 import AppKit
@@ -13,7 +14,7 @@ import AppKit
 final class AppNavigator {
     private let window: UIWindow
     private let userSettings: UserSettings
-    private let loginViewController: LoginViewController
+    private let loginViewController: UIViewController
     private var tabBarViewController: TabBarViewController?
     private let loginViewModel = LoginViewModel()
     private let toolbarDelegate = ToolbarDelegate()
@@ -23,7 +24,7 @@ final class AppNavigator {
         self.window = window
         self.userSettings = userSettings
 
-        self.loginViewController = LoginViewController(viewModel: loginViewModel)
+        self.loginViewController = UIHostingController(rootView: LoginView(viewModel: loginViewModel))
 
         loginViewModel.didLogin = { [weak self] _ in
             guard let self = self else { return }
@@ -33,8 +34,7 @@ final class AppNavigator {
     }
 
     func showLogin() {
-        let navigationController = UINavigationController(rootViewController: loginViewController)
-        window.rootViewController?.present(navigationController, animated: true, completion: nil)
+        window.rootViewController?.present(loginViewController, animated: true, completion: nil)
     }
 
     func setup() {
@@ -77,7 +77,7 @@ final class AppNavigator {
     func handleDeeplink(url: URL) {
         showLogin()
         let token = url.absoluteString.replacingOccurrences(of: "icro://", with: "")
-        loginViewController.verify(token: token)
+//        loginViewController.verify(token: token)
     }
 }
 

@@ -42,6 +42,7 @@
 		5B0D273822A3BA1F00C0EA53 /* Settings2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D273622A3BA1F00C0EA53 /* Settings2ViewController.swift */; };
 		5B0D273922A3BA1F00C0EA53 /* Settings2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B0D273722A3BA1F00C0EA53 /* Settings2ViewController.xib */; };
 		5B0D273B22A3D46400C0EA53 /* SettingsSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */; };
+		5B1896C922B2DA200067F100 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51621A22B2C900009C0064 /* LoginView.swift */; };
 		5B38475D21FDFEC900F082AD /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475C21FDFEC900F082AD /* TipJarView.swift */; };
 		5B38475F21FDFEFD00F082AD /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */; };
 		5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B38476021FE035900F082AD /* StoreKit.framework */; };
@@ -100,12 +101,14 @@
 		5B4639E92169350600200D8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		5B4639EC2169C36500200D8F /* ImageViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4639EA2169C36500200D8F /* ImageViewItem.swift */; };
 		5B4639ED2169C36500200D8F /* ImageViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4639EB2169C36500200D8F /* ImageViewItem.xib */; };
+		5B4895F222B1603E00CF08C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4895F122B1603E00CF08C2 /* SceneDelegate.swift */; };
 		5B4DF0EE21AA8496008CEB58 /* LoadMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BBC6703218EB0150090629C /* LoadMoreTableViewCell.xib */; };
 		5B4DF0EF21AA84A4008CEB58 /* LoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC6702218EB0150090629C /* LoadMoreTableViewCell.swift */; };
 		5B4DF0F121AA8818008CEB58 /* ListViewModelListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DF0F021AA8818008CEB58 /* ListViewModelListType.swift */; };
 		5B4DF0F221AA8818008CEB58 /* ListViewModelListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DF0F021AA8818008CEB58 /* ListViewModelListType.swift */; };
 		5B4E4187208AF8C700FC610A /* Pods-Icro-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */; };
 		5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
+		5B51621B22B2C900009C0064 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51621A22B2C900009C0064 /* LoginView.swift */; };
 		5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371D212861220076121E /* EditActionsConfigurator.swift */; };
 		5B583722212861220076121E /* UserItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371E212861220076121E /* UserItemCellConfigurator.swift */; };
 		5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371F212861220076121E /* ProfileViewConfigurator.swift */; };
@@ -401,12 +404,14 @@
 		5B4639E721691F6E00200D8F /* ItemNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNavigator.swift; sourceTree = "<group>"; };
 		5B4639EA2169C36500200D8F /* ImageViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewItem.swift; sourceTree = "<group>"; };
 		5B4639EB2169C36500200D8F /* ImageViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewItem.xib; sourceTree = "<group>"; };
+		5B4895F122B1603E00CF08C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5B494E652124C0FA00C3969B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5B4DF0F021AA8818008CEB58 /* ListViewModelListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelListType.swift; sourceTree = "<group>"; };
 		5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-Icro-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
 		5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicropubRequestController.swift; sourceTree = "<group>"; };
 		5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewModel.swift; path = ViewModel/SettingsViewModel.swift; sourceTree = "<group>"; };
 		5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Icro-Bridging-Header.h"; sourceTree = "<group>"; };
+		5B51621A22B2C900009C0064 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = View/LoginView.swift; sourceTree = "<group>"; };
 		5B58371A212860BA0076121E /* ComposeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewModel.swift; sourceTree = "<group>"; };
 		5B58371D212861220076121E /* EditActionsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditActionsConfigurator.swift; path = Configurator/EditActionsConfigurator.swift; sourceTree = "<group>"; };
 		5B58371E212861220076121E /* UserItemCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserItemCellConfigurator.swift; path = Configurator/UserItemCellConfigurator.swift; sourceTree = "<group>"; };
@@ -1021,6 +1026,7 @@
 				C5FA2AF71EB44F2F006DEB40 /* ViewModel */,
 				C5FA2AF41EB4499F006DEB40 /* Netowkring */,
 				C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */,
+				5B4895F122B1603E00CF08C2 /* SceneDelegate.swift */,
 				5BF2DAA02287F4A50055240D /* AppDelegateComponents */,
 				C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */,
 				C5FA2ACC1EB4482C006DEB40 /* LaunchScreen.storyboard */,
@@ -1064,6 +1070,7 @@
 				5B38476221FE048900F082AD /* TipCollectionViewCell.swift */,
 				5B38476321FE048900F082AD /* TipCollectionViewCell.xib */,
 				5B39B7BD22AD504A004D5134 /* ListView.swift */,
+				5B51621A22B2C900009C0064 /* LoginView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1951,6 +1958,7 @@
 				5B5837772128B5F80076121E /* AppDelegate.swift in Sources */,
 				5B58374B2128B5BD0076121E /* UserListViewController.swift in Sources */,
 				5B5837402128B0680076121E /* HTMLContentTests.swift in Sources */,
+				5B1896C922B2DA200067F100 /* LoginView.swift in Sources */,
 				5BD95AFB2290A13200C74C52 /* SettingsButtonWithLabelView.swift in Sources */,
 				5B0D273322A3B85300C0EA53 /* SettingsSectionSubtitleView.swift in Sources */,
 			);
@@ -2017,6 +2025,7 @@
 				5BF2DA9D2287E97B0055240D /* SettingsInlineSeparatorView.swift in Sources */,
 				5BB388B822A3A558008E38B6 /* SettingsTextInputView.swift in Sources */,
 				5B0D273022A3B58400C0EA53 /* SettingsView.swift in Sources */,
+				5B51621B22B2C900009C0064 /* LoginView.swift in Sources */,
 				5B44C71720979CF20003B35D /* BlacklistViewModel.swift in Sources */,
 				5B0D273822A3BA1F00C0EA53 /* Settings2ViewController.swift in Sources */,
 				5B0D272E22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift in Sources */,
@@ -2025,6 +2034,7 @@
 				5B38476421FE048900F082AD /* TipCollectionViewCell.swift in Sources */,
 				5B583722212861220076121E /* UserItemCellConfigurator.swift in Sources */,
 				5B3C79C221C518B700F699B8 /* MainNavigator.swift in Sources */,
+				5B4895F222B1603E00CF08C2 /* SceneDelegate.swift in Sources */,
 				5BD9690F21C8D55400313795 /* ComposeNavigator.swift in Sources */,
 				5B38476921FE073800F082AD /* UIView+Contraints.swift in Sources */,
 				5B44C71420979CCC0003B35D /* BlacklistViewController.swift in Sources */,
