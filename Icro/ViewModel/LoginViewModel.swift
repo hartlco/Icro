@@ -16,20 +16,44 @@ final class LoginViewModel: BindableObject {
         case token
     }
 
-    var updateState: () -> Void = { }
-    var didStartLoading: () -> Void = { }
-    var didFinishLoading: () -> Void = { }
-    var didFinishWithError: (Error) -> Void = { _ in }
-
     var didLogin: (LoginInformation) -> Void = { _ in }
 
-    private var didRequest = false
-    private var isLoading = false
+    private var didRequest = false {
+        didSet {
+            didChange.send(self)
+        }
+    }
+
+    var isLoading = false {
+        didSet {
+            didChange.send(self)
+        }
+    }
 
     var loginString = "" {
         didSet {
-            didChange.send(self)
+            infoMessage = nil
             didRequest = false
+            didChange.send(self)
+        }
+    }
+
+    var buttonActivated: Bool {
+        return loginString.count > 0 && !isLoading && !didRequest
+    }
+
+    var buttonString: String {
+        switch loginType {
+        case .mail:
+            return NSLocalizedString("LOGINVIEWMODEL_LOGINTYPE_MAIL", comment: "")
+        case .token:
+            return NSLocalizedString("LOGINVIEWMODEL_LOGINTYPE_TOKEN", comment: "")
+        }
+    }
+
+    var infoMessage: String? {
+        didSet {
+            didChange.send(self)
         }
     }
 
@@ -53,68 +77,46 @@ final class LoginViewModel: BindableObject {
 
     private func requestLoginMail() {
         isLoading = true
-        updateState()
-        didStartLoading()
 
         guard let emailRequestResource = emailRequestResource else {
-            didFinishWithError(NetworkingError.invalidInput)
+            self.infoMessage = NSLocalizedString("UIVIEWCONTROLLERLOADING_INVALIDINPUT_TEXT", comment: "")
             self.isLoading = false
             self.didRequest = false
-            updateState()
             return
         }
 
         client.load(resource: emailRequestResource) { _ in
             self.isLoading = false
             self.didRequest = true
-            self.didFinishLoading()
-            self.updateState()
+            self.infoMessage = NSLocalizedString("LOGINVIEWCONTROLLER_INFOLABEL_TEXT", comment: "")
         }
     }
 
     private func login(withToken token: String) {
         isLoading = true
-        updateState()
-        didStartLoading()
 
         guard let loginRequestResource = loginRequestResource(token: token) else {
-            didFinishWithError(NetworkingError.invalidInput)
+            self.infoMessage = NSLocalizedString("UIVIEWCONTROLLERLOADING_INVALIDINPUT_TEXT", comment: "")
             self.isLoading = false
             self.didRequest = false
-            updateState()
             return
         }
 
         client.load(resource: loginRequestResource) { info in
             self.isLoading = false
             self.didRequest = true
-            self.didFinishLoading()
 
-            guard let info = info.value else { return }
+            guard let info = info.value else {
+                self.infoMessage = NSLocalizedString("UIVIEWCONTROLLERLOADING_INVALIDINPUT_TEXT", comment: "")
+                return
+            }
             self.userSettings.save(loginInformation: info)
             self.didLogin(info)
         }
     }
 
-    var buttonActivated: Bool {
-        return loginString.count > 0 && !isLoading && !didRequest
-    }
-
     private var loginType: LoginType {
         return loginString.contains("@") ? .mail : .token
-    }
-
-    var buttonString: String {
-        switch loginType {
-        case .mail:
-            return NSLocalizedString("LOGINVIEWMODEL_LOGINTYPE_MAIL", comment: "")
-        case .token:
-            return NSLocalizedString("LOGINVIEWMODEL_LOGINTYPE_TOKEN", comment: "")
-        }
-    }
-
-    var infoLabelVisible: Bool {
-        return didRequest
     }
 
     private var emailRequestResource: Resource<Empty>? {

@@ -75,9 +75,9 @@ final class AppNavigator {
     }
 
     func handleDeeplink(url: URL) {
-        showLogin()
         let token = url.absoluteString.replacingOccurrences(of: "icro://", with: "")
-//        loginViewController.verify(token: token)
+        loginViewModel.loginString = token
+        loginViewModel.login()
     }
 }
 

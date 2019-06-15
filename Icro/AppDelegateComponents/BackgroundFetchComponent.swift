@@ -18,14 +18,14 @@ final class BackgroundFetchComponent: AppDelegateComponent {
 
     func application(_ app: UIApplication,
                      performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        viewModel.load()
-        viewModel.didFinishLoading = { cached in
-            guard !cached else { return }
-            completionHandler(.newData)
-        }
-
-        viewModel.didFinishWithError = { _ in
-            completionHandler(.failed)
-        }
+//        viewModel.load()
+//        viewModel.didFinishLoading = { cached in
+//            guard !cached else { return }
+//            completionHandler(.newData)
+//        }
+//
+//        viewModel.didFinishWithError = { _ in
+//            completionHandler(.failed)
+//        }
     }
 }

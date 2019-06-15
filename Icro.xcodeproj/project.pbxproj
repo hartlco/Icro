@@ -119,8 +119,6 @@
 		5B58374F2128B5F80076121E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
 		5B5837542128B5F80076121E /* UserListViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D00207E8147002FB9FF /* UserListViewController.xib */; };
 		5B5837552128B5F80076121E /* TabBarViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
-		5B5837562128B5F80076121E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17A2087C0B300F484B2 /* LoginViewController.swift */; };
-		5B5837572128B5F80076121E /* LoginViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17B2087C0B300F484B2 /* LoginViewController.xib */; };
 		5B5837582128B5F80076121E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD32BB72089A12E005D250A /* SettingsViewController.swift */; };
 		5B5837592128B5F80076121E /* SettingsViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BD32BB82089A12E005D250A /* SettingsViewController.xib */; };
 		5B58375A2128B5F80076121E /* BlacklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71220979CCC0003B35D /* BlacklistViewController.swift */; };
@@ -166,8 +164,6 @@
 		5B99C67F229FBA2A00437552 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C3421D0CBE300F511A6 /* assets-images.swift */; };
 		5B99C680229FBDAE00437552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		5BA333752189ADAF000FA900 /* DiscoveryCategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663842189673100ABA671 /* DiscoveryCategoryStore.swift */; };
-		5BA6D17C2087C0B300F484B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17A2087C0B300F484B2 /* LoginViewController.swift */; };
-		5BA6D17D2087C0B300F484B2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA6D17B2087C0B300F484B2 /* LoginViewController.xib */; };
 		5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */; };
 		5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D180208904D300F484B2 /* AppNavigator.swift */; };
 		5BB388B422A3953D008E38B6 /* SettingsSwitchWithLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B322A3953D008E38B6 /* SettingsSwitchWithLabelView.swift */; };
@@ -204,7 +200,6 @@
 		5BD32BBA2089A12E005D250A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BD32BB82089A12E005D250A /* SettingsViewController.xib */; };
 		5BD499CF21CA1D8C007EF47C /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79C121C518B700F699B8 /* MainNavigator.swift */; };
 		5BD95AF4228FE85600C74C52 /* BackgroundFetchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD95AF3228FE85600C74C52 /* BackgroundFetchComponent.swift */; };
-		5BD95AF52290A10600C74C52 /* NavigatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA12287F4DB0055240D /* NavigatorComponent.swift */; };
 		5BD95AF62290A10600C74C52 /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
 		5BD95AF72290A10600C74C52 /* UserDefaultsMigrationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */; };
 		5BD95AF82290A10600C74C52 /* BackgroundFetchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD95AF3228FE85600C74C52 /* BackgroundFetchComponent.swift */; };
@@ -237,7 +232,6 @@
 		5BF2DA992287E8860055240D /* SettingsSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DA982287E8860055240D /* SettingsSectionHeaderView.swift */; };
 		5BF2DA9B2287E91A0055240D /* SettingsButtonWithLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DA9A2287E91A0055240D /* SettingsButtonWithLabelView.swift */; };
 		5BF2DA9D2287E97B0055240D /* SettingsInlineSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DA9C2287E97B0055240D /* SettingsInlineSeparatorView.swift */; };
-		5BF2DAA22287F4DB0055240D /* NavigatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA12287F4DB0055240D /* NavigatorComponent.swift */; };
 		5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
 		5BF2DAA6228802000055240D /* UserDefaultsMigrationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */; };
 		5BF6637F218961AB00ABA671 /* DiscoveryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */; };
@@ -450,8 +444,6 @@
 		5B8754FC2070139F00018DFA /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		5B99C679229FB47200437552 /* UITableView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+Keyboard.swift"; path = "Helper/UITableView+Keyboard.swift"; sourceTree = "<group>"; };
 		5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Loading.swift"; sourceTree = "<group>"; };
-		5BA6D17A2087C0B300F484B2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewController/LoginViewController.swift; sourceTree = "<group>"; };
-		5BA6D17B2087C0B300F484B2 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ViewController/LoginViewController.xib; sourceTree = "<group>"; };
 		5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = ViewModel/LoginViewModel.swift; sourceTree = "<group>"; };
 		5BA6D180208904D300F484B2 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppNavigator.swift; path = Navigator/AppNavigator.swift; sourceTree = "<group>"; };
 		5BB388B322A3953D008E38B6 /* SettingsSwitchWithLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsSwitchWithLabelView.swift; path = View/Settings/SettingsSwitchWithLabelView.swift; sourceTree = "<group>"; };
@@ -501,7 +493,6 @@
 		5BF2DA982287E8860055240D /* SettingsSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsSectionHeaderView.swift; path = View/Settings/SettingsSectionHeaderView.swift; sourceTree = "<group>"; };
 		5BF2DA9A2287E91A0055240D /* SettingsButtonWithLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsButtonWithLabelView.swift; path = View/Settings/SettingsButtonWithLabelView.swift; sourceTree = "<group>"; };
 		5BF2DA9C2287E97B0055240D /* SettingsInlineSeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsInlineSeparatorView.swift; path = View/Settings/SettingsInlineSeparatorView.swift; sourceTree = "<group>"; };
-		5BF2DAA12287F4DB0055240D /* NavigatorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorComponent.swift; sourceTree = "<group>"; };
 		5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryComponent.swift; sourceTree = "<group>"; };
 		5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMigrationComponent.swift; sourceTree = "<group>"; };
 		5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategory.swift; sourceTree = "<group>"; };
@@ -858,8 +849,6 @@
 				5BED6CFF207E8147002FB9FF /* UserListViewController.swift */,
 				5BED6D00207E8147002FB9FF /* UserListViewController.xib */,
 				5B689BAB20837ECE005B9874 /* TabBarViewController.xib */,
-				5BA6D17A2087C0B300F484B2 /* LoginViewController.swift */,
-				5BA6D17B2087C0B300F484B2 /* LoginViewController.xib */,
 				5BD32BB72089A12E005D250A /* SettingsViewController.swift */,
 				5BD32BB82089A12E005D250A /* SettingsViewController.xib */,
 				5B44C71220979CCC0003B35D /* BlacklistViewController.swift */,
@@ -964,7 +953,6 @@
 		5BF2DAA02287F4A50055240D /* AppDelegateComponents */ = {
 			isa = PBXGroup;
 			children = (
-				5BF2DAA12287F4DB0055240D /* NavigatorComponent.swift */,
 				5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */,
 				5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */,
 				5BD95AF3228FE85600C74C52 /* BackgroundFetchComponent.swift */,
@@ -1500,7 +1488,6 @@
 				5BBC6705218EB0150090629C /* LoadMoreTableViewCell.xib in Resources */,
 				BF707E742131C45600506E64 /* Localizable.strings in Resources */,
 				5B44C71520979CCC0003B35D /* BlacklistViewController.xib in Resources */,
-				5BA6D17D2087C0B300F484B2 /* LoginViewController.xib in Resources */,
 				C5FA2ACE1EB4482C006DEB40 /* LaunchScreen.storyboard in Resources */,
 				5B3C79BE21C50A6600F699B8 /* ListViewController.xib in Resources */,
 				5BED6D02207E8147002FB9FF /* UserListViewController.xib in Resources */,
@@ -1914,9 +1901,7 @@
 				5B5837542128B5F80076121E /* UserListViewController.xib in Sources */,
 				5B5837552128B5F80076121E /* TabBarViewController.xib in Sources */,
 				5BD95AFE2290A1B000C74C52 /* AppearanceComponent.swift in Sources */,
-				5B5837562128B5F80076121E /* LoginViewController.swift in Sources */,
 				5B4DF0EF21AA84A4008CEB58 /* LoadMoreTableViewCell.swift in Sources */,
-				5B5837572128B5F80076121E /* LoginViewController.xib in Sources */,
 				5B5837582128B5F80076121E /* SettingsViewController.swift in Sources */,
 				5B5837592128B5F80076121E /* SettingsViewController.xib in Sources */,
 				5B3C79BB21C50A6200F699B8 /* ListViewController.swift in Sources */,
@@ -1951,7 +1936,6 @@
 				5BC5A5A721D4E1F200B9A8D1 /* AppearanceManager.swift in Sources */,
 				5B5837742128B5F80076121E /* LoginViewModel.swift in Sources */,
 				5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */,
-				5BD95AF52290A10600C74C52 /* NavigatorComponent.swift in Sources */,
 				5B0D273522A3B87000C0EA53 /* SettingsSwitchWithLabelView.swift in Sources */,
 				5B5837762128B5F80076121E /* BlacklistViewModel.swift in Sources */,
 				5B81E79C2206D000008BEA16 /* TipCollectionViewCell.swift in Sources */,
@@ -2011,9 +1995,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B3C79C721C51BD900F699B8 /* ItemNavigator.swift in Sources */,
-				5BA6D17C2087C0B300F484B2 /* LoginViewController.swift in Sources */,
 				5BD95AF4228FE85600C74C52 /* BackgroundFetchComponent.swift in Sources */,
-				5BF2DAA22287F4DB0055240D /* NavigatorComponent.swift in Sources */,
 				5BF2DA9B2287E91A0055240D /* SettingsButtonWithLabelView.swift in Sources */,
 				5BD9690C21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift in Sources */,
 				5B38475D21FDFEC900F082AD /* TipJarView.swift in Sources */,

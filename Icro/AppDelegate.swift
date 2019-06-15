@@ -9,8 +9,7 @@ import AppDelegateComponent
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore {
-    let storedComponents: [AppDelegateComponent] = [NavigatorComponent(),
-                                                    DiscoveryCategoryComponent(),
+    let storedComponents: [AppDelegateComponent] = [DiscoveryCategoryComponent(),
                                                     UserDefaultsMigrationComponent(),
                                                     BackgroundFetchComponent()]
     private let componentRunner = AppDelegateComponentRunner()

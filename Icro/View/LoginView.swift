@@ -15,35 +15,62 @@ struct LoginView: View {
         self.viewModel = viewModel
     }
 
-    var backgroundColor: Color {
-        return Color("accentLight")
-    }
-
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Footer")) {
+                Section {
                     TextField($viewModel.loginString,
-                              placeholder: Text("Placeholder"))
+                              placeholder: Text("Mail address or access token"))
+                    Text(viewModel.infoMessage ?? "Login with mail address or access token")
+                    .lineLimit(nil)
+                    .font(.footnote)
                 }
                 Section {
-                    Button(action: {
+                    LoginButton(loading: $viewModel.isLoading,
+                                enabled: viewModel.buttonActivated,
+                                label: Text(viewModel.buttonString)) {
                         self.viewModel.login()
-                    }, label: {
-                        Text("Login")
-                    })
-                    .disabled(!viewModel.buttonActivated)
+                    }
                 }
             }
             .listStyle(.grouped)
             .navigationBarTitle(Text("Login"))
-            .navigationBarItems(trailing:
-                Button(action: {
-                    print("Help tapped!")
-                }, label: {
-                    Text("Cancel")
-                })
-            )
+        }
+    }
+}
+
+struct LoginButton: View {
+    @Binding var loading: Bool
+    var enabled: Bool
+    var label: Text
+    var action: () -> Void
+
+    var body: some View {
+        HStack {
+            Button(action: {
+                self.action()
+            }, label: {
+                label
+            })
+            .disabled(!enabled)
+            Spinner(loading: $loading)
+        }
+    }
+}
+
+struct Spinner: UIViewRepresentable {
+    @Binding var loading: Bool
+
+    func makeUIView(context: UIViewRepresentableContext<Spinner>) -> UIActivityIndicatorView {
+        let indicator = UIActivityIndicatorView(style: .medium)
+        return indicator
+    }
+
+    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<Spinner>) {
+        if loading {
+            uiView.startAnimating()
+        } else {
+            uiView.stopAnimating()
         }
     }
 }
