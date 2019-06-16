@@ -11,7 +11,15 @@ import UIKit
 extension UIApplication {
 
     static var applicationWindow: UIWindow {
-        return (UIApplication.shared.delegate?.window?.flatMap { $0 })!
+        let activeScene = UIApplication.shared.connectedScenes.first {
+            $0.activationState == .foregroundActive
+        }
+
+        guard let windowScene = activeScene as? UIWindowScene else {
+            fatalError("No active scene")
+        }
+
+        return windowScene.windows.first!
     }
 
     static var isPortraitOnly: Bool {

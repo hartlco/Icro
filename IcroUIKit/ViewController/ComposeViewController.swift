@@ -58,6 +58,8 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
         title = localizedString(key: "COMPOSEVIEWCONTROLLER_TITLE")
         cancelButton = UIBarButtonItem(title: localizedString(key: "COMPOSEVIEWCONTROLLER_CANCELBUTTON_TITLE"),
                                        style: .plain, target: self, action: #selector(cancel))
+        let sendButton = UIBarButtonItem(title: localizedString(key: "KEYBOARDINPUTVIEW_POSTBUTTON_TITLE"),
+                                       style: .plain, target: self, action: #selector(post))
         keyboardInputView.postButton.addTarget(self, action: #selector(post), for: .touchUpInside)
         keyboardInputView.linkButton.addTarget(self, action: #selector(insertLink), for: .touchUpInside)
         keyboardInputView.imageButton.addTarget(self, action: #selector(insertImage), for: .touchUpInside)
@@ -79,6 +81,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
         }
 
         navigationItem.leftBarButtonItem = cancelButton
+        navigationItem.rightBarButtonItem = sendButton
     }
 
     required init?(coder aDecoder: NSCoder) {

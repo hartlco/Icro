@@ -5,6 +5,7 @@
 
 import UIKit
 import IcroKit
+import IcroUIKit
 import SwiftUI
 
 #if targetEnvironment(UIKitForMac)
@@ -24,12 +25,19 @@ final class AppNavigator {
         self.window = window
         self.userSettings = userSettings
 
-        self.loginViewController = UIHostingController(rootView: LoginView(viewModel: loginViewModel))
+        let loginView = LoginView(viewModel: loginViewModel)
+
+        self.loginViewController = UIHostingController(rootView: loginView)
 
         loginViewModel.didLogin = { [weak self] _ in
             guard let self = self else { return }
             self.loginViewController.dismiss(animated: true, completion: nil)
             self.tabBarViewController?.reload()
+        }
+
+        loginViewModel.didDismiss = { [weak self] in
+            guard let self = self else { return }
+            self.loginViewController.dismiss(animated: true, completion: nil)
         }
     }
 
@@ -37,13 +45,19 @@ final class AppNavigator {
         window.rootViewController?.present(loginViewController, animated: true, completion: nil)
     }
 
+    func showComposeViewController() {
+        let navController = UINavigationController()
+        let viewModel = ComposeViewModel(mode: .post)
+        let itemNavigator = ItemNavigator(navigationController: navController, appNavigator: self)
+        let navigator = ComposeNavigator(navigationController: navController, viewModel: viewModel)
+        let viewController = ComposeViewController(viewModel: viewModel, composeNavigator: navigator, itemNavigator: itemNavigator)
+        navController.viewControllers = [viewController]
+        tabBarViewController?.present(navController, animated: true, completion: nil)
+    }
+
     func setup() {
         tabBarViewController = TabBarViewController(userSettings: userSettings, appNavigator: self)
         window.rootViewController = tabBarViewController
-
-        if !userSettings.loggedIn {
-            tabBarViewController?.select(type: .discover)
-        }
 
         #if targetEnvironment(UIKitForMac)
         if let windowScene = window.windowScene,
@@ -57,12 +71,21 @@ final class AppNavigator {
                 guard let self = self else { return }
                 self.tabBarViewController?.selectedIndex = index
             }
+
+            toolbarDelegate.showCompose = { [weak self] in
+                guard let self = self else { return }
+                self.showComposeViewController()
+            }
             let toolbar = NSToolbar(identifier: NSToolbar.Identifier("MainToolbar"))
             titleBar.toolbar = toolbar
             toolbar.delegate = toolbarDelegate
             titleBar.titleVisibility = .hidden
         }
         #endif
+
+        if !userSettings.loggedIn {
+            tabBarViewController?.select(type: .discover)
+        }
 
         window.tintColor = Color.main
         window.makeKeyAndVisible()
@@ -98,6 +121,7 @@ final class ToolbarDelegate: NSObject {
     #endif
 
     var didSelectIndex: ((Int) -> Void) = { _ in }
+    var showCompose: () -> Void = { }
 
     func selectIndex(_ index: Int) {
         selectIndexBlock(index)
@@ -115,14 +139,14 @@ extension ToolbarDelegate: NSToolbarDelegate {
         switch itemIdentifier {
         case segmentedControlIdentifier:
             let group = NSToolbarItemGroup(itemIdentifier: segmentedControlIdentifier,
-                                           images: toolbarImages,
+                                           titles: ["Home", "@", "Fav", "Discover", "Profile"],
                                            selectionMode: .selectOne,
-                                           labels: nil,
+                                           labels: ["Home", "@", "Fav", "Discover", "Profile"],
                                            target: self,
                                            action: #selector(didToggle(group:)))
 
             group.controlRepresentation = NSToolbarItemGroupControlRepresentation.expanded
-            group.setSelected(true, at: 0)
+            group.setSelected(true, at: UserSettings.shared.loggedIn ? 0 : 3)
             selectIndexBlock = { index in
                 group.setSelected(true, at: index)
             }
@@ -132,8 +156,8 @@ extension ToolbarDelegate: NSToolbarDelegate {
         case composeIdentifier:
             let item = NSToolbarItem(itemIdentifier: composeIdentifier, barButtonItem: UIBarButtonItem(image: UIImage(named: "compose"),
                                                                                                        style: .plain,
-                                                                                                       target: nil,
-                                                                                                       action: nil))
+                                                                                                       target: self,
+                                                                                                       action: #selector(openNewWindow)))
             toolbarItem = item
         default:
             fatalError()
@@ -158,6 +182,23 @@ extension ToolbarDelegate: NSToolbarDelegate {
 
     @objc private func didToggle(group: NSToolbarItemGroup) {
         didSelectIndex(group.selectedIndex)
+    }
+
+    @objc private func openNewWindow() {
+//        let composeType = "co.hartl.icro.compose"
+//
+//        let userActivity = NSUserActivity(activityType: composeType)
+//        userActivity.userInfo = ["ur": "Test"]
+//
+//        UIApplication.shared.requestSceneSessionActivation(nil,
+//                                                           userActivity: userActivity,
+//                                                           options: nil,
+//                                                           errorHandler: { error in
+//
+//        })
+
+        showCompose()
+
     }
 }
 #endif

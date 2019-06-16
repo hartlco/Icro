@@ -31,6 +31,11 @@ final class ItemNavigator: ItemNavigatorProtocol {
             return
         }
 
+        #if targetEnvironment(UIKitForMac)
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        return
+        #endif
+
         let safariViewController = SFSafariViewController(url: url)
         navigationController.present(safariViewController, animated: true, completion: nil)
     }

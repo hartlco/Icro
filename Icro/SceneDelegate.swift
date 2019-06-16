@@ -5,6 +5,7 @@
 
 import UIKit
 import IcroKit
+import IcroUIKit
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
@@ -12,12 +13,12 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private var navigator: AppNavigator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: windowScene)
         navigator = AppNavigator(window: window!, userSettings: UserSettings.shared)
         navigator?.setup()
-        window?.makeKeyAndVisible()
     }
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

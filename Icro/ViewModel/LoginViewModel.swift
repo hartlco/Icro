@@ -17,6 +17,7 @@ final class LoginViewModel: BindableObject {
     }
 
     var didLogin: (LoginInformation) -> Void = { _ in }
+    var didDismiss: () -> Void = { }
 
     private var didRequest = false {
         didSet {

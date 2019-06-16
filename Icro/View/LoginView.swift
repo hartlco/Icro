@@ -34,6 +34,13 @@ struct LoginView: View {
                 }
             }
             .listStyle(.grouped)
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.viewModel.didDismiss()
+                }, label: {
+                    Text("Cancel")
+                })
+            )
             .navigationBarTitle(Text("Login"))
         }
     }
