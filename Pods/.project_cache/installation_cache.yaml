@@ -1,0 +1,175 @@
+BUILD_CONFIGURATIONS:
+  Debug: :debug
+  Release: :release
+CACHE_KEYS:
+  AcknowList:
+    BUILD_SETTINGS_CHECKSUM:
+      AcknowList: b24212962ea9d3d4530547412fddafef
+    CHECKSUM: 06fde3319971dfd517ea1b1c194d78eb8cd774a2
+    SPECS:
+      - AcknowList (1.9)
+  Alamofire-iOS:
+    BUILD_SETTINGS_CHECKSUM:
+      Alamofire-iOS: a84a261c6388ae1ddf43f006a1cfdf80
+    CHECKSUM: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+    SPECS:
+      - Alamofire (4.8.2)
+  Alamofire-macOS:
+    BUILD_SETTINGS_CHECKSUM:
+      Alamofire-macOS: 42035fe3402b331e67f9b593738fcf34
+    CHECKSUM: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+    SPECS:
+      - Alamofire (4.8.2)
+  AppDelegateComponent:
+    BUILD_SETTINGS_CHECKSUM:
+      AppDelegateComponent: 0206b71ff42c0eb00a0022c4b6657603
+    CHECKSUM: b462d799a3e3de605dc194966f41bc332ce1537d
+    SPECS:
+      - AppDelegateComponent (1.0.1)
+  Dequeueable:
+    BUILD_SETTINGS_CHECKSUM:
+      Dequeueable: 58b878cd87fc71b14fa0c874918ed22e
+    CHECKSUM: 9ae3656cfa523e4963fa4b53b118b5df1dbb11c8
+    SPECS:
+      - Dequeueable (0.1.0)
+  DropdownTitleView:
+    BUILD_SETTINGS_CHECKSUM:
+      DropdownTitleView: a65e4e4587f2e4a0e3644053f0d303eb
+    CHECKSUM: e02e559243efb248dd0e8a50665b0acc5f6f2413
+    SPECS:
+      - DropdownTitleView (0.1.0)
+  DTCoreText:
+    BUILD_SETTINGS_CHECKSUM:
+      DTCoreText: 8d7fbbf5cb5fc6f348e6002a15221e85
+    CHECKSUM: e5d688cffc9f6a61eddd1a4f94e2046851230de3
+    SPECS:
+      - DTCoreText (1.6.21)
+      - DTCoreText/Core (1.6.21)
+  DTFoundation:
+    BUILD_SETTINGS_CHECKSUM:
+      DTFoundation: 89bf8acc7909b414ad7971cadf29e1c1
+    CHECKSUM: f03be9fd786f11e505bb8fc44e2a3732bf0917df
+    SPECS:
+      - DTFoundation/Core (1.7.13)
+      - DTFoundation/DTAnimatedGIF (1.7.13)
+      - DTFoundation/DTHTMLParser (1.7.13)
+      - DTFoundation/UIKit (1.7.13)
+  ImageViewer:
+    BUILD_SETTINGS_CHECKSUM:
+      ImageViewer: 77a5f607132652711ba35e7697658581
+    CHECKOUT_OPTIONS:
+      :commit: d9ec56f76dce1f9bd998bcdba782d6a071c7d620
+      :git: https://github.com/hartlco/ImageViewer.git
+    CHECKSUM: 997018c2f4f7f9830602349bbcc3b2b776424942
+    SPECS:
+      - ImageViewer (5.0.0)
+  Kanna-iOS:
+    BUILD_SETTINGS_CHECKSUM:
+      Kanna-iOS: 3618bdf2e9d7843e8c0e559dc15a11e7
+    CHECKSUM: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
+    SPECS:
+      - Kanna (5.0.0)
+  Kanna-macOS:
+    BUILD_SETTINGS_CHECKSUM:
+      Kanna-macOS: 973ab4a77e66e1793b499517ccf5430a
+    CHECKSUM: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
+    SPECS:
+      - Kanna (5.0.0)
+  KeychainAccess-iOS:
+    BUILD_SETTINGS_CHECKSUM:
+      KeychainAccess-iOS: 19ff46fe34cad763302d1645dac91d7e
+    CHECKSUM: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
+    SPECS:
+      - KeychainAccess (3.2.0)
+  KeychainAccess-macOS:
+    BUILD_SETTINGS_CHECKSUM:
+      KeychainAccess-macOS: 79a889a701b3de17717804a61920ee18
+    CHECKSUM: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
+    SPECS:
+      - KeychainAccess (3.2.0)
+  Kingfisher-iOS:
+    BUILD_SETTINGS_CHECKSUM:
+      Kingfisher-iOS: 9886b08bd10120ef8d596455c54b0cee
+    CHECKSUM: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
+    SPECS:
+      - Kingfisher (5.5.0)
+  Kingfisher-macOS:
+    BUILD_SETTINGS_CHECKSUM:
+      Kingfisher-macOS: 1c4e15d097e8eabafd43a54cb6506fb4
+    CHECKSUM: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
+    SPECS:
+      - Kingfisher (5.5.0)
+  Pods-Icro:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: e23c5dee35817fd2fd08bdb5e6464456
+      Release: e23c5dee35817fd2fd08bdb5e6464456
+  Pods-Icro-IcroTests:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: af9fda4efb7fad4bdda08db1900a33e8
+      Release: af9fda4efb7fad4bdda08db1900a33e8
+  Pods-Icro-Mac:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 136b4a84b0bdea5d1829ca8dacc8986a
+      Release: 136b4a84b0bdea5d1829ca8dacc8986a
+  Pods-Icro-Share:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 17b80b0db54fcb2b81caaa294432e0de
+      Release: 17b80b0db54fcb2b81caaa294432e0de
+  Pods-IcroKit:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: c64444d7edb336e29c335e639c22f4ef
+      Release: c64444d7edb336e29c335e639c22f4ef
+  Pods-IcroKit-Mac:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 4f302d35653628ba4ffe5665b29ca157
+      Release: 4f302d35653628ba4ffe5665b29ca157
+  Pods-IcroScreenshotsTests:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 9b1f6577268c4cc90d99d152946ddf6e
+      Release: 9b1f6577268c4cc90d99d152946ddf6e
+  Pods-IcroUIKit:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 781ddf0473c8a8a191357b8e4016f9de
+      Release: 781ddf0473c8a8a191357b8e4016f9de
+  SwiftGen:
+    BUILD_SETTINGS_CHECKSUM:
+      SwiftGen: 2ea8643b3366223fd3e5fa764030b8aa
+    CHECKSUM: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
+    SPECS:
+      - SwiftGen (6.1.0)
+  SwiftLint:
+    BUILD_SETTINGS_CHECKSUM:
+      SwiftLint: 5dad78478f945d539dad07ca95609223
+    CHECKSUM: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
+    SPECS:
+      - SwiftLint (0.32.0)
+  TypedSymbols:
+    BUILD_SETTINGS_CHECKSUM:
+      TypedSymbols: f3a80074406cd44b399eb6cdf8f4a4a1
+    CHECKSUM: 946dde0513d20f09f6b38ac308f0a22c8162d703
+    FILES:
+      - "/Users/martin/Code/TypedSymbols/LICENSE"
+      - "/Users/martin/Code/TypedSymbols/README.md"
+      - "/Users/martin/Code/TypedSymbols/TypedSymbols/Classes/Symbol.swift"
+      - "/Users/martin/Code/TypedSymbols/TypedSymbols/Classes/TypedSymbols/Package.swift"
+      - "/Users/martin/Code/TypedSymbols/TypedSymbols/Classes/TypedSymbols/README.md"
+      - "/Users/martin/Code/TypedSymbols/TypedSymbols/Classes/TypedSymbols/Sources/TypedSymbols/TypedSymbols.swift"
+      - "/Users/martin/Code/TypedSymbols/TypedSymbols/Classes/TypedSymbols/Tests/LinuxMain.swift"
+      - "/Users/martin/Code/TypedSymbols/TypedSymbols/Classes/TypedSymbols/Tests/TypedSymbolsTests/TypedSymbolsTests.swift"
+      - "/Users/martin/Code/TypedSymbols/TypedSymbols/Classes/TypedSymbols/Tests/TypedSymbolsTests/XCTestManifests.swift"
+      - "/Users/martin/Code/TypedSymbols/TypedSymbols/Classes/UIImage+TypedSymbol.swift"
+    SPECS:
+      - TypedSymbols (0.1.0)
+  wpxmlrpc-iOS:
+    BUILD_SETTINGS_CHECKSUM:
+      wpxmlrpc-iOS: e08af12887341cd432bb0dc43068c8d8
+    CHECKSUM: 6ba55c773cfa27083ae4a2173e69b19f46da98e2
+    SPECS:
+      - wpxmlrpc (0.8.4)
+  wpxmlrpc-macOS:
+    BUILD_SETTINGS_CHECKSUM:
+      wpxmlrpc-macOS: 9e4b0f3ff62a8775b10fccbc6b929248
+    CHECKSUM: 6ba55c773cfa27083ae4a2173e69b19f46da98e2
+    SPECS:
+      - wpxmlrpc (0.8.4)
+OBJECT_VERSION: 46

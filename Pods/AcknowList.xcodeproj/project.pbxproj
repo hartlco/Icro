@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08278A43890966EC7A85FFFB87886DCC /* AcknowLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75DA468896628908A42496631F5FF37 /* AcknowLocalization.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		3646A7BD9A0D2E8C611B69DB603A4B83 /* AcknowParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0ED873636231267A7CC56C5EA6E936 /* AcknowParser.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B46277533AC219F53A66B6E150E6F30C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66661E9116785B8275D1F28722F18356 /* UIKit.framework */; };
+		B4ADCF93592F141CB029EAA0121D622E /* AcknowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55D025E90534BC0C22B8A735BBF8F5B /* AcknowViewController.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BD75A6470DDB224DEDE616CDEC4F9332 /* Acknow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C082F3968E41D7EE08761383B81882B2 /* Acknow.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C0543D32BA8843C1E8867554933D4726 /* AcknowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78173F3060826423F731428CACE964F /* AcknowListViewController.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D04BADABA39E3C74CDC220FF01B176F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E57F8FF8FA715F396F36B59ADCD5B5 /* Foundation.framework */; };
+		E9C2219CC1110DA08483603CDBEB518A /* AcknowList-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C74ECA6F79E774EA78C09B8630138619 /* AcknowList-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F65ADD867FC5F4EBE1C11B2E4D4B8692 /* AcknowList-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B8168639B723B78A6A72655087E04728 /* AcknowList-dummy.m */; };
+		F74409B10C904853F3E6DE5A3FCB7F07 /* AcknowList.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F4EA1691525FF6B161833B19E97B201A /* AcknowList.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C1506C7505690C5566A11B6B751CD0D /* AcknowList-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AcknowList-Info.plist"; sourceTree = "<group>"; };
+		312FF0B9B254B5AE9C26D35426163559 /* AcknowList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AcknowList.framework; path = AcknowList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66661E9116785B8275D1F28722F18356 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		6FC0DF428F505E6528320225F6811E2F /* AcknowList.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AcknowList.modulemap; sourceTree = "<group>"; };
+		77C1505A2567E3D21E407DACECE5F3E1 /* AcknowList-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AcknowList-prefix.pch"; sourceTree = "<group>"; };
+		A55D025E90534BC0C22B8A735BBF8F5B /* AcknowViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowViewController.swift; path = Source/AcknowViewController.swift; sourceTree = "<group>"; };
+		B8168639B723B78A6A72655087E04728 /* AcknowList-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AcknowList-dummy.m"; sourceTree = "<group>"; };
+		C082F3968E41D7EE08761383B81882B2 /* Acknow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Acknow.swift; path = Source/Acknow.swift; sourceTree = "<group>"; };
+		C74ECA6F79E774EA78C09B8630138619 /* AcknowList-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AcknowList-umbrella.h"; sourceTree = "<group>"; };
+		E1E57F8FF8FA715F396F36B59ADCD5B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E75DA468896628908A42496631F5FF37 /* AcknowLocalization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowLocalization.swift; path = Source/AcknowLocalization.swift; sourceTree = "<group>"; };
+		E78173F3060826423F731428CACE964F /* AcknowListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowListViewController.swift; path = Source/AcknowListViewController.swift; sourceTree = "<group>"; };
+		EF0ED873636231267A7CC56C5EA6E936 /* AcknowParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowParser.swift; path = Source/AcknowParser.swift; sourceTree = "<group>"; };
+		F4EA1691525FF6B161833B19E97B201A /* AcknowList.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = AcknowList.bundle; path = Resources/AcknowList.bundle; sourceTree = "<group>"; };
+		FA97CC7BC35A8493E5DCE1931C7EE4E2 /* AcknowList.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AcknowList.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B368F02E57D8EFE148A4155089864710 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D04BADABA39E3C74CDC220FF01B176F7 /* Foundation.framework in Frameworks */,
+				B46277533AC219F53A66B6E150E6F30C /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0CED01B3AFB8E90678B0674536543EF0 = {
+			isa = PBXGroup;
+			children = (
+				4BEE2D82CE9E655C36E52DF6AB7FA8C7 /* AcknowList */,
+				73434F1EEB72F6D0056EDDA2E9BEA7EC /* Frameworks */,
+				D34BB57EA3E35BE8C9D828FCDB6270E2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4BEE2D82CE9E655C36E52DF6AB7FA8C7 /* AcknowList */ = {
+			isa = PBXGroup;
+			children = (
+				C082F3968E41D7EE08761383B81882B2 /* Acknow.swift */,
+				E78173F3060826423F731428CACE964F /* AcknowListViewController.swift */,
+				E75DA468896628908A42496631F5FF37 /* AcknowLocalization.swift */,
+				EF0ED873636231267A7CC56C5EA6E936 /* AcknowParser.swift */,
+				A55D025E90534BC0C22B8A735BBF8F5B /* AcknowViewController.swift */,
+				B8F59A6ABAFA556D250C0902113D215C /* Resources */,
+				B2C45AA551F61D901C62CD295035AF41 /* Support Files */,
+			);
+			name = AcknowList;
+			path = AcknowList;
+			sourceTree = "<group>";
+		};
+		73434F1EEB72F6D0056EDDA2E9BEA7EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E492EDE0E56E892C8939DE293DF48A18 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2C45AA551F61D901C62CD295035AF41 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6FC0DF428F505E6528320225F6811E2F /* AcknowList.modulemap */,
+				FA97CC7BC35A8493E5DCE1931C7EE4E2 /* AcknowList.xcconfig */,
+				B8168639B723B78A6A72655087E04728 /* AcknowList-dummy.m */,
+				2C1506C7505690C5566A11B6B751CD0D /* AcknowList-Info.plist */,
+				77C1505A2567E3D21E407DACECE5F3E1 /* AcknowList-prefix.pch */,
+				C74ECA6F79E774EA78C09B8630138619 /* AcknowList-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AcknowList";
+			sourceTree = "<group>";
+		};
+		B8F59A6ABAFA556D250C0902113D215C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F4EA1691525FF6B161833B19E97B201A /* AcknowList.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D34BB57EA3E35BE8C9D828FCDB6270E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				312FF0B9B254B5AE9C26D35426163559 /* AcknowList.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E492EDE0E56E892C8939DE293DF48A18 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E1E57F8FF8FA715F396F36B59ADCD5B5 /* Foundation.framework */,
+				66661E9116785B8275D1F28722F18356 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9F1BC4E9D0C99D008423D6F7E14CD698 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9C2219CC1110DA08483603CDBEB518A /* AcknowList-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7CF6E42D4C087FBFF7E37AE9F9A3C91B /* AcknowList */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7D43550790550C2DDE316604AC0C87E /* Build configuration list for PBXNativeTarget "AcknowList" */;
+			buildPhases = (
+				9F1BC4E9D0C99D008423D6F7E14CD698 /* Headers */,
+				88E3757E98A2B8126F7B8E3B3AB87E7E /* Sources */,
+				B368F02E57D8EFE148A4155089864710 /* Frameworks */,
+				CEBACF3FE72A2B782C5264C01270DA95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AcknowList;
+			productName = AcknowList;
+			productReference = 312FF0B9B254B5AE9C26D35426163559 /* AcknowList.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2137F6F038C519142BDD18938523246 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+			};
+			buildConfigurationList = A8FBA3EE0C9479E83E34C3DB8B90D455 /* Build configuration list for PBXProject "AcknowList" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0CED01B3AFB8E90678B0674536543EF0;
+			productRefGroup = D34BB57EA3E35BE8C9D828FCDB6270E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7CF6E42D4C087FBFF7E37AE9F9A3C91B /* AcknowList */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEBACF3FE72A2B782C5264C01270DA95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F74409B10C904853F3E6DE5A3FCB7F07 /* AcknowList.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88E3757E98A2B8126F7B8E3B3AB87E7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD75A6470DDB224DEDE616CDEC4F9332 /* Acknow.swift in Sources */,
+				F65ADD867FC5F4EBE1C11B2E4D4B8692 /* AcknowList-dummy.m in Sources */,
+				C0543D32BA8843C1E8867554933D4726 /* AcknowListViewController.swift in Sources */,
+				08278A43890966EC7A85FFFB87886DCC /* AcknowLocalization.swift in Sources */,
+				3646A7BD9A0D2E8C611B69DB603A4B83 /* AcknowParser.swift in Sources */,
+				B4ADCF93592F141CB029EAA0121D622E /* AcknowViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6D920FB5BB93E53A0010459C59629C03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C5B8EFDD0498DFCCA5F74F5A46862CFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		DA4A3DF75B38B411542A4BA9421F7557 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA97CC7BC35A8493E5DCE1931C7EE4E2 /* AcknowList.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AcknowList/AcknowList-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AcknowList/AcknowList-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AcknowList/AcknowList.modulemap";
+				PRODUCT_MODULE_NAME = AcknowList;
+				PRODUCT_NAME = AcknowList;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E081497011774AC320A0D541FA7DFC61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA97CC7BC35A8493E5DCE1931C7EE4E2 /* AcknowList.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AcknowList/AcknowList-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AcknowList/AcknowList-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AcknowList/AcknowList.modulemap";
+				PRODUCT_MODULE_NAME = AcknowList;
+				PRODUCT_NAME = AcknowList;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7D43550790550C2DDE316604AC0C87E /* Build configuration list for PBXNativeTarget "AcknowList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA4A3DF75B38B411542A4BA9421F7557 /* Debug */,
+				E081497011774AC320A0D541FA7DFC61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8FBA3EE0C9479E83E34C3DB8B90D455 /* Build configuration list for PBXProject "AcknowList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D920FB5BB93E53A0010459C59629C03 /* Debug */,
+				C5B8EFDD0498DFCCA5F74F5A46862CFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2137F6F038C519142BDD18938523246 /* Project object */;
+}

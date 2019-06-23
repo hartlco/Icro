@@ -9,6 +9,7 @@ import IcroKit
 import IcroUIKit
 import ImageViewer
 import AVKit
+import SwiftUI
 
 final class ItemNavigator: ItemNavigatorProtocol {
     private let navigationController: UINavigationController
@@ -141,10 +142,10 @@ final class ItemNavigator: ItemNavigatorProtocol {
                                             strongSelf.userSettings.addToBlacklist(word: username)
                                         }
 
-                                        let blackListViewModel = BlacklistViewModel(userSettings: strongSelf.userSettings)
-                                        let blackListViewController = BlacklistViewController(viewModel: blackListViewModel,
-                                                                                              mainNavigator: strongSelf.mainNavigator)
-                                        strongSelf.navigationController.pushViewController(blackListViewController, animated: true)
+                                        let blackListViewModel = MuteViewModel(userSettings: strongSelf.userSettings)
+                                        let muteView = MuteView(viewModel: blackListViewModel)
+                                        let viewController = UIHostingController(rootView: muteView)
+                                        strongSelf.navigationController.pushViewController(viewController, animated: true)
         }))
 
         alert.addAction(UIAlertAction(title: NSLocalizedString("ITEMNAVIGATOR_MOREALERT_GUIDELINEACTION", comment: ""),

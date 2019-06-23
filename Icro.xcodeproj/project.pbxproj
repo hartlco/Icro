@@ -89,9 +89,7 @@
 		5B3C79D421C5238800F699B8 /* IcroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */; };
 		5B3C79D621C52D2C00F699B8 /* KeyboardLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */; };
 		5B3C79D721C52EB100F699B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
-		5B44C71420979CCC0003B35D /* BlacklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71220979CCC0003B35D /* BlacklistViewController.swift */; };
-		5B44C71520979CCC0003B35D /* BlacklistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B44C71320979CCC0003B35D /* BlacklistViewController.xib */; };
-		5B44C71720979CF20003B35D /* BlacklistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71620979CF20003B35D /* BlacklistViewModel.swift */; };
+		5B44C71720979CF20003B35D /* MuteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71620979CF20003B35D /* MuteViewModel.swift */; };
 		5B4639DD2168FE9B00200D8F /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4639DC2168FE9B00200D8F /* TabViewController.swift */; };
 		5B4639DF216901BE00200D8F /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4639DE216901BE00200D8F /* SplitViewController.swift */; };
 		5B4639E02169074200200D8F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
@@ -121,8 +119,6 @@
 		5B5837552128B5F80076121E /* TabBarViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
 		5B5837582128B5F80076121E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD32BB72089A12E005D250A /* SettingsViewController.swift */; };
 		5B5837592128B5F80076121E /* SettingsViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BD32BB82089A12E005D250A /* SettingsViewController.xib */; };
-		5B58375A2128B5F80076121E /* BlacklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71220979CCC0003B35D /* BlacklistViewController.swift */; };
-		5B58375B2128B5F80076121E /* BlacklistViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71320979CCC0003B35D /* BlacklistViewController.xib */; };
 		5B58375E2128B5F80076121E /* SettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583727212861770076121E /* SettingsNavigator.swift */; };
 		5B58375F2128B5F80076121E /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D180208904D300F484B2 /* AppNavigator.swift */; };
 		5B5837612128B5F80076121E /* EditActionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371D212861220076121E /* EditActionsConfigurator.swift */; };
@@ -136,7 +132,7 @@
 		5B5837722128B5F80076121E /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837292128618B0076121E /* UserListViewModel.swift */; };
 		5B5837742128B5F80076121E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */; };
 		5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
-		5B5837762128B5F80076121E /* BlacklistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71620979CF20003B35D /* BlacklistViewModel.swift */; };
+		5B5837762128B5F80076121E /* MuteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71620979CF20003B35D /* MuteViewModel.swift */; };
 		5B5837772128B5F80076121E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */; };
 		5B66EE6A227D6C8300317FE3 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE69227D6C8300317FE3 /* Client.swift */; };
 		5B66EE6C227D700A00317FE3 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE6B227D700A00317FE3 /* HttpMethod.swift */; };
@@ -147,10 +143,12 @@
 		5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
 		5B69E65122AA16310081CDFB /* SettingsView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsView2.swift */; };
 		5B69E65222AA170D0081CDFB /* SettingsSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */; };
+		5B6A45B822BE872700858756 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A45B722BE872700858756 /* CustomTextField.swift */; };
 		5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B6A565E21735A69003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B6BCC3121A2F215007225C2 /* LoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */; };
 		5B6BCC3321A2F233007225C2 /* LoadMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6BCC3221A2F233007225C2 /* LoadMoreCell.xib */; };
+		5B761F2922BE958C0038FF73 /* SettingsViewNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B761F2822BE958C0038FF73 /* SettingsViewNavigator.swift */; };
 		5B81E79A2206C62E008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
 		5B81E79B2206C63A008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
 		5B81E79C2206D000008BEA16 /* TipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476221FE048900F082AD /* TipCollectionViewCell.swift */; };
@@ -193,6 +191,7 @@
 		5BC347C82132962200DEB45D /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */; };
 		5BC5A5A621D377B300B9A8D1 /* Theme+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A5A521D377B300B9A8D1 /* Theme+Extenstions.swift */; };
 		5BC5A5A721D4E1F200B9A8D1 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */; };
+		5BCD7F0222BDE35D00CA5B6C /* MuteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCD7F0122BDE35D00CA5B6C /* MuteView.swift */; };
 		5BD2FE5F2259D15100591490 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2FE5E2259D15100591490 /* Media.swift */; };
 		5BD2FE602259D2EC00591490 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2FE5E2259D15100591490 /* Media.swift */; };
 		5BD2FE682259E0DC00591490 /* VideoThumbnailImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */; };
@@ -388,9 +387,7 @@
 		5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutGuide.swift; sourceTree = "<group>"; };
 		5B3F68762098BB8800A24983 /* KeyboardInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInputView.swift; sourceTree = "<group>"; };
 		5B3F68782098BBA200A24983 /* KeyboardInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardInputView.xib; sourceTree = "<group>"; };
-		5B44C71220979CCC0003B35D /* BlacklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlacklistViewController.swift; path = ViewController/BlacklistViewController.swift; sourceTree = "<group>"; };
-		5B44C71320979CCC0003B35D /* BlacklistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BlacklistViewController.xib; path = ViewController/BlacklistViewController.xib; sourceTree = "<group>"; };
-		5B44C71620979CF20003B35D /* BlacklistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlacklistViewModel.swift; path = ViewModel/BlacklistViewModel.swift; sourceTree = "<group>"; };
+		5B44C71620979CF20003B35D /* MuteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuteViewModel.swift; path = ViewModel/MuteViewModel.swift; sourceTree = "<group>"; };
 		5B4639DC2168FE9B00200D8F /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		5B4639DE216901BE00200D8F /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		5B4639E1216908E800200D8F /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -433,11 +430,13 @@
 		5B66EE75227D780300317FE3 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
 		5B689BAB20837ECE005B9874 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TabBarViewController.xib; path = ViewController/TabBarViewController.xib; sourceTree = "<group>"; };
 		5B69E65022AA16310081CDFB /* SettingsView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView2.swift; path = View/Settings/SettingsView2.swift; sourceTree = "<group>"; };
+		5B6A45B722BE872700858756 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = View/CustomTextField.swift; sourceTree = "<group>"; };
 		5B6A565C21735A4F003C4D92 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
 		5B6BCC3221A2F233007225C2 /* LoadMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadMoreCell.xib; sourceTree = "<group>"; };
 		5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
 		5B744A4C8329D56FBB21833D /* Pods-IcroScreenshotsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroScreenshotsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroScreenshotsTests/Pods-IcroScreenshotsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5B761F2822BE958C0038FF73 /* SettingsViewNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewNavigator.swift; path = Navigator/SettingsViewNavigator.swift; sourceTree = "<group>"; };
 		5B81E7992206C62E008BEA16 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		5B869B07214E4633000A051C /* MicropubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicropubEndpoint.swift; sourceTree = "<group>"; };
 		5B8754F92070137300018DFA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
@@ -466,6 +465,7 @@
 		5BC347B12132944900DEB45D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BC347C62132960900DEB45D /* LoginInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInformation.swift; sourceTree = "<group>"; };
 		5BC5A5A521D377B300B9A8D1 /* Theme+Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Extenstions.swift"; sourceTree = "<group>"; };
+		5BCD7F0122BDE35D00CA5B6C /* MuteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuteView.swift; path = View/Settings/MuteView.swift; sourceTree = "<group>"; };
 		5BD2FE5E2259D15100591490 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailImageProvider.swift; sourceTree = "<group>"; };
 		5BD32BB72089A12E005D250A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewController/SettingsViewController.swift; sourceTree = "<group>"; };
@@ -836,6 +836,7 @@
 				5BA6D180208904D300F484B2 /* AppNavigator.swift */,
 				5B3C79C121C518B700F699B8 /* MainNavigator.swift */,
 				5B5837252128616E0076121E /* ItemNavigator.swift */,
+				5B761F2822BE958C0038FF73 /* SettingsViewNavigator.swift */,
 			);
 			name = Navigator;
 			sourceTree = "<group>";
@@ -851,8 +852,6 @@
 				5B689BAB20837ECE005B9874 /* TabBarViewController.xib */,
 				5BD32BB72089A12E005D250A /* SettingsViewController.swift */,
 				5BD32BB82089A12E005D250A /* SettingsViewController.xib */,
-				5B44C71220979CCC0003B35D /* BlacklistViewController.swift */,
-				5B44C71320979CCC0003B35D /* BlacklistViewController.xib */,
 				5B0D273622A3BA1F00C0EA53 /* Settings2ViewController.swift */,
 				5B0D273722A3BA1F00C0EA53 /* Settings2ViewController.xib */,
 			);
@@ -946,6 +945,7 @@
 				5B0D272F22A3B58400C0EA53 /* SettingsView.swift */,
 				5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */,
 				5B69E65022AA16310081CDFB /* SettingsView2.swift */,
+				5BCD7F0122BDE35D00CA5B6C /* MuteView.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1038,7 +1038,7 @@
 				5B5837292128618B0076121E /* UserListViewModel.swift */,
 				5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */,
 				5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */,
-				5B44C71620979CF20003B35D /* BlacklistViewModel.swift */,
+				5B44C71620979CF20003B35D /* MuteViewModel.swift */,
 				5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */,
 			);
 			name = ViewModel;
@@ -1059,6 +1059,7 @@
 				5B38476321FE048900F082AD /* TipCollectionViewCell.xib */,
 				5B39B7BD22AD504A004D5134 /* ListView.swift */,
 				5B51621A22B2C900009C0064 /* LoginView.swift */,
+				5B6A45B722BE872700858756 /* CustomTextField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1487,7 +1488,6 @@
 				5B0D273922A3BA1F00C0EA53 /* Settings2ViewController.xib in Resources */,
 				5BBC6705218EB0150090629C /* LoadMoreTableViewCell.xib in Resources */,
 				BF707E742131C45600506E64 /* Localizable.strings in Resources */,
-				5B44C71520979CCC0003B35D /* BlacklistViewController.xib in Resources */,
 				C5FA2ACE1EB4482C006DEB40 /* LaunchScreen.storyboard in Resources */,
 				5B3C79BE21C50A6600F699B8 /* ListViewController.xib in Resources */,
 				5BED6D02207E8147002FB9FF /* UserListViewController.xib in Resources */,
@@ -1906,9 +1906,7 @@
 				5B5837592128B5F80076121E /* SettingsViewController.xib in Sources */,
 				5B3C79BB21C50A6200F699B8 /* ListViewController.swift in Sources */,
 				5B0D273122A3B84C00C0EA53 /* SettingsView.swift in Sources */,
-				5B58375A2128B5F80076121E /* BlacklistViewController.swift in Sources */,
 				5BB73F0C212C9E0B00120FAB /* ListViewModelTests.swift in Sources */,
-				5B58375B2128B5F80076121E /* BlacklistViewController.xib in Sources */,
 				5B0D273222A3B85000C0EA53 /* SettingsTextInputView.swift in Sources */,
 				5B38476721FE06F500F082AD /* TipJarView.swift in Sources */,
 				5B38476621FE06B200F082AD /* TipJarViewModel.swift in Sources */,
@@ -1937,7 +1935,7 @@
 				5B5837742128B5F80076121E /* LoginViewModel.swift in Sources */,
 				5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */,
 				5B0D273522A3B87000C0EA53 /* SettingsSwitchWithLabelView.swift in Sources */,
-				5B5837762128B5F80076121E /* BlacklistViewModel.swift in Sources */,
+				5B5837762128B5F80076121E /* MuteViewModel.swift in Sources */,
 				5B81E79C2206D000008BEA16 /* TipCollectionViewCell.swift in Sources */,
 				5B5837772128B5F80076121E /* AppDelegate.swift in Sources */,
 				5B58374B2128B5BD0076121E /* UserListViewController.swift in Sources */,
@@ -2005,10 +2003,12 @@
 				5B39B7BE22AD504A004D5134 /* ListView.swift in Sources */,
 				5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */,
 				5BF2DA9D2287E97B0055240D /* SettingsInlineSeparatorView.swift in Sources */,
+				5B761F2922BE958C0038FF73 /* SettingsViewNavigator.swift in Sources */,
 				5BB388B822A3A558008E38B6 /* SettingsTextInputView.swift in Sources */,
 				5B0D273022A3B58400C0EA53 /* SettingsView.swift in Sources */,
 				5B51621B22B2C900009C0064 /* LoginView.swift in Sources */,
-				5B44C71720979CF20003B35D /* BlacklistViewModel.swift in Sources */,
+				5B44C71720979CF20003B35D /* MuteViewModel.swift in Sources */,
+				5BCD7F0222BDE35D00CA5B6C /* MuteView.swift in Sources */,
 				5B0D273822A3BA1F00C0EA53 /* Settings2ViewController.swift in Sources */,
 				5B0D272E22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift in Sources */,
 				5BB388B622A39D5C008E38B6 /* SettingsButton.swift in Sources */,
@@ -2019,7 +2019,6 @@
 				5B4895F222B1603E00CF08C2 /* SceneDelegate.swift in Sources */,
 				5BD9690F21C8D55400313795 /* ComposeNavigator.swift in Sources */,
 				5B38476921FE073800F082AD /* UIView+Contraints.swift in Sources */,
-				5B44C71420979CCC0003B35D /* BlacklistViewController.swift in Sources */,
 				5BED6D01207E8147002FB9FF /* UserListViewController.swift in Sources */,
 				5BBC6704218EB0150090629C /* LoadMoreTableViewCell.swift in Sources */,
 				5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */,
@@ -2028,6 +2027,7 @@
 				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
 				C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */,
 				5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */,
+				5B6A45B822BE872700858756 /* CustomTextField.swift in Sources */,
 				5B99C67A229FB47200437552 /* UITableView+Keyboard.swift in Sources */,
 				5BD95AFD2290A16100C74C52 /* AppearanceComponent.swift in Sources */,
 				5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */,

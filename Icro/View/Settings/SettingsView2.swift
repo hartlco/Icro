@@ -43,16 +43,13 @@ class SettingsStore: BindableObject {
 }
 
 struct SettingsContentView: View {
-    let itemNavigator: ItemNavigatorProtocol
     let dismissAction: () -> Void
-
+    let settingsNavigator: SettingsViewNavigator
     @ObjectBinding var store: SettingsStore
-
-    private let hartlcoViewModel = ListViewModel(type: .username(username: "hartlco"))
 
     var body: some View {
         NavigationView {
-            List {
+            Form {
                 Section(header: Text("Wordpress Setup")
                     .font(.headline)
                     .fontWeight(.bold)) {
@@ -67,18 +64,8 @@ struct SettingsContentView: View {
                                   placeholder: Text("Password"))
                             .textContentType(.password)
                 }
-                Section(header: Text("Other")
-                    .font(.headline)
-                    .fontWeight(.bold)) {
-                        NavigationButton(destination: MuteView()) {
-                            Text("Icro Support")
-                        }
-                        NavigationButton(destination: MuteView()) {
-                            Text("Acknowledgements")
-                        }
-                }
+                OtherSection()
             }
-            .listStyle(.grouped)
             .navigationBarTitle(Text("Settings"))
             .navigationBarItems(leading: Button(action: {
                 self.dismissAction()
@@ -89,68 +76,32 @@ struct SettingsContentView: View {
     }
 }
 
-struct MuteView: View {
-    var body: some View {
-        return Text("Mute")
-    }
-}
-
 #if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsContentView(itemNavigator: EmptyItemNavigator(),
-                            dismissAction: {},
+        let settingsNavigator = SettingsViewNavigator(userSettings: .shared)
+        return SettingsContentView(dismissAction: {},
+                            settingsNavigator: settingsNavigator,
                             store: SettingsStore())
     }
 }
+#endif
 
-private class EmptyItemNavigator: ItemNavigatorProtocol {
-    func showLogin() {
-
-    }
-
-    func open(url: URL) {
-
-    }
-
-    func open(author: Author) {
-
-    }
-
-    func open(authorName: String) {
-
-    }
-
-    func openFollowing(for user: Author) {
-
-    }
-
-    func openConversation(item: Item) {
-
-    }
-
-    func openMedia(media: [Media], index: Int) {
-
-    }
-
-    func openReply(item: Item) {
-
-    }
-
-    func share(item: Item, sourceView: UIView?) {
-
-    }
-
-    func accessibilityPresentLinks(linkList: [(text: String, url: URL)], message: String, sourceView: UIView) {
-
-    }
-
-    func openMore(item: Item, sourceView: UIView?) {
-
-    }
-
-    func showDiscoveryCategories(categories: [DiscoveryCategory], sourceView: UIView) {
-
+struct OtherSection: View {
+    let settingsNavigator = SettingsViewNavigator(userSettings: .shared)
+    var body: some View {
+        return Section(header: Text("Other")
+            .font(.headline)
+            .fontWeight(.bold)) {
+                NavigationButton(destination: Text("Test")) {
+                    Text("Icro Supports")
+                }
+                NavigationButton(destination: Text("Test")) {
+                    Text("Acknowledgements")
+                }
+                NavigationButton(destination: settingsNavigator.muteView) {
+                    Text("Mute")
+                }
+            }
     }
 }
-#endif

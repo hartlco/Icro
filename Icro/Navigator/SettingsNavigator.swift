@@ -7,6 +7,7 @@ import Foundation
 import AcknowList
 import MessageUI
 import IcroKit
+import SwiftUI
 
 final class SettingsNavigator: NSObject {
     private let navigationController: UINavigationController
@@ -47,10 +48,9 @@ final class SettingsNavigator: NSObject {
     }
 
     func openBlacklist() {
-        let viewModel = BlacklistViewModel(userSettings: UserSettings.shared)
-        let mainNavigator = MainNavigator(navigationController: navigationController)
-        let viewController = BlacklistViewController(viewModel: viewModel,
-                                                     mainNavigator: mainNavigator)
+        let viewModel = MuteViewModel(userSettings: UserSettings.shared)
+        let muteView = MuteView(viewModel: viewModel)
+        let viewController = UIHostingController(rootView: muteView)
         navigationController.pushViewController(viewController, animated: true)
     }
 

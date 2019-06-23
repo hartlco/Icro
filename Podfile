@@ -1,6 +1,7 @@
 use_frameworks!
 inhibit_all_warnings!
 
+
 target 'Icro' do
     pod 'ImageViewer', :git => 'https://github.com/hartlco/ImageViewer.git', :branch => 'master'
 	pod 'TypedSymbols', :path => '/Users/martin/Code/TypedSymbols/'

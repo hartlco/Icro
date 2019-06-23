@@ -101,9 +101,9 @@ final class EditActionsConfigurator {
         })
     }
 
-    private func makeContextMenu(indexPath: IndexPath) -> UIMenu<UIAction> {
+    private func makeContextMenu(indexPath: IndexPath) -> UIMenu {
         guard case .item(let item) = viewModel.viewType(forRow: indexPath.row) else {
-            return UIMenu<UIAction>.create(title: "Main Menu", children: [])
+            return UIMenu(__title: "", image: nil, identifier: nil, children: [])
         }
 
         let share = UIAction(__title: NSLocalizedString("EDITACTIONSCONFIGURATOR_LEADINGEDITACTIONS", comment: ""),
@@ -122,6 +122,9 @@ final class EditActionsConfigurator {
                                 self?.viewModel.toggleFave(for: item)
         }
 
-        return UIMenu<UIAction>.create(title: "Main Menu", children: [share, favorite])
+        return UIMenu(__title: "Main Menu",
+                      image: nil,
+                      identifier: nil,
+                      children: [share, favorite])
     }
 }

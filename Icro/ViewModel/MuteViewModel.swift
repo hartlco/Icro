@@ -5,32 +5,30 @@
 
 import Foundation
 import IcroKit
+import Combine
+import SwiftUI
 
-class BlacklistViewModel {
+final class MuteViewModel: BindableObject {
+    var didChange = PassthroughSubject<Void, Never>()
+
     private let userSettings: UserSettings
-
-    var update: (() -> Void)?
 
     init(userSettings: UserSettings) {
         self.userSettings = userSettings
     }
 
-    var numberOfRows: Int {
-        return userSettings.blacklist.count
-    }
-
-    func word(for row: Int) -> String {
-        return userSettings.blacklist[row]
+    var words: [String] {
+        return userSettings.blacklist
     }
 
     func add(word: String?) {
         userSettings.addToBlacklist(word: word)
-        update?()
+        didChange.send()
     }
 
-    func remove(at indexPath: IndexPath) {
-        userSettings.removeIndexFromBlacklist(index: indexPath.row)
-        update?()
+    func remove(at index: Int) {
+        userSettings.removeIndexFromBlacklist(index: index)
+        didChange.send()
     }
 
     var title: String {

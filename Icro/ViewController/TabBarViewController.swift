@@ -104,23 +104,22 @@ class TabBarViewController: UITabBarController {
     }
 
     @objc private func showSettingsViewController() {
-        let navigationController = UINavigationController()
-        let itemNavigator = ItemNavigator(navigationController: navigationController, appNavigator: appNavigator)
-//        let settingsContentView = SettingsContentView(itemNavigator: itemNavigator,
-//                                                      dismissAction: { [weak self] in
-//                                                        guard let self = self else { return }
-//                                                        self.presentedViewController?.dismiss(animated: true, completion: nil)
-//        },
-//                                                      store: SettingsStore())
-//        present(UIHostingController(rootView: settingsContentView), animated: true, completion: nil)
+        let settingsNavigator = SettingsViewNavigator(userSettings: userSettings)
+        let settingsContentView = SettingsContentView(dismissAction: { [weak self] in
+                                                        guard let self = self else { return }
+                                                        self.presentedViewController?.dismiss(animated: true, completion: nil)
+            },
+                                                      settingsNavigator: settingsNavigator,
+                                                      store: SettingsStore())
+        present(UIHostingController(rootView: settingsContentView), animated: true, completion: nil)
 
-        let settingsNavigator = SettingsNavigator(navigationController: navigationController, appNavigator: appNavigator)
-        let viewModel = SettingsViewModel(userSettings: userSettings)
-        let settingsViewCOntroller = SettingsViewController(navigator: settingsNavigator,
-                                                            mainNavigator: MainNavigator(navigationController: navigationController),
-                                                            viewModel: viewModel)
-        navigationController.viewControllers = [settingsViewCOntroller]
-        present(navigationController, animated: true, completion: nil)
+//        let settingsNavigator = SettingsNavigator(navigationController: navigationController, appNavigator: appNavigator)
+//        let viewModel = SettingsViewModel(userSettings: userSettings)
+//        let settingsViewCOntroller = SettingsViewController(navigator: settingsNavigator,
+//                                                            mainNavigator: MainNavigator(navigationController: navigationController),
+//                                                            viewModel: viewModel)
+//        navigationController.viewControllers = [settingsViewCOntroller]
+//        present(navigationController, animated: true, completion: nil)
     }
 
     @objc private func showPhotosTimeline() {
