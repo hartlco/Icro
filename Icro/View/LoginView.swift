@@ -1,8 +1,5 @@
 //
-//  LoginView.swift
-//  Icro
-//
-//  Created by martin on 13.06.19.
+//  Created by Martin Hartl on 13.06.19.
 //  Copyright © 2019 Martin Hartl. All rights reserved.
 //
 

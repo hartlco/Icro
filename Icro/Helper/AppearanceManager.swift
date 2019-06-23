@@ -69,19 +69,6 @@ final class AppearanceManager {
         sectionHeaderLabelAppearance.backgroundColor = Color.accentSuperLight
         sectionHeaderLabelAppearance.textColor = Color.textColor
 
-        SettingsScrollView.appearance().backgroundColor = Color.accentSuperLight
-
-        let settingsSectionsSubtitleLableAppearance = UILabel.appearance(whenContainedInInstancesOf: [SettingsSectionSubtitleView.self])
-        settingsSectionsSubtitleLableAppearance.textColor = Color.secondaryTextColor
-
-        let settingsButtonAppearance = UIButton.appearance(whenContainedInInstancesOf: [SettingsViewController.self])
-        settingsButtonAppearance.backgroundColor = Color.backgroundColor
-        settingsButtonAppearance.setTitleColor(Color.textColor, for: .normal)
-
-        let settingsCellViewLableAppearance = UILabel.appearance(whenContainedInInstancesOf: [SettingsCellView.self])
-        settingsCellViewLableAppearance.textColor = Color.textColor
-        SettingsCellView.appearance().backgroundColor = Color.backgroundColor
-
         let inputAppearance = SettingsTextInputView.appearance()
         inputAppearance.backgroundColor = Color.backgroundColor
 

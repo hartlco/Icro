@@ -6,15 +6,28 @@
 import Foundation
 import StoreKit
 import IcroKit
+import SwiftUI
+import Combine
 
-final class TipJarViewModel: NSObject {
+final class TipJarViewModel: NSObject, BindableObject {
+    var didChange = PassthroughSubject<Void, Never>()
+
     private(set) var state = State.unloaded {
         didSet {
             stateChanged(state)
+            DispatchQueue.main.async {
+                self.didChange.send()
+            }
         }
     }
 
-    private var products = [InAppPurchaseProduct]()
+    private(set) var products = [InAppPurchaseProduct]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.didChange.send()
+            }
+        }
+    }
 
     enum State {
         case unloaded
@@ -32,6 +45,11 @@ final class TipJarViewModel: NSObject {
         return products.count
     }
 
+    override init() {
+        super.init()
+        load()
+    }
+
     func product(at index: Int) -> InAppPurchaseProduct {
         return products[index]
     }
@@ -44,9 +62,9 @@ final class TipJarViewModel: NSObject {
         state = .loading
     }
 
-    func purchaseProduct(at index: Int) {
+    func purchase(product: InAppPurchaseProduct) {
         if canMakePurchases {
-            let purchase = product(at: index).product
+            let purchase = product.product
             let payment = SKPayment(product: purchase)
             SKPaymentQueue.default().add(self)
             SKPaymentQueue.default().add(payment)
@@ -109,7 +127,11 @@ extension TipJarViewModel: SKProductsRequestDelegate, SKPaymentTransactionObserv
     }
 }
 
-struct InAppPurchaseProduct {
+struct InAppPurchaseProduct: Identifiable {
+    var id: String {
+        return identifier
+    }
+
     let identifier: String
     let title: String
     let price: String

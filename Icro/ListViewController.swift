@@ -144,7 +144,9 @@ final class ListViewController: UIViewController, LoadingViewController {
 
     private func setupDataSource() {
         dataSource =
-            UITableViewDiffableDataSource<ListViewModel.Section, ListViewModel.ViewType>(tableView: tableView, cellProvider: { [weak self] tableView, indexPath, item -> UITableViewCell? in
+            UITableViewDiffableDataSource<ListViewModel.Section, ListViewModel.ViewType>(tableView: tableView,
+                                                                                         cellProvider: { [weak self] tableView,
+                                                                                            indexPath, item -> UITableViewCell? in
             guard let self = self else { return nil }
             switch item {
             case .author(let author):
@@ -281,7 +283,9 @@ extension ListViewController: UITableViewDelegate {
         return editActionsConfigurator.canEdit(at: indexPath)
     }
 
-    func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+    func tableView(_ tableView: UITableView,
+                   contextMenuConfigurationForRowAt indexPath: IndexPath,
+                   point: CGPoint) -> UIContextMenuConfiguration? {
         return editActionsConfigurator.contextMenu(at: indexPath)
     }
 }
