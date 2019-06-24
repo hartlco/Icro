@@ -145,8 +145,7 @@ final class ListViewController: UIViewController, LoadingViewController {
     private func setupDataSource() {
         dataSource =
             UITableViewDiffableDataSource<ListViewModel.Section, ListViewModel.ViewType>(tableView: tableView,
-                                                                                         cellProvider: { [weak self] tableView,
-                                                                                            indexPath, item -> UITableViewCell? in
+                                                                                         cellProvider: { [weak self] tableView, indexPath, item -> UITableViewCell? in
             guard let self = self else { return nil }
             switch item {
             case .author(let author):

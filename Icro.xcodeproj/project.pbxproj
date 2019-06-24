@@ -38,8 +38,8 @@
 		5B0D273422A3B85600C0EA53 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B522A39D5C008E38B6 /* SettingsButton.swift */; };
 		5B0D273522A3B87000C0EA53 /* SettingsSwitchWithLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B322A3953D008E38B6 /* SettingsSwitchWithLabelView.swift */; };
 		5B0D273B22A3D46400C0EA53 /* SettingsSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */; };
-		5B165D8822BF436D00B851B2 /* TipJarView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView2.swift */; };
-		5B165DA922BF538C00B851B2 /* TipJarView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView2.swift */; };
+		5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView.swift */; };
+		5B165DA922BF538C00B851B2 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView.swift */; };
 		5B1896C922B2DA200067F100 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51621A22B2C900009C0064 /* LoginView.swift */; };
 		5B38475F21FDFEFD00F082AD /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */; };
 		5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B38476021FE035900F082AD /* StoreKit.framework */; };
@@ -349,7 +349,7 @@
 		5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCellConfigurator.swift; sourceTree = "<group>"; };
 		5B0D272D22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsSectionSubtitleView.swift; path = View/Settings/SettingsSectionSubtitleView.swift; sourceTree = "<group>"; };
 		5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsSeparatorView.swift; path = View/Settings/SettingsSeparatorView.swift; sourceTree = "<group>"; };
-		5B165D8722BF436D00B851B2 /* TipJarView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TipJarView2.swift; path = View/TipJarView2.swift; sourceTree = "<group>"; };
+		5B165D8722BF436D00B851B2 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TipJarView.swift; path = View/TipJarView.swift; sourceTree = "<group>"; };
 		5B2A5A7720A613EF00B54399 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableCellButton.swift; sourceTree = "<group>"; };
 		5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarViewModel.swift; sourceTree = "<group>"; };
@@ -1034,7 +1034,7 @@
 				5B39B7BD22AD504A004D5134 /* ListView.swift */,
 				5B51621A22B2C900009C0064 /* LoginView.swift */,
 				5B6A45B722BE872700858756 /* CustomTextField.swift */,
-				5B165D8722BF436D00B851B2 /* TipJarView2.swift */,
+				5B165D8722BF436D00B851B2 /* TipJarView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1866,7 +1866,7 @@
 				5B99C67B229FB5CD00437552 /* UITableView+Keyboard.swift in Sources */,
 				5B66EE71227D73E400317FE3 /* HTTPMethodTests.swift in Sources */,
 				5B0D273422A3B85600C0EA53 /* SettingsButton.swift in Sources */,
-				5B165DA922BF538C00B851B2 /* TipJarView2.swift in Sources */,
+				5B165DA922BF538C00B851B2 /* TipJarView.swift in Sources */,
 				5B58374F2128B5F80076121E /* TabBarViewController.swift in Sources */,
 				5B38476A21FE077A00F082AD /* UIView+Contraints.swift in Sources */,
 				5B66EE74227D74DF00317FE3 /* MockClient.swift in Sources */,
@@ -1978,7 +1978,7 @@
 				5B0D272E22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift in Sources */,
 				5BB388B622A39D5C008E38B6 /* SettingsButton.swift in Sources */,
 				5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */,
-				5B165D8822BF436D00B851B2 /* TipJarView2.swift in Sources */,
+				5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */,
 				5B583722212861220076121E /* UserItemCellConfigurator.swift in Sources */,
 				5B3C79C221C518B700F699B8 /* MainNavigator.swift in Sources */,
 				5B4895F222B1603E00CF08C2 /* SceneDelegate.swift in Sources */,

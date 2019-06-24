@@ -153,7 +153,7 @@ struct TipJarSection: View {
             .font(.headline)
             .fontWeight(.bold)) {
                 stateView
-                TipJarView2(viewModel: tipJarViewModel)
+                TipJarView(viewModel: tipJarViewModel)
         }
     }
 

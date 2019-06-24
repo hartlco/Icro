@@ -6,7 +6,7 @@
 import SwiftUI
 import IcroKit
 
-struct TipJarView2: View {
+struct TipJarView: View {
     @ObjectBinding var viewModel: TipJarViewModel
     private let cardColor = SwiftUI.Color("accentSuperLight")
 
@@ -47,9 +47,9 @@ struct TipJarView2: View {
 }
 
 #if DEBUG
-struct TipJarView2_Previews: PreviewProvider {
+struct TipJarView_Previews: PreviewProvider {
     static var previews: some View {
-        TipJarView2(viewModel: TipJarViewModel())
+        TipJarView(viewModel: TipJarViewModel())
     }
 }
 #endif
