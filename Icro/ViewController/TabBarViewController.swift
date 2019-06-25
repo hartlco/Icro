@@ -110,7 +110,7 @@ class TabBarViewController: UITabBarController {
                                                         self.presentedViewController?.dismiss(animated: true, completion: nil)
             },
                                                       settingsNavigator: settingsNavigator,
-                                                      store: SettingsStore())
+                                                      store: SettingsViewModel(userSettings: userSettings))
         present(UIHostingController(rootView: settingsContentView), animated: true, completion: nil)
 
 //        let settingsNavigator = SettingsNavigator(navigationController: navigationController, appNavigator: appNavigator)

@@ -5,14 +5,71 @@
 
 import Foundation
 import IcroKit
+import SwiftUI
+import Combine
 
-final class SettingsViewModel {
-    let tipJarViewModel = TipJarViewModel()
+final class SettingsViewModel: BindableObject {
+    var didChange = PassthroughSubject<Void, Never>()
 
     private let userSettings: UserSettings
 
     init(userSettings: UserSettings) {
         self.userSettings = userSettings
+        self.isWordpressBlog = userSettings.wordpressInfo != nil
+        self.wordpressURL = userSettings.wordpressInfo?.urlString ?? ""
+        self.wordpressUsername = userSettings.wordpressInfo?.username ?? ""
+        self.wordpressPassword = userSettings.wordpressInfo?.password ?? ""
+        self.isMicropubBlog = userSettings.micropubInfo != nil
+        self.micropubURL = userSettings.micropubInfo?.urlString ?? ""
+        self.micropubToken = userSettings.micropubInfo?.micropubToken ?? ""
+    }
+
+    var isWordpressBlog: Bool {
+        didSet {
+            if isMicropubBlog {
+                isMicropubBlog = false
+            }
+            updateSetup()
+        }
+    }
+
+    var wordpressURL: String {
+        didSet {
+            updateSetup()
+        }
+    }
+
+    var wordpressUsername: String {
+        didSet {
+            updateSetup()
+        }
+    }
+
+    var wordpressPassword: String {
+        didSet {
+            updateSetup()
+        }
+    }
+
+    var isMicropubBlog: Bool {
+        didSet {
+            if isWordpressBlog {
+                isWordpressBlog = false
+            }
+            updateSetup()
+        }
+    }
+
+    var micropubURL: String {
+        didSet {
+            updateSetup()
+        }
+    }
+
+    var micropubToken: String {
+        didSet {
+            updateSetup()
+        }
     }
 
     let title = NSLocalizedString("SETTINGSVIEWCONTROLLER_TITLE", comment: "")
@@ -27,23 +84,18 @@ final class SettingsViewModel {
     let wordpressSubTitle = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGINFO_TEXT", comment: "")
     let wordpressSwitchTitle = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGSETUPSWITCH_TEXT", comment: "")
 
-    var wordPressSetup: UserSettings.WordpressInfo? {
-        get {
-            return userSettings.wordpressInfo
-        }
+    private func updateSetup() {
+        didChange.send()
 
-        set {
-            userSettings.setWordpressInfo(info: newValue)
-        }
-    }
-
-    var micropubSetup: UserSettings.MicropubInfo? {
-        get {
-            return userSettings.micropubInfo
-        }
-
-        set {
-            userSettings.setMicropubInfo(info: newValue)
+        if isWordpressBlog {
+            let wordpressInfo = UserSettings.WordpressInfo(urlString: wordpressURL,
+                                                           username: wordpressUsername,
+                                                           password: wordpressPassword)
+            userSettings.setWordpressInfo(info: wordpressInfo)
+        } else if isMicropubBlog {
+            let micropubInfo = UserSettings.MicropubInfo(urlString: micropubURL,
+                                                         micropubToken: micropubToken)
+            userSettings.setMicropubInfo(info: micropubInfo)
         }
     }
 }

@@ -12,40 +12,10 @@ import SafariServices
 import IcroUIKit
 import IcroKit
 
-class SettingsStore: BindableObject {
-    var didChange = PassthroughSubject<SettingsStore, Never>()
-
-    var isWorpressBlog: Bool = false {
-        didSet {
-            print("did change isWordpressBlog")
-            didChange.send(self)
-        }
-    }
-
-    var wordpressURL = "" {
-        didSet {
-            didChange.send(self)
-        }
-    }
-
-    var wordpressUserName = "" {
-        didSet {
-            didChange.send(self)
-        }
-    }
-
-    var wordpressPassword = "" {
-        didSet {
-            didChange.send(self)
-        }
-    }
-
-}
-
 struct SettingsContentView: View {
     let dismissAction: () -> Void
     let settingsNavigator: SettingsViewNavigator
-    @ObjectBinding var store: SettingsStore
+    @ObjectBinding var store: SettingsViewModel
 
     var body: some View {
         NavigationView {
@@ -67,49 +37,61 @@ struct SettingsContentView: View {
 }
 
 struct WordpressSection: View {
-    @ObjectBinding var store: SettingsStore
+    @ObjectBinding var store: SettingsViewModel
 
     var body: some View {
-        return Section(header: Text("Wordpress")
+        Section(header: Text("Wordpress")
             .font(.headline)
             .fontWeight(.bold)) {
-                Toggle(isOn: $store.isWorpressBlog) {
+                Toggle(isOn: $store.isWordpressBlog) {
                     Text("Post to Wordpress Site")
                 }
-                if store.isWorpressBlog {
-                    TextField($store.wordpressURL,
-                              placeholder: Text("Wordpress URL"))
-                    TextField($store.wordpressUserName,
-                              placeholder: Text("Username"))
-                    TextField($store.wordpressPassword,
-                              placeholder: Text("Password"))
-                        .textContentType(.password)
-                } else {
-                    EmptyView()
-                }
+                inputField
+        }
+    }
+
+    private var inputField: AnyView? {
+        if store.isWordpressBlog {
+            return AnyView(Group {
+                TextField($store.wordpressURL,
+                          placeholder: Text("Wordpress URL"))
+                TextField($store.wordpressUsername,
+                          placeholder: Text("Username"))
+                TextField($store.wordpressPassword,
+                          placeholder: Text("Password"))
+                    .textContentType(.password)
+            })
+        } else {
+            return nil
         }
     }
 }
 
 struct MicropubSection: View {
-    @ObjectBinding var store: SettingsStore
+    @ObjectBinding var store: SettingsViewModel
 
     var body: some View {
-        return Section(header: Text("Micropub")
+        Section(header: Text("Micropub")
             .font(.headline)
             .fontWeight(.bold)) {
-                Toggle(isOn: $store.isWorpressBlog) {
+                Toggle(isOn: $store.isMicropubBlog) {
                     Text("Post to Micropub Site")
                 }
-                if store.isWorpressBlog {
-                    TextField($store.wordpressURL,
-                              placeholder: Text("Wordpress URL"))
-                    TextField($store.wordpressPassword,
-                              placeholder: Text("Token"))
-                        .textContentType(.password)
-                } else {
-                    EmptyView()
-                }
+                inputField
+        }
+    }
+
+    private var inputField: AnyView? {
+        if store.isMicropubBlog {
+            return AnyView(Group {
+                TextField($store.micropubURL,
+                          placeholder: Text("Wordpress URL"))
+                TextField($store.micropubToken,
+                          placeholder: Text("Token"))
+                    .textContentType(.password)
+            })
+        } else {
+            return nil
         }
     }
 }
@@ -179,7 +161,7 @@ struct ContentView_Previews: PreviewProvider {
         let settingsNavigator = SettingsViewNavigator(userSettings: .shared)
         return SettingsContentView(dismissAction: {},
                             settingsNavigator: settingsNavigator,
-                            store: SettingsStore())
+                            store: SettingsViewModel(userSettings: .shared))
     }
 }
 #endif
