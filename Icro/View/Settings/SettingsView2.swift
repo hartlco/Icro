@@ -105,7 +105,7 @@ struct OtherSection: View {
                 NavigationButton(destination: Text("Test")) {
                     Text("Icro Supports")
                 }
-                NavigationButton(destination: Text("Test")) {
+                NavigationButton(destination: AcknowledgementView()) {
                     Text("Acknowledgements")
                 }
                 NavigationButton(destination: settingsNavigator.muteView) {

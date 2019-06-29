@@ -41,6 +41,7 @@
 		5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView.swift */; };
 		5B165DA922BF538C00B851B2 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView.swift */; };
 		5B1896C922B2DA200067F100 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51621A22B2C900009C0064 /* LoginView.swift */; };
+		5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */; };
 		5B38475F21FDFEFD00F082AD /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */; };
 		5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B38476021FE035900F082AD /* StoreKit.framework */; };
 		5B38476621FE06B200F082AD /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */; };
@@ -350,6 +351,7 @@
 		5B0D272D22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsSectionSubtitleView.swift; path = View/Settings/SettingsSectionSubtitleView.swift; sourceTree = "<group>"; };
 		5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsSeparatorView.swift; path = View/Settings/SettingsSeparatorView.swift; sourceTree = "<group>"; };
 		5B165D8722BF436D00B851B2 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TipJarView.swift; path = View/TipJarView.swift; sourceTree = "<group>"; };
+		5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AcknowledgementView.swift; path = View/Settings/AcknowledgementView.swift; sourceTree = "<group>"; };
 		5B2A5A7720A613EF00B54399 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableCellButton.swift; sourceTree = "<group>"; };
 		5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarViewModel.swift; sourceTree = "<group>"; };
@@ -923,6 +925,7 @@
 				5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */,
 				5B69E65022AA16310081CDFB /* SettingsView2.swift */,
 				5BCD7F0122BDE35D00CA5B6C /* MuteView.swift */,
+				5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1987,6 +1990,7 @@
 				5BED6D01207E8147002FB9FF /* UserListViewController.swift in Sources */,
 				5BBC6704218EB0150090629C /* LoadMoreTableViewCell.swift in Sources */,
 				5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */,
+				5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */,
 				5BB388B422A3953D008E38B6 /* SettingsSwitchWithLabelView.swift in Sources */,
 				5B3B4C3521D0CBE300F511A6 /* assets-images.swift in Sources */,
 				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
