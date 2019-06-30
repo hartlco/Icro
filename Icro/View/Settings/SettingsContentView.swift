@@ -30,7 +30,7 @@ struct SettingsContentView: View {
             .navigationBarItems(leading: Button(action: {
                 self.dismissAction()
             }, label: {
-                Image(systemName: "gift")
+                Text("Close")
             }))
         }
     }

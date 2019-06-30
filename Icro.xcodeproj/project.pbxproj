@@ -32,12 +32,6 @@
 		5B01CC002168E4DD0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
 		5B01CC012168E4DF0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
 		5B01CC072168E8000007E01D /* ListItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */; };
-		5B0D272E22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D272D22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift */; };
-		5B0D273222A3B85000C0EA53 /* SettingsTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B722A3A558008E38B6 /* SettingsTextInputView.swift */; };
-		5B0D273322A3B85300C0EA53 /* SettingsSectionSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D272D22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift */; };
-		5B0D273422A3B85600C0EA53 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B522A39D5C008E38B6 /* SettingsButton.swift */; };
-		5B0D273522A3B87000C0EA53 /* SettingsSwitchWithLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B322A3953D008E38B6 /* SettingsSwitchWithLabelView.swift */; };
-		5B0D273B22A3D46400C0EA53 /* SettingsSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */; };
 		5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView.swift */; };
 		5B165DA922BF538C00B851B2 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView.swift */; };
 		5B1896C922B2DA200067F100 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51621A22B2C900009C0064 /* LoginView.swift */; };
@@ -134,8 +128,7 @@
 		5B66EE74227D74DF00317FE3 /* MockClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE73227D74DF00317FE3 /* MockClient.swift */; };
 		5B66EE76227D780300317FE3 /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE75227D780300317FE3 /* UserListViewModelTests.swift */; };
 		5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
-		5B69E65122AA16310081CDFB /* SettingsView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsView2.swift */; };
-		5B69E65222AA170D0081CDFB /* SettingsSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */; };
+		5B69E65122AA16310081CDFB /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsContentView.swift */; };
 		5B6A45B822BE872700858756 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A45B722BE872700858756 /* CustomTextField.swift */; };
 		5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B6A565E21735A69003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
@@ -156,9 +149,6 @@
 		5BA333752189ADAF000FA900 /* DiscoveryCategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663842189673100ABA671 /* DiscoveryCategoryStore.swift */; };
 		5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */; };
 		5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D180208904D300F484B2 /* AppNavigator.swift */; };
-		5BB388B422A3953D008E38B6 /* SettingsSwitchWithLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B322A3953D008E38B6 /* SettingsSwitchWithLabelView.swift */; };
-		5BB388B622A39D5C008E38B6 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B522A39D5C008E38B6 /* SettingsButton.swift */; };
-		5BB388B822A3A558008E38B6 /* SettingsTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB388B722A3A558008E38B6 /* SettingsTextInputView.swift */; };
 		5BB3E470226C514C00C1B6BB /* IcroScreenshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB3E46F226C514C00C1B6BB /* IcroScreenshotsTests.swift */; };
 		5BB3E478226C518100C1B6BB /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB3E477226C518000C1B6BB /* SnapshotHelper.swift */; };
 		5BB73F0C212C9E0B00120FAB /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB73F0B212C9E0B00120FAB /* ListViewModelTests.swift */; };
@@ -192,9 +182,6 @@
 		5BD95AF62290A10600C74C52 /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
 		5BD95AF72290A10600C74C52 /* UserDefaultsMigrationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */; };
 		5BD95AF82290A10600C74C52 /* BackgroundFetchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD95AF3228FE85600C74C52 /* BackgroundFetchComponent.swift */; };
-		5BD95AF92290A12000C74C52 /* SettingsSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DA982287E8860055240D /* SettingsSectionHeaderView.swift */; };
-		5BD95AFA2290A12E00C74C52 /* SettingsInlineSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DA9C2287E97B0055240D /* SettingsInlineSeparatorView.swift */; };
-		5BD95AFB2290A13200C74C52 /* SettingsButtonWithLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DA9A2287E91A0055240D /* SettingsButtonWithLabelView.swift */; };
 		5BD95AFD2290A16100C74C52 /* AppearanceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD95AFC2290A16100C74C52 /* AppearanceComponent.swift */; };
 		5BD95AFE2290A1B000C74C52 /* AppearanceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD95AFC2290A16100C74C52 /* AppearanceComponent.swift */; };
 		5BD9690C21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD9690B21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift */; };
@@ -211,16 +198,13 @@
 		5BDE18F1216A57C0001254F4 /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
 		5BDE18F3216A76FA001254F4 /* SettingsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BDE18F2216A76FA001254F4 /* SettingsStoryboard.storyboard */; };
 		5BDE18F5216A7A47001254F4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE18F4216A7A47001254F4 /* SettingsViewController.swift */; };
-		5BE633AF22ACC09F005296AB /* SettingsView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsView2.swift */; };
+		5BE633AF22ACC09F005296AB /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsContentView.swift */; };
 		5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
 		5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */; };
 		5BED6D01207E8147002FB9FF /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6CFF207E8147002FB9FF /* UserListViewController.swift */; };
 		5BED6D02207E8147002FB9FF /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D00207E8147002FB9FF /* UserListViewController.xib */; };
 		5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */; };
 		5BED6D06207E81CC002FB9FF /* UserItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */; };
-		5BF2DA992287E8860055240D /* SettingsSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DA982287E8860055240D /* SettingsSectionHeaderView.swift */; };
-		5BF2DA9B2287E91A0055240D /* SettingsButtonWithLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DA9A2287E91A0055240D /* SettingsButtonWithLabelView.swift */; };
-		5BF2DA9D2287E97B0055240D /* SettingsInlineSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DA9C2287E97B0055240D /* SettingsInlineSeparatorView.swift */; };
 		5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
 		5BF2DAA6228802000055240D /* UserDefaultsMigrationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */; };
 		5BF6637F218961AB00ABA671 /* DiscoveryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */; };
@@ -348,8 +332,6 @@
 		5B01CBFC2168E2780007E01D /* ListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListItemCell.xib; sourceTree = "<group>"; };
 		5B01CC042168E7430007E01D /* Icro-Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Icro-Mac.entitlements"; sourceTree = "<group>"; };
 		5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCellConfigurator.swift; sourceTree = "<group>"; };
-		5B0D272D22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsSectionSubtitleView.swift; path = View/Settings/SettingsSectionSubtitleView.swift; sourceTree = "<group>"; };
-		5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsSeparatorView.swift; path = View/Settings/SettingsSeparatorView.swift; sourceTree = "<group>"; };
 		5B165D8722BF436D00B851B2 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TipJarView.swift; path = View/TipJarView.swift; sourceTree = "<group>"; };
 		5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AcknowledgementView.swift; path = View/Settings/AcknowledgementView.swift; sourceTree = "<group>"; };
 		5B2A5A7720A613EF00B54399 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
@@ -415,7 +397,7 @@
 		5B66EE73227D74DF00317FE3 /* MockClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockClient.swift; sourceTree = "<group>"; };
 		5B66EE75227D780300317FE3 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
 		5B689BAB20837ECE005B9874 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TabBarViewController.xib; path = ViewController/TabBarViewController.xib; sourceTree = "<group>"; };
-		5B69E65022AA16310081CDFB /* SettingsView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView2.swift; path = View/Settings/SettingsView2.swift; sourceTree = "<group>"; };
+		5B69E65022AA16310081CDFB /* SettingsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsContentView.swift; path = View/Settings/SettingsContentView.swift; sourceTree = "<group>"; };
 		5B6A45B722BE872700858756 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = View/CustomTextField.swift; sourceTree = "<group>"; };
 		5B6A565C21735A4F003C4D92 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
@@ -431,9 +413,6 @@
 		5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Loading.swift"; sourceTree = "<group>"; };
 		5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = ViewModel/LoginViewModel.swift; sourceTree = "<group>"; };
 		5BA6D180208904D300F484B2 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppNavigator.swift; path = Navigator/AppNavigator.swift; sourceTree = "<group>"; };
-		5BB388B322A3953D008E38B6 /* SettingsSwitchWithLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsSwitchWithLabelView.swift; path = View/Settings/SettingsSwitchWithLabelView.swift; sourceTree = "<group>"; };
-		5BB388B522A39D5C008E38B6 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsButton.swift; path = View/Settings/SettingsButton.swift; sourceTree = "<group>"; };
-		5BB388B722A3A558008E38B6 /* SettingsTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsTextInputView.swift; path = View/Settings/SettingsTextInputView.swift; sourceTree = "<group>"; };
 		5BB3E46D226C514C00C1B6BB /* IcroScreenshotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IcroScreenshotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB3E46F226C514C00C1B6BB /* IcroScreenshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcroScreenshotsTests.swift; sourceTree = "<group>"; };
 		5BB3E471226C514C00C1B6BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -474,9 +453,6 @@
 		5BED6D00207E8147002FB9FF /* UserListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserListViewController.xib; path = ViewController/UserListViewController.xib; sourceTree = "<group>"; };
 		5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserItemTableViewCell.swift; path = View/UserItemTableViewCell.swift; sourceTree = "<group>"; };
 		5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserItemTableViewCell.xib; path = View/UserItemTableViewCell.xib; sourceTree = "<group>"; };
-		5BF2DA982287E8860055240D /* SettingsSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsSectionHeaderView.swift; path = View/Settings/SettingsSectionHeaderView.swift; sourceTree = "<group>"; };
-		5BF2DA9A2287E91A0055240D /* SettingsButtonWithLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsButtonWithLabelView.swift; path = View/Settings/SettingsButtonWithLabelView.swift; sourceTree = "<group>"; };
-		5BF2DA9C2287E97B0055240D /* SettingsInlineSeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsInlineSeparatorView.swift; path = View/Settings/SettingsInlineSeparatorView.swift; sourceTree = "<group>"; };
 		5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryComponent.swift; sourceTree = "<group>"; };
 		5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMigrationComponent.swift; sourceTree = "<group>"; };
 		5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategory.swift; sourceTree = "<group>"; };
@@ -915,15 +891,7 @@
 		5BF2DA972287E85D0055240D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				5BF2DA982287E8860055240D /* SettingsSectionHeaderView.swift */,
-				5BF2DA9A2287E91A0055240D /* SettingsButtonWithLabelView.swift */,
-				5BF2DA9C2287E97B0055240D /* SettingsInlineSeparatorView.swift */,
-				5BB388B322A3953D008E38B6 /* SettingsSwitchWithLabelView.swift */,
-				5BB388B522A39D5C008E38B6 /* SettingsButton.swift */,
-				5BB388B722A3A558008E38B6 /* SettingsTextInputView.swift */,
-				5B0D272D22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift */,
-				5B0D273A22A3D46400C0EA53 /* SettingsSeparatorView.swift */,
-				5B69E65022AA16310081CDFB /* SettingsView2.swift */,
+				5B69E65022AA16310081CDFB /* SettingsContentView.swift */,
 				5BCD7F0122BDE35D00CA5B6C /* MuteView.swift */,
 				5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */,
 			);
@@ -1868,32 +1836,27 @@
 			files = (
 				5B99C67B229FB5CD00437552 /* UITableView+Keyboard.swift in Sources */,
 				5B66EE71227D73E400317FE3 /* HTTPMethodTests.swift in Sources */,
-				5B0D273422A3B85600C0EA53 /* SettingsButton.swift in Sources */,
 				5B165DA922BF538C00B851B2 /* TipJarView.swift in Sources */,
 				5B58374F2128B5F80076121E /* TabBarViewController.swift in Sources */,
 				5B38476A21FE077A00F082AD /* UIView+Contraints.swift in Sources */,
 				5B66EE74227D74DF00317FE3 /* MockClient.swift in Sources */,
-				5BD95AFA2290A12E00C74C52 /* SettingsInlineSeparatorView.swift in Sources */,
 				5B5837542128B5F80076121E /* UserListViewController.xib in Sources */,
 				5B5837552128B5F80076121E /* TabBarViewController.xib in Sources */,
 				5BD95AFE2290A1B000C74C52 /* AppearanceComponent.swift in Sources */,
 				5B4DF0EF21AA84A4008CEB58 /* LoadMoreTableViewCell.swift in Sources */,
 				5B3C79BB21C50A6200F699B8 /* ListViewController.swift in Sources */,
 				5BB73F0C212C9E0B00120FAB /* ListViewModelTests.swift in Sources */,
-				5B0D273222A3B85000C0EA53 /* SettingsTextInputView.swift in Sources */,
 				5B38476621FE06B200F082AD /* TipJarViewModel.swift in Sources */,
 				5B58375E2128B5F80076121E /* SettingsNavigator.swift in Sources */,
 				5BD499CF21CA1D8C007EF47C /* MainNavigator.swift in Sources */,
 				5B58375F2128B5F80076121E /* AppNavigator.swift in Sources */,
 				5BD95AF72290A10600C74C52 /* UserDefaultsMigrationComponent.swift in Sources */,
 				5B5837612128B5F80076121E /* EditActionsConfigurator.swift in Sources */,
-				5BE633AF22ACC09F005296AB /* SettingsView2.swift in Sources */,
-				5B69E65222AA170D0081CDFB /* SettingsSeparatorView.swift in Sources */,
+				5BE633AF22ACC09F005296AB /* SettingsContentView.swift in Sources */,
 				5BD95AF82290A10600C74C52 /* BackgroundFetchComponent.swift in Sources */,
 				5B5837622128B5F80076121E /* ProfileViewConfigurator.swift in Sources */,
 				5B3C79C821C51BDA00F699B8 /* ItemNavigator.swift in Sources */,
 				5B5837632128B5F80076121E /* UserItemCellConfigurator.swift in Sources */,
-				5BD95AF92290A12000C74C52 /* SettingsSectionHeaderView.swift in Sources */,
 				5BD9691021C8D55400313795 /* ComposeNavigator.swift in Sources */,
 				5B66EE76227D780300317FE3 /* UserListViewModelTests.swift in Sources */,
 				5BD95AF62290A10600C74C52 /* DiscoveryCategoryComponent.swift in Sources */,
@@ -1906,14 +1869,11 @@
 				5BC5A5A721D4E1F200B9A8D1 /* AppearanceManager.swift in Sources */,
 				5B5837742128B5F80076121E /* LoginViewModel.swift in Sources */,
 				5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */,
-				5B0D273522A3B87000C0EA53 /* SettingsSwitchWithLabelView.swift in Sources */,
 				5B5837762128B5F80076121E /* MuteViewModel.swift in Sources */,
 				5B5837772128B5F80076121E /* AppDelegate.swift in Sources */,
 				5B58374B2128B5BD0076121E /* UserListViewController.swift in Sources */,
 				5B5837402128B0680076121E /* HTMLContentTests.swift in Sources */,
 				5B1896C922B2DA200067F100 /* LoginView.swift in Sources */,
-				5BD95AFB2290A13200C74C52 /* SettingsButtonWithLabelView.swift in Sources */,
-				5B0D273322A3B85300C0EA53 /* SettingsSectionSubtitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1965,21 +1925,16 @@
 			files = (
 				5B3C79C721C51BD900F699B8 /* ItemNavigator.swift in Sources */,
 				5BD95AF4228FE85600C74C52 /* BackgroundFetchComponent.swift in Sources */,
-				5BF2DA9B2287E91A0055240D /* SettingsButtonWithLabelView.swift in Sources */,
 				5BD9690C21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift in Sources */,
 				5B583728212861770076121E /* SettingsNavigator.swift in Sources */,
-				5B69E65122AA16310081CDFB /* SettingsView2.swift in Sources */,
+				5B69E65122AA16310081CDFB /* SettingsContentView.swift in Sources */,
 				5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */,
 				5B39B7BE22AD504A004D5134 /* ListView.swift in Sources */,
 				5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */,
-				5BF2DA9D2287E97B0055240D /* SettingsInlineSeparatorView.swift in Sources */,
 				5B761F2922BE958C0038FF73 /* SettingsViewNavigator.swift in Sources */,
-				5BB388B822A3A558008E38B6 /* SettingsTextInputView.swift in Sources */,
 				5B51621B22B2C900009C0064 /* LoginView.swift in Sources */,
 				5B44C71720979CF20003B35D /* MuteViewModel.swift in Sources */,
 				5BCD7F0222BDE35D00CA5B6C /* MuteView.swift in Sources */,
-				5B0D272E22A3B2E400C0EA53 /* SettingsSectionSubtitleView.swift in Sources */,
-				5BB388B622A39D5C008E38B6 /* SettingsButton.swift in Sources */,
 				5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */,
 				5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */,
 				5B583722212861220076121E /* UserItemCellConfigurator.swift in Sources */,
@@ -1991,7 +1946,6 @@
 				5BBC6704218EB0150090629C /* LoadMoreTableViewCell.swift in Sources */,
 				5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */,
 				5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */,
-				5BB388B422A3953D008E38B6 /* SettingsSwitchWithLabelView.swift in Sources */,
 				5B3B4C3521D0CBE300F511A6 /* assets-images.swift in Sources */,
 				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
 				C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */,
@@ -2003,11 +1957,9 @@
 				5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */,
 				5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */,
 				5B3C79BA21C50A6200F699B8 /* ListViewController.swift in Sources */,
-				5BF2DA992287E8860055240D /* SettingsSectionHeaderView.swift in Sources */,
 				5BF2DAA6228802000055240D /* UserDefaultsMigrationComponent.swift in Sources */,
 				5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */,
 				5B38475F21FDFEFD00F082AD /* TipJarViewModel.swift in Sources */,
-				5B0D273B22A3D46400C0EA53 /* SettingsSeparatorView.swift in Sources */,
 				5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

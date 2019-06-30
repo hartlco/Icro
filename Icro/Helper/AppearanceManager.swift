@@ -50,8 +50,6 @@ final class AppearanceManager {
             UINavigationBar.appearance().barStyle = .black
         }
 
-        applySettingsAppearance()
-
         notificationCenter.post(name: .appearanceDidChange, object: nil)
     }
 
@@ -59,29 +57,5 @@ final class AppearanceManager {
         Theme.currentTheme = newTheme
         UserSettings.shared.theme = newTheme
         applyAppearance()
-    }
-
-    private func applySettingsAppearance() {
-        let sectionHeaderViewAppearance = UIView.appearance(whenContainedInInstancesOf: [SettingsSectionHeaderView.self])
-        sectionHeaderViewAppearance.backgroundColor = Color.accentSuperLight
-
-        let sectionHeaderLabelAppearance = UILabel.appearance(whenContainedInInstancesOf: [SettingsSectionHeaderView.self])
-        sectionHeaderLabelAppearance.backgroundColor = Color.accentSuperLight
-        sectionHeaderLabelAppearance.textColor = Color.textColor
-
-        let inputAppearance = SettingsTextInputView.appearance()
-        inputAppearance.backgroundColor = Color.backgroundColor
-
-        let textFieldInputAppearance = UITextField.appearance(whenContainedInInstancesOf: [SettingsTextInputView.self])
-        textFieldInputAppearance.textColor = Color.textColor
-
-        UILabel.appearance(whenContainedInInstancesOf: [SettingsTextInputView.self]).textColor = Color.secondaryTextColor
-
-        SettingsInlineSeparatorView.appearance().backgroundColor = Color.backgroundColor
-        SettingsButtonWithLabelView.appearance().backgroundColor = Color.backgroundColor
-        SettingsButtonWithLabelView.SecondaryTextLabel.appearance().textColor = Color.secondaryTextColor
-
-        let insertLinksTextViewAppearance = UITextField.appearance(whenContainedInInstancesOf: [InsertLinkViewController.self])
-        insertLinksTextViewAppearance.textColor = Color.textColor
     }
 }

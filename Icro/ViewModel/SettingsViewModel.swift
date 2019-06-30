@@ -9,6 +9,12 @@ import SwiftUI
 import Combine
 
 final class SettingsViewModel: BindableObject {
+    enum CustomBlogType {
+        case wordpress
+        case micropub
+        case none
+    }
+
     var didChange = PassthroughSubject<Void, Never>()
 
     private let userSettings: UserSettings
@@ -22,11 +28,17 @@ final class SettingsViewModel: BindableObject {
         self.isMicropubBlog = userSettings.micropubInfo != nil
         self.micropubURL = userSettings.micropubInfo?.urlString ?? ""
         self.micropubToken = userSettings.micropubInfo?.micropubToken ?? ""
+
+        if isWordpressBlog {
+            isMicropubBlog = false
+        } else if isMicropubBlog {
+            isWordpressBlog = false
+        }
     }
 
     var isWordpressBlog: Bool {
         didSet {
-            if isMicropubBlog {
+            if isWordpressBlog, isMicropubBlog {
                 isMicropubBlog = false
             }
             updateSetup()
@@ -53,7 +65,7 @@ final class SettingsViewModel: BindableObject {
 
     var isMicropubBlog: Bool {
         didSet {
-            if isWordpressBlog {
+            if isWordpressBlog, isMicropubBlog {
                 isWordpressBlog = false
             }
             updateSetup()
@@ -87,15 +99,26 @@ final class SettingsViewModel: BindableObject {
     private func updateSetup() {
         didChange.send()
 
-        if isWordpressBlog {
+        if isWordpressBlog,
+            !wordpressURL.isEmpty,
+            !wordpressUsername.isEmpty,
+            !wordpressPassword.isEmpty {
             let wordpressInfo = UserSettings.WordpressInfo(urlString: wordpressURL,
                                                            username: wordpressUsername,
                                                            password: wordpressPassword)
             userSettings.setWordpressInfo(info: wordpressInfo)
-        } else if isMicropubBlog {
+        } else {
+            userSettings.setWordpressInfo(info: nil)
+        }
+
+        if isMicropubBlog,
+            !micropubURL.isEmpty,
+            !micropubToken.isEmpty {
             let micropubInfo = UserSettings.MicropubInfo(urlString: micropubURL,
                                                          micropubToken: micropubToken)
             userSettings.setMicropubInfo(info: micropubInfo)
+        } else {
+            userSettings.setMicropubInfo(info: nil)
         }
     }
 }
