@@ -33,12 +33,6 @@ final class AppearanceManager {
         listTableViewAppearance.sectionIndexBackgroundColor = .green
         listTableViewAppearance.separatorColor = Theme.colorTheme.separatorColor
 
-        let userListTableViewAppearance = UITableView.appearance(whenContainedInInstancesOf: [UserListViewController.self])
-
-        userListTableViewAppearance.backgroundColor = Theme.colorTheme.backgroundColor
-        userListTableViewAppearance.sectionIndexBackgroundColor = .green
-        userListTableViewAppearance.separatorColor = Theme.colorTheme.separatorColor
-
         UITextView.appearance().backgroundColor = Theme.colorTheme.backgroundColor
         UITextView.appearance().textColor = Theme.colorTheme.textColor
         UIScrollView.appearance(whenContainedInInstancesOf: [ComposeViewController.self]).backgroundColor = Theme.colorTheme.backgroundColor

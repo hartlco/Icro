@@ -32,6 +32,7 @@
 		5B01CC002168E4DD0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
 		5B01CC012168E4DF0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
 		5B01CC072168E8000007E01D /* ListItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */; };
+		5B11A46722C8A5C70095E068 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11A46622C8A5C70095E068 /* NetworkImage.swift */; };
 		5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView.swift */; };
 		5B165DA922BF538C00B851B2 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView.swift */; };
 		5B1896C922B2DA200067F100 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51621A22B2C900009C0064 /* LoginView.swift */; };
@@ -39,6 +40,10 @@
 		5B28C8C822C87BFA00A46C52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8C722C87BFA00A46C52 /* Kingfisher */; };
 		5B28C8CA22C87C1000A46C52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8C922C87C1000A46C52 /* Kingfisher */; };
 		5B28C8CC22C87C6C00A46C52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8CB22C87C6C00A46C52 /* Kingfisher */; };
+		5B28C8CE22C89A1D00A46C52 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */; };
+		5B28C8D022C89B2600A46C52 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CF22C89B2600A46C52 /* UserListView.swift */; };
+		5B28C8D122C89BE200A46C52 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */; };
+		5B28C8D222C89BEE00A46C52 /* MuteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCD7F0122BDE35D00CA5B6C /* MuteView.swift */; };
 		5B38475F21FDFEFD00F082AD /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */; };
 		5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B38476021FE035900F082AD /* StoreKit.framework */; };
 		5B38476621FE06B200F082AD /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */; };
@@ -100,25 +105,19 @@
 		5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
 		5B51621B22B2C900009C0064 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51621A22B2C900009C0064 /* LoginView.swift */; };
 		5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371D212861220076121E /* EditActionsConfigurator.swift */; };
-		5B583722212861220076121E /* UserItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371E212861220076121E /* UserItemCellConfigurator.swift */; };
 		5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371F212861220076121E /* ProfileViewConfigurator.swift */; };
 		5B583728212861770076121E /* SettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583727212861770076121E /* SettingsNavigator.swift */; };
 		5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837292128618B0076121E /* UserListViewModel.swift */; };
 		5B5837402128B0680076121E /* HTMLContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58373F2128B0680076121E /* HTMLContentTests.swift */; };
-		5B58374B2128B5BD0076121E /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6CFF207E8147002FB9FF /* UserListViewController.swift */; };
 		5B58374F2128B5F80076121E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
-		5B5837542128B5F80076121E /* UserListViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D00207E8147002FB9FF /* UserListViewController.xib */; };
 		5B5837552128B5F80076121E /* TabBarViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
 		5B58375E2128B5F80076121E /* SettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583727212861770076121E /* SettingsNavigator.swift */; };
 		5B58375F2128B5F80076121E /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D180208904D300F484B2 /* AppNavigator.swift */; };
 		5B5837612128B5F80076121E /* EditActionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371D212861220076121E /* EditActionsConfigurator.swift */; };
 		5B5837622128B5F80076121E /* ProfileViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371F212861220076121E /* ProfileViewConfigurator.swift */; };
-		5B5837632128B5F80076121E /* UserItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371E212861220076121E /* UserItemCellConfigurator.swift */; };
 		5B5837662128B5F80076121E /* Icro-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */; };
 		5B58376C2128B5F80076121E /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
 		5B58376D2128B5F80076121E /* ProfileTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */; };
-		5B58376E2128B5F80076121E /* UserItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */; };
-		5B58376F2128B5F80076121E /* UserItemTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */; };
 		5B5837722128B5F80076121E /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837292128618B0076121E /* UserListViewModel.swift */; };
 		5B5837742128B5F80076121E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */; };
 		5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
@@ -204,10 +203,6 @@
 		5BE633AF22ACC09F005296AB /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsContentView.swift */; };
 		5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
 		5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */; };
-		5BED6D01207E8147002FB9FF /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6CFF207E8147002FB9FF /* UserListViewController.swift */; };
-		5BED6D02207E8147002FB9FF /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D00207E8147002FB9FF /* UserListViewController.xib */; };
-		5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */; };
-		5BED6D06207E81CC002FB9FF /* UserItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */; };
 		5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
 		5BF2DAA6228802000055240D /* UserDefaultsMigrationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */; };
 		5BF6637F218961AB00ABA671 /* DiscoveryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */; };
@@ -335,8 +330,11 @@
 		5B01CBFC2168E2780007E01D /* ListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListItemCell.xib; sourceTree = "<group>"; };
 		5B01CC042168E7430007E01D /* Icro-Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Icro-Mac.entitlements"; sourceTree = "<group>"; };
 		5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCellConfigurator.swift; sourceTree = "<group>"; };
+		5B11A46622C8A5C70095E068 /* NetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkImage.swift; path = Helper/NetworkImage.swift; sourceTree = "<group>"; };
 		5B165D8722BF436D00B851B2 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TipJarView.swift; path = View/TipJarView.swift; sourceTree = "<group>"; };
 		5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AcknowledgementView.swift; path = View/Settings/AcknowledgementView.swift; sourceTree = "<group>"; };
+		5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModelState.swift; path = Helper/ViewModelState.swift; sourceTree = "<group>"; };
+		5B28C8CF22C89B2600A46C52 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserListView.swift; path = View/UserListView.swift; sourceTree = "<group>"; };
 		5B2A5A7720A613EF00B54399 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableCellButton.swift; sourceTree = "<group>"; };
 		5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarViewModel.swift; sourceTree = "<group>"; };
@@ -376,7 +374,6 @@
 		5B51621A22B2C900009C0064 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = View/LoginView.swift; sourceTree = "<group>"; };
 		5B58371A212860BA0076121E /* ComposeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewModel.swift; sourceTree = "<group>"; };
 		5B58371D212861220076121E /* EditActionsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditActionsConfigurator.swift; path = Configurator/EditActionsConfigurator.swift; sourceTree = "<group>"; };
-		5B58371E212861220076121E /* UserItemCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserItemCellConfigurator.swift; path = Configurator/UserItemCellConfigurator.swift; sourceTree = "<group>"; };
 		5B58371F212861220076121E /* ProfileViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewConfigurator.swift; path = Configurator/ProfileViewConfigurator.swift; sourceTree = "<group>"; };
 		5B583720212861220076121E /* ItemCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCellConfigurator.swift; sourceTree = "<group>"; };
 		5B5837252128616E0076121E /* ItemNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemNavigator.swift; sourceTree = "<group>"; };
@@ -452,10 +449,6 @@
 		5BECC33820A8017200EC63F2 /* InsertLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertLinkViewController.swift; sourceTree = "<group>"; };
 		5BECC33920A8017200EC63F2 /* InsertLinkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertLinkViewController.xib; sourceTree = "<group>"; };
 		5BECC33C20A8021A00EC63F2 /* ComposeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeNavigator.swift; sourceTree = "<group>"; };
-		5BED6CFF207E8147002FB9FF /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserListViewController.swift; path = ViewController/UserListViewController.swift; sourceTree = "<group>"; };
-		5BED6D00207E8147002FB9FF /* UserListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserListViewController.xib; path = ViewController/UserListViewController.xib; sourceTree = "<group>"; };
-		5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserItemTableViewCell.swift; path = View/UserItemTableViewCell.swift; sourceTree = "<group>"; };
-		5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserItemTableViewCell.xib; path = View/UserItemTableViewCell.xib; sourceTree = "<group>"; };
 		5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryComponent.swift; sourceTree = "<group>"; };
 		5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMigrationComponent.swift; sourceTree = "<group>"; };
 		5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategory.swift; sourceTree = "<group>"; };
@@ -789,7 +782,6 @@
 			children = (
 				5B58371D212861220076121E /* EditActionsConfigurator.swift */,
 				5B58371F212861220076121E /* ProfileViewConfigurator.swift */,
-				5B58371E212861220076121E /* UserItemCellConfigurator.swift */,
 			);
 			name = Configurator;
 			sourceTree = "<group>";
@@ -813,8 +805,6 @@
 				5B58372D212861F30076121E /* ListViewController.swift */,
 				5B8754FC2070139F00018DFA /* ListViewController.xib */,
 				5B8754F92070137300018DFA /* TabBarViewController.swift */,
-				5BED6CFF207E8147002FB9FF /* UserListViewController.swift */,
-				5BED6D00207E8147002FB9FF /* UserListViewController.xib */,
 				5B689BAB20837ECE005B9874 /* TabBarViewController.xib */,
 			);
 			name = ViewController;
@@ -1004,14 +994,13 @@
 				5BF2DA972287E85D0055240D /* Settings */,
 				5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */,
 				5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */,
-				5BED6D03207E81CC002FB9FF /* UserItemTableViewCell.swift */,
-				5BED6D04207E81CC002FB9FF /* UserItemTableViewCell.xib */,
 				5BBC6702218EB0150090629C /* LoadMoreTableViewCell.swift */,
 				5BBC6703218EB0150090629C /* LoadMoreTableViewCell.xib */,
 				5B39B7BD22AD504A004D5134 /* ListView.swift */,
 				5B51621A22B2C900009C0064 /* LoginView.swift */,
 				5B6A45B722BE872700858756 /* CustomTextField.swift */,
 				5B165D8722BF436D00B851B2 /* TipJarView.swift */,
+				5B28C8CF22C89B2600A46C52 /* UserListView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1024,6 +1013,8 @@
 				5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */,
 				5B38476821FE073800F082AD /* UIView+Contraints.swift */,
 				5B99C679229FB47200437552 /* UITableView+Keyboard.swift */,
+				5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */,
+				5B11A46622C8A5C70095E068 /* NetworkImage.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -1453,11 +1444,9 @@
 				BF707E742131C45600506E64 /* Localizable.strings in Resources */,
 				C5FA2ACE1EB4482C006DEB40 /* LaunchScreen.storyboard in Resources */,
 				5B3C79BE21C50A6600F699B8 /* ListViewController.xib in Resources */,
-				5BED6D02207E8147002FB9FF /* UserListViewController.xib in Resources */,
 				5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */,
 				5B4E4187208AF8C700FC610A /* Pods-Icro-acknowledgements.plist in Resources */,
 				C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */,
-				5BED6D06207E81CC002FB9FF /* UserItemTableViewCell.xib in Resources */,
 				5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1852,7 +1841,7 @@
 				5B58374F2128B5F80076121E /* TabBarViewController.swift in Sources */,
 				5B38476A21FE077A00F082AD /* UIView+Contraints.swift in Sources */,
 				5B66EE74227D74DF00317FE3 /* MockClient.swift in Sources */,
-				5B5837542128B5F80076121E /* UserListViewController.xib in Sources */,
+				5B28C8D122C89BE200A46C52 /* ViewModelState.swift in Sources */,
 				5B5837552128B5F80076121E /* TabBarViewController.xib in Sources */,
 				5BD95AFE2290A1B000C74C52 /* AppearanceComponent.swift in Sources */,
 				5B4DF0EF21AA84A4008CEB58 /* LoadMoreTableViewCell.swift in Sources */,
@@ -1868,22 +1857,19 @@
 				5BD95AF82290A10600C74C52 /* BackgroundFetchComponent.swift in Sources */,
 				5B5837622128B5F80076121E /* ProfileViewConfigurator.swift in Sources */,
 				5B3C79C821C51BDA00F699B8 /* ItemNavigator.swift in Sources */,
-				5B5837632128B5F80076121E /* UserItemCellConfigurator.swift in Sources */,
 				5BD9691021C8D55400313795 /* ComposeNavigator.swift in Sources */,
 				5B66EE76227D780300317FE3 /* UserListViewModelTests.swift in Sources */,
 				5BD95AF62290A10600C74C52 /* DiscoveryCategoryComponent.swift in Sources */,
+				5B28C8D222C89BEE00A46C52 /* MuteView.swift in Sources */,
 				5B5837662128B5F80076121E /* Icro-Bridging-Header.h in Sources */,
 				5B58376C2128B5F80076121E /* ProfileTableViewCell.swift in Sources */,
 				5B58376D2128B5F80076121E /* ProfileTableViewCell.xib in Sources */,
-				5B58376E2128B5F80076121E /* UserItemTableViewCell.swift in Sources */,
-				5B58376F2128B5F80076121E /* UserItemTableViewCell.xib in Sources */,
 				5B5837722128B5F80076121E /* UserListViewModel.swift in Sources */,
 				5BC5A5A721D4E1F200B9A8D1 /* AppearanceManager.swift in Sources */,
 				5B5837742128B5F80076121E /* LoginViewModel.swift in Sources */,
 				5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */,
 				5B5837762128B5F80076121E /* MuteViewModel.swift in Sources */,
 				5B5837772128B5F80076121E /* AppDelegate.swift in Sources */,
-				5B58374B2128B5BD0076121E /* UserListViewController.swift in Sources */,
 				5B5837402128B0680076121E /* HTMLContentTests.swift in Sources */,
 				5B1896C922B2DA200067F100 /* LoginView.swift in Sources */,
 			);
@@ -1946,15 +1932,14 @@
 				5B761F2922BE958C0038FF73 /* SettingsViewNavigator.swift in Sources */,
 				5B51621B22B2C900009C0064 /* LoginView.swift in Sources */,
 				5B44C71720979CF20003B35D /* MuteViewModel.swift in Sources */,
+				5B28C8D022C89B2600A46C52 /* UserListView.swift in Sources */,
 				5BCD7F0222BDE35D00CA5B6C /* MuteView.swift in Sources */,
 				5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */,
 				5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */,
-				5B583722212861220076121E /* UserItemCellConfigurator.swift in Sources */,
 				5B3C79C221C518B700F699B8 /* MainNavigator.swift in Sources */,
 				5B4895F222B1603E00CF08C2 /* SceneDelegate.swift in Sources */,
 				5BD9690F21C8D55400313795 /* ComposeNavigator.swift in Sources */,
 				5B38476921FE073800F082AD /* UIView+Contraints.swift in Sources */,
-				5BED6D01207E8147002FB9FF /* UserListViewController.swift in Sources */,
 				5BBC6704218EB0150090629C /* LoadMoreTableViewCell.swift in Sources */,
 				5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */,
 				5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */,
@@ -1962,6 +1947,7 @@
 				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
 				C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */,
 				5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */,
+				5B11A46722C8A5C70095E068 /* NetworkImage.swift in Sources */,
 				5B6A45B822BE872700858756 /* CustomTextField.swift in Sources */,
 				5B99C67A229FB47200437552 /* UITableView+Keyboard.swift in Sources */,
 				5BD95AFD2290A16100C74C52 /* AppearanceComponent.swift in Sources */,
@@ -1970,7 +1956,7 @@
 				5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */,
 				5B3C79BA21C50A6200F699B8 /* ListViewController.swift in Sources */,
 				5BF2DAA6228802000055240D /* UserDefaultsMigrationComponent.swift in Sources */,
-				5BED6D05207E81CC002FB9FF /* UserItemTableViewCell.swift in Sources */,
+				5B28C8CE22C89A1D00A46C52 /* ViewModelState.swift in Sources */,
 				5B38475F21FDFEFD00F082AD /* TipJarViewModel.swift in Sources */,
 				5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */,
 			);

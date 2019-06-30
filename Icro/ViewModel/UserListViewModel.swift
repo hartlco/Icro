@@ -5,40 +5,47 @@
 
 import Foundation
 import IcroKit
+import SwiftUI
+import Combine
 
-final class UserListViewModel {
-    var didStartLoading: () -> Void = { }
-    var didFinishLoading: () -> Void = { }
-    var didFinishWithError: (Error) -> Void = { _ in }
+final class UserListViewModel: BindableObject {
+    var didChange = PassthroughSubject<Void, Never>()
 
-    private var users = [Author]()
+    var users: [Author] {
+        if case .loaded(let authors) = state {
+            return authors
+        }
+
+        return []
+    }
+
     private let resource: Resource<[Author]>
     private let client: Client
+
+    private var state: ViewModelState<[Author]> = .initial {
+        didSet {
+            didChange.send()
+        }
+    }
 
     init(resource: Resource<[Author]>,
          client: Client = URLSession.shared) {
         self.resource = resource
         self.client = client
+
+        load()
     }
 
     func load() {
-        didStartLoading()
+        state = .loading
         client.load(resource: resource) { [weak self] users in
+            guard let self = self else { return }
             switch users {
             case .error(let error):
-                self?.didFinishWithError(error)
+                self.state = .error(error)
             case .success(let value):
-                self?.users = value
-                self?.didFinishLoading()
+                self.state = .loaded(content: value)
             }
         }
-    }
-
-    var numberOfUsers: Int {
-        return users.count
-    }
-
-    func user(for row: Int) -> Author {
-        return users[row]
     }
 }
