@@ -10,7 +10,6 @@ target 'Icro' do
     pod 'SwiftLint'
     pod 'DropdownTitleView'
     pod 'SwiftGen'
-    pod 'Kingfisher'
     pod 'AppDelegateComponent'
     pod 'Dequeueable'
 	
@@ -39,7 +38,6 @@ end
 
 target 'IcroUIKit' do
     kitPods
-    pod 'Kingfisher'
     pod 'Dequeueable'
 end
 
@@ -49,7 +47,6 @@ target 'IcroKit-Mac' do
 end
 
 target 'Icro-Mac' do
-  pod 'Kingfisher'
 end
 
 post_install do |installer|

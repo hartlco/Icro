@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher/",
+        "state": {
+          "branch": "xcode11",
+          "revision": "80c0f2c4209047b5d6c4ebfdfbb18e806904046f",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
