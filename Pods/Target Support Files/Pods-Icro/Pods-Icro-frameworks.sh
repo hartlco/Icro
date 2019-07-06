@@ -169,6 +169,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/DropdownTitleView/DropdownTitleView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TypedSymbols/TypedSymbols.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Kanna-iOS/Kanna.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/wpxmlrpc-iOS/wpxmlrpc.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -180,6 +181,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/DropdownTitleView/DropdownTitleView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TypedSymbols/TypedSymbols.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Kanna-iOS/Kanna.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/wpxmlrpc-iOS/wpxmlrpc.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

@@ -11,21 +11,12 @@
         }
       },
       {
-        "package": "Kanna",
-        "repositoryURL": "https://github.com/tid-kijyun/Kanna.git",
-        "state": {
-          "branch": null,
-          "revision": "9b8f73f8c8e145dc496565bbf878a709793e7ba3",
-          "version": "5.0.0"
-        }
-      },
-      {
         "package": "KeychainAccess",
-        "repositoryURL": "https://github.com/kishikawakatsumi/KeychainAccess.git",
+        "repositoryURL": "https://github.com/hartlco/KeychainAccess",
         "state": {
-          "branch": null,
-          "revision": "0046db4ab8fd7be31a59e57912dbb96639ad8ce9",
-          "version": "3.2.0"
+          "branch": "master",
+          "revision": "8dbcaab61ad9017ef99a33a368ba63960cd5d034",
+          "version": null
         }
       },
       {

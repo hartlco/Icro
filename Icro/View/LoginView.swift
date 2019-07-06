@@ -16,8 +16,7 @@ struct LoginView: View {
         NavigationView {
             List {
                 Section {
-                    TextField($viewModel.loginString,
-                              placeholder: Text("Mail address or access token"))
+                    TextField("Mail address or access token", text: $viewModel.loginString)
                     Text(viewModel.infoMessage ?? "Login with mail address or access token")
                     .lineLimit(nil)
                     .font(.footnote)

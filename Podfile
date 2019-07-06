@@ -20,11 +20,13 @@ end
 target 'IcroScreenshotsTests' do
 end
 
-target 'Icro-Share' do
+def kitPods
+  pod 'Kanna'
+  pod 'wpxmlrpc'
 end
 
-def kitPods
-    pod 'wpxmlrpc'
+target 'Icro-Share' do
+  pod 'Kanna'
 end
 
 target 'IcroKit' do

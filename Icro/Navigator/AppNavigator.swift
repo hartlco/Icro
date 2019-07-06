@@ -145,7 +145,7 @@ extension ToolbarDelegate: NSToolbarDelegate {
                                            target: self,
                                            action: #selector(didToggle(group:)))
 
-            group.controlRepresentation = NSToolbarItemGroupControlRepresentation.expanded
+            group.controlRepresentation = NSToolbarItemGroup.ControlRepresentation.expanded
             group.setSelected(true, at: UserSettings.shared.loggedIn ? 0 : 3)
             selectIndexBlock = { index in
                 group.setSelected(true, at: index)

@@ -53,12 +53,9 @@ struct WordpressSection: View {
     private var inputField: AnyView? {
         if store.isWordpressBlog {
             return AnyView(Group {
-                TextField($store.wordpressURL,
-                          placeholder: Text("Wordpress URL"))
-                TextField($store.wordpressUsername,
-                          placeholder: Text("Username"))
-                TextField($store.wordpressPassword,
-                          placeholder: Text("Password"))
+                TextField("Wordpress URL", text: $store.wordpressURL)
+                TextField("Username", text: $store.wordpressUsername)
+                TextField("Password", text: $store.wordpressPassword)
                     .textContentType(.password)
             })
         } else {
@@ -84,10 +81,8 @@ struct MicropubSection: View {
     private var inputField: AnyView? {
         if store.isMicropubBlog {
             return AnyView(Group {
-                TextField($store.micropubURL,
-                          placeholder: Text("Wordpress URL"))
-                TextField($store.micropubToken,
-                          placeholder: Text("Token"))
+                TextField("Wordpress URL", text: $store.micropubURL)
+                TextField("Token", text: $store.micropubToken)
                     .textContentType(.password)
             })
         } else {
