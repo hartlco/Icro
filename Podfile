@@ -24,9 +24,7 @@ target 'Icro-Share' do
 end
 
 def kitPods
-    pod 'KeychainAccess'
     pod 'wpxmlrpc'
-    pod 'Alamofire', '~> 4.7'
 end
 
 target 'IcroKit' do

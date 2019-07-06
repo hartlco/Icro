@@ -1,10 +1,9 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire-macOS" "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess-macOS" "${PODS_CONFIGURATION_BUILD_DIR}/wpxmlrpc-macOS"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/wpxmlrpc-macOS"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire-macOS/Alamofire.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess-macOS/KeychainAccess.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/wpxmlrpc-macOS/wpxmlrpc.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/wpxmlrpc-macOS/wpxmlrpc.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire-macOS/Alamofire.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess-macOS/KeychainAccess.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/wpxmlrpc-macOS/wpxmlrpc.framework/Headers" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire-macOS" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess-macOS" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/wpxmlrpc-macOS"
-OTHER_LDFLAGS = $(inherited) -l"iconv" -framework "Alamofire" -framework "KeychainAccess" -framework "wpxmlrpc"
-OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/wpxmlrpc-macOS/wpxmlrpc.framework/Headers" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/wpxmlrpc-macOS"
+OTHER_LDFLAGS = $(inherited) -l"iconv" -framework "wpxmlrpc"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
