@@ -22,7 +22,6 @@ PODS:
   - DTFoundation/UIKit (1.7.13):
     - DTFoundation/Core
   - ImageViewer (5.0.0)
-  - Kanna (5.0.0)
   - KeychainAccess (3.2.0)
   - SwiftGen (6.1.0)
   - SwiftLint (0.32.0)
@@ -37,7 +36,6 @@ DEPENDENCIES:
   - DropdownTitleView
   - DTCoreText
   - ImageViewer (from `https://github.com/hartlco/ImageViewer.git`, branch `master`)
-  - Kanna
   - KeychainAccess
   - SwiftGen
   - SwiftLint
@@ -53,7 +51,6 @@ SPEC REPOS:
     - DropdownTitleView
     - DTCoreText
     - DTFoundation
-    - Kanna
     - KeychainAccess
     - SwiftGen
     - SwiftLint
@@ -80,13 +77,12 @@ SPEC CHECKSUMS:
   DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
   DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
-  Kanna: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
   KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
   TypedSymbols: 946dde0513d20f09f6b38ac308f0a22c8162d703
   wpxmlrpc: 6ba55c773cfa27083ae4a2173e69b19f46da98e2
 
-PODFILE CHECKSUM: 1486788e7778e211e419faf1a673bd6080646ece
+PODFILE CHECKSUM: f0bae9b95f0d840f66cd528ab9e22c894618245c
 
 COCOAPODS: 1.7.1

@@ -161,13 +161,11 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Kanna-macOS/Kanna.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-macOS/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeychainAccess-macOS/KeychainAccess.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/wpxmlrpc-macOS/wpxmlrpc.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Kanna-macOS/Kanna.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-macOS/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeychainAccess-macOS/KeychainAccess.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/wpxmlrpc-macOS/wpxmlrpc.framework"

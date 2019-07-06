@@ -21,11 +21,9 @@ target 'IcroScreenshotsTests' do
 end
 
 target 'Icro-Share' do
-    pod 'Kanna'
 end
 
 def kitPods
-    pod 'Kanna'
     pod 'KeychainAccess'
     pod 'wpxmlrpc'
     pod 'Alamofire', '~> 4.7'
