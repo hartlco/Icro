@@ -180,10 +180,10 @@
 		5BD2FE602259D2EC00591490 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2FE5E2259D15100591490 /* Media.swift */; };
 		5BD2FE682259E0DC00591490 /* VideoThumbnailImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */; };
 		5BD499CF21CA1D8C007EF47C /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79C121C518B700F699B8 /* MainNavigator.swift */; };
-		5BD95AF4228FE85600C74C52 /* BackgroundFetchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD95AF3228FE85600C74C52 /* BackgroundFetchComponent.swift */; };
+		5BD67FC922D05FD3007568E9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A45B722BE872700858756 /* CustomTextField.swift */; };
+		5BD67FCA22D060D9007568E9 /* SettingsViewNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B761F2822BE958C0038FF73 /* SettingsViewNavigator.swift */; };
 		5BD95AF62290A10600C74C52 /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
 		5BD95AF72290A10600C74C52 /* UserDefaultsMigrationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */; };
-		5BD95AF82290A10600C74C52 /* BackgroundFetchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD95AF3228FE85600C74C52 /* BackgroundFetchComponent.swift */; };
 		5BD95AFD2290A16100C74C52 /* AppearanceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD95AFC2290A16100C74C52 /* AppearanceComponent.swift */; };
 		5BD95AFE2290A1B000C74C52 /* AppearanceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD95AFC2290A16100C74C52 /* AppearanceComponent.swift */; };
 		5BD9690C21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD9690B21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift */; };
@@ -433,7 +433,6 @@
 		5BCD7F0122BDE35D00CA5B6C /* MuteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuteView.swift; path = View/Settings/MuteView.swift; sourceTree = "<group>"; };
 		5BD2FE5E2259D15100591490 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailImageProvider.swift; sourceTree = "<group>"; };
-		5BD95AF3228FE85600C74C52 /* BackgroundFetchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundFetchComponent.swift; sourceTree = "<group>"; };
 		5BD95AFC2290A16100C74C52 /* AppearanceComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceComponent.swift; sourceTree = "<group>"; };
 		5BD9690921C8CBFB00313795 /* GalleryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDataSource.swift; sourceTree = "<group>"; };
 		5BD9690B21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryDataSource+ImageViewer.swift"; sourceTree = "<group>"; };
@@ -899,7 +898,6 @@
 			children = (
 				5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */,
 				5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */,
-				5BD95AF3228FE85600C74C52 /* BackgroundFetchComponent.swift */,
 				5BD95AFC2290A16100C74C52 /* AppearanceComponent.swift */,
 			);
 			path = AppDelegateComponents;
@@ -1842,6 +1840,7 @@
 				5B38476A21FE077A00F082AD /* UIView+Contraints.swift in Sources */,
 				5B66EE74227D74DF00317FE3 /* MockClient.swift in Sources */,
 				5B28C8D122C89BE200A46C52 /* ViewModelState.swift in Sources */,
+				5BD67FCA22D060D9007568E9 /* SettingsViewNavigator.swift in Sources */,
 				5B5837552128B5F80076121E /* TabBarViewController.xib in Sources */,
 				5BD95AFE2290A1B000C74C52 /* AppearanceComponent.swift in Sources */,
 				5B4DF0EF21AA84A4008CEB58 /* LoadMoreTableViewCell.swift in Sources */,
@@ -1854,11 +1853,11 @@
 				5BD95AF72290A10600C74C52 /* UserDefaultsMigrationComponent.swift in Sources */,
 				5B5837612128B5F80076121E /* EditActionsConfigurator.swift in Sources */,
 				5BE633AF22ACC09F005296AB /* SettingsContentView.swift in Sources */,
-				5BD95AF82290A10600C74C52 /* BackgroundFetchComponent.swift in Sources */,
 				5B5837622128B5F80076121E /* ProfileViewConfigurator.swift in Sources */,
 				5B3C79C821C51BDA00F699B8 /* ItemNavigator.swift in Sources */,
 				5BD9691021C8D55400313795 /* ComposeNavigator.swift in Sources */,
 				5B66EE76227D780300317FE3 /* UserListViewModelTests.swift in Sources */,
+				5BD67FC922D05FD3007568E9 /* CustomTextField.swift in Sources */,
 				5BD95AF62290A10600C74C52 /* DiscoveryCategoryComponent.swift in Sources */,
 				5B28C8D222C89BEE00A46C52 /* MuteView.swift in Sources */,
 				5B5837662128B5F80076121E /* Icro-Bridging-Header.h in Sources */,
@@ -1922,7 +1921,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B3C79C721C51BD900F699B8 /* ItemNavigator.swift in Sources */,
-				5BD95AF4228FE85600C74C52 /* BackgroundFetchComponent.swift in Sources */,
 				5BD9690C21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift in Sources */,
 				5B583728212861770076121E /* SettingsNavigator.swift in Sources */,
 				5B69E65122AA16310081CDFB /* SettingsContentView.swift in Sources */,

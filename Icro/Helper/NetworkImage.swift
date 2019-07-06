@@ -46,4 +46,3 @@ struct NetworkImage_Previews: PreviewProvider {
     }
 }
 #endif
-

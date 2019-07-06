@@ -46,7 +46,7 @@ struct AcknowledgementView: View {
     var body: some View {
         Form {
             ForEach(viewModel.acknows) { ackno in
-                NavigationButton(destination: AcknowledgementDetailView(acknow: ackno)) {
+                NavigationLink(destination: AcknowledgementDetailView(acknow: ackno)) {
                     Text(ackno.title)
                 }
             }

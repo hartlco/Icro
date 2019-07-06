@@ -10,8 +10,7 @@ import AppDelegateComponent
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore {
     let storedComponents: [AppDelegateComponent] = [DiscoveryCategoryComponent(),
-                                                    UserDefaultsMigrationComponent(),
-                                                    BackgroundFetchComponent()]
+                                                    UserDefaultsMigrationComponent()]
     private let componentRunner = AppDelegateComponentRunner()
 
     func application(_ application: UIApplication,

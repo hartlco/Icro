@@ -112,14 +112,6 @@ class TabBarViewController: UITabBarController {
                                                       settingsNavigator: settingsNavigator,
                                                       store: SettingsViewModel(userSettings: userSettings))
         present(UIHostingController(rootView: settingsContentView), animated: true, completion: nil)
-
-//        let settingsNavigator = SettingsNavigator(navigationController: navigationController, appNavigator: appNavigator)
-//        let viewModel = SettingsViewModel(userSettings: userSettings)
-//        let settingsViewCOntroller = SettingsViewController(navigator: settingsNavigator,
-//                                                            mainNavigator: MainNavigator(navigationController: navigationController),
-//                                                            viewModel: viewModel)
-//        navigationController.viewControllers = [settingsViewCOntroller]
-//        present(navigationController, animated: true, completion: nil)
     }
 
     @objc private func showPhotosTimeline() {
@@ -151,19 +143,21 @@ extension TabBarViewController: UITabBarControllerDelegate {
 
 extension TabBarViewController {
     override var keyCommands: [UIKeyCommand]? {
-        let composeCommand = UIMutableKeyCommand(input: "n", modifierFlags: .command, action: #selector(showComposeViewController))
+        let composeCommand = UIKeyCommand(input: "n", modifierFlags: .command, action: #selector(showComposeViewController))
         composeCommand.title = "Compose"
         composeCommand.discoverabilityTitle = "Compose"
 
-        let settingsCommand = UIMutableKeyCommand(input: ",", modifierFlags: .command, action: #selector(showSettingsViewController))
+        let settingsCommand = UIKeyCommand(input: ",", modifierFlags: .command, action: #selector(showSettingsViewController))
         settingsCommand.title = "Settings"
         settingsCommand.discoverabilityTitle = "Settings"
 
         return types.enumerated().map { index, type in
-            return UIMutableKeyCommand(input: "\(index + 1)",
+            let command = UIKeyCommand(input: "\(index + 1)",
                 modifierFlags: .command,
-                action: #selector(selectType(sender:)),
-                discoverabilityTitle: type.tabTitle ?? type.title)
+                action: #selector(selectType(sender:)))
+            command.title = type.tabTitle ?? type.title
+            command.discoverabilityTitle = type.tabTitle ?? type.title
+            return command
         } + [composeCommand, settingsCommand]
     }
 

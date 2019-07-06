@@ -40,20 +40,6 @@ internal enum Asset {
   internal static let grayButtonColor = ColorAsset(name: "gray-buttonColor")
   internal static let graySecondaryTextColor = ColorAsset(name: "gray-secondaryTextColor")
   internal static let grayTextColor = ColorAsset(name: "gray-textColor")
-  internal static let conversation = ImageAsset(name: "conversation")
-  internal static let discover = ImageAsset(name: "discover")
-  internal static let favorite = ImageAsset(name: "favorite")
-  internal static let favorites = ImageAsset(name: "favorites")
-  internal static let mentions = ImageAsset(name: "mentions")
-  internal static let more = ImageAsset(name: "more")
-  internal static let new = ImageAsset(name: "new")
-  internal static let playButton = ImageAsset(name: "play-button")
-  internal static let profile = ImageAsset(name: "profile")
-  internal static let reply = ImageAsset(name: "reply")
-  internal static let settings = ImageAsset(name: "settings")
-  internal static let share = ImageAsset(name: "share")
-  internal static let timeline = ImageAsset(name: "timeline")
-  internal static let unfavorite = ImageAsset(name: "unfavorite")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

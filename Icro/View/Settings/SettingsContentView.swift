@@ -102,13 +102,13 @@ struct OtherSection: View {
         return Section(header: Text("Other")
             .font(.headline)
             .fontWeight(.bold)) {
-                NavigationButton(destination: Text("Test")) {
+                NavigationLink(destination: Text("Test")) {
                     Text("Icro Supports")
                 }
-                NavigationButton(destination: AcknowledgementView()) {
+                NavigationLink(destination: AcknowledgementView()) {
                     Text("Acknowledgements")
                 }
-                NavigationButton(destination: settingsNavigator.muteView) {
+                NavigationLink(destination: settingsNavigator.muteView) {
                     Text("Mute")
                 }
         }

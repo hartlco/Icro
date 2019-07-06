@@ -278,10 +278,6 @@ extension ListViewController: UITableViewDelegate {
         return editActionsConfigurator.leadingEditActions(at: indexPath, in: tableView)
     }
 
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return editActionsConfigurator.canEdit(at: indexPath)
-    }
-
     func tableView(_ tableView: UITableView,
                    contextMenuConfigurationForRowAt indexPath: IndexPath,
                    point: CGPoint) -> UIContextMenuConfiguration? {
@@ -299,28 +295,28 @@ extension ListViewController {
     override var keyCommands: [UIKeyCommand]? {
         let refreshCommand = UIKeyCommand(input: "r",
                                           modifierFlags: .command,
-                                          action: #selector(refreshFromCommand),
-                                          discoverabilityTitle: "Refresh")
+                                          action: #selector(refreshFromCommand))
+        refreshCommand.discoverabilityTitle = "Refresh"
 
         let scrollUpCommand = UIKeyCommand(input: UIKeyCommand.inputUpArrow,
                                            modifierFlags: .command,
-                                           action: #selector(scrollUpFromCommand),
-                                           discoverabilityTitle: "Scroll up")
+                                           action: #selector(scrollUpFromCommand))
+        refreshCommand.discoverabilityTitle = "Scroll up"
 
         let scrollDownCommand = UIKeyCommand(input: UIKeyCommand.inputDownArrow,
                                              modifierFlags: .command,
-                                             action: #selector(scrollDownFromCommand),
-                                             discoverabilityTitle: "Scroll down")
+                                             action: #selector(scrollDownFromCommand))
+        scrollDownCommand.discoverabilityTitle = "Scroll down"
 
         let scrollToTopCommand = UIKeyCommand(input: UIKeyCommand.inputUpArrow,
                                               modifierFlags: [.shift, .command],
-                                              action: #selector(scrollToTopFromCommand),
-                                              discoverabilityTitle: "Scroll to top")
+                                              action: #selector(scrollToTopFromCommand))
+        scrollToTopCommand.discoverabilityTitle = "Scroll to top"
 
         let scrollToBottomCommand = UIKeyCommand(input: UIKeyCommand.inputDownArrow,
                                                  modifierFlags: [.shift, .command],
-                                                 action: #selector(scrollToBottomFromCommand),
-                                                 discoverabilityTitle: "Scroll to bottom")
+                                                 action: #selector(scrollToBottomFromCommand))
+        scrollToBottomCommand.discoverabilityTitle = "Scroll to bottom"
 
         return [refreshCommand, scrollUpCommand, scrollDownCommand, scrollToTopCommand, scrollToBottomCommand]
     }

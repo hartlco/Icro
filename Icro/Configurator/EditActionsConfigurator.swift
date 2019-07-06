@@ -20,15 +20,6 @@ final class EditActionsConfigurator {
         self.viewModel = viewModel
     }
 
-    func canEdit(at indexPath: IndexPath) -> Bool {
-        switch viewModel.viewType(forRow: indexPath.row) {
-        case .author, .loadMore:
-            return false
-        case .item:
-            return true
-        }
-    }
-
     func tralingEditActions(at indexPath: IndexPath, in tableView: UITableView) -> UISwipeActionsConfiguration? {
         guard case .item(let item) = viewModel.viewType(forRow: indexPath.row) else { return nil }
         let cell = tableView.cellForRow(at: indexPath)
@@ -86,7 +77,7 @@ final class EditActionsConfigurator {
         }
         favoriteAction.backgroundColor = Color.yellow
 
-        let image = item.isFavorite ? UIImage(symbol: .star_fill) : UIImage(symbol: .star)
+        let image = item.isFavorite ? UIImage(symbol: .heart_fill) : UIImage(symbol: .star)
 
         favoriteAction.image = image
 
@@ -108,17 +99,17 @@ final class EditActionsConfigurator {
 
         let share = UIAction(__title: NSLocalizedString("EDITACTIONSCONFIGURATOR_LEADINGEDITACTIONS", comment: ""),
                              image: UIImage(symbol: .arrowshape_turn_up_left),
-                             options: []) { [weak self] _ in
+                             identifier: nil) { [weak self] _ in
                                 self?.itemNavigator.openReply(item: item)
         }
 
         let favoriteTitle = item.isFavorite ?
             NSLocalizedString("EDITACTIONSCONFIGURATOR_FAVORITEACTION_UNFAVORITE", comment: "") :
             NSLocalizedString("EDITACTIONSCONFIGURATOR_FAVORITEACTION_FAVORITE", comment: "")
-        let favoriteImage = item.isFavorite ? UIImage(symbol: .star_fill) : UIImage(symbol: .star)
+        let favoriteImage = item.isFavorite ? UIImage(symbol: .heart_fill) : UIImage(symbol: .heart)
         let favorite = UIAction(__title: favoriteTitle,
                              image: favoriteImage,
-                             options: []) { [weak self] _ in
+                             identifier: nil) { [weak self] _ in
                                 self?.viewModel.toggleFave(for: item)
         }
 
