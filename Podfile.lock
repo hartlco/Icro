@@ -24,7 +24,6 @@ PODS:
   - Kanna (5.0.0)
   - SwiftGen (6.1.0)
   - SwiftLint (0.32.0)
-  - TypedSymbols (0.1.0)
   - wpxmlrpc (0.8.4)
 
 DEPENDENCIES:
@@ -37,7 +36,6 @@ DEPENDENCIES:
   - Kanna
   - SwiftGen
   - SwiftLint
-  - TypedSymbols (from `/Users/martin/Code/TypedSymbols/`)
   - wpxmlrpc
 
 SPEC REPOS:
@@ -57,8 +55,6 @@ EXTERNAL SOURCES:
   ImageViewer:
     :branch: master
     :git: https://github.com/hartlco/ImageViewer.git
-  TypedSymbols:
-    :path: "/Users/martin/Code/TypedSymbols/"
 
 CHECKOUT OPTIONS:
   ImageViewer:
@@ -76,9 +72,8 @@ SPEC CHECKSUMS:
   Kanna: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
-  TypedSymbols: 946dde0513d20f09f6b38ac308f0a22c8162d703
   wpxmlrpc: 6ba55c773cfa27083ae4a2173e69b19f46da98e2
 
-PODFILE CHECKSUM: d04a3a96830cb521a9666220c5649329cdbf5dd5
+PODFILE CHECKSUM: 9be7fc60f065e939f9095427d635befd91f1b0bf
 
 COCOAPODS: 1.7.1

@@ -27,6 +27,15 @@
           "revision": "80c0f2c4209047b5d6c4ebfdfbb18e806904046f",
           "version": null
         }
+      },
+      {
+        "package": "TypedSymbols",
+        "repositoryURL": "https://github.com/hartlco/TypedSymbols",
+        "state": {
+          "branch": "master",
+          "revision": "375d8437496812a8a2c0155b36117b8fd9d23adb",
+          "version": null
+        }
       }
     ]
   },

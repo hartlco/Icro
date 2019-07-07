@@ -143,6 +143,7 @@
 		5B83B00F22D06EB1004C4D8D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B00E22D06EB1004C4D8D /* Alamofire */; };
 		5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01A22D11B3D004C4D8D /* KeychainAccess */; };
 		5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01C22D11D64004C4D8D /* KeychainAccess */; };
+		5B83B02222D1B3DC004C4D8D /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B02122D1B3DC004C4D8D /* TypedSymbols */; };
 		5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B869B07214E4633000A051C /* MicropubEndpoint.swift */; };
 		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
 		5B99C67A229FB47200437552 /* UITableView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99C679229FB47200437552 /* UITableView+Keyboard.swift */; };
@@ -559,6 +560,7 @@
 			files = (
 				5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */,
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
+				5B83B02222D1B3DC004C4D8D /* TypedSymbols in Frameworks */,
 				5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
 				61B772A049E74A71B8194FCD /* Pods_Icro.framework in Frameworks */,
@@ -1259,6 +1261,7 @@
 			packageProductDependencies = (
 				5B28C8C722C87BFA00A46C52 /* Kingfisher */,
 				5B83B01A22D11B3D004C4D8D /* KeychainAccess */,
+				5B83B02122D1B3DC004C4D8D /* TypedSymbols */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -1364,6 +1367,7 @@
 				5B28C8C622C87BFA00A46C52 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */,
 			);
 			productRefGroup = C5FA2AC11EB4482C006DEB40 /* Products */;
 			projectDirPath = "";
@@ -2754,6 +2758,14 @@
 				kind = branch;
 			};
 		};
+		5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hartlco/TypedSymbols";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2791,6 +2803,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		5B83B02122D1B3DC004C4D8D /* TypedSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */;
+			productName = TypedSymbols;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
