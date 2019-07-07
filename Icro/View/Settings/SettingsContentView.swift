@@ -55,8 +55,7 @@ struct WordpressSection: View {
             return AnyView(Group {
                 TextField("Wordpress URL", text: $store.wordpressURL)
                 TextField("Username", text: $store.wordpressUsername)
-                TextField("Password", text: $store.wordpressPassword)
-                    .textContentType(.password)
+                SecureField("Password", text: $store.wordpressPassword)
             })
         } else {
             return nil
@@ -82,8 +81,7 @@ struct MicropubSection: View {
         if store.isMicropubBlog {
             return AnyView(Group {
                 TextField("Wordpress URL", text: $store.micropubURL)
-                TextField("Token", text: $store.micropubToken)
-                    .textContentType(.password)
+                SecureField("Token", text: $store.micropubToken)
             })
         } else {
             return nil

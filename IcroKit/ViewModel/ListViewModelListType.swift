@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import TypedSymbols
 
 public extension ListViewModel.ListType {
     var resource: Resource<ItemResponse> {
@@ -55,15 +56,15 @@ public extension ListViewModel.ListType {
     var image: XImage? {
         switch self {
         case .timeline:
-            return UIImage(systemName: "text.justify")
+            return UIImage(symbol: .house_fill)
         case .mentions:
-            return UIImage(systemName: "text.bubble.fill")
+            return UIImage(symbol: .text_bubble_fill)
         case .favorites:
-            return UIImage(systemName: "heart.fill")
+            return UIImage(symbol: .heart_fill)
         case .discover:
-            return UIImage(systemName: "safari.fill")
+            return UIImage(symbol: .safari_fill)
         case .user, .username:
-            return UIImage(systemName: "person.fill")
+            return UIImage(symbol: .person_fill)
         case .conversation, .photos, .discoverCollection:
             return nil
         }

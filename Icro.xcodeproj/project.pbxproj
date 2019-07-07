@@ -206,6 +206,7 @@
 		5BDE18F3216A76FA001254F4 /* SettingsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BDE18F2216A76FA001254F4 /* SettingsStoryboard.storyboard */; };
 		5BDE18F5216A7A47001254F4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE18F4216A7A47001254F4 /* SettingsViewController.swift */; };
 		5BE633AF22ACC09F005296AB /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsContentView.swift */; };
+		5BE92EF122D1B5630048E8F1 /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF022D1B5630048E8F1 /* TypedSymbols */; };
 		5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
 		5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */; };
 		5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
@@ -551,6 +552,7 @@
 				5B83B00D22D06EA8004C4D8D /* Alamofire in Frameworks */,
 				13AED6552F0EFB450E5BEF97 /* Pods_IcroKit.framework in Frameworks */,
 				5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */,
+				5BE92EF122D1B5630048E8F1 /* TypedSymbols in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1232,6 +1234,7 @@
 			packageProductDependencies = (
 				5B83B00C22D06EA8004C4D8D /* Alamofire */,
 				5B83B01C22D11D64004C4D8D /* KeychainAccess */,
+				5BE92EF022D1B5630048E8F1 /* TypedSymbols */,
 			);
 			productName = IcroKit;
 			productReference = 5BC347AE2132944900DEB45D /* IcroKit.framework */;
@@ -2805,6 +2808,11 @@
 			productName = KeychainAccess;
 		};
 		5B83B02122D1B3DC004C4D8D /* TypedSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */;
+			productName = TypedSymbols;
+		};
+		5BE92EF022D1B5630048E8F1 /* TypedSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */;
 			productName = TypedSymbols;
