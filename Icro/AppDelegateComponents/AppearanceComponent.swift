@@ -5,6 +5,7 @@
 
 import Foundation
 import AppDelegateComponent
+import UIKit
 
 final class AppearanceComponent: AppDelegateComponent {
     private let appearanceManager: AppearanceManager

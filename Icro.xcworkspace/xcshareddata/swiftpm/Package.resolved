@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "AppDelegateComponent",
+        "repositoryURL": "https://github.com/hartlco/AppDelegateComponent",
+        "state": {
+          "branch": "master",
+          "revision": "5b251cc38a3430c24074bb47aab1cb9e4dd59664",
+          "version": null
+        }
+      },
+      {
         "package": "KeychainAccess",
         "repositoryURL": "https://github.com/hartlco/KeychainAccess",
         "state": {

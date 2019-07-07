@@ -9,7 +9,6 @@ target 'Icro' do
     pod 'SwiftLint'
     pod 'DropdownTitleView'
     pod 'SwiftGen'
-    pod 'AppDelegateComponent'
     pod 'Dequeueable'
 	
 	target 'IcroTests' do

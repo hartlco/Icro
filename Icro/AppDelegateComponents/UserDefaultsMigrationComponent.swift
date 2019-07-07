@@ -5,6 +5,7 @@
 
 import Foundation
 import AppDelegateComponent
+import UIKit
 
 final class UserDefaultsMigrationComponent: AppDelegateComponent {
     private let userDefaults: UserDefaults

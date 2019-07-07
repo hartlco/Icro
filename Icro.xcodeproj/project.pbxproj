@@ -207,6 +207,7 @@
 		5BDE18F5216A7A47001254F4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE18F4216A7A47001254F4 /* SettingsViewController.swift */; };
 		5BE633AF22ACC09F005296AB /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsContentView.swift */; };
 		5BE92EF122D1B5630048E8F1 /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF022D1B5630048E8F1 /* TypedSymbols */; };
+		5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */; };
 		5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
 		5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */; };
 		5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
@@ -563,6 +564,7 @@
 				5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */,
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
 				5B83B02222D1B3DC004C4D8D /* TypedSymbols in Frameworks */,
+				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
 				5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
 				61B772A049E74A71B8194FCD /* Pods_Icro.framework in Frameworks */,
@@ -1265,6 +1267,7 @@
 				5B28C8C722C87BFA00A46C52 /* Kingfisher */,
 				5B83B01A22D11B3D004C4D8D /* KeychainAccess */,
 				5B83B02122D1B3DC004C4D8D /* TypedSymbols */,
+				5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -1371,6 +1374,7 @@
 				5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */,
+				5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */,
 			);
 			productRefGroup = C5FA2AC11EB4482C006DEB40 /* Products */;
 			projectDirPath = "";
@@ -2769,6 +2773,14 @@
 				kind = branch;
 			};
 		};
+		5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hartlco/AppDelegateComponent";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2816,6 +2828,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */;
 			productName = TypedSymbols;
+		};
+		5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */;
+			productName = AppDelegateComponent;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
