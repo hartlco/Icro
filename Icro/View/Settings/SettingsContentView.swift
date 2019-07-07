@@ -98,7 +98,7 @@ struct OtherSection: View {
                 NavigationLink(destination: Text("Test")) {
                     Text("Icro Supports")
                 }
-                NavigationLink(destination: AcknowledgementView()) {
+                NavigationLink(destination: settingsNavigator.acknowledgmentsView) {
                     Text("Acknowledgements")
                 }
                 NavigationLink(destination: settingsNavigator.muteView) {

@@ -17,4 +17,8 @@ final class SettingsViewNavigator {
         let viewModel = MuteViewModel(userSettings: userSettings)
         return MuteView(viewModel: viewModel)
     }
+
+    var acknowledgmentsView: AcknowledgementView {
+        return AcknowledgementView()
+    }
 }
