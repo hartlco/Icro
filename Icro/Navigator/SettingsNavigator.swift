@@ -54,28 +54,6 @@ final class SettingsNavigator: NSObject {
         navigationController.pushViewController(viewController, animated: true)
     }
 
-    func openThemeSelector(sourceView: UIView, completion: @escaping (Theme) -> Void) {
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        for theme in Theme.allCases {
-            let action = UIAlertAction(title: NSLocalizedString(theme.rawValue, comment: ""),
-            style: .default) { _ in
-                completion(theme)
-            }
-
-            alertController.addAction(action)
-        }
-
-        alertController.addAction(UIAlertAction(title:
-            NSLocalizedString("ITEMNAVIGATOR_MOREALERT_CANCELACTION", comment: ""),
-                                                style: .cancel,
-                                                handler: nil))
-
-        alertController.popoverPresentationController?.sourceView = sourceView
-        alertController.popoverPresentationController?.sourceRect = sourceView.bounds
-
-        navigationController.present(alertController, animated: true, completion: nil)
-    }
-
     func logout() {
         navigationController.dismiss(animated: true, completion: nil)
         appNavigator.logout()

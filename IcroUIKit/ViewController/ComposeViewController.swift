@@ -19,7 +19,6 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
             textView.font = Font().body
             textView.backgroundColor = Color.backgroundColor
             textView.textColor = Color.textColor
-            textView.keyboardAppearance = Theme.currentTheme.keyboardAppearance
         }
     }
     fileprivate let viewModel: ComposeViewModel

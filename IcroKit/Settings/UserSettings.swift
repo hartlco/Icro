@@ -215,17 +215,6 @@ public final class UserSettings {
         }
     }
 
-    public var theme: Theme {
-        set {
-            userDefaults.set(newValue.rawValue, forKey: #function)
-        }
-        get {
-            guard let themeString = userDefaults.string(forKey: #function),
-                let theme = Theme(rawValue: themeString) else { return .light }
-            return theme
-        }
-    }
-
     public func logout() {
         token = ""
         username = ""

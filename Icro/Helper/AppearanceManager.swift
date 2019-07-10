@@ -7,11 +7,6 @@ import UIKit
 import IcroKit
 import IcroUIKit
 
-extension Notification.Name {
-    static let appearanceDidChange
-        = NSNotification.Name("AppearanceDidChange")
-}
-
 final class AppearanceManager {
     static let shared = AppearanceManager()
 
@@ -22,34 +17,19 @@ final class AppearanceManager {
     }
 
     func applyAppearance() {
-        UITabBar.appearance().barTintColor = Theme.colorTheme.backgroundColor
-        UINavigationBar.appearance().barTintColor = Theme.colorTheme.backgroundColor
+        UITabBar.appearance().barTintColor = Color.backgroundColor
+        UINavigationBar.appearance().barTintColor = Color.backgroundColor
         UINavigationBar.appearance().titleTextAttributes = [
             .foregroundColor: Color.textColor
         ]
 
         let listTableViewAppearance = UITableView.appearance(whenContainedInInstancesOf: [ListViewController.self])
-        listTableViewAppearance.backgroundColor = Theme.colorTheme.backgroundColor
+        listTableViewAppearance.backgroundColor = Color.backgroundColor
         listTableViewAppearance.sectionIndexBackgroundColor = .green
-        listTableViewAppearance.separatorColor = Theme.colorTheme.separatorColor
+        listTableViewAppearance.separatorColor = Color.separatorColor
 
-        UITextView.appearance().backgroundColor = Theme.colorTheme.backgroundColor
-        UITextView.appearance().textColor = Theme.colorTheme.textColor
-        UIScrollView.appearance(whenContainedInInstancesOf: [ComposeViewController.self]).backgroundColor = Theme.colorTheme.backgroundColor
-
-        switch Theme.currentTheme {
-        case .light:
-            UINavigationBar.appearance().barStyle = .default
-        case .gray, .black:
-            UINavigationBar.appearance().barStyle = .black
-        }
-
-        notificationCenter.post(name: .appearanceDidChange, object: nil)
-    }
-
-    func switchTheme(to newTheme: Theme) {
-        Theme.currentTheme = newTheme
-        UserSettings.shared.theme = newTheme
-        applyAppearance()
+        UITextView.appearance().backgroundColor = Color.backgroundColor
+        UITextView.appearance().textColor = Color.textColor
+        UIScrollView.appearance(whenContainedInInstancesOf: [ComposeViewController.self]).backgroundColor = Color.backgroundColor
     }
 }

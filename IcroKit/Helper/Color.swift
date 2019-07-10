@@ -13,10 +13,10 @@ public typealias XColor = NSColor
 public struct Color {
     public static let main = XColor(named: "main")!
     public static var accentLight: XColor {
-        return Theme.colorTheme.accentLightColor
+        return Asset.accentLight.color
     }
     public static var accentSuperLight: XColor {
-        return Theme.colorTheme.accentSuperLightColor
+        return Asset.accentSuperLight.color
     }
     public static let accent = XColor(named: "accent")!
     public static let yellow = XColor(named: "yellow")
@@ -36,131 +36,10 @@ public struct Color {
     }
 
     public static var buttonColor: XColor {
-        return Theme.colorTheme.buttonColor
+        return Asset.whiteTransparent.color
     }
 
     public static var successColor: XColor {
         return Asset.success.color
-    }
-}
-
-public enum Theme: String, CaseIterable {
-    case light
-    case gray
-    case black
-
-    public static var currentTheme: Theme = {
-        UserSettings.shared.theme
-    }()
-
-    public static var colorTheme: ColorTheme.Type {
-        switch currentTheme {
-        case .black:
-            return BlackTheme.self
-        case .gray:
-            return GrayTheme.self
-        case .light:
-            return LightTheme.self
-        }
-    }
-}
-
-public protocol ColorTheme {
-    static var textColor: XColor { get }
-    static var secondaryTextColor: XColor { get }
-    static var backgroundColor: XColor { get }
-    static var buttonColor: XColor { get }
-    static var accentLightColor: XColor { get }
-    static var accentSuperLightColor: XColor { get }
-    static var separatorColor: XColor { get }
-}
-
-struct BlackTheme: ColorTheme {
-    static var secondaryTextColor: XColor {
-        return Asset.blackSecondaryTextColor.color
-    }
-
-    static var separatorColor: XColor {
-        return Asset.blackSeparatorColor.color
-    }
-
-    static var buttonColor: XColor {
-        return Asset.blackTransparent.color
-    }
-
-    static var accentSuperLightColor: XColor {
-        return Asset.blackAccentSuperLight.color
-    }
-
-    static var accentLightColor: XColor {
-        return Asset.blackAccentLight.color
-    }
-
-    static var textColor: XColor {
-        return Asset.blackTextColor.color
-    }
-
-    static var backgroundColor: XColor {
-        return .black
-    }
-}
-
-struct LightTheme: ColorTheme {
-    static var secondaryTextColor: XColor {
-        return Asset.secondaryTextColor.color
-    }
-
-    static var separatorColor: XColor {
-        return XColor.gray
-    }
-
-    static var buttonColor: XColor {
-        return Asset.whiteTransparent.color
-    }
-
-    static var accentSuperLightColor: XColor {
-        return Asset.accentSuperLight.color
-    }
-
-    static var accentLightColor: XColor {
-        return Asset.accentLight.color
-    }
-
-    static var textColor: XColor {
-        return Asset.textColor.color
-    }
-
-    static var backgroundColor: XColor {
-        return .white
-    }
-}
-
-struct GrayTheme: ColorTheme {
-    static var secondaryTextColor: XColor {
-        return Asset.graySecondaryTextColor.color
-    }
-
-    static var separatorColor: XColor {
-        return XColor.darkGray
-    }
-
-    static var buttonColor: XColor {
-        return Asset.grayButtonColor.color
-    }
-
-    static var accentSuperLightColor: XColor {
-        return Asset.blackAccentSuperLight.color
-    }
-
-    static var accentLightColor: XColor {
-        return Asset.blackAccentLight.color
-    }
-
-    static var textColor: XColor {
-        return Asset.grayTextColor.color
-    }
-
-    static var backgroundColor: XColor {
-        return Asset.grayBackgroundColor.color
     }
 }

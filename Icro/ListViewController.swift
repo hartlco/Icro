@@ -69,10 +69,6 @@ final class ListViewController: UIViewController, LoadingViewController {
                                                name: UIContentSizeCategory.didChangeNotification,
                                                object: nil)
 
-        notificationCenter.addObserver(self, selector: #selector(refreshContent),
-                                               name: .appearanceDidChange,
-                                               object: nil)
-
         editActionsConfigurator.didModifyIndexPath = { [weak self] indexPath in
             self?.tableView.reloadData()
         }
