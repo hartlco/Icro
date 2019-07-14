@@ -23,15 +23,15 @@ final class ListViewController: UIViewController, LoadingViewController {
         }
     }
 
-    fileprivate let viewModel: ListViewModel
-    fileprivate let cellConfigurator: ItemCellConfigurator
-    fileprivate let itemNavigator: ItemNavigatorProtocol
-    fileprivate let profileViewConfigurator: ProfileViewConfigurator
-    fileprivate let editActionsConfigurator: EditActionsConfigurator
+    private let viewModel: ListViewModel
+    private let cellConfigurator: ItemCellConfigurator
+    private let itemNavigator: ItemNavigatorProtocol
+    private let profileViewConfigurator: ProfileViewConfigurator
+    private let editActionsConfigurator: EditActionsConfigurator
     private var titleView: DropdownTitleView?
 
     @IBOutlet private weak var unreadView: UIView!
-    @IBOutlet weak var unreadLabel: UILabel!
+    @IBOutlet private weak var unreadLabel: UILabel!
     @IBOutlet private weak var loginLabel: UILabel!
     @IBOutlet private weak var loginView: UIView!
     private var isLoading = false
@@ -153,7 +153,6 @@ final class ListViewController: UIViewController, LoadingViewController {
                 cell.layer.shouldRasterize = true
                 cell.layer.rasterizationScale = UIScreen.main.scale
                 self.cellConfigurator.configure(cell, forDisplaying: item)
-
                 return cell
             }
         })

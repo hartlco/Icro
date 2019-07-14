@@ -51,9 +51,6 @@
 		5B38476A21FE077A00F082AD /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476821FE073800F082AD /* UIView+Contraints.swift */; };
 		5B39B7BE22AD504A004D5134 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39B7BD22AD504A004D5134 /* ListView.swift */; };
 		5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */; };
-		5B3B4C3521D0CBE300F511A6 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C3421D0CBE300F511A6 /* assets-images.swift */; };
-		5B3B4C3621D0CBE300F511A6 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C3421D0CBE300F511A6 /* assets-images.swift */; };
-		5B3B4C3721D0CBE300F511A6 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C3421D0CBE300F511A6 /* assets-images.swift */; };
 		5B3B4C3821D0D17800F511A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		5B3C798121C4DFAF00F699B8 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C798021C4DFAF00F699B8 /* ShareViewController.swift */; };
 		5B3C798421C4DFAF00F699B8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3C798221C4DFAF00F699B8 /* MainInterface.storyboard */; };
@@ -153,7 +150,6 @@
 		5B99C67C229FB9F100437552 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE69227D6C8300317FE3 /* Client.swift */; };
 		5B99C67D229FB9F800437552 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE6B227D700A00317FE3 /* HttpMethod.swift */; };
 		5B99C67E229FBA0800437552 /* MediaEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE6D227D734800317FE3 /* MediaEndpoint.swift */; };
-		5B99C67F229FBA2A00437552 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C3421D0CBE300F511A6 /* assets-images.swift */; };
 		5B99C680229FBDAE00437552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		5BA333752189ADAF000FA900 /* DiscoveryCategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663842189673100ABA671 /* DiscoveryCategoryStore.swift */; };
 		5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */; };
@@ -350,7 +346,6 @@
 		5B38476821FE073800F082AD /* UIView+Contraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Contraints.swift"; path = "Helper/UIView+Contraints.swift"; sourceTree = "<group>"; };
 		5B39B7BD22AD504A004D5134 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = View/ListView.swift; sourceTree = "<group>"; };
 		5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppearanceManager.swift; path = Helper/AppearanceManager.swift; sourceTree = "<group>"; };
-		5B3B4C3421D0CBE300F511A6 /* assets-images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "assets-images.swift"; path = "Generated/assets-images.swift"; sourceTree = "<group>"; };
 		5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Icro-Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3C798021C4DFAF00F699B8 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		5B3C798321C4DFAF00F699B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -650,14 +645,6 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
-		5B3B4C3321D0CBD400F511A6 /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				5B3B4C3421D0CBE300F511A6 /* assets-images.swift */,
-			);
-			name = Generated;
-			sourceTree = "<group>";
-		};
 		5B3C797F21C4DFAF00F699B8 /* Icro-Share */ = {
 			isa = PBXGroup;
 			children = (
@@ -927,7 +914,6 @@
 		C5FA2AB71EB4482C006DEB40 = {
 			isa = PBXGroup;
 			children = (
-				5B3B4C3321D0CBD400F511A6 /* Generated */,
 				C5FA2AC21EB4482C006DEB40 /* Icro */,
 				5B3C797F21C4DFAF00F699B8 /* Icro-Share */,
 				5B3C799321C4E31100F699B8 /* IcroUIKit */,
@@ -1225,7 +1211,6 @@
 				5BC347AA2132944900DEB45D /* Frameworks */,
 				5BC347AB2132944900DEB45D /* Headers */,
 				5BC347AC2132944900DEB45D /* Resources */,
-				5B3B4C2D21D0C97200F511A6 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -1575,24 +1560,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5B3B4C2D21D0C97200F511A6 /* SwiftGen */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftGen;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen\n";
-		};
 		5B494E642123590E00C3969B /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1736,7 +1703,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B3B4C3721D0CBE300F511A6 /* assets-images.swift in Sources */,
 				5BDE18EE216A5771001254F4 /* ComposeViewController.swift in Sources */,
 				5B01CBCA2168D6A90007E01D /* AppDelegate.swift in Sources */,
 				5B01CBFD2168E2780007E01D /* ListItemCell.swift in Sources */,
@@ -1761,7 +1727,6 @@
 				5B01CBEE2168D71A0007E01D /* UserSettings.swift in Sources */,
 				5B6A565E21735A69003C4D92 /* Functions.swift in Sources */,
 				5B99C67E229FBA0800437552 /* MediaEndpoint.swift in Sources */,
-				5B99C67F229FBA2A00437552 /* assets-images.swift in Sources */,
 				5BDE18EA216A5745001254F4 /* ComposeViewModel.swift in Sources */,
 				5BD2FE602259D2EC00591490 /* Media.swift in Sources */,
 				5B01CBF22168D7240007E01D /* Author.swift in Sources */,
@@ -1880,7 +1845,6 @@
 				5B66EE6A227D6C8300317FE3 /* Client.swift in Sources */,
 				5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */,
 				5BC347C5213295C000DEB45D /* Date+Ago.swift in Sources */,
-				5B3B4C3621D0CBE300F511A6 /* assets-images.swift in Sources */,
 				5BC347C82132962200DEB45D /* CacheStorage.swift in Sources */,
 				5BDE18EB216A5745001254F4 /* ComposeViewModel.swift in Sources */,
 				5BC347BC2132947100DEB45D /* Item.swift in Sources */,
@@ -1927,7 +1891,6 @@
 				5BBC6704218EB0150090629C /* LoadMoreTableViewCell.swift in Sources */,
 				5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */,
 				5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */,
-				5B3B4C3521D0CBE300F511A6 /* assets-images.swift in Sources */,
 				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
 				C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */,
 				5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */,

@@ -9,11 +9,11 @@ import IcroUIKit
 import SwiftUI
 import TypedSymbols
 
-class TabBarViewController: UITabBarController {
+final class TabBarViewController: UITabBarController {
     private let userSettings: UserSettings
     private let appNavigator: AppNavigator
     private var types: [ListViewModel.ListType]
-    fileprivate var previousViewController: UIViewController?
+    private var previousViewController: UIViewController?
 
     var didSwitchToIndexByCommand: (Int) -> Void = { _ in }
 
