@@ -28,7 +28,7 @@ struct UserListView: SwiftUI.View {
                     .font(.headline)
                     Text(author.username ?? "")
                     .font(.subheadline)
-                    .color(.secondary)
+                    .foregroundColor(.secondary)
                 }
             }
         }
