@@ -87,6 +87,7 @@
 		5B44C8D822E0C786005A9614 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = 5B44C8D722E0C786005A9614 /* Kanna */; };
 		5B44C8DA22E0C796005A9614 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = 5B44C8D922E0C796005A9614 /* Kanna */; };
 		5B44C8DC22E0C79F005A9614 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = 5B44C8DB22E0C79F005A9614 /* Kanna */; };
+		5B44C8DD22E0CEF7005A9614 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11A46622C8A5C70095E068 /* NetworkImage.swift */; };
 		5B4639DD2168FE9B00200D8F /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4639DC2168FE9B00200D8F /* TabViewController.swift */; };
 		5B4639DF216901BE00200D8F /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4639DE216901BE00200D8F /* SplitViewController.swift */; };
 		5B4639E02169074200200D8F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
@@ -1814,6 +1815,7 @@
 				5BD9691021C8D55400313795 /* ComposeNavigator.swift in Sources */,
 				5B66EE76227D780300317FE3 /* UserListViewModelTests.swift in Sources */,
 				5BD95AF62290A10600C74C52 /* DiscoveryCategoryComponent.swift in Sources */,
+				5B44C8DD22E0CEF7005A9614 /* NetworkImage.swift in Sources */,
 				5B28C8D222C89BEE00A46C52 /* MuteView.swift in Sources */,
 				5B87442122D66FAE001649A8 /* AcknowledgementView.swift in Sources */,
 				5B5837662128B5F80076121E /* Icro-Bridging-Header.h in Sources */,

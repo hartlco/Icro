@@ -34,18 +34,12 @@ final class AcknowledgmentViewModel {
     }
 }
 
-extension Acknow: Identifiable {
-    public var id: String {
-        return title
-    }
-}
-
 struct AcknowledgementView: View {
     private let viewModel = AcknowledgmentViewModel()
 
     var body: some View {
         Form {
-            ForEach(viewModel.acknows) { ackno in
+            ForEach(viewModel.acknows, id: \Acknow.title) { ackno in
                 NavigationLink(destination: AcknowledgementDetailView(acknow: ackno)) {
                     Text(ackno.title)
                 }

@@ -7,47 +7,12 @@ import XCTest
 @testable import IcroKit
 
 class UserListViewModelTests: XCTestCase {
-    func test_load_callsDidStartLoading() {
-        let client = MockClient<[Author]>(returnedData: nil, returnedResourceResult: nil)
-        let viewModel = UserListViewModel(resource: makeResource(), client: client)
-        var didStartLoadingCalled = false
-        viewModel.didStartLoading = {
-            didStartLoadingCalled = true
-        }
-        viewModel.load()
-        XCTAssert(didStartLoadingCalled == true)
-    }
-
-    func test_load_callsDidFinishWithErrorOnError() {
-        let client = MockClient<[Author]>(returnedData: nil, returnedResourceResult: nil)
-        client.error = NetworkingError.cannotParse
-        let viewModel = UserListViewModel(resource: makeResource(), client: client)
-        var didFinishWithErrorCalled = false
-        viewModel.didFinishWithError = { _ in
-            didFinishWithErrorCalled = true
-        }
-        viewModel.load()
-        XCTAssert(didFinishWithErrorCalled == true)
-    }
-
-    func test_load_callsDidFinishLoading() {
-        let client = MockClient<[Author]>(returnedData: nil,
-                                          returnedResourceResult: Result.success(value: makeAuthors()))
-        let viewModel = UserListViewModel(resource: makeResource(), client: client)
-        var didFinishLoadingCalled = false
-        viewModel.didFinishLoading = {
-            didFinishLoadingCalled = true
-        }
-        viewModel.load()
-        XCTAssert(didFinishLoadingCalled == true)
-    }
-
     func test_numberOfUsers() {
         let client = MockClient<[Author]>(returnedData: nil,
                                           returnedResourceResult: Result.success(value: makeAuthors()))
         let viewModel = UserListViewModel(resource: makeResource(), client: client)
         viewModel.load()
-        XCTAssert(viewModel.numberOfUsers == 2)
+        XCTAssert(viewModel.users.count == 2)
     }
 
     func test_userForRow() {
@@ -55,7 +20,7 @@ class UserListViewModelTests: XCTestCase {
                                           returnedResourceResult: Result.success(value: makeAuthors()))
         let viewModel = UserListViewModel(resource: makeResource(), client: client)
         viewModel.load()
-        XCTAssert(viewModel.user(for: 1).name == "Author 2")
+        XCTAssert(viewModel.users[1].name == "Author 2")
     }
 
     // MARK: - Test
