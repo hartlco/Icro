@@ -20,7 +20,6 @@ PODS:
   - DTFoundation/UIKit (1.7.13):
     - DTFoundation/Core
   - ImageViewer (5.0.0)
-  - Kanna (5.0.0)
   - SwiftLint (0.32.0)
   - wpxmlrpc (0.8.4)
 
@@ -30,7 +29,6 @@ DEPENDENCIES:
   - DropdownTitleView
   - DTCoreText
   - ImageViewer (from `https://github.com/hartlco/ImageViewer.git`, branch `master`)
-  - Kanna
   - SwiftLint
   - wpxmlrpc
 
@@ -41,7 +39,6 @@ SPEC REPOS:
     - DropdownTitleView
     - DTCoreText
     - DTFoundation
-    - Kanna
     - SwiftLint
     - wpxmlrpc
 
@@ -62,10 +59,9 @@ SPEC CHECKSUMS:
   DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
   DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
-  Kanna: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
   SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
   wpxmlrpc: 6ba55c773cfa27083ae4a2173e69b19f46da98e2
 
-PODFILE CHECKSUM: 8f2c1a595363f1ea692f5acf2b26757c0aa5a982
+PODFILE CHECKSUM: d766c40bed6d0991ca9c0fa798c34c814698b52f
 
 COCOAPODS: 1.7.1

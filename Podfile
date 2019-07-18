@@ -1,6 +1,4 @@
 use_frameworks!
-inhibit_all_warnings!
-
 
 target 'Icro' do
     pod 'ImageViewer', :git => 'https://github.com/hartlco/ImageViewer.git', :branch => 'master'
@@ -18,12 +16,10 @@ target 'IcroScreenshotsTests' do
 end
 
 def kitPods
-  pod 'Kanna'
   pod 'wpxmlrpc'
 end
 
 target 'Icro-Share' do
-  pod 'Kanna'
 end
 
 target 'IcroKit' do

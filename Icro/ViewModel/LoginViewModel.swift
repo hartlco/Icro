@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 final class LoginViewModel: BindableObject {
-    let didChange = PassthroughSubject<LoginViewModel, Never>()
+    let willChange = PassthroughSubject<LoginViewModel, Never>()
 
     enum LoginType {
         case mail
@@ -20,22 +20,25 @@ final class LoginViewModel: BindableObject {
     var didDismiss: () -> Void = { }
 
     private var didRequest = false {
-        didSet {
-            didChange.send(self)
+        willSet {
+            willChange.send(self)
         }
     }
 
     var isLoading = false {
-        didSet {
-            didChange.send(self)
+        willSet {
+            willChange.send(self)
         }
     }
 
     var loginString = "" {
+        willSet {
+            willChange.send(self)
+        }
+
         didSet {
             infoMessage = nil
             didRequest = false
-            didChange.send(self)
         }
     }
 
@@ -53,8 +56,8 @@ final class LoginViewModel: BindableObject {
     }
 
     var infoMessage: String? {
-        didSet {
-            didChange.send(self)
+        willSet {
+            willChange.send(self)
         }
     }
 
@@ -120,13 +123,13 @@ final class LoginViewModel: BindableObject {
         return loginString.contains("@") ? .mail : .token
     }
 
-    private var emailRequestResource: Resource<Empty>? {
+    private var emailRequestResource: Resource<IcroKit.Empty>? {
         let mail = loginString.replacingOccurrences(of: " ", with: "")
         let baseURLString = "https://micro.blog/account/signin?email=\(mail)&app_name=Icro&redirect_url=icro://"
         guard let url = URL(string: baseURLString) else {
             return nil
         }
-        return Resource<Empty>(url: url, httpMethod: .post(nil), parseJSON: { _ in
+        return Resource<IcroKit.Empty>(url: url, httpMethod: .post(nil), parseJSON: { _ in
             return Empty()
         })
     }

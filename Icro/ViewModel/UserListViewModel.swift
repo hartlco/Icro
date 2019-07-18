@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 final class UserListViewModel: BindableObject {
-    var didChange = PassthroughSubject<Void, Never>()
+    var willChange = PassthroughSubject<Void, Never>()
 
     var users: [Author] {
         if case .loaded(let authors) = state {
@@ -23,8 +23,8 @@ final class UserListViewModel: BindableObject {
     private let client: Client
 
     private var state: ViewModelState<[Author]> = .initial {
-        didSet {
-            didChange.send()
+        willSet {
+            willChange.send()
         }
     }
 

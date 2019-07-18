@@ -22,16 +22,15 @@ struct MuteView: View {
                     .onDelete(perform: delete)
             }
             Section(header: Text("Add words/usernames to your mute filter")) {
-                CustomTextField(text: $addedWord,
-                                placeholder: "New muted word",
-                                isFirstResponder: false,
-                                didReturn: {
-                                    self.viewModel.add(word: self.addedWord)
-                                    self.addedWord = ""
-                })
+                TextField("New muted word",
+                          text: $addedWord) {
+                            self.viewModel.add(word: self.addedWord)
+                            self.addedWord = ""
+
+                }
             }
-            }
-            .navigationBarTitle(Text("Mute"))
+        }
+        .navigationBarTitle(Text("Mute"))
     }
 
     func delete(at offsets: IndexSet) {
