@@ -7,12 +7,8 @@ import UIKit
 import IcroKit
 import Dequeueable
 
-class LoadMoreTableViewCell: UITableViewCell, NibReusable {
+final class LoadMoreTableViewCell: UITableViewCell, NibReusable {
     var didPressLoadMore: (() -> Void)?
-
-    @IBAction func loadMorePressed(_ sender: Any) {
-        didPressLoadMore?()
-    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,5 +22,9 @@ class LoadMoreTableViewCell: UITableViewCell, NibReusable {
 
     private func applyAppearance() {
         backgroundColor = Color.backgroundColor
+    }
+
+    @IBAction private func loadMorePressed(_ sender: Any) {
+        didPressLoadMore?()
     }
 }

@@ -31,6 +31,9 @@ struct UserListView: SwiftUI.View {
                     .foregroundColor(.secondary)
                 }
             }
+            .tapAction {
+                self.itemNavigator.open(author: author)
+            }
         }
         .navigationBarTitle(Text("Following"))
     }

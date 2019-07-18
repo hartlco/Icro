@@ -84,9 +84,6 @@
 		5B3C79D621C52D2C00F699B8 /* KeyboardLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */; };
 		5B3C79D721C52EB100F699B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
 		5B44C71720979CF20003B35D /* MuteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71620979CF20003B35D /* MuteViewModel.swift */; };
-		5B44C8D822E0C786005A9614 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = 5B44C8D722E0C786005A9614 /* Kanna */; };
-		5B44C8DA22E0C796005A9614 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = 5B44C8D922E0C796005A9614 /* Kanna */; };
-		5B44C8DC22E0C79F005A9614 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = 5B44C8DB22E0C79F005A9614 /* Kanna */; };
 		5B44C8DD22E0CEF7005A9614 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11A46622C8A5C70095E068 /* NetworkImage.swift */; };
 		5B4639DD2168FE9B00200D8F /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4639DC2168FE9B00200D8F /* TabViewController.swift */; };
 		5B4639DF216901BE00200D8F /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4639DE216901BE00200D8F /* SplitViewController.swift */; };
@@ -511,7 +508,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B44C8DC22E0C79F005A9614 /* Kanna in Frameworks */,
 				5B3C79D421C5238800F699B8 /* IcroUIKit.framework in Frameworks */,
 				B5AD51B5A0BE76BF5490C725 /* Pods_Icro_Share.framework in Frameworks */,
 			);
@@ -551,7 +547,6 @@
 				13AED6552F0EFB450E5BEF97 /* Pods_IcroKit.framework in Frameworks */,
 				5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */,
 				5BE92EF122D1B5630048E8F1 /* TypedSymbols in Frameworks */,
-				5B44C8DA22E0C796005A9614 /* Kanna in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,7 +554,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B44C8D822E0C786005A9614 /* Kanna in Frameworks */,
 				5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */,
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
 				5B83B02222D1B3DC004C4D8D /* TypedSymbols in Frameworks */,
@@ -1139,7 +1133,6 @@
 			);
 			name = "Icro-Share";
 			packageProductDependencies = (
-				5B44C8DB22E0C79F005A9614 /* Kanna */,
 			);
 			productName = "Icro-Share";
 			productReference = 5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */;
@@ -1225,7 +1218,6 @@
 				5B83B00C22D06EA8004C4D8D /* Alamofire */,
 				5B83B01C22D11D64004C4D8D /* KeychainAccess */,
 				5BE92EF022D1B5630048E8F1 /* TypedSymbols */,
-				5B44C8D922E0C796005A9614 /* Kanna */,
 			);
 			productName = IcroKit;
 			productReference = 5BC347AE2132944900DEB45D /* IcroKit.framework */;
@@ -1257,7 +1249,6 @@
 				5B83B01A22D11B3D004C4D8D /* KeychainAccess */,
 				5B83B02122D1B3DC004C4D8D /* TypedSymbols */,
 				5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */,
-				5B44C8D722E0C786005A9614 /* Kanna */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -1365,7 +1356,6 @@
 				5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */,
 				5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */,
-				5B44C8D622E0C786005A9614 /* XCRemoteSwiftPackageReference "Kanna" */,
 			);
 			productRefGroup = C5FA2AC11EB4482C006DEB40 /* Products */;
 			projectDirPath = "";
@@ -2718,14 +2708,6 @@
 				kind = branch;
 			};
 		};
-		5B44C8D622E0C786005A9614 /* XCRemoteSwiftPackageReference "Kanna" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tid-kijyun/Kanna";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -2775,21 +2757,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5B28C8C622C87BFA00A46C52 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		5B44C8D722E0C786005A9614 /* Kanna */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B44C8D622E0C786005A9614 /* XCRemoteSwiftPackageReference "Kanna" */;
-			productName = Kanna;
-		};
-		5B44C8D922E0C796005A9614 /* Kanna */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B44C8D622E0C786005A9614 /* XCRemoteSwiftPackageReference "Kanna" */;
-			productName = Kanna;
-		};
-		5B44C8DB22E0C79F005A9614 /* Kanna */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B44C8D622E0C786005A9614 /* XCRemoteSwiftPackageReference "Kanna" */;
-			productName = Kanna;
 		};
 		5B83B00C22D06EA8004C4D8D /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
