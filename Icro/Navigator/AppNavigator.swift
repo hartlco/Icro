@@ -57,7 +57,20 @@ final class AppNavigator {
 
     func setup() {
         tabBarViewController = TabBarViewController(userSettings: userSettings, appNavigator: self)
-        window.rootViewController = tabBarViewController
+
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            window.rootViewController = tabBarViewController
+        } else {
+            let splitViewController = UISplitViewController()
+            let horizontalTabView = HorizontalTabView()
+            let hostingController = UIHostingController(rootView: horizontalTabView)
+            splitViewController.viewControllers = [hostingController, tabBarViewController!]
+            tabBarViewController?.tabBar.isHidden = true
+            tabBarViewController?.extendedLayoutIncludesOpaqueBars = true
+            splitViewController.preferredDisplayMode = .allVisible
+            window.rootViewController = splitViewController
+            splitViewController.maximumPrimaryColumnWidth = 84.0
+        }
 
         #if targetEnvironment(UIKitForMac)
         if let windowScene = window.windowScene,
