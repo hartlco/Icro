@@ -8,17 +8,21 @@ import Combine
 import IcroKit
 import TypedSymbols
 
-final class HorizontalTabViewModel: BindableObject {
+final class VerticalTabViewModel: BindableObject {
     private let userSettings: UserSettings
+
+    var didSelectIndex: (Int) -> Void = { _ in }
 
     init(userSettings: UserSettings = .shared) {
         self.userSettings = userSettings
+        self.selectedTab = userSettings.loggedIn ? HorizontalTab(type: .timeline) :
+            HorizontalTab(type: .discover)
         updateTabs()
     }
 
     var willChange = PassthroughSubject<Void, Never>()
 
-    private var selectedTab: HorizontalTab = HorizontalTab(type: .discover) {
+    private var selectedTab: HorizontalTab {
         willSet {
             willChange.send()
         }
@@ -32,6 +36,17 @@ final class HorizontalTabViewModel: BindableObject {
 
     func isSelected(tab: HorizontalTab) -> Bool {
         return tab == selectedTab
+    }
+
+    func select(tab: HorizontalTab) {
+        selectedTab = tab
+        guard let index = tabs.firstIndex(of: tab) else { return }
+        didSelectIndex(index)
+    }
+
+    func select(index: Int) {
+        let tab = tabs[index]
+        select(tab: tab)
     }
 
     private func updateTabs() {

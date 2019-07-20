@@ -21,12 +21,7 @@ final class TabBarViewController: UITabBarController {
          appNavigator: AppNavigator) {
         self.userSettings = userSettings
         self.appNavigator = appNavigator
-        self.types = [ListViewModel.ListType.timeline,
-                 ListViewModel.ListType.mentions,
-                 ListViewModel.ListType.favorites,
-                 ListViewModel.ListType.discover,
-                 ListViewModel.ListType.username(username: userSettings.username)
-        ]
+        self.types = ListViewModel.ListType.standardTabs(from: userSettings)
 
         super.init(nibName: "TabBarViewController", bundle: nil)
         commonInit()
@@ -89,11 +84,7 @@ final class TabBarViewController: UITabBarController {
     }
 
     func reload() {
-        self.types = [ListViewModel.ListType.timeline,
-                      ListViewModel.ListType.mentions,
-                      ListViewModel.ListType.favorites,
-                      ListViewModel.ListType.discover,
-                      ListViewModel.ListType.username(username: userSettings.username)]
+        self.types = ListViewModel.ListType.standardTabs(from: userSettings)
         commonInit()
     }
 

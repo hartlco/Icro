@@ -5,8 +5,8 @@
 
 import SwiftUI
 
-struct HorizontalTabView: View {
-    @ObjectBinding var viewModel = HorizontalTabViewModel()
+struct VerticalTabView: View {
+    @ObjectBinding var viewModel: VerticalTabViewModel
 
     var body: some View {
         VStack(spacing: 20) {
@@ -14,6 +14,9 @@ struct HorizontalTabView: View {
                 ImageTab(selected: self.viewModel.isSelected(tab: tab),
                          image: tab.image,
                          title: tab.title)
+                .tapAction {
+                    self.viewModel.select(tab: tab)
+                }
             }
             Spacer()
         }
@@ -30,6 +33,7 @@ struct ImageTab: View {
         image
         .resizable()
         .frame(width: 30, height: 30)
+        .padding()
         .foregroundColor(selected ? Color.accentColor : .secondary)
         .accessibility(label: Text(title))
     }

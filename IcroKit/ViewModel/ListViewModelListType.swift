@@ -7,6 +7,16 @@ import Foundation
 import TypedSymbols
 
 public extension ListViewModel.ListType {
+    static func standardTabs(from userSettings: UserSettings) -> [ListViewModel.ListType] {
+        return [
+            .timeline,
+            .mentions,
+            .favorites,
+            .discover,
+            .username(username: userSettings.username)
+        ]
+    }
+
     var resource: Resource<ItemResponse> {
         switch self {
         case .timeline:

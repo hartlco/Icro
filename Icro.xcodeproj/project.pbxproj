@@ -85,9 +85,9 @@
 		5B3C79D721C52EB100F699B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
 		5B44C71720979CF20003B35D /* MuteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71620979CF20003B35D /* MuteViewModel.swift */; };
 		5B44C8DD22E0CEF7005A9614 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11A46622C8A5C70095E068 /* NetworkImage.swift */; };
-		5B44C8DF22E1977A005A9614 /* HorizontalTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C8DE22E1977A005A9614 /* HorizontalTabView.swift */; };
-		5B44C90122E19F94005A9614 /* HorizontalTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C90022E19F94005A9614 /* HorizontalTabViewModel.swift */; };
-		5B44C90222E1A049005A9614 /* HorizontalTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C90022E19F94005A9614 /* HorizontalTabViewModel.swift */; };
+		5B44C8DF22E1977A005A9614 /* VerticalTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C8DE22E1977A005A9614 /* VerticalTabView.swift */; };
+		5B44C90122E19F94005A9614 /* VerticalTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C90022E19F94005A9614 /* VerticalTabViewModel.swift */; };
+		5B44C90222E1A049005A9614 /* VerticalTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C90022E19F94005A9614 /* VerticalTabViewModel.swift */; };
 		5B4639DD2168FE9B00200D8F /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4639DC2168FE9B00200D8F /* TabViewController.swift */; };
 		5B4639DF216901BE00200D8F /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4639DE216901BE00200D8F /* SplitViewController.swift */; };
 		5B4639E02169074200200D8F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
@@ -136,6 +136,9 @@
 		5B6A565E21735A69003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B6BCC3121A2F215007225C2 /* LoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */; };
 		5B6BCC3321A2F233007225C2 /* LoadMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6BCC3221A2F233007225C2 /* LoadMoreCell.xib */; };
+		5B6FBE7822E2F30B006F6058 /* VerticalTabsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBE7722E2F30B006F6058 /* VerticalTabsSplitViewController.swift */; };
+		5B6FBE7A22E2F89A006F6058 /* CatalystToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBE7922E2F89A006F6058 /* CatalystToolbar.swift */; };
+		5B6FBE7B22E2F9FC006F6058 /* CatalystToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBE7922E2F89A006F6058 /* CatalystToolbar.swift */; };
 		5B761F2922BE958C0038FF73 /* SettingsViewNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B761F2822BE958C0038FF73 /* SettingsViewNavigator.swift */; };
 		5B81E79A2206C62E008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
 		5B81E79B2206C63A008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
@@ -362,8 +365,8 @@
 		5B3F68762098BB8800A24983 /* KeyboardInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInputView.swift; sourceTree = "<group>"; };
 		5B3F68782098BBA200A24983 /* KeyboardInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardInputView.xib; sourceTree = "<group>"; };
 		5B44C71620979CF20003B35D /* MuteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuteViewModel.swift; path = ViewModel/MuteViewModel.swift; sourceTree = "<group>"; };
-		5B44C8DE22E1977A005A9614 /* HorizontalTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HorizontalTabView.swift; path = ../../../../../System/Volumes/Data/Users/martin/Code/Icro/Icro/View/HorizontalTabView.swift; sourceTree = "<group>"; };
-		5B44C90022E19F94005A9614 /* HorizontalTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HorizontalTabViewModel.swift; path = ../../../../../System/Volumes/Data/Users/martin/Code/Icro/Icro/ViewModel/HorizontalTabViewModel.swift; sourceTree = "<group>"; };
+		5B44C8DE22E1977A005A9614 /* VerticalTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerticalTabView.swift; path = ../../../../../System/Volumes/Data/Users/martin/Code/Icro/Icro/View/VerticalTabView.swift; sourceTree = "<group>"; };
+		5B44C90022E19F94005A9614 /* VerticalTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerticalTabViewModel.swift; path = ../../../../../System/Volumes/Data/Users/martin/Code/Icro/Icro/ViewModel/VerticalTabViewModel.swift; sourceTree = "<group>"; };
 		5B4639DC2168FE9B00200D8F /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		5B4639DE216901BE00200D8F /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		5B4639E1216908E800200D8F /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -409,6 +412,8 @@
 		5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
 		5B6BCC3221A2F233007225C2 /* LoadMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadMoreCell.xib; sourceTree = "<group>"; };
 		5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
+		5B6FBE7722E2F30B006F6058 /* VerticalTabsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerticalTabsSplitViewController.swift; path = ../../../../../System/Volumes/Data/Users/martin/Code/Icro/Icro/ViewController/VerticalTabsSplitViewController.swift; sourceTree = "<group>"; };
+		5B6FBE7922E2F89A006F6058 /* CatalystToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CatalystToolbar.swift; path = ../../../../../System/Volumes/Data/Users/martin/Code/Icro/Icro/Helper/CatalystToolbar.swift; sourceTree = "<group>"; };
 		5B744A4C8329D56FBB21833D /* Pods-IcroScreenshotsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroScreenshotsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroScreenshotsTests/Pods-IcroScreenshotsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B761F2822BE958C0038FF73 /* SettingsViewNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewNavigator.swift; path = Navigator/SettingsViewNavigator.swift; sourceTree = "<group>"; };
 		5B81E7992206C62E008BEA16 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -808,6 +813,7 @@
 				5B8754FC2070139F00018DFA /* ListViewController.xib */,
 				5B8754F92070137300018DFA /* TabBarViewController.swift */,
 				5B689BAB20837ECE005B9874 /* TabBarViewController.xib */,
+				5B6FBE7722E2F30B006F6058 /* VerticalTabsSplitViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -984,7 +990,7 @@
 				5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */,
 				5B44C71620979CF20003B35D /* MuteViewModel.swift */,
 				5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */,
-				5B44C90022E19F94005A9614 /* HorizontalTabViewModel.swift */,
+				5B44C90022E19F94005A9614 /* VerticalTabViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -1001,7 +1007,7 @@
 				5B51621A22B2C900009C0064 /* LoginView.swift */,
 				5B165D8722BF436D00B851B2 /* TipJarView.swift */,
 				5B28C8CF22C89B2600A46C52 /* UserListView.swift */,
-				5B44C8DE22E1977A005A9614 /* HorizontalTabView.swift */,
+				5B44C8DE22E1977A005A9614 /* VerticalTabView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1016,6 +1022,7 @@
 				5B99C679229FB47200437552 /* UITableView+Keyboard.swift */,
 				5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */,
 				5B11A46622C8A5C70095E068 /* NetworkImage.swift */,
+				5B6FBE7922E2F89A006F6058 /* CatalystToolbar.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -1804,7 +1811,7 @@
 				5B58375E2128B5F80076121E /* SettingsNavigator.swift in Sources */,
 				5BD499CF21CA1D8C007EF47C /* MainNavigator.swift in Sources */,
 				5B58375F2128B5F80076121E /* AppNavigator.swift in Sources */,
-				5B44C90222E1A049005A9614 /* HorizontalTabViewModel.swift in Sources */,
+				5B44C90222E1A049005A9614 /* VerticalTabViewModel.swift in Sources */,
 				5BD95AF72290A10600C74C52 /* UserDefaultsMigrationComponent.swift in Sources */,
 				5B5837612128B5F80076121E /* EditActionsConfigurator.swift in Sources */,
 				5BE633AF22ACC09F005296AB /* SettingsContentView.swift in Sources */,
@@ -1822,6 +1829,7 @@
 				5B5837722128B5F80076121E /* UserListViewModel.swift in Sources */,
 				5BC5A5A721D4E1F200B9A8D1 /* AppearanceManager.swift in Sources */,
 				5B5837742128B5F80076121E /* LoginViewModel.swift in Sources */,
+				5B6FBE7B22E2F9FC006F6058 /* CatalystToolbar.swift in Sources */,
 				5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */,
 				5B5837762128B5F80076121E /* MuteViewModel.swift in Sources */,
 				5B5837772128B5F80076121E /* AppDelegate.swift in Sources */,
@@ -1882,7 +1890,7 @@
 				5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */,
 				5B39B7BE22AD504A004D5134 /* ListView.swift in Sources */,
 				5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */,
-				5B44C90122E19F94005A9614 /* HorizontalTabViewModel.swift in Sources */,
+				5B44C90122E19F94005A9614 /* VerticalTabViewModel.swift in Sources */,
 				5B761F2922BE958C0038FF73 /* SettingsViewNavigator.swift in Sources */,
 				5B51621B22B2C900009C0064 /* LoginView.swift in Sources */,
 				5B44C71720979CF20003B35D /* MuteViewModel.swift in Sources */,
@@ -1890,6 +1898,7 @@
 				5BCD7F0222BDE35D00CA5B6C /* MuteView.swift in Sources */,
 				5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */,
 				5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */,
+				5B6FBE7A22E2F89A006F6058 /* CatalystToolbar.swift in Sources */,
 				5B3C79C221C518B700F699B8 /* MainNavigator.swift in Sources */,
 				5B4895F222B1603E00CF08C2 /* SceneDelegate.swift in Sources */,
 				5BD9690F21C8D55400313795 /* ComposeNavigator.swift in Sources */,
@@ -1898,6 +1907,7 @@
 				5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */,
 				5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */,
 				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
+				5B6FBE7822E2F30B006F6058 /* VerticalTabsSplitViewController.swift in Sources */,
 				C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */,
 				5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */,
 				5B11A46722C8A5C70095E068 /* NetworkImage.swift in Sources */,
@@ -1910,7 +1920,7 @@
 				5BF2DAA6228802000055240D /* UserDefaultsMigrationComponent.swift in Sources */,
 				5B28C8CE22C89A1D00A46C52 /* ViewModelState.swift in Sources */,
 				5B38475F21FDFEFD00F082AD /* TipJarViewModel.swift in Sources */,
-				5B44C8DF22E1977A005A9614 /* HorizontalTabView.swift in Sources */,
+				5B44C8DF22E1977A005A9614 /* VerticalTabView.swift in Sources */,
 				5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
