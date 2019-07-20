@@ -32,7 +32,7 @@ final class ItemNavigator: ItemNavigatorProtocol {
             return
         }
 
-        #if targetEnvironment(UIKitForMac)
+        #if targetEnvironment(macCatalyst)
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
         return
         #endif

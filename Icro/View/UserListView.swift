@@ -18,22 +18,23 @@ struct UserListView: SwiftUI.View {
 
     var body: some SwiftUI.View {
         List(viewModel.users, id: \Author.name) { author in
-            HStack {
-                NetworkImage(imageURL: author.avatar,
-                             placeholderImage: UIImage(symbol: .person_fill)!)
-                .frame(width: 40, height: 40)
-                .clipShape(Circle())
-                HStack {
-                    Text(author.name)
-                    .font(.headline)
-                    Text(author.username ?? "")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                }
-            }
-            .tapAction {
+            Button(action: {
                 self.itemNavigator.open(author: author)
-            }
+            }, label: {
+                HStack {
+                    NetworkImage(imageURL: author.avatar,
+                                 placeholderImage: UIImage(symbol: .person_fill)!)
+                    .frame(width: 40, height: 40)
+                    .clipShape(Circle())
+                    HStack {
+                        Text(author.name)
+                        .font(.headline)
+                        Text(author.username ?? "")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    }
+                }
+            })
         }
         .navigationBarTitle(Text("Following"))
     }

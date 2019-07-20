@@ -21,11 +21,11 @@ struct TipJarView: View {
                             VStack {
                                 Text(product.title)
                                     .font(.headline)
-                                    .color(.primary)
+                                    .foregroundColor(.primary)
                                 Spacer(minLength: 10)
                                 Group {
                                     Text(product.price)
-                                        .color(.red)
+                                        .foregroundColor(.red)
                                     }
                                     .padding(.all, 8)
                                     .border(Color.red,
