@@ -58,7 +58,6 @@
 "light" = "Light";
 
 // BlacklistViewController
-"BLACKLISTVIEWCONTROLLER_ADDBUTTON_TITLE" = "Add";
 "BLACKLISTVIEWCONTROLLER_TITLE" = "Mute";
 "BLACKLISTVIEWCONTROLLER_ADDALERT_TITLE" = "Blacklist";
 "BLACKLISTVIEWCONTROLLER_ADDALERT_MESSAGE" = "Add words or usernames to the blacklist";

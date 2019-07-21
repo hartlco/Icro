@@ -21,8 +21,8 @@ struct MuteView: View {
                     }
                     .onDelete(perform: delete)
             }
-            Section(header: Text("Add words/usernames to your mute filter")) {
-                TextField("New muted word",
+            Section(header: Text("BLACKLISTVIEWCONTROLLER_ADDALERT_MESSAGE")) {
+                TextField("BLACKLISTVIEWCONTROLLER_ADDALERT_PLACEHOLDER",
                           text: $addedWord) {
                             self.viewModel.add(word: self.addedWord)
                             self.addedWord = ""
@@ -30,7 +30,7 @@ struct MuteView: View {
                 }
             }
         }
-        .navigationBarTitle(Text("Mute"))
+        .navigationBarTitle(Text("BLACKLISTVIEWCONTROLLER_TITLE"))
     }
 
     func delete(at offsets: IndexSet) {

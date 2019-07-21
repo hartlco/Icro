@@ -58,7 +58,6 @@
 "light" = "Hell";
 
 // BlacklistViewController
-"BLACKLISTVIEWCONTROLLER_ADDBUTTON_TITLE" = "Hinzufügen";
 "BLACKLISTVIEWCONTROLLER_TITLE" = "Sperrliste";
 "BLACKLISTVIEWCONTROLLER_ADDALERT_TITLE" = "Sperrliste";
 "BLACKLISTVIEWCONTROLLER_ADDALERT_MESSAGE" = "Füge Wörter oder Nutzernamen zu deiner Sperrliste hinzu";
