@@ -45,7 +45,7 @@ struct AcknowledgementView: View {
                 }
             }
         }
-        .navigationBarTitle(Text("Acknowledgments"))
+        .navigationBarTitle(Text("SETTINGSVIEWCONTROLLER_ACKNOWLEDGMENTSBUTTON_TITLE"))
     }
 }
 
