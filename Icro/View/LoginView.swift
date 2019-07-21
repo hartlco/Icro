@@ -15,9 +15,12 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             List {
-                Section {
-                    TextField("Mail address or access token", text: $viewModel.loginString)
-                    Text(viewModel.infoMessage ?? "Login with mail address or access token")
+                Section(footer: Text("LOGINVIEWCONTROLLER_TEXTFIELDINFO_TEXT").lineLimit(nil)) {
+                    TextField("LOGINVIEWCONTROLLER_TEXTFIELD_PLACEHOLDER",
+                              text: $viewModel.loginString)
+                    viewModel.infoMessage.map {
+                        Text($0)
+                    }
                     .lineLimit(nil)
                     .font(.footnote)
                 }
@@ -30,14 +33,14 @@ struct LoginView: View {
                 }
             }
             .listStyle(.grouped)
-            .navigationBarItems(trailing:
+            .navigationBarItems(leading:
                 Button(action: {
                     self.viewModel.didDismiss()
                 }, label: {
-                    Text("Cancel")
+                    Text("ITEMNAVIGATOR_MOREALERT_CANCELACTION")
                 })
             )
-            .navigationBarTitle(Text("Login"))
+            .navigationBarTitle(Text("LOGINVIEWCONTROLLER_TITLE"))
         }
     }
 }
