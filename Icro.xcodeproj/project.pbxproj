@@ -53,7 +53,6 @@
 		5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */; };
 		5B3B4C3821D0D17800F511A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		5B3C798121C4DFAF00F699B8 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C798021C4DFAF00F699B8 /* ShareViewController.swift */; };
-		5B3C798421C4DFAF00F699B8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3C798221C4DFAF00F699B8 /* MainInterface.storyboard */; };
 		5B3C798821C4DFAF00F699B8 /* Icro-Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5B3C799621C4E31100F699B8 /* IcroUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B3C799421C4E31100F699B8 /* IcroUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */; };
@@ -330,7 +329,6 @@
 		5B01CBC72168D6A90007E01D /* Icro-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Icro-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B01CBC92168D6A90007E01D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B01CBCD2168D6AA0007E01D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5B01CBD02168D6AA0007E01D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B01CBD22168D6AA0007E01D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B01CBD32168D6AA0007E01D /* Icro_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Icro_Mac.entitlements; sourceTree = "<group>"; };
 		5B01CBDC2168D6B50007E01D /* IcroKit_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IcroKit_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -354,7 +352,6 @@
 		5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppearanceManager.swift; path = Helper/AppearanceManager.swift; sourceTree = "<group>"; };
 		5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Icro-Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3C798021C4DFAF00F699B8 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		5B3C798321C4DFAF00F699B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		5B3C798521C4DFAF00F699B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B3C799221C4E31100F699B8 /* IcroUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IcroUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3C799421C4E31100F699B8 /* IcroUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IcroUIKit.h; sourceTree = "<group>"; };
@@ -437,6 +434,9 @@
 		5BC1384221C6332B0040353C /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		5BC184D322E47CE7000155DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5BC184D422E47D2F000155DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5BC184D522E47D34000155DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5BC347AE2132944900DEB45D /* IcroKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IcroKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC347B02132944900DEB45D /* IcroKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IcroKit.h; sourceTree = "<group>"; };
 		5BC347B12132944900DEB45D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -478,12 +478,10 @@
 		A46BBCD92B53C40E02AB78B6 /* Pods-IcroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IcroTests/Pods-IcroTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1016753D82E9CA15583B804 /* Pods-Icro-IcroKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroKit/Pods-Icro-IcroKit.debug.xcconfig"; sourceTree = "<group>"; };
 		B2175C9DAAFEF9FA508D0A47 /* Pods_Icro_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF707E772131C46500506E64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BF71E43E214287CF007E88BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C5FA2AC01EB4482C006DEB40 /* Icro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Icro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C5FA2ACD1EB4482C006DEB40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5FA2ACF1EB4482C006DEB40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5FA2AF51EB449BC006DEB40 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		C5FA2B001EB45213006DEB40 /* HTMLContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLContent.swift; sourceTree = "<group>"; };
@@ -659,7 +657,6 @@
 			children = (
 				5BC1384021C632F20040353C /* Icro-Share.entitlements */,
 				5B3C798021C4DFAF00F699B8 /* ShareViewController.swift */,
-				5B3C798221C4DFAF00F699B8 /* MainInterface.storyboard */,
 				5B3C798521C4DFAF00F699B8 /* Info.plist */,
 			);
 			path = "Icro-Share";
@@ -1361,7 +1358,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				de,
 			);
 			mainGroup = C5FA2AB71EB4482C006DEB40;
@@ -1419,7 +1415,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC1384721C639160040353C /* Assets.xcassets in Resources */,
-				5B3C798421C4DFAF00F699B8 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1966,24 +1961,16 @@
 		5B01CBCF2168D6AA0007E01D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5B01CBD02168D6AA0007E01D /* Base */,
+				5BC184D522E47D34000155DB /* en */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5B3C798221C4DFAF00F699B8 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B3C798321C4DFAF00F699B8 /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		BF707E762131C45600506E64 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BF707E772131C46500506E64 /* Base */,
 				BF71E43E214287CF007E88BF /* de */,
+				5BC184D322E47CE7000155DB /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1991,7 +1978,7 @@
 		C5FA2ACC1EB4482C006DEB40 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C5FA2ACD1EB4482C006DEB40 /* Base */,
+				5BC184D422E47D2F000155DB /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
