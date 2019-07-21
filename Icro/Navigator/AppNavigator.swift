@@ -77,7 +77,7 @@ final class AppNavigator {
             window.rootViewController = tabBarViewController
         } else {
             let splitViewController = VerticalTabsSplitViewController(verticalTabView: VerticalTabView(viewModel: verticalTabViewModel),
-                                                                                  tabBarViewController: tabBarViewController)
+                                                                      tabBarViewController: tabBarViewController)
             window.rootViewController = splitViewController
         }
 

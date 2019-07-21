@@ -154,11 +154,13 @@ public class ListViewModel: NSObject {
         }
     }
 
-    public var snapshot: NSDiffableDataSourceSnapshot<Section, ListViewModel.ViewType> {
+    public func applicableSnapshot(snapshotBlock: ((NSDiffableDataSourceSnapshot<Section, ListViewModel.ViewType>) -> Void)) {
         let snapshot = NSDiffableDataSourceSnapshot<Section, ListViewModel.ViewType>()
         snapshot.appendSections([.main  ])
         snapshot.appendItems(viewTypes)
-        return snapshot
+        let lastReadItem = userSettings.lastread_timeline
+        snapshotBlock(snapshot)
+        userSettings.lastread_timeline = lastReadItem
     }
 
     public var shouldLoad: Bool {
@@ -269,6 +271,7 @@ public class ListViewModel: NSObject {
                 newLastReadID < lastReadID {
                 return
             }
+            print("Update last read row: \(lastReadRow)")
             userSettings.lastread_timeline = items[lastReadRow].id
         default:
             return

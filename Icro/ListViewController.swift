@@ -86,13 +86,10 @@ final class ListViewController: UIViewController, LoadingViewController {
             }
 
             self?.applySnapshot()
-            self?.tableView.beginUpdates()
-            self?.tableView.reloadData()
             if let newIndex = self?.viewModel.numberOfUnreadItems {
                 self?.updateUnread()
                 self?.tableView.scrollToRow(at: IndexPath(row: newIndex, section: 0), at: .top, animated: false)
             }
-            self?.tableView.endUpdates()
             self?.isLoading = false
         }
 
@@ -161,8 +158,10 @@ final class ListViewController: UIViewController, LoadingViewController {
     }
 
     private func applySnapshot() {
-        let snapshop = viewModel.snapshot
-        dataSource?.apply(snapshop, animatingDifferences: false)
+        viewModel.applicableSnapshot { [weak self] snapshot in
+            guard let self = self else { return }
+            self.dataSource?.apply(snapshot, animatingDifferences: false)
+        }
     }
 
     private func updateDiscoverySectionsIfNeeded() {
@@ -206,7 +205,7 @@ extension ListViewController: UITableViewDelegate {
             return
         case .item(let item):
             if isLoading == false {
-                viewModel.set(lastReadRow: indexPath.row)
+                viewModel.set(lastReadRow: tableView.indexPathsForVisibleRows!.first!.row)
             }
 
             rowHeightEstimate[item.id] = cell.bounds.size.height
