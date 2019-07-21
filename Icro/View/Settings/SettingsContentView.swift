@@ -14,7 +14,7 @@ import IcroKit
 
 struct SettingsContentView: View {
     let dismissAction: () -> Void
-    let settingsNavigator: SettingsViewNavigator
+    let settingsNavigator: SettingsNavigator
     @ObjectBinding var store: SettingsViewModel
 
     var body: some View {
@@ -22,8 +22,8 @@ struct SettingsContentView: View {
             Form {
                 WordpressSection(store: store)
                 MicropubSection(store: store)
-                AccountSection()
-                OtherSection()
+                AccountSection(settingsNavigator: settingsNavigator)
+                OtherSection(settingsNavigator: settingsNavigator)
                 TipJarSection()
             }
             .navigationBarTitle(Text("SETTINGSVIEWCONTROLLER_TITLE"))
@@ -94,7 +94,7 @@ struct MicropubSection: View {
 }
 
 struct OtherSection: View {
-    let settingsNavigator = SettingsViewNavigator(userSettings: .shared)
+    let settingsNavigator: SettingsNavigator
     var body: some View {
         return Section(header: Text("SETTINGSVIEWCONTROLLER_OTHER_TITLE")
             .font(.headline)
@@ -113,12 +113,14 @@ struct OtherSection: View {
 }
 
 struct AccountSection: View {
+    let settingsNavigator: SettingsNavigator
+
     var body: some View {
         Section(header: Text("SETTINGSVIEWCONTROLLER_ACCOUNT_TITLE")
                 .font(.headline)
                 .fontWeight(.bold)) {
             Button(action: {
-
+                self.settingsNavigator.logout()
             }, label: {
                 Text("SETTINGSVIEWCONTROLLER_LOGOUTBUTTON_TITLE")
             })
@@ -153,14 +155,3 @@ struct TipJarSection: View {
         }
     }
 }
-
-#if DEBUG
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        let settingsNavigator = SettingsViewNavigator(userSettings: .shared)
-        return SettingsContentView(dismissAction: {},
-                            settingsNavigator: settingsNavigator,
-                            store: SettingsViewModel(userSettings: .shared))
-    }
-}
-#endif

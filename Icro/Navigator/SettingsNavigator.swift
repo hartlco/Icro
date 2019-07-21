@@ -10,26 +10,25 @@ import IcroKit
 import SwiftUI
 
 final class SettingsNavigator: NSObject {
-    private let navigationController: UINavigationController
+    private let presentedController: UIViewController
     private let appNavigator: AppNavigator
+    private let userSettings: UserSettings
 
-    init(navigationController: UINavigationController,
-         appNavigator: AppNavigator) {
-        self.navigationController = navigationController
+    init(presentedController: UIViewController,
+         appNavigator: AppNavigator,
+         userSettings: UserSettings = .shared) {
+        self.presentedController = presentedController
         self.appNavigator = appNavigator
+        self.userSettings = userSettings
     }
 
-    func openAcknowledgements() {
-        let viewController = AcknowListViewController()
-        viewController.view.backgroundColor = Color.accentSuperLight
-        navigationController.pushViewController(viewController, animated: true)
+    var muteView: MuteView {
+        let viewModel = MuteViewModel(userSettings: userSettings)
+        return MuteView(viewModel: viewModel)
     }
 
-    func openHartlCoOnMicroBlog() {
-        let viewModel = ListViewModel(type: .username(username: "hartlco"))
-        let itemNavigator = ItemNavigator(navigationController: navigationController, appNavigator: appNavigator)
-        let viewController = ListViewController(viewModel: viewModel, itemNavigator: itemNavigator)
-        navigationController.pushViewController(viewController, animated: true)
+    var acknowledgmentsView: AcknowledgementView {
+        return AcknowledgementView()
     }
 
     func openSupportMail() {
@@ -39,23 +38,11 @@ final class SettingsNavigator: NSObject {
         viewController.mailComposeDelegate = self
         viewController.setToRecipients(["icro@hartl.co"])
         viewController.setSubject("Icro support")
-        navigationController.present(viewController, animated: true, completion: nil)
-    }
-
-    func openMicroBlog() {
-        let mainNavigator = MainNavigator(navigationController: navigationController)
-        mainNavigator.openMicroBlog()
-    }
-
-    func openBlacklist() {
-        let viewModel = MuteViewModel(userSettings: UserSettings.shared)
-        let muteView = MuteView(viewModel: viewModel)
-        let viewController = UIHostingController(rootView: muteView)
-        navigationController.pushViewController(viewController, animated: true)
+        presentedController.present(viewController, animated: true, completion: nil)
     }
 
     func logout() {
-        navigationController.dismiss(animated: true, completion: nil)
+        presentedController.dismiss(animated: true, completion: nil)
         appNavigator.logout()
     }
 }

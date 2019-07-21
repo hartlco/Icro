@@ -95,14 +95,7 @@ final class TabBarViewController: UITabBarController {
     }
 
     @objc private func showSettingsViewController() {
-        let settingsNavigator = SettingsViewNavigator(userSettings: userSettings)
-        let settingsContentView = SettingsContentView(dismissAction: { [weak self] in
-                                                        guard let self = self else { return }
-                                                        self.presentedViewController?.dismiss(animated: true, completion: nil)
-            },
-                                                      settingsNavigator: settingsNavigator,
-                                                      store: SettingsViewModel(userSettings: userSettings))
-        present(UIHostingController(rootView: settingsContentView), animated: true, completion: nil)
+        appNavigator.showSettingsView(on: self)
     }
 
     @objc private func showPhotosTimeline() {

@@ -103,6 +103,16 @@ final class AppNavigator {
         loginViewModel.login()
     }
 
+    func showSettingsView(on presentedController: UIViewController) {
+        let settingsNavigator = SettingsNavigator(presentedController: presentedController, appNavigator: self)
+        let settingsContentView = SettingsContentView(dismissAction: {
+                                                        presentedController.dismiss(animated: true, completion: nil)
+        },
+                                                      settingsNavigator: settingsNavigator,
+                                                      store: SettingsViewModel(userSettings: userSettings))
+        presentedController.present(UIHostingController(rootView: settingsContentView), animated: true, completion: nil)
+    }
+
     // MARK: - Private
 
     private func setupMacCatalystWindow() {
