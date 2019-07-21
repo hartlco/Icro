@@ -86,11 +86,13 @@ final class ListViewController: UIViewController, LoadingViewController {
             }
 
             self?.applySnapshot()
+            self?.tableView.beginUpdates()
             self?.tableView.reloadData()
             if let newIndex = self?.viewModel.numberOfUnreadItems {
                 self?.updateUnread()
                 self?.tableView.scrollToRow(at: IndexPath(row: newIndex, section: 0), at: .top, animated: false)
             }
+            self?.tableView.endUpdates()
             self?.isLoading = false
         }
 

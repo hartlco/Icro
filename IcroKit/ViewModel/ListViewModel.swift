@@ -41,7 +41,7 @@ public class ListViewModel: NSObject {
     private let discoveryMananger: DiscoveryCategoryStore
     private let client: Client
 
-    private var unreadItems = Set<Int>()
+    private var didScrollToTop = true
     private var blacklistChangedObserver: Any?
 
     public var didStartLoading: () -> Void = { }
@@ -80,7 +80,7 @@ public class ListViewModel: NSObject {
                                                                           queue: nil) { [weak self] _ in
             Item.deleteAllCached()
             self?.userSettings.lastread_timeline = nil
-            self?.unreadItems = Set<Int>()
+            self?.didScrollToTop = true
             self?.items = []
             self?.load()
         }
@@ -250,53 +250,35 @@ public class ListViewModel: NSObject {
         }
     }
 
-    public var lastReadIndex: Int? {
-        guard items.count > 0 else { return nil }
-
-        switch type {
-        case .timeline:
-            guard let lastReadID = userSettings.lastread_timeline,
-                let index = index(for: lastReadID) else {
-                    userSettings.lastread_timeline = items.first?.id
-                    return 0
-            }
-            return index
-        default:
-            return nil
-        }
-    }
-
     public var numberOfUnreadItems: Int? {
-        guard unreadItems.count > 0 else { return nil }
-
         switch type {
         case .timeline:
-            return unreadItems.count
+            return items.firstIndex(where: { [weak self] item in
+                return item.id == self?.userSettings.lastread_timeline
+            })
         default:
             return nil
         }
     }
 
     public func set(lastReadRow: Int) {
-        guard let removedIndex = unreadItems.remove(lastReadRow) else { return }
-        let item = items[removedIndex]
-
         switch type {
         case .timeline:
-            userSettings.lastread_timeline = item.id
+            let newLastReadID = items[lastReadRow].id
+            if let lastReadID = userSettings.lastread_timeline,
+                newLastReadID < lastReadID {
+                return
+            }
+            userSettings.lastread_timeline = items[lastReadRow].id
         default:
             return
         }
     }
 
     public func resetScrollPosition() {
-        guard let removedIndex = unreadItems.remove(0) else { return }
-        let item = items[removedIndex]
-        unreadItems = Set<Int>()
-
         switch type {
         case .timeline:
-            userSettings.lastread_timeline = item.id
+            userSettings.lastread_timeline = items[0].id
         default:
             return
         }
@@ -375,10 +357,7 @@ public class ListViewModel: NSObject {
     private func updateUnreadItems() {
         guard self.items.count > 0 else { return }
 
-        let lastReadIndex = self.lastReadIndex ?? (self.items.count - 1)
-        for index in 0..<lastReadIndex {
-            self.unreadItems.insert(index)
-        }
+        didScrollToTop = userSettings.lastread_timeline == items[0].id
     }
 
     private func appendMoreLoadedItem(moreItems: [Item], after item: Item) {

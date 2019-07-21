@@ -20,6 +20,7 @@ struct VerticalTabView: View {
             }
             Spacer()
         }
+        .background(Color.clear)
 
     }
 }

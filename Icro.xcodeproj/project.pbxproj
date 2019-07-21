@@ -139,6 +139,7 @@
 		5B6FBE7822E2F30B006F6058 /* VerticalTabsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBE7722E2F30B006F6058 /* VerticalTabsSplitViewController.swift */; };
 		5B6FBE7A22E2F89A006F6058 /* CatalystToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBE7922E2F89A006F6058 /* CatalystToolbar.swift */; };
 		5B6FBE7B22E2F9FC006F6058 /* CatalystToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBE7922E2F89A006F6058 /* CatalystToolbar.swift */; };
+		5B6FBE7C22E38446006F6058 /* VerticalTabsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBE7722E2F30B006F6058 /* VerticalTabsSplitViewController.swift */; };
 		5B761F2922BE958C0038FF73 /* SettingsViewNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B761F2822BE958C0038FF73 /* SettingsViewNavigator.swift */; };
 		5B81E79A2206C62E008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
 		5B81E79B2206C63A008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
@@ -1817,6 +1818,7 @@
 				5BE633AF22ACC09F005296AB /* SettingsContentView.swift in Sources */,
 				5B5837622128B5F80076121E /* ProfileViewConfigurator.swift in Sources */,
 				5B3C79C821C51BDA00F699B8 /* ItemNavigator.swift in Sources */,
+				5B6FBE7C22E38446006F6058 /* VerticalTabsSplitViewController.swift in Sources */,
 				5BD9691021C8D55400313795 /* ComposeNavigator.swift in Sources */,
 				5B66EE76227D780300317FE3 /* UserListViewModelTests.swift in Sources */,
 				5BD95AF62290A10600C74C52 /* DiscoveryCategoryComponent.swift in Sources */,
