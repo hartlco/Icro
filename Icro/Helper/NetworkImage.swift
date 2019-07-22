@@ -12,7 +12,7 @@ public struct NetworkImage: SwiftUI.View {
 
     public let imageURL: URL?
     public let placeholderImage: UIImage
-    public let animation: Animation = .default
+    public let animation: Animation = .basic()
 
     public var body: some SwiftUI.View {
         Image(uiImage: image ?? placeholderImage)

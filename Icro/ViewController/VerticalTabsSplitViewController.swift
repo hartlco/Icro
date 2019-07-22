@@ -11,6 +11,8 @@ final class VerticalTabsSplitViewController: UISplitViewController {
     private let tabBarViewController: TabBarViewController
     private let hostingController: UIHostingController<VerticalTabView>
 
+    var shouldIncludeBarInExtendedLayout = true
+
     init(verticalTabView: VerticalTabView,
          tabBarViewController: TabBarViewController) {
         self.verticalTabView = verticalTabView
@@ -29,7 +31,6 @@ final class VerticalTabsSplitViewController: UISplitViewController {
         primaryBackgroundStyle = .sidebar
         viewControllers = [hostingController, tabBarViewController]
         tabBarViewController.tabBar.isHidden = true
-        tabBarViewController.extendedLayoutIncludesOpaqueBars = true
         preferredDisplayMode = .allVisible
         maximumPrimaryColumnWidth = 84.0
         minimumPrimaryColumnWidth = 84.0
@@ -39,11 +40,15 @@ final class VerticalTabsSplitViewController: UISplitViewController {
 extension VerticalTabsSplitViewController: UISplitViewControllerDelegate {
     func primaryViewController(forCollapsing splitViewController: UISplitViewController) -> UIViewController? {
         tabBarViewController.tabBar.isHidden = false
+        shouldIncludeBarInExtendedLayout = false
+        tabBarViewController.extendedLayoutIncludesOpaqueBars = false
         return tabBarViewController
     }
 
     func primaryViewController(forExpanding splitViewController: UISplitViewController) -> UIViewController? {
         tabBarViewController.tabBar.isHidden = true
+        shouldIncludeBarInExtendedLayout = true
+        tabBarViewController.extendedLayoutIncludesOpaqueBars = true
         return hostingController
     }
 }

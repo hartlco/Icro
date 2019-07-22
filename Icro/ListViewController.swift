@@ -188,7 +188,10 @@ final class ListViewController: UIViewController, LoadingViewController {
         titleView?.titleColor = Color.textColor
         titleView?.subtitleColor = Color.secondaryTextColor
         view.backgroundColor = Color.backgroundColor
-        extendedLayoutIncludesOpaqueBars = true
+        
+        if let splitViewController = splitViewController as? VerticalTabsSplitViewController {
+            extendedLayoutIncludesOpaqueBars = splitViewController.shouldIncludeBarInExtendedLayout
+        }
 
         #if targetEnvironment(macCatalyst)
         if let navigationController = navigationController {
