@@ -29,6 +29,7 @@ final class ListViewController: UIViewController, LoadingViewController {
     private let profileViewConfigurator: ProfileViewConfigurator
     private let editActionsConfigurator: EditActionsConfigurator
     private var titleView: DropdownTitleView?
+    private typealias DiffableDataSource = UITableViewDiffableDataSource<ListViewModel.Section, ListViewModel.ViewType>
 
     @IBOutlet private weak var unreadView: UIView!
     @IBOutlet private weak var unreadLabel: UILabel!
@@ -138,9 +139,8 @@ final class ListViewController: UIViewController, LoadingViewController {
     }
 
     private func setupDataSource() {
-        dataSource =
-            UITableViewDiffableDataSource<ListViewModel.Section, ListViewModel.ViewType>(tableView: tableView,
-                                                                                         cellProvider: { [weak self] tableView, indexPath, item -> UITableViewCell? in
+        dataSource = DiffableDataSource(tableView: tableView,
+                                        cellProvider: { [weak self] tableView, indexPath, item -> UITableViewCell? in
             guard let self = self else { return nil }
             switch item {
             case .author(let author):
@@ -188,7 +188,7 @@ final class ListViewController: UIViewController, LoadingViewController {
         titleView?.titleColor = Color.textColor
         titleView?.subtitleColor = Color.secondaryTextColor
         view.backgroundColor = Color.backgroundColor
-        
+
         if let splitViewController = splitViewController as? VerticalTabsSplitViewController {
             extendedLayoutIncludesOpaqueBars = splitViewController.shouldIncludeBarInExtendedLayout
         }
