@@ -6,7 +6,6 @@
 import Foundation
 import IcroKit
 import IcroUIKit
-import ImageViewer
 import Kingfisher
 
 final class ProfileViewConfigurator: NSObject {

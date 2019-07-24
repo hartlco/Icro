@@ -6,7 +6,6 @@
 import UIKit
 import IcroKit
 import Kingfisher
-import Dequeueable
 
 public final class ComposeViewController: UIViewController, LoadingViewController {
     public var didClose: () -> Void = { }

@@ -4,7 +4,6 @@
 //
 
 import Foundation
-import wpxmlrpc
 
 public enum ImageState {
     case idle

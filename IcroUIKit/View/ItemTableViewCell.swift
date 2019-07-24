@@ -7,14 +7,8 @@ import UIKit
 import IcroKit
 import AVFoundation
 import Kingfisher
-import Dequeueable
 
-public final class ItemTableViewCell: UITableViewCell, NibReusable {
-    public static var nib: UINib {
-        return UINib(nibName: String(describing: self),
-                     bundle: Bundle(for: ItemTableViewCell.self))
-    }
-
+public final class ItemTableViewCell: UITableViewCell {
     var isFavorite: Bool = false
 
     @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!

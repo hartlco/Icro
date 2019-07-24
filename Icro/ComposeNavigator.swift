@@ -6,7 +6,6 @@
 import UIKit
 import IcroKit
 import IcroUIKit
-import ImageViewer
 
 final class ComposeNavigator: NSObject, ComposeNavigatorProtocol {
     private let navigationController: UINavigationController

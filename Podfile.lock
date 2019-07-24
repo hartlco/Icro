@@ -1,41 +1,20 @@
 PODS:
   - AcknowList (1.9)
-  - Dequeueable (0.1.0)
   - DropdownTitleView (0.1.0)
-  - ImageViewer (5.0.0)
-  - wpxmlrpc (0.8.4)
 
 DEPENDENCIES:
   - AcknowList
-  - Dequeueable
   - DropdownTitleView
-  - ImageViewer (from `https://github.com/hartlco/ImageViewer.git`, branch `master`)
-  - wpxmlrpc
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AcknowList
-    - Dequeueable
     - DropdownTitleView
-    - wpxmlrpc
-
-EXTERNAL SOURCES:
-  ImageViewer:
-    :branch: master
-    :git: https://github.com/hartlco/ImageViewer.git
-
-CHECKOUT OPTIONS:
-  ImageViewer:
-    :commit: d9ec56f76dce1f9bd998bcdba782d6a071c7d620
-    :git: https://github.com/hartlco/ImageViewer.git
 
 SPEC CHECKSUMS:
   AcknowList: 06fde3319971dfd517ea1b1c194d78eb8cd774a2
-  Dequeueable: 9ae3656cfa523e4963fa4b53b118b5df1dbb11c8
   DropdownTitleView: e02e559243efb248dd0e8a50665b0acc5f6f2413
-  ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
-  wpxmlrpc: 6ba55c773cfa27083ae4a2173e69b19f46da98e2
 
-PODFILE CHECKSUM: bb105e8124eaa3ccc3a6ed849d35a8aac7a0f2fd
+PODFILE CHECKSUM: 33c55683f9f36f1d08cf15c66306256b57cb09c0
 
 COCOAPODS: 1.7.1

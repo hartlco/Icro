@@ -5,9 +5,8 @@
 
 import UIKit
 import IcroKit
-import Dequeueable
 
-final class LoadMoreTableViewCell: UITableViewCell, NibReusable {
+final class LoadMoreTableViewCell: UITableViewCell {
     var didPressLoadMore: (() -> Void)?
 
     override func awakeFromNib() {

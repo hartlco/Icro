@@ -1,10 +1,8 @@
 use_frameworks!
 
 target 'Icro' do
-    pod 'ImageViewer', :git => 'https://github.com/hartlco/ImageViewer.git', :branch => 'master'
     pod 'AcknowList'
     pod 'DropdownTitleView'
-    pod 'Dequeueable'
 	
 	target 'IcroTests' do
 	end
@@ -14,7 +12,6 @@ target 'IcroScreenshotsTests' do
 end
 
 def kitPods
-  pod 'wpxmlrpc'
 end
 
 target 'Icro-Share' do
@@ -26,7 +23,6 @@ end
 
 target 'IcroUIKit' do
     kitPods
-    pod 'Dequeueable'
 end
 
 post_install do |installer|

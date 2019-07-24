@@ -11,19 +11,7 @@ import UIKit
 extension UIApplication {
 
     static var applicationWindow: UIWindow {
-        if #available(iOS 13.0, *) {
-            let activeScene = UIApplication.shared.connectedScenes.first {
-                $0.activationState == .foregroundActive
-            }
-
-            guard let windowScene = activeScene as? UIWindowScene else {
-                fatalError("No active scene")
-            }
-
-            return windowScene.windows.first!
-        } else {
-            fatalError()
-        }
+        return (UIApplication.shared.delegate?.window?.flatMap { $0 })!
     }
 
     static var isPortraitOnly: Bool {

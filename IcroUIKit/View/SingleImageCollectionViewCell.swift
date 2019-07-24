@@ -5,14 +5,8 @@
 
 import UIKit
 import IcroKit
-import Dequeueable
 
-final class SingleImageCollectionViewCell: UICollectionViewCell, NibReusable {
-    public static var nib: UINib {
-        return UINib(nibName: String(describing: self),
-                     bundle: Bundle(for: SingleImageCollectionViewCell.self))
-    }
-
+final class SingleImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var videoPlayImage: UIImageView!
 
