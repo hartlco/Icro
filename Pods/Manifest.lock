@@ -2,23 +2,6 @@ PODS:
   - AcknowList (1.9)
   - Dequeueable (0.1.0)
   - DropdownTitleView (0.1.0)
-  - DTCoreText (1.6.21):
-    - DTCoreText/Core (= 1.6.21)
-    - DTFoundation/Core (~> 1.7.5)
-    - DTFoundation/DTAnimatedGIF (~> 1.7.5)
-    - DTFoundation/DTHTMLParser (~> 1.7.5)
-    - DTFoundation/UIKit (~> 1.7.5)
-  - DTCoreText/Core (1.6.21):
-    - DTFoundation/Core (~> 1.7.5)
-    - DTFoundation/DTAnimatedGIF (~> 1.7.5)
-    - DTFoundation/DTHTMLParser (~> 1.7.5)
-    - DTFoundation/UIKit (~> 1.7.5)
-  - DTFoundation/Core (1.7.13)
-  - DTFoundation/DTAnimatedGIF (1.7.13)
-  - DTFoundation/DTHTMLParser (1.7.13):
-    - DTFoundation/Core
-  - DTFoundation/UIKit (1.7.13):
-    - DTFoundation/Core
   - ImageViewer (5.0.0)
   - Kanna (5.0.0)
   - SwiftLint (0.32.0)
@@ -28,7 +11,6 @@ DEPENDENCIES:
   - AcknowList
   - Dequeueable
   - DropdownTitleView
-  - DTCoreText
   - ImageViewer (from `https://github.com/hartlco/ImageViewer.git`, branch `master`)
   - Kanna
   - SwiftLint
@@ -39,8 +21,6 @@ SPEC REPOS:
     - AcknowList
     - Dequeueable
     - DropdownTitleView
-    - DTCoreText
-    - DTFoundation
     - Kanna
     - SwiftLint
     - wpxmlrpc
@@ -59,13 +39,11 @@ SPEC CHECKSUMS:
   AcknowList: 06fde3319971dfd517ea1b1c194d78eb8cd774a2
   Dequeueable: 9ae3656cfa523e4963fa4b53b118b5df1dbb11c8
   DropdownTitleView: e02e559243efb248dd0e8a50665b0acc5f6f2413
-  DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
-  DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
   Kanna: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
   SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
   wpxmlrpc: 6ba55c773cfa27083ae4a2173e69b19f46da98e2
 
-PODFILE CHECKSUM: 69096e964c0e5339afcbfbbcb0426905e8cd60df
+PODFILE CHECKSUM: 598adf20e8616b6448dfdcf6b533387425133466
 
 COCOAPODS: 1.7.1

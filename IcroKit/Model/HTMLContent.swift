@@ -6,10 +6,6 @@
 import Kanna
 
 #if os(iOS)
-import DTCoreText
-#endif
-
-#if os(iOS)
 import UIKit
 public typealias XImage = UIImage
 #elseif os(OSX)
@@ -67,40 +63,57 @@ public final class HTMLContent: Codable {
 private extension String {
     #if os(iOS)
     func htmlToAttributedString(for itemID: String) -> NSAttributedString? {
-        let data = Data(trimEmptyLines.utf8)
-        guard let string = NSMutableAttributedString(htmlData: data, options: nil, documentAttributes: nil) else { return nil }
+        guard let document = try? HTML(html: trimEmptyLines, encoding: .utf8),
+            let body = document.body,
+            let bodyString = document.body?.text else { return nil }
 
+        let string = NSMutableAttributedString(string: bodyString)
         let paragraphStyle = NSMutableParagraphStyle()
+        let nsString = bodyString as NSString
         paragraphStyle.lineSpacing = 1.2
         let mutableAttributedString = NSMutableAttributedString(string: string.string.trimEmptyLines, attributes: [
                 .font: Font().body,
                 .foregroundColor: Color.textColor,
                 .paragraphStyle: paragraphStyle
-            ])
+        ])
+
+        for linkValue in body.xpath("//a | //href") {
+            guard let content = linkValue.content,
+                let linkURLString = linkValue["href"],
+                let url = URL(string: linkURLString) else { continue }
+            let range = nsString.range(of: content)
+            mutableAttributedString.save_addAttributes([
+                                        .foregroundColor: Color.main,
+                                        NSAttributedString.Key(rawValue: "IcroLinkAttribute"): url
+                                    ], range: range)
+
+        }
+//
+//        for textAttachmentImage in body.xpath("//img | //src") {
+//            var range = nsString.range(of: " ")
+//
+//            if let htmlClass = textAttachmentImage["class"], String.inlineMiniImageClasses.contains(htmlClass) {
+//                if let textAttachment = textAttachment(for: textAttachmentImage, itemID: itemID) {
+//                    let addedAttributedStrig = NSMutableAttributedString(string: " ")
+//                    addedAttributedStrig.save_addAttributes([
+//                        .attachment: textAttachment
+//                    ], range: range)
+//                    mutableAttributedString.append(addedAttributedStrig)
+//                    mutableAttributedString.append(NSAttributedString(string: " "))
+//                }
+//            }
+//        }
 
         string.enumerateAttributes(in: NSRange(location: 0, length: string.length), options: []) { (attributes, rane, _) in
-            let links = attributes.filter({ key, _ in
-                return key == .link
-            })
-
-            links.forEach({ _, value in
-                mutableAttributedString.save_addAttributes(
-                    [
-                        .foregroundColor: Color.main,
-                        NSAttributedString.Key(rawValue: "IcroLinkAttribute"): value
-                    ], range: rane)
-                return
-            })
-
             for (_, value) in attributes {
-                #if os(iOS)
-                if let image = value as? DTImageTextAttachment,
-                    let textAttachment = textAttachment(for: image, itemID: itemID) {
-                    mutableAttributedString.save_addAttributes([
-                        .attachment: textAttachment
-                        ], range: rane)
-                }
-                #endif
+//                #if os(iOS)
+//                if let image = value as? DTImageTextAttachment,
+//                    let textAttachment = textAttachment(for: image, itemID: itemID) {
+//                    mutableAttributedString.save_addAttributes([
+//                        .attachment: textAttachment
+//                        ], range: rane)
+//                }
+//                #endif
 
                 if let font = value as? XFont {
                     if font.isBold {
@@ -176,10 +189,10 @@ private extension String {
     }
 
     #if os(iOS)
-    private func textAttachment(for textImage: DTImageTextAttachment, itemID: String) -> NSTextAttachment? {
-        guard let urlString = textImage.attributes["src"] as? String,
+    private func textAttachment(for textImage: XMLElement, itemID: String) -> NSTextAttachment? {
+        guard let urlString = textImage["src"],
             let url = URL(string: urlString),
-            let classString = textImage.attributes["class"] as? String,
+            let classString = textImage["class"],
             String.inlineMiniImageClasses.contains(classString) else { return nil }
 
         let font = XFont.systemFont(ofSize: 16)
@@ -211,18 +224,6 @@ private extension NSMutableAttributedString {
 
 private extension String {
     static let inlineMiniImageClasses = ["mini_thumbnail", "wp-smiley"]
-
-    func matchesIn(string: NSString!, atRangeIndex: Int!) -> [String] {
-        guard let expression = try? NSRegularExpression(pattern: self, options: .caseInsensitive) else {
-            return [] }
-
-        // swiftlint:disable legacy_constructor
-        let matches = expression.matches(in: string as String, options: .withoutAnchoringBounds, range: NSMakeRange(0, string.length))
-
-        return matches.compactMap({
-            return string.substring(with: $0.range(at: 1))
-        })
-    }
 
     func videoLinks(from document: HTMLDocument?) -> [String] {
         guard let document = document else { return [] }

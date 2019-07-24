@@ -162,16 +162,12 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Dequeueable/Dequeueable.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DropdownTitleView/DropdownTitleView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Dequeueable/Dequeueable.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DropdownTitleView/DropdownTitleView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework"

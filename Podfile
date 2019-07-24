@@ -2,7 +2,6 @@ use_frameworks!
 
 target 'Icro' do
     pod 'ImageViewer', :git => 'https://github.com/hartlco/ImageViewer.git', :branch => 'master'
-    pod 'DTCoreText'
     pod 'AcknowList'
     pod 'SwiftLint'
     pod 'DropdownTitleView'
@@ -26,7 +25,6 @@ end
 
 target 'IcroKit' do
     kitPods
-    pod 'DTCoreText'
 end
 
 target 'IcroUIKit' do

@@ -1,7 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework
-${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework
-${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework
 ${BUILT_PRODUCTS_DIR}/Dequeueable/Dequeueable.framework
 ${BUILT_PRODUCTS_DIR}/DropdownTitleView/DropdownTitleView.framework
 ${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework
