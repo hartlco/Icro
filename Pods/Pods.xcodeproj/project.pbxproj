@@ -6,140 +6,135 @@
 	objectVersion = 52;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
-			buildPhases = (
-			);
-			dependencies = (
-			);
-			name = SwiftLint;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		01C00B97DDC1C2DF019C219998A8173D /* WPXMLRPCDecoderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CBA0E0713554C46DB2A55D5A9C69FBA9 /* WPXMLRPCDecoderDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		04F62D3F28EE1889294A90D837290808 /* WPStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D4DF907BA61541AEF931B8DAE7788 /* WPStringUtils.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		05A9D47FFD7C4DB9021080E1FFDFC5DD /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0C64FDCC23AC88B09C4ACC23F9D9E /* UtilityFunctions.swift */; };
-		08CD201F93481ED36649C949EDD444B8 /* ThumbnailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7104D8701560F8B022575AABBED55831 /* ThumbnailsViewController.swift */; };
-		09A8D6807443542C2AEB7F292997D476 /* UISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B790945736837F7FAE2148CB18D05E /* UISlider.swift */; };
-		0A1ABF5BA068A0246BE893EB79A5B5C5 /* AcknowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFA50A5E88EBCB58C6CFE1A9FDB228 /* AcknowListViewController.swift */; };
+		01C00B97DDC1C2DF019C219998A8173D /* WPXMLRPCDecoderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1449DC943736BBB451E774A55033F4 /* WPXMLRPCDecoderDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		04F62D3F28EE1889294A90D837290808 /* WPStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C05E6B7953254E1E309654AF7101C40 /* WPStringUtils.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		05A9D47FFD7C4DB9021080E1FFDFC5DD /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3533C532DDBE3D6F0FD7BB656BA5E8 /* UtilityFunctions.swift */; };
+		079EBF3EC7A999EB7797B8A8BC50A924 /* Pods-Icro-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52201C7886DC3A3193D556CD09DE8848 /* Pods-Icro-dummy.m */; };
+		08CD201F93481ED36649C949EDD444B8 /* ThumbnailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B334EFBB94A8E1C1F5899A42DD0E4B19 /* ThumbnailsViewController.swift */; };
+		09A8D6807443542C2AEB7F292997D476 /* UISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B6BD2B294EB8DF8A29CE33D7101D4 /* UISlider.swift */; };
+		0A1ABF5BA068A0246BE893EB79A5B5C5 /* AcknowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140F0CADCC19F624235A06109ACC54FE /* AcknowListViewController.swift */; };
 		0F0DD984C74F66D8E639C3E88E95B372 /* Pods-IcroUIKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 763F60231D137736E52EFBDFB43F2BFF /* Pods-IcroUIKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		17B05898EE35114FF85BBE0D9F1970DD /* Pods-Icro-IcroTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5725FBEEF475911E6CED3FDC55C856B /* Pods-Icro-IcroTests-dummy.m */; };
 		1908C17050FCE155F39F4510BC39CA79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		19CE05A282657B766995D2F407D715CE /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ECB5D4D186888FDECFFAC3A637B841 /* BlurView.swift */; };
-		1B2C9B889CFB2E4CF7D4970777EED45E /* Pods-Icro-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52201C7886DC3A3193D556CD09DE8848 /* Pods-Icro-dummy.m */; };
-		1BA7857A87F1970D5B6A7D8119BB1EC1 /* GalleryConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFD9E155F06E8E8ABFFBD32FA2F34B0 /* GalleryConfiguration.swift */; };
-		1F5E3E84B1DCD5B91CD44DD931E71B79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		213AD1A07A3FBB683B6154F9B069C1A4 /* WPBase64Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FCAE3AE1686B73FB3538281A961BD7D /* WPBase64Utils.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		225E9FD95946F5A3FA79EDB4357B9E4A /* AcknowParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037E7DEF74C89083A54D5DCCAFF9DF3 /* AcknowParser.swift */; };
+		19CE05A282657B766995D2F407D715CE /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5C3140CA38A2621D4B851E04FD687 /* BlurView.swift */; };
+		1BA7857A87F1970D5B6A7D8119BB1EC1 /* GalleryConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE466E962763E40269C40E8A378F7E11 /* GalleryConfiguration.swift */; };
+		213AD1A07A3FBB683B6154F9B069C1A4 /* WPBase64Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = D1852AD843159C30C5CB60D88C3138D6 /* WPBase64Utils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		225E9FD95946F5A3FA79EDB4357B9E4A /* AcknowParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31929CEE40FAD831E82C4A679B7FE2F5 /* AcknowParser.swift */; };
 		23423F1A5C2ACEB63C43F0129C42CEFF /* Pods-IcroKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 870E3F9F7586480928FB9C4B1DEE2A8F /* Pods-IcroKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		23DB694F59D9DE6BF18A6DF91C4F4D6E /* WPXMLRPCEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F4D7CCC52A88C3254520ECD15A6B7D3 /* WPXMLRPCEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		286C97A680D57B198255317165F29D6E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17378E6E926194E3D483DB2B988C89F8 /* UIColor.swift */; };
+		23DB694F59D9DE6BF18A6DF91C4F4D6E /* WPXMLRPCEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EB34159126F287EA1B970B6CC9490FF /* WPXMLRPCEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		286C97A680D57B198255317165F29D6E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50814DC06B08EE65443C1A46D06AD8A /* UIColor.swift */; };
 		2C3C0ACB68CC71F519CABEC7D4FBAB3D /* Pods-IcroScreenshotsTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D1A8774DDF923CBC9AE112185184CC59 /* Pods-IcroScreenshotsTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		306C0E88C9A8225830A010E28A0EE071 /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B127DB2DF19B7DA5ACD876B5E0D4E5A /* WPXMLRPCEncoder.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		33EDE0C248F54C3284D35D422E97C3CD /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E317C0CC71C969907C5BBF4A0EDF13F0 /* ImageViewController.swift */; };
-		34D05D3D95D556FBBCDC9506640558EC /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B5C47BA37A1279B3AD0A499A605E60 /* CGSize.swift */; };
-		36699972EBF7FE87CE1F0B5499E867BC /* UITableView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F0EA62204AC3002D2C59BC237CCC8C /* UITableView+Dequeueable.swift */; };
+		306C0E88C9A8225830A010E28A0EE071 /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 278154C2E50A29A3701732DE2AB19F77 /* WPXMLRPCEncoder.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		33EDE0C248F54C3284D35D422E97C3CD /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006C97AB56D65F28685B345BC9020288 /* ImageViewController.swift */; };
+		34D05D3D95D556FBBCDC9506640558EC /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC365449BCA7E3C2675BB1E2E3B9F /* CGSize.swift */; };
+		36699972EBF7FE87CE1F0B5499E867BC /* UITableView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9F4B3209A5D42BE37B3D76FE2116F /* UITableView+Dequeueable.swift */; };
 		3B20248FD492E0CB4D1FBF1C30A0CC23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		3B7620F0F2A3D80EE55836F1A1199E3B /* Dequeueable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD4327669E6AB43D87F4307D0B50B64 /* Dequeueable-dummy.m */; };
-		3FEC3A8CB58569E07783A364E6B014EC /* AcknowList-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 836F803425F492D17EF87C8AFA085FCF /* AcknowList-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		42F4F5BA79B38D682A8456C3096AD5A4 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1DA50615004016EB63AA16030DAD3F /* WPXMLRPCDecoder.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		45988E96DD2DAB2EF0A4EDF311BC1A08 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1508416465C611CE755D2469BE44915 /* VideoView.swift */; };
-		45E36BAA8228D491790A7FC5B886ADF0 /* AcknowLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD9A90E52E97A9B8B55E17318CC73BE /* AcknowLocalization.swift */; };
+		3B7620F0F2A3D80EE55836F1A1199E3B /* Dequeueable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB6F156D37E9027E7AEE1252A9C1EE4 /* Dequeueable-dummy.m */; };
+		3FEC3A8CB58569E07783A364E6B014EC /* AcknowList-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D1A0895C225ADCC023A87C30E0B07B36 /* AcknowList-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		42F4F5BA79B38D682A8456C3096AD5A4 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5A28118CEBACCB299BDDDD12BAD57B /* WPXMLRPCDecoder.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		45988E96DD2DAB2EF0A4EDF311BC1A08 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A826693F3932049F7E380113B1208E5 /* VideoView.swift */; };
+		45E36BAA8228D491790A7FC5B886ADF0 /* AcknowLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F22488C10336FC6ACB84090F2C55F8 /* AcknowLocalization.swift */; };
 		497B0E9E5E93A0737AC9500745F9C768 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		4B0698455B81069AC9FB004E495A340D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E984353824AAB0EFB8D9848B0C4355 /* Reusable.swift */; };
-		4BE7196D0F58A0AD030AFB1A5DFA4244 /* ItemControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847F74183A548BBA3D499A654C610DD /* ItemControllerDelegate.swift */; };
-		4E2A5C7C4A8811F736110C5B5627CB82 /* WPXMLRPC.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DF89AE6CDFB315AEDE05FD033845AA2 /* WPXMLRPC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		579E663A3D6CBB8718B88228925F95BA /* DropdownTitleView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F495C48B82C2B708B17C0A13646AC76 /* DropdownTitleView-dummy.m */; };
-		5D5CAB42C634939E64E2EAD2EEC0A2BD /* GalleryItemsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CF1920DC58873A44FA334EDAFC27DD /* GalleryItemsDataSource.swift */; };
-		5E4F53285282F0792B04D218269319C8 /* ImageFadeInHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A9D0C735FF76F87EF51296433F14DB /* ImageFadeInHandler.swift */; };
-		5F3E6CDA373F197D9FFF58F37DEC92FB /* GalleryPagingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8E208B78FA59CC16C6449731441E93 /* GalleryPagingDataSource.swift */; };
-		5F81A2654EBB49955481A98F39E75238 /* AcknowList.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A7B513A20529FA93A5A8B1364FB607EB /* AcknowList.bundle */; };
-		5FCC83C9375B74F76735AA9DE442D188 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B4DE750FAA43B8C33FD52D83B5133F /* UIApplication.swift */; };
-		6B249D9D9B0D6D6A6F2614BB5A02A82F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8992F1D8E9365EEF32D45E3B91182F /* UIView.swift */; };
-		6B551D29B4DECD446F70F548795C2E0A /* WPStringUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BAABBE4445D54D7114DE80DD6D7B89AF /* WPStringUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4B0698455B81069AC9FB004E495A340D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA5C6CF6AFC1F9FFAE5401C478F75C /* Reusable.swift */; };
+		4BE7196D0F58A0AD030AFB1A5DFA4244 /* ItemControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7189D84045315FE251D38AB8BFBBB755 /* ItemControllerDelegate.swift */; };
+		4E2A5C7C4A8811F736110C5B5627CB82 /* WPXMLRPC.h in Headers */ = {isa = PBXBuildFile; fileRef = 43461718365F1893A84E497DD6608090 /* WPXMLRPC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		579E663A3D6CBB8718B88228925F95BA /* DropdownTitleView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BE01667169C782902A9C8C2777EBFB /* DropdownTitleView-dummy.m */; };
+		5826106CB504464311EB3AB7A6BF62B6 /* Pods-Icro-IcroTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D2128398EA3EC928C2E7BA2DD02302D /* Pods-Icro-IcroTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D5CAB42C634939E64E2EAD2EEC0A2BD /* GalleryItemsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448F8B964FA045F1FB6C2905CF96F36 /* GalleryItemsDataSource.swift */; };
+		5E4F53285282F0792B04D218269319C8 /* ImageFadeInHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F954380D5A6383B64307E64F9CAA626 /* ImageFadeInHandler.swift */; };
+		5F3E6CDA373F197D9FFF58F37DEC92FB /* GalleryPagingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30C71E611C172F902A15BF4B010C6A /* GalleryPagingDataSource.swift */; };
+		5F81A2654EBB49955481A98F39E75238 /* AcknowList.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 238022DEBF05EEDD092BFFFE1A66231C /* AcknowList.bundle */; };
+		5FCC83C9375B74F76735AA9DE442D188 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D27DAF13AB13F55410065D894F4809 /* UIApplication.swift */; };
+		6B249D9D9B0D6D6A6F2614BB5A02A82F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E50E92752B310327A4E93294E93638 /* UIView.swift */; };
+		6B551D29B4DECD446F70F548795C2E0A /* WPStringUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = FAB311B534B9CC5F56CCC8A42510FC68 /* WPStringUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6B5F95C9DA7C25717C9BED370935F228 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		6B92A01820C1AD93388406E2E63640DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		6CBCBC9417E6359F669CBF7CC831A744 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
-		6CE339306192F9CA1C10238C35945E01 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2093FA0663097E8649F9D156AECE436D /* Slider.swift */; };
-		6DDD3DC2EB493A828F816AD8ADD1CF8C /* GalleryDisplacedViewsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C9EE5A5F8DD1C7EE535818D3480CE /* GalleryDisplacedViewsDataSource.swift */; };
-		709662E01E0ECF09C2BA4FFE56298C6F /* Pods-Icro-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D556F2B325D49101893AD91207B2EA2 /* Pods-Icro-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CE339306192F9CA1C10238C35945E01 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB047E1FBCEC9EECAC8D3F590B8897E3 /* Slider.swift */; };
+		6DDD3DC2EB493A828F816AD8ADD1CF8C /* GalleryDisplacedViewsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7BC4104F165C49FA32A1883B14079C /* GalleryDisplacedViewsDataSource.swift */; };
 		71F3715181163C7AFE05A0C2E2F41CEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
-		73CC93A8A114C015884AC9A202316D2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		73F1770D60F417260F68D56A4C7DE9EF /* GalleryItemsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD281B26EE4ED3A7CAA62CCFC1296EF /* GalleryItemsDelegate.swift */; };
-		7BDCBC7200286383577AC47A79CCA216 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D46AB8B21A57F68274FB72680EA2E /* CGRect.swift */; };
-		80BF9C31D042F2E378B2390F59F8E450 /* Dequeueable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 81FC74B83E5BF97B5FBC03234A826B8F /* Dequeueable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		80D97B70572A0F66F96C2F3493CB8FE5 /* DropdownTitleView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E1565F729AF635F8ECF9DFB2AE5469A /* DropdownTitleView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		837A9D66C78284B3CC229F1A340795F9 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B683E891BEAE7D956994BAE34833BAB /* CGPoint.swift */; };
-		8761178329E9F206CA7462EC1083ABD0 /* WPBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0847A7A17039BC490A2D8B2AB42D8CDD /* WPBase64Utils.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		88CAA9725111FF752BCB1F742395181B /* WPXMLRPCDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F154E0F401877437469D03F0756A26 /* WPXMLRPCDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8AB9B7BECC24AC69C4A0B68B1FB09CDB /* AcknowList-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFFD517EF1A9E6175D2AFBE90232CF7 /* AcknowList-dummy.m */; };
-		8BF84D8DD91A5BB763ADC29976790045 /* WPXMLRPCDecoderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E5B5C82013E3C5E9F870B6265DF744 /* WPXMLRPCDecoderDelegate.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		73F1770D60F417260F68D56A4C7DE9EF /* GalleryItemsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC417A1A1C4857B8AFB6C1AB167E1D7 /* GalleryItemsDelegate.swift */; };
+		7BDCBC7200286383577AC47A79CCA216 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8875EF2AE708BD5BC6365C57A5B7CB /* CGRect.swift */; };
+		80BF9C31D042F2E378B2390F59F8E450 /* Dequeueable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5921E1C1821C5ED49E236A583B22F48 /* Dequeueable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80D97B70572A0F66F96C2F3493CB8FE5 /* DropdownTitleView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B92797824366A22FF69A8D932B86779 /* DropdownTitleView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		837A9D66C78284B3CC229F1A340795F9 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE909E9E2C9028886664F72C164A4FD /* CGPoint.swift */; };
+		8761178329E9F206CA7462EC1083ABD0 /* WPBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9A5D319DC47A73626FB2D8D3CD296 /* WPBase64Utils.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		88CAA9725111FF752BCB1F742395181B /* WPXMLRPCDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CF6C1118A2C1BFB46FB5E6703341DDE /* WPXMLRPCDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A84A4AD77DC3DC253B9170AC9D53763 /* Pods-Icro-IcroTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5725FBEEF475911E6CED3FDC55C856B /* Pods-Icro-IcroTests-dummy.m */; };
+		8AB9B7BECC24AC69C4A0B68B1FB09CDB /* AcknowList-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F3056F0356083BC9473200962BB36 /* AcknowList-dummy.m */; };
+		8BF84D8DD91A5BB763ADC29976790045 /* WPXMLRPCDecoderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F7EF7729911561C19E907662C89AD3 /* WPXMLRPCDecoderDelegate.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		8DD42F4E8AC779CA1A2ADF6F6E0C050B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		8E652EF10AB5F02BC969ACC247048CD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		90FEA831530C3975DA0E1A02A6A8D441 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF919BB09AA801E7FEB9461604DC2785 /* UIButton.swift */; };
+		90FEA831530C3975DA0E1A02A6A8D441 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BF0D76DE94C694BA2ACC3BDBA51192 /* UIButton.swift */; };
 		93FB7682BF9C652BE28613A156101994 /* Pods-IcroScreenshotsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CEF3A0D11E31FD1FD3124DD0E41EDC /* Pods-IcroScreenshotsTests-dummy.m */; };
-		A0B153EBF7842459203579BDECBDFBD1 /* WPXMLRPCDataCleaner.h in Headers */ = {isa = PBXBuildFile; fileRef = 440A118F89679C7586EE73D437CAABE2 /* WPXMLRPCDataCleaner.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A2AE485FF0BC1E1EAE4DB46203CD4954 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5E8096D78EADEA6637C71BA2D7D494 /* CALayer.swift */; };
-		AAE40530AD4E5CF8EE2C5237D8BAF3D6 /* LayoutEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D648BF76895D34D8670BC98DE55389E /* LayoutEnums.swift */; };
-		ACF4E52DF084DC669436A1CBD9D042A3 /* ThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C31375E0A0406DE061A3C79AB14582 /* ThumbnailCell.swift */; };
-		AD02698A0843D6F4889505EF8E42E6B6 /* ImageViewer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B49C16548CDC98ED234F85CBDBB4D8 /* ImageViewer-dummy.m */; };
+		A0B153EBF7842459203579BDECBDFBD1 /* WPXMLRPCDataCleaner.h in Headers */ = {isa = PBXBuildFile; fileRef = 54B81874BBEFD3ABD9619E097D68E2D9 /* WPXMLRPCDataCleaner.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A2AE485FF0BC1E1EAE4DB46203CD4954 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F8EA7BBEA036BB7A40A468B9044AE6 /* CALayer.swift */; };
+		AAE40530AD4E5CF8EE2C5237D8BAF3D6 /* LayoutEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C720B90E738AD2D87B1FDE9095D9D /* LayoutEnums.swift */; };
+		ACF4E52DF084DC669436A1CBD9D042A3 /* ThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0C1E7787EE80AB4D58E7D879BCE38 /* ThumbnailCell.swift */; };
+		AD02698A0843D6F4889505EF8E42E6B6 /* ImageViewer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEEFB76D381F987E9EE229DA0F9D52C /* ImageViewer-dummy.m */; };
 		AF848B978668F93BD6646B457AABCC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		B09C588672424C8CD2691D855FE003BF /* wpxmlrpc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B9A1C0491272D2FC38A5A5C250A6742 /* wpxmlrpc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B55FCA9B7714157C2F2280379058ECCB /* wpxmlrpc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B2EEDACA9A3B2FA263430AAC62A9CB /* wpxmlrpc-dummy.m */; };
-		B6D3ACC72B2BEBABB9E5875D0A0E5EBC /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A627A61ED2ACD0EB09A6C662EBEE0 /* UIScreen.swift */; };
-		B80F06CDB456C32A0447D48D324D237E /* AVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63070B4B3AC73C7FBCDDADE3C02DDCBF /* AVPlayer.swift */; };
-		BB24386D9F99D684E773F634F75C27D6 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC126B84191301A2499136094D1F72 /* GalleryViewController.swift */; };
-		BBCE68123DCF3700839F969F93192F4C /* ImageViewer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 26BCC851BED4C6FFA635F81A86DBA5C2 /* ImageViewer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF7980953BA5EEC6FDA6B432BD221A5D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3EB20F81D88BB85CED85EBF266203 /* UIViewController.swift */; };
-		C228E56186A268C4728AF5BE996DED33 /* AcknowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D163D29E416062A03646DADB317F05A2 /* AcknowViewController.swift */; };
-		C2CE4BD58A09162AD7F07313B5F72061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44CB044B2F242C0CA9A3AF9FEDB363F /* Assets.xcassets */; };
-		C38A4947EFA45AF908F89585FAEC7246 /* VideoScrubber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78948BD6C4B489624A23D4453B8E578 /* VideoScrubber.swift */; };
-		C509BFC61351F146B3119441D3352851 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00462F36515B6A4E0968094AC3EC9A76 /* UIImageView.swift */; };
-		C5CB9B1D8E0C6100F7E9CB6703C1C51D /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1F23BEACB57B2A5B481A4B838AF4C5 /* Bool.swift */; };
-		D164202EA037AA99FEA734A6775D0A1C /* Pods-Icro-IcroTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D2128398EA3EC928C2E7BA2DD02302D /* Pods-Icro-IcroTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B09C588672424C8CD2691D855FE003BF /* wpxmlrpc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4636A828C11917FBD03564340591AB03 /* wpxmlrpc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B55FCA9B7714157C2F2280379058ECCB /* wpxmlrpc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A952DD2E0226B85EDA1D21B956E7397B /* wpxmlrpc-dummy.m */; };
+		B6D3ACC72B2BEBABB9E5875D0A0E5EBC /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589EE51A30BB2E09C2A6C31C5B31C47A /* UIScreen.swift */; };
+		B80F06CDB456C32A0447D48D324D237E /* AVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0C6E41273207BB80D25462558170CA /* AVPlayer.swift */; };
+		BB24386D9F99D684E773F634F75C27D6 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4CE922A1B97BAFA7CDBF3898931C1 /* GalleryViewController.swift */; };
+		BBCE68123DCF3700839F969F93192F4C /* ImageViewer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86C8471F9DFF0F23AFFFC4F8F8493E39 /* ImageViewer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDEBF579C767DA5D245461C1C77CF2C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		BF7980953BA5EEC6FDA6B432BD221A5D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F2EE64F578EAB61596D6FFBBB1437C /* UIViewController.swift */; };
+		C228E56186A268C4728AF5BE996DED33 /* AcknowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412C01C473148D5739F8261682533330 /* AcknowViewController.swift */; };
+		C2CE4BD58A09162AD7F07313B5F72061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 519B4F2A05455007A3863B645465C924 /* Assets.xcassets */; };
+		C38A4947EFA45AF908F89585FAEC7246 /* VideoScrubber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E98C232768D9EC68C3F86A5F8A55AD /* VideoScrubber.swift */; };
+		C509BFC61351F146B3119441D3352851 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218D76B141C387326ECAC38D5EDE4DDC /* UIImageView.swift */; };
+		C5CB9B1D8E0C6100F7E9CB6703C1C51D /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CF8A4361FC99E4935B6DDD633C790D /* Bool.swift */; };
 		D413F5FF8090FDB8A311AB38A9841EA4 /* Pods-IcroKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82834F232BD0ED006ABC389EAECC8300 /* Pods-IcroKit-dummy.m */; };
-		D64C0C0FC87AA36D9D6739A738D7D6BD /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FAD2457402AC289B89F40ACB58502 /* ItemController.swift */; };
+		D64C0C0FC87AA36D9D6739A738D7D6BD /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF53D4C13674473B2120DB5971C943 /* ItemController.swift */; };
 		D71AE15176137CC0D497B9A7D11C4B9D /* Pods-Icro-Share-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98091DB1A21AFFB3E4C2E62CAA37F458 /* Pods-Icro-Share-dummy.m */; };
-		D771B7EA9E0662F574D5257DE5A9799B /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED4D9386797346ADF2E00FABBB07936 /* NibView.swift */; };
-		D9374A87B3A97464983A7E535FBF022A /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F491208E1777A452372F43CBC0B2A3 /* GalleryItem.swift */; };
-		DCA006624E52CE676330FCD1AB19DE14 /* DropdownTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73C5505C46C5BC993CBF8FB96EE0258 /* DropdownTitleView.swift */; };
-		E2F9F41C03CCE63342AA09BE7A564F9D /* CAShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BFC45EBD5B1D350DCBC8DB7D1F2293 /* CAShapeLayer.swift */; };
+		D771B7EA9E0662F574D5257DE5A9799B /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524ABC8BCC7B87F88C98F7DFE50A16A6 /* NibView.swift */; };
+		D9374A87B3A97464983A7E535FBF022A /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA398DB3EDA2658A1B2F08CF2548E08A /* GalleryItem.swift */; };
+		DCA006624E52CE676330FCD1AB19DE14 /* DropdownTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA445F0E6C1BEEAC2C65C526F93E45 /* DropdownTitleView.swift */; };
+		E2F9F41C03CCE63342AA09BE7A564F9D /* CAShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58DDA9D246457E7D87B5FEEFE0CE658 /* CAShapeLayer.swift */; };
 		E433032DDD8A5896EC4E64689DAAB4E3 /* Pods-Icro-Share-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EEB041BDAB870D38CDAA959BBD150CB7 /* Pods-Icro-Share-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E524F49D1FB7C5B56D28E8CBD3E8A514 /* Pods-IcroUIKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 621263CC9FCEFB5621B68849D8CD213A /* Pods-IcroUIKit-dummy.m */; };
-		E63B4B1FF3ECA393B1977B923473B34F /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC664A9D6EDC2BD81838533E35BEF6B /* WPXMLRPCDataCleaner.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E6F90239BF7BDFDC6983E4A7D0DF3A64 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F51299DF18CA4A3F8F07F4AE3DA58C /* VideoViewController.swift */; };
-		E84346CD028EB8083CF4871D3172F52A /* UICollectionView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC83768A247D5D90BE65EB06725D3D /* UICollectionView+Dequeueable.swift */; };
-		EADF94DB4AB8BB1E9E8A53A8BFFDFF21 /* UIBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A159FB65B08589375F4424AB14D548F8 /* UIBezierPath.swift */; };
-		EC07FBEFC038A6E5AE8CB833D71739FB /* Acknow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD327F31A43AC73A85A10FC2A63A92D8 /* Acknow.swift */; };
-		F5C9A33B34D1D5977D17AD51437DB631 /* GallerySwipeToDismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F27A09A5FAC5A2AA251494094CFC8F3 /* GallerySwipeToDismissTransition.swift */; };
+		E63B4B1FF3ECA393B1977B923473B34F /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 7657F236050B7EC00228072BEC627DFE /* WPXMLRPCDataCleaner.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E6F90239BF7BDFDC6983E4A7D0DF3A64 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA83C05EEC2DD95CB4BF474C84B768E9 /* VideoViewController.swift */; };
+		E84346CD028EB8083CF4871D3172F52A /* UICollectionView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C83DF20238664EE68DB50FE1B7AB0 /* UICollectionView+Dequeueable.swift */; };
+		EADF94DB4AB8BB1E9E8A53A8BFFDFF21 /* UIBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3452E5A6356C84E5CDE2F58F56F6B4 /* UIBezierPath.swift */; };
+		EC07FBEFC038A6E5AE8CB833D71739FB /* Acknow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7C4729FE426957ED7DE9EAD78A0B3 /* Acknow.swift */; };
+		F5C9A33B34D1D5977D17AD51437DB631 /* GallerySwipeToDismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C8FE8DD8A933B269878F43702F810 /* GallerySwipeToDismissTransition.swift */; };
+		F96531B4811A535ED0DBF78B7626A6FB /* Pods-Icro-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D556F2B325D49101893AD91207B2EA2 /* Pods-Icro-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FB51A730CE494A52FA54ED168DC55548 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		FC2AE75413E198891C51478D3EDDA1C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		FE526018AE3CF21B7183608411BAD82C /* ItemBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802D5D3267EF36841B86EF13C4F1EE6 /* ItemBaseController.swift */; };
+		FE526018AE3CF21B7183608411BAD82C /* ItemBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5EC08655AF3D324A739E84C65630E /* ItemBaseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0DC9C16DFB7387F57F5D3311F0F98355 /* PBXContainerItemProxy */ = {
+		0EA0CDF8BD416EEC6B46B9834DFD54A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F925A5167B179E11CFF65658A43F095F;
-			remoteInfo = Dequeueable;
+			remoteGlobalIDString = 318CFBA3C7320ED40817AEE1BFFF9FF1;
+			remoteInfo = wpxmlrpc;
 		};
-		2318FB86A11D2F9B81A60F86DA9D1A69 /* PBXContainerItemProxy */ = {
+		132DE121C493EF21837762FC33AAED44 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3D83A5D20FC82284ECB8F7B3F5991097;
 			remoteInfo = ImageViewer;
 		};
-		27C5EBB790C3AAB5D4A133AF989349C3 /* PBXContainerItemProxy */ = {
+		1AAAC7E160B45442F6FCE998D38DE94A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
-			remoteInfo = SwiftLint;
+			remoteGlobalIDString = 51691F4311958691BD98F5F26E2D77D4;
+			remoteInfo = AcknowList;
+		};
+		29D1D26DDA01C2FEFCEAC8D591C27E10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51691F4311958691BD98F5F26E2D77D4;
+			remoteInfo = AcknowList;
 		};
 		338043D8D165126E09391175BA82A4E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -155,35 +150,35 @@
 			remoteGlobalIDString = F925A5167B179E11CFF65658A43F095F;
 			remoteInfo = Dequeueable;
 		};
-		69EADA6C74518AEB93A643949234B7A7 /* PBXContainerItemProxy */ = {
+		3BF16A33E8B6DA4EA0995A0F08964CC1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 51691F4311958691BD98F5F26E2D77D4;
-			remoteInfo = AcknowList;
+			remoteGlobalIDString = F925A5167B179E11CFF65658A43F095F;
+			remoteInfo = Dequeueable;
 		};
-		7018EE301FEDD5BEFF6F49414F915B68 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
-			remoteInfo = SwiftLint;
-		};
-		83762EE60D0EEF78BC0842A6861E3C57 /* PBXContainerItemProxy */ = {
+		80867F980C34C5142539C2CBC921E899 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3D83A5D20FC82284ECB8F7B3F5991097;
 			remoteInfo = ImageViewer;
 		};
-		843EED195AA931BC7C1D3601C48FAA71 /* PBXContainerItemProxy */ = {
+		CB7ED82CEC3B3C425BE2382C18F08988 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D7ECEE45EC39F97DE10FBB99F33044A6;
 			remoteInfo = DropdownTitleView;
 		};
-		98C167BEF0A0FFD8CAA15A6A78BB9FB4 /* PBXContainerItemProxy */ = {
+		CFC3B61D8E78021462D835B4CE4067A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F925A5167B179E11CFF65658A43F095F;
+			remoteInfo = Dequeueable;
+		};
+		D57CB56977A9CCCA1B5FB29793C53729 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -197,188 +192,166 @@
 			remoteGlobalIDString = 318CFBA3C7320ED40817AEE1BFFF9FF1;
 			remoteInfo = wpxmlrpc;
 		};
-		E90328C37EF9953E209B3A03C5E23100 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 318CFBA3C7320ED40817AEE1BFFF9FF1;
-			remoteInfo = wpxmlrpc;
-		};
-		F937D7B290838A15482C62DDC04B579F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 51691F4311958691BD98F5F26E2D77D4;
-			remoteInfo = AcknowList;
-		};
-		FE5C98F0113BE1E0F64E6B0B470A10A5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F925A5167B179E11CFF65658A43F095F;
-			remoteInfo = Dequeueable;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		00199EFB90161D0813C8D7FF3EE2A4A7 /* Dequeueable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Dequeueable.framework; path = Dequeueable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		00462F36515B6A4E0968094AC3EC9A76 /* UIImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIImageView.swift; path = ImageViewer/Source/Extensions/UIImageView.swift; sourceTree = "<group>"; };
-		077A74B5B7DE2EC881688A46A7684733 /* wpxmlrpc-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "wpxmlrpc-Info.plist"; sourceTree = "<group>"; };
-		0847A7A17039BC490A2D8B2AB42D8CDD /* WPBase64Utils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WPBase64Utils.m; path = WPXMLRPC/WPBase64Utils.m; sourceTree = "<group>"; };
+		006C97AB56D65F28685B345BC9020288 /* ImageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageViewController.swift; path = ImageViewer/Source/ImageViewController.swift; sourceTree = "<group>"; };
+		07173FE80A86472FF5681B49A5F773FA /* ImageViewer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImageViewer.xcconfig; sourceTree = "<group>"; };
+		07682FF4838E54D19F817DAF9DE9221B /* AcknowList-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AcknowList-prefix.pch"; sourceTree = "<group>"; };
+		07D6F75E4860E86DA0E431A58DF42270 /* AcknowList.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AcknowList.modulemap; sourceTree = "<group>"; };
 		084F2960B5B3CACBD85EE17BDA0716FF /* Pods-IcroKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-IcroKit.modulemap"; sourceTree = "<group>"; };
-		0A8FC6EFD482B7EAAA26AB0B6C26A651 /* ImageViewer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImageViewer.xcconfig; sourceTree = "<group>"; };
-		0C8A627A61ED2ACD0EB09A6C662EBEE0 /* UIScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIScreen.swift; path = ImageViewer/Source/Extensions/UIScreen.swift; sourceTree = "<group>"; };
+		0CF6C1118A2C1BFB46FB5E6703341DDE /* WPXMLRPCDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WPXMLRPCDecoder.h; path = WPXMLRPC/WPXMLRPCDecoder.h; sourceTree = "<group>"; };
+		0CF76FEFCD874C9E76B90158F4125681 /* ImageViewer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageViewer-prefix.pch"; sourceTree = "<group>"; };
 		0D2128398EA3EC928C2E7BA2DD02302D /* Pods-Icro-IcroTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Icro-IcroTests-umbrella.h"; sourceTree = "<group>"; };
-		0D5DE3FBDD302A3E8CA38EFFCB5E1F27 /* AcknowList.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AcknowList.xcconfig; sourceTree = "<group>"; };
-		0DF89AE6CDFB315AEDE05FD033845AA2 /* WPXMLRPC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WPXMLRPC.h; path = WPXMLRPC/WPXMLRPC.h; sourceTree = "<group>"; };
-		0F4D7CCC52A88C3254520ECD15A6B7D3 /* WPXMLRPCEncoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WPXMLRPCEncoder.h; path = WPXMLRPC/WPXMLRPCEncoder.h; sourceTree = "<group>"; };
 		11C56F9A5A32E14452E91862088DA723 /* Pods-Icro-IcroTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Icro-IcroTests.modulemap"; sourceTree = "<group>"; };
-		11F494DCB34868C26AD264BA0BD96F5F /* wpxmlrpc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = wpxmlrpc.xcconfig; sourceTree = "<group>"; };
+		12BF0D76DE94C694BA2ACC3BDBA51192 /* UIButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIButton.swift; path = ImageViewer/Source/Extensions/UIButton.swift; sourceTree = "<group>"; };
 		12D7C58282EC9A84257A16784C275445 /* Pods-Icro.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Icro.modulemap"; sourceTree = "<group>"; };
-		1452929632602088FC179CDAD099B970 /* ImageViewer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ImageViewer.modulemap; sourceTree = "<group>"; };
+		140F0CADCC19F624235A06109ACC54FE /* AcknowListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowListViewController.swift; path = Source/AcknowListViewController.swift; sourceTree = "<group>"; };
 		1519EC008B66AF77E729CC5B69808E8C /* Pods-IcroUIKit-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IcroUIKit-acknowledgements.plist"; sourceTree = "<group>"; };
-		17378E6E926194E3D483DB2B988C89F8 /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = ImageViewer/Source/Extensions/UIColor.swift; sourceTree = "<group>"; };
-		1817B37C6BB06A3872E3F5467318275F /* AcknowList.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AcknowList.modulemap; sourceTree = "<group>"; };
+		186515E4025A316E092B88AD3A4327B6 /* AcknowList-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AcknowList-Info.plist"; sourceTree = "<group>"; };
 		1A63BE7CE141D8D899E88A1F69B82CE0 /* Pods_IcroUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_IcroUIKit.framework; path = "Pods-IcroUIKit.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB292DEC0B08C071C47375988B3366E /* AcknowList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AcknowList.framework; path = AcknowList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D556F2B325D49101893AD91207B2EA2 /* Pods-Icro-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Icro-umbrella.h"; sourceTree = "<group>"; };
+		1E3C720B90E738AD2D87B1FDE9095D9D /* LayoutEnums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutEnums.swift; path = ImageViewer/Source/LayoutEnums.swift; sourceTree = "<group>"; };
 		1E47A609CB68AC98BA61A03A8FFEA00D /* Pods-Icro-Share.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Icro-Share.debug.xcconfig"; sourceTree = "<group>"; };
 		1EB443E93A7EA117A5AE4F9FCD738B04 /* Pods_Icro_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Icro_Share.framework; path = "Pods-Icro-Share.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2037E7DEF74C89083A54D5DCCAFF9DF3 /* AcknowParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowParser.swift; path = Source/AcknowParser.swift; sourceTree = "<group>"; };
-		2093FA0663097E8649F9D156AECE436D /* Slider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Slider.swift; path = ImageViewer/Source/Slider.swift; sourceTree = "<group>"; };
-		20D40F238F6FB2FCBFC3F191A4D0BC13 /* SwiftLint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.xcconfig; sourceTree = "<group>"; };
-		20E5B5C82013E3C5E9F870B6265DF744 /* WPXMLRPCDecoderDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WPXMLRPCDecoderDelegate.m; path = WPXMLRPC/WPXMLRPCDecoderDelegate.m; sourceTree = "<group>"; };
-		22B790945736837F7FAE2148CB18D05E /* UISlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UISlider.swift; path = ImageViewer/Source/Extensions/UISlider.swift; sourceTree = "<group>"; };
-		23EFA50A5E88EBCB58C6CFE1A9FDB228 /* AcknowListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowListViewController.swift; path = Source/AcknowListViewController.swift; sourceTree = "<group>"; };
-		251C9EE5A5F8DD1C7EE535818D3480CE /* GalleryDisplacedViewsDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryDisplacedViewsDataSource.swift; path = ImageViewer/Source/GalleryDisplacedViewsDataSource.swift; sourceTree = "<group>"; };
-		26BCC851BED4C6FFA635F81A86DBA5C2 /* ImageViewer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageViewer-umbrella.h"; sourceTree = "<group>"; };
+		1EEEFB76D381F987E9EE229DA0F9D52C /* ImageViewer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ImageViewer-dummy.m"; sourceTree = "<group>"; };
+		218D76B141C387326ECAC38D5EDE4DDC /* UIImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIImageView.swift; path = ImageViewer/Source/Extensions/UIImageView.swift; sourceTree = "<group>"; };
+		238022DEBF05EEDD092BFFFE1A66231C /* AcknowList.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = AcknowList.bundle; path = Resources/AcknowList.bundle; sourceTree = "<group>"; };
+		278154C2E50A29A3701732DE2AB19F77 /* WPXMLRPCEncoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WPXMLRPCEncoder.m; path = WPXMLRPC/WPXMLRPCEncoder.m; sourceTree = "<group>"; };
 		2B9D51DCBA77DEBBB4A71DA0A4AA3D31 /* DropdownTitleView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropdownTitleView.framework; path = DropdownTitleView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C0D4DF907BA61541AEF931B8DAE7788 /* WPStringUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WPStringUtils.m; path = WPXMLRPC/WPStringUtils.m; sourceTree = "<group>"; };
-		2C74573A9C5784B2791EF06CFAEE647E /* DropdownTitleView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DropdownTitleView.modulemap; sourceTree = "<group>"; };
+		2D24A3E6DBE8C82CEE12F63BCE50A145 /* DropdownTitleView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DropdownTitleView-Info.plist"; sourceTree = "<group>"; };
 		2DBA594AE45FE4E6DB558F385ADF49FC /* Pods-Icro-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Icro-acknowledgements.plist"; sourceTree = "<group>"; };
-		2E1565F729AF635F8ECF9DFB2AE5469A /* DropdownTitleView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropdownTitleView-umbrella.h"; sourceTree = "<group>"; };
+		2DF9A5D319DC47A73626FB2D8D3CD296 /* WPBase64Utils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WPBase64Utils.m; path = WPXMLRPC/WPBase64Utils.m; sourceTree = "<group>"; };
 		2EC8FAC75F26579AC8CC58B69C1BDA69 /* Pods-Icro-IcroTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Icro-IcroTests-Info.plist"; sourceTree = "<group>"; };
-		2F495C48B82C2B708B17C0A13646AC76 /* DropdownTitleView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropdownTitleView-dummy.m"; sourceTree = "<group>"; };
+		2F954380D5A6383B64307E64F9CAA626 /* ImageFadeInHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageFadeInHandler.swift; path = ImageViewer/Source/ImageFadeInHandler.swift; sourceTree = "<group>"; };
 		3110B48CCF8156AED9E50A9DE880EB06 /* Pods-Icro-IcroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Icro-IcroTests.release.xcconfig"; sourceTree = "<group>"; };
 		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		31929CEE40FAD831E82C4A679B7FE2F5 /* AcknowParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowParser.swift; path = Source/AcknowParser.swift; sourceTree = "<group>"; };
+		322C92E34D2E50641C3CCD11716A2D31 /* Dequeueable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dequeueable-prefix.pch"; sourceTree = "<group>"; };
 		32A56E23034957D6CAC6E1107A59F05E /* Pods-IcroKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IcroKit-Info.plist"; sourceTree = "<group>"; };
-		3847F74183A548BBA3D499A654C610DD /* ItemControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItemControllerDelegate.swift; path = ImageViewer/Source/ItemControllerDelegate.swift; sourceTree = "<group>"; };
-		38B4DE750FAA43B8C33FD52D83B5133F /* UIApplication.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIApplication.swift; path = ImageViewer/Source/Extensions/UIApplication.swift; sourceTree = "<group>"; };
-		3B8D46AB8B21A57F68274FB72680EA2E /* CGRect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGRect.swift; path = ImageViewer/Source/Extensions/CGRect.swift; sourceTree = "<group>"; };
-		3B9A1C0491272D2FC38A5A5C250A6742 /* wpxmlrpc-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "wpxmlrpc-umbrella.h"; sourceTree = "<group>"; };
-		3D648BF76895D34D8670BC98DE55389E /* LayoutEnums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutEnums.swift; path = ImageViewer/Source/LayoutEnums.swift; sourceTree = "<group>"; };
+		372064A1C00F8EE8F3A08562F5803F5C /* wpxmlrpc-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "wpxmlrpc-Info.plist"; sourceTree = "<group>"; };
+		398C83DF20238664EE68DB50FE1B7AB0 /* UICollectionView+Dequeueable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+Dequeueable.swift"; path = "Dequeueable/Classes/UICollectionView+Dequeueable.swift"; sourceTree = "<group>"; };
+		3BB6F156D37E9027E7AEE1252A9C1EE4 /* Dequeueable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dequeueable-dummy.m"; sourceTree = "<group>"; };
+		3D3533C532DDBE3D6F0FD7BB656BA5E8 /* UtilityFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UtilityFunctions.swift; path = ImageViewer/Source/UtilityFunctions.swift; sourceTree = "<group>"; };
+		3EEAC365449BCA7E3C2675BB1E2E3B9F /* CGSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGSize.swift; path = ImageViewer/Source/Extensions/CGSize.swift; sourceTree = "<group>"; };
+		412C01C473148D5739F8261682533330 /* AcknowViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowViewController.swift; path = Source/AcknowViewController.swift; sourceTree = "<group>"; };
 		41873B065F6E802A2C9C2140F300D00E /* Pods_IcroScreenshotsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_IcroScreenshotsTests.framework; path = "Pods-IcroScreenshotsTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43461718365F1893A84E497DD6608090 /* WPXMLRPC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WPXMLRPC.h; path = WPXMLRPC/WPXMLRPC.h; sourceTree = "<group>"; };
 		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		440A118F89679C7586EE73D437CAABE2 /* WPXMLRPCDataCleaner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WPXMLRPCDataCleaner.h; path = WPXMLRPC/WPXMLRPCDataCleaner.h; sourceTree = "<group>"; };
+		4636A828C11917FBD03564340591AB03 /* wpxmlrpc-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "wpxmlrpc-umbrella.h"; sourceTree = "<group>"; };
 		463DD918AF32B01A6E5748E9CA85F5F3 /* ImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ImageViewer.framework; path = ImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		47C31375E0A0406DE061A3C79AB14582 /* ThumbnailCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThumbnailCell.swift; path = "ImageViewer/Source/Thumbnails Controller/ThumbnailCell.swift"; sourceTree = "<group>"; };
-		47F7C6FFDE75C6294535391E514B3A69 /* DropdownTitleView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropdownTitleView.xcconfig; sourceTree = "<group>"; };
-		4802D5D3267EF36841B86EF13C4F1EE6 /* ItemBaseController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItemBaseController.swift; path = ImageViewer/Source/ItemBaseController.swift; sourceTree = "<group>"; };
-		4A1DA50615004016EB63AA16030DAD3F /* WPXMLRPCDecoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WPXMLRPCDecoder.m; path = WPXMLRPC/WPXMLRPCDecoder.m; sourceTree = "<group>"; };
 		4D27DAF72727F66D8BB5E88183C2FBFC /* Pods-IcroScreenshotsTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IcroScreenshotsTests-Info.plist"; sourceTree = "<group>"; };
-		4ED4D9386797346ADF2E00FABBB07936 /* NibView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NibView.swift; path = Dequeueable/Classes/NibView.swift; sourceTree = "<group>"; };
-		4FCAE3AE1686B73FB3538281A961BD7D /* WPBase64Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WPBase64Utils.h; path = WPXMLRPC/WPBase64Utils.h; sourceTree = "<group>"; };
+		4DE909E9E2C9028886664F72C164A4FD /* CGPoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGPoint.swift; path = ImageViewer/Source/Extensions/CGPoint.swift; sourceTree = "<group>"; };
+		4E1449DC943736BBB451E774A55033F4 /* WPXMLRPCDecoderDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WPXMLRPCDecoderDelegate.h; path = WPXMLRPC/WPXMLRPCDecoderDelegate.h; sourceTree = "<group>"; };
+		4F30C71E611C172F902A15BF4B010C6A /* GalleryPagingDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryPagingDataSource.swift; path = ImageViewer/Source/GalleryPagingDataSource.swift; sourceTree = "<group>"; };
+		50D0A98CE865866D4143ADED816F2C9E /* AcknowList.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AcknowList.xcconfig; sourceTree = "<group>"; };
 		514CA5FBBA54AE5C62611BA0B2CCF4B5 /* Pods-IcroScreenshotsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IcroScreenshotsTests.release.xcconfig"; sourceTree = "<group>"; };
+		519B4F2A05455007A3863B645465C924 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Source/Assets.xcassets; sourceTree = "<group>"; };
 		52201C7886DC3A3193D556CD09DE8848 /* Pods-Icro-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Icro-dummy.m"; sourceTree = "<group>"; };
+		524ABC8BCC7B87F88C98F7DFE50A16A6 /* NibView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NibView.swift; path = Dequeueable/Classes/NibView.swift; sourceTree = "<group>"; };
 		527F71CBE68E38601C633929FC6963F0 /* Pods-IcroScreenshotsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IcroScreenshotsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		52D552CB280B9B478C95F952A743BDF5 /* Pods-Icro-Share.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Icro-Share.release.xcconfig"; sourceTree = "<group>"; };
-		585FAD2457402AC289B89F40ACB58502 /* ItemController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItemController.swift; path = ImageViewer/Source/ItemController.swift; sourceTree = "<group>"; };
-		58AA7A96A5C30B7108951E384BCCBAF0 /* Dequeueable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Dequeueable.modulemap; sourceTree = "<group>"; };
+		54B81874BBEFD3ABD9619E097D68E2D9 /* WPXMLRPCDataCleaner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WPXMLRPCDataCleaner.h; path = WPXMLRPC/WPXMLRPCDataCleaner.h; sourceTree = "<group>"; };
+		57BF53D4C13674473B2120DB5971C943 /* ItemController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItemController.swift; path = ImageViewer/Source/ItemController.swift; sourceTree = "<group>"; };
+		589EE51A30BB2E09C2A6C31C5B31C47A /* UIScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIScreen.swift; path = ImageViewer/Source/Extensions/UIScreen.swift; sourceTree = "<group>"; };
 		5915F5633586B400E6F8BC8B8E375251 /* Pods-IcroKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IcroKit.release.xcconfig"; sourceTree = "<group>"; };
-		5A8992F1D8E9365EEF32D45E3B91182F /* UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = ImageViewer/Source/Extensions/UIView.swift; sourceTree = "<group>"; };
+		5C05E6B7953254E1E309654AF7101C40 /* WPStringUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WPStringUtils.m; path = WPXMLRPC/WPStringUtils.m; sourceTree = "<group>"; };
+		5EA3BD847ECB93BED0ECB3D3DBC92F3F /* Dequeueable-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Dequeueable-Info.plist"; sourceTree = "<group>"; };
 		5FA522E07948D1F724647D4102637410 /* Pods-Icro-IcroTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Icro-IcroTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5FCC126B84191301A2499136094D1F72 /* GalleryViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryViewController.swift; path = ImageViewer/Source/GalleryViewController.swift; sourceTree = "<group>"; };
 		621263CC9FCEFB5621B68849D8CD213A /* Pods-IcroUIKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IcroUIKit-dummy.m"; sourceTree = "<group>"; };
-		63070B4B3AC73C7FBCDDADE3C02DDCBF /* AVPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AVPlayer.swift; path = ImageViewer/Source/Extensions/AVPlayer.swift; sourceTree = "<group>"; };
+		62E98C232768D9EC68C3F86A5F8A55AD /* VideoScrubber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoScrubber.swift; path = ImageViewer/Source/VideoScrubber.swift; sourceTree = "<group>"; };
 		637324C95BEA07B9B9842ADAB0A001BE /* Pods-IcroUIKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IcroUIKit-Info.plist"; sourceTree = "<group>"; };
 		64AE27A6DECF117C9DB87E5A2FE36A5C /* Pods-IcroUIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IcroUIKit.release.xcconfig"; sourceTree = "<group>"; };
-		6551F5686C0903D3464FFDB50AAC2636 /* Dequeueable-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Dequeueable-Info.plist"; sourceTree = "<group>"; };
+		67D27DAF13AB13F55410065D894F4809 /* UIApplication.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIApplication.swift; path = ImageViewer/Source/Extensions/UIApplication.swift; sourceTree = "<group>"; };
 		67FC1FB3CA6BF1EC1E7E8856DBE092BA /* Pods-Icro-Share-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Icro-Share-acknowledgements.markdown"; sourceTree = "<group>"; };
 		682C85657C3EA751B8E2E83AF7C3EBD9 /* Pods-Icro-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Icro-frameworks.sh"; sourceTree = "<group>"; };
-		6AD281B26EE4ED3A7CAA62CCFC1296EF /* GalleryItemsDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryItemsDelegate.swift; path = ImageViewer/Source/GalleryItemsDelegate.swift; sourceTree = "<group>"; };
-		6B127DB2DF19B7DA5ACD876B5E0D4E5A /* WPXMLRPCEncoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WPXMLRPCEncoder.m; path = WPXMLRPC/WPXMLRPCEncoder.m; sourceTree = "<group>"; };
-		6F27A09A5FAC5A2AA251494094CFC8F3 /* GallerySwipeToDismissTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GallerySwipeToDismissTransition.swift; path = ImageViewer/Source/GallerySwipeToDismissTransition.swift; sourceTree = "<group>"; };
-		7104D8701560F8B022575AABBED55831 /* ThumbnailsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThumbnailsViewController.swift; path = "ImageViewer/Source/Thumbnails Controller/ThumbnailsViewController.swift"; sourceTree = "<group>"; };
+		7189D84045315FE251D38AB8BFBBB755 /* ItemControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItemControllerDelegate.swift; path = ImageViewer/Source/ItemControllerDelegate.swift; sourceTree = "<group>"; };
 		73BD2D55D47C4B6EBBBF36DB3558D199 /* Pods-IcroUIKit-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IcroUIKit-acknowledgements.markdown"; sourceTree = "<group>"; };
+		75CF8A4361FC99E4935B6DDD633C790D /* Bool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bool.swift; path = ImageViewer/Source/Extensions/Bool.swift; sourceTree = "<group>"; };
 		763F60231D137736E52EFBDFB43F2BFF /* Pods-IcroUIKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IcroUIKit-umbrella.h"; sourceTree = "<group>"; };
+		7657F236050B7EC00228072BEC627DFE /* WPXMLRPCDataCleaner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WPXMLRPCDataCleaner.m; path = WPXMLRPC/WPXMLRPCDataCleaner.m; sourceTree = "<group>"; };
 		7771203563B7CD21EF987D9C3EA53FD5 /* Pods-IcroUIKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-IcroUIKit.modulemap"; sourceTree = "<group>"; };
 		78717307DF5C3760242B17467F52344A /* Pods-IcroKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IcroKit.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2C26B39F7F0B2B9EE7F589AEC29A57 /* Pods-Icro-IcroTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Icro-IcroTests-frameworks.sh"; sourceTree = "<group>"; };
-		7B683E891BEAE7D956994BAE34833BAB /* CGPoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGPoint.swift; path = ImageViewer/Source/Extensions/CGPoint.swift; sourceTree = "<group>"; };
-		7D0FBD45CE60B8F6C953A613B34E1276 /* ImageViewer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageViewer-prefix.pch"; sourceTree = "<group>"; };
-		7EFFD517EF1A9E6175D2AFBE90232CF7 /* AcknowList-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AcknowList-dummy.m"; sourceTree = "<group>"; };
+		7B92797824366A22FF69A8D932B86779 /* DropdownTitleView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropdownTitleView-umbrella.h"; sourceTree = "<group>"; };
+		7BC417A1A1C4857B8AFB6C1AB167E1D7 /* GalleryItemsDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryItemsDelegate.swift; path = ImageViewer/Source/GalleryItemsDelegate.swift; sourceTree = "<group>"; };
 		7F5F33C1D1826F6BCEC0F163428872CF /* Pods-Icro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Icro.release.xcconfig"; sourceTree = "<group>"; };
-		81FC74B83E5BF97B5FBC03234A826B8F /* Dequeueable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dequeueable-umbrella.h"; sourceTree = "<group>"; };
+		80F2EE64F578EAB61596D6FFBBB1437C /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = ImageViewer/Source/Extensions/UIViewController.swift; sourceTree = "<group>"; };
 		82834F232BD0ED006ABC389EAECC8300 /* Pods-IcroKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IcroKit-dummy.m"; sourceTree = "<group>"; };
-		836F803425F492D17EF87C8AFA085FCF /* AcknowList-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AcknowList-umbrella.h"; sourceTree = "<group>"; };
-		84B0C64FDCC23AC88B09C4ACC23F9D9E /* UtilityFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UtilityFunctions.swift; path = ImageViewer/Source/UtilityFunctions.swift; sourceTree = "<group>"; };
+		82BE01667169C782902A9C8C2777EBFB /* DropdownTitleView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropdownTitleView-dummy.m"; sourceTree = "<group>"; };
+		837E9B846865D4005C8AE0C24FDE0C7A /* wpxmlrpc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = wpxmlrpc.modulemap; sourceTree = "<group>"; };
+		848C8FE8DD8A933B269878F43702F810 /* GallerySwipeToDismissTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GallerySwipeToDismissTransition.swift; path = ImageViewer/Source/GallerySwipeToDismissTransition.swift; sourceTree = "<group>"; };
+		84D5EC08655AF3D324A739E84C65630E /* ItemBaseController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItemBaseController.swift; path = ImageViewer/Source/ItemBaseController.swift; sourceTree = "<group>"; };
+		86C8471F9DFF0F23AFFFC4F8F8493E39 /* ImageViewer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageViewer-umbrella.h"; sourceTree = "<group>"; };
+		86F66CB79972908E2F4EB332078BE480 /* ImageViewer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ImageViewer.modulemap; sourceTree = "<group>"; };
 		870E3F9F7586480928FB9C4B1DEE2A8F /* Pods-IcroKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IcroKit-umbrella.h"; sourceTree = "<group>"; };
-		877E15426BD365DDE6B9718A4DD6B9F1 /* wpxmlrpc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = wpxmlrpc.modulemap; sourceTree = "<group>"; };
-		8CD9A90E52E97A9B8B55E17318CC73BE /* AcknowLocalization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowLocalization.swift; path = Source/AcknowLocalization.swift; sourceTree = "<group>"; };
-		917F0AB988BDC909E3907E1F113C2FE9 /* wpxmlrpc-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "wpxmlrpc-prefix.pch"; sourceTree = "<group>"; };
-		92F51299DF18CA4A3F8F07F4AE3DA58C /* VideoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoViewController.swift; path = ImageViewer/Source/VideoViewController.swift; sourceTree = "<group>"; };
-		95B2EEDACA9A3B2FA263430AAC62A9CB /* wpxmlrpc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "wpxmlrpc-dummy.m"; sourceTree = "<group>"; };
+		88C0C1E7787EE80AB4D58E7D879BCE38 /* ThumbnailCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThumbnailCell.swift; path = "ImageViewer/Source/Thumbnails Controller/ThumbnailCell.swift"; sourceTree = "<group>"; };
+		8A66034373E97C0BBF2503F36032DE01 /* DropdownTitleView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropdownTitleView.xcconfig; sourceTree = "<group>"; };
+		8A826693F3932049F7E380113B1208E5 /* VideoView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoView.swift; path = ImageViewer/Source/VideoView.swift; sourceTree = "<group>"; };
+		8D7BC4104F165C49FA32A1883B14079C /* GalleryDisplacedViewsDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryDisplacedViewsDataSource.swift; path = ImageViewer/Source/GalleryDisplacedViewsDataSource.swift; sourceTree = "<group>"; };
+		8EAB3CEBC0126E637E79AF726BF77BB0 /* Dequeueable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Dequeueable.xcconfig; sourceTree = "<group>"; };
 		98091DB1A21AFFB3E4C2E62CAA37F458 /* Pods-Icro-Share-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Icro-Share-dummy.m"; sourceTree = "<group>"; };
-		9AE4FABF343EF36F41A4E92F84D6C03C /* DropdownTitleView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DropdownTitleView-Info.plist"; sourceTree = "<group>"; };
+		9A5A28118CEBACCB299BDDDD12BAD57B /* WPXMLRPCDecoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WPXMLRPCDecoder.m; path = WPXMLRPC/WPXMLRPCDecoder.m; sourceTree = "<group>"; };
 		9B5D9878922E7DADB75444EFFBF73662 /* Pods-IcroKit-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IcroKit-acknowledgements.plist"; sourceTree = "<group>"; };
-		9BB3EB20F81D88BB85CED85EBF266203 /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = ImageViewer/Source/Extensions/UIViewController.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E6634F31E33CEB964A221E6405678FB /* Dequeueable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Dequeueable.xcconfig; sourceTree = "<group>"; };
-		A159FB65B08589375F4424AB14D548F8 /* UIBezierPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIBezierPath.swift; path = ImageViewer/Source/Extensions/UIBezierPath.swift; sourceTree = "<group>"; };
-		A4F491208E1777A452372F43CBC0B2A3 /* GalleryItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryItem.swift; path = ImageViewer/Source/GalleryItem.swift; sourceTree = "<group>"; };
+		9EB34159126F287EA1B970B6CC9490FF /* WPXMLRPCEncoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WPXMLRPCEncoder.h; path = WPXMLRPC/WPXMLRPCEncoder.h; sourceTree = "<group>"; };
+		A50814DC06B08EE65443C1A46D06AD8A /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = ImageViewer/Source/Extensions/UIColor.swift; sourceTree = "<group>"; };
+		A5FA5C6CF6AFC1F9FFAE5401C478F75C /* Reusable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reusable.swift; path = Dequeueable/Classes/Reusable.swift; sourceTree = "<group>"; };
 		A6F9783FFBC6610953E3C5DC371F6CF3 /* Pods_Icro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Icro.framework; path = "Pods-Icro.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7B513A20529FA93A5A8B1364FB607EB /* AcknowList.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = AcknowList.bundle; path = Resources/AcknowList.bundle; sourceTree = "<group>"; };
-		A7E984353824AAB0EFB8D9848B0C4355 /* Reusable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reusable.swift; path = Dequeueable/Classes/Reusable.swift; sourceTree = "<group>"; };
-		A9BFC45EBD5B1D350DCBC8DB7D1F2293 /* CAShapeLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CAShapeLayer.swift; path = ImageViewer/Source/Extensions/CAShapeLayer.swift; sourceTree = "<group>"; };
-		A9CC83768A247D5D90BE65EB06725D3D /* UICollectionView+Dequeueable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+Dequeueable.swift"; path = "Dequeueable/Classes/UICollectionView+Dequeueable.swift"; sourceTree = "<group>"; };
+		A952DD2E0226B85EDA1D21B956E7397B /* wpxmlrpc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "wpxmlrpc-dummy.m"; sourceTree = "<group>"; };
+		AC3452E5A6356C84E5CDE2F58F56F6B4 /* UIBezierPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIBezierPath.swift; path = ImageViewer/Source/Extensions/UIBezierPath.swift; sourceTree = "<group>"; };
 		AC60912925B66A35D25305ED9ED6C715 /* Pods-Icro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Icro.debug.xcconfig"; sourceTree = "<group>"; };
-		AF919BB09AA801E7FEB9461604DC2785 /* UIButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIButton.swift; path = ImageViewer/Source/Extensions/UIButton.swift; sourceTree = "<group>"; };
-		B1508416465C611CE755D2469BE44915 /* VideoView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoView.swift; path = ImageViewer/Source/VideoView.swift; sourceTree = "<group>"; };
+		AD3F1073CFC71EB73D05A64F9D874CF9 /* ImageViewer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ImageViewer-Info.plist"; sourceTree = "<group>"; };
+		AE466E962763E40269C40E8A378F7E11 /* GalleryConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryConfiguration.swift; path = ImageViewer/Source/GalleryConfiguration.swift; sourceTree = "<group>"; };
+		B0F7EF7729911561C19E907662C89AD3 /* WPXMLRPCDecoderDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WPXMLRPCDecoderDelegate.m; path = WPXMLRPC/WPXMLRPCDecoderDelegate.m; sourceTree = "<group>"; };
 		B2587F7205B292C85BCCA839B83264A0 /* Pods-Icro-IcroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Icro-IcroTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B334EFBB94A8E1C1F5899A42DD0E4B19 /* ThumbnailsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThumbnailsViewController.swift; path = "ImageViewer/Source/Thumbnails Controller/ThumbnailsViewController.swift"; sourceTree = "<group>"; };
+		B448F8B964FA045F1FB6C2905CF96F36 /* GalleryItemsDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryItemsDataSource.swift; path = ImageViewer/Source/GalleryItemsDataSource.swift; sourceTree = "<group>"; };
 		B458BA80D76AF3D2AD6137B6598B5B2B /* Pods-Icro-IcroTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Icro-IcroTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B4E23595CC8CF176EC8FE726E5337A5B /* Pods-IcroScreenshotsTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IcroScreenshotsTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B5F154E0F401877437469D03F0756A26 /* WPXMLRPCDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WPXMLRPCDecoder.h; path = WPXMLRPC/WPXMLRPCDecoder.h; sourceTree = "<group>"; };
-		B73C5505C46C5BC993CBF8FB96EE0258 /* DropdownTitleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropdownTitleView.swift; path = Source/DropdownTitleView.swift; sourceTree = "<group>"; };
-		B8F0EA62204AC3002D2C59BC237CCC8C /* UITableView+Dequeueable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+Dequeueable.swift"; path = "Dequeueable/Classes/UITableView+Dequeueable.swift"; sourceTree = "<group>"; };
-		B90EBEFF259FA4E3D7C65C2B730D0EAC /* ImageViewer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ImageViewer-Info.plist"; sourceTree = "<group>"; };
+		B58DDA9D246457E7D87B5FEEFE0CE658 /* CAShapeLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CAShapeLayer.swift; path = ImageViewer/Source/Extensions/CAShapeLayer.swift; sourceTree = "<group>"; };
+		B6D9F4B3209A5D42BE37B3D76FE2116F /* UITableView+Dequeueable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+Dequeueable.swift"; path = "Dequeueable/Classes/UITableView+Dequeueable.swift"; sourceTree = "<group>"; };
+		B8F8EA7BBEA036BB7A40A468B9044AE6 /* CALayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CALayer.swift; path = ImageViewer/Source/Extensions/CALayer.swift; sourceTree = "<group>"; };
+		BA83C05EEC2DD95CB4BF474C84B768E9 /* VideoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoViewController.swift; path = ImageViewer/Source/VideoViewController.swift; sourceTree = "<group>"; };
+		BA8B6BD2B294EB8DF8A29CE33D7101D4 /* UISlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UISlider.swift; path = ImageViewer/Source/Extensions/UISlider.swift; sourceTree = "<group>"; };
 		BA9DD19682E5B9DD5681F2B0561DC11C /* Pods_IcroKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_IcroKit.framework; path = "Pods-IcroKit.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAABBE4445D54D7114DE80DD6D7B89AF /* WPStringUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WPStringUtils.h; path = WPXMLRPC/WPStringUtils.h; sourceTree = "<group>"; };
-		BCD4327669E6AB43D87F4307D0B50B64 /* Dequeueable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dequeueable-dummy.m"; sourceTree = "<group>"; };
+		BB047E1FBCEC9EECAC8D3F590B8897E3 /* Slider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Slider.swift; path = ImageViewer/Source/Slider.swift; sourceTree = "<group>"; };
+		BCD4CE922A1B97BAFA7CDBF3898931C1 /* GalleryViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryViewController.swift; path = ImageViewer/Source/GalleryViewController.swift; sourceTree = "<group>"; };
 		BF7F1E1B2C4E31126611F790D4D23716 /* Pods-IcroScreenshotsTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-IcroScreenshotsTests.modulemap"; sourceTree = "<group>"; };
-		BFDF93932CAE32A9677DC9EE7FF79310 /* AcknowList-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AcknowList-Info.plist"; sourceTree = "<group>"; };
 		C4AB2DCEA75346550711A7C625A311A8 /* Pods-Icro-Share-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Icro-Share-acknowledgements.plist"; sourceTree = "<group>"; };
 		C589231BF6BFB4C618A385131496D61E /* Pods-Icro-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Icro-Info.plist"; sourceTree = "<group>"; };
-		C6B49C16548CDC98ED234F85CBDBB4D8 /* ImageViewer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ImageViewer-dummy.m"; sourceTree = "<group>"; };
-		C6BA270A8C62E7D5547A5717EB3BDEC8 /* DropdownTitleView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropdownTitleView-prefix.pch"; sourceTree = "<group>"; };
+		C6A98D4EE49F8A849E49030452EB91B0 /* wpxmlrpc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = wpxmlrpc.xcconfig; sourceTree = "<group>"; };
 		C800C0128170AEEEE861539D6D6AA7CD /* Pods-Icro-Share-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Icro-Share-Info.plist"; sourceTree = "<group>"; };
-		C9CF1920DC58873A44FA334EDAFC27DD /* GalleryItemsDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryItemsDataSource.swift; path = ImageViewer/Source/GalleryItemsDataSource.swift; sourceTree = "<group>"; };
-		CAC664A9D6EDC2BD81838533E35BEF6B /* WPXMLRPCDataCleaner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WPXMLRPCDataCleaner.m; path = WPXMLRPC/WPXMLRPCDataCleaner.m; sourceTree = "<group>"; };
-		CBA0E0713554C46DB2A55D5A9C69FBA9 /* WPXMLRPCDecoderDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WPXMLRPCDecoderDelegate.h; path = WPXMLRPC/WPXMLRPCDecoderDelegate.h; sourceTree = "<group>"; };
+		CA398DB3EDA2658A1B2F08CF2548E08A /* GalleryItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryItem.swift; path = ImageViewer/Source/GalleryItem.swift; sourceTree = "<group>"; };
+		CA5D75EC02B4D6B3539743D8D2019C24 /* Dequeueable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Dequeueable.modulemap; sourceTree = "<group>"; };
+		CD8F3056F0356083BC9473200962BB36 /* AcknowList-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AcknowList-dummy.m"; sourceTree = "<group>"; };
+		CE9E8B96F58ACD9D69B6AE795E9322AA /* DropdownTitleView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DropdownTitleView.modulemap; sourceTree = "<group>"; };
 		D11309D93D9A4277A3FDA101556D6BF2 /* Pods-IcroKit-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IcroKit-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D163D29E416062A03646DADB317F05A2 /* AcknowViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowViewController.swift; path = Source/AcknowViewController.swift; sourceTree = "<group>"; };
+		D1852AD843159C30C5CB60D88C3138D6 /* WPBase64Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WPBase64Utils.h; path = WPXMLRPC/WPBase64Utils.h; sourceTree = "<group>"; };
+		D1A0895C225ADCC023A87C30E0B07B36 /* AcknowList-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AcknowList-umbrella.h"; sourceTree = "<group>"; };
 		D1A8774DDF923CBC9AE112185184CC59 /* Pods-IcroScreenshotsTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IcroScreenshotsTests-umbrella.h"; sourceTree = "<group>"; };
-		D44CB044B2F242C0CA9A3AF9FEDB363F /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Source/Assets.xcassets; sourceTree = "<group>"; };
+		D3DA445F0E6C1BEEAC2C65C526F93E45 /* DropdownTitleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropdownTitleView.swift; path = Source/DropdownTitleView.swift; sourceTree = "<group>"; };
 		D47D41ECE4284D292159FBB7B031C8E3 /* Pods-Icro-Share.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Icro-Share.modulemap"; sourceTree = "<group>"; };
 		D5725FBEEF475911E6CED3FDC55C856B /* Pods-Icro-IcroTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Icro-IcroTests-dummy.m"; sourceTree = "<group>"; };
-		D78948BD6C4B489624A23D4453B8E578 /* VideoScrubber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoScrubber.swift; path = ImageViewer/Source/VideoScrubber.swift; sourceTree = "<group>"; };
+		D7C1B206263C322EDC44BC50195C7C24 /* DropdownTitleView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropdownTitleView-prefix.pch"; sourceTree = "<group>"; };
 		D8CEF3A0D11E31FD1FD3124DD0E41EDC /* Pods-IcroScreenshotsTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IcroScreenshotsTests-dummy.m"; sourceTree = "<group>"; };
 		D9FFC356DE64D1452B6785B64A7B4FD4 /* Pods-Icro-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Icro-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DAFD9E155F06E8E8ABFFBD32FA2F34B0 /* GalleryConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryConfiguration.swift; path = ImageViewer/Source/GalleryConfiguration.swift; sourceTree = "<group>"; };
-		E2ECB5D4D186888FDECFFAC3A637B841 /* BlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = ImageViewer/Source/BlurView.swift; sourceTree = "<group>"; };
-		E317C0CC71C969907C5BBF4A0EDF13F0 /* ImageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageViewController.swift; path = ImageViewer/Source/ImageViewController.swift; sourceTree = "<group>"; };
-		E4A9D0C735FF76F87EF51296433F14DB /* ImageFadeInHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageFadeInHandler.swift; path = ImageViewer/Source/ImageFadeInHandler.swift; sourceTree = "<group>"; };
+		E2D7C4729FE426957ED7DE9EAD78A0B3 /* Acknow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Acknow.swift; path = Source/Acknow.swift; sourceTree = "<group>"; };
 		E5E00EFDD80CFE7C7ADEFA7EFC6EA981 /* Pods-IcroUIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IcroUIKit.debug.xcconfig"; sourceTree = "<group>"; };
-		EA8E208B78FA59CC16C6449731441E93 /* GalleryPagingDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryPagingDataSource.swift; path = ImageViewer/Source/GalleryPagingDataSource.swift; sourceTree = "<group>"; };
+		EA8875EF2AE708BD5BC6365C57A5B7CB /* CGRect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGRect.swift; path = ImageViewer/Source/Extensions/CGRect.swift; sourceTree = "<group>"; };
+		EC0C6E41273207BB80D25462558170CA /* AVPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AVPlayer.swift; path = ImageViewer/Source/Extensions/AVPlayer.swift; sourceTree = "<group>"; };
 		EEB041BDAB870D38CDAA959BBD150CB7 /* Pods-Icro-Share-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Icro-Share-umbrella.h"; sourceTree = "<group>"; };
-		EFA2FF38132D7D1D35432600C78EBFC8 /* AcknowList-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AcknowList-prefix.pch"; sourceTree = "<group>"; };
 		F0C98CD240A1AD89E64530ECB137B3A5 /* wpxmlrpc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = wpxmlrpc.framework; path = wpxmlrpc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8B5C47BA37A1279B3AD0A499A605E60 /* CGSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGSize.swift; path = ImageViewer/Source/Extensions/CGSize.swift; sourceTree = "<group>"; };
-		FB5E8096D78EADEA6637C71BA2D7D494 /* CALayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CALayer.swift; path = ImageViewer/Source/Extensions/CALayer.swift; sourceTree = "<group>"; };
+		F12C294F7B1F75D8F9FA68596C593FC6 /* wpxmlrpc-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "wpxmlrpc-prefix.pch"; sourceTree = "<group>"; };
+		F2E50E92752B310327A4E93294E93638 /* UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = ImageViewer/Source/Extensions/UIView.swift; sourceTree = "<group>"; };
+		F2F5C3140CA38A2621D4B851E04FD687 /* BlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = ImageViewer/Source/BlurView.swift; sourceTree = "<group>"; };
+		F5921E1C1821C5ED49E236A583B22F48 /* Dequeueable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dequeueable-umbrella.h"; sourceTree = "<group>"; };
+		F8F22488C10336FC6ACB84090F2C55F8 /* AcknowLocalization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowLocalization.swift; path = Source/AcknowLocalization.swift; sourceTree = "<group>"; };
+		FAB311B534B9CC5F56CCC8A42510FC68 /* WPStringUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WPStringUtils.h; path = WPXMLRPC/WPStringUtils.h; sourceTree = "<group>"; };
 		FBE2908B635F23989FA8CC6423004AA7 /* Pods_Icro_IcroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Icro_IcroTests.framework; path = "Pods-Icro-IcroTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA2254592B090F3D6A83E5F7305EEDE /* Pods-IcroScreenshotsTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IcroScreenshotsTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		FD1F23BEACB57B2A5B481A4B838AF4C5 /* Bool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bool.swift; path = ImageViewer/Source/Extensions/Bool.swift; sourceTree = "<group>"; };
-		FD327F31A43AC73A85A10FC2A63A92D8 /* Acknow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Acknow.swift; path = Source/Acknow.swift; sourceTree = "<group>"; };
-		FDFBB811F450A96BE671A92356640647 /* Dequeueable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dequeueable-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -391,19 +364,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		186663FDA5EAAF23E3EE22E00A405F07 /* Frameworks */ = {
+		17D5A2D44BE61BC164D9231E2621F2D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F5E3E84B1DCD5B91CD44DD931E71B79 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4C750619A94D095FFF9511D3C31FBA0A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				73CC93A8A114C015884AC9A202316D2B /* Foundation.framework in Frameworks */,
+				6B5F95C9DA7C25717C9BED370935F228 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +420,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E12DCB3306ED805262038272E46C4B76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDEBF579C767DA5D245461C1C77CF2C0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EB5962A98E8774E6A2459F902C96522E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -475,38 +448,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		040E640F6EB6CC95BE76031459387553 /* DropdownTitleView */ = {
+		064DC998A1D4C328D82FC2235FA45730 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B73C5505C46C5BC993CBF8FB96EE0258 /* DropdownTitleView.swift */,
-				D420E600E8A03070F59FF41F92277B60 /* Resources */,
-				6F62289257A81BABB9359B096ECA3CFF /* Support Files */,
-			);
-			name = DropdownTitleView;
-			path = DropdownTitleView;
-			sourceTree = "<group>";
-		};
-		0C9990417B37CD0A1963A292060FB21B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				58AA7A96A5C30B7108951E384BCCBAF0 /* Dequeueable.modulemap */,
-				9E6634F31E33CEB964A221E6405678FB /* Dequeueable.xcconfig */,
-				BCD4327669E6AB43D87F4307D0B50B64 /* Dequeueable-dummy.m */,
-				6551F5686C0903D3464FFDB50AAC2636 /* Dequeueable-Info.plist */,
-				FDFBB811F450A96BE671A92356640647 /* Dequeueable-prefix.pch */,
-				81FC74B83E5BF97B5FBC03234A826B8F /* Dequeueable-umbrella.h */,
+				CA5D75EC02B4D6B3539743D8D2019C24 /* Dequeueable.modulemap */,
+				8EAB3CEBC0126E637E79AF726BF77BB0 /* Dequeueable.xcconfig */,
+				3BB6F156D37E9027E7AEE1252A9C1EE4 /* Dequeueable-dummy.m */,
+				5EA3BD847ECB93BED0ECB3D3DBC92F3F /* Dequeueable-Info.plist */,
+				322C92E34D2E50641C3CCD11716A2D31 /* Dequeueable-prefix.pch */,
+				F5921E1C1821C5ED49E236A583B22F48 /* Dequeueable-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Dequeueable";
 			sourceTree = "<group>";
 		};
-		0D6D790D466A45EBB0E5D16E46F70258 /* SwiftLint */ = {
+		100C264FD068536039B45A8BDFA6DC24 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1661844626730D6D0FE15A15AD40B3E6 /* Support Files */,
+				86F66CB79972908E2F4EB332078BE480 /* ImageViewer.modulemap */,
+				07173FE80A86472FF5681B49A5F773FA /* ImageViewer.xcconfig */,
+				1EEEFB76D381F987E9EE229DA0F9D52C /* ImageViewer-dummy.m */,
+				AD3F1073CFC71EB73D05A64F9D874CF9 /* ImageViewer-Info.plist */,
+				0CF76FEFCD874C9E76B90158F4125681 /* ImageViewer-prefix.pch */,
+				86C8471F9DFF0F23AFFFC4F8F8493E39 /* ImageViewer-umbrella.h */,
 			);
-			name = SwiftLint;
-			path = SwiftLint;
+			name = "Support Files";
+			path = "../Target Support Files/ImageViewer";
 			sourceTree = "<group>";
 		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
@@ -517,27 +484,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1661844626730D6D0FE15A15AD40B3E6 /* Support Files */ = {
+		20AD707D46C5FD08811DB3057EBDB54A /* Dequeueable */ = {
 			isa = PBXGroup;
 			children = (
-				20D40F238F6FB2FCBFC3F191A4D0BC13 /* SwiftLint.xcconfig */,
+				524ABC8BCC7B87F88C98F7DFE50A16A6 /* NibView.swift */,
+				A5FA5C6CF6AFC1F9FFAE5401C478F75C /* Reusable.swift */,
+				398C83DF20238664EE68DB50FE1B7AB0 /* UICollectionView+Dequeueable.swift */,
+				B6D9F4B3209A5D42BE37B3D76FE2116F /* UITableView+Dequeueable.swift */,
+				064DC998A1D4C328D82FC2235FA45730 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftLint";
-			sourceTree = "<group>";
-		};
-		22A62C7D9F36B27F28676C29C0CB1FAA /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				877E15426BD365DDE6B9718A4DD6B9F1 /* wpxmlrpc.modulemap */,
-				11F494DCB34868C26AD264BA0BD96F5F /* wpxmlrpc.xcconfig */,
-				95B2EEDACA9A3B2FA263430AAC62A9CB /* wpxmlrpc-dummy.m */,
-				077A74B5B7DE2EC881688A46A7684733 /* wpxmlrpc-Info.plist */,
-				917F0AB988BDC909E3907E1F113C2FE9 /* wpxmlrpc-prefix.pch */,
-				3B9A1C0491272D2FC38A5A5C250A6742 /* wpxmlrpc-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/wpxmlrpc";
+			name = Dequeueable;
+			path = Dequeueable;
 			sourceTree = "<group>";
 		};
 		360282C217F12F82740D3B8AC3A12CA0 /* Targets Support Files */ = {
@@ -569,6 +526,31 @@
 			path = "Target Support Files/Pods-IcroKit";
 			sourceTree = "<group>";
 		};
+		5BDD27C0D2BE9B5155CC04C96435C04F /* DropdownTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				D3DA445F0E6C1BEEAC2C65C526F93E45 /* DropdownTitleView.swift */,
+				C06D17A501DABC08CA0BC6E1730DE92F /* Resources */,
+				5CDB0494B99F2C1AA2FA48968C695FE4 /* Support Files */,
+			);
+			name = DropdownTitleView;
+			path = DropdownTitleView;
+			sourceTree = "<group>";
+		};
+		5CDB0494B99F2C1AA2FA48968C695FE4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE9E8B96F58ACD9D69B6AE795E9322AA /* DropdownTitleView.modulemap */,
+				8A66034373E97C0BBF2503F36032DE01 /* DropdownTitleView.xcconfig */,
+				82BE01667169C782902A9C8C2777EBFB /* DropdownTitleView-dummy.m */,
+				2D24A3E6DBE8C82CEE12F63BCE50A145 /* DropdownTitleView-Info.plist */,
+				D7C1B206263C322EDC44BC50195C7C24 /* DropdownTitleView-prefix.pch */,
+				7B92797824366A22FF69A8D932B86779 /* DropdownTitleView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DropdownTitleView";
+			sourceTree = "<group>";
+		};
 		5F992F1BFF46FB5B8EC50F6A08CEA904 /* Pods-Icro-IcroTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -584,21 +566,6 @@
 			);
 			name = "Pods-Icro-IcroTests";
 			path = "Target Support Files/Pods-Icro-IcroTests";
-			sourceTree = "<group>";
-		};
-		655FED8B8D9ED9A8FF5DD6892AD0E585 /* AcknowList */ = {
-			isa = PBXGroup;
-			children = (
-				FD327F31A43AC73A85A10FC2A63A92D8 /* Acknow.swift */,
-				23EFA50A5E88EBCB58C6CFE1A9FDB228 /* AcknowListViewController.swift */,
-				8CD9A90E52E97A9B8B55E17318CC73BE /* AcknowLocalization.swift */,
-				2037E7DEF74C89083A54D5DCCAFF9DF3 /* AcknowParser.swift */,
-				D163D29E416062A03646DADB317F05A2 /* AcknowViewController.swift */,
-				BC4A62B05DC531891A3593F0C0221994 /* Resources */,
-				761087F2E8E861035099A8396D88BA9D /* Support Files */,
-			);
-			name = AcknowList;
-			path = AcknowList;
 			sourceTree = "<group>";
 		};
 		6DEE728A046CACE762695592291A6FD1 /* Pods-IcroScreenshotsTests */ = {
@@ -617,58 +584,26 @@
 			path = "Target Support Files/Pods-IcroScreenshotsTests";
 			sourceTree = "<group>";
 		};
-		6F62289257A81BABB9359B096ECA3CFF /* Support Files */ = {
+		8ED2FF4ED14CEB39B53786982FF4E31E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2C74573A9C5784B2791EF06CFAEE647E /* DropdownTitleView.modulemap */,
-				47F7C6FFDE75C6294535391E514B3A69 /* DropdownTitleView.xcconfig */,
-				2F495C48B82C2B708B17C0A13646AC76 /* DropdownTitleView-dummy.m */,
-				9AE4FABF343EF36F41A4E92F84D6C03C /* DropdownTitleView-Info.plist */,
-				C6BA270A8C62E7D5547A5717EB3BDEC8 /* DropdownTitleView-prefix.pch */,
-				2E1565F729AF635F8ECF9DFB2AE5469A /* DropdownTitleView-umbrella.h */,
+				837E9B846865D4005C8AE0C24FDE0C7A /* wpxmlrpc.modulemap */,
+				C6A98D4EE49F8A849E49030452EB91B0 /* wpxmlrpc.xcconfig */,
+				A952DD2E0226B85EDA1D21B956E7397B /* wpxmlrpc-dummy.m */,
+				372064A1C00F8EE8F3A08562F5803F5C /* wpxmlrpc-Info.plist */,
+				F12C294F7B1F75D8F9FA68596C593FC6 /* wpxmlrpc-prefix.pch */,
+				4636A828C11917FBD03564340591AB03 /* wpxmlrpc-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/DropdownTitleView";
+			path = "../Target Support Files/wpxmlrpc";
 			sourceTree = "<group>";
 		};
-		6FF16BE0F44317406C48BB9A9C6854CC /* Pods */ = {
+		98D9EC5658E501F27463CB12AD7B3C4D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				655FED8B8D9ED9A8FF5DD6892AD0E585 /* AcknowList */,
-				73C4C4AB2A951BF9E52A3E27A9AECF64 /* Dequeueable */,
-				040E640F6EB6CC95BE76031459387553 /* DropdownTitleView */,
-				A4478CAB1F83BDD51A03603785BA693F /* ImageViewer */,
-				0D6D790D466A45EBB0E5D16E46F70258 /* SwiftLint */,
-				CA79EE29213D33526AF24E8A3D27581E /* wpxmlrpc */,
+				238022DEBF05EEDD092BFFFE1A66231C /* AcknowList.bundle */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		73C4C4AB2A951BF9E52A3E27A9AECF64 /* Dequeueable */ = {
-			isa = PBXGroup;
-			children = (
-				4ED4D9386797346ADF2E00FABBB07936 /* NibView.swift */,
-				A7E984353824AAB0EFB8D9848B0C4355 /* Reusable.swift */,
-				A9CC83768A247D5D90BE65EB06725D3D /* UICollectionView+Dequeueable.swift */,
-				B8F0EA62204AC3002D2C59BC237CCC8C /* UITableView+Dequeueable.swift */,
-				0C9990417B37CD0A1963A292060FB21B /* Support Files */,
-			);
-			name = Dequeueable;
-			path = Dequeueable;
-			sourceTree = "<group>";
-		};
-		761087F2E8E861035099A8396D88BA9D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1817B37C6BB06A3872E3F5467318275F /* AcknowList.modulemap */,
-				0D5DE3FBDD302A3E8CA38EFFCB5E1F27 /* AcknowList.xcconfig */,
-				7EFFD517EF1A9E6175D2AFBE90232CF7 /* AcknowList-dummy.m */,
-				BFDF93932CAE32A9677DC9EE7FF79310 /* AcknowList-Info.plist */,
-				EFA2FF38132D7D1D35432600C78EBFC8 /* AcknowList-prefix.pch */,
-				836F803425F492D17EF87C8AFA085FCF /* AcknowList-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/AcknowList";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		9B3A3CE88A70E9832C1E0A7776EBB467 /* Pods-Icro-Share */ = {
@@ -687,51 +622,26 @@
 			path = "Target Support Files/Pods-Icro-Share";
 			sourceTree = "<group>";
 		};
-		A4478CAB1F83BDD51A03603785BA693F /* ImageViewer */ = {
+		ADBD4F8B72A536BC8132A0F25B617D89 /* wpxmlrpc */ = {
 			isa = PBXGroup;
 			children = (
-				63070B4B3AC73C7FBCDDADE3C02DDCBF /* AVPlayer.swift */,
-				E2ECB5D4D186888FDECFFAC3A637B841 /* BlurView.swift */,
-				FD1F23BEACB57B2A5B481A4B838AF4C5 /* Bool.swift */,
-				FB5E8096D78EADEA6637C71BA2D7D494 /* CALayer.swift */,
-				A9BFC45EBD5B1D350DCBC8DB7D1F2293 /* CAShapeLayer.swift */,
-				7B683E891BEAE7D956994BAE34833BAB /* CGPoint.swift */,
-				3B8D46AB8B21A57F68274FB72680EA2E /* CGRect.swift */,
-				F8B5C47BA37A1279B3AD0A499A605E60 /* CGSize.swift */,
-				DAFD9E155F06E8E8ABFFBD32FA2F34B0 /* GalleryConfiguration.swift */,
-				251C9EE5A5F8DD1C7EE535818D3480CE /* GalleryDisplacedViewsDataSource.swift */,
-				A4F491208E1777A452372F43CBC0B2A3 /* GalleryItem.swift */,
-				C9CF1920DC58873A44FA334EDAFC27DD /* GalleryItemsDataSource.swift */,
-				6AD281B26EE4ED3A7CAA62CCFC1296EF /* GalleryItemsDelegate.swift */,
-				EA8E208B78FA59CC16C6449731441E93 /* GalleryPagingDataSource.swift */,
-				6F27A09A5FAC5A2AA251494094CFC8F3 /* GallerySwipeToDismissTransition.swift */,
-				5FCC126B84191301A2499136094D1F72 /* GalleryViewController.swift */,
-				E4A9D0C735FF76F87EF51296433F14DB /* ImageFadeInHandler.swift */,
-				E317C0CC71C969907C5BBF4A0EDF13F0 /* ImageViewController.swift */,
-				4802D5D3267EF36841B86EF13C4F1EE6 /* ItemBaseController.swift */,
-				585FAD2457402AC289B89F40ACB58502 /* ItemController.swift */,
-				3847F74183A548BBA3D499A654C610DD /* ItemControllerDelegate.swift */,
-				3D648BF76895D34D8670BC98DE55389E /* LayoutEnums.swift */,
-				2093FA0663097E8649F9D156AECE436D /* Slider.swift */,
-				47C31375E0A0406DE061A3C79AB14582 /* ThumbnailCell.swift */,
-				7104D8701560F8B022575AABBED55831 /* ThumbnailsViewController.swift */,
-				38B4DE750FAA43B8C33FD52D83B5133F /* UIApplication.swift */,
-				A159FB65B08589375F4424AB14D548F8 /* UIBezierPath.swift */,
-				AF919BB09AA801E7FEB9461604DC2785 /* UIButton.swift */,
-				17378E6E926194E3D483DB2B988C89F8 /* UIColor.swift */,
-				00462F36515B6A4E0968094AC3EC9A76 /* UIImageView.swift */,
-				0C8A627A61ED2ACD0EB09A6C662EBEE0 /* UIScreen.swift */,
-				22B790945736837F7FAE2148CB18D05E /* UISlider.swift */,
-				5A8992F1D8E9365EEF32D45E3B91182F /* UIView.swift */,
-				9BB3EB20F81D88BB85CED85EBF266203 /* UIViewController.swift */,
-				84B0C64FDCC23AC88B09C4ACC23F9D9E /* UtilityFunctions.swift */,
-				D78948BD6C4B489624A23D4453B8E578 /* VideoScrubber.swift */,
-				B1508416465C611CE755D2469BE44915 /* VideoView.swift */,
-				92F51299DF18CA4A3F8F07F4AE3DA58C /* VideoViewController.swift */,
-				B87012A3C3A2FA0A12AEFA9DD83C8495 /* Support Files */,
+				D1852AD843159C30C5CB60D88C3138D6 /* WPBase64Utils.h */,
+				2DF9A5D319DC47A73626FB2D8D3CD296 /* WPBase64Utils.m */,
+				FAB311B534B9CC5F56CCC8A42510FC68 /* WPStringUtils.h */,
+				5C05E6B7953254E1E309654AF7101C40 /* WPStringUtils.m */,
+				43461718365F1893A84E497DD6608090 /* WPXMLRPC.h */,
+				54B81874BBEFD3ABD9619E097D68E2D9 /* WPXMLRPCDataCleaner.h */,
+				7657F236050B7EC00228072BEC627DFE /* WPXMLRPCDataCleaner.m */,
+				0CF6C1118A2C1BFB46FB5E6703341DDE /* WPXMLRPCDecoder.h */,
+				9A5A28118CEBACCB299BDDDD12BAD57B /* WPXMLRPCDecoder.m */,
+				4E1449DC943736BBB451E774A55033F4 /* WPXMLRPCDecoderDelegate.h */,
+				B0F7EF7729911561C19E907662C89AD3 /* WPXMLRPCDecoderDelegate.m */,
+				9EB34159126F287EA1B970B6CC9490FF /* WPXMLRPCEncoder.h */,
+				278154C2E50A29A3701732DE2AB19F77 /* WPXMLRPCEncoder.m */,
+				8ED2FF4ED14CEB39B53786982FF4E31E /* Support Files */,
 			);
-			name = ImageViewer;
-			path = ImageViewer;
+			name = wpxmlrpc;
+			path = wpxmlrpc;
 			sourceTree = "<group>";
 		};
 		B01DEE0C56D09CC46B43ADDA9B993A35 /* Products */ = {
@@ -752,28 +662,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B87012A3C3A2FA0A12AEFA9DD83C8495 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1452929632602088FC179CDAD099B970 /* ImageViewer.modulemap */,
-				0A8FC6EFD482B7EAAA26AB0B6C26A651 /* ImageViewer.xcconfig */,
-				C6B49C16548CDC98ED234F85CBDBB4D8 /* ImageViewer-dummy.m */,
-				B90EBEFF259FA4E3D7C65C2B730D0EAC /* ImageViewer-Info.plist */,
-				7D0FBD45CE60B8F6C953A613B34E1276 /* ImageViewer-prefix.pch */,
-				26BCC851BED4C6FFA635F81A86DBA5C2 /* ImageViewer-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ImageViewer";
-			sourceTree = "<group>";
-		};
-		BC4A62B05DC531891A3593F0C0221994 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				A7B513A20529FA93A5A8B1364FB607EB /* AcknowList.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		BD4C057E3F4BADEA7A7FBA17ED7CF92D /* Pods-Icro */ = {
 			isa = PBXGroup;
 			children = (
@@ -789,6 +677,29 @@
 			);
 			name = "Pods-Icro";
 			path = "Target Support Files/Pods-Icro";
+			sourceTree = "<group>";
+		};
+		BD63902ACFCDD6FFF38C8143E679F8BA /* AcknowList */ = {
+			isa = PBXGroup;
+			children = (
+				E2D7C4729FE426957ED7DE9EAD78A0B3 /* Acknow.swift */,
+				140F0CADCC19F624235A06109ACC54FE /* AcknowListViewController.swift */,
+				F8F22488C10336FC6ACB84090F2C55F8 /* AcknowLocalization.swift */,
+				31929CEE40FAD831E82C4A679B7FE2F5 /* AcknowParser.swift */,
+				412C01C473148D5739F8261682533330 /* AcknowViewController.swift */,
+				98D9EC5658E501F27463CB12AD7B3C4D /* Resources */,
+				DC8BD33169198D392BF747E014E434D7 /* Support Files */,
+			);
+			name = AcknowList;
+			path = AcknowList;
+			sourceTree = "<group>";
+		};
+		C06D17A501DABC08CA0BC6E1730DE92F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				519B4F2A05455007A3863B645465C924 /* Assets.xcassets */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		C8514DE4E153DCA678A2D30928F98CE1 /* Pods-IcroUIKit */ = {
@@ -807,45 +718,76 @@
 			path = "Target Support Files/Pods-IcroUIKit";
 			sourceTree = "<group>";
 		};
-		CA79EE29213D33526AF24E8A3D27581E /* wpxmlrpc */ = {
-			isa = PBXGroup;
-			children = (
-				4FCAE3AE1686B73FB3538281A961BD7D /* WPBase64Utils.h */,
-				0847A7A17039BC490A2D8B2AB42D8CDD /* WPBase64Utils.m */,
-				BAABBE4445D54D7114DE80DD6D7B89AF /* WPStringUtils.h */,
-				2C0D4DF907BA61541AEF931B8DAE7788 /* WPStringUtils.m */,
-				0DF89AE6CDFB315AEDE05FD033845AA2 /* WPXMLRPC.h */,
-				440A118F89679C7586EE73D437CAABE2 /* WPXMLRPCDataCleaner.h */,
-				CAC664A9D6EDC2BD81838533E35BEF6B /* WPXMLRPCDataCleaner.m */,
-				B5F154E0F401877437469D03F0756A26 /* WPXMLRPCDecoder.h */,
-				4A1DA50615004016EB63AA16030DAD3F /* WPXMLRPCDecoder.m */,
-				CBA0E0713554C46DB2A55D5A9C69FBA9 /* WPXMLRPCDecoderDelegate.h */,
-				20E5B5C82013E3C5E9F870B6265DF744 /* WPXMLRPCDecoderDelegate.m */,
-				0F4D7CCC52A88C3254520ECD15A6B7D3 /* WPXMLRPCEncoder.h */,
-				6B127DB2DF19B7DA5ACD876B5E0D4E5A /* WPXMLRPCEncoder.m */,
-				22A62C7D9F36B27F28676C29C0CB1FAA /* Support Files */,
-			);
-			name = wpxmlrpc;
-			path = wpxmlrpc;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				6FF16BE0F44317406C48BB9A9C6854CC /* Pods */,
+				F086C3BE2D8DD014789E731334C1F995 /* Pods */,
 				B01DEE0C56D09CC46B43ADDA9B993A35 /* Products */,
 				360282C217F12F82740D3B8AC3A12CA0 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D420E600E8A03070F59FF41F92277B60 /* Resources */ = {
+		D067B596490D72C61235CCCC2B7F848A /* ImageViewer */ = {
 			isa = PBXGroup;
 			children = (
-				D44CB044B2F242C0CA9A3AF9FEDB363F /* Assets.xcassets */,
+				EC0C6E41273207BB80D25462558170CA /* AVPlayer.swift */,
+				F2F5C3140CA38A2621D4B851E04FD687 /* BlurView.swift */,
+				75CF8A4361FC99E4935B6DDD633C790D /* Bool.swift */,
+				B8F8EA7BBEA036BB7A40A468B9044AE6 /* CALayer.swift */,
+				B58DDA9D246457E7D87B5FEEFE0CE658 /* CAShapeLayer.swift */,
+				4DE909E9E2C9028886664F72C164A4FD /* CGPoint.swift */,
+				EA8875EF2AE708BD5BC6365C57A5B7CB /* CGRect.swift */,
+				3EEAC365449BCA7E3C2675BB1E2E3B9F /* CGSize.swift */,
+				AE466E962763E40269C40E8A378F7E11 /* GalleryConfiguration.swift */,
+				8D7BC4104F165C49FA32A1883B14079C /* GalleryDisplacedViewsDataSource.swift */,
+				CA398DB3EDA2658A1B2F08CF2548E08A /* GalleryItem.swift */,
+				B448F8B964FA045F1FB6C2905CF96F36 /* GalleryItemsDataSource.swift */,
+				7BC417A1A1C4857B8AFB6C1AB167E1D7 /* GalleryItemsDelegate.swift */,
+				4F30C71E611C172F902A15BF4B010C6A /* GalleryPagingDataSource.swift */,
+				848C8FE8DD8A933B269878F43702F810 /* GallerySwipeToDismissTransition.swift */,
+				BCD4CE922A1B97BAFA7CDBF3898931C1 /* GalleryViewController.swift */,
+				2F954380D5A6383B64307E64F9CAA626 /* ImageFadeInHandler.swift */,
+				006C97AB56D65F28685B345BC9020288 /* ImageViewController.swift */,
+				84D5EC08655AF3D324A739E84C65630E /* ItemBaseController.swift */,
+				57BF53D4C13674473B2120DB5971C943 /* ItemController.swift */,
+				7189D84045315FE251D38AB8BFBBB755 /* ItemControllerDelegate.swift */,
+				1E3C720B90E738AD2D87B1FDE9095D9D /* LayoutEnums.swift */,
+				BB047E1FBCEC9EECAC8D3F590B8897E3 /* Slider.swift */,
+				88C0C1E7787EE80AB4D58E7D879BCE38 /* ThumbnailCell.swift */,
+				B334EFBB94A8E1C1F5899A42DD0E4B19 /* ThumbnailsViewController.swift */,
+				67D27DAF13AB13F55410065D894F4809 /* UIApplication.swift */,
+				AC3452E5A6356C84E5CDE2F58F56F6B4 /* UIBezierPath.swift */,
+				12BF0D76DE94C694BA2ACC3BDBA51192 /* UIButton.swift */,
+				A50814DC06B08EE65443C1A46D06AD8A /* UIColor.swift */,
+				218D76B141C387326ECAC38D5EDE4DDC /* UIImageView.swift */,
+				589EE51A30BB2E09C2A6C31C5B31C47A /* UIScreen.swift */,
+				BA8B6BD2B294EB8DF8A29CE33D7101D4 /* UISlider.swift */,
+				F2E50E92752B310327A4E93294E93638 /* UIView.swift */,
+				80F2EE64F578EAB61596D6FFBBB1437C /* UIViewController.swift */,
+				3D3533C532DDBE3D6F0FD7BB656BA5E8 /* UtilityFunctions.swift */,
+				62E98C232768D9EC68C3F86A5F8A55AD /* VideoScrubber.swift */,
+				8A826693F3932049F7E380113B1208E5 /* VideoView.swift */,
+				BA83C05EEC2DD95CB4BF474C84B768E9 /* VideoViewController.swift */,
+				100C264FD068536039B45A8BDFA6DC24 /* Support Files */,
 			);
-			name = Resources;
+			name = ImageViewer;
+			path = ImageViewer;
+			sourceTree = "<group>";
+		};
+		DC8BD33169198D392BF747E014E434D7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				07D6F75E4860E86DA0E431A58DF42270 /* AcknowList.modulemap */,
+				50D0A98CE865866D4143ADED816F2C9E /* AcknowList.xcconfig */,
+				CD8F3056F0356083BC9473200962BB36 /* AcknowList-dummy.m */,
+				186515E4025A316E092B88AD3A4327B6 /* AcknowList-Info.plist */,
+				07682FF4838E54D19F817DAF9DE9221B /* AcknowList-prefix.pch */,
+				D1A0895C225ADCC023A87C30E0B07B36 /* AcknowList-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AcknowList";
 			sourceTree = "<group>";
 		};
 		E2983683FD097A93297E2F5D4E382B36 /* iOS */ = {
@@ -855,6 +797,18 @@
 				312B988EF117AE4DE76A268D970131FE /* UIKit.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		F086C3BE2D8DD014789E731334C1F995 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD63902ACFCDD6FFF38C8143E679F8BA /* AcknowList */,
+				20AD707D46C5FD08811DB3057EBDB54A /* Dequeueable */,
+				5BDD27C0D2BE9B5155CC04C96435C04F /* DropdownTitleView */,
+				D067B596490D72C61235CCCC2B7F848A /* ImageViewer */,
+				ADBD4F8B72A536BC8132A0F25B617D89 /* wpxmlrpc */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -875,14 +829,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0D7D35FE8C828A7ED35AC3C626AD0F2D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D164202EA037AA99FEA734A6775D0A1C /* Pods-Icro-IcroTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		186802A720BD896AF48649642B0E69CC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -899,11 +845,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		585BF6CFC6B4AD6DB13ED3BF115657F7 /* Headers */ = {
+		576E0443B4D5FD9F6E59C7B532D049A3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				709662E01E0ECF09C2BA4FFE56298C6F /* Pods-Icro-umbrella.h in Headers */,
+				5826106CB504464311EB3AB7A6BF62B6 /* Pods-Icro-IcroTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -912,6 +858,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FEC3A8CB58569E07783A364E6B014EC /* AcknowList-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91231450B8055D7B3B2260AD12337558 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F96531B4811A535ED0DBF78B7626A6FB /* Pods-Icro-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1014,21 +968,20 @@
 		};
 		41CE99194F0C9B305AD7B4AD51CE25D4 /* Pods-Icro-IcroTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 59755E3B383A93E81069DC7A461065F8 /* Build configuration list for PBXNativeTarget "Pods-Icro-IcroTests" */;
+			buildConfigurationList = F9DD0AF51981E6AFB56CB418BD600A6A /* Build configuration list for PBXNativeTarget "Pods-Icro-IcroTests" */;
 			buildPhases = (
-				0D7D35FE8C828A7ED35AC3C626AD0F2D /* Headers */,
-				63D97CDBB7FD564206F62D19AB82C435 /* Sources */,
-				186663FDA5EAAF23E3EE22E00A405F07 /* Frameworks */,
-				FA37817A76700ABA8B830DA0AB49C1C2 /* Resources */,
+				576E0443B4D5FD9F6E59C7B532D049A3 /* Headers */,
+				61D83CBC15B329DDA3A18634D12236A1 /* Sources */,
+				E12DCB3306ED805262038272E46C4B76 /* Frameworks */,
+				08B71D7BF6FE12AEA950BAC8765FE20E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0AC9D0C22C91B93B7F79AE289573B188 /* PBXTargetDependency */,
-				74620E825E36609EB902519FD62EF191 /* PBXTargetDependency */,
-				D4198440C9CA58432EEE15CEE271521A /* PBXTargetDependency */,
-				E9B087A691AF3B0F9DA83A048C820861 /* PBXTargetDependency */,
-				9768C22CE87F4CF0A4D07E22035436F6 /* PBXTargetDependency */,
+				6142B82EB4FC8ADF226A1BC28759BD6B /* PBXTargetDependency */,
+				DA8E817B121E90B9A92C54C6C034C6E7 /* PBXTargetDependency */,
+				AADE6271603364987D120EC9A72B1223 /* PBXTargetDependency */,
+				F94CBBC4A024CE271D756AD06529EC33 /* PBXTargetDependency */,
 			);
 			name = "Pods-Icro-IcroTests";
 			productName = "Pods-Icro-IcroTests";
@@ -1112,22 +1065,21 @@
 		};
 		CEBB3F3BC3C74013FABC7ED4A1DF167A /* Pods-Icro */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 650D6F56DC3114F26CF5A29E29EA83A8 /* Build configuration list for PBXNativeTarget "Pods-Icro" */;
+			buildConfigurationList = 3F324005CFC18DE79255614550FE1FC7 /* Build configuration list for PBXNativeTarget "Pods-Icro" */;
 			buildPhases = (
-				585BF6CFC6B4AD6DB13ED3BF115657F7 /* Headers */,
-				C473BE18C6B6D1C71DB90AB7DC972088 /* Sources */,
-				4C750619A94D095FFF9511D3C31FBA0A /* Frameworks */,
-				43F970B3AFFA6D7985BB31A726B37B71 /* Resources */,
+				91231450B8055D7B3B2260AD12337558 /* Headers */,
+				D3B4369F212251C202E94984E05D96C7 /* Sources */,
+				17D5A2D44BE61BC164D9231E2621F2D2 /* Frameworks */,
+				B9330753758E8A7E2BFF32650E3A7C39 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2C6A8524CF83D16194F9001FDE9A096A /* PBXTargetDependency */,
-				DEBC68843550309CEEE9654C8C4343D6 /* PBXTargetDependency */,
-				FF015DE15A8FA13B27047A89E0C65EE7 /* PBXTargetDependency */,
-				D5AF54984D517C2B0B9BF667EA9246A6 /* PBXTargetDependency */,
-				D41035895B53278A8F06F6D058A85851 /* PBXTargetDependency */,
-				351706C79E36B68910E05AF99519CFE8 /* PBXTargetDependency */,
+				A6EB83F6AC57F2F235D5393F796242F9 /* PBXTargetDependency */,
+				E2EFEB04981B2F370A5BE49B2F598098 /* PBXTargetDependency */,
+				3E001A6A9F0F551B6983D5E0F1FC3AB4 /* PBXTargetDependency */,
+				7480CEDF9F87A8F400B0CD50FE94B38B /* PBXTargetDependency */,
+				CB875D5115ED90DF79D9560E28A1775B /* PBXTargetDependency */,
 			);
 			name = "Pods-Icro";
 			productName = "Pods-Icro";
@@ -1201,7 +1153,6 @@
 				76184847EBD5C986B29F25E9B1F110AF /* Pods-IcroKit */,
 				77197F1401E52A5486A386A6294FE82C /* Pods-IcroScreenshotsTests */,
 				8FC0E0C27320C2A63F582BD1C4D1FA20 /* Pods-IcroUIKit */,
-				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
 				318CFBA3C7320ED40817AEE1BFFF9FF1 /* wpxmlrpc */,
 			);
 		};
@@ -1209,6 +1160,13 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		089384594767FE4E7CCFDDA6F73FD19C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08B71D7BF6FE12AEA950BAC8765FE20E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1223,13 +1181,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3D3E55A9BC2CBBD7E5C09374B56F5F4B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		43F970B3AFFA6D7985BB31A726B37B71 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1258,6 +1209,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B9330753758E8A7E2BFF32650E3A7C39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D26DC425550C0862B3CA13D99BF233D5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1274,13 +1232,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F7011C815CE1A91197A483D8774A35FB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA37817A76700ABA8B830DA0AB49C1C2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1307,11 +1258,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		63D97CDBB7FD564206F62D19AB82C435 /* Sources */ = {
+		61D83CBC15B329DDA3A18634D12236A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17B05898EE35114FF85BBE0D9F1970DD /* Pods-Icro-IcroTests-dummy.m in Sources */,
+				8A84A4AD77DC3DC253B9170AC9D53763 /* Pods-Icro-IcroTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1395,19 +1346,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C473BE18C6B6D1C71DB90AB7DC972088 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B2C9B889CFB2E4CF7D4970777EED45E /* Pods-Icro-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CD638A30D5E6CAACB48ABDC18F26F063 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E524F49D1FB7C5B56D28E8CBD3E8A514 /* Pods-IcroUIKit-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3B4369F212251C202E94984E05D96C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				079EBF3EC7A999EB7797B8A8BC50A924 /* Pods-Icro-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1435,29 +1386,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0AC9D0C22C91B93B7F79AE289573B188 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AcknowList;
-			target = 51691F4311958691BD98F5F26E2D77D4 /* AcknowList */;
-			targetProxy = F937D7B290838A15482C62DDC04B579F /* PBXContainerItemProxy */;
-		};
-		2C6A8524CF83D16194F9001FDE9A096A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AcknowList;
-			target = 51691F4311958691BD98F5F26E2D77D4 /* AcknowList */;
-			targetProxy = 69EADA6C74518AEB93A643949234B7A7 /* PBXContainerItemProxy */;
-		};
-		351706C79E36B68910E05AF99519CFE8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = wpxmlrpc;
-			target = 318CFBA3C7320ED40817AEE1BFFF9FF1 /* wpxmlrpc */;
-			targetProxy = E90328C37EF9953E209B3A03C5E23100 /* PBXContainerItemProxy */;
-		};
 		38B2A9245FF2EE3AD96D70B7F45994EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = wpxmlrpc;
 			target = 318CFBA3C7320ED40817AEE1BFFF9FF1 /* wpxmlrpc */;
 			targetProxy = D793A5E8E4DDD5D4C73D9F55B2EE1E0F /* PBXContainerItemProxy */;
+		};
+		3E001A6A9F0F551B6983D5E0F1FC3AB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DropdownTitleView;
+			target = D7ECEE45EC39F97DE10FBB99F33044A6 /* DropdownTitleView */;
+			targetProxy = D57CB56977A9CCCA1B5FB29793C53729 /* PBXContainerItemProxy */;
+		};
+		6142B82EB4FC8ADF226A1BC28759BD6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AcknowList;
+			target = 51691F4311958691BD98F5F26E2D77D4 /* AcknowList */;
+			targetProxy = 1AAAC7E160B45442F6FCE998D38DE94A /* PBXContainerItemProxy */;
 		};
 		6ABD71D758D30ADC0FFDAF21D2B12B15 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1465,17 +1410,23 @@
 			target = F925A5167B179E11CFF65658A43F095F /* Dequeueable */;
 			targetProxy = 3A3E64C17AEB2F5D702E590C050022B6 /* PBXContainerItemProxy */;
 		};
-		74620E825E36609EB902519FD62EF191 /* PBXTargetDependency */ = {
+		7480CEDF9F87A8F400B0CD50FE94B38B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Dequeueable;
-			target = F925A5167B179E11CFF65658A43F095F /* Dequeueable */;
-			targetProxy = FE5C98F0113BE1E0F64E6B0B470A10A5 /* PBXContainerItemProxy */;
+			name = ImageViewer;
+			target = 3D83A5D20FC82284ECB8F7B3F5991097 /* ImageViewer */;
+			targetProxy = 80867F980C34C5142539C2CBC921E899 /* PBXContainerItemProxy */;
 		};
-		9768C22CE87F4CF0A4D07E22035436F6 /* PBXTargetDependency */ = {
+		A6EB83F6AC57F2F235D5393F796242F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftLint;
-			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
-			targetProxy = 27C5EBB790C3AAB5D4A133AF989349C3 /* PBXContainerItemProxy */;
+			name = AcknowList;
+			target = 51691F4311958691BD98F5F26E2D77D4 /* AcknowList */;
+			targetProxy = 29D1D26DDA01C2FEFCEAC8D591C27E10 /* PBXContainerItemProxy */;
+		};
+		AADE6271603364987D120EC9A72B1223 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DropdownTitleView;
+			target = D7ECEE45EC39F97DE10FBB99F33044A6 /* DropdownTitleView */;
+			targetProxy = CB7ED82CEC3B3C425BE2382C18F08988 /* PBXContainerItemProxy */;
 		};
 		BADE97C65C8AD4BDE75DE4326D066110 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1483,48 +1434,36 @@
 			target = 318CFBA3C7320ED40817AEE1BFFF9FF1 /* wpxmlrpc */;
 			targetProxy = 338043D8D165126E09391175BA82A4E9 /* PBXContainerItemProxy */;
 		};
-		D41035895B53278A8F06F6D058A85851 /* PBXTargetDependency */ = {
+		CB875D5115ED90DF79D9560E28A1775B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftLint;
-			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
-			targetProxy = 7018EE301FEDD5BEFF6F49414F915B68 /* PBXContainerItemProxy */;
+			name = wpxmlrpc;
+			target = 318CFBA3C7320ED40817AEE1BFFF9FF1 /* wpxmlrpc */;
+			targetProxy = 0EA0CDF8BD416EEC6B46B9834DFD54A0 /* PBXContainerItemProxy */;
 		};
-		D4198440C9CA58432EEE15CEE271521A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DropdownTitleView;
-			target = D7ECEE45EC39F97DE10FBB99F33044A6 /* DropdownTitleView */;
-			targetProxy = 98C167BEF0A0FFD8CAA15A6A78BB9FB4 /* PBXContainerItemProxy */;
-		};
-		D5AF54984D517C2B0B9BF667EA9246A6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ImageViewer;
-			target = 3D83A5D20FC82284ECB8F7B3F5991097 /* ImageViewer */;
-			targetProxy = 83762EE60D0EEF78BC0842A6861E3C57 /* PBXContainerItemProxy */;
-		};
-		DEBC68843550309CEEE9654C8C4343D6 /* PBXTargetDependency */ = {
+		DA8E817B121E90B9A92C54C6C034C6E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Dequeueable;
 			target = F925A5167B179E11CFF65658A43F095F /* Dequeueable */;
-			targetProxy = 0DC9C16DFB7387F57F5D3311F0F98355 /* PBXContainerItemProxy */;
+			targetProxy = CFC3B61D8E78021462D835B4CE4067A6 /* PBXContainerItemProxy */;
 		};
-		E9B087A691AF3B0F9DA83A048C820861 /* PBXTargetDependency */ = {
+		E2EFEB04981B2F370A5BE49B2F598098 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Dequeueable;
+			target = F925A5167B179E11CFF65658A43F095F /* Dequeueable */;
+			targetProxy = 3BF16A33E8B6DA4EA0995A0F08964CC1 /* PBXContainerItemProxy */;
+		};
+		F94CBBC4A024CE271D756AD06529EC33 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ImageViewer;
 			target = 3D83A5D20FC82284ECB8F7B3F5991097 /* ImageViewer */;
-			targetProxy = 2318FB86A11D2F9B81A60F86DA9D1A69 /* PBXContainerItemProxy */;
-		};
-		FF015DE15A8FA13B27047A89E0C65EE7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DropdownTitleView;
-			target = D7ECEE45EC39F97DE10FBB99F33044A6 /* DropdownTitleView */;
-			targetProxy = 843EED195AA931BC7C1D3601C48FAA71 /* PBXContainerItemProxy */;
+			targetProxy = 132DE121C493EF21837762FC33AAED44 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1C931158B3EF5ED580C9D2F23E9400C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47F7C6FFDE75C6294535391E514B3A69 /* DropdownTitleView.xcconfig */;
+			baseConfigurationReference = 8A66034373E97C0BBF2503F36032DE01 /* DropdownTitleView.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1670,9 +1609,52 @@
 			};
 			name = Debug;
 		};
+		216BC8830D9BF2BFFB186F0103D6EAC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3110B48CCF8156AED9E50A9DE880EB06 /* Pods-Icro-IcroTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DT_APP_EXTENSIONS=1",
+				);
+				INFOPLIST_FILE = "Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		282696FE9B37FA96538B7FEFE00ACFF2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47F7C6FFDE75C6294535391E514B3A69 /* DropdownTitleView.xcconfig */;
+			baseConfigurationReference = 8A66034373E97C0BBF2503F36032DE01 /* DropdownTitleView.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1713,7 +1695,7 @@
 		};
 		31523A96788F5D62080837853988FA09 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11F494DCB34868C26AD264BA0BD96F5F /* wpxmlrpc.xcconfig */;
+			baseConfigurationReference = C6A98D4EE49F8A849E49030452EB91B0 /* wpxmlrpc.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1811,48 +1793,6 @@
 			};
 			name = Release;
 		};
-		484FB29C89CAF9D126AC6DB8E1B93E54 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC60912925B66A35D25305ED9ED6C715 /* Pods-Icro.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"DT_APP_EXTENSIONS=1",
-				);
-				INFOPLIST_FILE = "Target Support Files/Pods-Icro/Pods-Icro-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Icro/Pods-Icro.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		59CCB10091B1234DD164A88AFFEB39D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 78717307DF5C3760242B17467F52344A /* Pods-IcroKit.debug.xcconfig */;
@@ -1898,7 +1838,7 @@
 		};
 		5C8A7027153B6276389E74B5DBEA6101 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D5DE3FBDD302A3E8CA38EFFCB5E1F27 /* AcknowList.xcconfig */;
+			baseConfigurationReference = 50D0A98CE865866D4143ADED816F2C9E /* AcknowList.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1935,9 +1875,9 @@
 			};
 			name = Debug;
 		};
-		84784B083DCA568639D483D5F9F197AA /* Debug */ = {
+		803C62AECCE5578B965978976DA5001E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2587F7205B292C85BCCA839B83264A0 /* Pods-Icro-IcroTests.debug.xcconfig */;
+			baseConfigurationReference = 7F5F33C1D1826F6BCEC0F163428872CF /* Pods-Icro.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1954,7 +1894,7 @@
 					"$(inherited)",
 					"DT_APP_EXTENSIONS=1",
 				);
-				INFOPLIST_FILE = "Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Icro/Pods-Icro-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1963,7 +1903,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Icro/Pods-Icro.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1972,35 +1912,15 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		84D7C4574E8F0F3095623F0E06F5B402 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20D40F238F6FB2FCBFC3F191A4D0BC13 /* SwiftLint.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"DT_APP_EXTENSIONS=1",
-				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		857F55C1C6EF3CE19B3CF07A0868EAEB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E6634F31E33CEB964A221E6405678FB /* Dequeueable.xcconfig */;
+			baseConfigurationReference = 8EAB3CEBC0126E637E79AF726BF77BB0 /* Dequeueable.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -2041,7 +1961,7 @@
 		};
 		8F1A9A417447618B8000B7629E594446 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A8FC6EFD482B7EAAA26AB0B6C26A651 /* ImageViewer.xcconfig */;
+			baseConfigurationReference = 07173FE80A86472FF5681B49A5F773FA /* ImageViewer.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2124,7 +2044,7 @@
 		};
 		97F4F623742FB19DCBF6A2BB6511F088 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11F494DCB34868C26AD264BA0BD96F5F /* wpxmlrpc.xcconfig */;
+			baseConfigurationReference = C6A98D4EE49F8A849E49030452EB91B0 /* wpxmlrpc.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -2206,52 +2126,9 @@
 			};
 			name = Debug;
 		};
-		A3BDE59B7DA7F8FE6C865C67F1935733 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3110B48CCF8156AED9E50A9DE880EB06 /* Pods-Icro-IcroTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"DT_APP_EXTENSIONS=1",
-				);
-				INFOPLIST_FILE = "Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		AA65E6D9F7C663E8584223586E744804 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A8FC6EFD482B7EAAA26AB0B6C26A651 /* ImageViewer.xcconfig */;
+			baseConfigurationReference = 07173FE80A86472FF5681B49A5F773FA /* ImageViewer.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2291,7 +2168,7 @@
 		};
 		AA7B644F52D739946D60DAE250B080E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E6634F31E33CEB964A221E6405678FB /* Dequeueable.xcconfig */;
+			baseConfigurationReference = 8EAB3CEBC0126E637E79AF726BF77BB0 /* Dequeueable.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -2375,7 +2252,7 @@
 		};
 		BB72BFB6E4B14DCB08CEE725F7BBAEFA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D5DE3FBDD302A3E8CA38EFFCB5E1F27 /* AcknowList.xcconfig */;
+			baseConfigurationReference = 50D0A98CE865866D4143ADED816F2C9E /* AcknowList.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2498,9 +2375,51 @@
 			};
 			name = Debug;
 		};
-		DB757615D719EB22B6E9BC558EFD839D /* Release */ = {
+		D7ECC98EF8AE81F4449CB02FBE4D20EB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F5F33C1D1826F6BCEC0F163428872CF /* Pods-Icro.release.xcconfig */;
+			baseConfigurationReference = B2587F7205B292C85BCCA839B83264A0 /* Pods-Icro-IcroTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DT_APP_EXTENSIONS=1",
+				);
+				INFOPLIST_FILE = "Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E7E1D5A69A1E6A9ABF15A93877454B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC60912925B66A35D25305ED9ED6C715 /* Pods-Icro.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2535,29 +2454,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		DEED47E09AF743F48544C1C4FEADEF47 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20D40F238F6FB2FCBFC3F191A4D0BC13 /* SwiftLint.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"DT_APP_EXTENSIONS=1",
-				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -2625,6 +2523,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		3F324005CFC18DE79255614550FE1FC7 /* Build configuration list for PBXNativeTarget "Pods-Icro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7E1D5A69A1E6A9ABF15A93877454B14 /* Debug */,
+				803C62AECCE5578B965978976DA5001E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2639,24 +2546,6 @@
 			buildConfigurations = (
 				31523A96788F5D62080837853988FA09 /* Debug */,
 				97F4F623742FB19DCBF6A2BB6511F088 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		59755E3B383A93E81069DC7A461065F8 /* Build configuration list for PBXNativeTarget "Pods-Icro-IcroTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				84784B083DCA568639D483D5F9F197AA /* Debug */,
-				A3BDE59B7DA7F8FE6C865C67F1935733 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		650D6F56DC3114F26CF5A29E29EA83A8 /* Build configuration list for PBXNativeTarget "Pods-Icro" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				484FB29C89CAF9D126AC6DB8E1B93E54 /* Debug */,
-				DB757615D719EB22B6E9BC558EFD839D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2688,15 +2577,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DEED47E09AF743F48544C1C4FEADEF47 /* Debug */,
-				84D7C4574E8F0F3095623F0E06F5B402 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C50CF86AF47B74977C721B19C401D3A7 /* Build configuration list for PBXNativeTarget "Pods-IcroKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2720,6 +2600,15 @@
 			buildConfigurations = (
 				9FDED03E3F57CDA1E475667122035CA1 /* Debug */,
 				92A22BE02948631A42796A7BD1F99D50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9DD0AF51981E6AFB56CB418BD600A6A /* Build configuration list for PBXNativeTarget "Pods-Icro-IcroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7ECC98EF8AE81F4449CB02FBE4D20EB /* Debug */,
+				216BC8830D9BF2BFFB186F0103D6EAC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
