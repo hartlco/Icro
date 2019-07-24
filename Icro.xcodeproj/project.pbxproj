@@ -67,8 +67,8 @@
 		5B165DA922BF538C00B851B2 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView.swift */; };
 		5B1896C922B2DA200067F100 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51621A22B2C900009C0064 /* LoginView.swift */; };
 		5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */; };
-		5B28C8C822C87BFA00A46C52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8C722C87BFA00A46C52 /* Kingfisher */; };
-		5B28C8CC22C87C6C00A46C52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8CB22C87C6C00A46C52 /* Kingfisher */; };
+		5B28C8C822C87BFA00A46C52 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8C722C87BFA00A46C52 /* SwiftPackageProductDependency */; };
+		5B28C8CC22C87C6C00A46C52 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8CB22C87C6C00A46C52 /* SwiftPackageProductDependency */; };
 		5B28C8CE22C89A1D00A46C52 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */; };
 		5B28C8D022C89B2600A46C52 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CF22C89B2600A46C52 /* UserListView.swift */; };
 		5B28C8D122C89BE200A46C52 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */; };
@@ -169,10 +169,10 @@
 		5B6FBE7B22E2F9FC006F6058 /* CatalystToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBE7922E2F89A006F6058 /* CatalystToolbar.swift */; };
 		5B6FBE7C22E38446006F6058 /* VerticalTabsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBE7722E2F30B006F6058 /* VerticalTabsSplitViewController.swift */; };
 		5B81E79A2206C62E008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
-		5B83B00D22D06EA8004C4D8D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B00C22D06EA8004C4D8D /* Alamofire */; };
-		5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01A22D11B3D004C4D8D /* KeychainAccess */; };
-		5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01C22D11D64004C4D8D /* KeychainAccess */; };
-		5B83B02222D1B3DC004C4D8D /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B02122D1B3DC004C4D8D /* TypedSymbols */; };
+		5B83B00D22D06EA8004C4D8D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B00C22D06EA8004C4D8D /* SwiftPackageProductDependency */; };
+		5B83B01B22D11B3D004C4D8D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01A22D11B3D004C4D8D /* SwiftPackageProductDependency */; };
+		5B83B01D22D11D64004C4D8D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01C22D11D64004C4D8D /* SwiftPackageProductDependency */; };
+		5B83B02222D1B3DC004C4D8D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B02122D1B3DC004C4D8D /* SwiftPackageProductDependency */; };
 		5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B841ECD22E832F700CDA80C /* libiconv.tbd */; };
 		5B841ED322E8349600CDA80C /* UICollectionView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A7BF22E8313200D420BD /* UICollectionView+Dequeueable.swift */; };
 		5B841ED922E83C2D00CDA80C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B841ED622E83C2D00CDA80C /* Assets.xcassets */; };
@@ -224,8 +224,8 @@
 		5BDE18EB216A5745001254F4 /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371A212860BA0076121E /* ComposeViewModel.swift */; };
 		5BDE18F1216A57C0001254F4 /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
 		5BE633AF22ACC09F005296AB /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsContentView.swift */; };
-		5BE92EF122D1B5630048E8F1 /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF022D1B5630048E8F1 /* TypedSymbols */; };
-		5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */; };
+		5BE92EF122D1B5630048E8F1 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF022D1B5630048E8F1 /* SwiftPackageProductDependency */; };
+		5BE92EF622D1BAAD0048E8F1 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF522D1BAAD0048E8F1 /* SwiftPackageProductDependency */; };
 		5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
 		5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */; };
 		5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
@@ -561,7 +561,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B28C8CC22C87C6C00A46C52 /* Kingfisher in Frameworks */,
+				5B28C8CC22C87C6C00A46C52 /* BuildFile in Frameworks */,
 				5BC1384921C69BB80040353C /* IcroKit.framework in Frameworks */,
 				17D39BE915CAD86206EDB58C /* Pods_IcroUIKit.framework in Frameworks */,
 			);
@@ -587,10 +587,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B83B00D22D06EA8004C4D8D /* Alamofire in Frameworks */,
+				5B83B00D22D06EA8004C4D8D /* BuildFile in Frameworks */,
 				13AED6552F0EFB450E5BEF97 /* Pods_IcroKit.framework in Frameworks */,
-				5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */,
-				5BE92EF122D1B5630048E8F1 /* TypedSymbols in Frameworks */,
+				5B83B01D22D11D64004C4D8D /* BuildFile in Frameworks */,
+				5BE92EF122D1B5630048E8F1 /* BuildFile in Frameworks */,
 				5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,12 +601,12 @@
 			files = (
 				5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */,
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
-				5B83B02222D1B3DC004C4D8D /* TypedSymbols in Frameworks */,
-				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
-				5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */,
+				5B83B02222D1B3DC004C4D8D /* BuildFile in Frameworks */,
+				5BE92EF622D1BAAD0048E8F1 /* BuildFile in Frameworks */,
+				5B83B01B22D11B3D004C4D8D /* BuildFile in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
 				61B772A049E74A71B8194FCD /* Pods_Icro.framework in Frameworks */,
-				5B28C8C822C87BFA00A46C52 /* Kingfisher in Frameworks */,
+				5B28C8C822C87BFA00A46C52 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1275,8 +1275,6 @@
 			dependencies = (
 			);
 			name = "Icro-Share";
-			packageProductDependencies = (
-			);
 			productName = "Icro-Share";
 			productReference = 5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -1297,7 +1295,7 @@
 			);
 			name = IcroUIKit;
 			packageProductDependencies = (
-				5B28C8CB22C87C6C00A46C52 /* Kingfisher */,
+				5B28C8CB22C87C6C00A46C52 /* SwiftPackageProductDependency */,
 			);
 			productName = IcroUIKit;
 			productReference = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */;
@@ -1311,7 +1309,6 @@
 				5B5837312128B04A0076121E /* Sources */,
 				5B5837322128B04A0076121E /* Frameworks */,
 				5B5837332128B04A0076121E /* Resources */,
-				A2F7AFDB630971309711D98A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1358,9 +1355,9 @@
 			);
 			name = IcroKit;
 			packageProductDependencies = (
-				5B83B00C22D06EA8004C4D8D /* Alamofire */,
-				5B83B01C22D11D64004C4D8D /* KeychainAccess */,
-				5BE92EF022D1B5630048E8F1 /* TypedSymbols */,
+				5B83B00C22D06EA8004C4D8D /* SwiftPackageProductDependency */,
+				5B83B01C22D11D64004C4D8D /* SwiftPackageProductDependency */,
+				5BE92EF022D1B5630048E8F1 /* SwiftPackageProductDependency */,
 			);
 			productName = IcroKit;
 			productReference = 5BC347AE2132944900DEB45D /* IcroKit.framework */;
@@ -1377,7 +1374,6 @@
 				5B494E642123590E00C3969B /* SwiftLint */,
 				5BC347BA2132944900DEB45D /* Embed Frameworks */,
 				5B3C798C21C4DFAF00F699B8 /* Embed App Extensions */,
-				1AEA6D5F2B7D06A648F73E20 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1388,10 +1384,10 @@
 			);
 			name = Icro;
 			packageProductDependencies = (
-				5B28C8C722C87BFA00A46C52 /* Kingfisher */,
-				5B83B01A22D11B3D004C4D8D /* KeychainAccess */,
-				5B83B02122D1B3DC004C4D8D /* TypedSymbols */,
-				5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */,
+				5B28C8C722C87BFA00A46C52 /* SwiftPackageProductDependency */,
+				5B83B01A22D11B3D004C4D8D /* SwiftPackageProductDependency */,
+				5B83B02122D1B3DC004C4D8D /* SwiftPackageProductDependency */,
+				5BE92EF522D1BAAD0048E8F1 /* SwiftPackageProductDependency */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -1478,11 +1474,11 @@
 			);
 			mainGroup = C5FA2AB71EB4482C006DEB40;
 			packageReferences = (
-				5B28C8C622C87BFA00A46C52 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */,
-				5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */,
-				5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */,
-				5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */,
+				5B28C8C622C87BFA00A46C52 /* RemoteSwiftPackageReference */,
+				5B70C0E822D06E9200D85F2B /* RemoteSwiftPackageReference */,
+				5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */,
+				5B83B02022D1B3DC004C4D8D /* RemoteSwiftPackageReference */,
+				5BE92EF422D1BAAD0048E8F1 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = C5FA2AC11EB4482C006DEB40 /* Products */;
 			projectDirPath = "";
@@ -1564,23 +1560,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1AEA6D5F2B7D06A648F73E20 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Icro/Pods-Icro-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Icro/Pods-Icro-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Icro/Pods-Icro-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		20C3A106AC1DA7AB6DC70FC0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1691,23 +1670,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A2F7AFDB630971309711D98A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A7B6E56198B9726D5428556F /* [CP] Check Pods Manifest.lock */ = {
@@ -2586,7 +2548,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5B28C8C622C87BFA00A46C52 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		5B28C8C622C87BFA00A46C52 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher/";
 			requirement = {
@@ -2594,7 +2556,7 @@
 				kind = branch;
 			};
 		};
-		5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		5B70C0E822D06E9200D85F2B /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -2602,7 +2564,7 @@
 				minimumVersion = 4.8.2;
 			};
 		};
-		5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+		5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/KeychainAccess";
 			requirement = {
@@ -2610,7 +2572,7 @@
 				kind = branch;
 			};
 		};
-		5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */ = {
+		5B83B02022D1B3DC004C4D8D /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/TypedSymbols";
 			requirement = {
@@ -2618,7 +2580,7 @@
 				kind = branch;
 			};
 		};
-		5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */ = {
+		5BE92EF422D1BAAD0048E8F1 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/AppDelegateComponent";
 			requirement = {
@@ -2629,44 +2591,44 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5B28C8C722C87BFA00A46C52 /* Kingfisher */ = {
+		5B28C8C722C87BFA00A46C52 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B28C8C622C87BFA00A46C52 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 5B28C8C622C87BFA00A46C52 /* RemoteSwiftPackageReference */;
 			productName = Kingfisher;
 		};
-		5B28C8CB22C87C6C00A46C52 /* Kingfisher */ = {
+		5B28C8CB22C87C6C00A46C52 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B28C8C622C87BFA00A46C52 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 5B28C8C622C87BFA00A46C52 /* RemoteSwiftPackageReference */;
 			productName = Kingfisher;
 		};
-		5B83B00C22D06EA8004C4D8D /* Alamofire */ = {
+		5B83B00C22D06EA8004C4D8D /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 5B70C0E822D06E9200D85F2B /* RemoteSwiftPackageReference */;
 			productName = Alamofire;
 		};
-		5B83B01A22D11B3D004C4D8D /* KeychainAccess */ = {
+		5B83B01A22D11B3D004C4D8D /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			package = 5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */;
 			productName = KeychainAccess;
 		};
-		5B83B01C22D11D64004C4D8D /* KeychainAccess */ = {
+		5B83B01C22D11D64004C4D8D /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			package = 5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */;
 			productName = KeychainAccess;
 		};
-		5B83B02122D1B3DC004C4D8D /* TypedSymbols */ = {
+		5B83B02122D1B3DC004C4D8D /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */;
+			package = 5B83B02022D1B3DC004C4D8D /* RemoteSwiftPackageReference */;
 			productName = TypedSymbols;
 		};
-		5BE92EF022D1B5630048E8F1 /* TypedSymbols */ = {
+		5BE92EF022D1B5630048E8F1 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */;
+			package = 5B83B02022D1B3DC004C4D8D /* RemoteSwiftPackageReference */;
 			productName = TypedSymbols;
 		};
-		5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */ = {
+		5BE92EF522D1BAAD0048E8F1 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */;
+			package = 5BE92EF422D1BAAD0048E8F1 /* RemoteSwiftPackageReference */;
 			productName = AppDelegateComponent;
 		};
 /* End XCSwiftPackageProductDependency section */

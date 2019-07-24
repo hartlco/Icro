@@ -4,33 +4,15 @@
 //
 
 import SwiftUI
-import AcknowList
+
+struct Acknow {
+    let title: String
+    let text: String
+}
 
 final class AcknowledgmentViewModel {
     var acknows: [Acknow] {
-        guard let path = AcknowledgmentViewModel.defaultAcknowledgementsPlistPath() else { return [] }
-        let parser = AcknowParser(plistPath: path)
-        return parser.parseAcknowledgements()
-    }
-
-    class func acknowledgementsPlistPath(name: String) -> String? {
-        return Bundle.main.path(forResource: name, ofType: "plist")
-    }
-
-    class func defaultAcknowledgementsPlistPath() -> String? {
-        guard let bundleName = Bundle.main.infoDictionary?["CFBundleName"] as? String else {
-            return nil
-        }
-
-        let defaultAcknowledgementsPlistName = "Pods-\(bundleName)-acknowledgements"
-        let defaultAcknowledgementsPlistPath = self.acknowledgementsPlistPath(name: defaultAcknowledgementsPlistName)
-
-        if let defaultAcknowledgementsPlistPath = defaultAcknowledgementsPlistPath,
-            FileManager.default.fileExists(atPath: defaultAcknowledgementsPlistPath) {
-            return defaultAcknowledgementsPlistPath
-        } else {
-            return self.acknowledgementsPlistPath(name: "Pods-acknowledgements")
-        }
+        return []
     }
 }
 

@@ -1,8 +1,7 @@
 use_frameworks!
 
 target 'Icro' do
-    pod 'AcknowList'
-	
+
 	target 'IcroTests' do
 	end
 end
