@@ -3,8 +3,6 @@
 //  Copyright © 2017 Martin Hartl. All rights reserved.
 //
 
-import Kanna
-
 #if os(iOS)
 import UIKit
 public typealias XImage = UIImage

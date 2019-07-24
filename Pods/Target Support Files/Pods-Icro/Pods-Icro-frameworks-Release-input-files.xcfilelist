@@ -3,5 +3,4 @@ ${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework
 ${BUILT_PRODUCTS_DIR}/Dequeueable/Dequeueable.framework
 ${BUILT_PRODUCTS_DIR}/DropdownTitleView/DropdownTitleView.framework
 ${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework
-${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework
 ${BUILT_PRODUCTS_DIR}/wpxmlrpc/wpxmlrpc.framework
