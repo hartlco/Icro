@@ -1,6 +1,0 @@
-framework module wpxmlrpc {
-  umbrella header "wpxmlrpc-iOS-umbrella.h"
-
-  export *
-  module * { export * }
-}

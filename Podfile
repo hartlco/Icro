@@ -32,14 +32,6 @@ target 'IcroUIKit' do
     pod 'Dequeueable'
 end
 
-target 'IcroKit-Mac' do
-    platform :osx, '10.14'
-    kitPods
-end
-
-target 'Icro-Mac' do
-end
-
 post_install do |installer|
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
