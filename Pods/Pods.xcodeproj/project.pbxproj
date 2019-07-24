@@ -7,64 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A1ABF5BA068A0246BE893EB79A5B5C5 /* AcknowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7267C910131F89E71A4C08476CE7ED /* AcknowListViewController.swift */; };
-		225E9FD95946F5A3FA79EDB4357B9E4A /* AcknowParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96FFD0FA78AE7F2044493C2D0CD146 /* AcknowParser.swift */; };
-		25152F41071E6FD3380BD1B51D9FFB50 /* Pods-Icro-IcroTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5725FBEEF475911E6CED3FDC55C856B /* Pods-Icro-IcroTests-dummy.m */; };
-		288576C6F032AB1A6BFA83D68C424788 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		0A1ABF5BA068A0246BE893EB79A5B5C5 /* AcknowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C353DCF299897871DD0E070AC73205D6 /* AcknowListViewController.swift */; };
+		0B064320D1A3CC404B33003B83EC7644 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		225E9FD95946F5A3FA79EDB4357B9E4A /* AcknowParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424EEAAA340724FA2A6097A7A17C9558 /* AcknowParser.swift */; };
 		2C3C0ACB68CC71F519CABEC7D4FBAB3D /* Pods-IcroScreenshotsTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D1A8774DDF923CBC9AE112185184CC59 /* Pods-IcroScreenshotsTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B20248FD492E0CB4D1FBF1C30A0CC23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		3FEC3A8CB58569E07783A364E6B014EC /* AcknowList-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AA1C8B556ED29E99B37F6DD0B7DCE17 /* AcknowList-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		45E36BAA8228D491790A7FC5B886ADF0 /* AcknowLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F84F0218716ECFCA6F51CFD56F861B /* AcknowLocalization.swift */; };
-		4693A0065BE8F07B95746EEB9AE8621B /* Pods-Icro-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52201C7886DC3A3193D556CD09DE8848 /* Pods-Icro-dummy.m */; };
+		3C5CD1CDE9A333D5357D0E6571A9298D /* Pods-Icro-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D556F2B325D49101893AD91207B2EA2 /* Pods-Icro-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FEC3A8CB58569E07783A364E6B014EC /* AcknowList-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F457C24B07F329F02A91BA7B6E593CC7 /* AcknowList-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45E36BAA8228D491790A7FC5B886ADF0 /* AcknowLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD879B0BA1B3137786CB49F2048960A /* AcknowLocalization.swift */; };
 		46CAD142B5D280C7358AF7252B080A5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		47EB15B45CA2B862EC0E8256E429E962 /* Pods-IcroKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 870E3F9F7586480928FB9C4B1DEE2A8F /* Pods-IcroKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		54EE4C2788CB28280F468BA39EAE796F /* Pods-Icro-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D556F2B325D49101893AD91207B2EA2 /* Pods-Icro-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		579E663A3D6CBB8718B88228925F95BA /* DropdownTitleView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DE8E6B0B6FCB3CDD3F17CF5B74D95A /* DropdownTitleView-dummy.m */; };
-		5F81A2654EBB49955481A98F39E75238 /* AcknowList.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 64BDDB026B89E7A24477C530EB3B777E /* AcknowList.bundle */; };
+		587E4839CB28D903A69A65DFEB185626 /* Pods-Icro-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52201C7886DC3A3193D556CD09DE8848 /* Pods-Icro-dummy.m */; };
+		5F81A2654EBB49955481A98F39E75238 /* AcknowList.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 85EBC1802F9C80AFB57B7426A1C9203E /* AcknowList.bundle */; };
 		60C6FA1898B0EB537DC7265FA61324AB /* Pods-IcroKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82834F232BD0ED006ABC389EAECC8300 /* Pods-IcroKit-dummy.m */; };
 		6436661177285FD267B798F565CEF6E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		6B92A01820C1AD93388406E2E63640DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		6C60D9E806BAD2D8881E62789E0572E1 /* Pods-Icro-IcroTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D2128398EA3EC928C2E7BA2DD02302D /* Pods-Icro-IcroTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E1485D4E96C65D9E7CAB0443E007352 /* Pods-Icro-IcroTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5725FBEEF475911E6CED3FDC55C856B /* Pods-Icro-IcroTests-dummy.m */; };
 		71F3715181163C7AFE05A0C2E2F41CEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
-		80D97B70572A0F66F96C2F3493CB8FE5 /* DropdownTitleView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 641AA8A4CB3452F6EB09FB0269ACEC3A /* DropdownTitleView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8AB9B7BECC24AC69C4A0B68B1FB09CDB /* AcknowList-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8916792F67E2B2ED95D11025FBCB3E8 /* AcknowList-dummy.m */; };
+		8AB9B7BECC24AC69C4A0B68B1FB09CDB /* AcknowList-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB8131AE1BB0E2042E2E0A18B16AB5 /* AcknowList-dummy.m */; };
+		8C074508BB5F3F017F90D20F038B4281 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		93FB7682BF9C652BE28613A156101994 /* Pods-IcroScreenshotsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CEF3A0D11E31FD1FD3124DD0E41EDC /* Pods-IcroScreenshotsTests-dummy.m */; };
 		AEAA6B4A6FE209F7A04530A7A124A2F8 /* Pods-IcroUIKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 621263CC9FCEFB5621B68849D8CD213A /* Pods-IcroUIKit-dummy.m */; };
-		AF848B978668F93BD6646B457AABCC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		C228E56186A268C4728AF5BE996DED33 /* AcknowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B3D0EF734732E2C87592CA7ED17D1B /* AcknowViewController.swift */; };
-		C2CE4BD58A09162AD7F07313B5F72061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 054393A9FC92662CDAF221764CC35438 /* Assets.xcassets */; };
-		D6587D6E960BF4AC4E518FEE5E7B522E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		C228E56186A268C4728AF5BE996DED33 /* AcknowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81299F2CCD9D691A52642F36C09864 /* AcknowViewController.swift */; };
 		D71AE15176137CC0D497B9A7D11C4B9D /* Pods-Icro-Share-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98091DB1A21AFFB3E4C2E62CAA37F458 /* Pods-Icro-Share-dummy.m */; };
-		DCA006624E52CE676330FCD1AB19DE14 /* DropdownTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FECF9FE052F3054816D17A312BBA8BD /* DropdownTitleView.swift */; };
 		E433032DDD8A5896EC4E64689DAAB4E3 /* Pods-Icro-Share-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EEB041BDAB870D38CDAA959BBD150CB7 /* Pods-Icro-Share-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E57119325CFE4F8FF23E033C1B06B73B /* Pods-IcroUIKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 763F60231D137736E52EFBDFB43F2BFF /* Pods-IcroUIKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EACE4378C01B642855F4A477141C42B1 /* Pods-Icro-IcroTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D2128398EA3EC928C2E7BA2DD02302D /* Pods-Icro-IcroTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC07FBEFC038A6E5AE8CB833D71739FB /* Acknow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B136FA7F7BB909586CC5D76CAE89A1C /* Acknow.swift */; };
+		EC07FBEFC038A6E5AE8CB833D71739FB /* Acknow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02C17701B56420033AF268F612B57F7 /* Acknow.swift */; };
 		FC2AE75413E198891C51478D3EDDA1C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1464FE55D2A0CF99AD2941E218EC01B7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D7ECEE45EC39F97DE10FBB99F33044A6;
-			remoteInfo = DropdownTitleView;
-		};
-		3120289A6859C8B27B7FA1E23E91BCB9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D7ECEE45EC39F97DE10FBB99F33044A6;
-			remoteInfo = DropdownTitleView;
-		};
-		57F4818EC9A74B38726651EAB6BE60FD /* PBXContainerItemProxy */ = {
+		6A0630CC4A5AB12ABAC470F6BCE3D840 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 51691F4311958691BD98F5F26E2D77D4;
 			remoteInfo = AcknowList;
 		};
-		F4C5DC924F83065EA76944D65264D2C3 /* PBXContainerItemProxy */ = {
+		C72CE1A00AA821A6EBEAE3127835B691 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -74,73 +55,64 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		054393A9FC92662CDAF221764CC35438 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Source/Assets.xcassets; sourceTree = "<group>"; };
 		084F2960B5B3CACBD85EE17BDA0716FF /* Pods-IcroKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-IcroKit.modulemap"; sourceTree = "<group>"; };
-		0B136FA7F7BB909586CC5D76CAE89A1C /* Acknow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Acknow.swift; path = Source/Acknow.swift; sourceTree = "<group>"; };
 		0D2128398EA3EC928C2E7BA2DD02302D /* Pods-Icro-IcroTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Icro-IcroTests-umbrella.h"; sourceTree = "<group>"; };
+		0D35152658D9F93393425CD8AF1DF2BA /* AcknowList.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AcknowList.xcconfig; sourceTree = "<group>"; };
+		0F92D239B6F49E8039BB183801560F61 /* AcknowList-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AcknowList-prefix.pch"; sourceTree = "<group>"; };
 		11C56F9A5A32E14452E91862088DA723 /* Pods-Icro-IcroTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Icro-IcroTests.modulemap"; sourceTree = "<group>"; };
-		120B0B8C6E09CEABB1AF32BAB5FB1348 /* DropdownTitleView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DropdownTitleView-Info.plist"; sourceTree = "<group>"; };
 		12D7C58282EC9A84257A16784C275445 /* Pods-Icro.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Icro.modulemap"; sourceTree = "<group>"; };
 		1519EC008B66AF77E729CC5B69808E8C /* Pods-IcroUIKit-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IcroUIKit-acknowledgements.plist"; sourceTree = "<group>"; };
-		193218C82155DC586DD7379811243826 /* AcknowList-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AcknowList-prefix.pch"; sourceTree = "<group>"; };
 		1A63BE7CE141D8D899E88A1F69B82CE0 /* Pods_IcroUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_IcroUIKit.framework; path = "Pods-IcroUIKit.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB292DEC0B08C071C47375988B3366E /* AcknowList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AcknowList.framework; path = AcknowList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D556F2B325D49101893AD91207B2EA2 /* Pods-Icro-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Icro-umbrella.h"; sourceTree = "<group>"; };
 		1E47A609CB68AC98BA61A03A8FFEA00D /* Pods-Icro-Share.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Icro-Share.debug.xcconfig"; sourceTree = "<group>"; };
 		1EB443E93A7EA117A5AE4F9FCD738B04 /* Pods_Icro_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Icro_Share.framework; path = "Pods-Icro-Share.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FECF9FE052F3054816D17A312BBA8BD /* DropdownTitleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropdownTitleView.swift; path = Source/DropdownTitleView.swift; sourceTree = "<group>"; };
-		2A72FFD9C7D76501C64DBFA5F9735785 /* AcknowList.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AcknowList.modulemap; sourceTree = "<group>"; };
-		2B9D51DCBA77DEBBB4A71DA0A4AA3D31 /* DropdownTitleView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropdownTitleView.framework; path = DropdownTitleView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DBA594AE45FE4E6DB558F385ADF49FC /* Pods-Icro-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Icro-acknowledgements.plist"; sourceTree = "<group>"; };
 		2EC8FAC75F26579AC8CC58B69C1BDA69 /* Pods-Icro-IcroTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Icro-IcroTests-Info.plist"; sourceTree = "<group>"; };
 		3110B48CCF8156AED9E50A9DE880EB06 /* Pods-Icro-IcroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Icro-IcroTests.release.xcconfig"; sourceTree = "<group>"; };
 		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3263CC4D450873606F24B45137BAD49A /* AcknowList.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AcknowList.modulemap; sourceTree = "<group>"; };
 		32A56E23034957D6CAC6E1107A59F05E /* Pods-IcroKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IcroKit-Info.plist"; sourceTree = "<group>"; };
 		41873B065F6E802A2C9C2140F300D00E /* Pods_IcroScreenshotsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_IcroScreenshotsTests.framework; path = "Pods-IcroScreenshotsTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		424EEAAA340724FA2A6097A7A17C9558 /* AcknowParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowParser.swift; path = Source/AcknowParser.swift; sourceTree = "<group>"; };
 		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4740925D50EA3EB679EEEB387A8CB570 /* AcknowList-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AcknowList-Info.plist"; sourceTree = "<group>"; };
 		4D27DAF72727F66D8BB5E88183C2FBFC /* Pods-IcroScreenshotsTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IcroScreenshotsTests-Info.plist"; sourceTree = "<group>"; };
-		4DF98075AA88873D218CBF8A0876E84A /* DropdownTitleView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DropdownTitleView.modulemap; sourceTree = "<group>"; };
 		514CA5FBBA54AE5C62611BA0B2CCF4B5 /* Pods-IcroScreenshotsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IcroScreenshotsTests.release.xcconfig"; sourceTree = "<group>"; };
 		52201C7886DC3A3193D556CD09DE8848 /* Pods-Icro-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Icro-dummy.m"; sourceTree = "<group>"; };
 		527F71CBE68E38601C633929FC6963F0 /* Pods-IcroScreenshotsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IcroScreenshotsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		52D552CB280B9B478C95F952A743BDF5 /* Pods-Icro-Share.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Icro-Share.release.xcconfig"; sourceTree = "<group>"; };
 		5915F5633586B400E6F8BC8B8E375251 /* Pods-IcroKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IcroKit.release.xcconfig"; sourceTree = "<group>"; };
-		5AA1C8B556ED29E99B37F6DD0B7DCE17 /* AcknowList-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AcknowList-umbrella.h"; sourceTree = "<group>"; };
 		5FA522E07948D1F724647D4102637410 /* Pods-Icro-IcroTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Icro-IcroTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		621263CC9FCEFB5621B68849D8CD213A /* Pods-IcroUIKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IcroUIKit-dummy.m"; sourceTree = "<group>"; };
 		637324C95BEA07B9B9842ADAB0A001BE /* Pods-IcroUIKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IcroUIKit-Info.plist"; sourceTree = "<group>"; };
-		641AA8A4CB3452F6EB09FB0269ACEC3A /* DropdownTitleView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropdownTitleView-umbrella.h"; sourceTree = "<group>"; };
 		64AE27A6DECF117C9DB87E5A2FE36A5C /* Pods-IcroUIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IcroUIKit.release.xcconfig"; sourceTree = "<group>"; };
-		64BDDB026B89E7A24477C530EB3B777E /* AcknowList.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = AcknowList.bundle; path = Resources/AcknowList.bundle; sourceTree = "<group>"; };
 		67FC1FB3CA6BF1EC1E7E8856DBE092BA /* Pods-Icro-Share-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Icro-Share-acknowledgements.markdown"; sourceTree = "<group>"; };
 		682C85657C3EA751B8E2E83AF7C3EBD9 /* Pods-Icro-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Icro-frameworks.sh"; sourceTree = "<group>"; };
 		73BD2D55D47C4B6EBBBF36DB3558D199 /* Pods-IcroUIKit-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IcroUIKit-acknowledgements.markdown"; sourceTree = "<group>"; };
 		763F60231D137736E52EFBDFB43F2BFF /* Pods-IcroUIKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IcroUIKit-umbrella.h"; sourceTree = "<group>"; };
 		7771203563B7CD21EF987D9C3EA53FD5 /* Pods-IcroUIKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-IcroUIKit.modulemap"; sourceTree = "<group>"; };
 		78717307DF5C3760242B17467F52344A /* Pods-IcroKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IcroKit.debug.xcconfig"; sourceTree = "<group>"; };
-		7928BAF3A03641DF4FCEEFD702C59A46 /* AcknowList-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AcknowList-Info.plist"; sourceTree = "<group>"; };
+		7AD879B0BA1B3137786CB49F2048960A /* AcknowLocalization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowLocalization.swift; path = Source/AcknowLocalization.swift; sourceTree = "<group>"; };
 		7B2C26B39F7F0B2B9EE7F589AEC29A57 /* Pods-Icro-IcroTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Icro-IcroTests-frameworks.sh"; sourceTree = "<group>"; };
 		7F5F33C1D1826F6BCEC0F163428872CF /* Pods-Icro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Icro.release.xcconfig"; sourceTree = "<group>"; };
-		7F7267C910131F89E71A4C08476CE7ED /* AcknowListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowListViewController.swift; path = Source/AcknowListViewController.swift; sourceTree = "<group>"; };
+		7FFB8131AE1BB0E2042E2E0A18B16AB5 /* AcknowList-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AcknowList-dummy.m"; sourceTree = "<group>"; };
 		82834F232BD0ED006ABC389EAECC8300 /* Pods-IcroKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IcroKit-dummy.m"; sourceTree = "<group>"; };
+		85EBC1802F9C80AFB57B7426A1C9203E /* AcknowList.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = AcknowList.bundle; path = Resources/AcknowList.bundle; sourceTree = "<group>"; };
 		870E3F9F7586480928FB9C4B1DEE2A8F /* Pods-IcroKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IcroKit-umbrella.h"; sourceTree = "<group>"; };
-		89032096FB163A0DD824E2557217CBFB /* AcknowList.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AcknowList.xcconfig; sourceTree = "<group>"; };
-		8D9B03A00F9F73E83E106542FB929914 /* DropdownTitleView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropdownTitleView-prefix.pch"; sourceTree = "<group>"; };
 		98091DB1A21AFFB3E4C2E62CAA37F458 /* Pods-Icro-Share-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Icro-Share-dummy.m"; sourceTree = "<group>"; };
 		9B5D9878922E7DADB75444EFFBF73662 /* Pods-IcroKit-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IcroKit-acknowledgements.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A6F9783FFBC6610953E3C5DC371F6CF3 /* Pods_Icro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Icro.framework; path = "Pods-Icro.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8916792F67E2B2ED95D11025FBCB3E8 /* AcknowList-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AcknowList-dummy.m"; sourceTree = "<group>"; };
 		AC60912925B66A35D25305ED9ED6C715 /* Pods-Icro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Icro.debug.xcconfig"; sourceTree = "<group>"; };
 		B2587F7205B292C85BCCA839B83264A0 /* Pods-Icro-IcroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Icro-IcroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B458BA80D76AF3D2AD6137B6598B5B2B /* Pods-Icro-IcroTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Icro-IcroTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		B4D4BE6BA471F888B863B89117065150 /* DropdownTitleView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropdownTitleView.xcconfig; sourceTree = "<group>"; };
 		B4E23595CC8CF176EC8FE726E5337A5B /* Pods-IcroScreenshotsTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IcroScreenshotsTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BA9DD19682E5B9DD5681F2B0561DC11C /* Pods_IcroKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_IcroKit.framework; path = "Pods-IcroKit.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7F1E1B2C4E31126611F790D4D23716 /* Pods-IcroScreenshotsTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-IcroScreenshotsTests.modulemap"; sourceTree = "<group>"; };
+		C353DCF299897871DD0E070AC73205D6 /* AcknowListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowListViewController.swift; path = Source/AcknowListViewController.swift; sourceTree = "<group>"; };
 		C4AB2DCEA75346550711A7C625A311A8 /* Pods-Icro-Share-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Icro-Share-acknowledgements.plist"; sourceTree = "<group>"; };
 		C589231BF6BFB4C618A385131496D61E /* Pods-Icro-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Icro-Info.plist"; sourceTree = "<group>"; };
-		C6F84F0218716ECFCA6F51CFD56F861B /* AcknowLocalization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowLocalization.swift; path = Source/AcknowLocalization.swift; sourceTree = "<group>"; };
 		C800C0128170AEEEE861539D6D6AA7CD /* Pods-Icro-Share-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Icro-Share-Info.plist"; sourceTree = "<group>"; };
 		D11309D93D9A4277A3FDA101556D6BF2 /* Pods-IcroKit-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IcroKit-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D1A8774DDF923CBC9AE112185184CC59 /* Pods-IcroScreenshotsTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IcroScreenshotsTests-umbrella.h"; sourceTree = "<group>"; };
@@ -149,11 +121,11 @@
 		D8CEF3A0D11E31FD1FD3124DD0E41EDC /* Pods-IcroScreenshotsTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IcroScreenshotsTests-dummy.m"; sourceTree = "<group>"; };
 		D9FFC356DE64D1452B6785B64A7B4FD4 /* Pods-Icro-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Icro-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E5E00EFDD80CFE7C7ADEFA7EFC6EA981 /* Pods-IcroUIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IcroUIKit.debug.xcconfig"; sourceTree = "<group>"; };
-		E8B3D0EF734732E2C87592CA7ED17D1B /* AcknowViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowViewController.swift; path = Source/AcknowViewController.swift; sourceTree = "<group>"; };
 		EEB041BDAB870D38CDAA959BBD150CB7 /* Pods-Icro-Share-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Icro-Share-umbrella.h"; sourceTree = "<group>"; };
-		F9DE8E6B0B6FCB3CDD3F17CF5B74D95A /* DropdownTitleView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropdownTitleView-dummy.m"; sourceTree = "<group>"; };
+		F02C17701B56420033AF268F612B57F7 /* Acknow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Acknow.swift; path = Source/Acknow.swift; sourceTree = "<group>"; };
+		F457C24B07F329F02A91BA7B6E593CC7 /* AcknowList-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AcknowList-umbrella.h"; sourceTree = "<group>"; };
+		FA81299F2CCD9D691A52642F36C09864 /* AcknowViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowViewController.swift; path = Source/AcknowViewController.swift; sourceTree = "<group>"; };
 		FBE2908B635F23989FA8CC6423004AA7 /* Pods_Icro_IcroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Icro_IcroTests.framework; path = "Pods-Icro-IcroTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC96FFD0FA78AE7F2044493C2D0CD146 /* AcknowParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowParser.swift; path = Source/AcknowParser.swift; sourceTree = "<group>"; };
 		FCA2254592B090F3D6A83E5F7305EEDE /* Pods-IcroScreenshotsTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IcroScreenshotsTests-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,19 +147,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2A6EA182A91823B65E8A7F485011E027 /* Frameworks */ = {
+		6C95919C8D6188FFADA45D41CBAA8032 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				288576C6F032AB1A6BFA83D68C424788 /* Foundation.framework in Frameworks */,
+				0B064320D1A3CC404B33003B83EC7644 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FB4417847E3F498048965091AF18318 /* Frameworks */ = {
+		80663D06FB3625A69C2CEBC4F16A20F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6587D6E960BF4AC4E518FEE5E7B522E /* Foundation.framework in Frameworks */,
+				8C074508BB5F3F017F90D20F038B4281 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,14 +176,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC2AE75413E198891C51478D3EDDA1C2 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DEFCB5B11DDFF23200A586A7ADB388BB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AF848B978668F93BD6646B457AABCC07 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,15 +211,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		44ADD963FD0015E6A268FF20452533DF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C58E2544EFAEBFAB8F33D8862564A0EC /* AcknowList */,
-				806765D7BFFF1D6DB7169BCA27E1330B /* DropdownTitleView */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		51D0460E62FAF265C83D39CB1732B3F2 /* Pods-IcroKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +225,28 @@
 			);
 			name = "Pods-IcroKit";
 			path = "Target Support Files/Pods-IcroKit";
+			sourceTree = "<group>";
+		};
+		5B5B1587001FA9350D84D9B9DE055542 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AB292DEC0B08C071C47375988B3366E /* AcknowList.framework */,
+				A6F9783FFBC6610953E3C5DC371F6CF3 /* Pods_Icro.framework */,
+				FBE2908B635F23989FA8CC6423004AA7 /* Pods_Icro_IcroTests.framework */,
+				1EB443E93A7EA117A5AE4F9FCD738B04 /* Pods_Icro_Share.framework */,
+				BA9DD19682E5B9DD5681F2B0561DC11C /* Pods_IcroKit.framework */,
+				41873B065F6E802A2C9C2140F300D00E /* Pods_IcroScreenshotsTests.framework */,
+				1A63BE7CE141D8D899E88A1F69B82CE0 /* Pods_IcroUIKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D52F40A4581DB93A96438386A83B9D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B88D78A315A35E09E3A6C0BCC1A92ADB /* AcknowList */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		5F992F1BFF46FB5B8EC50F6A08CEA904 /* Pods-Icro-IcroTests */ = {
@@ -305,31 +282,6 @@
 			path = "Target Support Files/Pods-IcroScreenshotsTests";
 			sourceTree = "<group>";
 		};
-		806765D7BFFF1D6DB7169BCA27E1330B /* DropdownTitleView */ = {
-			isa = PBXGroup;
-			children = (
-				1FECF9FE052F3054816D17A312BBA8BD /* DropdownTitleView.swift */,
-				BB3AD163F3EB7999EAC4D766BD561733 /* Resources */,
-				F0CA8556D02486591E29AF683AE04F0D /* Support Files */,
-			);
-			name = DropdownTitleView;
-			path = DropdownTitleView;
-			sourceTree = "<group>";
-		};
-		908776A8B9635C87920ADCB8FD86472C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2A72FFD9C7D76501C64DBFA5F9735785 /* AcknowList.modulemap */,
-				89032096FB163A0DD824E2557217CBFB /* AcknowList.xcconfig */,
-				A8916792F67E2B2ED95D11025FBCB3E8 /* AcknowList-dummy.m */,
-				7928BAF3A03641DF4FCEEFD702C59A46 /* AcknowList-Info.plist */,
-				193218C82155DC586DD7379811243826 /* AcknowList-prefix.pch */,
-				5AA1C8B556ED29E99B37F6DD0B7DCE17 /* AcknowList-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/AcknowList";
-			sourceTree = "<group>";
-		};
 		9B3A3CE88A70E9832C1E0A7776EBB467 /* Pods-Icro-Share */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,12 +298,33 @@
 			path = "Target Support Files/Pods-Icro-Share";
 			sourceTree = "<group>";
 		};
-		BB3AD163F3EB7999EAC4D766BD561733 /* Resources */ = {
+		B6CD8D3EA2B77EC3982FF7B822852510 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				054393A9FC92662CDAF221764CC35438 /* Assets.xcassets */,
+				3263CC4D450873606F24B45137BAD49A /* AcknowList.modulemap */,
+				0D35152658D9F93393425CD8AF1DF2BA /* AcknowList.xcconfig */,
+				7FFB8131AE1BB0E2042E2E0A18B16AB5 /* AcknowList-dummy.m */,
+				4740925D50EA3EB679EEEB387A8CB570 /* AcknowList-Info.plist */,
+				0F92D239B6F49E8039BB183801560F61 /* AcknowList-prefix.pch */,
+				F457C24B07F329F02A91BA7B6E593CC7 /* AcknowList-umbrella.h */,
 			);
-			name = Resources;
+			name = "Support Files";
+			path = "../Target Support Files/AcknowList";
+			sourceTree = "<group>";
+		};
+		B88D78A315A35E09E3A6C0BCC1A92ADB /* AcknowList */ = {
+			isa = PBXGroup;
+			children = (
+				F02C17701B56420033AF268F612B57F7 /* Acknow.swift */,
+				C353DCF299897871DD0E070AC73205D6 /* AcknowListViewController.swift */,
+				7AD879B0BA1B3137786CB49F2048960A /* AcknowLocalization.swift */,
+				424EEAAA340724FA2A6097A7A17C9558 /* AcknowParser.swift */,
+				FA81299F2CCD9D691A52642F36C09864 /* AcknowViewController.swift */,
+				D0DB048EF531AFFDBFC65D9266DC32D2 /* Resources */,
+				B6CD8D3EA2B77EC3982FF7B822852510 /* Support Files */,
+			);
+			name = AcknowList;
+			path = AcknowList;
 			sourceTree = "<group>";
 		};
 		BD4C057E3F4BADEA7A7FBA17ED7CF92D /* Pods-Icro */ = {
@@ -369,21 +342,6 @@
 			);
 			name = "Pods-Icro";
 			path = "Target Support Files/Pods-Icro";
-			sourceTree = "<group>";
-		};
-		C58E2544EFAEBFAB8F33D8862564A0EC /* AcknowList */ = {
-			isa = PBXGroup;
-			children = (
-				0B136FA7F7BB909586CC5D76CAE89A1C /* Acknow.swift */,
-				7F7267C910131F89E71A4C08476CE7ED /* AcknowListViewController.swift */,
-				C6F84F0218716ECFCA6F51CFD56F861B /* AcknowLocalization.swift */,
-				FC96FFD0FA78AE7F2044493C2D0CD146 /* AcknowParser.swift */,
-				E8B3D0EF734732E2C87592CA7ED17D1B /* AcknowViewController.swift */,
-				CFEEC6C580A02BF6AB79D0A528C99CB1 /* Resources */,
-				908776A8B9635C87920ADCB8FD86472C /* Support Files */,
-			);
-			name = AcknowList;
-			path = AcknowList;
 			sourceTree = "<group>";
 		};
 		C8514DE4E153DCA678A2D30928F98CE1 /* Pods-IcroUIKit */ = {
@@ -407,16 +365,16 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				44ADD963FD0015E6A268FF20452533DF /* Pods */,
-				F122D27A3DBB6CB7F90EC2EBC6809751 /* Products */,
+				5D52F40A4581DB93A96438386A83B9D9 /* Pods */,
+				5B5B1587001FA9350D84D9B9DE055542 /* Products */,
 				360282C217F12F82740D3B8AC3A12CA0 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		CFEEC6C580A02BF6AB79D0A528C99CB1 /* Resources */ = {
+		D0DB048EF531AFFDBFC65D9266DC32D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				64BDDB026B89E7A24477C530EB3B777E /* AcknowList.bundle */,
+				85EBC1802F9C80AFB57B7426A1C9203E /* AcknowList.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -428,35 +386,6 @@
 				312B988EF117AE4DE76A268D970131FE /* UIKit.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		F0CA8556D02486591E29AF683AE04F0D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4DF98075AA88873D218CBF8A0876E84A /* DropdownTitleView.modulemap */,
-				B4D4BE6BA471F888B863B89117065150 /* DropdownTitleView.xcconfig */,
-				F9DE8E6B0B6FCB3CDD3F17CF5B74D95A /* DropdownTitleView-dummy.m */,
-				120B0B8C6E09CEABB1AF32BAB5FB1348 /* DropdownTitleView-Info.plist */,
-				8D9B03A00F9F73E83E106542FB929914 /* DropdownTitleView-prefix.pch */,
-				641AA8A4CB3452F6EB09FB0269ACEC3A /* DropdownTitleView-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/DropdownTitleView";
-			sourceTree = "<group>";
-		};
-		F122D27A3DBB6CB7F90EC2EBC6809751 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1AB292DEC0B08C071C47375988B3366E /* AcknowList.framework */,
-				2B9D51DCBA77DEBBB4A71DA0A4AA3D31 /* DropdownTitleView.framework */,
-				A6F9783FFBC6610953E3C5DC371F6CF3 /* Pods_Icro.framework */,
-				FBE2908B635F23989FA8CC6423004AA7 /* Pods_Icro_IcroTests.framework */,
-				1EB443E93A7EA117A5AE4F9FCD738B04 /* Pods_Icro_Share.framework */,
-				BA9DD19682E5B9DD5681F2B0561DC11C /* Pods_IcroKit.framework */,
-				41873B065F6E802A2C9C2140F300D00E /* Pods_IcroScreenshotsTests.framework */,
-				1A63BE7CE141D8D899E88A1F69B82CE0 /* Pods_IcroUIKit.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,11 +407,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D7F7819C183E366E699D4DD90B18789 /* Headers */ = {
+		44F43DE8B945E522B9672BD14863D191 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EACE4378C01B642855F4A477141C42B1 /* Pods-Icro-IcroTests-umbrella.h in Headers */,
+				6C60D9E806BAD2D8881E62789E0572E1 /* Pods-Icro-IcroTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,19 +423,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9F8A978CB0FC29511B3F730FE16860E8 /* Headers */ = {
+		F2F0FD9E4043C438F2B2F837CCABAAB3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54EE4C2788CB28280F468BA39EAE796F /* Pods-Icro-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DA5F61546A8E1F8537A5848044286054 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				80D97B70572A0F66F96C2F3493CB8FE5 /* DropdownTitleView-umbrella.h in Headers */,
+				3C5CD1CDE9A333D5357D0E6571A9298D /* Pods-Icro-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,18 +470,17 @@
 		};
 		41CE99194F0C9B305AD7B4AD51CE25D4 /* Pods-Icro-IcroTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 775D0F3EA66F0C5199591A0E5A977575 /* Build configuration list for PBXNativeTarget "Pods-Icro-IcroTests" */;
+			buildConfigurationList = 7806D3E63D4BE0633089ADF62B575C8E /* Build configuration list for PBXNativeTarget "Pods-Icro-IcroTests" */;
 			buildPhases = (
-				5D7F7819C183E366E699D4DD90B18789 /* Headers */,
-				D0B07CFF890D46D76C0F6E6B5CF2B523 /* Sources */,
-				7FB4417847E3F498048965091AF18318 /* Frameworks */,
-				9ADF1E1CE247DB8717328D85B28910B4 /* Resources */,
+				44F43DE8B945E522B9672BD14863D191 /* Headers */,
+				D5ABDB9AB1728BDEEF225328F461C8F6 /* Sources */,
+				6C95919C8D6188FFADA45D41CBAA8032 /* Frameworks */,
+				4F1C1B29C648E01901C9392DE1035AD9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				05125350B2DC2444E6A269EB693AFE0B /* PBXTargetDependency */,
-				8666A74BBD54A25DF2983B499153A5E6 /* PBXTargetDependency */,
+				54408F2975619548592636F72F54118E /* PBXTargetDependency */,
 			);
 			name = "Pods-Icro-IcroTests";
 			productName = "Pods-Icro-IcroTests";
@@ -641,40 +561,21 @@
 		};
 		CEBB3F3BC3C74013FABC7ED4A1DF167A /* Pods-Icro */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF513BF4CF9AAF575C623ECBE9395413 /* Build configuration list for PBXNativeTarget "Pods-Icro" */;
+			buildConfigurationList = 95A817D990FBE888208B080B4A6AC13E /* Build configuration list for PBXNativeTarget "Pods-Icro" */;
 			buildPhases = (
-				9F8A978CB0FC29511B3F730FE16860E8 /* Headers */,
-				5C1E5BF62F77C2ACF01A15DD85637144 /* Sources */,
-				2A6EA182A91823B65E8A7F485011E027 /* Frameworks */,
-				6EBFBA8676E737FD839CE224F8EB2277 /* Resources */,
+				F2F0FD9E4043C438F2B2F837CCABAAB3 /* Headers */,
+				F4414A28B4E2371C392A019EE0EFEC8B /* Sources */,
+				80663D06FB3625A69C2CEBC4F16A20F6 /* Frameworks */,
+				311F1A0C7CE29D1CCBA46D26C6F8F278 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5CE0C525C4D5E04AAC47DF21B3185F07 /* PBXTargetDependency */,
-				45E2B4BE7A0CC8FDDFDEF369EFEC6404 /* PBXTargetDependency */,
+				FAD8AE822C6F59D7B179BBD8F1782943 /* PBXTargetDependency */,
 			);
 			name = "Pods-Icro";
 			productName = "Pods-Icro";
 			productReference = A6F9783FFBC6610953E3C5DC371F6CF3 /* Pods_Icro.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		D7ECEE45EC39F97DE10FBB99F33044A6 /* DropdownTitleView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 85D279A30185ECABD5D1D3665238511F /* Build configuration list for PBXNativeTarget "DropdownTitleView" */;
-			buildPhases = (
-				DA5F61546A8E1F8537A5848044286054 /* Headers */,
-				179CA9210515F3E8B0A07E6D3065CC1A /* Sources */,
-				DEFCB5B11DDFF23200A586A7ADB388BB /* Frameworks */,
-				89444A7B6D21E57418D72CAA20F6CEAF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DropdownTitleView;
-			productName = DropdownTitleView;
-			productReference = 2B9D51DCBA77DEBBB4A71DA0A4AA3D31 /* DropdownTitleView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -694,12 +595,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = F122D27A3DBB6CB7F90EC2EBC6809751 /* Products */;
+			productRefGroup = 5B5B1587001FA9350D84D9B9DE055542 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				51691F4311958691BD98F5F26E2D77D4 /* AcknowList */,
-				D7ECEE45EC39F97DE10FBB99F33044A6 /* DropdownTitleView */,
 				CEBB3F3BC3C74013FABC7ED4A1DF167A /* Pods-Icro */,
 				41CE99194F0C9B305AD7B4AD51CE25D4 /* Pods-Icro-IcroTests */,
 				246B9B1053D10CE8448AE45B646FF772 /* Pods-Icro-Share */,
@@ -725,22 +625,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6EBFBA8676E737FD839CE224F8EB2277 /* Resources */ = {
+		311F1A0C7CE29D1CCBA46D26C6F8F278 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		89444A7B6D21E57418D72CAA20F6CEAF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C2CE4BD58A09162AD7F07313B5F72061 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9ADF1E1CE247DB8717328D85B28910B4 /* Resources */ = {
+		4F1C1B29C648E01901C9392DE1035AD9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -780,28 +672,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		179CA9210515F3E8B0A07E6D3065CC1A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				579E663A3D6CBB8718B88228925F95BA /* DropdownTitleView-dummy.m in Sources */,
-				DCA006624E52CE676330FCD1AB19DE14 /* DropdownTitleView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1FD9FC63119DD74A68F727C56076751D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				60C6FA1898B0EB537DC7265FA61324AB /* Pods-IcroKit-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5C1E5BF62F77C2ACF01A15DD85637144 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4693A0065BE8F07B95746EEB9AE8621B /* Pods-Icro-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,11 +696,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D0B07CFF890D46D76C0F6E6B5CF2B523 /* Sources */ = {
+		D5ABDB9AB1728BDEEF225328F461C8F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25152F41071E6FD3380BD1B51D9FFB50 /* Pods-Icro-IcroTests-dummy.m in Sources */,
+				6E1485D4E96C65D9E7CAB0443E007352 /* Pods-Icro-IcroTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,32 +717,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4414A28B4E2371C392A019EE0EFEC8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				587E4839CB28D903A69A65DFEB185626 /* Pods-Icro-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		05125350B2DC2444E6A269EB693AFE0B /* PBXTargetDependency */ = {
+		54408F2975619548592636F72F54118E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AcknowList;
 			target = 51691F4311958691BD98F5F26E2D77D4 /* AcknowList */;
-			targetProxy = 57F4818EC9A74B38726651EAB6BE60FD /* PBXContainerItemProxy */;
+			targetProxy = 6A0630CC4A5AB12ABAC470F6BCE3D840 /* PBXContainerItemProxy */;
 		};
-		45E2B4BE7A0CC8FDDFDEF369EFEC6404 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DropdownTitleView;
-			target = D7ECEE45EC39F97DE10FBB99F33044A6 /* DropdownTitleView */;
-			targetProxy = 1464FE55D2A0CF99AD2941E218EC01B7 /* PBXContainerItemProxy */;
-		};
-		5CE0C525C4D5E04AAC47DF21B3185F07 /* PBXTargetDependency */ = {
+		FAD8AE822C6F59D7B179BBD8F1782943 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AcknowList;
 			target = 51691F4311958691BD98F5F26E2D77D4 /* AcknowList */;
-			targetProxy = F4C5DC924F83065EA76944D65264D2C3 /* PBXContainerItemProxy */;
-		};
-		8666A74BBD54A25DF2983B499153A5E6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DropdownTitleView;
-			target = D7ECEE45EC39F97DE10FBB99F33044A6 /* DropdownTitleView */;
-			targetProxy = 3120289A6859C8B27B7FA1E23E91BCB9 /* PBXContainerItemProxy */;
+			targetProxy = C72CE1A00AA821A6EBEAE3127835B691 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -909,46 +780,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1C931158B3EF5ED580C9D2F23E9400C8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4D4BE6BA471F888B863B89117065150 /* DropdownTitleView.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/DropdownTitleView/DropdownTitleView-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"DT_APP_EXTENSIONS=1",
-				);
-				INFOPLIST_FILE = "Target Support Files/DropdownTitleView/DropdownTitleView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/DropdownTitleView/DropdownTitleView.modulemap";
-				PRODUCT_MODULE_NAME = DropdownTitleView;
-				PRODUCT_NAME = DropdownTitleView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1019,10 +850,11 @@
 			};
 			name = Debug;
 		};
-		282696FE9B37FA96538B7FEFE00ACFF2 /* Release */ = {
+		2546016F550142DB9AE7DA2033EE5ED2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4D4BE6BA471F888B863B89117065150 /* DropdownTitleView.xcconfig */;
+			baseConfigurationReference = B2587F7205B292C85BCCA839B83264A0 /* Pods-Icro-IcroTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1033,32 +865,32 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/DropdownTitleView/DropdownTitleView-prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"DT_APP_EXTENSIONS=1",
 				);
-				INFOPLIST_FILE = "Target Support Files/DropdownTitleView/DropdownTitleView-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/DropdownTitleView/DropdownTitleView.modulemap";
-				PRODUCT_MODULE_NAME = DropdownTitleView;
-				PRODUCT_NAME = DropdownTitleView;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		2B6B9BE0D65A95FF9F25C601013B8024 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1103,6 +935,48 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		3071D80A267EE1AD1EFEEE237DC7A36E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC60912925B66A35D25305ED9ED6C715 /* Pods-Icro.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DT_APP_EXTENSIONS=1",
+				);
+				INFOPLIST_FILE = "Target Support Files/Pods-Icro/Pods-Icro-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Icro/Pods-Icro.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		3CCC6195EDBEE5DA2A49DF962113BE16 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1166,7 +1040,7 @@
 		};
 		5C8A7027153B6276389E74B5DBEA6101 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89032096FB163A0DD824E2557217CBFB /* AcknowList.xcconfig */;
+			baseConfigurationReference = 0D35152658D9F93393425CD8AF1DF2BA /* AcknowList.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1247,6 +1121,49 @@
 			};
 			name = Release;
 		};
+		70A67C25F9E443FF3B2314805DCB772F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F5F33C1D1826F6BCEC0F163428872CF /* Pods-Icro.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DT_APP_EXTENSIONS=1",
+				);
+				INFOPLIST_FILE = "Target Support Files/Pods-Icro/Pods-Icro-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Icro/Pods-Icro.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		92A22BE02948631A42796A7BD1F99D50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 52D552CB280B9B478C95F952A743BDF5 /* Pods-Icro-Share.release.xcconfig */;
@@ -1291,9 +1208,9 @@
 			};
 			name = Release;
 		};
-		99439E1461736A3F6B8777186BD37E49 /* Debug */ = {
+		975584505BA867C669A1A3E92747C9FA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2587F7205B292C85BCCA839B83264A0 /* Pods-Icro-IcroTests.debug.xcconfig */;
+			baseConfigurationReference = 3110B48CCF8156AED9E50A9DE880EB06 /* Pods-Icro-IcroTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1328,10 +1245,11 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		9FDED03E3F57CDA1E475667122035CA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1376,51 +1294,9 @@
 			};
 			name = Debug;
 		};
-		ABAAAFC2B82E16BEF00E1B88B677F785 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC60912925B66A35D25305ED9ED6C715 /* Pods-Icro.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"DT_APP_EXTENSIONS=1",
-				);
-				INFOPLIST_FILE = "Target Support Files/Pods-Icro/Pods-Icro-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Icro/Pods-Icro.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		BB72BFB6E4B14DCB08CEE725F7BBAEFA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89032096FB163A0DD824E2557217CBFB /* AcknowList.xcconfig */;
+			baseConfigurationReference = 0D35152658D9F93393425CD8AF1DF2BA /* AcknowList.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1487,49 +1363,6 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-IcroScreenshotsTests/Pods-IcroScreenshotsTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C95160529A50F30C12B4F8BED96F91D1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3110B48CCF8156AED9E50A9DE880EB06 /* Pods-Icro-IcroTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"DT_APP_EXTENSIONS=1",
-				);
-				INFOPLIST_FILE = "Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1629,49 +1462,6 @@
 			};
 			name = Debug;
 		};
-		D3082B0094905FC45B96CA7C48E8F65F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F5F33C1D1826F6BCEC0F163428872CF /* Pods-Icro.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"DT_APP_EXTENSIONS=1",
-				);
-				INFOPLIST_FILE = "Target Support Files/Pods-Icro/Pods-Icro-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Icro/Pods-Icro.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1702,11 +1492,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		775D0F3EA66F0C5199591A0E5A977575 /* Build configuration list for PBXNativeTarget "Pods-Icro-IcroTests" */ = {
+		7806D3E63D4BE0633089ADF62B575C8E /* Build configuration list for PBXNativeTarget "Pods-Icro-IcroTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				99439E1461736A3F6B8777186BD37E49 /* Debug */,
-				C95160529A50F30C12B4F8BED96F91D1 /* Release */,
+				2546016F550142DB9AE7DA2033EE5ED2 /* Debug */,
+				975584505BA867C669A1A3E92747C9FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1720,20 +1510,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		85D279A30185ECABD5D1D3665238511F /* Build configuration list for PBXNativeTarget "DropdownTitleView" */ = {
+		95A817D990FBE888208B080B4A6AC13E /* Build configuration list for PBXNativeTarget "Pods-Icro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1C931158B3EF5ED580C9D2F23E9400C8 /* Debug */,
-				282696FE9B37FA96538B7FEFE00ACFF2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AF513BF4CF9AAF575C623ECBE9395413 /* Build configuration list for PBXNativeTarget "Pods-Icro" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ABAAAFC2B82E16BEF00E1B88B677F785 /* Debug */,
-				D3082B0094905FC45B96CA7C48E8F65F /* Release */,
+				3071D80A267EE1AD1EFEEE237DC7A36E /* Debug */,
+				70A67C25F9E443FF3B2314805DCB772F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,7 +6,6 @@
 import UIKit
 import IcroKit
 import IcroUIKit
-import DropdownTitleView
 
 final class ListViewController: UIViewController, LoadingViewController {
     @IBOutlet fileprivate weak var tableView: UITableView! {

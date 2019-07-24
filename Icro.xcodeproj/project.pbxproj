@@ -175,6 +175,8 @@
 		5B83B02222D1B3DC004C4D8D /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B02122D1B3DC004C4D8D /* TypedSymbols */; };
 		5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B841ECD22E832F700CDA80C /* libiconv.tbd */; };
 		5B841ED322E8349600CDA80C /* UICollectionView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A7BF22E8313200D420BD /* UICollectionView+Dequeueable.swift */; };
+		5B841ED922E83C2D00CDA80C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B841ED622E83C2D00CDA80C /* Assets.xcassets */; };
+		5B841EDA22E83C2D00CDA80C /* DropdownTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B841ED722E83C2D00CDA80C /* DropdownTitleView.swift */; };
 		5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B869B07214E4633000A051C /* MicropubEndpoint.swift */; };
 		5B87442122D66FAE001649A8 /* AcknowledgementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */; };
 		5B87442222D66FC9001649A8 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CF22C89B2600A46C52 /* UserListView.swift */; };
@@ -464,6 +466,9 @@
 		5B744A4C8329D56FBB21833D /* Pods-IcroScreenshotsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroScreenshotsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroScreenshotsTests/Pods-IcroScreenshotsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B81E7992206C62E008BEA16 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		5B841ECD22E832F700CDA80C /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
+		5B841ED522E83C2D00CDA80C /* DropdownTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropdownTitleView.h; sourceTree = "<group>"; };
+		5B841ED622E83C2D00CDA80C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B841ED722E83C2D00CDA80C /* DropdownTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownTitleView.swift; sourceTree = "<group>"; };
 		5B869B07214E4633000A051C /* MicropubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicropubEndpoint.swift; sourceTree = "<group>"; };
 		5B8754F92070137300018DFA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
 		5B8754FC2070139F00018DFA /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
@@ -784,6 +789,7 @@
 		5B2EF3D222E82649006931A7 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				5B841ED422E83C2D00CDA80C /* DropdownTitleView */,
 				5B01A7B922E8313200D420BD /* Dequeueable */,
 				5B01A79D22E82E4900D420BD /* WPXMLRPC */,
 				5B01A74E22E82CFA00D420BD /* ImageViewer */,
@@ -943,6 +949,16 @@
 				5B66EE73227D74DF00317FE3 /* MockClient.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		5B841ED422E83C2D00CDA80C /* DropdownTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				5B841ED522E83C2D00CDA80C /* DropdownTitleView.h */,
+				5B841ED622E83C2D00CDA80C /* Assets.xcassets */,
+				5B841ED722E83C2D00CDA80C /* DropdownTitleView.swift */,
+			);
+			path = DropdownTitleView;
 			sourceTree = "<group>";
 		};
 		5B8754F4206FE95200018DFA /* Configurator */ = {
@@ -1540,6 +1556,7 @@
 				5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */,
 				5B4E4187208AF8C700FC610A /* Pods-Icro-acknowledgements.plist in Resources */,
 				C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */,
+				5B841ED922E83C2D00CDA80C /* Assets.xcassets in Resources */,
 				5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1894,6 +1911,7 @@
 				5B6FBE7A22E2F89A006F6058 /* CatalystToolbar.swift in Sources */,
 				5B3C79C221C518B700F699B8 /* MainNavigator.swift in Sources */,
 				5B4895F222B1603E00CF08C2 /* SceneDelegate.swift in Sources */,
+				5B841EDA22E83C2D00CDA80C /* DropdownTitleView.swift in Sources */,
 				5BD9690F21C8D55400313795 /* ComposeNavigator.swift in Sources */,
 				5B38476921FE073800F082AD /* UIView+Contraints.swift in Sources */,
 				5B01A79122E82CFA00D420BD /* UISlider.swift in Sources */,

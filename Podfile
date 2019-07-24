@@ -2,7 +2,6 @@ use_frameworks!
 
 target 'Icro' do
     pod 'AcknowList'
-    pod 'DropdownTitleView'
 	
 	target 'IcroTests' do
 	end

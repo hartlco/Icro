@@ -1,20 +1,16 @@
 PODS:
   - AcknowList (1.9)
-  - DropdownTitleView (0.1.0)
 
 DEPENDENCIES:
   - AcknowList
-  - DropdownTitleView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AcknowList
-    - DropdownTitleView
 
 SPEC CHECKSUMS:
   AcknowList: 06fde3319971dfd517ea1b1c194d78eb8cd774a2
-  DropdownTitleView: e02e559243efb248dd0e8a50665b0acc5f6f2413
 
-PODFILE CHECKSUM: 33c55683f9f36f1d08cf15c66306256b57cb09c0
+PODFILE CHECKSUM: 4680da66dbf76bdbfb746ddc245bc4bb2d8fb43c
 
 COCOAPODS: 1.7.1
