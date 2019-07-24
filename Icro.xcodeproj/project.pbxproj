@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13AED6552F0EFB450E5BEF97 /* Pods_IcroKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67999FE2A9BB198E3B64937D /* Pods_IcroKit.framework */; };
-		17D39BE915CAD86206EDB58C /* Pods_IcroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51AA34E84478019BAD74376C /* Pods_IcroUIKit.framework */; };
 		5B01A77722E82CFA00D420BD /* GalleryConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A74F22E82CFA00D420BD /* GalleryConfiguration.swift */; };
 		5B01A77822E82CFA00D420BD /* ItemControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A75022E82CFA00D420BD /* ItemControllerDelegate.swift */; };
 		5B01A77922E82CFA00D420BD /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A75122E82CFA00D420BD /* UtilityFunctions.swift */; };
@@ -67,8 +65,8 @@
 		5B165DA922BF538C00B851B2 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView.swift */; };
 		5B1896C922B2DA200067F100 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51621A22B2C900009C0064 /* LoginView.swift */; };
 		5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */; };
-		5B28C8C822C87BFA00A46C52 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8C722C87BFA00A46C52 /* SwiftPackageProductDependency */; };
-		5B28C8CC22C87C6C00A46C52 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8CB22C87C6C00A46C52 /* SwiftPackageProductDependency */; };
+		5B28C8C822C87BFA00A46C52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8C722C87BFA00A46C52 /* Kingfisher */; };
+		5B28C8CC22C87C6C00A46C52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8CB22C87C6C00A46C52 /* Kingfisher */; };
 		5B28C8CE22C89A1D00A46C52 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */; };
 		5B28C8D022C89B2600A46C52 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CF22C89B2600A46C52 /* UserListView.swift */; };
 		5B28C8D122C89BE200A46C52 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */; };
@@ -133,7 +131,6 @@
 		5B4DF0EE21AA8496008CEB58 /* LoadMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BBC6703218EB0150090629C /* LoadMoreTableViewCell.xib */; };
 		5B4DF0EF21AA84A4008CEB58 /* LoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC6702218EB0150090629C /* LoadMoreTableViewCell.swift */; };
 		5B4DF0F121AA8818008CEB58 /* ListViewModelListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DF0F021AA8818008CEB58 /* ListViewModelListType.swift */; };
-		5B4E4187208AF8C700FC610A /* Pods-Icro-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */; };
 		5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
 		5B51621B22B2C900009C0064 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51621A22B2C900009C0064 /* LoginView.swift */; };
 		5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371D212861220076121E /* EditActionsConfigurator.swift */; };
@@ -169,10 +166,10 @@
 		5B6FBE7B22E2F9FC006F6058 /* CatalystToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBE7922E2F89A006F6058 /* CatalystToolbar.swift */; };
 		5B6FBE7C22E38446006F6058 /* VerticalTabsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBE7722E2F30B006F6058 /* VerticalTabsSplitViewController.swift */; };
 		5B81E79A2206C62E008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
-		5B83B00D22D06EA8004C4D8D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B00C22D06EA8004C4D8D /* SwiftPackageProductDependency */; };
-		5B83B01B22D11B3D004C4D8D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01A22D11B3D004C4D8D /* SwiftPackageProductDependency */; };
-		5B83B01D22D11D64004C4D8D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01C22D11D64004C4D8D /* SwiftPackageProductDependency */; };
-		5B83B02222D1B3DC004C4D8D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B02122D1B3DC004C4D8D /* SwiftPackageProductDependency */; };
+		5B83B00D22D06EA8004C4D8D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B00C22D06EA8004C4D8D /* Alamofire */; };
+		5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01A22D11B3D004C4D8D /* KeychainAccess */; };
+		5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01C22D11D64004C4D8D /* KeychainAccess */; };
+		5B83B02222D1B3DC004C4D8D /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B02122D1B3DC004C4D8D /* TypedSymbols */; };
 		5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B841ECD22E832F700CDA80C /* libiconv.tbd */; };
 		5B841ED322E8349600CDA80C /* UICollectionView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A7BF22E8313200D420BD /* UICollectionView+Dequeueable.swift */; };
 		5B841ED922E83C2D00CDA80C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B841ED622E83C2D00CDA80C /* Assets.xcassets */; };
@@ -224,8 +221,8 @@
 		5BDE18EB216A5745001254F4 /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371A212860BA0076121E /* ComposeViewModel.swift */; };
 		5BDE18F1216A57C0001254F4 /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
 		5BE633AF22ACC09F005296AB /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsContentView.swift */; };
-		5BE92EF122D1B5630048E8F1 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF022D1B5630048E8F1 /* SwiftPackageProductDependency */; };
-		5BE92EF622D1BAAD0048E8F1 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF522D1BAAD0048E8F1 /* SwiftPackageProductDependency */; };
+		5BE92EF122D1B5630048E8F1 /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF022D1B5630048E8F1 /* TypedSymbols */; };
+		5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */; };
 		5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
 		5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */; };
 		5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
@@ -233,14 +230,11 @@
 		5BF6637F218961AB00ABA671 /* DiscoveryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */; };
 		5BF663812189628300ABA671 /* DiscoveryCategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */; };
 		5BF663852189673100ABA671 /* DiscoveryCategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF663842189673100ABA671 /* DiscoveryCategoryStore.swift */; };
-		61B772A049E74A71B8194FCD /* Pods_Icro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B8B79BF11C171B505D9E7F /* Pods_Icro.framework */; };
 		8DCD1F043AA7A42B38373800 /* Pods_IcroScreenshotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4216F55176FDD95FB7B918F8 /* Pods_IcroScreenshotsTests.framework */; };
-		B5AD51B5A0BE76BF5490C725 /* Pods_Icro_Share.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2709F418E0D6293A75A02B /* Pods_Icro_Share.framework */; };
 		BF707E742131C45600506E64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
 		C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */; };
 		C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		C5FA2ACE1EB4482C006DEB40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACC1EB4482C006DEB40 /* LaunchScreen.storyboard */; };
-		CACFD8D8856EEBBE783024C1 /* Pods_Icro_IcroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D196BF2B2C750700D818D /* Pods_Icro_IcroTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -310,15 +304,9 @@
 /* Begin PBXFileReference section */
 		13B54E7197572F75267B493C /* Pods_IcroKit_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IcroKit_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14B873910DAE1E815D6F7A22 /* Pods_IcroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IcroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		18F889CC67CF42B6938FFF89 /* Pods-IcroKit-Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroKit-Mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-IcroKit-Mac/Pods-IcroKit-Mac.release.xcconfig"; sourceTree = "<group>"; };
-		1F2BD0E07C25F92320A828EA /* Pods-IcroKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-IcroKit/Pods-IcroKit.release.xcconfig"; sourceTree = "<group>"; };
-		28115B4C2357CE0D4DBB7787 /* Pods-Icro-IcroScreenshotsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroScreenshotsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroScreenshotsTests/Pods-Icro-IcroScreenshotsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2988532E03630C136C3136C6 /* Pods-Icro-Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-Mac/Pods-Icro-Mac.debug.xcconfig"; sourceTree = "<group>"; };
 		34B8B79BF11C171B505D9E7F /* Pods_Icro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4216F55176FDD95FB7B918F8 /* Pods_IcroScreenshotsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IcroScreenshotsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51AA34E84478019BAD74376C /* Pods_IcroUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IcroUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		52C2D67E51BFF3B28100165E /* Pods-Icro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro.release.xcconfig"; sourceTree = "<group>"; };
-		57DAA65633EEDE8EC6A2D51E /* Pods-Icro-Share.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-Share.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-Share/Pods-Icro-Share.debug.xcconfig"; sourceTree = "<group>"; };
 		5B01A74F22E82CFA00D420BD /* GalleryConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryConfiguration.swift; sourceTree = "<group>"; };
 		5B01A75022E82CFA00D420BD /* ItemControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemControllerDelegate.swift; sourceTree = "<group>"; };
 		5B01A75122E82CFA00D420BD /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
@@ -463,7 +451,6 @@
 		5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
 		5B6FBE7722E2F30B006F6058 /* VerticalTabsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerticalTabsSplitViewController.swift; path = ../../../../../System/Volumes/Data/Users/martin/Code/Icro/Icro/ViewController/VerticalTabsSplitViewController.swift; sourceTree = "<group>"; };
 		5B6FBE7922E2F89A006F6058 /* CatalystToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CatalystToolbar.swift; path = ../../../../../System/Volumes/Data/Users/martin/Code/Icro/Icro/Helper/CatalystToolbar.swift; sourceTree = "<group>"; };
-		5B744A4C8329D56FBB21833D /* Pods-IcroScreenshotsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroScreenshotsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroScreenshotsTests/Pods-IcroScreenshotsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B81E7992206C62E008BEA16 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		5B841ECD22E832F700CDA80C /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
 		5B841ED522E83C2D00CDA80C /* DropdownTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropdownTitleView.h; sourceTree = "<group>"; };
@@ -518,19 +505,8 @@
 		5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategory.swift; sourceTree = "<group>"; };
 		5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryResource.swift; sourceTree = "<group>"; };
 		5BF663842189673100ABA671 /* DiscoveryCategoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryStore.swift; sourceTree = "<group>"; };
-		5C5956D76539447B1A629134 /* Pods-IcroKit-Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroKit-Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroKit-Mac/Pods-IcroKit-Mac.debug.xcconfig"; sourceTree = "<group>"; };
-		5D349612C21E8935CA208791 /* Pods-Icro-Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-Mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-Mac/Pods-Icro-Mac.release.xcconfig"; sourceTree = "<group>"; };
-		62BDE592B91FF53059E2B98A /* Pods-Icro-IcroKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroKit/Pods-Icro-IcroKit.release.xcconfig"; sourceTree = "<group>"; };
 		67999FE2A9BB198E3B64937D /* Pods_IcroKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IcroKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AE0CC763A4435B23AD848F4 /* Pods-IcroUIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroUIKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroUIKit/Pods-IcroUIKit.debug.xcconfig"; sourceTree = "<group>"; };
-		6F49089207815FEE0F8181CB /* Pods-Icro-IcroScreenshotsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroScreenshotsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroScreenshotsTests/Pods-Icro-IcroScreenshotsTests.release.xcconfig"; sourceTree = "<group>"; };
 		7D2709F418E0D6293A75A02B /* Pods_Icro_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Share.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E1D5B3765739EE3E78E195D /* Pods-Icro-Share.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-Share.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-Share/Pods-Icro-Share.release.xcconfig"; sourceTree = "<group>"; };
-		8A6DD469FE907F7761590C87 /* Pods-IcroUIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroUIKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-IcroUIKit/Pods-IcroUIKit.release.xcconfig"; sourceTree = "<group>"; };
-		91BA051943E64235CE5FE52F /* Pods-IcroScreenshotsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroScreenshotsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IcroScreenshotsTests/Pods-IcroScreenshotsTests.release.xcconfig"; sourceTree = "<group>"; };
-		94EFF3BFFA6977873973D18F /* Pods-Icro-IcroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A46BBCD92B53C40E02AB78B6 /* Pods-IcroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IcroTests/Pods-IcroTests.release.xcconfig"; sourceTree = "<group>"; };
-		B1016753D82E9CA15583B804 /* Pods-Icro-IcroKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroKit/Pods-Icro-IcroKit.debug.xcconfig"; sourceTree = "<group>"; };
 		B2175C9DAAFEF9FA508D0A47 /* Pods_Icro_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF71E43E214287CF007E88BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C5FA2AC01EB4482C006DEB40 /* Icro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Icro.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -540,10 +516,6 @@
 		C5FA2AF51EB449BC006DEB40 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		C5FA2B001EB45213006DEB40 /* HTMLContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLContent.swift; sourceTree = "<group>"; };
 		CC2D196BF2B2C750700D818D /* Pods_Icro_IcroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_IcroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D426512F7548658C554240A1 /* Pods-IcroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroTests/Pods-IcroTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DB83C848BB5BA5B662CD6D6C /* Pods-IcroKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IcroKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IcroKit/Pods-IcroKit.debug.xcconfig"; sourceTree = "<group>"; };
-		E95C33C086DABED6C39EDF82 /* Pods-Icro-IcroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro-IcroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Icro-IcroTests/Pods-Icro-IcroTests.release.xcconfig"; sourceTree = "<group>"; };
-		EA46B8BCBC230D1C9A721F76 /* Pods-Icro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Icro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro.debug.xcconfig"; sourceTree = "<group>"; };
 		FD791585584689A5DBBBA5F4 /* Pods_Icro_IcroKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_IcroKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -553,7 +525,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B3C79D421C5238800F699B8 /* IcroUIKit.framework in Frameworks */,
-				B5AD51B5A0BE76BF5490C725 /* Pods_Icro_Share.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,9 +532,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B28C8CC22C87C6C00A46C52 /* BuildFile in Frameworks */,
+				5B28C8CC22C87C6C00A46C52 /* Kingfisher in Frameworks */,
 				5BC1384921C69BB80040353C /* IcroKit.framework in Frameworks */,
-				17D39BE915CAD86206EDB58C /* Pods_IcroUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,7 +541,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CACFD8D8856EEBBE783024C1 /* Pods_Icro_IcroTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,10 +556,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B83B00D22D06EA8004C4D8D /* BuildFile in Frameworks */,
-				13AED6552F0EFB450E5BEF97 /* Pods_IcroKit.framework in Frameworks */,
-				5B83B01D22D11D64004C4D8D /* BuildFile in Frameworks */,
-				5BE92EF122D1B5630048E8F1 /* BuildFile in Frameworks */,
+				5B83B00D22D06EA8004C4D8D /* Alamofire in Frameworks */,
+				5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */,
+				5BE92EF122D1B5630048E8F1 /* TypedSymbols in Frameworks */,
 				5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,12 +569,11 @@
 			files = (
 				5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */,
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
-				5B83B02222D1B3DC004C4D8D /* BuildFile in Frameworks */,
-				5BE92EF622D1BAAD0048E8F1 /* BuildFile in Frameworks */,
-				5B83B01B22D11B3D004C4D8D /* BuildFile in Frameworks */,
+				5B83B02222D1B3DC004C4D8D /* TypedSymbols in Frameworks */,
+				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
+				5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
-				61B772A049E74A71B8194FCD /* Pods_Icro.framework in Frameworks */,
-				5B28C8C822C87BFA00A46C52 /* BuildFile in Frameworks */,
+				5B28C8C822C87BFA00A46C52 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1109,7 +1076,6 @@
 				5B01CBDD2168D6B50007E01D /* IcroKit-Mac */,
 				5BB3E46E226C514C00C1B6BB /* IcroScreenshotsTests */,
 				C5FA2AC11EB4482C006DEB40 /* Products */,
-				D66296A63450197DD12D949D /* Pods */,
 				0DFA605700743A5D165A3DC5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -1202,35 +1168,6 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
-		D66296A63450197DD12D949D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EA46B8BCBC230D1C9A721F76 /* Pods-Icro.debug.xcconfig */,
-				52C2D67E51BFF3B28100165E /* Pods-Icro.release.xcconfig */,
-				D426512F7548658C554240A1 /* Pods-IcroTests.debug.xcconfig */,
-				A46BBCD92B53C40E02AB78B6 /* Pods-IcroTests.release.xcconfig */,
-				94EFF3BFFA6977873973D18F /* Pods-Icro-IcroTests.debug.xcconfig */,
-				E95C33C086DABED6C39EDF82 /* Pods-Icro-IcroTests.release.xcconfig */,
-				B1016753D82E9CA15583B804 /* Pods-Icro-IcroKit.debug.xcconfig */,
-				62BDE592B91FF53059E2B98A /* Pods-Icro-IcroKit.release.xcconfig */,
-				5C5956D76539447B1A629134 /* Pods-IcroKit-Mac.debug.xcconfig */,
-				18F889CC67CF42B6938FFF89 /* Pods-IcroKit-Mac.release.xcconfig */,
-				DB83C848BB5BA5B662CD6D6C /* Pods-IcroKit.debug.xcconfig */,
-				1F2BD0E07C25F92320A828EA /* Pods-IcroKit.release.xcconfig */,
-				2988532E03630C136C3136C6 /* Pods-Icro-Mac.debug.xcconfig */,
-				5D349612C21E8935CA208791 /* Pods-Icro-Mac.release.xcconfig */,
-				6AE0CC763A4435B23AD848F4 /* Pods-IcroUIKit.debug.xcconfig */,
-				8A6DD469FE907F7761590C87 /* Pods-IcroUIKit.release.xcconfig */,
-				57DAA65633EEDE8EC6A2D51E /* Pods-Icro-Share.debug.xcconfig */,
-				7E1D5B3765739EE3E78E195D /* Pods-Icro-Share.release.xcconfig */,
-				28115B4C2357CE0D4DBB7787 /* Pods-Icro-IcroScreenshotsTests.debug.xcconfig */,
-				6F49089207815FEE0F8181CB /* Pods-Icro-IcroScreenshotsTests.release.xcconfig */,
-				5B744A4C8329D56FBB21833D /* Pods-IcroScreenshotsTests.debug.xcconfig */,
-				91BA051943E64235CE5FE52F /* Pods-IcroScreenshotsTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1265,7 +1202,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B3C798B21C4DFAF00F699B8 /* Build configuration list for PBXNativeTarget "Icro-Share" */;
 			buildPhases = (
-				A7B6E56198B9726D5428556F /* [CP] Check Pods Manifest.lock */,
 				5B3C797A21C4DFAF00F699B8 /* Sources */,
 				5B3C797B21C4DFAF00F699B8 /* Frameworks */,
 				5B3C797C21C4DFAF00F699B8 /* Resources */,
@@ -1283,7 +1219,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B3C799B21C4E31100F699B8 /* Build configuration list for PBXNativeTarget "IcroUIKit" */;
 			buildPhases = (
-				2E327426467FEE16863F6D6F /* [CP] Check Pods Manifest.lock */,
 				5B3C798D21C4E31100F699B8 /* Headers */,
 				5B3C798E21C4E31100F699B8 /* Sources */,
 				5B3C798F21C4E31100F699B8 /* Frameworks */,
@@ -1295,7 +1230,7 @@
 			);
 			name = IcroUIKit;
 			packageProductDependencies = (
-				5B28C8CB22C87C6C00A46C52 /* SwiftPackageProductDependency */,
+				5B28C8CB22C87C6C00A46C52 /* Kingfisher */,
 			);
 			productName = IcroUIKit;
 			productReference = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */;
@@ -1305,7 +1240,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B58373C2128B04A0076121E /* Build configuration list for PBXNativeTarget "IcroTests" */;
 			buildPhases = (
-				228EC1B8085181E1AA0D5DAE /* [CP] Check Pods Manifest.lock */,
 				5B5837312128B04A0076121E /* Sources */,
 				5B5837322128B04A0076121E /* Frameworks */,
 				5B5837332128B04A0076121E /* Resources */,
@@ -1324,7 +1258,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BB3E476226C514C00C1B6BB /* Build configuration list for PBXNativeTarget "IcroScreenshotsTests" */;
 			buildPhases = (
-				776D2BBD9D95800DDC47C0E5 /* [CP] Check Pods Manifest.lock */,
 				5BB3E469226C514C00C1B6BB /* Sources */,
 				5BB3E46A226C514C00C1B6BB /* Frameworks */,
 				5BB3E46B226C514C00C1B6BB /* Resources */,
@@ -1343,7 +1276,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BC347B92132944900DEB45D /* Build configuration list for PBXNativeTarget "IcroKit" */;
 			buildPhases = (
-				20C3A106AC1DA7AB6DC70FC0 /* [CP] Check Pods Manifest.lock */,
 				5BC347A92132944900DEB45D /* Sources */,
 				5BC347AA2132944900DEB45D /* Frameworks */,
 				5BC347AB2132944900DEB45D /* Headers */,
@@ -1355,9 +1287,9 @@
 			);
 			name = IcroKit;
 			packageProductDependencies = (
-				5B83B00C22D06EA8004C4D8D /* SwiftPackageProductDependency */,
-				5B83B01C22D11D64004C4D8D /* SwiftPackageProductDependency */,
-				5BE92EF022D1B5630048E8F1 /* SwiftPackageProductDependency */,
+				5B83B00C22D06EA8004C4D8D /* Alamofire */,
+				5B83B01C22D11D64004C4D8D /* KeychainAccess */,
+				5BE92EF022D1B5630048E8F1 /* TypedSymbols */,
 			);
 			productName = IcroKit;
 			productReference = 5BC347AE2132944900DEB45D /* IcroKit.framework */;
@@ -1367,7 +1299,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5FA2AE81EB4482C006DEB40 /* Build configuration list for PBXNativeTarget "Icro" */;
 			buildPhases = (
-				53C8FC14491D3DD53B4AF3AC /* [CP] Check Pods Manifest.lock */,
 				C5FA2ABC1EB4482C006DEB40 /* Sources */,
 				C5FA2ABD1EB4482C006DEB40 /* Frameworks */,
 				C5FA2ABE1EB4482C006DEB40 /* Resources */,
@@ -1384,10 +1315,10 @@
 			);
 			name = Icro;
 			packageProductDependencies = (
-				5B28C8C722C87BFA00A46C52 /* SwiftPackageProductDependency */,
-				5B83B01A22D11B3D004C4D8D /* SwiftPackageProductDependency */,
-				5B83B02122D1B3DC004C4D8D /* SwiftPackageProductDependency */,
-				5BE92EF522D1BAAD0048E8F1 /* SwiftPackageProductDependency */,
+				5B28C8C722C87BFA00A46C52 /* Kingfisher */,
+				5B83B01A22D11B3D004C4D8D /* KeychainAccess */,
+				5B83B02122D1B3DC004C4D8D /* TypedSymbols */,
+				5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -1474,11 +1405,11 @@
 			);
 			mainGroup = C5FA2AB71EB4482C006DEB40;
 			packageReferences = (
-				5B28C8C622C87BFA00A46C52 /* RemoteSwiftPackageReference */,
-				5B70C0E822D06E9200D85F2B /* RemoteSwiftPackageReference */,
-				5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */,
-				5B83B02022D1B3DC004C4D8D /* RemoteSwiftPackageReference */,
-				5BE92EF422D1BAAD0048E8F1 /* RemoteSwiftPackageReference */,
+				5B28C8C622C87BFA00A46C52 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */,
+				5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */,
 			);
 			productRefGroup = C5FA2AC11EB4482C006DEB40 /* Products */;
 			projectDirPath = "";
@@ -1550,7 +1481,6 @@
 				C5FA2ACE1EB4482C006DEB40 /* LaunchScreen.storyboard in Resources */,
 				5B3C79BE21C50A6600F699B8 /* ListViewController.xib in Resources */,
 				5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */,
-				5B4E4187208AF8C700FC610A /* Pods-Icro-acknowledgements.plist in Resources */,
 				C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */,
 				5B841ED922E83C2D00CDA80C /* Assets.xcassets in Resources */,
 				5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */,
@@ -1560,82 +1490,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		20C3A106AC1DA7AB6DC70FC0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IcroKit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		228EC1B8085181E1AA0D5DAE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Icro-IcroTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2E327426467FEE16863F6D6F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IcroUIKit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		53C8FC14491D3DD53B4AF3AC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Icro-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5B494E642123590E00C3969B /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1649,50 +1503,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "${SRCROOT}/External/SwiftLint/swiftlint0340\n";
-		};
-		776D2BBD9D95800DDC47C0E5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IcroScreenshotsTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A7B6E56198B9726D5428556F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Icro-Share-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1981,7 +1791,6 @@
 /* Begin XCBuildConfiguration section */
 		5B3C798921C4DFAF00F699B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57DAA65633EEDE8EC6A2D51E /* Pods-Icro-Share.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2013,7 +1822,6 @@
 		};
 		5B3C798A21C4DFAF00F699B8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E1D5B3765739EE3E78E195D /* Pods-Icro-Share.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2044,7 +1852,6 @@
 		};
 		5B3C799C21C4E31100F699B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6AE0CC763A4435B23AD848F4 /* Pods-IcroUIKit.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2082,7 +1889,6 @@
 		};
 		5B3C799D21C4E31100F699B8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A6DD469FE907F7761590C87 /* Pods-IcroUIKit.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2119,7 +1925,6 @@
 		};
 		5B58373D2128B04A0076121E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94EFF3BFFA6977873973D18F /* Pods-Icro-IcroTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2147,7 +1952,6 @@
 		};
 		5B58373E2128B04A0076121E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E95C33C086DABED6C39EDF82 /* Pods-Icro-IcroTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2175,7 +1979,6 @@
 		};
 		5BB3E474226C514C00C1B6BB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B744A4C8329D56FBB21833D /* Pods-IcroScreenshotsTests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2204,7 +2007,6 @@
 		};
 		5BB3E475226C514C00C1B6BB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91BA051943E64235CE5FE52F /* Pods-IcroScreenshotsTests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2232,7 +2034,6 @@
 		};
 		5BC347B72132944900DEB45D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB83C848BB5BA5B662CD6D6C /* Pods-IcroKit.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2269,7 +2070,6 @@
 		};
 		5BC347B82132944900DEB45D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F2BD0E07C25F92320A828EA /* Pods-IcroKit.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2424,7 +2224,6 @@
 		};
 		C5FA2AE91EB4482C006DEB40 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA46B8BCBC230D1C9A721F76 /* Pods-Icro.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2453,7 +2252,6 @@
 		};
 		C5FA2AEA1EB4482C006DEB40 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52C2D67E51BFF3B28100165E /* Pods-Icro.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2548,7 +2346,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5B28C8C622C87BFA00A46C52 /* RemoteSwiftPackageReference */ = {
+		5B28C8C622C87BFA00A46C52 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher/";
 			requirement = {
@@ -2556,7 +2354,7 @@
 				kind = branch;
 			};
 		};
-		5B70C0E822D06E9200D85F2B /* RemoteSwiftPackageReference */ = {
+		5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -2564,7 +2362,7 @@
 				minimumVersion = 4.8.2;
 			};
 		};
-		5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */ = {
+		5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/KeychainAccess";
 			requirement = {
@@ -2572,7 +2370,7 @@
 				kind = branch;
 			};
 		};
-		5B83B02022D1B3DC004C4D8D /* RemoteSwiftPackageReference */ = {
+		5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/TypedSymbols";
 			requirement = {
@@ -2580,7 +2378,7 @@
 				kind = branch;
 			};
 		};
-		5BE92EF422D1BAAD0048E8F1 /* RemoteSwiftPackageReference */ = {
+		5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/AppDelegateComponent";
 			requirement = {
@@ -2591,44 +2389,44 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5B28C8C722C87BFA00A46C52 /* SwiftPackageProductDependency */ = {
+		5B28C8C722C87BFA00A46C52 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B28C8C622C87BFA00A46C52 /* RemoteSwiftPackageReference */;
+			package = 5B28C8C622C87BFA00A46C52 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		5B28C8CB22C87C6C00A46C52 /* SwiftPackageProductDependency */ = {
+		5B28C8CB22C87C6C00A46C52 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B28C8C622C87BFA00A46C52 /* RemoteSwiftPackageReference */;
+			package = 5B28C8C622C87BFA00A46C52 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		5B83B00C22D06EA8004C4D8D /* SwiftPackageProductDependency */ = {
+		5B83B00C22D06EA8004C4D8D /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B70C0E822D06E9200D85F2B /* RemoteSwiftPackageReference */;
+			package = 5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		5B83B01A22D11B3D004C4D8D /* SwiftPackageProductDependency */ = {
+		5B83B01A22D11B3D004C4D8D /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */;
+			package = 5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
 		};
-		5B83B01C22D11D64004C4D8D /* SwiftPackageProductDependency */ = {
+		5B83B01C22D11D64004C4D8D /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */;
+			package = 5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
 		};
-		5B83B02122D1B3DC004C4D8D /* SwiftPackageProductDependency */ = {
+		5B83B02122D1B3DC004C4D8D /* TypedSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B83B02022D1B3DC004C4D8D /* RemoteSwiftPackageReference */;
+			package = 5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */;
 			productName = TypedSymbols;
 		};
-		5BE92EF022D1B5630048E8F1 /* SwiftPackageProductDependency */ = {
+		5BE92EF022D1B5630048E8F1 /* TypedSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B83B02022D1B3DC004C4D8D /* RemoteSwiftPackageReference */;
+			package = 5B83B02022D1B3DC004C4D8D /* XCRemoteSwiftPackageReference "TypedSymbols" */;
 			productName = TypedSymbols;
 		};
-		5BE92EF522D1BAAD0048E8F1 /* SwiftPackageProductDependency */ = {
+		5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5BE92EF422D1BAAD0048E8F1 /* RemoteSwiftPackageReference */;
+			package = 5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */;
 			productName = AppDelegateComponent;
 		};
 /* End XCSwiftPackageProductDependency section */
