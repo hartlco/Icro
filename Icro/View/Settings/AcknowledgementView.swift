@@ -5,14 +5,27 @@
 
 import SwiftUI
 
-struct Acknow {
+struct Acknow: Codable {
     let title: String
     let text: String
 }
 
 final class AcknowledgmentViewModel {
+    private let fileManager: FileManager
+    private let bundle: Bundle
+
+    init(fileManager: FileManager = .default,
+         bundle: Bundle = .main) {
+        self.fileManager = fileManager
+        self.bundle = bundle
+    }
+
     var acknows: [Acknow] {
-        return []
+        guard let filePath = bundle.path(forResource: "acknowledgements", ofType: "json"),
+            let data = fileManager.contents(atPath: filePath),
+        let acknows = try? JSONDecoder().decode([Acknow].self, from: data) else { return [] }
+
+        return acknows
     }
 }
 
