@@ -99,9 +99,11 @@ struct OtherSection: View {
         return Section(header: Text("SETTINGSVIEWCONTROLLER_OTHER_TITLE")
             .font(.headline)
             .fontWeight(.bold)) {
-                NavigationLink(destination: Text("Test")) {
+                Button(action: {
+                    self.settingsNavigator.openSupportMail()
+                }, label: {
                     Text("SETTINGSVIEWCONTROLLER_SUPPORTBUTTON_TITLE")
-                }
+                })
                 NavigationLink(destination: settingsNavigator.acknowledgmentsView) {
                     Text("SETTINGSVIEWCONTROLLER_ACKNOWLEDGMENTSBUTTON_TITLE")
                 }
