@@ -210,6 +210,7 @@
 		5BD2FE5F2259D15100591490 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2FE5E2259D15100591490 /* Media.swift */; };
 		5BD2FE682259E0DC00591490 /* VideoThumbnailImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */; };
 		5BD499CF21CA1D8C007EF47C /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79C121C518B700F699B8 /* MainNavigator.swift */; };
+		5BD867DB22ECA31100E39414 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD867D922ECA31100E39414 /* MainInterface.storyboard */; };
 		5BD95AF62290A10600C74C52 /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
 		5BD95AF72290A10600C74C52 /* UserDefaultsMigrationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */; };
 		5BD95AFD2290A16100C74C52 /* AppearanceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD95AFC2290A16100C74C52 /* AppearanceComponent.swift */; };
@@ -487,6 +488,7 @@
 		5BCD7F0122BDE35D00CA5B6C /* MuteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuteView.swift; path = View/Settings/MuteView.swift; sourceTree = "<group>"; };
 		5BD2FE5E2259D15100591490 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailImageProvider.swift; sourceTree = "<group>"; };
+		5BD867DA22ECA31100E39414 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		5BD95AFC2290A16100C74C52 /* AppearanceComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceComponent.swift; sourceTree = "<group>"; };
 		5BD9690921C8CBFB00313795 /* GalleryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDataSource.swift; sourceTree = "<group>"; };
 		5BD9690B21C8D2F100313795 /* GalleryDataSource+ImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryDataSource+ImageViewer.swift"; sourceTree = "<group>"; };
@@ -793,6 +795,7 @@
 		5B3C797F21C4DFAF00F699B8 /* Icro-Share */ = {
 			isa = PBXGroup;
 			children = (
+				5BD867D922ECA31100E39414 /* MainInterface.storyboard */,
 				5BC1384021C632F20040353C /* Icro-Share.entitlements */,
 				5B3C798021C4DFAF00F699B8 /* ShareViewController.swift */,
 				5B3C798521C4DFAF00F699B8 /* Info.plist */,
@@ -1438,6 +1441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC1384721C639160040353C /* Assets.xcassets in Resources */,
+				5BD867DB22ECA31100E39414 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1775,6 +1779,14 @@
 				5BC184D522E47D34000155DB /* en */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5BD867D922ECA31100E39414 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BD867DA22ECA31100E39414 /* en */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		BF707E762131C45600506E64 /* Localizable.strings */ = {
