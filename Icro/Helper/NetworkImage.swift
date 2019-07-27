@@ -11,15 +11,18 @@ public struct NetworkImage: SwiftUI.View {
     @State private var image: UIImage? = nil
 
     public let imageURL: URL?
-    public let placeholderImage: UIImage
-    public let animation: Animation = .basic()
 
     public var body: some SwiftUI.View {
-        Image(uiImage: image ?? placeholderImage)
-            .resizable()
-            .onAppear(perform: loadImage)
-            .transition(.opacity)
-            .id(image ?? placeholderImage)
+        ZStack {
+            Rectangle()
+                .foregroundColor(backgroundColor)
+            image.map { image in
+                Image(uiImage: image)
+                .resizable()
+                .id(image)
+            }
+        }
+        .onAppear(perform: loadImage)
     }
 
     private func loadImage() {
@@ -27,12 +30,18 @@ public struct NetworkImage: SwiftUI.View {
         KingfisherManager.shared.retrieveImage(with: imageURL) { result in
             switch result {
             case .success(let imageResult):
-                withAnimation(self.animation) {
-                    self.image = imageResult.image
-                }
+                self.image = imageResult.image
             case .failure:
                 break
             }
+        }
+    }
+
+    private var backgroundColor: SwiftUI.Color {
+        if image == nil {
+            return Color.gray
+        } else {
+            return Color.clear
         }
     }
 }
@@ -41,8 +50,7 @@ public struct NetworkImage: SwiftUI.View {
 // swiftlint:disable:next type_name
 struct NetworkImage_Previews: PreviewProvider {
     static var previews: some SwiftUI.View {
-        NetworkImage(imageURL: URL(string: "https://www.apple.com/favicon.ico")!,
-                     placeholderImage: UIImage(systemName: "bookmark")!)
+        NetworkImage(imageURL: URL(string: "https://www.apple.com/favicon.ico")!)
     }
 }
 #endif

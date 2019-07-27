@@ -22,8 +22,7 @@ struct UserListView: SwiftUI.View {
                 self.itemNavigator.open(author: author)
             }, label: {
                 HStack {
-                    NetworkImage(imageURL: author.avatar,
-                                 placeholderImage: UIImage(symbol: .person_fill)!)
+                    NetworkImage(imageURL: author.avatar)
                     .frame(width: 40, height: 40)
                     .clipShape(Circle())
                     HStack {
