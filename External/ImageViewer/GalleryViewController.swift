@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 
 open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
-
     // UI
     fileprivate let overlayView = BlurView()
     /// A custom view on the top of the gallery with layout using default (or custom) pinning settings for header.
@@ -169,7 +168,7 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
         self.modalPresentationStyle = .overFullScreen
         self.dataSource = pagingDataSource
 
-        UIApplication.applicationWindow.windowLevel = (statusBarHidden) ? UIWindow.Level.statusBar + 1 : UIWindow.Level.normal
+//        UIApplication.applicationWindow.windowLevel = (statusBarHidden) ? UIWindow.Level.statusBar + 1 : UIWindow.Level.normal
 
         NotificationCenter.default.addObserver(self, selector: #selector(GalleryViewController.rotate), name: UIDevice.orientationDidChangeNotification, object: nil)
 
