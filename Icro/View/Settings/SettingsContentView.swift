@@ -33,6 +33,7 @@ struct SettingsContentView: View {
                 Text("SETTINGSVIEWCONTROLLER_CANCELBUTTON_TITLE")
             }))
         }
+        .navigationViewStyle(.stack)
     }
 }
 

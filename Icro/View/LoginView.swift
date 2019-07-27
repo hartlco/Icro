@@ -42,6 +42,7 @@ struct LoginView: View {
             )
             .navigationBarTitle(Text("LOGINVIEWCONTROLLER_TITLE"))
         }
+        .navigationViewStyle(.stack)
     }
 }
 

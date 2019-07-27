@@ -121,6 +121,10 @@ final class ListViewController: UIViewController, LoadingViewController {
         navigationItem.leftBarButtonItem?.isEnabled = viewModel.barButtonEnabled
     }
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        updateAppearance()
+    }
+
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         rowHeightEstimate = [:]
         super.viewWillTransition(to: size, with: coordinator)
