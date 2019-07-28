@@ -71,6 +71,7 @@
 		5B28C8D022C89B2600A46C52 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CF22C89B2600A46C52 /* UserListView.swift */; };
 		5B28C8D122C89BE200A46C52 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */; };
 		5B28C8D222C89BEE00A46C52 /* MuteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCD7F0122BDE35D00CA5B6C /* MuteView.swift */; };
+		5B28FF2F22ED87AD006E20CA /* UserActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28FF2E22ED87AD006E20CA /* UserActivities.swift */; };
 		5B2EF3DD22E827C5006931A7 /* CSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EF3D422E827C5006931A7 /* CSS.swift */; };
 		5B2EF3DE22E827C5006931A7 /* CSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EF3D422E827C5006931A7 /* CSS.swift */; };
 		5B2EF3DF22E827C5006931A7 /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EF3D522E827C5006931A7 /* Deprecated.swift */; };
@@ -376,6 +377,7 @@
 		5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AcknowledgementView.swift; path = View/Settings/AcknowledgementView.swift; sourceTree = "<group>"; };
 		5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModelState.swift; path = Helper/ViewModelState.swift; sourceTree = "<group>"; };
 		5B28C8CF22C89B2600A46C52 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserListView.swift; path = View/UserListView.swift; sourceTree = "<group>"; };
+		5B28FF2E22ED87AD006E20CA /* UserActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserActivities.swift; path = ../../../../../System/Volumes/Data/Users/martin/Code/Icro/Icro/Helper/UserActivities.swift; sourceTree = "<group>"; };
 		5B2A5A7720A613EF00B54399 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableCellButton.swift; sourceTree = "<group>"; };
 		5B2EF3D422E827C5006931A7 /* CSS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSS.swift; sourceTree = "<group>"; };
@@ -1178,6 +1180,7 @@
 				5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */,
 				5B11A46622C8A5C70095E068 /* NetworkImage.swift */,
 				5B6FBE7922E2F89A006F6058 /* CatalystToolbar.swift */,
+				5B28FF2E22ED87AD006E20CA /* UserActivities.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -1688,6 +1691,7 @@
 				5B01A79322E82CFA00D420BD /* GalleryItemsDelegate.swift in Sources */,
 				5BCD7F0222BDE35D00CA5B6C /* MuteView.swift in Sources */,
 				5B01A77F22E82CFA00D420BD /* ThumbnailsViewController.swift in Sources */,
+				5B28FF2F22ED87AD006E20CA /* UserActivities.swift in Sources */,
 				5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */,
 				5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */,
 				5B2EF3E522E827C5006931A7 /* libxmlHTMLNode.swift in Sources */,

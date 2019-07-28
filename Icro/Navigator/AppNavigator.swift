@@ -63,13 +63,7 @@ final class AppNavigator {
     }
 
     func showComposeViewController() {
-        let navController = UINavigationController()
-        let viewModel = ComposeViewModel(mode: .post)
-        let itemNavigator = ItemNavigator(navigationController: navController, appNavigator: self)
-        let navigator = ComposeNavigator(navigationController: navController, viewModel: viewModel)
-        let viewController = ComposeViewController(viewModel: viewModel, composeNavigator: navigator, itemNavigator: itemNavigator)
-        navController.viewControllers = [viewController]
-        tabBarViewController.present(navController, animated: true, completion: nil)
+        tabBarViewController.present(composeNavigationController, animated: true, completion: nil)
     }
 
     func setup() {
@@ -87,6 +81,15 @@ final class AppNavigator {
             tabBarViewController.select(type: .discover)
         }
 
+        window.tintColor = Color.main
+        window.makeKeyAndVisible()
+    }
+
+    func setupComposeWinodw() {
+        let navigationController = composeNavigationController
+        navigationController.navigationBar.isHidden = true
+        window.rootViewController = navigationController
+        setupMacCatalystComposeWindow()
         window.tintColor = Color.main
         window.makeKeyAndVisible()
     }
@@ -128,5 +131,26 @@ final class AppNavigator {
             titleBar.titleVisibility = .hidden
         }
         #endif
+    }
+
+    private func setupMacCatalystComposeWindow() {
+        #if targetEnvironment(macCatalyst)
+        if let windowScene = window.windowScene,
+            let titleBar = windowScene.titlebar {
+            titleBar.toolbar = catalystToolbar.composeToolbar
+            titleBar.titleVisibility = .hidden
+        }
+        #endif
+    }
+
+    private var composeNavigationController: UINavigationController {
+        let navController = UINavigationController()
+        let viewModel = ComposeViewModel(mode: .post)
+        let itemNavigator = ItemNavigator(navigationController: navController, appNavigator: self)
+        let navigator = ComposeNavigator(navigationController: navController, viewModel: viewModel)
+        let viewController = ComposeViewController(viewModel: viewModel, composeNavigator: navigator, itemNavigator: itemNavigator)
+        navController.viewControllers = [viewController]
+        return navController
+
     }
 }

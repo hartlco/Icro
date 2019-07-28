@@ -15,9 +15,17 @@ final class CatalystToolbar: NSObject {
 
     #if targetEnvironment(macCatalyst)
     private let composeIdentifier = NSToolbarItem.Identifier("compose")
+    private let mainToolbarIdentifier = NSToolbar.Identifier("MainToolbar")
+    private let composeToolbarIdentifier = NSToolbar.Identifier("ComposeToolbar")
 
     var toolbar: NSToolbar {
-        let toolbar = NSToolbar(identifier: NSToolbar.Identifier("MainToolbar"))
+        let toolbar = NSToolbar(identifier: mainToolbarIdentifier)
+        toolbar.delegate = self
+        return toolbar
+    }
+
+    var composeToolbar: NSToolbar {
+        let toolbar = NSToolbar(identifier: composeToolbarIdentifier)
         toolbar.delegate = self
         return toolbar
     }
@@ -51,28 +59,34 @@ extension CatalystToolbar: NSToolbarDelegate {
     }
 
     public func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        return [NSToolbarItem.Identifier.flexibleSpace, composeIdentifier]
+        switch toolbar.identifier {
+        case mainToolbarIdentifier:
+            return [NSToolbarItem.Identifier.flexibleSpace, composeIdentifier]
+        case composeToolbarIdentifier:
+            return [NSToolbarItem.Identifier.flexibleSpace]
+        default:
+            return []
+        }
     }
 
     public func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        return [.flexibleSpace, composeIdentifier]
+        switch toolbar.identifier {
+        case mainToolbarIdentifier:
+            return [NSToolbarItem.Identifier.flexibleSpace, composeIdentifier]
+        case composeToolbarIdentifier:
+            return [NSToolbarItem.Identifier.flexibleSpace]
+        default:
+            return []
+        }
     }
 
     @objc private func openNewWindow() {
-//        let composeType = "co.hartl.icro.compose"
-//
-//        let userActivity = NSUserActivity(activityType: composeType)
-//        userActivity.userInfo = ["ur": "Test"]
-//
-//        UIApplication.shared.requestSceneSessionActivation(nil,
-//                                                           userActivity: userActivity,
-//                                                           options: nil,
-//                                                           errorHandler: { error in
-//
-//        })
-
-        showCompose()
-
+        let userActivity = NSUserActivity(activityType: UserActivities.compose.rawValue)
+        UIApplication.shared.requestSceneSessionActivation(nil,
+                                                           userActivity: userActivity,
+                                                           options: nil,
+                                                           errorHandler: { _ in
+        })
     }
 }
 #endif
