@@ -94,13 +94,19 @@ final class EditActionsConfigurator {
 
     private func makeContextMenu(indexPath: IndexPath) -> UIMenu {
         guard case .item(let item) = viewModel.viewType(forRow: indexPath.row) else {
-            return UIMenu(__title: "", image: nil, identifier: nil, children: [])
+            return UIMenu(title: "", image: nil, identifier: nil, children: [])
         }
 
-        let share = UIAction(__title: NSLocalizedString("EDITACTIONSCONFIGURATOR_LEADINGEDITACTIONS", comment: ""),
-                             image: UIImage(symbol: .arrowshape_turn_up_left),
+        let reply = UIAction(__title: NSLocalizedString("EDITACTIONSCONFIGURATOR_SHAREACTION", comment: ""),
+                             image: UIImage(symbol: .square_and_arrow_up),
                              identifier: nil) { [weak self] _ in
                                 self?.itemNavigator.openReply(item: item)
+        }
+
+        let chat = UIAction(__title: NSLocalizedString("EDITACTIONSCONFIGURATOR_LEADINGEDITACTIONS", comment: ""),
+                             image: UIImage(symbol: .arrowshape_turn_up_left),
+                             identifier: nil) { [weak self] _ in
+                                self?.itemNavigator.openConversation(item: item)
         }
 
         let favoriteTitle = item.isFavorite ?
@@ -113,9 +119,9 @@ final class EditActionsConfigurator {
                                 self?.viewModel.toggleFave(for: item)
         }
 
-        return UIMenu(__title: "Main Menu",
+        return UIMenu(title: "Main Menu",
                       image: nil,
                       identifier: nil,
-                      children: [share, favorite])
+                      children: [reply, chat, favorite])
     }
 }
