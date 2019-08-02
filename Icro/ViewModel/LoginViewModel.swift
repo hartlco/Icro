@@ -8,7 +8,7 @@ import IcroKit
 import SwiftUI
 import Combine
 
-final class LoginViewModel: BindableObject {
+final class LoginViewModel: ObservableObject {
     let willChange = PassthroughSubject<LoginViewModel, Never>()
 
     enum LoginType {

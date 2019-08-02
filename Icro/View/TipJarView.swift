@@ -7,7 +7,7 @@ import SwiftUI
 import IcroKit
 
 struct TipJarView: View {
-    @ObjectBinding var viewModel: TipJarViewModel
+    @ObservedObject var viewModel: TipJarViewModel
     private let cardColor = SwiftUI.Color("accentSuperLight")
 
     var body: some View {

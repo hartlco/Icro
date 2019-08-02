@@ -9,7 +9,7 @@ import IcroKit
 import SwiftUI
 import Combine
 
-final class TipJarViewModel: NSObject, BindableObject {
+final class TipJarViewModel: NSObject, ObservableObject {
     var willChange = PassthroughSubject<Void, Never>()
 
     private(set) var state = State.unloaded {

@@ -52,7 +52,7 @@ struct AcknowledgementDetailView: View {
             Text(acknow.text)
             .lineLimit(nil)
         }
-        .listStyle(.plain)
+        .listStyle(PlainListStyle())
         .navigationBarTitle(Text(acknow.title))
     }
 }

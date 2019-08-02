@@ -8,7 +8,7 @@ import IcroKit
 import SwiftUI
 import Combine
 
-final class SettingsViewModel: BindableObject {
+final class SettingsViewModel: ObservableObject {
     enum CustomBlogType {
         case wordpress
         case micropub

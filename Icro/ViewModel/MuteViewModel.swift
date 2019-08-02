@@ -8,7 +8,7 @@ import IcroKit
 import Combine
 import SwiftUI
 
-final class MuteViewModel: BindableObject {
+final class MuteViewModel: ObservableObject {
     var willChange = PassthroughSubject<Void, Never>()
 
     private let userSettings: UserSettings

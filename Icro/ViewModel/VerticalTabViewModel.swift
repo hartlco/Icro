@@ -8,7 +8,7 @@ import Combine
 import IcroKit
 import TypedSymbols
 
-final class VerticalTabViewModel: BindableObject {
+final class VerticalTabViewModel: ObservableObject {
     private let userSettings: UserSettings
 
     var didSelectIndex: (Int) -> Void = { _ in }

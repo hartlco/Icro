@@ -15,7 +15,7 @@ import IcroKit
 struct SettingsContentView: View {
     let dismissAction: () -> Void
     let settingsNavigator: SettingsNavigator
-    @ObjectBinding var store: SettingsViewModel
+    @ObservedObject var store: SettingsViewModel
 
     var body: some View {
         NavigationView {
@@ -33,12 +33,12 @@ struct SettingsContentView: View {
                 Text("SETTINGSVIEWCONTROLLER_CANCELBUTTON_TITLE")
             }))
         }
-        .navigationViewStyle(.stack)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
 struct WordpressSection: View {
-    @ObjectBinding var store: SettingsViewModel
+    @ObservedObject var store: SettingsViewModel
 
     var body: some View {
         Section(header: Text("SETTINGSVIEWCONTROLLER_BLOGSETUP_TITLE")
@@ -66,7 +66,7 @@ struct WordpressSection: View {
 }
 
 struct MicropubSection: View {
-    @ObjectBinding var store: SettingsViewModel
+    @ObservedObject var store: SettingsViewModel
 
     var body: some View {
         Section(header: Text("SETTINGSVIEWCONTROLLER_MICROPUBSETUP_TITLE")
@@ -132,7 +132,7 @@ struct AccountSection: View {
 }
 
 struct TipJarSection: View {
-    @ObjectBinding var tipJarViewModel = TipJarViewModel()
+    @ObservedObject var tipJarViewModel = TipJarViewModel()
 
     var body: some View {
         return Section(header: Text("IN-APP-PURCHASE-TIP-JAR")

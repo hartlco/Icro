@@ -6,7 +6,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @ObjectBinding private var viewModel: LoginViewModel
+    @ObservedObject private var viewModel: LoginViewModel
 
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -32,7 +32,7 @@ struct LoginView: View {
                     }
                 }
             }
-            .listStyle(.grouped)
+            .listStyle(GroupedListStyle())
             .navigationBarItems(leading:
                 Button(action: {
                     self.viewModel.didDismiss()
@@ -42,7 +42,7 @@ struct LoginView: View {
             )
             .navigationBarTitle(Text("LOGINVIEWCONTROLLER_TITLE"))
         }
-        .navigationViewStyle(.stack)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

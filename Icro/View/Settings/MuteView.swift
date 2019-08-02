@@ -10,13 +10,13 @@ import SwiftUI
 import Combine
 
 struct MuteView: View {
-    @ObjectBinding var viewModel: MuteViewModel
+    @ObservedObject var viewModel: MuteViewModel
     @State private var addedWord = ""
 
     var body: some View {
         Form {
             Section {
-                ForEach(viewModel.words.identified(by: \.self)) { word in
+                ForEach(viewModel.words, id: \.self) { word in
                     Text(word)
                     }
                     .onDelete(perform: delete)

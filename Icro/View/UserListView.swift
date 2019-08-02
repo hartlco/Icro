@@ -11,7 +11,7 @@ import Kingfisher
 import IcroKit
 
 struct UserListView: SwiftUI.View {
-    @ObjectBinding var viewModel: UserListViewModel
+    @ObservedObject var viewModel: UserListViewModel
     let itemNavigator: ItemNavigator
 
     @State var show = false

@@ -6,7 +6,7 @@
 import SwiftUI
 
 struct VerticalTabView: View {
-    @ObjectBinding var viewModel: VerticalTabViewModel
+    @ObservedObject var viewModel: VerticalTabViewModel
 
     var body: some View {
         VStack(spacing: 20) {
@@ -14,7 +14,7 @@ struct VerticalTabView: View {
                 ImageTab(selected: self.viewModel.isSelected(tab: tab),
                          image: tab.image,
                          title: tab.title)
-                .tapAction {
+                .onTapGesture {
                     self.viewModel.select(tab: tab)
                 }
             }
