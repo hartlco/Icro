@@ -6,7 +6,7 @@
 import UIKit
 import IcroKit
 import IcroUIKit
-import TypedSymbols
+
 
 final class EditActionsConfigurator {
     private let itemNavigator: ItemNavigatorProtocol
@@ -31,7 +31,7 @@ final class EditActionsConfigurator {
             tableView.setEditing(false, animated: true)
         }
         conversationAction.backgroundColor = Color.main
-        conversationAction.image = UIImage(symbol: .bubble_left_and_bubble_right)
+        conversationAction.image = UIImage(symbol: Symbol.bubble_left_and_bubble_right)
 
         let shareAction =
             UIContextualAction(style: .normal,
@@ -40,7 +40,7 @@ final class EditActionsConfigurator {
             tableView.setEditing(false, animated: true)
         }
         shareAction.backgroundColor = Color.accent
-        shareAction.image = UIImage(symbol: .square_and_arrow_up)
+        shareAction.image = UIImage(symbol: Symbol.square_and_arrow_up)
 
         return UISwipeActionsConfiguration(actions: [conversationAction, shareAction])
     }
@@ -56,7 +56,7 @@ final class EditActionsConfigurator {
             tableView.setEditing(false, animated: true)
         }
         replyAction.backgroundColor = Color.accentDark
-        replyAction.image = UIImage(symbol: .arrowshape_turn_up_left)
+        replyAction.image = UIImage(symbol: Symbol.arrowshape_turn_up_left)
 
         let moreAction =
             UIContextualAction(style: .normal,
@@ -66,7 +66,7 @@ final class EditActionsConfigurator {
             self?.itemNavigator.openMore(item: item, sourceView: cell)
         }
         moreAction.backgroundColor = Color.separatorColor
-        moreAction.image = UIImage(symbol: .ellipsis)
+        moreAction.image = UIImage(symbol: Symbol.ellipsis)
 
         let title = item.isFavorite ?
             NSLocalizedString("EDITACTIONSCONFIGURATOR_FAVORITEACTION_UNFAVORITE", comment: "") :
@@ -77,7 +77,7 @@ final class EditActionsConfigurator {
         }
         favoriteAction.backgroundColor = Color.yellow
 
-        let image = item.isFavorite ? UIImage(symbol: .heart_fill) : UIImage(symbol: .star)
+        let image = item.isFavorite ? UIImage(symbol: Symbol.heart_fill) : UIImage(symbol: Symbol.star)
 
         favoriteAction.image = image
 
@@ -98,13 +98,13 @@ final class EditActionsConfigurator {
         }
 
         let reply = UIAction(__title: NSLocalizedString("EDITACTIONSCONFIGURATOR_SHAREACTION", comment: ""),
-                             image: UIImage(symbol: .square_and_arrow_up),
+                             image: UIImage(symbol: Symbol.square_and_arrow_up),
                              identifier: nil) { [weak self] _ in
                                 self?.itemNavigator.openReply(item: item)
         }
 
         let chat = UIAction(__title: NSLocalizedString("EDITACTIONSCONFIGURATOR_LEADINGEDITACTIONS", comment: ""),
-                             image: UIImage(symbol: .arrowshape_turn_up_left),
+                             image: UIImage(symbol: Symbol.arrowshape_turn_up_left),
                              identifier: nil) { [weak self] _ in
                                 self?.itemNavigator.openConversation(item: item)
         }
@@ -112,7 +112,7 @@ final class EditActionsConfigurator {
         let favoriteTitle = item.isFavorite ?
             NSLocalizedString("EDITACTIONSCONFIGURATOR_FAVORITEACTION_UNFAVORITE", comment: "") :
             NSLocalizedString("EDITACTIONSCONFIGURATOR_FAVORITEACTION_FAVORITE", comment: "")
-        let favoriteImage = item.isFavorite ? UIImage(symbol: .heart_fill) : UIImage(symbol: .heart)
+        let favoriteImage = item.isFavorite ? UIImage(symbol: Symbol.heart_fill) : UIImage(symbol: Symbol.heart)
         let favorite = UIAction(__title: favoriteTitle,
                              image: favoriteImage,
                              identifier: nil) { [weak self] _ in

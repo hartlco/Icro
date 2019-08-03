@@ -7,7 +7,6 @@ import UIKit
 import IcroKit
 import IcroUIKit
 import SwiftUI
-import TypedSymbols
 
 final class TabBarViewController: UITabBarController {
     private let userSettings: UserSettings
@@ -50,14 +49,14 @@ final class TabBarViewController: UITabBarController {
 
             navigationController.tabBarItem = UITabBarItem(title: type.tabTitle, image: type.image, selectedImage: nil)
 
-            let image = UIImage(symbol: .square_and_pencil)
+            let image = UIImage(symbol: Symbol.square_and_pencil)
             let newPostIcon = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(showComposeViewController))
 			newPostIcon.accessibilityLabel = "Compose"
             viewController.navigationItem.rightBarButtonItem = newPostIcon
 
             switch type {
             case .username:
-                let settingsImage = UIImage(symbol: .gear)
+                let settingsImage = UIImage(symbol: Symbol.gear)
                 let settingsButton = UIBarButtonItem(image: settingsImage,
                                                      style: .plain,
                                                      target: self,
@@ -65,7 +64,7 @@ final class TabBarViewController: UITabBarController {
 				settingsButton.accessibilityLabel = "Settings"
 				viewController.navigationItem.leftBarButtonItem = settingsButton
             case .timeline:
-                let photosButton  = UIBarButtonItem(image: UIImage(symbol: .photo),
+                let photosButton  = UIBarButtonItem(image: UIImage(symbol: Symbol.photo),
                                                     style: .plain,
                                                     target: self,
                                                     action: #selector(showPhotosTimeline))

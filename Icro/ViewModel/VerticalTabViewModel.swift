@@ -6,7 +6,6 @@
 import SwiftUI
 import Combine
 import IcroKit
-import TypedSymbols
 
 final class VerticalTabViewModel: ObservableObject {
     private let userSettings: UserSettings
@@ -74,17 +73,17 @@ private extension ListViewModel.ListType {
     var swiftUIImage: Image {
         switch self {
         case .timeline:
-            return Image(symbol: .house_fill)
+            return Image(symbol: Symbol.house_fill)
         case .mentions:
-            return Image(symbol: .text_bubble_fill)
+            return Image(symbol: Symbol.text_bubble_fill)
         case .favorites:
-            return Image(symbol: .heart_fill)
+            return Image(symbol: Symbol.heart_fill)
         case .discover:
-            return Image(symbol: .safari_fill)
+            return Image(symbol: Symbol.safari_fill)
         case .user, .username:
-            return Image(symbol: .person_fill)
+            return Image(symbol: Symbol.person_fill)
         case .conversation, .photos, .discoverCollection:
-            return Image(symbol: .house_fill)
+            return Image(symbol: Symbol.house_fill)
         }
     }
 }

@@ -137,6 +137,7 @@ final class AppNavigator {
         #if targetEnvironment(macCatalyst)
         if let windowScene = window.windowScene,
             let titleBar = windowScene.titlebar {
+            windowScene.sizeRestrictions?.maximumSize = CGSize(width: 300, height: 250)
             titleBar.toolbar = catalystToolbar.composeToolbar
             titleBar.titleVisibility = .hidden
         }
