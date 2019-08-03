@@ -18,6 +18,7 @@ public struct NetworkImage: SwiftUI.View {
                 .foregroundColor(backgroundColor)
             image.map { image in
                 Image(uiImage: image)
+                .renderingMode(.original)
                 .resizable()
                 .id(image)
             }
