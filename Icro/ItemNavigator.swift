@@ -15,14 +15,17 @@ final class ItemNavigator: ItemNavigatorProtocol {
     private let userSettings: UserSettings
     private let mainNavigator: MainNavigator
     private var appNavigator: AppNavigator
+    private let application: UIApplication
 
     init(navigationController: UINavigationController,
          appNavigator: AppNavigator,
-         userSettings: UserSettings = .shared) {
+         userSettings: UserSettings = .shared,
+         application: UIApplication = .shared) {
         self.navigationController = navigationController
         self.userSettings = userSettings
         self.mainNavigator = MainNavigator(navigationController: navigationController)
         self.appNavigator = appNavigator
+        self.application = application
     }
 
     func open(url: URL) {
@@ -31,13 +34,7 @@ final class ItemNavigator: ItemNavigatorProtocol {
             return
         }
 
-        #if targetEnvironment(macCatalyst)
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        return
-        #endif
-
-        let safariViewController = SFSafariViewController(url: url)
-        navigationController.present(safariViewController, animated: true, completion: nil)
+        application.open(url, options: [:], completionHandler: nil)
     }
 
     func open(author: Author) {
@@ -165,7 +162,9 @@ final class ItemNavigator: ItemNavigatorProtocol {
             style: .default) { [weak self] _ in
                 guard let self = self else { return }
                 let viewModel = ListViewModel(type: .discoverCollection(category: category))
-                let itemNavigator = ItemNavigator(navigationController: self.navigationController, appNavigator: self.appNavigator)
+                let itemNavigator = ItemNavigator(navigationController: self.navigationController,
+                                                  appNavigator: self.appNavigator,
+                                                  application: self.application)
                 let viewController = ListViewController(viewModel: viewModel, itemNavigator: itemNavigator)
                 self.navigationController.pushViewController(viewController, animated: true)
             }
