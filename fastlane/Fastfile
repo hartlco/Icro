@@ -19,7 +19,7 @@ platform :ios do
   desc "Run unit tests"
   lane :tests do
     run_tests(workspace: "Icro.xcworkspace",
-            devices: ["iPhone X"],
+            devices: ["iPhone Xs"],
             scheme: "Icro")
   end
 
