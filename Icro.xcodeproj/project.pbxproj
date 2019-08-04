@@ -70,6 +70,8 @@
 		5B1E73C822F54E32001A43F2 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E73C322F54E02001A43F2 /* Symbol.swift */; };
 		5B1E73C922F54FD3001A43F2 /* UIImage+TypedSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E73C122F54E02001A43F2 /* UIImage+TypedSymbol.swift */; };
 		5B1E73CA22F54FD3001A43F2 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E73C322F54E02001A43F2 /* Symbol.swift */; };
+		5B1E73CB22F553E4001A43F2 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A77222E82CFA00D420BD /* GalleryViewController.swift */; };
+		5B1E73CC22F553F1001A43F2 /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A76E22E82CFA00D420BD /* GalleryItem.swift */; };
 		5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */; };
 		5B28C8C822C87BFA00A46C52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8C722C87BFA00A46C52 /* Kingfisher */; };
 		5B28C8CC22C87C6C00A46C52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8CB22C87C6C00A46C52 /* Kingfisher */; };
@@ -96,6 +98,7 @@
 		5B38476621FE06B200F082AD /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */; };
 		5B38476921FE073800F082AD /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476821FE073800F082AD /* UIView+Contraints.swift */; };
 		5B38476A21FE077A00F082AD /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476821FE073800F082AD /* UIView+Contraints.swift */; };
+		5B39A4CE22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39A4CD22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift */; };
 		5B39B7BE22AD504A004D5134 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39B7BD22AD504A004D5134 /* ListView.swift */; };
 		5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */; };
 		5B3B4C3821D0D17800F511A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
@@ -397,6 +400,7 @@
 		5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarViewModel.swift; sourceTree = "<group>"; };
 		5B38476021FE035900F082AD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5B38476821FE073800F082AD /* UIView+Contraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Contraints.swift"; path = "Helper/UIView+Contraints.swift"; sourceTree = "<group>"; };
+		5B39A4CD22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerticalTabAwareHostingController.swift; path = Helper/VerticalTabAwareHostingController.swift; sourceTree = "<group>"; };
 		5B39B7BD22AD504A004D5134 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = View/ListView.swift; sourceTree = "<group>"; };
 		5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppearanceManager.swift; path = Helper/AppearanceManager.swift; sourceTree = "<group>"; };
 		5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Icro-Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1195,6 +1199,7 @@
 				5B11A46622C8A5C70095E068 /* NetworkImage.swift */,
 				5B6FBE7922E2F89A006F6058 /* CatalystToolbar.swift */,
 				5B28FF2E22ED87AD006E20CA /* UserActivities.swift */,
+				5B39A4CD22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -1568,6 +1573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B99C67B229FB5CD00437552 /* UITableView+Keyboard.swift in Sources */,
+				5B1E73CC22F553F1001A43F2 /* GalleryItem.swift in Sources */,
 				5B66EE71227D73E400317FE3 /* HTTPMethodTests.swift in Sources */,
 				5B165DA922BF538C00B851B2 /* TipJarView.swift in Sources */,
 				5B58374F2128B5F80076121E /* TabBarViewController.swift in Sources */,
@@ -1609,6 +1615,7 @@
 				5B5837752128B5F80076121E /* SettingsViewModel.swift in Sources */,
 				5B5837762128B5F80076121E /* MuteViewModel.swift in Sources */,
 				5B5837772128B5F80076121E /* AppDelegate.swift in Sources */,
+				5B1E73CB22F553E4001A43F2 /* GalleryViewController.swift in Sources */,
 				5B5837402128B0680076121E /* HTMLContentTests.swift in Sources */,
 				5B1896C922B2DA200067F100 /* LoginView.swift in Sources */,
 			);
@@ -1710,6 +1717,7 @@
 				5B01A77F22E82CFA00D420BD /* ThumbnailsViewController.swift in Sources */,
 				5B28FF2F22ED87AD006E20CA /* UserActivities.swift in Sources */,
 				5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */,
+				5B39A4CE22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift in Sources */,
 				5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */,
 				5B2EF3E522E827C5006931A7 /* libxmlHTMLNode.swift in Sources */,
 				5B01A78C22E82CFA00D420BD /* AVPlayer.swift in Sources */,

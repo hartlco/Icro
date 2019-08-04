@@ -54,7 +54,7 @@ final class ItemNavigator: ItemNavigatorProtocol {
 
     func openFollowing(for user: Author) {
         let viewModel = UserListViewModel(resource: user.followingResource())
-        let viewController = UIHostingController(rootView: UserListView(viewModel: viewModel, itemNavigator: self))
+        let viewController = VerticalTabAwareHostingController(rootView: UserListView(viewModel: viewModel, itemNavigator: self))
         navigationController.pushViewController(viewController, animated: true)
     }
 
