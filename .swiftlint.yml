@@ -8,6 +8,7 @@ excluded: # paths to ignore during linting. Takes precedence over `included`.
   - gems
   - vendor
   - External
+  - derivedData
   
 line_length: 140
 file_length: 500

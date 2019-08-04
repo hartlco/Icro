@@ -19,8 +19,9 @@ platform :ios do
   desc "Run unit tests"
   lane :tests do
     run_tests(workspace: "Icro.xcworkspace",
-            devices: ["iPhone Xs"],
-            scheme: "Icro")
+              derived_data_path: "derivedData",
+              devices: ["iPhone Xs"],
+              scheme: "Icro")
   end
 
   desc "Push a new beta build to TestFlight"
