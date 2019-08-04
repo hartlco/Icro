@@ -66,12 +66,17 @@
 		5B1E73C622F54E02001A43F2 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E73C322F54E02001A43F2 /* Symbol.swift */; };
 		5B1E73C722F54E32001A43F2 /* UIImage+TypedSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E73C122F54E02001A43F2 /* UIImage+TypedSymbol.swift */; };
 		5B1E73C822F54E32001A43F2 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E73C322F54E02001A43F2 /* Symbol.swift */; };
+		5B20951B22F6B03400C06123 /* VerticalTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20951A22F6B03400C06123 /* VerticalTabView.swift */; };
+		5B20951D22F6B05800C06123 /* VerticalTabsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20951C22F6B05800C06123 /* VerticalTabsSplitViewController.swift */; };
+		5B20951F22F6B0B900C06123 /* UserActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20951E22F6B0B900C06123 /* UserActivities.swift */; };
+		5B20952122F6B0CF00C06123 /* acknowledgements.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B20952022F6B0CF00C06123 /* acknowledgements.json */; };
+		5B20952322F6B12300C06123 /* VerticalTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20952222F6B12300C06123 /* VerticalTabViewModel.swift */; };
+		5B20952522F6B14E00C06123 /* CatalystToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20952422F6B14E00C06123 /* CatalystToolbar.swift */; };
 		5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */; };
 		5B28C8C822C87BFA00A46C52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8C722C87BFA00A46C52 /* Kingfisher */; };
 		5B28C8CC22C87C6C00A46C52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8CB22C87C6C00A46C52 /* Kingfisher */; };
 		5B28C8CE22C89A1D00A46C52 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */; };
 		5B28C8D022C89B2600A46C52 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CF22C89B2600A46C52 /* UserListView.swift */; };
-		5B28FF2F22ED87AD006E20CA /* UserActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28FF2E22ED87AD006E20CA /* UserActivities.swift */; };
 		5B2EF3DD22E827C5006931A7 /* CSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EF3D422E827C5006931A7 /* CSS.swift */; };
 		5B2EF3DE22E827C5006931A7 /* CSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EF3D422E827C5006931A7 /* CSS.swift */; };
 		5B2EF3DF22E827C5006931A7 /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EF3D522E827C5006931A7 /* Deprecated.swift */; };
@@ -124,10 +129,7 @@
 		5B3C79D421C5238800F699B8 /* IcroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */; };
 		5B3C79D621C52D2C00F699B8 /* KeyboardLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */; };
 		5B3C79D721C52EB100F699B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
-		5B4365FE22E97D460043CEB0 /* acknowledgements.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B4365FD22E97D460043CEB0 /* acknowledgements.json */; };
 		5B44C71720979CF20003B35D /* MuteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71620979CF20003B35D /* MuteViewModel.swift */; };
-		5B44C8DF22E1977A005A9614 /* VerticalTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C8DE22E1977A005A9614 /* VerticalTabView.swift */; };
-		5B44C90122E19F94005A9614 /* VerticalTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C90022E19F94005A9614 /* VerticalTabViewModel.swift */; };
 		5B4895F222B1603E00CF08C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4895F122B1603E00CF08C2 /* SceneDelegate.swift */; };
 		5B4DF0EE21AA8496008CEB58 /* LoadMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BBC6703218EB0150090629C /* LoadMoreTableViewCell.xib */; };
 		5B4DF0F121AA8818008CEB58 /* ListViewModelListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DF0F021AA8818008CEB58 /* ListViewModelListType.swift */; };
@@ -143,8 +145,6 @@
 		5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
 		5B69E65122AA16310081CDFB /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsContentView.swift */; };
 		5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
-		5B6FBE7822E2F30B006F6058 /* VerticalTabsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBE7722E2F30B006F6058 /* VerticalTabsSplitViewController.swift */; };
-		5B6FBE7A22E2F89A006F6058 /* CatalystToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBE7922E2F89A006F6058 /* CatalystToolbar.swift */; };
 		5B81E79A2206C62E008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
 		5B83B00D22D06EA8004C4D8D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B00C22D06EA8004C4D8D /* Alamofire */; };
 		5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01A22D11B3D004C4D8D /* KeychainAccess */; };
@@ -342,10 +342,15 @@
 		5B165D8722BF436D00B851B2 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TipJarView.swift; path = View/TipJarView.swift; sourceTree = "<group>"; };
 		5B1E73C122F54E02001A43F2 /* UIImage+TypedSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+TypedSymbol.swift"; sourceTree = "<group>"; };
 		5B1E73C322F54E02001A43F2 /* Symbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
+		5B20951A22F6B03400C06123 /* VerticalTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerticalTabView.swift; path = View/VerticalTabView.swift; sourceTree = "<group>"; };
+		5B20951C22F6B05800C06123 /* VerticalTabsSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerticalTabsSplitViewController.swift; path = ViewController/VerticalTabsSplitViewController.swift; sourceTree = "<group>"; };
+		5B20951E22F6B0B900C06123 /* UserActivities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivities.swift; path = Helper/UserActivities.swift; sourceTree = "<group>"; };
+		5B20952022F6B0CF00C06123 /* acknowledgements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = acknowledgements.json; path = Resources/acknowledgements.json; sourceTree = "<group>"; };
+		5B20952222F6B12300C06123 /* VerticalTabViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerticalTabViewModel.swift; path = ViewModel/VerticalTabViewModel.swift; sourceTree = "<group>"; };
+		5B20952422F6B14E00C06123 /* CatalystToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CatalystToolbar.swift; path = Helper/CatalystToolbar.swift; sourceTree = "<group>"; };
 		5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AcknowledgementView.swift; path = View/Settings/AcknowledgementView.swift; sourceTree = "<group>"; };
 		5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModelState.swift; path = Helper/ViewModelState.swift; sourceTree = "<group>"; };
 		5B28C8CF22C89B2600A46C52 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserListView.swift; path = View/UserListView.swift; sourceTree = "<group>"; };
-		5B28FF2E22ED87AD006E20CA /* UserActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserActivities.swift; path = ../../../../../System/Volumes/Data/Users/martin/Code/Icro/Icro/Helper/UserActivities.swift; sourceTree = "<group>"; };
 		5B2A5A7720A613EF00B54399 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableCellButton.swift; sourceTree = "<group>"; };
 		5B2EF3D422E827C5006931A7 /* CSS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSS.swift; sourceTree = "<group>"; };
@@ -374,10 +379,7 @@
 		5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutGuide.swift; sourceTree = "<group>"; };
 		5B3F68762098BB8800A24983 /* KeyboardInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInputView.swift; sourceTree = "<group>"; };
 		5B3F68782098BBA200A24983 /* KeyboardInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardInputView.xib; sourceTree = "<group>"; };
-		5B4365FD22E97D460043CEB0 /* acknowledgements.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = acknowledgements.json; path = ../../../../../System/Volumes/Data/Users/martin/Code/Icro/Icro/Resources/acknowledgements.json; sourceTree = "<group>"; };
 		5B44C71620979CF20003B35D /* MuteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuteViewModel.swift; path = ViewModel/MuteViewModel.swift; sourceTree = "<group>"; };
-		5B44C8DE22E1977A005A9614 /* VerticalTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerticalTabView.swift; path = ../../../../../System/Volumes/Data/Users/martin/Code/Icro/Icro/View/VerticalTabView.swift; sourceTree = "<group>"; };
-		5B44C90022E19F94005A9614 /* VerticalTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerticalTabViewModel.swift; path = ../../../../../System/Volumes/Data/Users/martin/Code/Icro/Icro/ViewModel/VerticalTabViewModel.swift; sourceTree = "<group>"; };
 		5B4639DC2168FE9B00200D8F /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		5B4639DE216901BE00200D8F /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		5B4639E1216908E800200D8F /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -423,8 +425,6 @@
 		5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
 		5B6BCC3221A2F233007225C2 /* LoadMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadMoreCell.xib; sourceTree = "<group>"; };
 		5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
-		5B6FBE7722E2F30B006F6058 /* VerticalTabsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerticalTabsSplitViewController.swift; path = ../../../../../System/Volumes/Data/Users/martin/Code/Icro/Icro/ViewController/VerticalTabsSplitViewController.swift; sourceTree = "<group>"; };
-		5B6FBE7922E2F89A006F6058 /* CatalystToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CatalystToolbar.swift; path = ../../../../../System/Volumes/Data/Users/martin/Code/Icro/Icro/Helper/CatalystToolbar.swift; sourceTree = "<group>"; };
 		5B81E7992206C62E008BEA16 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		5B841ECD22E832F700CDA80C /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
 		5B841ED522E83C2D00CDA80C /* DropdownTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropdownTitleView.h; sourceTree = "<group>"; };
@@ -853,7 +853,7 @@
 		5B4365FC22E97D0A0043CEB0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5B4365FD22E97D460043CEB0 /* acknowledgements.json */,
+				5B20952022F6B0CF00C06123 /* acknowledgements.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -948,7 +948,7 @@
 				5B8754FC2070139F00018DFA /* ListViewController.xib */,
 				5B8754F92070137300018DFA /* TabBarViewController.swift */,
 				5B689BAB20837ECE005B9874 /* TabBarViewController.xib */,
-				5B6FBE7722E2F30B006F6058 /* VerticalTabsSplitViewController.swift */,
+				5B20951C22F6B05800C06123 /* VerticalTabsSplitViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1124,7 +1124,7 @@
 				5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */,
 				5B44C71620979CF20003B35D /* MuteViewModel.swift */,
 				5B38475E21FDFEFD00F082AD /* TipJarViewModel.swift */,
-				5B44C90022E19F94005A9614 /* VerticalTabViewModel.swift */,
+				5B20952222F6B12300C06123 /* VerticalTabViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -1141,7 +1141,7 @@
 				5B51621A22B2C900009C0064 /* LoginView.swift */,
 				5B165D8722BF436D00B851B2 /* TipJarView.swift */,
 				5B28C8CF22C89B2600A46C52 /* UserListView.swift */,
-				5B44C8DE22E1977A005A9614 /* VerticalTabView.swift */,
+				5B20951A22F6B03400C06123 /* VerticalTabView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1156,9 +1156,9 @@
 				5B99C679229FB47200437552 /* UITableView+Keyboard.swift */,
 				5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */,
 				5B11A46622C8A5C70095E068 /* NetworkImage.swift */,
-				5B6FBE7922E2F89A006F6058 /* CatalystToolbar.swift */,
-				5B28FF2E22ED87AD006E20CA /* UserActivities.swift */,
 				5B39A4CD22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift */,
+				5B20951E22F6B0B900C06123 /* UserActivities.swift */,
+				5B20952422F6B14E00C06123 /* CatalystToolbar.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -1471,7 +1471,7 @@
 				5B3C79BE21C50A6600F699B8 /* ListViewController.xib in Resources */,
 				5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */,
 				C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */,
-				5B4365FE22E97D460043CEB0 /* acknowledgements.json in Resources */,
+				5B20952122F6B0CF00C06123 /* acknowledgements.json in Resources */,
 				5B841ED922E83C2D00CDA80C /* Assets.xcassets in Resources */,
 				5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */,
 			);
@@ -1613,10 +1613,10 @@
 				5B39B7BE22AD504A004D5134 /* ListView.swift in Sources */,
 				5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */,
 				5B01A78D22E82CFA00D420BD /* Bool.swift in Sources */,
-				5B44C90122E19F94005A9614 /* VerticalTabViewModel.swift in Sources */,
 				5B2EF3E322E827C5006931A7 /* libxmlHTMLDocument.swift in Sources */,
 				5B01A78E22E82CFA00D420BD /* CGRect.swift in Sources */,
 				5B01A78A22E82CFA00D420BD /* UIViewController.swift in Sources */,
+				5B20951F22F6B0B900C06123 /* UserActivities.swift in Sources */,
 				5B01A77E22E82CFA00D420BD /* VideoView.swift in Sources */,
 				5B1E73C622F54E02001A43F2 /* Symbol.swift in Sources */,
 				5B01A79022E82CFA00D420BD /* UIScreen.swift in Sources */,
@@ -1633,15 +1633,15 @@
 				5B01A79322E82CFA00D420BD /* GalleryItemsDelegate.swift in Sources */,
 				5BCD7F0222BDE35D00CA5B6C /* MuteView.swift in Sources */,
 				5B01A77F22E82CFA00D420BD /* ThumbnailsViewController.swift in Sources */,
-				5B28FF2F22ED87AD006E20CA /* UserActivities.swift in Sources */,
 				5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */,
 				5B39A4CE22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift in Sources */,
 				5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */,
 				5B2EF3E522E827C5006931A7 /* libxmlHTMLNode.swift in Sources */,
 				5B01A78C22E82CFA00D420BD /* AVPlayer.swift in Sources */,
-				5B6FBE7A22E2F89A006F6058 /* CatalystToolbar.swift in Sources */,
+				5B20952522F6B14E00C06123 /* CatalystToolbar.swift in Sources */,
 				5B3C79C221C518B700F699B8 /* MainNavigator.swift in Sources */,
 				5B4895F222B1603E00CF08C2 /* SceneDelegate.swift in Sources */,
+				5B20951B22F6B03400C06123 /* VerticalTabView.swift in Sources */,
 				5B841EDA22E83C2D00CDA80C /* DropdownTitleView.swift in Sources */,
 				5BD9690F21C8D55400313795 /* ComposeNavigator.swift in Sources */,
 				5B38476921FE073800F082AD /* UIView+Contraints.swift in Sources */,
@@ -1658,7 +1658,6 @@
 				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
 				5B01A78222E82CFA00D420BD /* GalleryItemsDataSource.swift in Sources */,
 				5B01A78022E82CFA00D420BD /* ThumbnailCell.swift in Sources */,
-				5B6FBE7822E2F30B006F6058 /* VerticalTabsSplitViewController.swift in Sources */,
 				C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */,
 				5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */,
 				5B01A79822E82CFA00D420BD /* GalleryViewController.swift in Sources */,
@@ -1673,17 +1672,18 @@
 				5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */,
 				5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */,
 				5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */,
+				5B20952322F6B12300C06123 /* VerticalTabViewModel.swift in Sources */,
 				5B01A77A22E82CFA00D420BD /* BlurView.swift in Sources */,
 				5B01A78922E82CFA00D420BD /* UIButton.swift in Sources */,
 				5B01A78622E82CFA00D420BD /* CGSize.swift in Sources */,
 				5B01A79222E82CFA00D420BD /* CAShapeLayer.swift in Sources */,
+				5B20951D22F6B05800C06123 /* VerticalTabsSplitViewController.swift in Sources */,
 				5B3C79BA21C50A6200F699B8 /* ListViewController.swift in Sources */,
 				5BF2DAA6228802000055240D /* UserDefaultsMigrationComponent.swift in Sources */,
 				5B28C8CE22C89A1D00A46C52 /* ViewModelState.swift in Sources */,
 				5B38475F21FDFEFD00F082AD /* TipJarViewModel.swift in Sources */,
 				5B01A7C622E8313200D420BD /* UICollectionView+Dequeueable.swift in Sources */,
 				5B01A78822E82CFA00D420BD /* CGPoint.swift in Sources */,
-				5B44C8DF22E1977A005A9614 /* VerticalTabView.swift in Sources */,
 				5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */,
 				5B01A77C22E82CFA00D420BD /* VideoScrubber.swift in Sources */,
 			);
