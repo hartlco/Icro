@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 final class LoginViewModel: ObservableObject {
-    let willChange = PassthroughSubject<LoginViewModel, Never>()
+    let objectWillChange = ObservableObjectPublisher()
 
     enum LoginType {
         case mail
@@ -21,19 +21,19 @@ final class LoginViewModel: ObservableObject {
 
     private var didRequest = false {
         willSet {
-            willChange.send(self)
+            objectWillChange.send()
         }
     }
 
     var isLoading = false {
         willSet {
-            willChange.send(self)
+            objectWillChange.send()
         }
     }
 
     var loginString = "" {
         willSet {
-            willChange.send(self)
+            objectWillChange.send()
         }
 
         didSet {
@@ -57,7 +57,7 @@ final class LoginViewModel: ObservableObject {
 
     var infoMessage: String? {
         willSet {
-            willChange.send(self)
+            objectWillChange.send()
         }
     }
 

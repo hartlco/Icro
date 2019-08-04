@@ -8,8 +8,8 @@ import IcroKit
 import SwiftUI
 import Combine
 
-final class UserListViewModel: BindableObject {
-    var willChange = PassthroughSubject<Void, Never>()
+final class UserListViewModel: ObservableObject {
+    var objectWillChange = ObservableObjectPublisher()
 
     var users: [Author] {
         if case .loaded(let authors) = state {
@@ -24,7 +24,7 @@ final class UserListViewModel: BindableObject {
 
     private var state: ViewModelState<[Author]> = .initial {
         willSet {
-            willChange.send()
+            objectWillChange.send()
         }
     }
 

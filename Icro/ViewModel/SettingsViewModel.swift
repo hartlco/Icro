@@ -15,7 +15,7 @@ final class SettingsViewModel: ObservableObject {
         case none
     }
 
-    var willChange = PassthroughSubject<Void, Never>()
+    var objectWillChange = ObservableObjectPublisher()
 
     private let userSettings: UserSettings
 
@@ -93,7 +93,7 @@ final class SettingsViewModel: ObservableObject {
     let wordpressSwitchTitle = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGSETUPSWITCH_TEXT", comment: "")
 
     private func updateSetup() {
-        willChange.send()
+        objectWillChange.send()
 
         if isWordpressBlog,
             !wordpressURL.isEmpty,

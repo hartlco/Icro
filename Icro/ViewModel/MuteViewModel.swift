@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 final class MuteViewModel: ObservableObject {
-    var willChange = PassthroughSubject<Void, Never>()
+    var objectWillChange = ObservableObjectPublisher()
 
     private let userSettings: UserSettings
 
@@ -22,12 +22,12 @@ final class MuteViewModel: ObservableObject {
     }
 
     func add(word: String?) {
-        willChange.send()
+        objectWillChange.send()
         userSettings.addToBlacklist(word: word)
     }
 
     func remove(at index: Int) {
-        willChange.send()
+        objectWillChange.send()
         userSettings.removeIndexFromBlacklist(index: index)
     }
 

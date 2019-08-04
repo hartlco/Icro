@@ -19,17 +19,17 @@ final class VerticalTabViewModel: ObservableObject {
         updateTabs()
     }
 
-    var willChange = PassthroughSubject<Void, Never>()
+    var objectWillChange = ObservableObjectPublisher()
 
     private var selectedTab: HorizontalTab {
         willSet {
-            willChange.send()
+            objectWillChange.send()
         }
     }
 
     private(set)var tabs: [HorizontalTab] = [] {
         willSet {
-            willChange.send()
+            objectWillChange.send()
         }
     }
 

@@ -10,12 +10,12 @@ import SwiftUI
 import Combine
 
 final class TipJarViewModel: NSObject, ObservableObject {
-    var willChange = PassthroughSubject<Void, Never>()
+    var objectWillChange = ObservableObjectPublisher()
 
     private(set) var state = State.unloaded {
         willSet {
             DispatchQueue.main.async {
-                self.willChange.send()
+                self.objectWillChange.send()
             }
         }
 
@@ -27,7 +27,7 @@ final class TipJarViewModel: NSObject, ObservableObject {
     private(set) var products = [InAppPurchaseProduct]() {
         willSet {
             DispatchQueue.main.async {
-                self.willChange.send()
+                self.objectWillChange.send()
             }
         }
     }

@@ -421,7 +421,7 @@ public class ListViewModel: NSObject {
             viewTypes.append(.loadMore(index: items.count - 1))
         }
 
-        if showLoadMoreInBetween != 0, supportedLodMoreTypes {
+        if showLoadMoreInBetween != 0, supportedLodMoreTypes, !viewTypes.isEmpty {
             viewTypes.insert(.loadMore(index: showLoadMoreInBetween), at: showLoadMoreInBetween)
         }
 
