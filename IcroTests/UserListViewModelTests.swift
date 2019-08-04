@@ -4,6 +4,7 @@
 //
 
 import XCTest
+@testable import Icro
 @testable import IcroKit
 
 class UserListViewModelTests: XCTestCase {

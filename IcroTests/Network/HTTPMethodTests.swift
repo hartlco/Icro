@@ -3,7 +3,9 @@
 //  Copyright © 2019 Martin Hartl. All rights reserved.
 //
 
+import UIKit
 import XCTest
+@testable import Icro
 @testable import IcroKit
 
 class HTTPMethodTests: XCTestCase {
