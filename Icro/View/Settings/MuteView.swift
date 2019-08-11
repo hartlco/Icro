@@ -18,8 +18,15 @@ struct MuteView: View {
             Section {
                 ForEach(viewModel.words, id: \.self) { word in
                     Text(word)
+                    .contextMenu {
+                        Button(action: {
+                            self.viewModel.remove(word: word)
+                        }, label: {
+                            Text("Delete")
+                        })
                     }
-                    .onDelete(perform: delete)
+                }
+                .onDelete(perform: delete)
             }
             Section(header: Text("BLACKLISTVIEWCONTROLLER_ADDALERT_MESSAGE")) {
                 TextField("BLACKLISTVIEWCONTROLLER_ADDALERT_PLACEHOLDER",

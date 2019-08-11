@@ -202,6 +202,11 @@ public final class UserSettings {
         blacklist = array
     }
 
+    public func removeWordFromBlacklist(word: String) {
+        guard let index = blacklist.firstIndex(of: word) else { return }
+        removeIndexFromBlacklist(index: index)
+    }
+
     public var blacklist: [String] {
         set {
             if newValue != blacklist {

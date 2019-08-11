@@ -31,6 +31,11 @@ final class MuteViewModel: ObservableObject {
         userSettings.removeIndexFromBlacklist(index: index)
     }
 
+    func remove(word: String) {
+        objectWillChange.send()
+        userSettings.removeWordFromBlacklist(word: word)
+    }
+
     var title: String {
         return NSLocalizedString("BLACKLISTVIEWMODEL_TITLE", comment: "")
     }
