@@ -58,6 +58,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore
         MainMenuActionNotifier().handleMainMenuCommand(command: command)
     }
 
+    @objc func handleMainMenuTimelineCommand(command: UIKeyCommand) {
+        MainMenuActionNotifier().handleMainMenuCommand(command: command)
+    }
+
+    @objc func handleMainMenuMentionsCommand(command: UIKeyCommand) {
+        MainMenuActionNotifier().handleMainMenuCommand(command: command)
+    }
+
+    @objc func handleMainMenuFavoritesCommand(command: UIKeyCommand) {
+        MainMenuActionNotifier().handleMainMenuCommand(command: command)
+    }
+
+    @objc func handleMainMenuDiscoverCommand(command: UIKeyCommand) {
+        MainMenuActionNotifier().handleMainMenuCommand(command: command)
+    }
+
+    @objc func handleMainMenuProfileCommand(command: UIKeyCommand) {
+        MainMenuActionNotifier().handleMainMenuCommand(command: command)
+    }
+
     private func handleMainMenuCommand(command: UIKeyCommand) {
         MainMenuActionNotifier().handleMainMenuCommand(command: command)
     }

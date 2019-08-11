@@ -3,7 +3,7 @@
 //  Copyright © 2019 Martin Hartl. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIKeyCommand {
     var mainMenuKeyCommand: MainMenuKeyCommand? {
@@ -18,6 +18,11 @@ enum MainMenuKeyCommand: CaseIterable {
     case refresh
     case compose
     case settings
+    case timeline
+    case mentions
+    case favorites
+    case discover
+    case profile
 
     var command: UIKeyCommand {
         let config = configuration
@@ -37,6 +42,16 @@ enum MainMenuKeyCommand: CaseIterable {
             return ("N", [.command], "New Post", #selector(AppDelegate.handleMainMenuComposeCommand(command:)))
         case .settings:
             return (",", [.command], "Settings", #selector(AppDelegate.handleMainMenuSettingsCommand(command:)))
+        case .timeline:
+            return ("1", [.command], "Timeline", #selector(AppDelegate.handleMainMenuTimelineCommand(command:)))
+        case .mentions:
+            return ("2", [.command], "Mentions", #selector(AppDelegate.handleMainMenuMentionsCommand(command:)))
+        case .favorites:
+            return ("3", [.command], "Favorites", #selector(AppDelegate.handleMainMenuFavoritesCommand(command:)))
+        case .discover:
+            return ("4", [.command], "Discover", #selector(AppDelegate.handleMainMenuDiscoverCommand(command:)))
+        case .profile:
+            return ("5", [.command], "Profile", #selector(AppDelegate.handleMainMenuProfileCommand(command:)))
         }
     }
 
@@ -48,6 +63,8 @@ enum MainMenuKeyCommand: CaseIterable {
             return .mainMenuCompose
         case .settings:
             return .mainMenuSettings
+        case .timeline, .mentions, .favorites, .discover, .profile:
+            return .mainMenuTabChange
         }
     }
 }
@@ -56,14 +73,21 @@ extension Notification.Name {
     static let mainMenuRefresh = Notification.Name("mainMenuRefresh")
     static let mainMenuCompose = Notification.Name("mainMenuCompose")
     static let mainMenuSettings = Notification.Name("mainMenuSettings")
+    static let mainMenuTabChange = Notification.Name("mainMenuTabChange")
 }
 
 final class MainMenuActionNotifier {
+    private let notificationCenter: NotificationCenter
+
+    init(notificationCenter: NotificationCenter = .default) {
+        self.notificationCenter = notificationCenter
+    }
+
     func handleMainMenuCommand(command: UIKeyCommand) {
         guard let name = command.mainMenuKeyCommand?.notificationName else {
             return
         }
 
-        NotificationCenter.default.post(name: name, object: command)
+        notificationCenter.post(name: name, object: command)
     }
 }

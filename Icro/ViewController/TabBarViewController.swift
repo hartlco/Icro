@@ -97,8 +97,13 @@ final class TabBarViewController: UITabBarController {
                                        object: nil)
         notificationCenter.addObserver(self,
                                        selector: #selector(showSettingsViewController),
-        name: .mainMenuSettings,
-        object: nil)
+                                       name: .mainMenuSettings,
+                                       object: nil)
+
+        notificationCenter.addObserver(self,
+                                       selector: #selector(handleMainMenuShortcut(notification:)),
+                                       name: .mainMenuTabChange,
+                                       object: nil)
     }
 
     func reload() {
@@ -170,5 +175,13 @@ extension TabBarViewController {
             index < types.count + 1 else { return }
         selectedIndex = index - 1
         didSwitchToIndexByCommand(selectedIndex)
+    }
+
+    @objc private func handleMainMenuShortcut(notification: Notification) {
+        guard let sender = notification.object as? UIKeyCommand else {
+            return
+        }
+
+        selectType(sender: sender)
     }
 }
