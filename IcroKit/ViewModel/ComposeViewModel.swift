@@ -117,6 +117,10 @@ public final class ComposeViewModel {
     }
 
     public func removeImage(at index: Int) {
+        guard images.count > index else {
+            return
+        }
+        
         images.remove(at: index)
         didUpdateImages?()
     }
