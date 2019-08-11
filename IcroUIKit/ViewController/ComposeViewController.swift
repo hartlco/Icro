@@ -128,7 +128,12 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
 
         keyboardInputView.imageButton.isHidden = !viewModel.canUploadImage
 
-        textView.inputAccessoryView = keyboardInputView
+        view.addSubview(keyboardInputView)
+        if let layoutGuide = layoutGuide {
+            keyboardInputView.bottomAnchor.constraint(equalTo: layoutGuide.topGuide.topAnchor).isActive = true
+            keyboardInputView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            keyboardInputView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        }
     }
 
     @objc private func cancel() {
