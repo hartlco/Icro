@@ -11,21 +11,28 @@ import SwiftUI
 final class TabBarViewController: UITabBarController {
     private let userSettings: UserSettings
     private let appNavigator: AppNavigator
+    private let notificationCenter: NotificationCenter
     private var types: [ListViewModel.ListType]
     private var previousViewController: UIViewController?
 
     var didSwitchToIndexByCommand: (Int) -> Void = { _ in }
 
     init(userSettings: UserSettings,
-         appNavigator: AppNavigator) {
+         appNavigator: AppNavigator,
+         notificationCenter: NotificationCenter = .default) {
         self.userSettings = userSettings
         self.appNavigator = appNavigator
+        self.notificationCenter = notificationCenter
         self.types = ListViewModel.ListType.standardTabs(from: userSettings)
 
         super.init(nibName: "TabBarViewController", bundle: nil)
         commonInit()
         view.tintColor = Color.main
         delegate = self
+    }
+
+    override var canBecomeFirstResponder: Bool {
+        return true
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -80,6 +87,18 @@ final class TabBarViewController: UITabBarController {
 
         setViewControllers(viewControllers, animated: false)
         previousViewController = viewControllers.first
+        setupMainMenuNotifications()
+    }
+
+    private func setupMainMenuNotifications() {
+        notificationCenter.addObserver(self,
+                                       selector: #selector(showComposeViewController),
+                                       name: .mainMenuCompose,
+                                       object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(showSettingsViewController),
+        name: .mainMenuSettings,
+        object: nil)
     }
 
     func reload() {

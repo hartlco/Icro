@@ -62,6 +62,7 @@ final class ListViewController: UIViewController, LoadingViewController {
         super.viewDidLoad()
 
         setupDataSource()
+        setupMainMenuNotification()
         updateUnread()
 
         notificationCenter.addObserver(self, selector: #selector(refreshContent),
@@ -292,6 +293,13 @@ extension ListViewController: ScrollToTop {
 }
 
 extension ListViewController {
+    func setupMainMenuNotification() {
+        notificationCenter.addObserver(self,
+                                       selector: #selector(refreshFromCommand),
+                                       name: .mainMenuRefresh,
+                                       object: nil)
+    }
+
     override var keyCommands: [UIKeyCommand]? {
         let refreshCommand = UIKeyCommand(input: "r",
                                           modifierFlags: .command,
@@ -317,6 +325,8 @@ extension ListViewController {
                                                  modifierFlags: [.shift, .command],
                                                  action: #selector(scrollToBottomFromCommand))
         scrollToBottomCommand.discoverabilityTitle = "Scroll to bottom"
+
+        addKeyCommand(scrollUpCommand)
 
         return [refreshCommand, scrollUpCommand, scrollDownCommand, scrollToTopCommand, scrollToBottomCommand]
     }

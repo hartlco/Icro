@@ -10,7 +10,13 @@ import IcroKit
 import AppKit
 #endif
 
+protocol CatalystToolbarDelegate: class {
+    func didRequestToOpenCompose()
+}
+
 final class CatalystToolbar: NSObject {
+    weak var delegate: CatalystToolbarDelegate?
+
     private let items: [ListViewModel.ListType] = ListViewModel.ListType.standardTabs(from: UserSettings.shared)
 
     #if targetEnvironment(macCatalyst)
@@ -81,12 +87,7 @@ extension CatalystToolbar: NSToolbarDelegate {
     }
 
     @objc private func openNewWindow() {
-        let userActivity = NSUserActivity(activityType: UserActivities.compose.rawValue)
-        UIApplication.shared.requestSceneSessionActivation(nil,
-                                                           userActivity: userActivity,
-                                                           options: nil,
-                                                           errorHandler: { _ in
-        })
+        delegate?.didRequestToOpenCompose()
     }
 }
 #endif

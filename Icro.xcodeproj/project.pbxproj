@@ -73,8 +73,6 @@
 		5B20952322F6B12300C06123 /* VerticalTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20952222F6B12300C06123 /* VerticalTabViewModel.swift */; };
 		5B20952522F6B14E00C06123 /* CatalystToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20952422F6B14E00C06123 /* CatalystToolbar.swift */; };
 		5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */; };
-		5B28C8C822C87BFA00A46C52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8C722C87BFA00A46C52 /* Kingfisher */; };
-		5B28C8CC22C87C6C00A46C52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B28C8CB22C87C6C00A46C52 /* Kingfisher */; };
 		5B28C8CE22C89A1D00A46C52 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CD22C89A1D00A46C52 /* ViewModelState.swift */; };
 		5B28C8D022C89B2600A46C52 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CF22C89B2600A46C52 /* UserListView.swift */; };
 		5B2EF3DD22E827C5006931A7 /* CSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EF3D422E827C5006931A7 /* CSS.swift */; };
@@ -156,6 +154,10 @@
 		5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B869B07214E4633000A051C /* MicropubEndpoint.swift */; };
 		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
 		5B99C67A229FB47200437552 /* UITableView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99C679229FB47200437552 /* UITableView+Keyboard.swift */; };
+		5BA0C37422FE96DF00A9B44D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5BA0C37322FE96DF00A9B44D /* Kingfisher */; };
+		5BA0C37622FE96FE00A9B44D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5BA0C37522FE96FE00A9B44D /* Kingfisher */; };
+		5BA0C37822FE99E100A9B44D /* MainMenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA0C37722FE99E100A9B44D /* MainMenuBuilder.swift */; };
+		5BA0C37A22FFF24400A9B44D /* MainMenuActionNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA0C37922FFF24400A9B44D /* MainMenuActionNotifier.swift */; };
 		5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */; };
 		5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D180208904D300F484B2 /* AppNavigator.swift */; };
 		5BB3E470226C514C00C1B6BB /* IcroScreenshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB3E46F226C514C00C1B6BB /* IcroScreenshotsTests.swift */; };
@@ -435,6 +437,8 @@
 		5B8754F92070137300018DFA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
 		5B8754FC2070139F00018DFA /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		5B99C679229FB47200437552 /* UITableView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+Keyboard.swift"; path = "Helper/UITableView+Keyboard.swift"; sourceTree = "<group>"; };
+		5BA0C37722FE99E100A9B44D /* MainMenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainMenuBuilder.swift; path = Helper/MainMenuBuilder.swift; sourceTree = "<group>"; };
+		5BA0C37922FFF24400A9B44D /* MainMenuActionNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainMenuActionNotifier.swift; path = Helper/MainMenuActionNotifier.swift; sourceTree = "<group>"; };
 		5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Loading.swift"; sourceTree = "<group>"; };
 		5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = ViewModel/LoginViewModel.swift; sourceTree = "<group>"; };
 		5BA6D180208904D300F484B2 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppNavigator.swift; path = Navigator/AppNavigator.swift; sourceTree = "<group>"; };
@@ -508,7 +512,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B28C8CC22C87C6C00A46C52 /* Kingfisher in Frameworks */,
 				5BC1384921C69BB80040353C /* IcroKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +535,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA0C37622FE96FE00A9B44D /* Kingfisher in Frameworks */,
 				5B83B00D22D06EA8004C4D8D /* Alamofire in Frameworks */,
 				5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */,
 				5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */,
@@ -542,12 +546,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA0C37422FE96DF00A9B44D /* Kingfisher in Frameworks */,
 				5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */,
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
 				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
 				5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
-				5B28C8C822C87BFA00A46C52 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1161,6 +1165,8 @@
 				5B39A4CD22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift */,
 				5B20951E22F6B0B900C06123 /* UserActivities.swift */,
 				5B20952422F6B14E00C06123 /* CatalystToolbar.swift */,
+				5BA0C37722FE99E100A9B44D /* MainMenuBuilder.swift */,
+				5BA0C37922FFF24400A9B44D /* MainMenuActionNotifier.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -1227,7 +1233,6 @@
 			);
 			name = IcroUIKit;
 			packageProductDependencies = (
-				5B28C8CB22C87C6C00A46C52 /* Kingfisher */,
 			);
 			productName = IcroUIKit;
 			productReference = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */;
@@ -1286,6 +1291,7 @@
 			packageProductDependencies = (
 				5B83B00C22D06EA8004C4D8D /* Alamofire */,
 				5B83B01C22D11D64004C4D8D /* KeychainAccess */,
+				5BA0C37522FE96FE00A9B44D /* Kingfisher */,
 			);
 			productName = IcroKit;
 			productReference = 5BC347AE2132944900DEB45D /* IcroKit.framework */;
@@ -1311,9 +1317,9 @@
 			);
 			name = Icro;
 			packageProductDependencies = (
-				5B28C8C722C87BFA00A46C52 /* Kingfisher */,
 				5B83B01A22D11B3D004C4D8D /* KeychainAccess */,
 				5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */,
+				5BA0C37322FE96DF00A9B44D /* Kingfisher */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -1396,10 +1402,10 @@
 			);
 			mainGroup = C5FA2AB71EB4482C006DEB40;
 			packageReferences = (
-				5B28C8C622C87BFA00A46C52 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */,
+				5BA0C37222FE96DF00A9B44D /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = C5FA2AC11EB4482C006DEB40 /* Products */;
 			projectDirPath = "";
@@ -1657,6 +1663,7 @@
 				5B2EF3E122E827C5006931A7 /* libxmlParserOption.swift in Sources */,
 				5B01A77922E82CFA00D420BD /* UtilityFunctions.swift in Sources */,
 				5B01A79422E82CFA00D420BD /* GalleryItem.swift in Sources */,
+				5BA0C37A22FFF24400A9B44D /* MainMenuActionNotifier.swift in Sources */,
 				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
 				5B01A78222E82CFA00D420BD /* GalleryItemsDataSource.swift in Sources */,
 				5B01A78022E82CFA00D420BD /* ThumbnailCell.swift in Sources */,
@@ -1671,6 +1678,7 @@
 				5B01A78122E82CFA00D420BD /* ImageViewController.swift in Sources */,
 				5B01A79B22E82CFA00D420BD /* GalleryPagingDataSource.swift in Sources */,
 				5BD95AFD2290A16100C74C52 /* AppearanceComponent.swift in Sources */,
+				5BA0C37822FE99E100A9B44D /* MainMenuBuilder.swift in Sources */,
 				5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */,
 				5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */,
 				5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */,
@@ -2335,14 +2343,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5B28C8C622C87BFA00A46C52 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher/";
-			requirement = {
-				branch = xcode11;
-				kind = branch;
-			};
-		};
 		5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -2359,6 +2359,14 @@
 				kind = branch;
 			};
 		};
+		5BA0C37222FE96DF00A9B44D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = xcode11;
+				kind = branch;
+			};
+		};
 		5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/AppDelegateComponent";
@@ -2370,16 +2378,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5B28C8C722C87BFA00A46C52 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B28C8C622C87BFA00A46C52 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		5B28C8CB22C87C6C00A46C52 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B28C8C622C87BFA00A46C52 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
 		5B83B00C22D06EA8004C4D8D /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */;
@@ -2394,6 +2392,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		5BA0C37322FE96DF00A9B44D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BA0C37222FE96DF00A9B44D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		5BA0C37522FE96FE00A9B44D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BA0C37222FE96DF00A9B44D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */ = {
 			isa = XCSwiftPackageProductDependency;

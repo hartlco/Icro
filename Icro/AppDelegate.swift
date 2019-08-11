@@ -12,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore
     let storedComponents: [AppDelegateComponent] = [DiscoveryCategoryComponent(),
                                                     UserDefaultsMigrationComponent()]
     private let componentRunner = AppDelegateComponentRunner()
+    private let mainMenuBuilder = MainMenuBuilder()
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -38,5 +39,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore
         let configuration = UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
         configuration.delegateClass = SceneDelegate.self
         return configuration
+    }
+
+    override func buildMenu(with builder: UIMenuBuilder) {
+        super.buildMenu(with: builder)
+        mainMenuBuilder.buildMenu(with: builder)
+    }
+
+    @objc func handleMainMenuRefreshCommand(command: UIKeyCommand) {
+        MainMenuActionNotifier().handleMainMenuCommand(command: command)
+    }
+
+    @objc func handleMainMenuComposeCommand(command: UIKeyCommand) {
+        MainMenuActionNotifier().handleMainMenuCommand(command: command)
+    }
+
+    @objc func handleMainMenuSettingsCommand(command: UIKeyCommand) {
+        MainMenuActionNotifier().handleMainMenuCommand(command: command)
+    }
+
+    private func handleMainMenuCommand(command: UIKeyCommand) {
+        MainMenuActionNotifier().handleMainMenuCommand(command: command)
     }
 }

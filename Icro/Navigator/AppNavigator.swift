@@ -56,6 +56,8 @@ final class AppNavigator {
             guard let self = self else { return }
             self.tabBarViewController.selectedIndex = index
         }
+
+        self.catalystToolbar.delegate = self
     }
 
     func showLogin() {
@@ -153,5 +155,11 @@ final class AppNavigator {
         navController.viewControllers = [viewController]
         return navController
 
+    }
+}
+
+extension AppNavigator: CatalystToolbarDelegate {
+    func didRequestToOpenCompose() {
+        showComposeViewController()
     }
 }
