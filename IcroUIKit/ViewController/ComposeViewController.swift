@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 import IcroKit
 import Kingfisher
 
@@ -101,8 +102,9 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
         tableViewHeightConstraint.constant = tableView.contentSize.height
 
         updateImageCollection()
-
         setupKeyboardInputView()
+        let dropInteraction = UIDropInteraction(delegate: self)
+        view.addInteraction(dropInteraction)
     }
 
     override public func viewWillAppear(_ animated: Bool) {
@@ -259,5 +261,26 @@ extension ComposeViewController: UICollectionViewDelegate, UICollectionViewDataS
             self.viewModel.removeImage(at: index)
         }
         composeNavigator.open(datasource: dataSource)
+    }
+}
+
+extension ComposeViewController: UIDropInteractionDelegate {
+    public func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
+        return session.hasItemsConforming(toTypeIdentifiers: [kUTTypeImage as String]) && session.items.count == 1
+    }
+
+    public func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
+        let operation = UIDropOperation.copy
+        return UIDropProposal(operation: operation)
+    }
+
+    public func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
+        session.loadObjects(ofClass: UIImage.self) { imageItems in
+            guard let images = imageItems as? [UIImage], let firstImage = images.first else {
+                return
+            }
+
+            self.viewModel.upload(image: firstImage)
+        }
     }
 }
