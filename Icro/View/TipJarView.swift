@@ -28,9 +28,6 @@ struct TipJarView: View {
                                         .foregroundColor(.red)
                                     }
                                     .padding(.all, 8)
-                                    .border(Color.red,
-                                            width: 1,
-                                            cornerRadius: 4)
                             }
                         })
                         .padding()
