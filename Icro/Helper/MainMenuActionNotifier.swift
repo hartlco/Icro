@@ -23,6 +23,7 @@ enum MainMenuKeyCommand: CaseIterable {
     case favorites
     case discover
     case profile
+    case navigateBack
 
     var command: UIKeyCommand {
         let config = configuration
@@ -52,6 +53,8 @@ enum MainMenuKeyCommand: CaseIterable {
             return ("4", [.command], "Discover", #selector(AppDelegate.handleMainMenuDiscoverCommand(command:)))
         case .profile:
             return ("5", [.command], "Profile", #selector(AppDelegate.handleMainMenuProfileCommand(command:)))
+        case .navigateBack:
+            return (UIKeyCommand.inputLeftArrow, [.command], "Go back", #selector(AppDelegate.handleMainMenuGoBackCommand(command:)))
         }
     }
 
@@ -65,6 +68,8 @@ enum MainMenuKeyCommand: CaseIterable {
             return .mainMenuSettings
         case .timeline, .mentions, .favorites, .discover, .profile:
             return .mainMenuTabChange
+        case .navigateBack:
+            return .mainMenuNavigateBack
         }
     }
 }
@@ -74,6 +79,7 @@ extension Notification.Name {
     static let mainMenuCompose = Notification.Name("mainMenuCompose")
     static let mainMenuSettings = Notification.Name("mainMenuSettings")
     static let mainMenuTabChange = Notification.Name("mainMenuTabChange")
+    static let mainMenuNavigateBack = Notification.Name("mainMenuNavigateBack")
 }
 
 final class MainMenuActionNotifier {

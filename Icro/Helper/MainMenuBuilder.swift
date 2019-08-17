@@ -36,6 +36,12 @@ final class MainMenuBuilder {
                                     options: .displayInline,
                                     children: viewMenuChildren)
 
+        let backMenu = UIMenu(title: "Back Menu",
+                              image: nil,
+                              identifier: UIMenu.Identifier("Back Menu"),
+                              options: .displayInline,
+                              children: [MainMenuKeyCommand.navigateBack.command])
+
         let mainMenu = UIMenu(title: "Main Menu",
                               image: nil,
                               identifier: UIMenu.Identifier("Main Menu"),
@@ -44,6 +50,7 @@ final class MainMenuBuilder {
 
         builder.insertChild(reloadDataMenu, atStartOfMenu: .file)
         builder.insertSibling(mainMenu, afterMenu: .about)
+        builder.insertChild(backMenu, atStartOfMenu: .view)
         builder.insertChild(viewMenu, atStartOfMenu: .view)
     }
 }

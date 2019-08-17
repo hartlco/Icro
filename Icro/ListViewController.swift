@@ -97,6 +97,8 @@ final class ListViewController: UIViewController, LoadingViewController {
             self?.tableView.refreshControl?.endRefreshing()
             self?.showError(error: error)
         }
+
+        setupNavigateBackShortcut(with: notificationCenter)
     }
 
     deinit {
@@ -332,6 +334,7 @@ extension ListViewController {
     }
 
     @objc private func refreshFromCommand() {
+        guard isViewLoaded else { return }
         viewModel.load()
     }
 

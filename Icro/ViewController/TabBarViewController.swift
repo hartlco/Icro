@@ -49,7 +49,9 @@ final class TabBarViewController: UITabBarController {
             let viewModel = ListViewModel(type: type)
             let navigationController = UINavigationController()
             navigationController.navigationBar.isTranslucent = false
-            let itemNavigator = ItemNavigator(navigationController: navigationController, appNavigator: appNavigator)
+            let itemNavigator = ItemNavigator(navigationController: navigationController,
+                                              appNavigator: appNavigator,
+                                              notificationCenter: notificationCenter)
             let viewController = ListViewController(viewModel: viewModel, itemNavigator: itemNavigator)
             viewController.view.tintColor = Color.main
             navigationController.viewControllers = [viewController]
@@ -125,7 +127,9 @@ final class TabBarViewController: UITabBarController {
         guard let navigationController = selectedViewController as? UINavigationController else { return }
 
         let viewModel = ListViewModel(type: .photos)
-        let itemNavigator = ItemNavigator(navigationController: navigationController, appNavigator: appNavigator)
+        let itemNavigator = ItemNavigator(navigationController: navigationController,
+                                          appNavigator: appNavigator,
+                                          notificationCenter: notificationCenter)
         let viewController = ListViewController(viewModel: viewModel, itemNavigator: itemNavigator)
         navigationController.pushViewController(viewController, animated: true)
     }

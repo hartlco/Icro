@@ -40,7 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore
         configuration.delegateClass = SceneDelegate.self
         return configuration
     }
+}
 
+// MARK: - Main Menu
+
+extension AppDelegate {
     override func buildMenu(with builder: UIMenuBuilder) {
         super.buildMenu(with: builder)
         mainMenuBuilder.buildMenu(with: builder)
@@ -78,7 +82,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore
         MainMenuActionNotifier().handleMainMenuCommand(command: command)
     }
 
+    @objc func handleMainMenuGoBackCommand(command: UIKeyCommand) {
+        MainMenuActionNotifier().handleMainMenuCommand(command: command)
+    }
+
     private func handleMainMenuCommand(command: UIKeyCommand) {
         MainMenuActionNotifier().handleMainMenuCommand(command: command)
     }
+
 }

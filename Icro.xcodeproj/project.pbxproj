@@ -158,6 +158,7 @@
 		5BA0C37622FE96FE00A9B44D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5BA0C37522FE96FE00A9B44D /* Kingfisher */; };
 		5BA0C37822FE99E100A9B44D /* MainMenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA0C37722FE99E100A9B44D /* MainMenuBuilder.swift */; };
 		5BA0C37A22FFF24400A9B44D /* MainMenuActionNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA0C37922FFF24400A9B44D /* MainMenuActionNotifier.swift */; };
+		5BA0C37C2300610E00A9B44D /* UIViewController+ViewVisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA0C37B2300610E00A9B44D /* UIViewController+ViewVisible.swift */; };
 		5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */; };
 		5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D180208904D300F484B2 /* AppNavigator.swift */; };
 		5BB3E470226C514C00C1B6BB /* IcroScreenshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB3E46F226C514C00C1B6BB /* IcroScreenshotsTests.swift */; };
@@ -439,6 +440,7 @@
 		5B99C679229FB47200437552 /* UITableView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+Keyboard.swift"; path = "Helper/UITableView+Keyboard.swift"; sourceTree = "<group>"; };
 		5BA0C37722FE99E100A9B44D /* MainMenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainMenuBuilder.swift; path = Helper/MainMenuBuilder.swift; sourceTree = "<group>"; };
 		5BA0C37922FFF24400A9B44D /* MainMenuActionNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainMenuActionNotifier.swift; path = Helper/MainMenuActionNotifier.swift; sourceTree = "<group>"; };
+		5BA0C37B2300610E00A9B44D /* UIViewController+ViewVisible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+ViewVisible.swift"; path = "Helper/UIViewController+ViewVisible.swift"; sourceTree = "<group>"; };
 		5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Loading.swift"; sourceTree = "<group>"; };
 		5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = ViewModel/LoginViewModel.swift; sourceTree = "<group>"; };
 		5BA6D180208904D300F484B2 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppNavigator.swift; path = Navigator/AppNavigator.swift; sourceTree = "<group>"; };
@@ -1167,6 +1169,7 @@
 				5B20952422F6B14E00C06123 /* CatalystToolbar.swift */,
 				5BA0C37722FE99E100A9B44D /* MainMenuBuilder.swift */,
 				5BA0C37922FFF24400A9B44D /* MainMenuActionNotifier.swift */,
+				5BA0C37B2300610E00A9B44D /* UIViewController+ViewVisible.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -1669,6 +1672,7 @@
 				5B01A78022E82CFA00D420BD /* ThumbnailCell.swift in Sources */,
 				C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */,
 				5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */,
+				5BA0C37C2300610E00A9B44D /* UIViewController+ViewVisible.swift in Sources */,
 				5B01A79822E82CFA00D420BD /* GalleryViewController.swift in Sources */,
 				5B01A79A22E82CFA00D420BD /* VideoViewController.swift in Sources */,
 				5B01A79922E82CFA00D420BD /* Slider.swift in Sources */,

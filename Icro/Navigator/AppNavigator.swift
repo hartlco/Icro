@@ -23,13 +23,16 @@ final class AppNavigator {
     private let catalystToolbar = CatalystToolbar()
     private let verticalTabViewModel: VerticalTabViewModel
     private let device: UIDevice
+    private let notificationCenter: NotificationCenter
 
     init(window: UIWindow,
          userSettings: UserSettings,
-         device: UIDevice = .current) {
+         device: UIDevice = .current,
+         notificationCenter: NotificationCenter) {
         self.window = window
         self.userSettings = userSettings
         self.device = device
+        self.notificationCenter = notificationCenter
 
         let loginView = LoginView(viewModel: loginViewModel)
 
@@ -149,7 +152,9 @@ final class AppNavigator {
     private var composeNavigationController: UINavigationController {
         let navController = UINavigationController()
         let viewModel = ComposeViewModel(mode: .post)
-        let itemNavigator = ItemNavigator(navigationController: navController, appNavigator: self)
+        let itemNavigator = ItemNavigator(navigationController: navController,
+                                          appNavigator: self,
+                                          notificationCenter: notificationCenter)
         let navigator = ComposeNavigator(navigationController: navController, viewModel: viewModel)
         let viewController = ComposeViewController(viewModel: viewModel, composeNavigator: navigator, itemNavigator: itemNavigator)
         navController.viewControllers = [viewController]

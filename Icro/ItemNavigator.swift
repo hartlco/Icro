@@ -16,16 +16,19 @@ final class ItemNavigator: ItemNavigatorProtocol {
     private let mainNavigator: MainNavigator
     private var appNavigator: AppNavigator
     private let application: UIApplication
+    private let notificationCenter: NotificationCenter
 
     init(navigationController: UINavigationController,
          appNavigator: AppNavigator,
          userSettings: UserSettings = .shared,
-         application: UIApplication = .shared) {
+         application: UIApplication = .shared,
+         notificationCenter: NotificationCenter) {
         self.navigationController = navigationController
         self.userSettings = userSettings
         self.mainNavigator = MainNavigator(navigationController: navigationController)
         self.appNavigator = appNavigator
         self.application = application
+        self.notificationCenter = notificationCenter
     }
 
     func open(url: URL) {
@@ -52,7 +55,9 @@ final class ItemNavigator: ItemNavigatorProtocol {
     func openFollowing(for user: Author) {
         let viewModel = UserListViewModel(resource: user.followingResource())
         let viewController = VerticalTabAwareHostingController(rootView: UserListView(viewModel: viewModel, itemNavigator: self))
+        viewController.setupNavigateBackShortcut(with: notificationCenter)
         navigationController.pushViewController(viewController, animated: true)
+        navigationController.navigationBar.isHidden = false
     }
 
     func openConversation(item: Item) {
@@ -164,7 +169,8 @@ final class ItemNavigator: ItemNavigatorProtocol {
                 let viewModel = ListViewModel(type: .discoverCollection(category: category))
                 let itemNavigator = ItemNavigator(navigationController: self.navigationController,
                                                   appNavigator: self.appNavigator,
-                                                  application: self.application)
+                                                  application: self.application,
+                                                  notificationCenter: self.notificationCenter)
                 let viewController = ListViewController(viewModel: viewModel, itemNavigator: itemNavigator)
                 self.navigationController.pushViewController(viewController, animated: true)
             }
