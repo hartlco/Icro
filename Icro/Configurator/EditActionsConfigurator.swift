@@ -84,29 +84,30 @@ final class EditActionsConfigurator {
         return UISwipeActionsConfiguration(actions: [replyAction, favoriteAction, moreAction])
     }
 
-    func contextMenu(at indexPath: IndexPath) -> UIContextMenuConfiguration? {
+    func contextMenu(tableView: UITableView, indexPath: IndexPath) -> UIContextMenuConfiguration? {
         return UIContextMenuConfiguration(identifier: nil,
                                           previewProvider: nil,
                                           actionProvider: { _ in
-            return self.makeContextMenu(indexPath: indexPath)
+            return self.makeContextMenu(tableView: tableView, indexPath: indexPath)
         })
     }
 
-    private func makeContextMenu(indexPath: IndexPath) -> UIMenu {
-        guard case .item(let item) = viewModel.viewType(forRow: indexPath.row) else {
+    private func makeContextMenu(tableView: UITableView, indexPath: IndexPath) -> UIMenu {
+        guard case .item(let item) = viewModel.viewType(forRow: indexPath.row),
+            let cell = tableView.cellForRow(at: indexPath) else {
             return UIMenu(title: "", image: nil, identifier: nil, children: [])
         }
 
         let reply = UIAction(__title: NSLocalizedString("EDITACTIONSCONFIGURATOR_SHAREACTION", comment: ""),
                              image: UIImage(symbol: Symbol.square_and_arrow_up),
                              identifier: nil) { [weak self] _ in
-                                self?.itemNavigator.openReply(item: item)
+                                self?.itemNavigator.share(item: item, sourceView: cell)
         }
 
         let chat = UIAction(__title: NSLocalizedString("EDITACTIONSCONFIGURATOR_LEADINGEDITACTIONS", comment: ""),
                              image: UIImage(symbol: Symbol.arrowshape_turn_up_left),
                              identifier: nil) { [weak self] _ in
-                                self?.itemNavigator.openConversation(item: item)
+                                self?.itemNavigator.openReply(item: item)
         }
 
         let favoriteTitle = item.isFavorite ?

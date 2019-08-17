@@ -284,7 +284,7 @@ extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    contextMenuConfigurationForRowAt indexPath: IndexPath,
                    point: CGPoint) -> UIContextMenuConfiguration? {
-        return editActionsConfigurator.contextMenu(at: indexPath)
+        return editActionsConfigurator.contextMenu(tableView: tableView, indexPath: indexPath)
     }
 }
 
