@@ -155,7 +155,7 @@ public class ListViewModel: NSObject {
     }
 
     public func applicableSnapshot(snapshotBlock: ((NSDiffableDataSourceSnapshot<Section, ListViewModel.ViewType>) -> Void)) {
-        let snapshot = NSDiffableDataSourceSnapshot<Section, ListViewModel.ViewType>()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, ListViewModel.ViewType>()
         snapshot.appendSections([.main  ])
         snapshot.appendItems(viewTypes)
         let lastReadItem = userSettings.lastread_timeline

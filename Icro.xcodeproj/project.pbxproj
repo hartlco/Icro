@@ -1103,7 +1103,6 @@
 				C5FA2AFF1EB451F9006DEB40 /* Helper */,
 				C5FA2AFC1EB45164006DEB40 /* View */,
 				C5FA2AF71EB44F2F006DEB40 /* ViewModel */,
-				C5FA2AF41EB4499F006DEB40 /* Netowkring */,
 				C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */,
 				5B4895F122B1603E00CF08C2 /* SceneDelegate.swift */,
 				5BF2DAA02287F4A50055240D /* AppDelegateComponents */,
@@ -1114,13 +1113,6 @@
 				BF707E762131C45600506E64 /* Localizable.strings */,
 			);
 			path = Icro;
-			sourceTree = "<group>";
-		};
-		C5FA2AF41EB4499F006DEB40 /* Netowkring */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Netowkring;
 			sourceTree = "<group>";
 		};
 		C5FA2AF71EB44F2F006DEB40 /* ViewModel */ = {
