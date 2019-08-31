@@ -7,7 +7,6 @@ import UIKit
 import IcroKit
 import IcroUIKit
 
-
 final class EditActionsConfigurator {
     private let itemNavigator: ItemNavigatorProtocol
     private let viewModel: ListViewModel

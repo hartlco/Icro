@@ -86,7 +86,7 @@ final class ListViewController: UIViewController, LoadingViewController {
             }
 
             self?.applySnapshot()
-            if let newIndex = self?.viewModel.numberOfUnreadItems {
+            if let newIndex = self?.viewModel.numberOfUnreadItems, newIndex != 0 {
                 self?.updateUnread()
                 self?.tableView.scrollToRow(at: IndexPath(row: newIndex, section: 0), at: .top, animated: false)
             }
@@ -285,6 +285,11 @@ extension ListViewController: UITableViewDelegate {
                    contextMenuConfigurationForRowAt indexPath: IndexPath,
                    point: CGPoint) -> UIContextMenuConfiguration? {
         return editActionsConfigurator.contextMenu(tableView: tableView, indexPath: indexPath)
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard case .item(let item) = viewModel.viewType(forRow: indexPath.row) else { return }
+        itemNavigator.openConversation(item: item)
     }
 }
 
