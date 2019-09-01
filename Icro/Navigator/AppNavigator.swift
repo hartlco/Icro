@@ -57,7 +57,7 @@ final class AppNavigator {
 
         verticalTabViewModel.didSelectIndex = { [weak self] index in
             guard let self = self else { return }
-            self.tabBarViewController.selectedIndex = index
+            self.tabBarViewController.select(index: index)
         }
 
         self.catalystToolbar.delegate = self

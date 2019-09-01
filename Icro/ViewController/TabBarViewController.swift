@@ -41,6 +41,16 @@ final class TabBarViewController: UITabBarController {
 
     func select(type: ListViewModel.ListType) {
         guard let index = types.firstIndex(of: type) else { return }
+        select(index: index)
+    }
+
+    func select(index: Int) {
+        if index == selectedIndex, let navigationController = viewControllers?[index] as? UINavigationController,
+            let scrollToTop = navigationController.viewControllers.first as? ScrollToTop {
+            scrollToTop.scrollToTop()
+            return
+        }
+
         selectedIndex = index
     }
 
