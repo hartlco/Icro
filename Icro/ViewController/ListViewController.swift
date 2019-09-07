@@ -69,10 +69,6 @@ final class ListViewController: UIViewController, LoadingViewController {
                                                name: UIContentSizeCategory.didChangeNotification,
                                                object: nil)
 
-        editActionsConfigurator.didModifyIndexPath = { [weak self] indexPath in
-            self?.tableView.reloadData()
-        }
-
         viewModel.didStartLoading = { [weak self] in
             guard let self = self else { return }
             self.isLoading = true
@@ -269,16 +265,6 @@ extension ListViewController: UITableViewDelegate {
         } else {
             unreadView.isHidden = false
         }
-    }
-
-    func tableView(_ tableView: UITableView,
-                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        return editActionsConfigurator.tralingEditActions(at: indexPath, in: tableView)
-    }
-
-    func tableView(_ tableView: UITableView,
-                   leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        return editActionsConfigurator.leadingEditActions(at: indexPath, in: tableView)
     }
 
     func tableView(_ tableView: UITableView,

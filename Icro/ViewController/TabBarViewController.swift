@@ -123,11 +123,11 @@ final class TabBarViewController: UITabBarController {
         commonInit()
     }
 
-    // MARK: - Private
-
     @objc func showComposeViewController() {
         appNavigator.showComposeViewController()
     }
+
+    // MARK: - Private
 
     @objc private func showSettingsViewController() {
         appNavigator.showSettingsView(on: self)

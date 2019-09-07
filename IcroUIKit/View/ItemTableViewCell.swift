@@ -70,13 +70,13 @@ public final class ItemTableViewCell: UITableViewCell {
             imageCollectionView.register(cellType: SingleImageCollectionViewCell.self)
             imageCollectionView.delegate = self
             imageCollectionView.dataSource = self
+            imageCollectionView.allowsSelection = true
         }
     }
 
     var didTapAvatar: (() -> Void)?
     var didSelectAccessibilityLink :(() -> Void)?
     var didTapMedia: (([Media], Int) -> Void)?
-    var didSelect: (() -> Void)?
 
     override public func prepareForReuse() {
         media = []
@@ -88,9 +88,6 @@ public final class ItemTableViewCell: UITableViewCell {
 
     override public func awakeFromNib() {
         super.awakeFromNib()
-        let gestureRecognizer = UITapGestureRecognizer(target: self,
-                                                       action: #selector(didSelectCell))
-        addGestureRecognizer(gestureRecognizer)
         updateAppearance()
         let avatarGestureRecognizer = UITapGestureRecognizer(target: self,
                                                              action: #selector(didTapAvatarGestureRecognizer))
@@ -118,6 +115,14 @@ public final class ItemTableViewCell: UITableViewCell {
         didSelectAccessibilityLink?()
     }
 
+    public override func setSelected(_ selected: Bool, animated: Bool) {
+        return
+    }
+
+    public override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        return
+    }
+
     // MARK: - Private
 
     @objc private func didTapAvatarGestureRecognizer() {
@@ -130,10 +135,6 @@ public final class ItemTableViewCell: UITableViewCell {
 
         attributedLabel.setNeedsDisplay()
         attributedLabel.layoutIfNeeded()
-    }
-
-    @objc private func didSelectCell() {
-        didSelect?()
     }
 
     private func updateAppearance() {

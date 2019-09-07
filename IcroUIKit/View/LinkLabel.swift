@@ -8,7 +8,6 @@ import UIKit
 class LinkLabel: UILabel {
     /// Called on a detected touch on the Label. If a link was touched, the URL is passed.
     var didTap: ((URL?) -> Void)?
-    private var touchRecognizer: UITapGestureRecognizer?
 
     func set(attributedText: NSAttributedString) {
         self.attributedText = attributedText
@@ -17,6 +16,8 @@ class LinkLabel: UILabel {
             addGestureRecognizer(touchRecognizer!)
         }
     }
+
+    private var touchRecognizer: UITapGestureRecognizer?
 
     @objc private func didTapText(recognizer: UITapGestureRecognizer) {
         guard let text = attributedText else { return }

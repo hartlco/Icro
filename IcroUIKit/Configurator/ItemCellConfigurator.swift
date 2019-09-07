@@ -46,11 +46,6 @@ public final class ItemCellConfigurator: NSObject {
             self?.itemNavigator.accessibilityPresentLinks(linkList: linkList, message: attributedString.string, sourceView: cell)
         }
 
-        cell.didSelect = { [weak self] in
-            guard let self = self else { return }
-            self.itemNavigator.openConversation(item: item)
-        }
-
         cell.accessibilityLabel = item.accessibilityContent
         cell.accessibilityCustomActions = accessibilityCustomActions(for: item, cell: cell, attributedContent: attributedString)
     }
