@@ -6,7 +6,8 @@
 import UIKit
 
 class LinkLabel: UILabel {
-    var didTapLink: ((URL) -> Void)?
+    /// Called on a detected touch on the Label. If a link was touched, the URL is passed.
+    var didTap: ((URL?) -> Void)?
     private var touchRecognizer: UITapGestureRecognizer?
 
     func set(attributedText: NSAttributedString) {
@@ -20,6 +21,8 @@ class LinkLabel: UILabel {
     @objc private func didTapText(recognizer: UITapGestureRecognizer) {
         guard let text = attributedText else { return }
 
+        var didDetectLink = false
+
         text.enumerateAttributes(in: NSRange(location: 0, length: text.length), options: []) { [weak self] (attributes, rane, _) in
             guard let strongSelf = self else { return }
 
@@ -30,9 +33,14 @@ class LinkLabel: UILabel {
             links.forEach({ _, value in
                 if recognizer.didTapAttributedTextInLabel(label: strongSelf, inRange: rane),
                     let url = value as? URL {
-                    strongSelf.didTapLink?(url)
+                    strongSelf.didTap?(url)
+                    didDetectLink = true
                 }
             })
+        }
+
+        if didDetectLink == false {
+            didTap?(nil)
         }
     }
 }

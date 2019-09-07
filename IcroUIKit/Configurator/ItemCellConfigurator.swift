@@ -21,8 +21,12 @@ public final class ItemCellConfigurator: NSObject {
         cell.isFavorite = item.isFavorite
         let attributedString = item.content
         cell.attributedLabel.set(attributedText: attributedString)
-        cell.attributedLabel.didTapLink = { [weak self] link in
-            self?.itemNavigator.open(url: link)
+        cell.attributedLabel.didTap = { [weak self] link in
+            if let link = link {
+                self?.itemNavigator.open(url: link)
+            } else {
+                self?.itemNavigator.openConversation(item: item)
+            }
         }
 
         cell.media = item.media
@@ -40,6 +44,11 @@ public final class ItemCellConfigurator: NSObject {
         cell.didSelectAccessibilityLink = { [weak self] in
             let linkList = HTMLContent.textLinks(for: attributedString)
             self?.itemNavigator.accessibilityPresentLinks(linkList: linkList, message: attributedString.string, sourceView: cell)
+        }
+
+        cell.didSelect = { [weak self] in
+            guard let self = self else { return }
+            self.itemNavigator.openConversation(item: item)
         }
 
         cell.accessibilityLabel = item.accessibilityContent

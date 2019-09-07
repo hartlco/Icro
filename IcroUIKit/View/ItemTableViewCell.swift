@@ -76,6 +76,7 @@ public final class ItemTableViewCell: UITableViewCell {
     var didTapAvatar: (() -> Void)?
     var didSelectAccessibilityLink :(() -> Void)?
     var didTapMedia: (([Media], Int) -> Void)?
+    var didSelect: (() -> Void)?
 
     override public func prepareForReuse() {
         media = []
@@ -87,6 +88,9 @@ public final class ItemTableViewCell: UITableViewCell {
 
     override public func awakeFromNib() {
         super.awakeFromNib()
+        let gestureRecognizer = UITapGestureRecognizer(target: self,
+                                                       action: #selector(didSelectCell))
+        addGestureRecognizer(gestureRecognizer)
         updateAppearance()
         let avatarGestureRecognizer = UITapGestureRecognizer(target: self,
                                                              action: #selector(didTapAvatarGestureRecognizer))
@@ -126,6 +130,10 @@ public final class ItemTableViewCell: UITableViewCell {
 
         attributedLabel.setNeedsDisplay()
         attributedLabel.layoutIfNeeded()
+    }
+
+    @objc private func didSelectCell() {
+        didSelect?()
     }
 
     private func updateAppearance() {
