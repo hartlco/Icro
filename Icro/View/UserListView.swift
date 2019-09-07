@@ -14,8 +14,6 @@ struct UserListView: SwiftUI.View {
     @ObservedObject var viewModel: UserListViewModel
     let itemNavigator: ItemNavigator
 
-    @State var show = false
-
     var body: some SwiftUI.View {
         List(viewModel.users, id: \Author.name) { author in
             Button(action: {
@@ -29,10 +27,10 @@ struct UserListView: SwiftUI.View {
                         .clipShape(Circle())
                     HStack {
                         Text(author.name)
-                        .font(.headline)
+                            .font(.headline)
                         Text(author.username ?? "")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
                     }
                 }
             })
