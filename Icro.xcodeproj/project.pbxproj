@@ -60,7 +60,7 @@
 		5B01A7B722E82E4900D420BD /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A7AA22E82E4900D420BD /* WPXMLRPCDataCleaner.m */; };
 		5B01A7C622E8313200D420BD /* UICollectionView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A7BF22E8313200D420BD /* UICollectionView+Dequeueable.swift */; };
 		5B01CC002168E4DD0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
-		5B11A46722C8A5C70095E068 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11A46622C8A5C70095E068 /* NetworkImage.swift */; };
+		5B06532A2324088C000C5C3A /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653292324088C000C5C3A /* KingfisherSwiftUI */; };
 		5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView.swift */; };
 		5B1E73C422F54E02001A43F2 /* UIImage+TypedSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E73C122F54E02001A43F2 /* UIImage+TypedSymbol.swift */; };
 		5B1E73C622F54E02001A43F2 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E73C322F54E02001A43F2 /* Symbol.swift */; };
@@ -340,7 +340,6 @@
 		5B01CBFC2168E2780007E01D /* ListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListItemCell.xib; sourceTree = "<group>"; };
 		5B01CC042168E7430007E01D /* Icro-Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Icro-Mac.entitlements"; sourceTree = "<group>"; };
 		5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCellConfigurator.swift; sourceTree = "<group>"; };
-		5B11A46622C8A5C70095E068 /* NetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkImage.swift; path = Helper/NetworkImage.swift; sourceTree = "<group>"; };
 		5B165D8722BF436D00B851B2 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TipJarView.swift; path = View/TipJarView.swift; sourceTree = "<group>"; };
 		5B1E73C122F54E02001A43F2 /* UIImage+TypedSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+TypedSymbol.swift"; sourceTree = "<group>"; };
 		5B1E73C322F54E02001A43F2 /* Symbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
@@ -552,6 +551,7 @@
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
 				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
 				5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */,
+				5B06532A2324088C000C5C3A /* KingfisherSwiftUI in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1154,7 +1154,6 @@
 				5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */,
 				5B38476821FE073800F082AD /* UIView+Contraints.swift */,
 				5B99C679229FB47200437552 /* UITableView+Keyboard.swift */,
-				5B11A46622C8A5C70095E068 /* NetworkImage.swift */,
 				5B39A4CD22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift */,
 				5B20951E22F6B0B900C06123 /* UserActivities.swift */,
 				5B20952422F6B14E00C06123 /* CatalystToolbar.swift */,
@@ -1312,6 +1311,7 @@
 				5B83B01A22D11B3D004C4D8D /* KeychainAccess */,
 				5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */,
 				5BA0C37322FE96DF00A9B44D /* Kingfisher */,
+				5B0653292324088C000C5C3A /* KingfisherSwiftUI */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -1668,7 +1668,6 @@
 				5B01A79A22E82CFA00D420BD /* VideoViewController.swift in Sources */,
 				5B01A79922E82CFA00D420BD /* Slider.swift in Sources */,
 				5B01A78522E82CFA00D420BD /* UIColor.swift in Sources */,
-				5B11A46722C8A5C70095E068 /* NetworkImage.swift in Sources */,
 				5B99C67A229FB47200437552 /* UITableView+Keyboard.swift in Sources */,
 				5B01A78122E82CFA00D420BD /* ImageViewController.swift in Sources */,
 				5B01A79B22E82CFA00D420BD /* GalleryPagingDataSource.swift in Sources */,
@@ -2372,6 +2371,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5B0653292324088C000C5C3A /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BA0C37222FE96DF00A9B44D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
+		};
 		5B83B00C22D06EA8004C4D8D /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */;
