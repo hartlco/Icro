@@ -13,12 +13,12 @@ struct TipJarView: View {
     var body: some View {
         HStack {
             ScrollView {
-                HStack(spacing: 20) {
+                VStack(spacing: 20) {
                     ForEach(viewModel.products) { product in
                         Button(action: {
                             self.viewModel.purchase(product: product)
                         }, label: {
-                            VStack {
+                            HStack {
                                 Text(product.title)
                                     .font(.headline)
                                     .foregroundColor(.primary)
@@ -33,8 +33,6 @@ struct TipJarView: View {
                         .padding()
                         .background(self.cardColor)
                         .cornerRadius(6)
-                        .shadow(color: Color.black.opacity(0.2),
-                                radius: 1, x: 0, y: 2)
                     }
                 }
             }
