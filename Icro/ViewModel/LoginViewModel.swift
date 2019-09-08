@@ -106,7 +106,9 @@ final class LoginViewModel: ObservableObject {
             return
         }
 
-        client.load(resource: loginRequestResource) { info in
+        client.load(resource: loginRequestResource) { [weak self] info in
+            guard let self = self else { return }
+
             self.isLoading = false
             self.didRequest = true
 
@@ -116,6 +118,7 @@ final class LoginViewModel: ObservableObject {
             }
             self.userSettings.save(loginInformation: info)
             self.didLogin(info)
+            self.loginString = ""
         }
     }
 
