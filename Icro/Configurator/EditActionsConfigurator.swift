@@ -33,13 +33,13 @@ final class EditActionsConfigurator {
             return UIMenu(title: "", image: nil, identifier: nil, children: [])
         }
 
-        let reply = UIAction(__title: NSLocalizedString("EDITACTIONSCONFIGURATOR_SHAREACTION", comment: ""),
+        let reply = UIAction(title: NSLocalizedString("EDITACTIONSCONFIGURATOR_SHAREACTION", comment: ""),
                              image: UIImage(symbol: Symbol.square_and_arrow_up),
                              identifier: nil) { [weak self] _ in
                                 self?.itemNavigator.share(item: item, sourceView: cell)
         }
 
-        let chat = UIAction(__title: NSLocalizedString("EDITACTIONSCONFIGURATOR_LEADINGEDITACTIONS", comment: ""),
+        let chat = UIAction(title: NSLocalizedString("EDITACTIONSCONFIGURATOR_LEADINGEDITACTIONS", comment: ""),
                              image: UIImage(symbol: Symbol.arrowshape_turn_up_left),
                              identifier: nil) { [weak self] _ in
                                 self?.itemNavigator.openReply(item: item)
@@ -49,7 +49,7 @@ final class EditActionsConfigurator {
             NSLocalizedString("EDITACTIONSCONFIGURATOR_FAVORITEACTION_UNFAVORITE", comment: "") :
             NSLocalizedString("EDITACTIONSCONFIGURATOR_FAVORITEACTION_FAVORITE", comment: "")
         let favoriteImage = item.isFavorite ? UIImage(symbol: Symbol.heart_fill) : UIImage(symbol: Symbol.heart)
-        let favorite = UIAction(__title: favoriteTitle,
+        let favorite = UIAction(title: favoriteTitle,
                              image: favoriteImage,
                              identifier: nil) { [weak self] _ in
                                 self?.viewModel.toggleFave(for: item)
