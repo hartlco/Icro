@@ -35,6 +35,10 @@ final class VerticalTabsSplitViewController: UISplitViewController {
         maximumPrimaryColumnWidth = 84.0
         minimumPrimaryColumnWidth = 84.0
     }
+
+    override var canBecomeFirstResponder: Bool {
+        return false
+    }
 }
 
 extension VerticalTabsSplitViewController: UISplitViewControllerDelegate {
