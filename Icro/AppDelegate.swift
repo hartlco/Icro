@@ -6,11 +6,13 @@
 import UIKit
 import IcroKit
 import AppDelegateComponent
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore {
     let storedComponents: [AppDelegateComponent] = [DiscoveryCategoryComponent(),
-                                                    UserDefaultsMigrationComponent()]
+                                                    UserDefaultsMigrationComponent(),
+                                                    NotificationComponent()]
     private let componentRunner = AppDelegateComponentRunner()
     private let mainMenuBuilder = MainMenuBuilder()
 
@@ -39,6 +41,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore
         let configuration = UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
         configuration.delegateClass = SceneDelegate.self
         return configuration
+    }
+
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        componentRunner.componentStore(self,
+                                       app: application,
+                                       didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
     }
 }
 
