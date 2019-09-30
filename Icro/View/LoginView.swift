@@ -18,6 +18,8 @@ struct LoginView: View {
                 Section(footer: Text("LOGINVIEWCONTROLLER_TEXTFIELDINFO_TEXT").lineLimit(nil)) {
                     TextField("LOGINVIEWCONTROLLER_TEXTFIELD_PLACEHOLDER",
                               text: $viewModel.loginString)
+                            .disableAutocorrection(true)
+                            .autocapitalization(UITextAutocapitalizationType.none)
                     viewModel.infoMessage.map {
                         Text($0)
                     }
