@@ -278,7 +278,8 @@ extension ListViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard case .item(let item) = viewModel.viewType(forRow: indexPath.row) else { return }
+        guard viewModel.shouldShowConversationOnClick(),
+            case .item(let item) = viewModel.viewType(forRow: indexPath.row) else { return }
         itemNavigator.openConversation(item: item)
     }
 }

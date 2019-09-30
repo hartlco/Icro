@@ -120,6 +120,15 @@ public class ListViewModel: NSObject {
         }
     }
 
+    public func shouldShowConversationOnClick() -> Bool {
+        switch type {
+        case .conversation:
+            return false
+        default:
+            return true
+        }
+    }
+
     public func loadMore(afterItemAtIndex index: Int) {
         guard !isLoading else { return }
 
