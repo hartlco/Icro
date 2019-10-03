@@ -133,6 +133,7 @@
 		5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371F212861220076121E /* ProfileViewConfigurator.swift */; };
 		5B583728212861770076121E /* SettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583727212861770076121E /* SettingsNavigator.swift */; };
 		5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837292128618B0076121E /* UserListViewModel.swift */; };
+		5B5FE65123461A3F003C6F4D /* PushRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE65023461A3F003C6F4D /* PushRegistration.swift */; };
 		5B609F1023091FA900F2C1BC /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F0F23091FA900F2C1BC /* ViewModelState.swift */; };
 		5B609F1323091FD600F2C1BC /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F1123091FD500F2C1BC /* ListViewController.swift */; };
 		5B609F1423091FD600F2C1BC /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B609F1223091FD600F2C1BC /* ListViewController.xib */; };
@@ -409,6 +410,7 @@
 		5B58373F2128B0680076121E /* HTMLContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLContentTests.swift; sourceTree = "<group>"; };
 		5B58377A212950F40076121E /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		5B58377B212950F40076121E /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		5B5FE65023461A3F003C6F4D /* PushRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushRegistration.swift; sourceTree = "<group>"; };
 		5B609F0F23091FA900F2C1BC /* ViewModelState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModelState.swift; path = ViewModel/ViewModelState.swift; sourceTree = "<group>"; };
 		5B609F1123091FD500F2C1BC /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ViewController/ListViewController.swift; sourceTree = "<group>"; };
 		5B609F1223091FD600F2C1BC /* ListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListViewController.xib; path = ViewController/ListViewController.xib; sourceTree = "<group>"; };
@@ -994,6 +996,7 @@
 				C5FA2B001EB45213006DEB40 /* HTMLContent.swift */,
 				5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */,
 				5BD2FE5E2259D15100591490 /* Media.swift */,
+				5B5FE65023461A3F003C6F4D /* PushRegistration.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1593,6 +1596,7 @@
 				5BC347BB2132947100DEB45D /* Author.swift in Sources */,
 				5B01CC002168E4DD0007E01D /* ListViewModel.swift in Sources */,
 				5B2EF3E822E827C5006931A7 /* Kanna.swift in Sources */,
+				5B5FE65123461A3F003C6F4D /* PushRegistration.swift in Sources */,
 				5BC347C32132958600DEB45D /* Color.swift in Sources */,
 				5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */,
 				5B01A7AB22E82E4900D420BD /* WPXMLRPCDecoder.m in Sources */,

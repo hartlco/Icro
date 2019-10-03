@@ -4,33 +4,38 @@
 //
 
 import UIKit
+import IcroKit
 import AppDelegateComponent
 
 final class NotificationComponent: AppDelegateComponent {
+    private let client: Client
+
+    init(client: Client = URLSession.shared) {
+        self.client = client
+    }
+
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        registerForPushNotifications()
+        registerForPushNotifications(application: application)
         return true
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
         let token = tokenParts.joined()
+        let pushRegistration = PushRegistration(token: token)
+        client.load(resource: pushRegistration.register()) { _ in }
         print("Device Token: \(token)")
     }
 
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-
     }
 
     // MARK: - Notifications
-    func registerForPushNotifications() {
-      UNUserNotificationCenter.current() // 1
-        .requestAuthorization(options: [.alert, .sound, .badge]) { // 2
-          granted, error in
-          print("Permission granted: \(granted)") // 3
-      }
+    func registerForPushNotifications(application: UIApplication) {
+      UNUserNotificationCenter.current()
+        .requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in }
 
-        UIApplication.shared.registerForRemoteNotifications()
+        application.registerForRemoteNotifications()
     }
 }
