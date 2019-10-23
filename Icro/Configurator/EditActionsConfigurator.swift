@@ -6,6 +6,7 @@
 import UIKit
 import IcroKit
 import IcroUIKit
+import TypedSymbols
 
 final class EditActionsConfigurator {
     private let itemNavigator: ItemNavigatorProtocol

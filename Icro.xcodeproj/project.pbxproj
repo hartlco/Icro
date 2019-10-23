@@ -60,14 +60,10 @@
 		5B01A7B722E82E4900D420BD /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A7AA22E82E4900D420BD /* WPXMLRPCDataCleaner.m */; };
 		5B01A7C622E8313200D420BD /* UICollectionView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A7BF22E8313200D420BD /* UICollectionView+Dequeueable.swift */; };
 		5B01CC002168E4DD0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
-		5B0653322324D047000C5C3A /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653312324D047000C5C3A /* SwiftPackageProductDependency */; };
-		5B0653342324D047000C5C3A /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653332324D047000C5C3A /* SwiftPackageProductDependency */; };
-		5B0653362324D1E0000C5C3A /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653352324D1E0000C5C3A /* SwiftPackageProductDependency */; };
+		5B0653322324D047000C5C3A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653312324D047000C5C3A /* Kingfisher */; };
+		5B0653342324D047000C5C3A /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653332324D047000C5C3A /* KingfisherSwiftUI */; };
+		5B0653362324D1E0000C5C3A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653352324D1E0000C5C3A /* Kingfisher */; };
 		5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView.swift */; };
-		5B1E73C422F54E02001A43F2 /* UIImage+TypedSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E73C122F54E02001A43F2 /* UIImage+TypedSymbol.swift */; };
-		5B1E73C622F54E02001A43F2 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E73C322F54E02001A43F2 /* Symbol.swift */; };
-		5B1E73C722F54E32001A43F2 /* UIImage+TypedSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E73C122F54E02001A43F2 /* UIImage+TypedSymbol.swift */; };
-		5B1E73C822F54E32001A43F2 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E73C322F54E02001A43F2 /* Symbol.swift */; };
 		5B20951B22F6B03400C06123 /* VerticalTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20951A22F6B03400C06123 /* VerticalTabView.swift */; };
 		5B20951D22F6B05800C06123 /* VerticalTabsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20951C22F6B05800C06123 /* VerticalTabsSplitViewController.swift */; };
 		5B20951F22F6B0B900C06123 /* UserActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20951E22F6B0B900C06123 /* UserActivities.swift */; };
@@ -148,15 +144,17 @@
 		5B69E65122AA16310081CDFB /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsContentView.swift */; };
 		5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B81E79A2206C62E008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
-		5B83B00D22D06EA8004C4D8D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B00C22D06EA8004C4D8D /* SwiftPackageProductDependency */; };
-		5B83B01B22D11B3D004C4D8D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01A22D11B3D004C4D8D /* SwiftPackageProductDependency */; };
-		5B83B01D22D11D64004C4D8D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01C22D11D64004C4D8D /* SwiftPackageProductDependency */; };
+		5B83B00D22D06EA8004C4D8D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B00C22D06EA8004C4D8D /* Alamofire */; };
+		5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01A22D11B3D004C4D8D /* KeychainAccess */; };
+		5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01C22D11D64004C4D8D /* KeychainAccess */; };
 		5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B841ECD22E832F700CDA80C /* libiconv.tbd */; };
 		5B841ED322E8349600CDA80C /* UICollectionView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A7BF22E8313200D420BD /* UICollectionView+Dequeueable.swift */; };
 		5B841ED922E83C2D00CDA80C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B841ED622E83C2D00CDA80C /* Assets.xcassets */; };
 		5B841EDA22E83C2D00CDA80C /* DropdownTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B841ED722E83C2D00CDA80C /* DropdownTitleView.swift */; };
 		5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B869B07214E4633000A051C /* MicropubEndpoint.swift */; };
 		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
+		5B8FD3A02360D53700BC72F2 /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 5B8FD39F2360D53700BC72F2 /* TypedSymbols */; };
+		5B8FD3A22360D59800BC72F2 /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 5B8FD3A12360D59800BC72F2 /* TypedSymbols */; };
 		5B99C67A229FB47200437552 /* UITableView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99C679229FB47200437552 /* UITableView+Keyboard.swift */; };
 		5BA0C37822FE99E100A9B44D /* MainMenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA0C37722FE99E100A9B44D /* MainMenuBuilder.swift */; };
 		5BA0C37A22FFF24400A9B44D /* MainMenuActionNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA0C37922FFF24400A9B44D /* MainMenuActionNotifier.swift */; };
@@ -194,7 +192,7 @@
 		5BD9691121C8D61800313795 /* GalleryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD9690921C8CBFB00313795 /* GalleryDataSource.swift */; };
 		5BDE18EB216A5745001254F4 /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371A212860BA0076121E /* ComposeViewModel.swift */; };
 		5BDE18F1216A57C0001254F4 /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
-		5BE92EF622D1BAAD0048E8F1 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF522D1BAAD0048E8F1 /* SwiftPackageProductDependency */; };
+		5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */; };
 		5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
 		5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */; };
 		5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
@@ -343,8 +341,6 @@
 		5B01CC042168E7430007E01D /* Icro-Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Icro-Mac.entitlements"; sourceTree = "<group>"; };
 		5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCellConfigurator.swift; sourceTree = "<group>"; };
 		5B165D8722BF436D00B851B2 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TipJarView.swift; path = View/TipJarView.swift; sourceTree = "<group>"; };
-		5B1E73C122F54E02001A43F2 /* UIImage+TypedSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+TypedSymbol.swift"; sourceTree = "<group>"; };
-		5B1E73C322F54E02001A43F2 /* Symbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		5B20951A22F6B03400C06123 /* VerticalTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerticalTabView.swift; path = View/VerticalTabView.swift; sourceTree = "<group>"; };
 		5B20951C22F6B05800C06123 /* VerticalTabsSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerticalTabsSplitViewController.swift; path = ViewController/VerticalTabsSplitViewController.swift; sourceTree = "<group>"; };
 		5B20951E22F6B0B900C06123 /* UserActivities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivities.swift; path = Helper/UserActivities.swift; sourceTree = "<group>"; };
@@ -516,7 +512,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B0653362324D1E0000C5C3A /* BuildFile in Frameworks */,
+				5B0653362324D1E0000C5C3A /* Kingfisher in Frameworks */,
 				5BC1384921C69BB80040353C /* IcroKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,9 +536,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B83B00D22D06EA8004C4D8D /* BuildFile in Frameworks */,
-				5B83B01D22D11D64004C4D8D /* BuildFile in Frameworks */,
+				5B83B00D22D06EA8004C4D8D /* Alamofire in Frameworks */,
+				5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */,
 				5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */,
+				5B8FD3A22360D59800BC72F2 /* TypedSymbols in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,12 +547,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B0653322324D047000C5C3A /* BuildFile in Frameworks */,
+				5B0653322324D047000C5C3A /* Kingfisher in Frameworks */,
 				5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */,
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
-				5BE92EF622D1BAAD0048E8F1 /* BuildFile in Frameworks */,
-				5B83B01B22D11B3D004C4D8D /* BuildFile in Frameworks */,
-				5B0653342324D047000C5C3A /* BuildFile in Frameworks */,
+				5B8FD3A02360D53700BC72F2 /* TypedSymbols in Frameworks */,
+				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
+				5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */,
+				5B0653342324D047000C5C3A /* KingfisherSwiftUI in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -736,19 +734,9 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
-		5B1E73C022F54E02001A43F2 /* TypedSymbols */ = {
-			isa = PBXGroup;
-			children = (
-				5B1E73C122F54E02001A43F2 /* UIImage+TypedSymbol.swift */,
-				5B1E73C322F54E02001A43F2 /* Symbol.swift */,
-			);
-			path = TypedSymbols;
-			sourceTree = "<group>";
-		};
 		5B2EF3D222E82649006931A7 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				5B1E73C022F54E02001A43F2 /* TypedSymbols */,
 				5B841ED422E83C2D00CDA80C /* DropdownTitleView */,
 				5B01A7B922E8313200D420BD /* Dequeueable */,
 				5B01A79D22E82E4900D420BD /* WPXMLRPC */,
@@ -1232,7 +1220,7 @@
 			);
 			name = IcroUIKit;
 			packageProductDependencies = (
-				5B0653352324D1E0000C5C3A /* SwiftPackageProductDependency */,
+				5B0653352324D1E0000C5C3A /* Kingfisher */,
 			);
 			productName = IcroUIKit;
 			productReference = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */;
@@ -1289,8 +1277,9 @@
 			);
 			name = IcroKit;
 			packageProductDependencies = (
-				5B83B00C22D06EA8004C4D8D /* SwiftPackageProductDependency */,
-				5B83B01C22D11D64004C4D8D /* SwiftPackageProductDependency */,
+				5B83B00C22D06EA8004C4D8D /* Alamofire */,
+				5B83B01C22D11D64004C4D8D /* KeychainAccess */,
+				5B8FD3A12360D59800BC72F2 /* TypedSymbols */,
 			);
 			productName = IcroKit;
 			productReference = 5BC347AE2132944900DEB45D /* IcroKit.framework */;
@@ -1316,10 +1305,11 @@
 			);
 			name = Icro;
 			packageProductDependencies = (
-				5B83B01A22D11B3D004C4D8D /* SwiftPackageProductDependency */,
-				5BE92EF522D1BAAD0048E8F1 /* SwiftPackageProductDependency */,
-				5B0653312324D047000C5C3A /* SwiftPackageProductDependency */,
-				5B0653332324D047000C5C3A /* SwiftPackageProductDependency */,
+				5B83B01A22D11B3D004C4D8D /* KeychainAccess */,
+				5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */,
+				5B0653312324D047000C5C3A /* Kingfisher */,
+				5B0653332324D047000C5C3A /* KingfisherSwiftUI */,
+				5B8FD39F2360D53700BC72F2 /* TypedSymbols */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -1404,10 +1394,11 @@
 			);
 			mainGroup = C5FA2AB71EB4482C006DEB40;
 			packageReferences = (
-				5B70C0E822D06E9200D85F2B /* RemoteSwiftPackageReference */,
-				5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */,
-				5BE92EF422D1BAAD0048E8F1 /* RemoteSwiftPackageReference */,
-				5B0653302324D047000C5C3A /* RemoteSwiftPackageReference */,
+				5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */,
+				5B0653302324D047000C5C3A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */,
 			);
 			productRefGroup = C5FA2AC11EB4482C006DEB40 /* Products */;
 			projectDirPath = "";
@@ -1561,12 +1552,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B1E73C722F54E32001A43F2 /* UIImage+TypedSymbol.swift in Sources */,
 				5BF663852189673100ABA671 /* DiscoveryCategoryStore.swift in Sources */,
 				5B01A7B522E82E4900D420BD /* WPXMLRPCEncoder.m in Sources */,
 				5BC347BD213294A900DEB45D /* Resource.swift in Sources */,
 				5B66EE6C227D700A00317FE3 /* HttpMethod.swift in Sources */,
-				5B1E73C822F54E32001A43F2 /* Symbol.swift in Sources */,
 				5B81E79A2206C62E008BEA16 /* Error.swift in Sources */,
 				5B66EE6A227D6C8300317FE3 /* Client.swift in Sources */,
 				5B01A7B422E82E4900D420BD /* WPStringUtils.m in Sources */,
@@ -1626,10 +1615,8 @@
 				5B01A78A22E82CFA00D420BD /* UIViewController.swift in Sources */,
 				5B20951F22F6B0B900C06123 /* UserActivities.swift in Sources */,
 				5B01A77E22E82CFA00D420BD /* VideoView.swift in Sources */,
-				5B1E73C622F54E02001A43F2 /* Symbol.swift in Sources */,
 				5B01A79022E82CFA00D420BD /* UIScreen.swift in Sources */,
 				5B01A78B22E82CFA00D420BD /* UIImageView.swift in Sources */,
-				5B1E73C422F54E02001A43F2 /* UIImage+TypedSymbol.swift in Sources */,
 				5B51621B22B2C900009C0064 /* LoginView.swift in Sources */,
 				5B2EF3E722E827C5006931A7 /* Kanna.swift in Sources */,
 				5B01A77D22E82CFA00D420BD /* GallerySwipeToDismissTransition.swift in Sources */,
@@ -2346,7 +2333,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5B0653302324D047000C5C3A /* RemoteSwiftPackageReference */ = {
+		5B0653302324D047000C5C3A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/Kingfisher";
 			requirement = {
@@ -2354,7 +2341,7 @@
 				kind = branch;
 			};
 		};
-		5B70C0E822D06E9200D85F2B /* RemoteSwiftPackageReference */ = {
+		5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -2362,7 +2349,7 @@
 				minimumVersion = 4.8.2;
 			};
 		};
-		5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */ = {
+		5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/KeychainAccess";
 			requirement = {
@@ -2370,7 +2357,15 @@
 				kind = branch;
 			};
 		};
-		5BE92EF422D1BAAD0048E8F1 /* RemoteSwiftPackageReference */ = {
+		5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hartlco/TypedSymbols.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/AppDelegateComponent";
 			requirement = {
@@ -2381,39 +2376,49 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5B0653312324D047000C5C3A /* SwiftPackageProductDependency */ = {
+		5B0653312324D047000C5C3A /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B0653302324D047000C5C3A /* RemoteSwiftPackageReference */;
+			package = 5B0653302324D047000C5C3A /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		5B0653332324D047000C5C3A /* SwiftPackageProductDependency */ = {
+		5B0653332324D047000C5C3A /* KingfisherSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B0653302324D047000C5C3A /* RemoteSwiftPackageReference */;
+			package = 5B0653302324D047000C5C3A /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = KingfisherSwiftUI;
 		};
-		5B0653352324D1E0000C5C3A /* SwiftPackageProductDependency */ = {
+		5B0653352324D1E0000C5C3A /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B0653302324D047000C5C3A /* RemoteSwiftPackageReference */;
+			package = 5B0653302324D047000C5C3A /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		5B83B00C22D06EA8004C4D8D /* SwiftPackageProductDependency */ = {
+		5B83B00C22D06EA8004C4D8D /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B70C0E822D06E9200D85F2B /* RemoteSwiftPackageReference */;
+			package = 5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		5B83B01A22D11B3D004C4D8D /* SwiftPackageProductDependency */ = {
+		5B83B01A22D11B3D004C4D8D /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */;
+			package = 5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
 		};
-		5B83B01C22D11D64004C4D8D /* SwiftPackageProductDependency */ = {
+		5B83B01C22D11D64004C4D8D /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */;
+			package = 5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
 		};
-		5BE92EF522D1BAAD0048E8F1 /* SwiftPackageProductDependency */ = {
+		5B8FD39F2360D53700BC72F2 /* TypedSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5BE92EF422D1BAAD0048E8F1 /* RemoteSwiftPackageReference */;
+			package = 5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */;
+			productName = TypedSymbols;
+		};
+		5B8FD3A12360D59800BC72F2 /* TypedSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */;
+			productName = TypedSymbols;
+		};
+		5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */;
 			productName = AppDelegateComponent;
 		};
 /* End XCSwiftPackageProductDependency section */
