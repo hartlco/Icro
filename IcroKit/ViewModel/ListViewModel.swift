@@ -276,11 +276,13 @@ public class ListViewModel: NSObject {
         switch type {
         case .timeline:
             let newLastReadID = items[lastReadRow].id
-            if let lastReadID = userSettings.lastread_timeline,
-                newLastReadID < lastReadID {
-                return
+            if let lastReadID = userSettings.lastread_timeline {
+                if newLastReadID < lastReadID {
+                    return
+                }
             }
-            print("Update last read row: \(lastReadRow)")
+
+            print("Update last read row: \(lastReadRow) - item: \(newLastReadID)")
             userSettings.lastread_timeline = items[lastReadRow].id
         default:
             return
