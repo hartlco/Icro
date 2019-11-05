@@ -9,14 +9,7 @@ import IcroUIKit
 import IcroKit
 import MobileCoreServices
 
-class ShareViewController: UIViewController {
-    @IBOutlet private weak var container: UIView! {
-        didSet {
-            container.layer.cornerRadius = 10.0
-            container.layer.masksToBounds = true
-        }
-    }
-
+@objc(ShareViewController) class ShareViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -68,7 +61,7 @@ class ShareViewController: UIViewController {
             self?.extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
         }
         navigationController.viewControllers = [composeViewController]
-        add(navigationController, view: container)
+        add(navigationController, view: view)
     }
 
 }
