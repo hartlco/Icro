@@ -77,6 +77,7 @@ public final class ItemTableViewCell: UITableViewCell {
     var didTapAvatar: (() -> Void)?
     var didSelectAccessibilityLink :(() -> Void)?
     var didTapMedia: (([Media], Int) -> Void)?
+    var didTapReply: (() -> Void)?
 
     override public func prepareForReuse() {
         media = []
@@ -135,6 +136,10 @@ public final class ItemTableViewCell: UITableViewCell {
 
         attributedLabel.setNeedsDisplay()
         attributedLabel.layoutIfNeeded()
+    }
+
+    @IBAction private func replyButtonPressed(_ sender: Any) {
+        didTapReply?()
     }
 
     private func updateAppearance() {

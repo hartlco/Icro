@@ -33,6 +33,10 @@ public final class ItemCellConfigurator: NSObject {
         cell.didTapAvatar = { [weak self] in
             self?.itemNavigator.open(author: item.author)
         }
+        cell.didTapReply = { [weak self] in
+            guard let self = self else { return }
+            self.itemNavigator.openReply(item: item)
+        }
         cell.faveView.isHidden = true
         cell.timeLabel.text = item.relativeDateString
         cell.atUsernameLabel.text = "@" + (item.author.username ?? "")
