@@ -101,6 +101,9 @@ extension TipJarViewModel: SKProductsRequestDelegate, SKPaymentTransactionObserv
             case .restored:
                 queue.finishTransaction(transaction)
                 return
+            @unknown default:
+                state = .purchasingError(error: PurchaseError.paymentError)
+                queue.finishTransaction(transaction)
             }
         }
     }

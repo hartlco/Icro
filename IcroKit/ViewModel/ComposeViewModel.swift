@@ -120,7 +120,7 @@ public final class ComposeViewModel {
         guard images.count > index else {
             return
         }
-        
+
         images.remove(at: index)
         didUpdateImages?()
     }

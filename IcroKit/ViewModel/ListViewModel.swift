@@ -279,7 +279,7 @@ public class ListViewModel: NSObject {
                 oldReadPosition < lastReadRow {
                 return
             }
-            
+
             userSettings.lastread_timeline = items[lastReadRow].id
         default:
             return

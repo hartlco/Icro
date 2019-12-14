@@ -17,7 +17,7 @@ extension URLSession: Client {
     }
 
     public func load<A: Codable>(resource: Resource<A>, completion: @escaping (Result<A, Error>) -> Void) {
-        dataTask(with: resource.urlRequest) { (data, _, error) in
+        dataTask(with: resource.urlRequest) { (data, _, _) in
             guard let data = data else {
                 DispatchQueue.main.async {
                     completion(.failure(NetworkingError.cannotParse))
