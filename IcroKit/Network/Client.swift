@@ -6,7 +6,7 @@
 import Foundation
 
 public protocol Client {
-    func load<A: Codable>(resource: Resource<A>, completion: @escaping (Result<A>) -> Void)
+    func load<A: Codable>(resource: Resource<A>, completion: @escaping (Result<A, Error>) -> Void)
     func loadData(with request: URLRequest,
                   completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
 }
@@ -16,11 +16,11 @@ extension URLSession: Client {
         dataTask(with: request, completionHandler: completionHandler).resume()
     }
 
-    public func load<A: Codable>(resource: Resource<A>, completion: @escaping (Result<A>) -> Void) {
+    public func load<A: Codable>(resource: Resource<A>, completion: @escaping (Result<A, Error>) -> Void) {
         dataTask(with: resource.urlRequest) { (data, _, error) in
             guard let data = data else {
                 DispatchQueue.main.async {
-                    completion(.error(error: NetworkingError.cannotParse))
+                    completion(.failure(NetworkingError.cannotParse))
                 }
                 return
             }

@@ -108,7 +108,7 @@ public class ListViewModel: NSObject {
 
             self.isLoading = false
             switch itemResponse {
-            case .error(let error):
+            case .failure(let error):
                 self.didFinishWithError(error)
             case .success(let value):
                 self.updateShowLoadMoreInBetweenAfterLoadMore(loadedNewItems: value.items)
@@ -148,7 +148,7 @@ public class ListViewModel: NSObject {
             self.isLoading = false
 
             switch itemResponse {
-            case .error(let error):
+            case .failure(let error):
                 self.didFinishWithError(error)
             case .success(let value):
                 if isLoadMoreInTheEnd {

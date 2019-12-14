@@ -41,7 +41,7 @@ final class UserListViewModel: ObservableObject {
         client.load(resource: resource) { [weak self] users in
             guard let self = self else { return }
             switch users {
-            case .error(let error):
+            case .failure(let error):
                 self.state = .error(error)
             case .success(let value):
                 self.state = .loaded(content: value)

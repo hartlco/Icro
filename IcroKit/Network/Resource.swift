@@ -30,7 +30,7 @@ public enum HttpAuthoriztation {
 
 public struct Resource<A> {
     var urlRequest: URLRequest
-    let parse: (Data) -> Result<A>
+    let parse: (Data) -> Result<A, Error>
 }
 
 public enum NetworkingError: Error {
@@ -41,24 +41,21 @@ public enum NetworkingError: Error {
     case invalidInput
 }
 
-public enum Result<A> {
-    case error(error: Error)
-    case success(value: A)
-
-    public var value: A? {
+extension Result {
+    public var value: Success? {
         switch self {
-        case .error:
+        case .failure:
             return nil
         case .success(let value):
             return value
         }
     }
 
-    public init(value: A?, error: Error) {
+    public init(value: Success?, error: Failure) {
         if let value = value {
-            self = .success(value: value)
+            self = .success(value)
         } else {
-            self = .error(error: error)
+            self = .failure(error)
         }
     }
 }

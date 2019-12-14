@@ -199,7 +199,7 @@ public final class ComposeViewModel {
     public func reply(item: Item, string: String, completion: @escaping (Error?) -> Void) {
         client.load(resource: item.reply(with: string)) { response in
             switch response {
-            case .error(let error):
+            case .failure(let error):
                 completion(error)
             case .success:
                 completion(nil)
