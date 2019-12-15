@@ -8,10 +8,10 @@ import Foundation
 
 final class MockClient<B: Codable>: Client {
     private let returnedData: Data?
-    private let returnedResourceResult: Result<B>?
+    private let returnedResourceResult: Result<B, Error>?
 
     init(returnedData: Data?,
-         returnedResourceResult: Result<B>?) {
+         returnedResourceResult: Result<B, Error>?) {
         self.returnedData = returnedData
         self.returnedResourceResult = returnedResourceResult
     }
@@ -21,12 +21,12 @@ final class MockClient<B: Codable>: Client {
     }
 
     var error: Error?
-    func load<A>(resource: Resource<A>, completion: @escaping (Result<A>) -> Void) where A: Decodable, A: Encodable {
+    func load<A>(resource: Resource<A>, completion: @escaping (Result<A, Error>) -> Void) where A: Decodable, A: Encodable {
         if let error = error {
-            completion(.error(error: error))
+            completion(.failure(error))
         }
 
-        guard let result = returnedResourceResult as? Result<A> else { return }
+        guard let result = returnedResourceResult as? Result<A, Error> else { return }
         completion(result)
     }
 }

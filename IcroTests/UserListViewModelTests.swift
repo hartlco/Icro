@@ -10,7 +10,7 @@ import XCTest
 class UserListViewModelTests: XCTestCase {
     func test_numberOfUsers() {
         let client = MockClient<[Author]>(returnedData: nil,
-                                          returnedResourceResult: Result.success(value: makeAuthors()))
+                                          returnedResourceResult: Result.success(makeAuthors()))
         let viewModel = UserListViewModel(resource: makeResource(), client: client)
         viewModel.load()
         XCTAssert(viewModel.users.count == 2)
@@ -18,7 +18,7 @@ class UserListViewModelTests: XCTestCase {
 
     func test_userForRow() {
         let client = MockClient<[Author]>(returnedData: nil,
-                                          returnedResourceResult: Result.success(value: makeAuthors()))
+                                          returnedResourceResult: Result.success(makeAuthors()))
         let viewModel = UserListViewModel(resource: makeResource(), client: client)
         viewModel.load()
         XCTAssert(viewModel.users[1].name == "Author 2")
