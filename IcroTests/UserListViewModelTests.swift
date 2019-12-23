@@ -21,7 +21,7 @@ class UserListViewModelTests: XCTestCase {
                                           returnedResourceResult: Result.success(makeAuthors()))
         let viewModel = UserListViewModel(resource: makeResource(), client: client)
         viewModel.load()
-        XCTAssert(viewModel.users[1].name == "Author 1")
+        XCTAssert(viewModel.users[1].name == "Author 2")
     }
 
     // MARK: - Test
