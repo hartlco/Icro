@@ -6,8 +6,6 @@
 
 [Download from the App Store](https://itunes.apple.com/us/app/icro/id1375296597?ls=1&mt=8)
 
-[![Build Status](https://app.bitrise.io/app/223288add6631ac7/status.svg?token=sh5Rb02EXVs8bgD2fl0XWA&branch=master)](https://app.bitrise.io/app/223288add6631ac7)
-
 ## About
 Icro does not serve the purpose of a showcase project. Many parts were hacked together as I wanted to ship this App as quickly as possible.
 From now on all development will happen in public on Github.
