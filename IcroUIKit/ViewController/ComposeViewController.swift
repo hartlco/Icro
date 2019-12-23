@@ -8,6 +8,10 @@ import MobileCoreServices
 import IcroKit
 import Kingfisher
 
+private struct Constants {
+    static let KeyboardInputViewHeight: CGFloat = 40.0
+}
+
 public final class ComposeViewController: UIViewController, LoadingViewController {
     public var didClose: () -> Void = { }
 
@@ -94,7 +98,8 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
 
         layoutGuide = KeyboardLayoutGuide(parentView: view)
         if let layoutGuide = layoutGuide {
-            scrollView.bottomAnchor.constraint(equalTo: layoutGuide.topGuide.topAnchor).isActive = true
+            scrollView.bottomAnchor.constraint(equalTo: layoutGuide.topGuide.topAnchor,
+                                               constant: -Constants.KeyboardInputViewHeight).isActive = true
         }
 
         tableView.reloadData()
@@ -126,7 +131,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
                                                            toItem: nil,
                                                            attribute: .notAnAttribute,
                                                            multiplier: 1,
-                                                           constant: 40))
+                                                           constant: Constants.KeyboardInputViewHeight))
 
         keyboardInputView.imageButton.isHidden = !viewModel.canUploadImage
 
