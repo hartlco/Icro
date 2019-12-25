@@ -338,6 +338,10 @@ public class ListViewModel: NSObject {
     }
 
     public func showActionBar(at indexPath: IndexPath?) {
+        guard userSettings.loggedIn else {
+            return
+        }
+
         guard let indexPath = indexPath else {
             if let oldIndexPath = visibleActionBarIndexPath {
                 actionBarVisibilityChanged(.hide(indexPath: oldIndexPath))
