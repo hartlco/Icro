@@ -7,6 +7,7 @@ import UIKit
 import IcroKit
 import AVFoundation
 import Kingfisher
+import SnapKit
 
 public final class ItemTableViewCell: UITableViewCell {
     var isFavorite: Bool = false
@@ -50,6 +51,8 @@ public final class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var faveView: UIView!
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
 
+    public let actionButtonContainer = ItemActionButtonView()
+
     var itemID: String?
 
     var media = [Media]() {
@@ -84,11 +87,20 @@ public final class ItemTableViewCell: UITableViewCell {
         updateAppearance()
         avatarImageView.image = nil
         isFavorite = false
+        hideActionButtonContainer(duration: 0.0)
         super.prepareForReuse()
     }
 
     override public func awakeFromNib() {
         super.awakeFromNib()
+
+        actionButtonContainer.translatesAutoresizingMaskIntoConstraints = false
+        hideActionButtonContainer(duration: 0.0)
+        addSubview(actionButtonContainer)
+        actionButtonContainer.snp.makeConstraints { make in
+            make.leading.bottom.trailing.equalToSuperview()
+        }
+
         updateAppearance()
         let avatarGestureRecognizer = UITapGestureRecognizer(target: self,
                                                              action: #selector(didTapAvatarGestureRecognizer))
@@ -122,6 +134,11 @@ public final class ItemTableViewCell: UITableViewCell {
 
     public override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         return
+    }
+
+    public func toggleActionButtonContainerVisibility(animation: Bool = true) {
+        let duration = animation ? 0.2 : 0.0
+        toggleActionButtonContainer(duration: duration)
     }
 
     // MARK: - Private
@@ -192,6 +209,28 @@ extension ItemTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
             return CGSize(width: 140, height: 140)
         default:
             return CGSize.zero
+        }
+    }
+}
+
+extension ItemTableViewCell {
+    public func showActionButtonContainer(duration: Double = 0.2) {
+        UIView.animate(withDuration: duration) {
+            self.actionButtonContainer.alpha = 1.0
+        }
+    }
+
+    public func hideActionButtonContainer(duration: Double = 0.2) {
+        UIView.animate(withDuration: duration) {
+            self.actionButtonContainer.alpha = 0
+        }
+    }
+
+    private func toggleActionButtonContainer(duration: Double = 0.2) {
+        if actionButtonContainer.alpha == 0 {
+            showActionButtonContainer(duration: duration)
+        } else {
+            hideActionButtonContainer(duration: duration)
         }
     }
 }

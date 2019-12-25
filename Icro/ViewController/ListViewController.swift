@@ -98,6 +98,21 @@ final class ListViewController: UIViewController, LoadingViewController {
             self?.showError(error: error)
         }
 
+        viewModel.actionBarVisibilityChanged = { [weak self] event in
+            guard let self = self else { return }
+
+            switch event {
+            case .hide(let indexPath):
+                guard let cell = self.tableView.cellForRow(at: indexPath) as? ItemTableViewCell else { return }
+
+                cell.hideActionButtonContainer()
+            case .show(let indexPath):
+                guard let cell = self.tableView.cellForRow(at: indexPath) as? ItemTableViewCell else { return }
+
+                cell.showActionButtonContainer()
+            }
+        }
+
         setupNavigateBackShortcut(with: notificationCenter)
     }
 
@@ -147,6 +162,7 @@ final class ListViewController: UIViewController, LoadingViewController {
         dataSource = DiffableDataSource(tableView: tableView,
                                         cellProvider: { [weak self] tableView, indexPath, item -> UITableViewCell? in
             guard let self = self else { return nil }
+
             switch item {
             case .author(let author):
                 return self.authorCell(for: author, in: tableView, at: indexPath)
@@ -156,7 +172,9 @@ final class ListViewController: UIViewController, LoadingViewController {
                 let cell = tableView.dequeueCell(ofType: ItemTableViewCell.self, for: indexPath)
                 cell.layer.shouldRasterize = true
                 cell.layer.rasterizationScale = UIScreen.main.scale
-                self.cellConfigurator.configure(cell, forDisplaying: item)
+                self.cellConfigurator.configure(cell,
+                                                forDisplaying: item,
+                                                showActionButton: self.viewModel.showActionBar(for: indexPath))
                 return cell
             }
         })
@@ -278,9 +296,12 @@ extension ListViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard viewModel.shouldShowConversationOnClick(),
-            case .item(let item) = viewModel.viewType(forRow: indexPath.row) else { return }
-        itemNavigator.openConversation(item: item)
+        guard let cell = tableView.cellForRow(at: indexPath) as? ItemTableViewCell else {
+            return
+        }
+
+        editActionsConfigurator.configureItemActions(for: cell, at: indexPath)
+        viewModel.showActionBar(at: indexPath)
     }
 }
 

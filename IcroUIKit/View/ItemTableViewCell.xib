@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -84,36 +84,26 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </collectionView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqr-Xv-zRC">
-                        <rect key="frame" x="13" y="59" width="44" height="44"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="44" id="82Q-GQ-qi7"/>
-                            <constraint firstAttribute="width" constant="44" id="ar9-ZD-zrs"/>
-                        </constraints>
-                        <color key="tintColor" name="accent"/>
-                        <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                        <state key="normal" image="arrowshape.turn.up.right" catalog="system"/>
-                        <connections>
-                            <action selector="replyButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vEX-bo-i1I"/>
-                        </connections>
-                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipsis" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3Wj-Fk-Fah">
+                        <rect key="frame" x="150.5" y="227" width="19" height="5.5"/>
+                        <color key="tintColor" name="black-separatorColor"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="RIb-aZ-J41" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="2LR-fx-iMR"/>
                     <constraint firstItem="1qd-s8-lxc" firstAttribute="leading" secondItem="FRj-XY-IWC" secondAttribute="leading" id="90I-wu-fvJ"/>
                     <constraint firstItem="EpN-OF-974" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="52" id="Dqq-ht-meY"/>
                     <constraint firstItem="FRj-XY-IWC" firstAttribute="top" secondItem="RIb-aZ-J41" secondAttribute="top" id="FBd-g2-nRH"/>
-                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="Qqr-Xv-zRC" secondAttribute="bottom" constant="-4" id="JLR-6E-epq"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1qd-s8-lxc" secondAttribute="trailing" constant="12" id="LpI-Le-RBh"/>
                     <constraint firstItem="EpN-OF-974" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1qd-s8-lxc" secondAttribute="bottom" constant="6" id="Q7w-3m-ev0"/>
                     <constraint firstItem="EpN-OF-974" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="-10" id="QAa-Uu-zUT"/>
                     <constraint firstItem="FRj-XY-IWC" firstAttribute="leading" secondItem="RIb-aZ-J41" secondAttribute="trailing" constant="12" id="Ts9-vj-2zm"/>
                     <constraint firstAttribute="trailingMargin" secondItem="FRj-XY-IWC" secondAttribute="trailing" id="YHC-y6-bBL"/>
                     <constraint firstItem="RIb-aZ-J41" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="cik-u9-oUU"/>
-                    <constraint firstItem="Qqr-Xv-zRC" firstAttribute="top" secondItem="RIb-aZ-J41" secondAttribute="bottom" id="d3X-eJ-reU"/>
                     <constraint firstItem="EpN-OF-974" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="4" id="dVw-ge-H7V"/>
+                    <constraint firstItem="3Wj-Fk-Fah" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="gY5-40-Rdn"/>
                     <constraint firstItem="1qd-s8-lxc" firstAttribute="top" secondItem="FRj-XY-IWC" secondAttribute="bottom" constant="2" id="jRU-HP-2nc"/>
-                    <constraint firstItem="Qqr-Xv-zRC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-2" id="oOo-jm-g9r"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="3Wj-Fk-Fah" secondAttribute="bottom" constant="-10" id="ynY-8E-0R3"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -132,9 +122,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="arrowshape.turn.up.right" catalog="system" width="64" height="52"/>
-        <namedColor name="accent">
-            <color red="0.98000001907348633" green="0.59200000762939453" blue="0.46700000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="ellipsis" catalog="system" width="64" height="18"/>
+        <namedColor name="black-separatorColor">
+            <color red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

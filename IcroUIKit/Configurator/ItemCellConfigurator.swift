@@ -14,7 +14,7 @@ public final class ItemCellConfigurator: NSObject {
         self.itemNavigator = itemNavigator
     }
 
-    public func configure(_ cell: ItemTableViewCell, forDisplaying item: Item) {
+    public func configure(_ cell: ItemTableViewCell, forDisplaying item: Item, showActionButton: Bool) {
         cell.itemID = item.id
         cell.avatarImageView.kf.setImage(with: item.author.avatar)
         cell.usernameLabel.text = item.author.name
@@ -24,9 +24,13 @@ public final class ItemCellConfigurator: NSObject {
         cell.attributedLabel.didTap = { [weak self] link in
             if let link = link {
                 self?.itemNavigator.open(url: link)
-            } else {
-                self?.itemNavigator.openConversation(item: item)
             }
+        }
+
+        if showActionButton {
+            cell.showActionButtonContainer(duration: 0.0)
+        } else {
+            cell.hideActionButtonContainer(duration: 0.0)
         }
 
         cell.media = item.media

@@ -18,6 +18,31 @@ final class EditActionsConfigurator {
         self.viewModel = viewModel
     }
 
+    func configureItemActions(for cell: ItemTableViewCell, at indexPath: IndexPath) {
+        guard case .item(let item) = viewModel.viewType(forRow: indexPath.row) else {
+            return
+        }
+
+        cell.actionButtonContainer.isFavorite = item.isFavorite
+
+        cell.actionButtonContainer.didPress = { [weak self] action in
+            guard let self = self else { return }
+
+            switch action {
+            case .conversation:
+                self.itemNavigator.openConversation(item: item)
+            case .share:
+                self.itemNavigator.share(item: item, sourceView: cell)
+            case .reply:
+                self.itemNavigator.openReply(item: item)
+            case .favorite:
+                self.viewModel.toggleFave(for: item)
+            }
+
+            self.viewModel.showActionBar(at: nil)
+        }
+    }
+
     func contextMenu(tableView: UITableView, indexPath: IndexPath) -> UIContextMenuConfiguration? {
         return UIContextMenuConfiguration(identifier: nil,
                                           previewProvider: nil,
