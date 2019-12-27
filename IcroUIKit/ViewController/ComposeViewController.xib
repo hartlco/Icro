@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14854.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14806.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,9 +13,9 @@
                 <outlet property="collectionViewHeightConstraint" destination="d1h-6w-P92" id="bQD-2T-95D"/>
                 <outlet property="imageCollectionView" destination="3KW-Jp-SbQ" id="jI2-5g-ZzG"/>
                 <outlet property="scrollView" destination="CcP-xb-KNK" id="SEt-ge-g90"/>
+                <outlet property="syntaxView" destination="jHp-2B-act" id="uMH-zs-W4j"/>
                 <outlet property="tableView" destination="0G0-gY-AQB" id="WHR-2y-igi"/>
                 <outlet property="tableViewHeightConstraint" destination="CO4-76-swN" id="xpL-6X-52E"/>
-                <outlet property="textView" destination="xIu-jL-66e" id="CqK-iC-dGZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,22 +38,24 @@
                                     </constraints>
                                     <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </tableView>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="test" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xIu-jL-66e">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHp-2B-act" customClass="SyntaxTextView" customModule="Sourceful">
                                     <rect key="frame" x="6" y="128" width="363" height="38"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                </textView>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="WjI-Id-c4c"/>
+                                        <constraint firstAttribute="height" constant="38" placeholder="YES" id="wcv-eP-V7P"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="jHp-2B-act" secondAttribute="trailing" constant="6" id="005-KM-Tud"/>
                                 <constraint firstAttribute="trailing" secondItem="0G0-gY-AQB" secondAttribute="trailing" id="0Lp-zI-LVw"/>
-                                <constraint firstItem="xIu-jL-66e" firstAttribute="top" secondItem="0G0-gY-AQB" secondAttribute="bottom" id="Ijm-9Q-CTy"/>
                                 <constraint firstItem="0G0-gY-AQB" firstAttribute="top" secondItem="839-X8-Kby" secondAttribute="top" id="Izt-xE-hAl"/>
-                                <constraint firstAttribute="bottom" secondItem="xIu-jL-66e" secondAttribute="bottom" id="l5K-Ia-aF0"/>
-                                <constraint firstItem="xIu-jL-66e" firstAttribute="leading" secondItem="839-X8-Kby" secondAttribute="leading" constant="6" id="xZ4-2r-wBi"/>
+                                <constraint firstItem="jHp-2B-act" firstAttribute="leading" secondItem="839-X8-Kby" secondAttribute="leading" constant="6" id="P3i-9o-XrX"/>
+                                <constraint firstAttribute="bottom" secondItem="jHp-2B-act" secondAttribute="bottom" id="oLc-t1-neZ"/>
+                                <constraint firstItem="jHp-2B-act" firstAttribute="top" secondItem="0G0-gY-AQB" secondAttribute="bottom" id="qzS-s5-pe2"/>
                                 <constraint firstItem="0G0-gY-AQB" firstAttribute="leading" secondItem="839-X8-Kby" secondAttribute="leading" id="xat-uU-cUb"/>
-                                <constraint firstAttribute="trailing" secondItem="xIu-jL-66e" secondAttribute="trailing" constant="6" id="zf9-i6-nKf"/>
                             </constraints>
                         </view>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3KW-Jp-SbQ">
@@ -100,7 +102,7 @@
     </objects>
     <resources>
         <namedColor name="accentSuperLight">
-            <color red="0.17299999296665192" green="0.17299999296665192" blue="0.18000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.99199998378753662" green="0.98000001907348633" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

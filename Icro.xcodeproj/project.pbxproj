@@ -200,6 +200,9 @@
 		5BFCB8F6232E835F008D36E1 /* NotificationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFCB8F5232E835F008D36E1 /* NotificationComponent.swift */; };
 		8DCD1F043AA7A42B38373800 /* Pods_IcroScreenshotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4216F55176FDD95FB7B918F8 /* Pods_IcroScreenshotsTests.framework */; };
 		BF707E742131C45600506E64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
+		C5A498F323B66490006ED94F /* IcroLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F223B66490006ED94F /* IcroLexer.swift */; };
+		C5A498F523B69636006ED94F /* IcroEditorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F423B69636006ED94F /* IcroEditorTheme.swift */; };
+		C5A498F923B6AE3A006ED94F /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5A498F823B6AE3A006ED94F /* Sourceful */; };
 		C5F60BFD23B3862F0022448A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C5F60BFC23B3862F0022448A /* SnapKit */; };
 		C5F60BFF23B386650022448A /* ItemActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F60BFE23B386650022448A /* ItemActionButtonView.swift */; };
 		C5F8818023B4A141008DBAD6 /* DropdownTitleView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F8817423B4A124008DBAD6 /* DropdownTitleView.framework */; };
@@ -303,6 +306,16 @@
 				5B3C799A21C4E31100F699B8 /* IcroUIKit.framework in Embed Frameworks */,
 				5BC347B62132944900DEB45D /* IcroKit.framework in Embed Frameworks */,
 				C5F8818123B4A141008DBAD6 /* DropdownTitleView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5E52C3523B5153E0087A268 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +535,9 @@
 		7D2709F418E0D6293A75A02B /* Pods_Icro_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Share.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2175C9DAAFEF9FA508D0A47 /* Pods_Icro_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF71E43E214287CF007E88BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C5A498F223B66490006ED94F /* IcroLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcroLexer.swift; sourceTree = "<group>"; };
+		C5A498F423B69636006ED94F /* IcroEditorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcroEditorTheme.swift; sourceTree = "<group>"; };
+		C5A498FA23B6B676006ED94F /* Sourceful */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sourceful; sourceTree = "<group>"; };
 		C5F60BFE23B386650022448A /* ItemActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemActionButtonView.swift; sourceTree = "<group>"; };
 		C5F880EC23B4A124008DBAD6 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C5F880ED23B4A124008DBAD6 /* DropdownTitleView.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = DropdownTitleView.xcworkspace; sourceTree = "<group>"; };
@@ -637,6 +653,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A498F923B6AE3A006ED94F /* Sourceful in Frameworks */,
 				C5F60BFD23B3862F0022448A /* SnapKit in Frameworks */,
 				5B0653362324D1E0000C5C3A /* Kingfisher in Frameworks */,
 				5BC1384921C69BB80040353C /* IcroKit.framework in Frameworks */,
@@ -915,6 +932,8 @@
 				5B3C79A321C4E4CC00F699B8 /* Navigator */,
 				5B3C799421C4E31100F699B8 /* IcroUIKit.h */,
 				5B3C799521C4E31100F699B8 /* Info.plist */,
+				C5A498F223B66490006ED94F /* IcroLexer.swift */,
+				C5A498F423B69636006ED94F /* IcroEditorTheme.swift */,
 			);
 			path = IcroUIKit;
 			sourceTree = "<group>";
@@ -1174,6 +1193,7 @@
 		C5F880EA23B4A124008DBAD6 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				C5A498FA23B6B676006ED94F /* Sourceful */,
 				C5F880EB23B4A124008DBAD6 /* DropdownTitleView */,
 			);
 			path = Submodules;
@@ -1759,6 +1779,7 @@
 				5B3C798E21C4E31100F699B8 /* Sources */,
 				5B3C798F21C4E31100F699B8 /* Frameworks */,
 				5B3C799021C4E31100F699B8 /* Resources */,
+				C5E52C3523B5153E0087A268 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1768,6 +1789,7 @@
 			packageProductDependencies = (
 				5B0653352324D1E0000C5C3A /* Kingfisher */,
 				C5F60BFC23B3862F0022448A /* SnapKit */,
+				C5A498F823B6AE3A006ED94F /* Sourceful */,
 			);
 			productName = IcroUIKit;
 			productReference = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */;
@@ -1938,6 +1960,7 @@
 			knownRegions = (
 				en,
 				de,
+				Base,
 			);
 			mainGroup = C5FA2AB71EB4482C006DEB40;
 			packageReferences = (
@@ -2110,6 +2133,7 @@
 				5B3C79B421C508D300F699B8 /* ItemCellConfigurator.swift in Sources */,
 				5B841ED322E8349600CDA80C /* UICollectionView+Dequeueable.swift in Sources */,
 				5B3C79A621C4E51000F699B8 /* InsertLinkViewController.swift in Sources */,
+				C5A498F523B69636006ED94F /* IcroEditorTheme.swift in Sources */,
 				5B3C79C621C51B4900F699B8 /* ItemNavigatorProtocol.swift in Sources */,
 				5B3C79AA21C4E55300F699B8 /* ItemTableViewCell.swift in Sources */,
 				C5F60BFF23B386650022448A /* ItemActionButtonView.swift in Sources */,
@@ -2117,6 +2141,7 @@
 				5B3C79D621C52D2C00F699B8 /* KeyboardLayoutGuide.swift in Sources */,
 				5B3C79B221C5087C00F699B8 /* UIViewController+Loading.swift in Sources */,
 				5B3C799E21C4E33000F699B8 /* ComposeViewController.swift in Sources */,
+				C5A498F323B66490006ED94F /* IcroLexer.swift in Sources */,
 				5BD2FE682259E0DC00591490 /* VideoThumbnailImageProvider.swift in Sources */,
 				5BD9690E21C8D44000313795 /* ComposeNavigatorProtocol.swift in Sources */,
 			);
@@ -3020,6 +3045,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */;
 			productName = AppDelegateComponent;
+		};
+		C5A498F823B6AE3A006ED94F /* Sourceful */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Sourceful;
 		};
 		C5F60BFC23B3862F0022448A /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

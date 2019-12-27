@@ -27,9 +27,5 @@ final class AppearanceManager {
         listTableViewAppearance.backgroundColor = Color.backgroundColor
         listTableViewAppearance.sectionIndexBackgroundColor = .green
         listTableViewAppearance.separatorColor = Color.separatorColor
-
-        UITextView.appearance().backgroundColor = Color.backgroundColor
-        UITextView.appearance().textColor = Color.textColor
-        UIScrollView.appearance(whenContainedInInstancesOf: [ComposeViewController.self]).backgroundColor = Color.backgroundColor
     }
 }

@@ -7,6 +7,7 @@ import UIKit
 import MobileCoreServices
 import IcroKit
 import Kingfisher
+import Sourceful
 
 private struct Constants {
     static let KeyboardInputViewHeight: CGFloat = 40.0
@@ -17,14 +18,6 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
 
     private var layoutGuide: KeyboardLayoutGuide?
 
-    @IBOutlet private weak var textView: UITextView! {
-        didSet {
-            textView.delegate = self
-            textView.font = Font().body
-            textView.backgroundColor = Color.backgroundColor
-            textView.textColor = Color.textColor
-        }
-    }
     fileprivate let viewModel: ComposeViewModel
     private let composeNavigator: ComposeNavigatorProtocol
 
@@ -39,6 +32,14 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
             tableView.dataSource = self
         }
     }
+    @IBOutlet weak var syntaxView: SyntaxTextView! {
+        didSet {
+            syntaxView.delegate = self
+            syntaxView.theme = IcroEditorTheme()
+            syntaxView.contentTextView.isScrollEnabled = false
+        }
+    }
+
     @IBOutlet private weak var tableViewHeightConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var imageCollectionView: UICollectionView! {
@@ -71,14 +72,14 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
         viewModel.didUpdateImages = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.updateImageCollection()
-            strongSelf.keyboardInputView.update(for: strongSelf.textView.text,
+            strongSelf.keyboardInputView.update(for: strongSelf.syntaxView.text,
                                                 numberOfImages: strongSelf.viewModel.numberOfImages,
                                                 imageState: strongSelf.viewModel.imageState)
         }
 
         viewModel.didChangeImageState = { [weak self] imageState in
             guard let strongSelf = self else { return }
-            strongSelf.keyboardInputView.update(for: strongSelf.textView.text,
+            strongSelf.keyboardInputView.update(for: strongSelf.syntaxView.text,
                                                 numberOfImages: strongSelf.viewModel.numberOfImages,
                                                 imageState: strongSelf.viewModel.imageState)
         }
@@ -94,7 +95,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
     override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Color.backgroundColor
-        textView.text = viewModel.startText
+        syntaxView.text = viewModel.startText
 
         layoutGuide = KeyboardLayoutGuide(parentView: view)
         if let layoutGuide = layoutGuide {
@@ -114,7 +115,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
 
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        textView.becomeFirstResponder()
+        syntaxView.becomeFirstResponder()
     }
 
     // MARK: - Private
@@ -144,7 +145,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
     }
 
     @objc private func cancel() {
-        textView.resignFirstResponder()
+        syntaxView.resignFirstResponder()
         dismiss(animated: true, completion: nil)
         didClose()
     }
@@ -155,7 +156,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
 
         setButtonState(enabled: false)
 
-        viewModel.post(string: textView.text) { [weak self] error in
+        viewModel.post(string: syntaxView.text) { [weak self] error in
             self?.setButtonState(enabled: true)
             if let error = error {
                 self?.showError(error: error, position: .top)
@@ -170,13 +171,13 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
     @objc private func insertLink() {
         composeNavigator.openLinkInsertion { [weak self] title, url in
             guard let title = title, let url = url else { return }
-            self?.textView.insertText(self?.viewModel.linkText(url: url,
+            self?.syntaxView.insertText(self?.viewModel.linkText(url: url,
                                                                title: title) ?? "")
         }
     }
 
     @objc private func insertImage() {
-        textView.resignFirstResponder()
+        syntaxView.resignFirstResponder()
         composeNavigator.openImageInsertion(sourceView: keyboardInputView.imageButton, imageInsertion: { [weak self] image in
             self?.viewModel.insertImage(image: image)
         }, imageUpload: { [weak self] image in
@@ -287,5 +288,11 @@ extension ComposeViewController: UIDropInteractionDelegate {
 
             self.viewModel.upload(image: firstImage)
         }
+    }
+}
+
+extension ComposeViewController: SyntaxTextViewDelegate {
+    public func lexerForSource(_ source: String) -> Lexer {
+        return IcroLexer()
     }
 }
