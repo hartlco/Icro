@@ -115,7 +115,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
 
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        syntaxView.becomeFirstResponder()
+        syntaxView.contentTextView.becomeFirstResponder()
     }
 
     // MARK: - Private

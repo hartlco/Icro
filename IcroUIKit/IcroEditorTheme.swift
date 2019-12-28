@@ -56,11 +56,11 @@ final class IcroEditorTheme: SourceCodeTheme {
 
     func color(for syntaxColorType: SourceCodeTokenType) -> Sourceful.Color {
         switch syntaxColorType {
-        case .number, .plain:
+        case .plain:
             return IcroKit.Color.textColor
         case .string, .identifier, .keyword, .comment:
             return IcroKit.Color.secondaryTextColor
-        case .editorPlaceholder:
+        case .editorPlaceholder, .number:
             return IcroKit.Color.main
         }
     }
