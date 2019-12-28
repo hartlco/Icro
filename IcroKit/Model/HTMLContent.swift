@@ -81,10 +81,26 @@ private extension String {
                 let url = URL(string: linkURLString) else { continue }
             let range = nsString.range(of: content)
             mutableAttributedString.save_addAttributes([
-                                        .foregroundColor: Color.main,
-                                        NSAttributedString.Key(rawValue: "IcroLinkAttribute"): url
-                                    ], range: range)
+                .foregroundColor: Color.main,
+                NSAttributedString.Key(rawValue: "IcroLinkAttribute"): url
+            ], range: range)
 
+        }
+
+        for boldValue in body.xpath("//strong") {
+            guard let content = boldValue.content else { continue }
+            let range = nsString.range(of: content)
+            mutableAttributedString.save_addAttributes([
+                NSAttributedString.Key.font: Font().boldBody
+            ], range: range)
+        }
+
+        for italicValue in body.xpath("//em") {
+            guard let content = italicValue.content else { continue }
+            let range = nsString.range(of: content)
+            mutableAttributedString.save_addAttributes([
+                NSAttributedString.Key.font: Font().italicBody
+            ], range: range)
         }
 //
 //        for textAttachmentImage in body.xpath("//img | //src") {
@@ -101,29 +117,6 @@ private extension String {
 //                }
 //            }
 //        }
-
-        string.enumerateAttributes(in: NSRange(location: 0, length: string.length), options: []) { (attributes, rane, _) in
-            for (_, value) in attributes {
-//                #if os(iOS)
-//                if let image = value as? DTImageTextAttachment,
-//                    let textAttachment = textAttachment(for: image, itemID: itemID) {
-//                    mutableAttributedString.save_addAttributes([
-//                        .attachment: textAttachment
-//                        ], range: rane)
-//                }
-//                #endif
-
-                if let font = value as? XFont {
-                    if font.isBold {
-                        mutableAttributedString.save_addAttributes([.font: Font().boldBody], range: rane)
-                    }
-
-                    if font.isItalic {
-                        mutableAttributedString.save_addAttributes([.font: Font().italicBody], range: rane)
-                    }
-                }
-            }
-        }
 
         return mutableAttributedString
 
