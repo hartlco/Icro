@@ -3,4 +3,4 @@
 	url = https://github.com/GitHawkApp/DropdownTitleView
 [submodule "Submodules/Sourceful"]
 	path = Submodules/Sourceful
-	url = git@github.com:hartlco/Sourceful.git
+	url = https://github.com/hartlco/Sourceful.git
