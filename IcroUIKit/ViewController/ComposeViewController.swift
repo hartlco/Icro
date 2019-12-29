@@ -215,11 +215,11 @@ extension ComposeViewController: UITableViewDelegate, UITableViewDataSource {
         return viewModel.replyItem == nil ? 0 : 1
     }
 
-    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return viewModel.replyItem == nil ? nil : localizedString(key: "COMPOSEVIEWCONTROLLER_TABLEVIEW_HEADER_TITLE")
     }
 
-    public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    public func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         view.tintColor = Color.backgroundColor
         guard let header = view as? UITableViewHeaderFooterView else { return }
         header.textLabel?.textColor = Color.textColor
