@@ -4,3 +4,6 @@
 [submodule "Submodules/Sourceful"]
 	path = Submodules/Sourceful
 	url = https://github.com/hartlco/Sourceful.git
+[submodule "Submodules/WPXMLRPC"]
+	path = Submodules/WPXMLRPC
+	url = https://github.com/wordpress-mobile/wpxmlrpc
