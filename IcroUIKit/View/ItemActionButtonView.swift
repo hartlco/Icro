@@ -32,7 +32,7 @@ final public class ItemActionButtonView: UIView {
     }
 
     public var didPress: (Action) -> Void = { _ in }
-    
+
     public var isFavorite = false {
         didSet {
             if isFavorite {

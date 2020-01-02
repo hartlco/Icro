@@ -192,6 +192,7 @@
 		C5A498F923B6AE3A006ED94F /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5A498F823B6AE3A006ED94F /* Sourceful */; };
 		C5F4561523B912A8003A9308 /* wpxmlrpc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F4560423B9128A003A9308 /* wpxmlrpc.framework */; };
 		C5F4561623B912A8003A9308 /* wpxmlrpc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5F4560423B9128A003A9308 /* wpxmlrpc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C5F4564323BB3501003A9308 /* IndieAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F4564223BB3501003A9308 /* IndieAuth.swift */; };
 		C5F60BFD23B3862F0022448A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C5F60BFC23B3862F0022448A /* SnapKit */; };
 		C5F60BFF23B386650022448A /* ItemActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F60BFE23B386650022448A /* ItemActionButtonView.swift */; };
 		C5F8818023B4A141008DBAD6 /* DropdownTitleView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F8817423B4A124008DBAD6 /* DropdownTitleView.framework */; };
@@ -639,6 +640,7 @@
 		C5F455F923B9128A003A9308 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		C5F455FA23B9128A003A9308 /* wpxmlrpc.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = wpxmlrpc.podspec; sourceTree = "<group>"; };
 		C5F455FC23B9128A003A9308 /* config.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = config.yml; sourceTree = "<group>"; };
+		C5F4564223BB3501003A9308 /* IndieAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndieAuth.swift; sourceTree = "<group>"; };
 		C5F60BFE23B386650022448A /* ItemActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemActionButtonView.swift; sourceTree = "<group>"; };
 		C5F880EC23B4A124008DBAD6 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C5F880ED23B4A124008DBAD6 /* DropdownTitleView.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = DropdownTitleView.xcworkspace; sourceTree = "<group>"; };
@@ -1215,6 +1217,7 @@
 				5B66EE69227D6C8300317FE3 /* Client.swift */,
 				5B66EE6B227D700A00317FE3 /* HttpMethod.swift */,
 				5B66EE6D227D734800317FE3 /* MediaEndpoint.swift */,
+				C5F4564223BB3501003A9308 /* IndieAuth.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2490,6 +2493,7 @@
 				5BF6637F218961AB00ABA671 /* DiscoveryCategory.swift in Sources */,
 				5BD9691121C8D61800313795 /* GalleryDataSource.swift in Sources */,
 				5B2EF3E022E827C5006931A7 /* Deprecated.swift in Sources */,
+				C5F4564323BB3501003A9308 /* IndieAuth.swift in Sources */,
 				5B2EF3DE22E827C5006931A7 /* CSS.swift in Sources */,
 				5B66EE6E227D734800317FE3 /* MediaEndpoint.swift in Sources */,
 				5BD2FE5F2259D15100591490 /* Media.swift in Sources */,

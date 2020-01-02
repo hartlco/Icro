@@ -16,7 +16,10 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: windowScene)
-        navigator = AppNavigator(window: window!, userSettings: UserSettings.shared, notificationCenter: NotificationCenter.default)
+        navigator = AppNavigator(window: window!,
+                                 userSettings: UserSettings.shared,
+                                 notificationCenter: NotificationCenter.default,
+                                 application: .shared)
 
         if let firstUserActivity = connectionOptions.userActivities.first,
             firstUserActivity.activityType == UserActivities.compose.rawValue {
