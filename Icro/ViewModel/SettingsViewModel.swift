@@ -18,8 +18,10 @@ final class SettingsViewModel: ObservableObject {
     var objectWillChange = ObservableObjectPublisher()
 
     private let userSettings: UserSettings
+    private let notificationCenter: NotificationCenter
 
-    init(userSettings: UserSettings) {
+    init(userSettings: UserSettings,
+         notificationCenter: NotificationCenter = .default) {
         self.userSettings = userSettings
         self.isWordpressBlog = userSettings.wordpressInfo != nil
         self.wordpressURL = userSettings.wordpressInfo?.urlString ?? ""
@@ -28,12 +30,21 @@ final class SettingsViewModel: ObservableObject {
         self.isMicropubBlog = userSettings.micropubInfo != nil
         self.micropubURL = userSettings.micropubInfo?.urlString ?? ""
         self.micropubToken = userSettings.micropubInfo?.micropubToken ?? ""
+        self.notificationCenter = notificationCenter
+        self.indieAuthMeURLString = userSettings.indieAuthMeURLString
 
         if isWordpressBlog {
             isMicropubBlog = false
         } else if isMicropubBlog {
             isWordpressBlog = false
         }
+
+        notificationCenter.addObserver(self, selector: #selector(updateValues), name: .micropubAccessTokenChanged, object: nil)
+    }
+    @objc private func updateValues() {
+        self.micropubToken = userSettings.micropubToken ?? ""
+
+        objectWillChange.send()
     }
 
     var isWordpressBlog: Bool {
@@ -84,6 +95,12 @@ final class SettingsViewModel: ObservableObject {
         }
     }
 
+    var indieAuthMeURLString: String {
+        didSet {
+            updateSetup()
+        }
+    }
+
     let title = NSLocalizedString("SETTINGSVIEWCONTROLLER_TITLE", comment: "")
     let appearanceTitle = NSLocalizedString( "SETTINGSVIEWCONTROLLER_APPEARANCE_TITLE", comment: "")
     let appearanceButtonText = NSLocalizedString("SETTINGSVIEWCONTROLLER_THEME_TITLE", comment: "")
@@ -116,5 +133,7 @@ final class SettingsViewModel: ObservableObject {
         } else {
             userSettings.setMicropubInfo(info: nil)
         }
+
+        userSettings.indieAuthMeURLString = indieAuthMeURLString
     }
 }

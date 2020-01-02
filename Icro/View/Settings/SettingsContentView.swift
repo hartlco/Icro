@@ -21,7 +21,7 @@ struct SettingsContentView: View {
         NavigationView {
             Form {
                 WordpressSection(store: store)
-                MicropubSection(store: store)
+                MicropubSection(store: store, settingsNavigator: settingsNavigator)
                 AccountSection(settingsNavigator: settingsNavigator)
                 OtherSection(settingsNavigator: settingsNavigator)
                 TipJarSection()
@@ -67,16 +67,17 @@ struct WordpressSection: View {
 
 struct MicropubSection: View {
     @ObservedObject var store: SettingsViewModel
+    let settingsNavigator: SettingsNavigator
 
     var body: some View {
         Section(header: Text("SETTINGSVIEWCONTROLLER_MICROPUBSETUP_TITLE")
             .font(.headline)
             .fontWeight(.bold),
                 footer: Text("SETTINGSVIEWCONTROLLER_MICROPUBINFO_TEXT").lineLimit(nil)) {
-                Toggle(isOn: $store.isMicropubBlog) {
-                    Text("SETTINGSVIEWCONTROLLER_MICROPUBSETUPSWITCH_TEXT")
-                }
-                inputField
+                    Toggle(isOn: $store.isMicropubBlog) {
+                        Text("SETTINGSVIEWCONTROLLER_MICROPUBSETUPSWITCH_TEXT")
+                    }
+                    inputField
         }
     }
 
@@ -87,6 +88,17 @@ struct MicropubSection: View {
                           text: $store.micropubURL)
                 SecureField("SETTINGSVIEWCONTROLLER_MICROPUBTOKENFIELD_PLACEHOLDER",
                             text: $store.micropubToken)
+                HStack {
+                    TextField("Website URL", text: $store.indieAuthMeURLString)
+                        .disableAutocorrection(true)
+                        .autocapitalization(UITextAutocapitalizationType.none)
+                    Button(action: {
+                        self.settingsNavigator.openIndieAuthFlow(for: self.store.indieAuthMeURLString)
+                    }, label: {
+                        Text("Indie Auth")
+                    })
+                    .disabled(self.store.indieAuthMeURLString == "")
+                }
             })
         } else {
             return nil

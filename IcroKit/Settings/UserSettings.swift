@@ -8,6 +8,7 @@ import KeychainAccess
 
 public extension Notification.Name {
     static let blackListChanged = Notification.Name(rawValue: "blackListChanged")
+    static let micropubAccessTokenChanged = Notification.Name(rawValue: "micropubAccessTokenChanged")
 }
 
 public final class UserSettings {
@@ -146,9 +147,22 @@ public final class UserSettings {
         }
     }
 
+    public var indieAuthMeURLString: String {
+        set {
+            userDefaults.set(newValue, forKey: #function)
+        }
+        get {
+            guard let data = userDefaults.value(forKey: #function) as? String else { return "" }
+            return data
+        }
+    }
+
     public var micropubToken: String? {
         set {
-            keychain[#function] = newValue
+            if newValue != micropubToken {
+                keychain[#function] = newValue
+                notificationCenter.post(name: .micropubAccessTokenChanged, object: nil)
+            }
         }
         get {
             return keychain[#function]

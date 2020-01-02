@@ -24,15 +24,18 @@ final class AppNavigator {
     private let verticalTabViewModel: VerticalTabViewModel
     private let device: UIDevice
     private let notificationCenter: NotificationCenter
+    private let application: UIApplication
 
     init(window: UIWindow,
          userSettings: UserSettings,
          device: UIDevice = .current,
-         notificationCenter: NotificationCenter) {
+         notificationCenter: NotificationCenter,
+         application: UIApplication) {
         self.window = window
         self.userSettings = userSettings
         self.device = device
         self.notificationCenter = notificationCenter
+        self.application = application
 
         let loginView = LoginView(viewModel: loginViewModel)
 
@@ -106,13 +109,20 @@ final class AppNavigator {
     }
 
     func handleDeeplink(url: URL) {
+        if url.absoluteString.contains("auth") {
+            handleIndieAuthTokenCallback(url: url)
+            return
+        }
+
         let token = url.absoluteString.replacingOccurrences(of: "icro://", with: "")
         loginViewModel.loginString = token
         loginViewModel.login()
     }
 
     func showSettingsView(on presentedController: UIViewController) {
-        let settingsNavigator = SettingsNavigator(presentedController: presentedController, appNavigator: self)
+        let settingsNavigator = SettingsNavigator(presentedController: presentedController,
+                                                  appNavigator: self,
+                                                  application: application)
         let settingsContentView = SettingsContentView(dismissAction: {
                                                         presentedController.dismiss(animated: true, completion: nil)
         },
@@ -160,6 +170,23 @@ final class AppNavigator {
         navController.viewControllers = [viewController]
         return navController
 
+    }
+
+    private func handleIndieAuthTokenCallback(url: URL) {
+        guard let meURL = URL(string: userSettings.indieAuthMeURLString),
+            let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+            let code = components.queryItems?[0],
+            let codeValue = code.value else { return }
+
+        IndieAuth.makeTokenRequest(forEndpoint: IndieAuth.Constants.tokenURL,
+                                   meUrl: meURL,
+                                   code: codeValue,
+                                   redirectURI: IndieAuth.Constants.callback,
+                                   clientId: IndieAuth.Constants.clientIDURL.absoluteString) { (_, _, accessToken) in
+            DispatchQueue.main.async {
+                self.userSettings.micropubToken = accessToken
+            }
+        }
     }
 }
 

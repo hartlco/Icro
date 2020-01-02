@@ -241,12 +241,6 @@ extension ComposeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension ComposeViewController: UITextViewDelegate {
-    public func textViewDidChange(_ textView: UITextView) {
-        keyboardInputView.update(for: textView.text, numberOfImages: viewModel.numberOfImages, imageState: viewModel.imageState)
-    }
-}
-
 extension ComposeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfImages
@@ -294,5 +288,9 @@ extension ComposeViewController: UIDropInteractionDelegate {
 extension ComposeViewController: SyntaxTextViewDelegate {
     public func lexerForSource(_ source: String) -> Lexer {
         return IcroLexer()
+    }
+
+    public func didChangeText(_ syntaxTextView: SyntaxTextView) {
+        keyboardInputView.update(for: syntaxTextView.text, numberOfImages: viewModel.numberOfImages, imageState: viewModel.imageState)
     }
 }
