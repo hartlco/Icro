@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import Settings
 
 public enum MicropubEndpoint {
     case micropub

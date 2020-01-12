@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import Settings
 
 public typealias JSONDictionary = [String: Any]
 

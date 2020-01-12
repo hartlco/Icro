@@ -6,6 +6,7 @@
 import UIKit
 import IcroKit
 import IcroUIKit
+import Settings
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?

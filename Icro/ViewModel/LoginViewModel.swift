@@ -7,6 +7,7 @@ import Foundation
 import IcroKit
 import SwiftUI
 import Combine
+import Settings
 
 final class LoginViewModel: ObservableObject {
     let objectWillChange = ObservableObjectPublisher()

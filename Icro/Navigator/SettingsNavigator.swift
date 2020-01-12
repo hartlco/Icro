@@ -7,6 +7,7 @@ import Foundation
 import MessageUI
 import IcroKit
 import SwiftUI
+import Settings
 
 final class SettingsNavigator: NSObject {
     private let presentedController: UIViewController

@@ -5,6 +5,7 @@
 
 import Foundation
 import TypedSymbols
+import Settings
 
 public extension ListViewModel.ListType {
     static func standardTabs(from userSettings: UserSettings) -> [ListViewModel.ListType] {

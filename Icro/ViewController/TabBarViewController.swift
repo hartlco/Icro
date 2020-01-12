@@ -8,6 +8,7 @@ import IcroKit
 import IcroUIKit
 import SwiftUI
 import TypedSymbols
+import Settings
 
 final class TabBarViewController: UITabBarController {
     private let userSettings: UserSettings

@@ -5,6 +5,7 @@
 
 import Foundation
 import IcroKit
+import Settings
 
 #if targetEnvironment(macCatalyst)
 import AppKit

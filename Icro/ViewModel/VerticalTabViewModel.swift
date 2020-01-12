@@ -7,6 +7,7 @@ import SwiftUI
 import Combine
 import IcroKit
 import TypedSymbols
+import Settings
 
 final class VerticalTabViewModel: ObservableObject {
     private let userSettings: UserSettings

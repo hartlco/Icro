@@ -7,6 +7,7 @@ import Foundation
 import IcroKit
 import Combine
 import SwiftUI
+import Settings
 
 final class MuteViewModel: ObservableObject {
     var objectWillChange = ObservableObjectPublisher()

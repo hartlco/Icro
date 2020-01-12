@@ -1,7 +1,6 @@
-//
-//  Created by martin on 01.04.18.
-//  Copyright © 2018 Martin Hartl. All rights reserved.
-//
+struct Settings {
+    var text = "Hello, World!"
+}
 
 import Foundation
 import KeychainAccess

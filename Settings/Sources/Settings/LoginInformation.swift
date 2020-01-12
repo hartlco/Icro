@@ -5,6 +5,8 @@
 
 import Foundation
 
+public typealias JSONDictionary = [String: Any]
+
 public struct LoginInformation: Codable {
     public let token: String
     public let username: String
