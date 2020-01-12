@@ -1,16 +1,16 @@
-//
-//  Created by martin on 19.07.19.
-//  Copyright © 2019 Martin Hartl. All rights reserved.
-//
-
 import SwiftUI
 
-struct VerticalTabView: View {
+@available(iOS 13.0, OSX 10.15, *)
+public struct VerticalTabView: View {
     @ObservedObject var viewModel: VerticalTabViewModel
 
-    var body: some View {
+    public init(viewModel: VerticalTabViewModel) {
+        self.viewModel = viewModel
+    }
+
+    public var body: some View {
         VStack(spacing: 20) {
-            ForEach(viewModel.tabs, id: \HorizontalTab.title) { tab in
+            ForEach(viewModel.tabs, id: \VerticalTab.title) { tab in
                 ImageTab(selected: self.viewModel.isSelected(tab: tab),
                          image: tab.image,
                          title: tab.title)
@@ -25,6 +25,7 @@ struct VerticalTabView: View {
     }
 }
 
+@available(iOS 13.0, OSX 10.15, *)
 struct ImageTab: View {
     var selected: Bool
     var image: Image

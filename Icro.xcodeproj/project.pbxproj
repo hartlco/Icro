@@ -51,11 +51,10 @@
 		5B0653342324D047000C5C3A /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653332324D047000C5C3A /* KingfisherSwiftUI */; };
 		5B0653362324D1E0000C5C3A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653352324D1E0000C5C3A /* Kingfisher */; };
 		5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView.swift */; };
-		5B20951B22F6B03400C06123 /* VerticalTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20951A22F6B03400C06123 /* VerticalTabView.swift */; };
 		5B20951D22F6B05800C06123 /* VerticalTabsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20951C22F6B05800C06123 /* VerticalTabsSplitViewController.swift */; };
 		5B20951F22F6B0B900C06123 /* UserActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20951E22F6B0B900C06123 /* UserActivities.swift */; };
 		5B20952122F6B0CF00C06123 /* acknowledgements.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B20952022F6B0CF00C06123 /* acknowledgements.json */; };
-		5B20952322F6B12300C06123 /* VerticalTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20952222F6B12300C06123 /* VerticalTabViewModel.swift */; };
+		5B20952322F6B12300C06123 /* VerticalTabViewModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20952222F6B12300C06123 /* VerticalTabViewModel+Extensions.swift */; };
 		5B20952522F6B14E00C06123 /* CatalystToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20952422F6B14E00C06123 /* CatalystToolbar.swift */; };
 		5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */; };
 		5B28C8D022C89B2600A46C52 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CF22C89B2600A46C52 /* UserListView.swift */; };
@@ -185,6 +184,11 @@
 		5BFCB8F6232E835F008D36E1 /* NotificationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFCB8F5232E835F008D36E1 /* NotificationComponent.swift */; };
 		8DCD1F043AA7A42B38373800 /* Pods_IcroScreenshotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4216F55176FDD95FB7B918F8 /* Pods_IcroScreenshotsTests.framework */; };
 		BF707E742131C45600506E64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
+		C5454DAE23CB9A5C00739A6C /* VerticalTabView in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DAD23CB9A5C00739A6C /* VerticalTabView */; };
+		C5454DB023CB9F4A00739A6C /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DAF23CB9F4A00739A6C /* Settings */; };
+		C5454DB223CB9F5000739A6C /* VerticalTabView in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DB123CB9F5000739A6C /* VerticalTabView */; };
+		C5454DB423CB9FD200739A6C /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DB323CB9FD200739A6C /* TypedSymbols */; };
+		C5454DB523CBA0EF00739A6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		C59E637E23BDC9C10012BF85 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637123BDC9C10012BF85 /* WPXMLRPCDecoder.m */; };
 		C59E637F23BDC9C10012BF85 /* WPXMLRPC.h in Headers */ = {isa = PBXBuildFile; fileRef = C59E637223BDC9C10012BF85 /* WPXMLRPC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C59E638023BDC9C10012BF85 /* WPXMLRPCEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = C59E637323BDC9C10012BF85 /* WPXMLRPCEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -393,11 +397,10 @@
 		5B01CC042168E7430007E01D /* Icro-Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Icro-Mac.entitlements"; sourceTree = "<group>"; };
 		5B01CC062168E8000007E01D /* ListItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCellConfigurator.swift; sourceTree = "<group>"; };
 		5B165D8722BF436D00B851B2 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TipJarView.swift; path = View/TipJarView.swift; sourceTree = "<group>"; };
-		5B20951A22F6B03400C06123 /* VerticalTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerticalTabView.swift; path = View/VerticalTabView.swift; sourceTree = "<group>"; };
 		5B20951C22F6B05800C06123 /* VerticalTabsSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerticalTabsSplitViewController.swift; path = ViewController/VerticalTabsSplitViewController.swift; sourceTree = "<group>"; };
 		5B20951E22F6B0B900C06123 /* UserActivities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivities.swift; path = Helper/UserActivities.swift; sourceTree = "<group>"; };
 		5B20952022F6B0CF00C06123 /* acknowledgements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = acknowledgements.json; path = Resources/acknowledgements.json; sourceTree = "<group>"; };
-		5B20952222F6B12300C06123 /* VerticalTabViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerticalTabViewModel.swift; path = ViewModel/VerticalTabViewModel.swift; sourceTree = "<group>"; };
+		5B20952222F6B12300C06123 /* VerticalTabViewModel+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "VerticalTabViewModel+Extensions.swift"; path = "ViewModel/VerticalTabViewModel+Extensions.swift"; sourceTree = "<group>"; };
 		5B20952422F6B14E00C06123 /* CatalystToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CatalystToolbar.swift; path = Helper/CatalystToolbar.swift; sourceTree = "<group>"; };
 		5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AcknowledgementView.swift; path = View/Settings/AcknowledgementView.swift; sourceTree = "<group>"; };
 		5B28C8CF22C89B2600A46C52 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserListView.swift; path = View/UserListView.swift; sourceTree = "<group>"; };
@@ -535,6 +538,7 @@
 		7D2709F418E0D6293A75A02B /* Pods_Icro_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Share.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2175C9DAAFEF9FA508D0A47 /* Pods_Icro_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF71E43E214287CF007E88BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C5454DA723CB991A00739A6C /* VerticalTabView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = VerticalTabView; sourceTree = "<group>"; };
 		C59E637123BDC9C10012BF85 /* WPXMLRPCDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoder.m; sourceTree = "<group>"; };
 		C59E637223BDC9C10012BF85 /* WPXMLRPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPC.h; sourceTree = "<group>"; };
 		C59E637323BDC9C10012BF85 /* WPXMLRPCEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCEncoder.h; sourceTree = "<group>"; };
@@ -714,6 +718,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5454DB023CB9F4A00739A6C /* Settings in Frameworks */,
+				C5454DB423CB9FD200739A6C /* TypedSymbols in Frameworks */,
+				C5454DB223CB9F5000739A6C /* VerticalTabView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +729,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B0653322324D047000C5C3A /* Kingfisher in Frameworks */,
+				C5454DAE23CB9A5C00739A6C /* VerticalTabView in Frameworks */,
 				5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */,
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
 				5B8FD3A02360D53700BC72F2 /* TypedSymbols in Frameworks */,
@@ -1667,6 +1675,7 @@
 		C5FA2AB71EB4482C006DEB40 = {
 			isa = PBXGroup;
 			children = (
+				C5454DA723CB991A00739A6C /* VerticalTabView */,
 				C5CE39ED23CB70550095013A /* Settings */,
 				5B2B817422F6CC2E0073B393 /* appversion.xcconfig */,
 				C5F880EA23B4A124008DBAD6 /* Submodules */,
@@ -1731,7 +1740,7 @@
 				5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */,
 				5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */,
 				5B44C71620979CF20003B35D /* MuteViewModel.swift */,
-				5B20952222F6B12300C06123 /* VerticalTabViewModel.swift */,
+				5B20952222F6B12300C06123 /* VerticalTabViewModel+Extensions.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -1748,7 +1757,6 @@
 				5B51621A22B2C900009C0064 /* LoginView.swift */,
 				5B165D8722BF436D00B851B2 /* TipJarView.swift */,
 				5B28C8CF22C89B2600A46C52 /* UserListView.swift */,
-				5B20951A22F6B03400C06123 /* VerticalTabView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1916,6 +1924,11 @@
 			dependencies = (
 			);
 			name = "Icro-Next";
+			packageProductDependencies = (
+				C5454DAF23CB9F4A00739A6C /* Settings */,
+				C5454DB123CB9F5000739A6C /* VerticalTabView */,
+				C5454DB323CB9FD200739A6C /* TypedSymbols */,
+			);
 			productName = "Icro-Next";
 			productReference = C5CE39D523CB6F9F0095013A /* Icro-Next.app */;
 			productType = "com.apple.product-type.application";
@@ -1945,6 +1958,7 @@
 				5B0653312324D047000C5C3A /* Kingfisher */,
 				5B0653332324D047000C5C3A /* KingfisherSwiftUI */,
 				5B8FD39F2360D53700BC72F2 /* TypedSymbols */,
+				C5454DAD23CB9A5C00739A6C /* VerticalTabView */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -2155,6 +2169,7 @@
 			files = (
 				C5CE39E223CB6FA00095013A /* Main.storyboard in Resources */,
 				C5CE39DF23CB6FA00095013A /* Preview Assets.xcassets in Resources */,
+				C5454DB523CBA0EF00739A6C /* Assets.xcassets in Resources */,
 				C5CE39DC23CB6FA00095013A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2344,7 +2359,6 @@
 				5B20952522F6B14E00C06123 /* CatalystToolbar.swift in Sources */,
 				5B3C79C221C518B700F699B8 /* MainNavigator.swift in Sources */,
 				5B4895F222B1603E00CF08C2 /* SceneDelegate.swift in Sources */,
-				5B20951B22F6B03400C06123 /* VerticalTabView.swift in Sources */,
 				5B609F1023091FA900F2C1BC /* ViewModelState.swift in Sources */,
 				5B609F162309200400F2C1BC /* GalleryDataSource+ImageViewer.swift in Sources */,
 				5B38476921FE073800F082AD /* UIView+Contraints.swift in Sources */,
@@ -2381,7 +2395,7 @@
 				5B609F1323091FD600F2C1BC /* ListViewController.swift in Sources */,
 				5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */,
 				5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */,
-				5B20952322F6B12300C06123 /* VerticalTabViewModel.swift in Sources */,
+				5B20952322F6B12300C06123 /* VerticalTabViewModel+Extensions.swift in Sources */,
 				5B01A77A22E82CFA00D420BD /* BlurView.swift in Sources */,
 				5B01A78922E82CFA00D420BD /* UIButton.swift in Sources */,
 				5B609F1A2309204B00F2C1BC /* TipJarViewModel.swift in Sources */,
@@ -3213,6 +3227,23 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */;
 			productName = AppDelegateComponent;
+		};
+		C5454DAD23CB9A5C00739A6C /* VerticalTabView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VerticalTabView;
+		};
+		C5454DAF23CB9F4A00739A6C /* Settings */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Settings;
+		};
+		C5454DB123CB9F5000739A6C /* VerticalTabView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VerticalTabView;
+		};
+		C5454DB323CB9FD200739A6C /* TypedSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */;
+			productName = TypedSymbols;
 		};
 		C5A498F823B6AE3A006ED94F /* Sourceful */ = {
 			isa = XCSwiftPackageProductDependency;

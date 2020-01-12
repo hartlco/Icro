@@ -5,6 +5,7 @@
 
 import UIKit
 import SwiftUI
+import VerticalTabView
 
 final class VerticalTabsSplitViewController: UISplitViewController {
     private let verticalTabView: VerticalTabView

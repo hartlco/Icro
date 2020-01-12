@@ -8,6 +8,7 @@ import IcroKit
 import IcroUIKit
 import SwiftUI
 import Settings
+import VerticalTabView
 
 #if targetEnvironment(macCatalyst)
 import AppKit

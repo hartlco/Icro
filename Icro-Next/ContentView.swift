@@ -7,14 +7,24 @@
 //
 
 import SwiftUI
+import VerticalTabView
+import TypedSymbols
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, World!")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-}
+    let viewModel = VerticalTabViewModel(tabs: [VerticalTab(image: Image("play-button"), title: "Profile")],
+                                         selectedTab: VerticalTab(image: Image("play-button"), title: "Profile"))
 
+    var body: some View {
+        HSplitView {
+            VerticalTabView(viewModel: viewModel)
+            Text("Hi SwiftUI")
+        }
+    }
+
+    let tabs = [
+        VerticalTab(image: Image("Profile"), title: "Profile")
+    ]
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
