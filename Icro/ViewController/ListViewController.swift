@@ -115,6 +115,9 @@ final class ListViewController: UIViewController, LoadingViewController {
         }
 
         setupNavigateBackShortcut(with: notificationCenter)
+
+        // Hide empty cells
+        tableView.tableFooterView = UIView(frame: .zero)
     }
 
     deinit {
