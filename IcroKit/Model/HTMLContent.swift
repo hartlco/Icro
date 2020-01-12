@@ -31,8 +31,8 @@ public final class HTMLContent: Codable {
         self.videoLinks = rawHTMLString.videoLinks(from: htmlDocument).compactMap(URL.init)
     }
 
-    public func imageDescs() -> [String] {
-        return rawHTMLString.imagesDescs()
+    public func imageDescriptions() -> [String] {
+        return rawHTMLString.imageDescriptions()
     }
 
     public func attributedStringWithoutImages() -> NSAttributedString? {
@@ -238,7 +238,7 @@ private extension String {
         }
     }
 
-    func imagesDescs() -> [String] {
+    func imageDescriptions() -> [String] {
         guard let doc = try? HTML(html: self, encoding: .utf8) else { return [] }
 
         return doc.xpath("//img | //alt").compactMap {

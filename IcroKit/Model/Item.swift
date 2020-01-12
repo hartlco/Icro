@@ -136,7 +136,7 @@ extension Item {
     private func accessibilityLabel(for item: Item, attributedContent: NSAttributedString?) -> String {
         var accessibilityLabel = "\(item.author.name): \(item.content.string)"
 
-        for imageDescription in item.htmlContent.imageDescs() where !imageDescription.isEmpty {
+        for imageDescription in item.htmlContent.imageDescriptions() where !imageDescription.isEmpty {
             accessibilityLabel += ", image: \(imageDescription)"
         }
 
