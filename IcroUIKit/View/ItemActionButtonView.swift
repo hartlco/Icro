@@ -14,6 +14,7 @@ final public class ItemActionButtonView: UIView {
         case conversation
         case share
         case favorite
+        case dismiss
     }
 
     private let replyButton = UIButton()
@@ -45,7 +46,7 @@ final public class ItemActionButtonView: UIView {
 
     // MARK: - Private
 
-    @objc private func didPress(button: UIButton) {
+    @objc private func didPress(button: NSObject) {
         switch button {
         case _ where button == replyButton:
             didPress(.reply)
@@ -56,12 +57,13 @@ final public class ItemActionButtonView: UIView {
         case _ where button == favoriteButton:
             didPress(.favorite)
         default:
-            return
+            didPress(.dismiss)
         }
     }
 
     func setupLayout() {
-        backgroundColor = Color.buttonColor
+        backgroundColor = .clear
+        stackView.addBackground(color: Color.buttonColor ?? UIColor.systemBackground)
 
         replyButton.setImage(UIImage(symbol: .arrowshape_turn_up_left), for: .normal)
         conversationButton.setImage(UIImage(symbol: .bubble_left_and_bubble_right), for: .normal)
@@ -73,9 +75,13 @@ final public class ItemActionButtonView: UIView {
         favoriteButton.addTarget(self, action: #selector(didPress(button:)), for: .touchUpInside)
         shareButton.addTarget(self, action: #selector(didPress(button:)), for: .touchUpInside)
 
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didPress(button:)))
+        addGestureRecognizer(tapRecognizer)
+
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalTo(44)
         }
 
         stackView.addArrangedSubview(replyButton)
@@ -84,9 +90,14 @@ final public class ItemActionButtonView: UIView {
         stackView.addArrangedSubview(shareButton)
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
+    }
+}
 
-        snp.makeConstraints { make in
-            make.height.equalTo(50)
-        }
+private extension UIStackView {
+    func addBackground(color: UIColor) {
+        let subView = UIView(frame: bounds)
+        subView.backgroundColor = color
+        subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        insertSubview(subView, at: 0)
     }
 }

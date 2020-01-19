@@ -98,7 +98,7 @@ public final class ItemTableViewCell: UITableViewCell {
         hideActionButtonContainer(duration: 0.0)
         addSubview(actionButtonContainer)
         actionButtonContainer.snp.makeConstraints { make in
-            make.leading.bottom.trailing.equalToSuperview()
+            make.edges.equalToSuperview()
         }
 
         updateAppearance()

@@ -37,6 +37,8 @@ final class EditActionsConfigurator {
                 self.itemNavigator.openReply(item: item)
             case .favorite:
                 self.viewModel.toggleFave(for: item)
+            case .dismiss:
+                break
             }
 
             self.viewModel.showActionBar(at: nil)
