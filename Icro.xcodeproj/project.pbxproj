@@ -47,9 +47,9 @@
 		5B01A79C22E82CFA00D420BD /* ImageFadeInHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A77622E82CFA00D420BD /* ImageFadeInHandler.swift */; };
 		5B01A7C622E8313200D420BD /* UICollectionView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A7BF22E8313200D420BD /* UICollectionView+Dequeueable.swift */; };
 		5B01CC002168E4DD0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
-		5B0653322324D047000C5C3A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653312324D047000C5C3A /* Kingfisher */; };
-		5B0653342324D047000C5C3A /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653332324D047000C5C3A /* KingfisherSwiftUI */; };
-		5B0653362324D1E0000C5C3A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653352324D1E0000C5C3A /* Kingfisher */; };
+		5B0653322324D047000C5C3A /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653312324D047000C5C3A /* SwiftPackageProductDependency */; };
+		5B0653342324D047000C5C3A /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653332324D047000C5C3A /* SwiftPackageProductDependency */; };
+		5B0653362324D1E0000C5C3A /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653352324D1E0000C5C3A /* SwiftPackageProductDependency */; };
 		5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView.swift */; };
 		5B20951D22F6B05800C06123 /* VerticalTabsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20951C22F6B05800C06123 /* VerticalTabsSplitViewController.swift */; };
 		5B20951F22F6B0B900C06123 /* UserActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20951E22F6B0B900C06123 /* UserActivities.swift */; };
@@ -130,15 +130,15 @@
 		5B69E65122AA16310081CDFB /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsContentView.swift */; };
 		5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B81E79A2206C62E008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
-		5B83B00D22D06EA8004C4D8D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B00C22D06EA8004C4D8D /* Alamofire */; };
-		5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01A22D11B3D004C4D8D /* KeychainAccess */; };
-		5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01C22D11D64004C4D8D /* KeychainAccess */; };
+		5B83B00D22D06EA8004C4D8D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B00C22D06EA8004C4D8D /* SwiftPackageProductDependency */; };
+		5B83B01B22D11B3D004C4D8D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01A22D11B3D004C4D8D /* SwiftPackageProductDependency */; };
+		5B83B01D22D11D64004C4D8D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01C22D11D64004C4D8D /* SwiftPackageProductDependency */; };
 		5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B841ECD22E832F700CDA80C /* libiconv.tbd */; };
 		5B841ED322E8349600CDA80C /* UICollectionView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A7BF22E8313200D420BD /* UICollectionView+Dequeueable.swift */; };
 		5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B869B07214E4633000A051C /* MicropubEndpoint.swift */; };
 		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
-		5B8FD3A02360D53700BC72F2 /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 5B8FD39F2360D53700BC72F2 /* TypedSymbols */; };
-		5B8FD3A22360D59800BC72F2 /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 5B8FD3A12360D59800BC72F2 /* TypedSymbols */; };
+		5B8FD3A02360D53700BC72F2 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B8FD39F2360D53700BC72F2 /* SwiftPackageProductDependency */; };
+		5B8FD3A22360D59800BC72F2 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5B8FD3A12360D59800BC72F2 /* SwiftPackageProductDependency */; };
 		5B99C67A229FB47200437552 /* UITableView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99C679229FB47200437552 /* UITableView+Keyboard.swift */; };
 		5BA0C37822FE99E100A9B44D /* MainMenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA0C37722FE99E100A9B44D /* MainMenuBuilder.swift */; };
 		5BA0C37A22FFF24400A9B44D /* MainMenuActionNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA0C37922FFF24400A9B44D /* MainMenuActionNotifier.swift */; };
@@ -173,7 +173,7 @@
 		5BD9691121C8D61800313795 /* GalleryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD9690921C8CBFB00313795 /* GalleryDataSource.swift */; };
 		5BDE18EB216A5745001254F4 /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58371A212860BA0076121E /* ComposeViewModel.swift */; };
 		5BDE18F1216A57C0001254F4 /* MicropubRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */; };
-		5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */; };
+		5BE92EF622D1BAAD0048E8F1 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF522D1BAAD0048E8F1 /* SwiftPackageProductDependency */; };
 		5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
 		5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */; };
 		5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
@@ -184,10 +184,10 @@
 		5BFCB8F6232E835F008D36E1 /* NotificationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFCB8F5232E835F008D36E1 /* NotificationComponent.swift */; };
 		8DCD1F043AA7A42B38373800 /* Pods_IcroScreenshotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4216F55176FDD95FB7B918F8 /* Pods_IcroScreenshotsTests.framework */; };
 		BF707E742131C45600506E64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
-		C5454DAE23CB9A5C00739A6C /* VerticalTabView in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DAD23CB9A5C00739A6C /* VerticalTabView */; };
-		C5454DB023CB9F4A00739A6C /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DAF23CB9F4A00739A6C /* Settings */; };
-		C5454DB223CB9F5000739A6C /* VerticalTabView in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DB123CB9F5000739A6C /* VerticalTabView */; };
-		C5454DB423CB9FD200739A6C /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DB323CB9FD200739A6C /* TypedSymbols */; };
+		C5454DAE23CB9A5C00739A6C /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DAD23CB9A5C00739A6C /* SwiftPackageProductDependency */; };
+		C5454DB023CB9F4A00739A6C /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DAF23CB9F4A00739A6C /* SwiftPackageProductDependency */; };
+		C5454DB223CB9F5000739A6C /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DB123CB9F5000739A6C /* SwiftPackageProductDependency */; };
+		C5454DB423CB9FD200739A6C /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DB323CB9FD200739A6C /* SwiftPackageProductDependency */; };
 		C5454DB523CBA0EF00739A6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		C59E637E23BDC9C10012BF85 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637123BDC9C10012BF85 /* WPXMLRPCDecoder.m */; };
 		C59E637F23BDC9C10012BF85 /* WPXMLRPC.h in Headers */ = {isa = PBXBuildFile; fileRef = C59E637223BDC9C10012BF85 /* WPXMLRPC.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -204,15 +204,15 @@
 		C59E638A23BDC9C10012BF85 /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637D23BDC9C10012BF85 /* WPXMLRPCDataCleaner.m */; };
 		C5A498F323B66490006ED94F /* IcroLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F223B66490006ED94F /* IcroLexer.swift */; };
 		C5A498F523B69636006ED94F /* IcroEditorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F423B69636006ED94F /* IcroEditorTheme.swift */; };
-		C5A498F923B6AE3A006ED94F /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5A498F823B6AE3A006ED94F /* Sourceful */; };
+		C5A498F923B6AE3A006ED94F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C5A498F823B6AE3A006ED94F /* SwiftPackageProductDependency */; };
 		C5CE39D823CB6F9F0095013A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE39D723CB6F9F0095013A /* AppDelegate.swift */; };
 		C5CE39DA23CB6F9F0095013A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE39D923CB6F9F0095013A /* ContentView.swift */; };
 		C5CE39DC23CB6FA00095013A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CE39DB23CB6FA00095013A /* Assets.xcassets */; };
 		C5CE39DF23CB6FA00095013A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CE39DE23CB6FA00095013A /* Preview Assets.xcassets */; };
 		C5CE39E223CB6FA00095013A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CE39E023CB6FA00095013A /* Main.storyboard */; };
-		C5CE39EF23CB710D0095013A /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = C5CE39EE23CB710D0095013A /* Settings */; };
+		C5CE39EF23CB710D0095013A /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C5CE39EE23CB710D0095013A /* SwiftPackageProductDependency */; };
 		C5F4564323BB3501003A9308 /* IndieAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F4564223BB3501003A9308 /* IndieAuth.swift */; };
-		C5F60BFD23B3862F0022448A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C5F60BFC23B3862F0022448A /* SnapKit */; };
+		C5F60BFD23B3862F0022448A /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C5F60BFC23B3862F0022448A /* SwiftPackageProductDependency */; };
 		C5F60BFF23B386650022448A /* ItemActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F60BFE23B386650022448A /* ItemActionButtonView.swift */; };
 		C5F8818023B4A141008DBAD6 /* DropdownTitleView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F8817423B4A124008DBAD6 /* DropdownTitleView.framework */; };
 		C5F8818123B4A141008DBAD6 /* DropdownTitleView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5F8817423B4A124008DBAD6 /* DropdownTitleView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -680,9 +680,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5A498F923B6AE3A006ED94F /* Sourceful in Frameworks */,
-				C5F60BFD23B3862F0022448A /* SnapKit in Frameworks */,
-				5B0653362324D1E0000C5C3A /* Kingfisher in Frameworks */,
+				C5A498F923B6AE3A006ED94F /* BuildFile in Frameworks */,
+				C5F60BFD23B3862F0022448A /* BuildFile in Frameworks */,
+				5B0653362324D1E0000C5C3A /* BuildFile in Frameworks */,
 				5BC1384921C69BB80040353C /* IcroKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,11 +706,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B83B00D22D06EA8004C4D8D /* Alamofire in Frameworks */,
-				C5CE39EF23CB710D0095013A /* Settings in Frameworks */,
-				5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */,
+				5B83B00D22D06EA8004C4D8D /* BuildFile in Frameworks */,
+				C5CE39EF23CB710D0095013A /* BuildFile in Frameworks */,
+				5B83B01D22D11D64004C4D8D /* BuildFile in Frameworks */,
 				5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */,
-				5B8FD3A22360D59800BC72F2 /* TypedSymbols in Frameworks */,
+				5B8FD3A22360D59800BC72F2 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,9 +718,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5454DB023CB9F4A00739A6C /* Settings in Frameworks */,
-				C5454DB423CB9FD200739A6C /* TypedSymbols in Frameworks */,
-				C5454DB223CB9F5000739A6C /* VerticalTabView in Frameworks */,
+				C5454DB023CB9F4A00739A6C /* BuildFile in Frameworks */,
+				C5454DB423CB9FD200739A6C /* BuildFile in Frameworks */,
+				C5454DB223CB9F5000739A6C /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,15 +728,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B0653322324D047000C5C3A /* Kingfisher in Frameworks */,
-				C5454DAE23CB9A5C00739A6C /* VerticalTabView in Frameworks */,
+				5B0653322324D047000C5C3A /* BuildFile in Frameworks */,
+				C5454DAE23CB9A5C00739A6C /* BuildFile in Frameworks */,
 				5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */,
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
-				5B8FD3A02360D53700BC72F2 /* TypedSymbols in Frameworks */,
-				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
+				5B8FD3A02360D53700BC72F2 /* BuildFile in Frameworks */,
+				5BE92EF622D1BAAD0048E8F1 /* BuildFile in Frameworks */,
 				C5F8818023B4A141008DBAD6 /* DropdownTitleView.framework in Frameworks */,
-				5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */,
-				5B0653342324D047000C5C3A /* KingfisherSwiftUI in Frameworks */,
+				5B83B01B22D11B3D004C4D8D /* BuildFile in Frameworks */,
+				5B0653342324D047000C5C3A /* BuildFile in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1842,9 +1842,9 @@
 			);
 			name = IcroUIKit;
 			packageProductDependencies = (
-				5B0653352324D1E0000C5C3A /* Kingfisher */,
-				C5F60BFC23B3862F0022448A /* SnapKit */,
-				C5A498F823B6AE3A006ED94F /* Sourceful */,
+				5B0653352324D1E0000C5C3A /* SwiftPackageProductDependency */,
+				C5F60BFC23B3862F0022448A /* SwiftPackageProductDependency */,
+				C5A498F823B6AE3A006ED94F /* SwiftPackageProductDependency */,
 			);
 			productName = IcroUIKit;
 			productReference = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */;
@@ -1902,10 +1902,10 @@
 			);
 			name = IcroKit;
 			packageProductDependencies = (
-				5B83B00C22D06EA8004C4D8D /* Alamofire */,
-				5B83B01C22D11D64004C4D8D /* KeychainAccess */,
-				5B8FD3A12360D59800BC72F2 /* TypedSymbols */,
-				C5CE39EE23CB710D0095013A /* Settings */,
+				5B83B00C22D06EA8004C4D8D /* SwiftPackageProductDependency */,
+				5B83B01C22D11D64004C4D8D /* SwiftPackageProductDependency */,
+				5B8FD3A12360D59800BC72F2 /* SwiftPackageProductDependency */,
+				C5CE39EE23CB710D0095013A /* SwiftPackageProductDependency */,
 			);
 			productName = IcroKit;
 			productReference = 5BC347AE2132944900DEB45D /* IcroKit.framework */;
@@ -1925,9 +1925,9 @@
 			);
 			name = "Icro-Next";
 			packageProductDependencies = (
-				C5454DAF23CB9F4A00739A6C /* Settings */,
-				C5454DB123CB9F5000739A6C /* VerticalTabView */,
-				C5454DB323CB9FD200739A6C /* TypedSymbols */,
+				C5454DAF23CB9F4A00739A6C /* SwiftPackageProductDependency */,
+				C5454DB123CB9F5000739A6C /* SwiftPackageProductDependency */,
+				C5454DB323CB9FD200739A6C /* SwiftPackageProductDependency */,
 			);
 			productName = "Icro-Next";
 			productReference = C5CE39D523CB6F9F0095013A /* Icro-Next.app */;
@@ -1953,12 +1953,12 @@
 			);
 			name = Icro;
 			packageProductDependencies = (
-				5B83B01A22D11B3D004C4D8D /* KeychainAccess */,
-				5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */,
-				5B0653312324D047000C5C3A /* Kingfisher */,
-				5B0653332324D047000C5C3A /* KingfisherSwiftUI */,
-				5B8FD39F2360D53700BC72F2 /* TypedSymbols */,
-				C5454DAD23CB9A5C00739A6C /* VerticalTabView */,
+				5B83B01A22D11B3D004C4D8D /* SwiftPackageProductDependency */,
+				5BE92EF522D1BAAD0048E8F1 /* SwiftPackageProductDependency */,
+				5B0653312324D047000C5C3A /* SwiftPackageProductDependency */,
+				5B0653332324D047000C5C3A /* SwiftPackageProductDependency */,
+				5B8FD39F2360D53700BC72F2 /* SwiftPackageProductDependency */,
+				C5454DAD23CB9A5C00739A6C /* SwiftPackageProductDependency */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -2014,6 +2014,7 @@
 					};
 					C5CE39D423CB6F9F0095013A = {
 						CreatedOnToolsVersion = 11.3;
+						ProvisioningStyle = Automatic;
 					};
 					C5FA2ABF1EB4482C006DEB40 = {
 						CreatedOnToolsVersion = 8.2;
@@ -2047,12 +2048,12 @@
 			);
 			mainGroup = C5FA2AB71EB4482C006DEB40;
 			packageReferences = (
-				5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */,
-				5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */,
-				5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */,
-				5B0653302324D047000C5C3A /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */,
-				C5F60BFB23B3862F0022448A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				5B70C0E822D06E9200D85F2B /* RemoteSwiftPackageReference */,
+				5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */,
+				5BE92EF422D1BAAD0048E8F1 /* RemoteSwiftPackageReference */,
+				5B0653302324D047000C5C3A /* RemoteSwiftPackageReference */,
+				5B8FD39E2360D53700BC72F2 /* RemoteSwiftPackageReference */,
+				C5F60BFB23B3862F0022448A /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = C5FA2AC11EB4482C006DEB40 /* Products */;
 			projectDirPath = "";
@@ -2488,7 +2489,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 130;
+				CURRENT_PROJECT_VERSION = 132;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2525,7 +2526,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 130;
+				CURRENT_PROJECT_VERSION = 132;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2560,11 +2561,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 130;
+				CURRENT_PROJECT_VERSION = 132;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 130;
+				DYLIB_CURRENT_VERSION = 132;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IcroUIKit/Info.plist;
@@ -2598,11 +2599,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 130;
+				CURRENT_PROJECT_VERSION = 132;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 130;
+				DYLIB_CURRENT_VERSION = 132;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IcroUIKit/Info.plist;
@@ -2745,11 +2746,11 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 130;
+				CURRENT_PROJECT_VERSION = 132;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 130;
+				DYLIB_CURRENT_VERSION = 132;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IcroKit/Info.plist;
@@ -2783,11 +2784,11 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 130;
+				CURRENT_PROJECT_VERSION = 132;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 130;
+				DYLIB_CURRENT_VERSION = 132;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IcroKit/Info.plist;
@@ -3001,7 +3002,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 130;
+				CURRENT_PROJECT_VERSION = 132;
 				DEFINES_MODULE = YES;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
@@ -3033,7 +3034,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 130;
+				CURRENT_PROJECT_VERSION = 132;
 				DEFINES_MODULE = YES;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
@@ -3132,7 +3133,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5B0653302324D047000C5C3A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		5B0653302324D047000C5C3A /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/Kingfisher";
 			requirement = {
@@ -3140,7 +3141,7 @@
 				kind = branch;
 			};
 		};
-		5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		5B70C0E822D06E9200D85F2B /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -3148,7 +3149,7 @@
 				minimumVersion = 4.8.2;
 			};
 		};
-		5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+		5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/KeychainAccess";
 			requirement = {
@@ -3156,7 +3157,7 @@
 				kind = branch;
 			};
 		};
-		5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */ = {
+		5B8FD39E2360D53700BC72F2 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/TypedSymbols.git";
 			requirement = {
@@ -3164,7 +3165,7 @@
 				kind = branch;
 			};
 		};
-		5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */ = {
+		5BE92EF422D1BAAD0048E8F1 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/AppDelegateComponent";
 			requirement = {
@@ -3172,7 +3173,7 @@
 				kind = branch;
 			};
 		};
-		C5F60BFB23B3862F0022448A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		C5F60BFB23B3862F0022448A /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -3183,79 +3184,79 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5B0653312324D047000C5C3A /* Kingfisher */ = {
+		5B0653312324D047000C5C3A /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B0653302324D047000C5C3A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 5B0653302324D047000C5C3A /* RemoteSwiftPackageReference */;
 			productName = Kingfisher;
 		};
-		5B0653332324D047000C5C3A /* KingfisherSwiftUI */ = {
+		5B0653332324D047000C5C3A /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B0653302324D047000C5C3A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 5B0653302324D047000C5C3A /* RemoteSwiftPackageReference */;
 			productName = KingfisherSwiftUI;
 		};
-		5B0653352324D1E0000C5C3A /* Kingfisher */ = {
+		5B0653352324D1E0000C5C3A /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B0653302324D047000C5C3A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 5B0653302324D047000C5C3A /* RemoteSwiftPackageReference */;
 			productName = Kingfisher;
 		};
-		5B83B00C22D06EA8004C4D8D /* Alamofire */ = {
+		5B83B00C22D06EA8004C4D8D /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 5B70C0E822D06E9200D85F2B /* RemoteSwiftPackageReference */;
 			productName = Alamofire;
 		};
-		5B83B01A22D11B3D004C4D8D /* KeychainAccess */ = {
+		5B83B01A22D11B3D004C4D8D /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			package = 5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */;
 			productName = KeychainAccess;
 		};
-		5B83B01C22D11D64004C4D8D /* KeychainAccess */ = {
+		5B83B01C22D11D64004C4D8D /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			package = 5B83B01922D11B3D004C4D8D /* RemoteSwiftPackageReference */;
 			productName = KeychainAccess;
 		};
-		5B8FD39F2360D53700BC72F2 /* TypedSymbols */ = {
+		5B8FD39F2360D53700BC72F2 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */;
+			package = 5B8FD39E2360D53700BC72F2 /* RemoteSwiftPackageReference */;
 			productName = TypedSymbols;
 		};
-		5B8FD3A12360D59800BC72F2 /* TypedSymbols */ = {
+		5B8FD3A12360D59800BC72F2 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */;
+			package = 5B8FD39E2360D53700BC72F2 /* RemoteSwiftPackageReference */;
 			productName = TypedSymbols;
 		};
-		5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */ = {
+		5BE92EF522D1BAAD0048E8F1 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */;
+			package = 5BE92EF422D1BAAD0048E8F1 /* RemoteSwiftPackageReference */;
 			productName = AppDelegateComponent;
 		};
-		C5454DAD23CB9A5C00739A6C /* VerticalTabView */ = {
+		C5454DAD23CB9A5C00739A6C /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = VerticalTabView;
 		};
-		C5454DAF23CB9F4A00739A6C /* Settings */ = {
+		C5454DAF23CB9F4A00739A6C /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Settings;
 		};
-		C5454DB123CB9F5000739A6C /* VerticalTabView */ = {
+		C5454DB123CB9F5000739A6C /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = VerticalTabView;
 		};
-		C5454DB323CB9FD200739A6C /* TypedSymbols */ = {
+		C5454DB323CB9FD200739A6C /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */;
+			package = 5B8FD39E2360D53700BC72F2 /* RemoteSwiftPackageReference */;
 			productName = TypedSymbols;
 		};
-		C5A498F823B6AE3A006ED94F /* Sourceful */ = {
+		C5A498F823B6AE3A006ED94F /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Sourceful;
 		};
-		C5CE39EE23CB710D0095013A /* Settings */ = {
+		C5CE39EE23CB710D0095013A /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Settings;
 		};
-		C5F60BFC23B3862F0022448A /* SnapKit */ = {
+		C5F60BFC23B3862F0022448A /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C5F60BFB23B3862F0022448A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = C5F60BFB23B3862F0022448A /* RemoteSwiftPackageReference */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
