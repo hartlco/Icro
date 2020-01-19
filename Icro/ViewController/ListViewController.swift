@@ -229,6 +229,12 @@ final class ListViewController: UIViewController, LoadingViewController {
 }
 
 extension ListViewController: UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if viewModel.showsAnActionBar {
+            viewModel.showActionBar(at: nil)
+        }
+    }
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         switch viewModel.viewType(forRow: indexPath.row) {
         case .author, .loadMore:

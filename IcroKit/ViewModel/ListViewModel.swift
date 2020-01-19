@@ -369,6 +369,10 @@ public class ListViewModel: NSObject {
         return indexPath == visibleActionBarIndexPath
     }
 
+    public var showsAnActionBar: Bool {
+        return visibleActionBarIndexPath != nil
+    }
+
     // MARK: - Private
 
     private func index(for identifier: String) -> Int? {
