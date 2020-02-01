@@ -37,6 +37,8 @@ final class ListViewController: UIViewController, LoadingViewController {
     private var isLoading = false
     private var rowHeightEstimate = [String: CGFloat]()
     private let notificationCenter: NotificationCenter
+    private let loadingSpinner = UIActivityIndicatorView(style: .medium)
+    private let loadingBarButtonItem: UIBarButtonItem
 
     private var dataSource: UITableViewDiffableDataSource<ListViewModel.Section, ListViewModel.ViewType>?
 
@@ -49,6 +51,7 @@ final class ListViewController: UIViewController, LoadingViewController {
         profileViewConfigurator = ProfileViewConfigurator(itemNavigator: itemNavigator, viewModel: viewModel)
         editActionsConfigurator = EditActionsConfigurator(itemNavigator: itemNavigator, viewModel: viewModel)
         self.notificationCenter = notificationCenter
+        self.loadingBarButtonItem = UIBarButtonItem(customView: loadingSpinner)
 
         super.init(nibName: "ListViewController", bundle: nil)
 
@@ -77,13 +80,13 @@ final class ListViewController: UIViewController, LoadingViewController {
         viewModel.didStartLoading = { [weak self] in
             guard let self = self else { return }
             self.isLoading = true
-            self.showLoading()
+            self.showLoadingSpinnerIfNeeded()
         }
 
         viewModel.didFinishLoading = { [weak self] cache in
             if cache == false {
+                self?.hideLoadingSpinner()
                 self?.tableView.refreshControl?.endRefreshing()
-                self?.hideMessage()
             }
 
             self?.applySnapshot()
@@ -95,7 +98,6 @@ final class ListViewController: UIViewController, LoadingViewController {
         }
 
         viewModel.didFinishWithError = { [weak self] error in
-            self?.tableView.refreshControl?.endRefreshing()
             self?.showError(error: error)
         }
 
@@ -182,6 +184,11 @@ final class ListViewController: UIViewController, LoadingViewController {
                 return cell
             }
         })
+    }
+
+    @objc private func load() {
+        tableView.refreshControl?.endRefreshing()
+        viewModel.load()
     }
 
     private func applySnapshot() {
@@ -379,5 +386,27 @@ extension ListViewController {
 
     @objc private func scrollToBottomFromCommand() {
         tableView.scroll(action: .bottom)
+    }
+
+    private func showLoadingSpinnerIfNeeded() {
+        if tableView.refreshControl?.isRefreshing == true {
+            return
+        }
+
+        if navigationItem.rightBarButtonItems == nil {
+            navigationItem.rightBarButtonItems = []
+        }
+
+        loadingSpinner.startAnimating()
+        navigationItem.rightBarButtonItems?.append(loadingBarButtonItem)
+    }
+
+    private func hideLoadingSpinner() {
+        guard let indexOfLoadingItem = navigationItem.rightBarButtonItems?.firstIndex(of: loadingBarButtonItem) else {
+            return
+        }
+
+        loadingSpinner.stopAnimating()
+        navigationItem.rightBarButtonItems?.remove(at: indexOfLoadingItem)
     }
 }
