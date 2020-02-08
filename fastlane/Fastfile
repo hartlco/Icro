@@ -35,7 +35,14 @@ platform :ios do
     sh("git", "push")
   end
 
+  lane :bump_version do
+    increment_build_number(xcodeproj: "Icro.xcodeproj")
+  end
+
   lane :beta_ci do
+    match(type: "development", readonly: true)
     match(type: "appstore", readonly: true)
+    build_app(workspace: "Icro.xcworkspace", scheme: "Icro")
+    upload_to_testflight(skip_waiting_for_build_processing: true)
   end
 end
