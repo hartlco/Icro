@@ -16,4 +16,4 @@ jobs:
     - name: Fastlane Beta CI
       run: bundle exec fastlane beta_ci
       env:
-        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        MATCH_PASSWORD: ${{ secrets.KEYSTORE_PASSPHRASE }}
