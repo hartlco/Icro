@@ -1,0 +1,20 @@
+name: Deploy
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: submodules-init
+      uses: snickerbockers/submodules-init@v4
+    - name: Bundle Install
+      run: bundle install
+    - name: Store env variable
+      env:
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+    - name: Fastlane match
+      run: bundle exec fastlane match appstore
