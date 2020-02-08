@@ -26,6 +26,11 @@ Run unit tests
 fastlane ios beta
 ```
 Push a new beta build to TestFlight
+### ios beta_ci
+```
+fastlane ios beta_ci
+```
+
 
 ----
 

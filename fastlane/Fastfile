@@ -34,4 +34,8 @@ platform :ios do
     sh("git", "commit", "-a", "-m", "Bump version number")
     sh("git", "push")
   end
+
+  lane :beta_ci do
+    match(type: "appstore", readonly: true)
+  end
 end
