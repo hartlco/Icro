@@ -1,5 +1,5 @@
 git_url("https://github.com/hartlco/Icro-certificates")
-
+app_identifier("co.hartl.icro")
 storage_mode("git")
 
 type("development") # The default type, can be: appstore, adhoc, enterprise or development
