@@ -19,3 +19,4 @@ jobs:
       run: bundle exec fastlane beta_ci
       env:
         MATCH_PASSWORD: ${{ secrets.KEYSTORE_PASSPHRASE }}
+        FASTLANE_PASSWORD: ${{ secrets.APPSTORE_PASSWORD }}
