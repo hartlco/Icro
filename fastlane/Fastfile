@@ -51,6 +51,6 @@ platform :ios do
     match(type: "development", readonly: true, keychain_name: 'Fastlane_CI', keychain_password: 'CI_Password')
     match(type: "appstore", readonly: true, keychain_name: 'Fastlane_CI', keychain_password: 'CI_Password')
     build_app(workspace: "Icro.xcworkspace", scheme: "Icro")
-    upload_to_testflight(skip_waiting_for_build_processing: true)
+    upload_to_testflight(skip_waiting_for_build_processing: true, username: "icro@hartl.co")
   end
 end
