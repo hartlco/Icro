@@ -40,8 +40,16 @@ platform :ios do
   end
 
   lane :beta_ci do
-    match(type: "development", readonly: true)
-    match(type: "appstore", readonly: true)
+    create_keychain(
+      name: "Fastlane_CI",
+      password: "CI_Password",
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      add_to_search_list: true,
+    )
+    match(type: "development", readonly: true, keychain_name: 'Fastlane_CI', keychain_password: 'CI_Password')
+    match(type: "appstore", readonly: true, keychain_name: 'Fastlane_CI', keychain_password: 'CI_Password')
     build_app(workspace: "Icro.xcworkspace", scheme: "Icro")
     upload_to_testflight(skip_waiting_for_build_processing: true)
   end
