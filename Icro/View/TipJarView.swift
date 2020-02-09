@@ -8,35 +8,24 @@ import IcroKit
 
 struct TipJarView: View {
     @ObservedObject var viewModel: TipJarViewModel
-    private let cardColor = SwiftUI.Color("accentSuperLight")
 
     var body: some View {
-        HStack {
-            ScrollView {
-                VStack(spacing: 20) {
-                    ForEach(viewModel.products) { product in
-                        Button(action: {
-                            self.viewModel.purchase(product: product)
-                        }, label: {
-                            HStack {
-                                Text(product.title)
-                                    .font(.headline)
-                                    .foregroundColor(.primary)
-                                Spacer(minLength: 10)
-                                Group {
-                                    Text(product.price)
-                                        .foregroundColor(.red)
-                                    }
-                                    .padding(.all, 8)
-                            }
-                        })
-                        .padding()
-                        .background(self.cardColor)
-                        .cornerRadius(6)
-                    }
+        List(viewModel.products) { product in
+            Button(action: {
+                self.viewModel.purchase(product: product)
+            }, label: {
+                HStack {
+                    Text(product.title)
+                        .font(.headline)
+                        .foregroundColor(.primary)
+                    Spacer(minLength: 10)
+                    Group {
+                        Text(product.price)
+                            .foregroundColor(.red)
+                        }
+                        .padding(.all, 8)
                 }
-            }
-            .frame(minHeight: 110)
+            })
         }
     }
 }
