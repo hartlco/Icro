@@ -83,7 +83,7 @@ final class EditActionsConfigurator {
                                 self?.viewModel.toggleFave(for: item)
         }
 
-        return UIMenu(title: "Main Menu",
+        return UIMenu(title: "",
                       image: nil,
                       identifier: nil,
                       children: [reply, chat, favorite])
