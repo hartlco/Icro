@@ -24,8 +24,14 @@ platform :ios do
               scheme: "Icro")
   end
 
+  lane :bump_version do
+    build_number = number_of_commits(all: true)
+    increment_build_number(build_number: build_number)
+  end
+
   desc "Push a new beta build to TestFlight"
   lane :beta do
+    bump_version
     enable_automatic_code_signing
     git_pull
     increment_build_number(xcodeproj: "Icro.xcodeproj")
@@ -35,13 +41,8 @@ platform :ios do
     sh("git", "push")
   end
 
-  lane :bump_version do
-    increment_build_number(xcodeproj: "Icro.xcodeproj")
-  end
-
   lane :beta_ci do
-    build_number = number_of_commits(all: true)
-    increment_build_number(build_number: build_number)
+    bump_version
     create_keychain(
       name: "Fastlane_CI",
       password: "CI_Password",
