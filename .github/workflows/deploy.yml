@@ -1,0 +1,24 @@
+name: Deploy
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: submodules-init
+      uses: snickerbockers/submodules-init@v4
+    - name: Bundle Install
+      run: bundle install
+    - name: Set Appstore Connect User
+      run: bundle exec fastlane fastlane-credentials add --username icro@hartl.co --password ${{ secrets.APPSTORE_PASSWORD }}
+    - name: Fastlane Beta CI
+      run: bundle exec fastlane beta_ci
+      env:
+        MATCH_PASSWORD: ${{ secrets.KEYSTORE_PASSPHRASE }}
+        FASTLANE_PASSWORD: ${{ secrets.APPSTORE_PASSWORD }}

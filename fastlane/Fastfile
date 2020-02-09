@@ -34,4 +34,23 @@ platform :ios do
     sh("git", "commit", "-a", "-m", "Bump version number")
     sh("git", "push")
   end
+
+  lane :bump_version do
+    increment_build_number(xcodeproj: "Icro.xcodeproj")
+  end
+
+  lane :beta_ci do
+    create_keychain(
+      name: "Fastlane_CI",
+      password: "CI_Password",
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      add_to_search_list: true,
+    )
+    match(type: "development", readonly: true, keychain_name: 'Fastlane_CI', keychain_password: 'CI_Password')
+    match(type: "appstore", readonly: true, keychain_name: 'Fastlane_CI', keychain_password: 'CI_Password')
+    build_app(workspace: "Icro.xcworkspace", scheme: "Icro")
+    upload_to_testflight(skip_waiting_for_build_processing: true, username: "icro@hartl.co")
+  end
 end
