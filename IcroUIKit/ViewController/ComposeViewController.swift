@@ -37,6 +37,9 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
             syntaxView.delegate = self
             syntaxView.theme = IcroEditorTheme()
             syntaxView.contentTextView.isScrollEnabled = false
+            syntaxView.contentTextView.autocorrectionType = .default
+            syntaxView.contentTextView.autocapitalizationType = .sentences
+            syntaxView.contentTextView.spellCheckingType = .default
         }
     }
 
