@@ -15,6 +15,8 @@ import IcroKit
 struct SettingsContentView: View {
     let dismissAction: () -> Void
     let settingsNavigator: SettingsNavigator
+    @State private var modalPresented = false
+
     @ObservedObject var store: SettingsViewModel
 
     var body: some View {
@@ -23,7 +25,7 @@ struct SettingsContentView: View {
                 WordpressSection(store: store)
                 MicropubSection(store: store, settingsNavigator: settingsNavigator)
                 AccountSection(settingsNavigator: settingsNavigator)
-                OtherSection(settingsNavigator: settingsNavigator)
+                OtherSection(settingsNavigator: settingsNavigator, store: store)
                 TipJarSection()
             }
             .navigationBarTitle(Text("SETTINGSVIEWCONTROLLER_TITLE"))
@@ -108,15 +110,20 @@ struct MicropubSection: View {
 
 struct OtherSection: View {
     let settingsNavigator: SettingsNavigator
+    @State private var modalPresented = false
+    @ObservedObject var store: SettingsViewModel
+
     var body: some View {
         return Section(header: Text("SETTINGSVIEWCONTROLLER_OTHER_TITLE")
             .font(.headline)
             .fontWeight(.bold)) {
                 Button(action: {
-                    self.settingsNavigator.openSupportMail()
+                        self.modalPresented = true
                 }, label: {
-                    Text("SETTINGSVIEWCONTROLLER_SUPPORTBUTTON_TITLE")
-                })
+                        Text("SETTINGSVIEWCONTROLLER_SUPPORTBUTTON_TITLE")
+                }).sheet(isPresented: self.$modalPresented) {
+                    self.settingsNavigator.mailView
+                }.disabled(!self.store.canSendMail)
                 NavigationLink(destination: settingsNavigator.acknowledgmentsView) {
                     Text("SETTINGSVIEWCONTROLLER_ACKNOWLEDGMENTSBUTTON_TITLE")
                 }

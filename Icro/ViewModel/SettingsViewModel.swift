@@ -22,7 +22,8 @@ final class SettingsViewModel: ObservableObject {
     private let notificationCenter: NotificationCenter
 
     init(userSettings: UserSettings,
-         notificationCenter: NotificationCenter = .default) {
+         notificationCenter: NotificationCenter = .default,
+         canSendMail: Bool) {
         self.userSettings = userSettings
         self.isWordpressBlog = userSettings.wordpressInfo != nil
         self.wordpressURL = userSettings.wordpressInfo?.urlString ?? ""
@@ -33,6 +34,7 @@ final class SettingsViewModel: ObservableObject {
         self.micropubToken = userSettings.micropubInfo?.micropubToken ?? ""
         self.notificationCenter = notificationCenter
         self.indieAuthMeURLString = userSettings.indieAuthMeURLString
+        self.canSendMail = canSendMail
 
         if isWordpressBlog {
             isMicropubBlog = false
@@ -42,11 +44,14 @@ final class SettingsViewModel: ObservableObject {
 
         notificationCenter.addObserver(self, selector: #selector(updateValues), name: .micropubAccessTokenChanged, object: nil)
     }
+
     @objc private func updateValues() {
         self.micropubToken = userSettings.micropubToken ?? ""
 
         objectWillChange.send()
     }
+
+    let canSendMail: Bool
 
     var isWordpressBlog: Bool {
         didSet {

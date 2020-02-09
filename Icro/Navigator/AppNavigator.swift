@@ -9,6 +9,7 @@ import IcroUIKit
 import SwiftUI
 import Settings
 import VerticalTabView
+import MessageUI
 
 #if targetEnvironment(macCatalyst)
 import AppKit
@@ -125,11 +126,14 @@ final class AppNavigator {
         let settingsNavigator = SettingsNavigator(presentedController: presentedController,
                                                   appNavigator: self,
                                                   application: application)
+        let viewModel = SettingsViewModel(userSettings: userSettings,
+                                          canSendMail: MFMailComposeViewController.canSendMail())
+
         let settingsContentView = SettingsContentView(dismissAction: {
                                                         presentedController.dismiss(animated: true, completion: nil)
         },
                                                       settingsNavigator: settingsNavigator,
-                                                      store: SettingsViewModel(userSettings: userSettings))
+                                                      store: viewModel)
         presentedController.present(UIHostingController(rootView: settingsContentView), animated: true, completion: nil)
     }
 
