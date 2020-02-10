@@ -28,11 +28,11 @@ public struct VerticalTabView: View {
 @available(iOS 13.0, OSX 10.15, *)
 struct ImageTab: View {
     var selected: Bool
-    var image: Image
+    var image: Image?
     var title: String
 
     var body: some View {
-        image
+        image?
         .resizable()
         .frame(width: 30, height: 30)
         .padding()

@@ -10,6 +10,7 @@ import SwiftUI
 import Settings
 import VerticalTabView
 import MessageUI
+import Combine
 
 #if targetEnvironment(macCatalyst)
 import AppKit
@@ -28,6 +29,7 @@ final class AppNavigator {
     private let device: UIDevice
     private let notificationCenter: NotificationCenter
     private let application: UIApplication
+    private var selectedIndexCancellable: AnyCancellable?
 
     init(window: UIWindow,
          userSettings: UserSettings,
@@ -61,10 +63,11 @@ final class AppNavigator {
             self.verticalTabViewModel.select(index: index)
         }
 
-        verticalTabViewModel.didSelectIndex = { [weak self] index in
+        selectedIndexCancellable = verticalTabViewModel.$selectedIndex.sink(receiveValue: { [weak self] index in
             guard let self = self else { return }
+
             self.tabBarViewController.select(index: index)
-        }
+        })
 
         self.catalystToolbar.delegate = self
     }
