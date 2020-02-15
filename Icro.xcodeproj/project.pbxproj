@@ -539,6 +539,7 @@
 		B2175C9DAAFEF9FA508D0A47 /* Pods_Icro_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF71E43E214287CF007E88BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C5454DA723CB991A00739A6C /* VerticalTabView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = VerticalTabView; sourceTree = "<group>"; };
+		C55D7AC523F7C756004E5DBB /* Icro.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Icro.xctestplan; sourceTree = "<group>"; };
 		C59E637123BDC9C10012BF85 /* WPXMLRPCDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoder.m; sourceTree = "<group>"; };
 		C59E637223BDC9C10012BF85 /* WPXMLRPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPC.h; sourceTree = "<group>"; };
 		C59E637323BDC9C10012BF85 /* WPXMLRPCEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCEncoder.h; sourceTree = "<group>"; };
@@ -1675,6 +1676,7 @@
 		C5FA2AB71EB4482C006DEB40 = {
 			isa = PBXGroup;
 			children = (
+				C55D7AC523F7C756004E5DBB /* Icro.xctestplan */,
 				C5454DA723CB991A00739A6C /* VerticalTabView */,
 				C5CE39ED23CB70550095013A /* Settings */,
 				5B2B817422F6CC2E0073B393 /* appversion.xcconfig */,
