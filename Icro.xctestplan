@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "CF1688FE-0100-4B80-B538-1FBF957E5554",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Icro.xcodeproj",
+        "identifier" : "5B5837342128B04A0076121E",
+        "name" : "IcroTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Settings",
+        "identifier" : "SettingsTests",
+        "name" : "SettingsTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:VerticalTabView",
+        "identifier" : "VerticalTabViewTests",
+        "name" : "VerticalTabViewTests"
+      }
+    }
+  ],
+  "version" : 1
+}

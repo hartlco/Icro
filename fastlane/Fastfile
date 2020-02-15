@@ -20,8 +20,9 @@ platform :ios do
   lane :tests do
     run_tests(workspace: "Icro.xcworkspace",
               derived_data_path: "derivedData",
-              devices: ["iPhone Xs"],
-              scheme: "Icro")
+              devices: ["iPhone 11"],
+              scheme: "Icro",
+              xcargs: "-testPlan Icro")
   end
 
   lane :bump_version do
