@@ -6,6 +6,7 @@
 import UIKit
 import IcroKit
 import AppDelegateComponent
+import Client
 
 final class NotificationComponent: AppDelegateComponent {
     private let client: Client

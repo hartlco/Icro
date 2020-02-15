@@ -75,7 +75,6 @@
 		5B38476921FE073800F082AD /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476821FE073800F082AD /* UIView+Contraints.swift */; };
 		5B39A4CE22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39A4CD22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift */; };
 		5B39A4CF22F6A5F400B2B38F /* MockClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE73227D74DF00317FE3 /* MockClient.swift */; };
-		5B39A4D022F6A5F700B2B38F /* HTTPMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE70227D73E400317FE3 /* HTTPMethodTests.swift */; };
 		5B39A4D122F6A5FB00B2B38F /* HTMLContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58373F2128B0680076121E /* HTMLContentTests.swift */; };
 		5B39A4D222F6A60100B2B38F /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE75227D780300317FE3 /* UserListViewModelTests.swift */; };
 		5B39B7BE22AD504A004D5134 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39B7BD22AD504A004D5134 /* ListView.swift */; };
@@ -123,8 +122,6 @@
 		5B609F182309203400F2C1BC /* ItemNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F172309203400F2C1BC /* ItemNavigator.swift */; };
 		5B609F1A2309204B00F2C1BC /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F192309204B00F2C1BC /* TipJarViewModel.swift */; };
 		5B609F1C2309206600F2C1BC /* ComposeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F1B2309206600F2C1BC /* ComposeNavigator.swift */; };
-		5B66EE6A227D6C8300317FE3 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE69227D6C8300317FE3 /* Client.swift */; };
-		5B66EE6C227D700A00317FE3 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE6B227D700A00317FE3 /* HttpMethod.swift */; };
 		5B66EE6E227D734800317FE3 /* MediaEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE6D227D734800317FE3 /* MediaEndpoint.swift */; };
 		5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
 		5B69E65122AA16310081CDFB /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsContentView.swift */; };
@@ -184,6 +181,9 @@
 		5BFCB8F6232E835F008D36E1 /* NotificationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFCB8F5232E835F008D36E1 /* NotificationComponent.swift */; };
 		8DCD1F043AA7A42B38373800 /* Pods_IcroScreenshotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4216F55176FDD95FB7B918F8 /* Pods_IcroScreenshotsTests.framework */; };
 		BF707E742131C45600506E64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
+		C544111523F7CB7200428609 /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C544111423F7CB7200428609 /* Client */; };
+		C544111C23F7CD2A00428609 /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C544111B23F7CD2A00428609 /* Client */; };
+		C544111E23F7CED800428609 /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C544111D23F7CED800428609 /* Client */; };
 		C5454DAE23CB9A5C00739A6C /* VerticalTabView in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DAD23CB9A5C00739A6C /* VerticalTabView */; };
 		C5454DB023CB9F4A00739A6C /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DAF23CB9F4A00739A6C /* Settings */; };
 		C5454DB223CB9F5000739A6C /* VerticalTabView in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DB123CB9F5000739A6C /* VerticalTabView */; };
@@ -211,7 +211,6 @@
 		C5CE39DF23CB6FA00095013A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CE39DE23CB6FA00095013A /* Preview Assets.xcassets */; };
 		C5CE39E223CB6FA00095013A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CE39E023CB6FA00095013A /* Main.storyboard */; };
 		C5CE39EF23CB710D0095013A /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = C5CE39EE23CB710D0095013A /* Settings */; };
-		C5F4564323BB3501003A9308 /* IndieAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F4564223BB3501003A9308 /* IndieAuth.swift */; };
 		C5F60BFD23B3862F0022448A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C5F60BFC23B3862F0022448A /* SnapKit */; };
 		C5F60BFF23B386650022448A /* ItemActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F60BFE23B386650022448A /* ItemActionButtonView.swift */; };
 		C5F8818023B4A141008DBAD6 /* DropdownTitleView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F8817423B4A124008DBAD6 /* DropdownTitleView.framework */; };
@@ -471,10 +470,7 @@
 		5B609F1B2309206600F2C1BC /* ComposeNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComposeNavigator.swift; path = Navigator/ComposeNavigator.swift; sourceTree = "<group>"; };
 		5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
-		5B66EE69227D6C8300317FE3 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
-		5B66EE6B227D700A00317FE3 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		5B66EE6D227D734800317FE3 /* MediaEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEndpoint.swift; sourceTree = "<group>"; };
-		5B66EE70227D73E400317FE3 /* HTTPMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodTests.swift; sourceTree = "<group>"; };
 		5B66EE73227D74DF00317FE3 /* MockClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockClient.swift; sourceTree = "<group>"; };
 		5B66EE75227D780300317FE3 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
 		5B689BAB20837ECE005B9874 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TabBarViewController.xib; path = ViewController/TabBarViewController.xib; sourceTree = "<group>"; };
@@ -539,6 +535,7 @@
 		B2175C9DAAFEF9FA508D0A47 /* Pods_Icro_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF71E43E214287CF007E88BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C5454DA723CB991A00739A6C /* VerticalTabView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = VerticalTabView; sourceTree = "<group>"; };
+		C553DD5023F7CABC0001E7DF /* Client */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Client; sourceTree = "<group>"; };
 		C55D7AC523F7C756004E5DBB /* Icro.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Icro.xctestplan; sourceTree = "<group>"; };
 		C59E637123BDC9C10012BF85 /* WPXMLRPCDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoder.m; sourceTree = "<group>"; };
 		C59E637223BDC9C10012BF85 /* WPXMLRPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPC.h; sourceTree = "<group>"; };
@@ -565,7 +562,6 @@
 		C5CE39E323CB6FA00095013A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5CE39E423CB6FA00095013A /* Icro_Next.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Icro_Next.entitlements; sourceTree = "<group>"; };
 		C5CE39ED23CB70550095013A /* Settings */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Settings; sourceTree = "<group>"; };
-		C5F4564223BB3501003A9308 /* IndieAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndieAuth.swift; sourceTree = "<group>"; };
 		C5F60BFE23B386650022448A /* ItemActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemActionButtonView.swift; sourceTree = "<group>"; };
 		C5F880EC23B4A124008DBAD6 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C5F880ED23B4A124008DBAD6 /* DropdownTitleView.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = DropdownTitleView.xcworkspace; sourceTree = "<group>"; };
@@ -681,6 +677,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C544111C23F7CD2A00428609 /* Client in Frameworks */,
 				C5A498F923B6AE3A006ED94F /* Sourceful in Frameworks */,
 				C5F60BFD23B3862F0022448A /* SnapKit in Frameworks */,
 				5B0653362324D1E0000C5C3A /* Kingfisher in Frameworks */,
@@ -692,6 +689,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C544111E23F7CED800428609 /* Client in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +710,7 @@
 				5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */,
 				5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */,
 				5B8FD3A22360D59800BC72F2 /* TypedSymbols in Frameworks */,
+				C544111523F7CB7200428609 /* Client in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1048,21 +1047,12 @@
 			isa = PBXGroup;
 			children = (
 				5B66EE72227D74CC00317FE3 /* Mocks */,
-				5B66EE6F227D73C600317FE3 /* Network */,
 				5B58373F2128B0680076121E /* HTMLContentTests.swift */,
 				5B5837392128B04A0076121E /* Info.plist */,
 				5BB73F0B212C9E0B00120FAB /* ListViewModelTests.swift */,
 				5B66EE75227D780300317FE3 /* UserListViewModelTests.swift */,
 			);
 			path = IcroTests;
-			sourceTree = "<group>";
-		};
-		5B66EE6F227D73C600317FE3 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				5B66EE70227D73E400317FE3 /* HTTPMethodTests.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		5B66EE72227D74CC00317FE3 /* Mocks */ = {
@@ -1150,10 +1140,7 @@
 				C5FA2AF51EB449BC006DEB40 /* Resource.swift */,
 				5B869B07214E4633000A051C /* MicropubEndpoint.swift */,
 				5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */,
-				5B66EE69227D6C8300317FE3 /* Client.swift */,
-				5B66EE6B227D700A00317FE3 /* HttpMethod.swift */,
 				5B66EE6D227D734800317FE3 /* MediaEndpoint.swift */,
-				C5F4564223BB3501003A9308 /* IndieAuth.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1677,6 +1664,7 @@
 			isa = PBXGroup;
 			children = (
 				C55D7AC523F7C756004E5DBB /* Icro.xctestplan */,
+				C553DD5023F7CABC0001E7DF /* Client */,
 				C5454DA723CB991A00739A6C /* VerticalTabView */,
 				C5CE39ED23CB70550095013A /* Settings */,
 				5B2B817422F6CC2E0073B393 /* appversion.xcconfig */,
@@ -1847,6 +1835,7 @@
 				5B0653352324D1E0000C5C3A /* Kingfisher */,
 				C5F60BFC23B3862F0022448A /* SnapKit */,
 				C5A498F823B6AE3A006ED94F /* Sourceful */,
+				C544111B23F7CD2A00428609 /* Client */,
 			);
 			productName = IcroUIKit;
 			productReference = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */;
@@ -1866,6 +1855,9 @@
 				5B58373B2128B04A0076121E /* PBXTargetDependency */,
 			);
 			name = IcroTests;
+			packageProductDependencies = (
+				C544111D23F7CED800428609 /* Client */,
+			);
 			productName = IcroTests;
 			productReference = 5B5837352128B04A0076121E /* IcroTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -1908,6 +1900,7 @@
 				5B83B01C22D11D64004C4D8D /* KeychainAccess */,
 				5B8FD3A12360D59800BC72F2 /* TypedSymbols */,
 				C5CE39EE23CB710D0095013A /* Settings */,
+				C544111423F7CB7200428609 /* Client */,
 			);
 			productName = IcroKit;
 			productReference = 5BC347AE2132944900DEB45D /* IcroKit.framework */;
@@ -2249,7 +2242,6 @@
 			files = (
 				5B39A4D222F6A60100B2B38F /* UserListViewModelTests.swift in Sources */,
 				5B39A4D122F6A5FB00B2B38F /* HTMLContentTests.swift in Sources */,
-				5B39A4D022F6A5F700B2B38F /* HTTPMethodTests.swift in Sources */,
 				5B39A4CF22F6A5F400B2B38F /* MockClient.swift in Sources */,
 				5BB73F0C212C9E0B00120FAB /* ListViewModelTests.swift in Sources */,
 			);
@@ -2271,10 +2263,8 @@
 				C59E638A23BDC9C10012BF85 /* WPXMLRPCDataCleaner.m in Sources */,
 				5BF663852189673100ABA671 /* DiscoveryCategoryStore.swift in Sources */,
 				5BC347BD213294A900DEB45D /* Resource.swift in Sources */,
-				5B66EE6C227D700A00317FE3 /* HttpMethod.swift in Sources */,
 				5B81E79A2206C62E008BEA16 /* Error.swift in Sources */,
 				C59E638423BDC9C10012BF85 /* WPBase64Utils.m in Sources */,
-				5B66EE6A227D6C8300317FE3 /* Client.swift in Sources */,
 				C59E638623BDC9C10012BF85 /* WPXMLRPCDecoderDelegate.m in Sources */,
 				5B2EF3E222E827C5006931A7 /* libxmlParserOption.swift in Sources */,
 				5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */,
@@ -2289,7 +2279,6 @@
 				5BF6637F218961AB00ABA671 /* DiscoveryCategory.swift in Sources */,
 				5BD9691121C8D61800313795 /* GalleryDataSource.swift in Sources */,
 				5B2EF3E022E827C5006931A7 /* Deprecated.swift in Sources */,
-				C5F4564323BB3501003A9308 /* IndieAuth.swift in Sources */,
 				5B2EF3DE22E827C5006931A7 /* CSS.swift in Sources */,
 				5B66EE6E227D734800317FE3 /* MediaEndpoint.swift in Sources */,
 				C59E638723BDC9C10012BF85 /* WPStringUtils.m in Sources */,
@@ -3228,6 +3217,18 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */;
 			productName = AppDelegateComponent;
+		};
+		C544111423F7CB7200428609 /* Client */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Client;
+		};
+		C544111B23F7CD2A00428609 /* Client */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Client;
+		};
+		C544111D23F7CED800428609 /* Client */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Client;
 		};
 		C5454DAD23CB9A5C00739A6C /* VerticalTabView */ = {
 			isa = XCSwiftPackageProductDependency;

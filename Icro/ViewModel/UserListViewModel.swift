@@ -7,6 +7,7 @@ import Foundation
 import IcroKit
 import SwiftUI
 import Combine
+import Client
 
 final class UserListViewModel: ObservableObject {
     var objectWillChange = ObservableObjectPublisher()

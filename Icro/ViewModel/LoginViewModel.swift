@@ -8,6 +8,7 @@ import IcroKit
 import SwiftUI
 import Combine
 import Settings
+import Client
 
 final class LoginViewModel: ObservableObject {
     let objectWillChange = ObservableObjectPublisher()
@@ -133,8 +134,11 @@ final class LoginViewModel: ObservableObject {
         guard let url = URL(string: baseURLString) else {
             return nil
         }
-        return Resource<IcroKit.Empty>(url: url, httpMethod: .post(nil), parseJSON: { _ in
-            return Empty()
+        return Resource<IcroKit.Empty>(url: url,
+                                       httpMethod: .post(nil),
+                                       authorization: .plain(token: userSettings.token),
+                                       parseJSON: { _ in
+                                        return Empty()
         })
     }
 
@@ -143,9 +147,12 @@ final class LoginViewModel: ObservableObject {
         guard let url = URL(string: baseURLString) else {
             return nil
         }
-        return Resource<LoginInformation>(url: url, httpMethod: .post(nil), parseJSON: { json in
-            guard let json = json as? JSONDictionary else { return nil }
-            return LoginInformation(json: json)
+        return Resource<LoginInformation>(url: url,
+                                          httpMethod: .post(nil),
+                                          authorization: .plain(token: userSettings.token),
+                                          parseJSON: { json in
+                                            guard let json = json as? JSONDictionary else { return nil }
+                                            return LoginInformation(json: json)
         })
     }
 }

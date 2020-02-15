@@ -5,6 +5,7 @@
 
 import UIKit
 import IcroKit
+import Client
 
 public protocol LoadingViewController: class {
     func showLoading(position: LoadingPosition, dismissalTime: LoadingIndicatorDismissalTime)

@@ -6,6 +6,7 @@
 import Foundation
 import Alamofire
 import Settings
+import Client
 
 final class MicropubRequestController {
     private var currentlyRunningTask: Request?

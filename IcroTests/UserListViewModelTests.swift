@@ -4,6 +4,7 @@
 //
 
 import XCTest
+import Client
 @testable import Icro
 @testable import IcroKit
 
@@ -50,7 +51,9 @@ class UserListViewModelTests: XCTestCase {
 
     private func makeResource() -> Resource<[Author]> {
         let resourceURL = URL(string: "http://google.de")!
-        return Resource(url: resourceURL, parseJSON: { _ in
+        return Resource(url: resourceURL,
+                        authorization: .plain(token: "test token"),
+                        parseJSON: { _ in
             return self.makeAuthors()
         })
     }

@@ -32,6 +32,13 @@
         "identifier" : "VerticalTabViewTests",
         "name" : "VerticalTabViewTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Client",
+        "identifier" : "ClientTests",
+        "name" : "ClientTests"
+      }
     }
   ],
   "version" : 1

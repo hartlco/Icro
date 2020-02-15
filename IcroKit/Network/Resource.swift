@@ -5,6 +5,7 @@
 
 import Foundation
 import Settings
+import Client
 
 public typealias JSONDictionary = [String: Any]
 
@@ -23,73 +24,6 @@ let unfollowURLString = "https://micro.blog/users/unfollow?username="
 let followingURLString = "http://micro.blog/users/following/"
 
 public let microblogMedia = "?q=config"
-
-public enum HttpAuthoriztation {
-    case bearer(token: String)
-    case plain(token: String)
-}
-
-public struct Resource<A> {
-    var urlRequest: URLRequest
-    let parse: (Data) -> Result<A, Error>
-}
-
-public enum NetworkingError: Error {
-    case cannotParse
-    case wordPressURLError
-    case micropubURLError
-    case generalError(error: Error)
-    case invalidInput
-}
-
-extension Result {
-    public var value: Success? {
-        switch self {
-        case .failure:
-            return nil
-        case .success(let value):
-            return value
-        }
-    }
-
-    public init(value: Success?, error: Failure) {
-        if let value = value {
-            self = .success(value)
-        } else {
-            self = .failure(error)
-        }
-    }
-}
-
-public extension Resource {
-    init(url: URL, httpMethod: HttpMethod = .get,
-         authorization: HttpAuthoriztation? = .plain(token: UserSettings.shared.token),
-         parseJSON: @escaping (Any) -> A?) {
-        self.urlRequest = URLRequest(url: url)
-        self.urlRequest.httpMethod = httpMethod.method
-
-        switch authorization {
-        case .some(.bearer(let token)):
-            self.urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        case .some(.plain(let token)):
-            self.urlRequest.addValue(token, forHTTPHeaderField: "Authorization")
-        case .none:
-            break
-        }
-
-        switch httpMethod {
-        case .get, .delete: ()
-        case .post(let body):
-            self.urlRequest.httpBody = body
-        }
-
-        self.parse = { data in
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
-
-            return Result(value: json.flatMap(parseJSON), error: NetworkingError.cannotParse)
-        }
-    }
-}
 
 public extension Item {
     static func allCached(completion: @escaping (ItemResponse?) -> Void) {
@@ -157,7 +91,9 @@ public extension Item {
 
     static func usernamePostURL(for username: String) -> Resource<ItemResponse> {
         let url = userPostsURL.appendingPathComponent(username)
-        return Resource<ItemResponse>(url: url, parseJSON: { json in
+        return Resource<ItemResponse>(url: url,
+                                      authorization: .plain(token: UserSettings.shared.token),
+                                      parseJSON: { json in
             guard let jsonDictionary = json as? JSONDictionary,
                 let jsonItems = jsonDictionary["items"] as? [JSONDictionary],
                 let microBlogJson = jsonDictionary["_microblog"] as? JSONDictionary,
@@ -172,7 +108,9 @@ public extension Item {
     }
 
     fileprivate static func resource(for url: URL, cacheName: String? = nil) -> Resource<ItemResponse> {
-        return Resource<ItemResponse>(url: url, parseJSON: { json in
+        return Resource<ItemResponse>(url: url,
+                                      authorization: .plain(token: UserSettings.shared.token),
+                                      parseJSON: { json in
             guard let jsonDictionary = json as? JSONDictionary,
                 let jsonItems = jsonDictionary["items"] as? [JSONDictionary] else {
                     return nil
@@ -216,13 +154,19 @@ public extension Item {
         let baseUrl = isFavorite ? unfaveURLString : faveURLString
         let urlString = baseUrl + id
         let url = URL(string: urlString)!
-        return Resource<Empty>(url: url, httpMethod: httpMethod, parseJSON: { _ in return Empty() })
+        return Resource<Empty>(url: url,
+                               httpMethod: httpMethod,
+                               authorization: .plain(token: UserSettings.shared.token),
+                               parseJSON: { _ in return Empty() })
     }
 
     func reply(with text: String) -> Resource<Empty> {
         let encodedText = text.stringByAddingPercentEncodingForFormData() ?? ""
         let url = URL(string: replyURLString + "?id=\(id)&text=\(encodedText)")!
-        return Resource<Empty>(url: url, httpMethod: .post(nil), parseJSON: { _ in return Empty() })
+        return Resource<Empty>(url: url,
+                               httpMethod: .post(nil),
+                               authorization: .plain(token: UserSettings.shared.token),
+                               parseJSON: { _ in return Empty() })
     }
 
     var conversation: Resource<ItemResponse> {
@@ -252,8 +196,11 @@ public extension Author {
             fatalError()
         }
         let url = URL(string: followURLString + username)!
-        return Resource<Empty>(url: url, httpMethod: .post(nil), parseJSON: { _ in
-            return Empty()
+        return Resource<Empty>(url: url,
+                               httpMethod: .post(nil),
+                               authorization: .plain(token: UserSettings.shared.token),
+                               parseJSON: { _ in
+                                return Empty()
         })
     }
 
@@ -262,8 +209,11 @@ public extension Author {
             fatalError()
         }
         let url = URL(string: unfollowURLString + username)!
-        return Resource<Empty>(url: url, httpMethod: .post(nil), parseJSON: { _ in
-            return Empty()
+        return Resource<Empty>(url: url,
+                               httpMethod: .post(nil),
+                               authorization: .plain(token: UserSettings.shared.token),
+                               parseJSON: { _ in
+                                return Empty()
         })
     }
 
@@ -272,12 +222,15 @@ public extension Author {
             fatalError()
         }
         let url = URL(string: followingURLString + username)!
-        return Resource<[Author]>(url: url, httpMethod: .get, parseJSON: { json in
-            guard let jsonItems = json as? [JSONDictionary] else {
-                    return nil
-            }
-
-            return jsonItems.compactMap(Author.init(dictionary:))
+        return Resource<[Author]>(url: url,
+                                  httpMethod: .get,
+                                  authorization: .plain(token: UserSettings.shared.token),
+                                  parseJSON: { json in
+                                    guard let jsonItems = json as? [JSONDictionary] else {
+                                        return nil
+                                    }
+                                    
+                                    return jsonItems.compactMap(Author.init(dictionary:))
         })
     }
 }

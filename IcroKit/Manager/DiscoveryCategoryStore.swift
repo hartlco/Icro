@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import Client
 
 public final class DiscoveryCategoryStore {
     public private(set) var categories = [DiscoveryCategory]()

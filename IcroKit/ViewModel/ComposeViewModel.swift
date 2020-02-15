@@ -5,6 +5,7 @@
 
 import Foundation
 import Settings
+import Client
 
 public enum ImageState {
     case idle

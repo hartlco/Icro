@@ -11,6 +11,7 @@ import Settings
 import VerticalTabView
 import MessageUI
 import Combine
+import Client
 
 #if targetEnvironment(macCatalyst)
 import AppKit

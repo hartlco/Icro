@@ -1,14 +1,7 @@
-//
-//  Created by Martin Hartl on 04.05.19.
-//  Copyright © 2019 Martin Hartl. All rights reserved.
-//
-
-import UIKit
 import XCTest
-@testable import Icro
-@testable import IcroKit
+@testable import Client
 
-class HTTPMethodTests: XCTestCase {
+final class HttpMethodTests: XCTestCase {
     func test_method_isCorrectForGet() {
         XCTAssert(HttpMethod.get.method == "GET")
     }
@@ -20,4 +13,10 @@ class HTTPMethodTests: XCTestCase {
     func test_method_isCorrectForDelete() {
         XCTAssert(HttpMethod.delete.method == "DELETE")
     }
+
+    static var allTests = [
+        ("test_method_isCorrectForGet", test_method_isCorrectForGet,
+         "test_method_isCorrectForPost", test_method_isCorrectForPost,
+         "test_method_isCorrectForDelete", test_method_isCorrectForDelete)
+    ]
 }

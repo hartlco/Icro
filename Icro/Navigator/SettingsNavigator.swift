@@ -8,6 +8,7 @@ import MessageUI
 import IcroKit
 import SwiftUI
 import Settings
+import Client
 
 final class SettingsNavigator: NSObject {
     private let presentedController: UIViewController
@@ -42,11 +43,11 @@ final class SettingsNavigator: NSObject {
         let me = url
 
         guard let indieAuthURL = IndieAuth.buildAuthorizationURL(forEndpoint: IndieAuth.Constants.authURL,
-                                                           meUrl: me,
-                                                           redirectURI: IndieAuth.Constants.callback,
-                                                           clientId: IndieAuth.Constants.clientIDURL,
-                                                           state: "") else {
-                                                            return
+                                                                 meUrl: me,
+                                                                 redirectURI: IndieAuth.Constants.callback,
+                                                                 clientId: IndieAuth.Constants.clientIDURL,
+                                                                 state: "") else {
+                                                                    return
         }
 
         application.open(indieAuthURL, options: [:], completionHandler: nil)
