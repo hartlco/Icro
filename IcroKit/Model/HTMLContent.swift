@@ -3,6 +3,8 @@
 //  Copyright © 2017 Martin Hartl. All rights reserved.
 //
 
+import SwiftSoup
+
 #if os(iOS)
 import UIKit
 public typealias XImage = UIImage
@@ -25,10 +27,10 @@ public final class HTMLContent: Codable {
         self.rawHTMLString = rawHTMLString
         self.itemID = itemID
 
-        let htmlDocument = try? HTML(html: rawHTMLString, encoding: .utf8)
+        let doccument = try? SwiftSoup.parse(rawHTMLString)
 
-        self.imageLinks = rawHTMLString.imagesLinks(from: htmlDocument).compactMap(URL.init)
-        self.videoLinks = rawHTMLString.videoLinks(from: htmlDocument).compactMap(URL.init)
+        self.imageLinks = rawHTMLString.imagesLinks(from: doccument).compactMap(URL.init)
+        self.videoLinks = rawHTMLString.videoLinks(from: doccument).compactMap(URL.init)
     }
 
     public func imageDescriptions() -> [String] {
@@ -61,9 +63,9 @@ public final class HTMLContent: Codable {
 private extension String {
     #if os(iOS)
     func htmlToAttributedString(for itemID: String) -> NSAttributedString? {
-        guard let document = try? HTML(html: trimEmptyLines, encoding: .utf8),
-            let body = document.body,
-            let bodyString = document.body?.text else { return nil }
+        guard let document = try? SwiftSoup.parse(trimEmptyLines),
+            let body = document.body(),
+            let bodyString = try? body.text() else { return nil }
 
         let string = NSMutableAttributedString(string: bodyString)
         let paragraphStyle = NSMutableParagraphStyle()
@@ -75,9 +77,11 @@ private extension String {
                 .paragraphStyle: paragraphStyle
         ])
 
-        for linkValue in body.xpath("//a | //href") {
-            guard let content = linkValue.content,
-                let linkURLString = linkValue["href"],
+        let linkValues = try? body.select("a[href]").array()
+
+        for linkValue in (linkValues ?? []) {
+            guard let content = try? linkValue.text(),
+                let linkURLString = try? linkValue.attr("href"),
                 let url = URL(string: linkURLString) else { continue }
             let range = nsString.range(of: content)
             mutableAttributedString.save_addAttributes([
@@ -87,36 +91,25 @@ private extension String {
 
         }
 
-        for boldValue in body.xpath("//strong") {
-            guard let content = boldValue.content else { continue }
+        let boldValues = try? body.select("strong").array()
+
+        for boldValue in (boldValues ?? []) {
+            guard let content = try? boldValue.text() else { continue }
             let range = nsString.range(of: content)
             mutableAttributedString.save_addAttributes([
                 NSAttributedString.Key.font: Font().boldBody
             ], range: range)
         }
 
-        for italicValue in body.xpath("//em") {
-            guard let content = italicValue.content else { continue }
+        let italicValues = try? body.select("em").array()
+
+        for italicValue in (italicValues ?? []) {
+            guard let content = try? italicValue.text() else { continue }
             let range = nsString.range(of: content)
             mutableAttributedString.save_addAttributes([
                 NSAttributedString.Key.font: Font().italicBody
             ], range: range)
         }
-//
-//        for textAttachmentImage in body.xpath("//img | //src") {
-//            var range = nsString.range(of: " ")
-//
-//            if let htmlClass = textAttachmentImage["class"], String.inlineMiniImageClasses.contains(htmlClass) {
-//                if let textAttachment = textAttachment(for: textAttachmentImage, itemID: itemID) {
-//                    let addedAttributedStrig = NSMutableAttributedString(string: " ")
-//                    addedAttributedStrig.save_addAttributes([
-//                        .attachment: textAttachment
-//                    ], range: range)
-//                    mutableAttributedString.append(addedAttributedStrig)
-//                    mutableAttributedString.append(NSAttributedString(string: " "))
-//                }
-//            }
-//        }
 
         return mutableAttributedString
 
@@ -178,32 +171,6 @@ private extension String {
     var trimEmptyLines: String {
         return self.trimmingCharacters(in: CharacterSet(["\n"]))
     }
-
-    #if os(iOS)
-    private func textAttachment(for textImage: XMLElement, itemID: String) -> NSTextAttachment? {
-        guard let urlString = textImage["src"],
-            let url = URL(string: urlString),
-            let classString = textImage["class"],
-            String.inlineMiniImageClasses.contains(classString) else { return nil }
-
-        let font = XFont.systemFont(ofSize: 16)
-        let textAttachment = NSTextAttachment()
-
-        URLSession.shared.dataTask(with: url) { (data, _, _) in
-            guard let data = data else { return }
-            let image = XImage(data: data)
-            DispatchQueue.main.async {
-                textAttachment.image = image
-                NotificationCenter.default.post(name: .asyncInlineImageFinishedLoading, object: nil, userInfo: ["id": itemID])
-            }
-        }.resume()
-
-        let mid = font.descender + font.capHeight
-        let width: CGFloat = 18
-        textAttachment.bounds = CGRect(x: 0, y: font.descender - width / 2 + mid + 2, width: width, height: width).integral
-        return textAttachment
-    }
-    #endif
 }
 
 private extension NSMutableAttributedString {
@@ -216,45 +183,56 @@ private extension NSMutableAttributedString {
 private extension String {
     static let inlineMiniImageClasses = ["mini_thumbnail", "wp-smiley"]
 
-    func videoLinks(from document: HTMLDocument?) -> [String] {
-        guard let document = document else { return [] }
+    func videoLinks(from document: Document?) -> [String] {
+        guard let document = document,
+            let srcs = try? document.select("video[src]") else { return [] }
 
-        return document.xpath("//video | //src").compactMap {
-            if let htmlClass = $0["class"], String.inlineMiniImageClasses.contains(htmlClass) {
-                return nil
-            }
-            return $0["src"]
-        }
+        let srcsStringArray: [String] = srcs.array().compactMap { try? $0.attr("src").description }
+        return srcsStringArray
     }
 
-    func imagesLinks(from document: HTMLDocument?) -> [String] {
-        guard let document = document else { return [] }
+    func imagesLinks(from document: Document?) -> [String] {
+        guard let document = document,
+            let srcs = try? document.select("img[src]") else { return [] }
 
-        return document.xpath("//img | //src").compactMap {
-            if let htmlClass = $0["class"], String.inlineMiniImageClasses.contains(htmlClass) {
+        return srcs.array().compactMap {
+            if let className = try? $0.className(),
+                String.inlineMiniImageClasses.contains(className) {
                 return nil
             }
-            return $0["src"]
+
+            return try? $0.attr("src").description
         }
     }
 
     func imageDescriptions() -> [String] {
-        guard let doc = try? HTML(html: self, encoding: .utf8) else { return [] }
+        guard let document = try? SwiftSoup.parse(self),
+            let srcs = try? document.select("img[src]") else { return [] }
 
-        return doc.xpath("//img | //alt").compactMap {
-            return $0["alt"]
+        return srcs.array().compactMap {
+            if let className = try? $0.className(),
+                String.inlineMiniImageClasses.contains(className) {
+                return nil
+            }
+
+            return try? $0.attr("alt").description
         }
     }
 
     func withoutImages() -> String {
-        guard let doc = try? HTML(html: self, encoding: .utf8) else { return self }
+        guard let document = try? SwiftSoup.parse(self),
+            let srcs = try? document.select("img[src]") else { return self }
+
         var mutableSelf = self
 
-        for image in doc.xpath("//img | //src") {
-            if let htmlClass = image["class"], String.inlineMiniImageClasses.contains(htmlClass) {
+        for image in srcs.array() {
+            if let className = try? image.className(),
+                String.inlineMiniImageClasses.contains(className) {
                 continue
             }
-            mutableSelf = mutableSelf.replacingOccurrences(of: image.toHTML ?? "", with: "")
+
+            let iamgeHTML = try? image.html()
+            mutableSelf = mutableSelf.replacingOccurrences(of: iamgeHTML ?? "", with: "")
         }
 
         return mutableSelf
