@@ -119,7 +119,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if syntaxView.text.isEmpty {
+        if viewModel.showKeyboardOnAppear {
             syntaxView.contentTextView.becomeFirstResponder()
         }
     }

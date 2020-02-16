@@ -55,6 +55,15 @@ public final class ComposeViewModel {
         self.client = client
     }
 
+    public var showKeyboardOnAppear: Bool {
+        switch mode {
+        case .reply, .post:
+            return true
+        case .shareImage, .shareText, .shareURL:
+            return false
+        }
+    }
+
     public var canUploadImage: Bool {
         switch mode {
         case .shareText, .shareURL:
