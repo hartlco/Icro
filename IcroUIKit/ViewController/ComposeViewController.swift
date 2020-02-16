@@ -116,9 +116,12 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
         view.addInteraction(dropInteraction)
     }
 
-    override public func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        syntaxView.contentTextView.becomeFirstResponder()
+    override public func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if syntaxView.text.isEmpty {
+            syntaxView.contentTextView.becomeFirstResponder()
+        }
     }
 
     // MARK: - Private
