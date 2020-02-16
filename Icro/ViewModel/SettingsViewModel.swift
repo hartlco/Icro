@@ -35,6 +35,7 @@ final class SettingsViewModel: ObservableObject {
         self.notificationCenter = notificationCenter
         self.indieAuthMeURLString = userSettings.indieAuthMeURLString
         self.canSendMail = canSendMail
+        self.useMediumContentFont = userSettings.useMediumContentFont
 
         if isWordpressBlog {
             isMicropubBlog = false
@@ -115,6 +116,14 @@ final class SettingsViewModel: ObservableObject {
     let wordpressSubTitle = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGINFO_TEXT", comment: "")
     let wordpressSwitchTitle = NSLocalizedString("SETTINGSVIEWCONTROLLER_BLOGSETUPSWITCH_TEXT", comment: "")
 
+    // MARK: - Appearance
+
+    var useMediumContentFont: Bool {
+        didSet {
+            updateSetup()
+        }
+    }
+
     private func updateSetup() {
         objectWillChange.send()
 
@@ -141,5 +150,6 @@ final class SettingsViewModel: ObservableObject {
         }
 
         userSettings.indieAuthMeURLString = indieAuthMeURLString
+        userSettings.useMediumContentFont = useMediumContentFont
     }
 }

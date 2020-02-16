@@ -22,6 +22,7 @@ struct SettingsContentView: View {
     var body: some View {
         NavigationView {
             Form {
+                AppearanceSection(store: store)
                 WordpressSection(store: store)
                 MicropubSection(store: store, settingsNavigator: settingsNavigator)
                 AccountSection(settingsNavigator: settingsNavigator)
@@ -146,6 +147,20 @@ struct AccountSection: View {
             }, label: {
                 Text("SETTINGSVIEWCONTROLLER_LOGOUTBUTTON_TITLE")
             })
+        }
+    }
+}
+
+struct AppearanceSection: View {
+    @ObservedObject var store: SettingsViewModel
+
+    var body: some View {
+        return Section(header: Text("Appearance")
+            .font(.headline)
+            .fontWeight(.bold)) {
+                Toggle(isOn: $store.useMediumContentFont) {
+                    Text("Use bolder content font")
+                }
         }
     }
 }

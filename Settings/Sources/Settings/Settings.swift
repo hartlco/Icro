@@ -233,6 +233,18 @@ public final class UserSettings {
         }
     }
 
+    // MARK: - Appearance
+
+    public var useMediumContentFont: Bool {
+        set {
+            userDefaults.set(newValue, forKey: #function)
+        }
+        get {
+            guard let data = userDefaults.value(forKey: #function) as? Bool else { return true }
+            return data
+        }
+    }
+
     public func logout() {
         token = ""
         username = ""
