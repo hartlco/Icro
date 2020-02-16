@@ -18,12 +18,12 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
 
     private var layoutGuide: KeyboardLayoutGuide?
 
-    fileprivate let viewModel: ComposeViewModel
+    private let viewModel: ComposeViewModel
     private let composeNavigator: ComposeNavigatorProtocol
 
     private var cancelButton: UIBarButtonItem?
     private let itemNavigator: ItemNavigatorProtocol
-    fileprivate let keyboardInputView = KeyboardInputView.instanceFromNib()
+    private let keyboardInputView = KeyboardInputView.instanceFromNib()
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
