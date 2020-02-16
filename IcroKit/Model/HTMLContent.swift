@@ -12,33 +12,29 @@ public typealias XImage = UIImage
 public typealias XImage = NSImage
 #endif
 
-public extension Notification.Name {
-    static let asyncInlineImageFinishedLoading = Notification.Name(rawValue: "asyncInlineImageFinishedLoading")
-}
-
 public final class HTMLContent: Codable {
     private let rawHTMLString: String
     private let itemID: String
+    private let rawHTMLStringWithoutImages: String
 
     public let imageLinks: [URL]
+    public let imageDescriptions: [String]
     public let videoLinks: [URL]
 
     init(rawHTMLString: String, itemID: String) {
+        let document = try? SwiftSoup.parse(rawHTMLString)
+
         self.rawHTMLString = rawHTMLString
         self.itemID = itemID
+        self.rawHTMLStringWithoutImages = rawHTMLString.withoutImages(from: document)
 
-        let doccument = try? SwiftSoup.parse(rawHTMLString)
-
-        self.imageLinks = rawHTMLString.imagesLinks(from: doccument).compactMap(URL.init)
-        self.videoLinks = rawHTMLString.videoLinks(from: doccument).compactMap(URL.init)
-    }
-
-    public func imageDescriptions() -> [String] {
-        return rawHTMLString.imageDescriptions()
+        self.imageLinks = rawHTMLString.imagesLinks(from: document).compactMap(URL.init)
+        self.videoLinks = rawHTMLString.videoLinks(from: document).compactMap(URL.init)
+        self.imageDescriptions = rawHTMLString.imageDescriptions(from: document)
     }
 
     public func attributedStringWithoutImages() -> NSAttributedString? {
-        return rawHTMLString.withoutImages().htmlToAttributedString(for: itemID)
+        return rawHTMLStringWithoutImages.htmlToAttributedString(for: itemID)
     }
 
     public static func textLinks(for attributedString: NSAttributedString?) -> [(text: String, url: URL)] {
@@ -205,8 +201,8 @@ private extension String {
         }
     }
 
-    func imageDescriptions() -> [String] {
-        guard let document = try? SwiftSoup.parse(self),
+    func imageDescriptions(from document: Document?) -> [String] {
+        guard let document = document,
             let srcs = try? document.select("img[src]") else { return [] }
 
         return srcs.array().compactMap {
@@ -219,8 +215,8 @@ private extension String {
         }
     }
 
-    func withoutImages() -> String {
-        guard let document = try? SwiftSoup.parse(self),
+    func withoutImages(from document: Document?) -> String {
+        guard let document = document,
             let srcs = try? document.select("img[src]") else { return self }
 
         var mutableSelf = self

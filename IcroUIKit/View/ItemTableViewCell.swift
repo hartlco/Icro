@@ -105,10 +105,6 @@ public final class ItemTableViewCell: UITableViewCell {
         let avatarGestureRecognizer = UITapGestureRecognizer(target: self,
                                                              action: #selector(didTapAvatarGestureRecognizer))
         avatarImageView.addGestureRecognizer(avatarGestureRecognizer)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(asyncInlineImageFinishedLoading),
-                                               name: .asyncInlineImageFinishedLoading,
-                                               object: nil)
         backgroundColor = Color.backgroundColor
     }
 
@@ -145,14 +141,6 @@ public final class ItemTableViewCell: UITableViewCell {
 
     @objc private func didTapAvatarGestureRecognizer() {
         didTapAvatar?()
-    }
-
-    @objc private func asyncInlineImageFinishedLoading(notification: Notification) {
-        guard let idString = notification.userInfo?["id"] as? String,
-            idString == itemID else { return }
-
-        attributedLabel.setNeedsDisplay()
-        attributedLabel.layoutIfNeeded()
     }
 
     @IBAction private func replyButtonPressed(_ sender: Any) {
