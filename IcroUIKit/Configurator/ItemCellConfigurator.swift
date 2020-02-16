@@ -41,7 +41,7 @@ public final class ItemCellConfigurator: NSObject {
             guard let self = self else { return }
             self.itemNavigator.openReply(item: item)
         }
-        cell.faveView.isHidden = true
+
         cell.timeLabel.text = item.relativeDateString
         cell.atUsernameLabel.text = "@" + (item.author.username ?? "")
 

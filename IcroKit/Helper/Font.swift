@@ -12,7 +12,7 @@ public typealias XFont = NSFont
 
 public struct Font {
     #if os(iOS)
-    let bodySize: CGFloat = 16
+    let bodySize: CGFloat = 17
     #elseif os(OSX)
     let bodySize: CGFloat = 13
     #endif
@@ -20,7 +20,7 @@ public struct Font {
     public init() { }
 
     public var body: XFont {
-        let font = XFont.systemFont(ofSize: bodySize)
+        let font = XFont.systemFont(ofSize: bodySize, weight: .medium)
         let fontMetrics = UIFontMetrics(forTextStyle: .body)
         return fontMetrics.scaledFont(for: font)
     }
@@ -38,7 +38,7 @@ public struct Font {
     }
 
     public var name: XFont {
-        let font = XFont.systemFont(ofSize: 17, weight: .semibold)
+        let font = XFont.systemFont(ofSize: 19, weight: .bold)
         let fontMetrics = UIFontMetrics(forTextStyle: .headline)
         return fontMetrics.scaledFont(for: font)
     }

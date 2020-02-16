@@ -48,7 +48,7 @@ public final class ItemTableViewCell: UITableViewCell {
             timeLabel.font = Font().username
         }
     }
-    @IBOutlet weak var faveView: UIView!
+
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
 
     public let actionButtonContainer = ItemActionButtonView()
