@@ -14,18 +14,16 @@ public typealias XImage = NSImage
 
 public final class HTMLContent: Codable {
     private let rawHTMLString: String
-    private let itemID: String
     private let rawHTMLStringWithoutImages: String
 
     public let imageLinks: [URL]
     public let imageDescriptions: [String]
     public let videoLinks: [URL]
 
-    init(rawHTMLString: String, itemID: String) {
+    init(rawHTMLString: String) {
         let document = try? SwiftSoup.parse(rawHTMLString)
 
         self.rawHTMLString = rawHTMLString
-        self.itemID = itemID
         self.rawHTMLStringWithoutImages = rawHTMLString.withoutImages(from: document)
 
         self.imageLinks = rawHTMLString.imagesLinks(from: document).compactMap(URL.init)
@@ -34,7 +32,7 @@ public final class HTMLContent: Codable {
     }
 
     public func attributedStringWithoutImages() -> NSAttributedString? {
-        return rawHTMLStringWithoutImages.htmlToAttributedString(for: itemID)
+        return rawHTMLStringWithoutImages.htmlToAttributedString()
     }
 
     public static func textLinks(for attributedString: NSAttributedString?) -> [(text: String, url: URL)] {
@@ -52,13 +50,13 @@ public final class HTMLContent: Codable {
     }
 
     private func attirbutedString() -> NSAttributedString? {
-        return rawHTMLString.htmlToAttributedString(for: itemID)
+        return rawHTMLString.htmlToAttributedString()
     }
 }
 
 private extension String {
     #if os(iOS)
-    func htmlToAttributedString(for itemID: String) -> NSAttributedString? {
+    func htmlToAttributedString() -> NSAttributedString? {
         guard let document = try? SwiftSoup.parse(trimEmptyLines),
             let body = document.body(),
             let bodyString = try? body.text() else { return nil }
@@ -111,7 +109,7 @@ private extension String {
 
     }
     #elseif os(OSX)
-    func htmlToAttributedString(for itemID: String) -> NSAttributedString? {
+    func htmlToAttributedString() -> NSAttributedString? {
         let htmlData = NSString(string: self as NSString).data(using: String.Encoding.unicode.rawValue)
         let options = [NSAttributedString.DocumentReadingOptionKey.documentType:
             NSAttributedString.DocumentType.html]
@@ -160,8 +158,8 @@ private extension String {
     }
     #endif
 
-    func htmlToString(for itemID: String) -> String {
-        return htmlToAttributedString(for: itemID)?.string ?? ""
+    func htmlToString() -> String {
+        return htmlToAttributedString()?.string ?? ""
     }
 
     var trimEmptyLines: String {

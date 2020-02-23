@@ -113,7 +113,7 @@ extension Item {
         }
 
         self.init(id: id,
-                  htmlContent: HTMLContent(rawHTMLString: content_html, itemID: id),
+                  htmlContent: HTMLContent(rawHTMLString: content_html),
                   url: url,
                   date_published: date,
                   author: author,
