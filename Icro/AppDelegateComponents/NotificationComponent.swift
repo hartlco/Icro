@@ -17,6 +17,7 @@ final class NotificationComponent: AppDelegateComponent {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        application.applicationIconBadgeNumber = 0
         registerForPushNotifications(application: application)
         return true
     }
