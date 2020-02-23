@@ -1,0 +1,10 @@
+upcoming:
+  version: 2.2
+  date: TBD
+  dev:
+    - Introduce CHANGELOG.yml
+    - Integrate danger.js for pull request checks
+  user_facing:
+    - Reset Application notification badge after opening the App
+
+releases:
