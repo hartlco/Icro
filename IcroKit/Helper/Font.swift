@@ -40,9 +40,15 @@ public struct Font {
     }
 
     public var italicBody: XFont {
-        let font = XFont.italicSystemFont(ofSize: bodySize)
+        let font = body
+        let descriptor = font.fontDescriptor.withSymbolicTraits(.traitItalic)
         let fontMetrics = UIFontMetrics(forTextStyle: .body)
-        return fontMetrics.scaledFont(for: font)
+
+        if let descriptor = descriptor {
+            return fontMetrics.scaledFont(for: UIFont(descriptor: descriptor, size: bodySize))
+        } else {
+            return font
+        }
     }
 
     public var name: XFont {
