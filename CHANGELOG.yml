@@ -6,5 +6,6 @@ upcoming:
     - Integrate danger.js for pull request checks
   user_facing:
     - Reset Application notification badge after opening the App
+    - Test
 
 releases:
