@@ -64,7 +64,7 @@ final class MicropubRequestController {
                       completion: @escaping (ComposeViewModel.Image?, Error?) -> Void) {
 
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(UserSettings.shared.token)"
+            "Authorization": "Bearer \(endpoint.token)"
         ]
 
         client.load(resource: MediaEndpoint.get(endpoint: endpoint)) { endpoint in
