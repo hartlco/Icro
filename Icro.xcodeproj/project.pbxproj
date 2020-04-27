@@ -47,7 +47,6 @@
 		5B01A79C22E82CFA00D420BD /* ImageFadeInHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A77622E82CFA00D420BD /* ImageFadeInHandler.swift */; };
 		5B01A7C622E8313200D420BD /* UICollectionView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A7BF22E8313200D420BD /* UICollectionView+Dequeueable.swift */; };
 		5B01CC002168E4DD0007E01D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372B2128619B0076121E /* ListViewModel.swift */; };
-		5B0653322324D047000C5C3A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653312324D047000C5C3A /* Kingfisher */; };
 		5B0653342324D047000C5C3A /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653332324D047000C5C3A /* KingfisherSwiftUI */; };
 		5B0653362324D1E0000C5C3A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0653352324D1E0000C5C3A /* Kingfisher */; };
 		5B165D8822BF436D00B851B2 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B165D8722BF436D00B851B2 /* TipJarView.swift */; };
@@ -115,13 +114,11 @@
 		5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B81E79A2206C62E008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
 		5B83B00D22D06EA8004C4D8D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B00C22D06EA8004C4D8D /* Alamofire */; };
-		5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01A22D11B3D004C4D8D /* KeychainAccess */; };
 		5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01C22D11D64004C4D8D /* KeychainAccess */; };
 		5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B841ECD22E832F700CDA80C /* libiconv.tbd */; };
 		5B841ED322E8349600CDA80C /* UICollectionView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A7BF22E8313200D420BD /* UICollectionView+Dequeueable.swift */; };
 		5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B869B07214E4633000A051C /* MicropubEndpoint.swift */; };
 		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
-		5B8FD3A02360D53700BC72F2 /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 5B8FD39F2360D53700BC72F2 /* TypedSymbols */; };
 		5B8FD3A22360D59800BC72F2 /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 5B8FD3A12360D59800BC72F2 /* TypedSymbols */; };
 		5B99C67A229FB47200437552 /* UITableView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99C679229FB47200437552 /* UITableView+Keyboard.swift */; };
 		5BA0C37822FE99E100A9B44D /* MainMenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA0C37722FE99E100A9B44D /* MainMenuBuilder.swift */; };
@@ -137,7 +134,7 @@
 		5BC1384321C6332B0040353C /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1384221C6332B0040353C /* LocalizedString.swift */; };
 		5BC1384721C639160040353C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		5BC1384821C675240040353C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
-		5BC1384921C69BB80040353C /* IcroKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC347AE2132944900DEB45D /* IcroKit.framework */; };
+		5BC1384921C69BB80040353C /* IcroKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC347AE2132944900DEB45D /* IcroKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		5BC347B22132944900DEB45D /* IcroKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC347B02132944900DEB45D /* IcroKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC347AE2132944900DEB45D /* IcroKit.framework */; };
 		5BC347B62132944900DEB45D /* IcroKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC347AE2132944900DEB45D /* IcroKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -169,7 +166,6 @@
 		8DCD1F043AA7A42B38373800 /* Pods_IcroScreenshotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4216F55176FDD95FB7B918F8 /* Pods_IcroScreenshotsTests.framework */; };
 		BF707E742131C45600506E64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
 		C544111523F7CB7200428609 /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C544111423F7CB7200428609 /* Client */; };
-		C544111C23F7CD2A00428609 /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C544111B23F7CD2A00428609 /* Client */; };
 		C544111E23F7CED800428609 /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C544111D23F7CED800428609 /* Client */; };
 		C544112123F7E81400428609 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = C544112023F7E81400428609 /* SwiftSoup */; };
 		C5454DAE23CB9A5C00739A6C /* VerticalTabView in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DAD23CB9A5C00739A6C /* VerticalTabView */; };
@@ -657,7 +653,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C544111C23F7CD2A00428609 /* Client in Frameworks */,
 				C5A498F923B6AE3A006ED94F /* Sourceful in Frameworks */,
 				C5F60BFD23B3862F0022448A /* SnapKit in Frameworks */,
 				5B0653362324D1E0000C5C3A /* Kingfisher in Frameworks */,
@@ -709,14 +704,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B0653322324D047000C5C3A /* Kingfisher in Frameworks */,
 				C5454DAE23CB9A5C00739A6C /* VerticalTabView in Frameworks */,
 				5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */,
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
-				5B8FD3A02360D53700BC72F2 /* TypedSymbols in Frameworks */,
 				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
 				C5F8818023B4A141008DBAD6 /* DropdownTitleView.framework in Frameworks */,
-				5B83B01B22D11B3D004C4D8D /* KeychainAccess in Frameworks */,
 				5B0653342324D047000C5C3A /* KingfisherSwiftUI in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
 			);
@@ -1791,7 +1783,6 @@
 				5B0653352324D1E0000C5C3A /* Kingfisher */,
 				C5F60BFC23B3862F0022448A /* SnapKit */,
 				C5A498F823B6AE3A006ED94F /* Sourceful */,
-				C544111B23F7CD2A00428609 /* Client */,
 			);
 			productName = IcroUIKit;
 			productReference = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */;
@@ -1905,11 +1896,8 @@
 			);
 			name = Icro;
 			packageProductDependencies = (
-				5B83B01A22D11B3D004C4D8D /* KeychainAccess */,
 				5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */,
-				5B0653312324D047000C5C3A /* Kingfisher */,
 				5B0653332324D047000C5C3A /* KingfisherSwiftUI */,
-				5B8FD39F2360D53700BC72F2 /* TypedSymbols */,
 				C5454DAD23CB9A5C00739A6C /* VerticalTabView */,
 			);
 			productName = Icro;
@@ -3127,11 +3115,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5B0653312324D047000C5C3A /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B0653302324D047000C5C3A /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
 		5B0653332324D047000C5C3A /* KingfisherSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5B0653302324D047000C5C3A /* XCRemoteSwiftPackageReference "Kingfisher" */;
@@ -3147,20 +3130,10 @@
 			package = 5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		5B83B01A22D11B3D004C4D8D /* KeychainAccess */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */;
-			productName = KeychainAccess;
-		};
 		5B83B01C22D11D64004C4D8D /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
-		};
-		5B8FD39F2360D53700BC72F2 /* TypedSymbols */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */;
-			productName = TypedSymbols;
 		};
 		5B8FD3A12360D59800BC72F2 /* TypedSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -3173,10 +3146,6 @@
 			productName = AppDelegateComponent;
 		};
 		C544111423F7CB7200428609 /* Client */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Client;
-		};
-		C544111B23F7CD2A00428609 /* Client */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Client;
 		};
