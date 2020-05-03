@@ -9,7 +9,7 @@ import AVFoundation
 import Kingfisher
 import SnapKit
 
-public final class ItemTableViewCell: UITableViewCell {
+public final class ItemTableViewCell: SwipeTableViewCell {
     var isFavorite: Bool = false
 
     @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!
