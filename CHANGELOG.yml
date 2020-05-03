@@ -1,10 +1,21 @@
 upcoming:
-  version: 2.2
+  version: 2.2.1
   date: TBD
+  dev:
+    -
+  user_facing:
+    - Add Swipe actions for reply/conversation
+    - Add conversation item to context menu
+    - Don’t dismiss keyboard when entering micropub information
+    - Accept micropub access token without requiring the micropub endpoint to be filled first
+
+releases:
+  version: 2.2
+  date: 2020-04-30
   dev:
     - Introduce CHANGELOG.yml
     - Integrate danger.js for pull request checks
   user_facing:
     - Reset Application notification badge after opening the App
-
-releases:
+    - Add actions menu to cells
+    - Add indieauth support

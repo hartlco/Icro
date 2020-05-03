@@ -177,6 +177,7 @@ final class ListViewController: UIViewController, LoadingViewController {
             case .item(let item):
                 let cell = tableView.dequeueCell(ofType: ItemTableViewCell.self, for: indexPath)
                 cell.layer.shouldRasterize = true
+                cell.delegate = self
                 cell.layer.rasterizationScale = UIScreen.main.scale
                 self.cellConfigurator.configure(cell,
                                                 forDisplaying: item,
@@ -408,5 +409,24 @@ extension ListViewController {
 
         loadingSpinner.stopAnimating()
         navigationItem.rightBarButtonItems?.remove(at: indexOfLoadingItem)
+    }
+}
+
+extension ListViewController: SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView,
+                   editActionsForRowAt indexPath: IndexPath,
+                   for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        return editActionsConfigurator.swipeActions(tableView: tableView,
+                                                    indexPath: indexPath,
+                                                    orientation: orientation)
+    }
+
+    func tableView(_ tableView: UITableView,
+                   editActionsOptionsForRowAt indexPath: IndexPath,
+                   for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .selection
+
+        return options
     }
 }
