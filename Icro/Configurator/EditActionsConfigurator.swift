@@ -61,13 +61,13 @@ final class EditActionsConfigurator {
             return UIMenu(title: "", image: nil, identifier: nil, children: [])
         }
 
-        let reply = UIAction(title: NSLocalizedString("EDITACTIONSCONFIGURATOR_SHAREACTION", comment: ""),
+        let share = UIAction(title: NSLocalizedString("EDITACTIONSCONFIGURATOR_SHAREACTION", comment: ""),
                              image: UIImage(symbol: Symbol.square_and_arrow_up),
                              identifier: nil) { [weak self] _ in
                                 self?.itemNavigator.share(item: item, sourceView: cell)
         }
 
-        let chat = UIAction(title: NSLocalizedString("EDITACTIONSCONFIGURATOR_LEADINGEDITACTIONS", comment: ""),
+        let reply = UIAction(title: NSLocalizedString("EDITACTIONSCONFIGURATOR_LEADINGEDITACTIONS", comment: ""),
                              image: UIImage(symbol: Symbol.arrowshape_turn_up_left),
                              identifier: nil) { [weak self] _ in
                                 self?.itemNavigator.openReply(item: item)
@@ -83,9 +83,16 @@ final class EditActionsConfigurator {
                                 self?.viewModel.toggleFave(for: item)
         }
 
+        let conversation = UIAction(title: NSLocalizedString("EDITACTIONSCONFIGURATOR_CONVERSATIONACTION", comment: ""),
+            image: UIImage(symbol: .bubble_left_and_bubble_right),
+                                    identifier: nil,
+                                    discoverabilityTitle: nil) { [weak self] _ in
+                                        self?.itemNavigator.openConversation(item: item)
+        }
+
         return UIMenu(title: "",
                       image: nil,
                       identifier: nil,
-                      children: [reply, chat, favorite])
+                      children: [share, reply, conversation, favorite])
     }
 }
