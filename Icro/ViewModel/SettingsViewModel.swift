@@ -16,8 +16,6 @@ final class SettingsViewModel: ObservableObject {
         case none
     }
 
-    var objectWillChange = ObservableObjectPublisher()
-
     private let userSettings: UserSettings
     private let notificationCenter: NotificationCenter
 
@@ -48,13 +46,11 @@ final class SettingsViewModel: ObservableObject {
 
     @objc private func updateValues() {
         self.micropubToken = userSettings.micropubToken ?? ""
-
-        objectWillChange.send()
     }
 
     let canSendMail: Bool
 
-    var isWordpressBlog: Bool {
+    @Published var isWordpressBlog: Bool {
         didSet {
             if isWordpressBlog, isMicropubBlog {
                 isMicropubBlog = false
@@ -81,7 +77,7 @@ final class SettingsViewModel: ObservableObject {
         }
     }
 
-    var isMicropubBlog: Bool {
+    @Published var isMicropubBlog: Bool {
         didSet {
             if isWordpressBlog, isMicropubBlog {
                 isWordpressBlog = false
@@ -96,7 +92,7 @@ final class SettingsViewModel: ObservableObject {
         }
     }
 
-    var micropubToken: String {
+    @Published var micropubToken: String {
         didSet {
             updateSetup()
         }
@@ -125,8 +121,6 @@ final class SettingsViewModel: ObservableObject {
     }
 
     private func updateSetup() {
-        objectWillChange.send()
-
         if isWordpressBlog,
             !wordpressURL.isEmpty,
             !wordpressUsername.isEmpty,
@@ -139,9 +133,7 @@ final class SettingsViewModel: ObservableObject {
             userSettings.setWordpressInfo(info: nil)
         }
 
-        if isMicropubBlog,
-            !micropubURL.isEmpty,
-            !micropubToken.isEmpty {
+        if isMicropubBlog {
             let micropubInfo = UserSettings.MicropubInfo(urlString: micropubURL,
                                                          micropubToken: micropubToken)
             userSettings.setMicropubInfo(info: micropubInfo)

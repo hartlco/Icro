@@ -100,7 +100,6 @@ struct MicropubSection: View {
                     }, label: {
                         Text("Indie Auth")
                     })
-                    .disabled(self.store.indieAuthMeURLString == "")
                 }
             })
         } else {
