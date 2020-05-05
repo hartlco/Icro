@@ -2,7 +2,7 @@ upcoming:
   version: 2.2.1
   date: TBD
   dev:
-    -
+    - Fix crash when saving a picture
   user_facing:
     - Add Swipe actions for reply/conversation
     - Add conversation item to context menu
