@@ -310,7 +310,9 @@ extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    contextMenuConfigurationForRowAt indexPath: IndexPath,
                    point: CGPoint) -> UIContextMenuConfiguration? {
-        return editActionsConfigurator.contextMenu(tableView: tableView, indexPath: indexPath)
+        return editActionsConfigurator.contextMenu(tableView: tableView,
+                                                   indexPath: indexPath,
+                                                   inConversation: viewModel.inConversation)
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -416,9 +418,9 @@ extension ListViewController: SwipeTableViewCellDelegate {
     func tableView(_ tableView: UITableView,
                    editActionsForRowAt indexPath: IndexPath,
                    for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        return editActionsConfigurator.swipeActions(tableView: tableView,
-                                                    indexPath: indexPath,
-                                                    orientation: orientation)
+        return editActionsConfigurator.swipeActions(indexPath: indexPath,
+                                                    orientation: orientation,
+                                                    inConversation: viewModel.inConversation)
     }
 
     func tableView(_ tableView: UITableView,

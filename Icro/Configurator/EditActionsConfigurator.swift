@@ -71,17 +71,19 @@ final class EditActionsConfigurator {
         }
     }
 
-    func contextMenu(tableView: UITableView, indexPath: IndexPath) -> UIContextMenuConfiguration? {
+    func contextMenu(tableView: UITableView, indexPath: IndexPath, inConversation: Bool) -> UIContextMenuConfiguration? {
         return UIContextMenuConfiguration(identifier: nil,
                                           previewProvider: nil,
                                           actionProvider: { _ in
-            return self.makeContextMenu(tableView: tableView, indexPath: indexPath)
+            return self.makeContextMenu(tableView: tableView,
+                                        indexPath: indexPath,
+                                        inConversation: inConversation)
         })
     }
 
-    func swipeActions(tableView: UITableView,
-                      indexPath: IndexPath,
-                      orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+    func swipeActions(indexPath: IndexPath,
+                      orientation: SwipeActionsOrientation,
+                      inConversation: Bool) -> [SwipeAction]? {
         guard case .item(let item) = viewModel.viewType(forRow: indexPath.row) else {
             return nil
         }
@@ -90,13 +92,19 @@ final class EditActionsConfigurator {
         case .left:
             return [replyAction(for: item).toSwipeAction()]
         case .right:
+            guard !inConversation else {
+                return []
+            }
+
             return [conversationAction(for: item).toSwipeAction()]
         }
     }
 
     // MARK: - Private
 
-    private func makeContextMenu(tableView: UITableView, indexPath: IndexPath) -> UIMenu {
+    private func makeContextMenu(tableView: UITableView,
+                                 indexPath: IndexPath,
+                                 inConversation: Bool) -> UIMenu {
         guard case .item(let item) = viewModel.viewType(forRow: indexPath.row),
             let cell = tableView.cellForRow(at: indexPath) else {
             return UIMenu(title: "", image: nil, identifier: nil, children: [])
@@ -107,10 +115,16 @@ final class EditActionsConfigurator {
         let favorite = favoriteAction(for: item).toUIAction()
         let conversation = conversationAction(for: item).toUIAction()
 
+        var actions = [share, reply, favorite]
+
+        if !inConversation {
+            actions.insert(conversation, at: 2)
+        }
+
         return UIMenu(title: "",
                       image: nil,
                       identifier: nil,
-                      children: [share, reply, conversation, favorite])
+                      children: actions)
     }
 
     private func favoriteAction(for item: Item) -> ContextAction {

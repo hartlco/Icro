@@ -8,7 +8,7 @@ upcoming:
     - Add conversation item to context menu
     - Don’t dismiss keyboard when entering micropub information
     - Accept micropub access token without requiring the micropub endpoint to be filled first
-
+    - Don't show chat context items while showing a chat
 releases:
   version: 2.2
   date: 2020-04-30

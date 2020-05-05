@@ -130,12 +130,12 @@ public class ListViewModel: NSObject {
         }
     }
 
-    public func shouldShowConversationOnClick() -> Bool {
+    public var inConversation: Bool {
         switch type {
         case .conversation:
-            return false
-        default:
             return true
+        default:
+            return false
         }
     }
 
