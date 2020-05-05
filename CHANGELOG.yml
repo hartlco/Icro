@@ -9,7 +9,8 @@ upcoming:
     - Don’t dismiss keyboard when entering micropub information
     - Accept micropub access token without requiring the micropub endpoint to be filled first
     - Don't show chat context items while showing a chat
-    - Rename Conversation view to Chat to align with context actions
+    - Rename Conversation view to Chat to align with context action
+    - Respect darkmode when inserting a links
 releases:
   version: 2.2
   date: 2020-04-30

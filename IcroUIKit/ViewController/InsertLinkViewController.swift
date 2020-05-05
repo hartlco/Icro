@@ -18,7 +18,7 @@ public class InsertLinkViewController: UIViewController, UITextFieldDelegate {
     }
     @IBOutlet private weak var insertButton: FakeTableCellButton! {
         didSet {
-            insertButton.backgroundColor = Color.buttonColor
+            insertButton.backgroundColor = UIColor.systemBackground
         }
     }
 
