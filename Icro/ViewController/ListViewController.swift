@@ -15,7 +15,7 @@ final class ListViewController: UIViewController, LoadingViewController {
             tableView.refreshControl?.addTarget(viewModel, action: #selector(ListViewModel.load), for: .valueChanged)
             tableView.register(cellType: ItemTableViewCell.self)
             tableView.register(cellType: ProfileTableViewCell.self)
-            tableView.register(cellType: LoadMoreTableViewCell.self)
+            tableView.registerClass(cellType: LoadMoreTableViewCell.self)
             tableView.estimatedRowHeight = UITableView.automaticDimension
             tableView.rowHeight = UITableView.automaticDimension
             tableView.separatorColor = Color.separatorColor
@@ -290,6 +290,7 @@ extension ListViewController: UITableViewDelegate {
             guard let self = self else { return }
             self.viewModel.loadMore(afterItemAtIndex: indexPath.row - 1)
         }
+
         return cell
     }
 

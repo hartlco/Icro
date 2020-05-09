@@ -92,7 +92,6 @@
 		5B3C79D721C52EB100F699B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
 		5B44C71720979CF20003B35D /* MuteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44C71620979CF20003B35D /* MuteViewModel.swift */; };
 		5B4895F222B1603E00CF08C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4895F122B1603E00CF08C2 /* SceneDelegate.swift */; };
-		5B4DF0EE21AA8496008CEB58 /* LoadMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BBC6703218EB0150090629C /* LoadMoreTableViewCell.xib */; };
 		5B4DF0F121AA8818008CEB58 /* ListViewModelListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DF0F021AA8818008CEB58 /* ListViewModelListType.swift */; };
 		5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */; };
 		5B51621B22B2C900009C0064 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51621A22B2C900009C0064 /* LoginView.swift */; };
@@ -130,7 +129,6 @@
 		5BB3E478226C518100C1B6BB /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB3E477226C518000C1B6BB /* SnapshotHelper.swift */; };
 		5BB73F0C212C9E0B00120FAB /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB73F0B212C9E0B00120FAB /* ListViewModelTests.swift */; };
 		5BBC6704218EB0150090629C /* LoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC6702218EB0150090629C /* LoadMoreTableViewCell.swift */; };
-		5BBC6705218EB0150090629C /* LoadMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BBC6703218EB0150090629C /* LoadMoreTableViewCell.xib */; };
 		5BC1384321C6332B0040353C /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1384221C6332B0040353C /* LocalizedString.swift */; };
 		5BC1384721C639160040353C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		5BC1384821C675240040353C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
@@ -495,7 +493,6 @@
 		5BB3E477226C518000C1B6BB /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		5BB73F0B212C9E0B00120FAB /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		5BBC6702218EB0150090629C /* LoadMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadMoreTableViewCell.swift; path = View/LoadMoreTableViewCell.swift; sourceTree = "<group>"; };
-		5BBC6703218EB0150090629C /* LoadMoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoadMoreTableViewCell.xib; path = View/LoadMoreTableViewCell.xib; sourceTree = "<group>"; };
 		5BC1384021C632F20040353C /* Icro-Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Icro-Share.entitlements"; sourceTree = "<group>"; };
 		5BC1384121C632FF0040353C /* Icro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Icro.entitlements; sourceTree = "<group>"; };
 		5BC1384221C6332B0040353C /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
@@ -1768,7 +1765,6 @@
 				5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */,
 				5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */,
 				5BBC6702218EB0150090629C /* LoadMoreTableViewCell.swift */,
-				5BBC6703218EB0150090629C /* LoadMoreTableViewCell.xib */,
 				5B39B7BD22AD504A004D5134 /* ListView.swift */,
 				5B51621A22B2C900009C0064 /* LoginView.swift */,
 				5B165D8722BF436D00B851B2 /* TipJarView.swift */,
@@ -2162,7 +2158,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B4DF0EE21AA8496008CEB58 /* LoadMoreTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2196,7 +2191,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BBC6705218EB0150090629C /* LoadMoreTableViewCell.xib in Resources */,
 				BF707E742131C45600506E64 /* Localizable.strings in Resources */,
 				C5FA2ACE1EB4482C006DEB40 /* LaunchScreen.storyboard in Resources */,
 				5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */,

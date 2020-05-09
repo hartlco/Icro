@@ -63,6 +63,10 @@ public extension UITableView {
         register(T.nib, forCellReuseIdentifier: T.reuseIdentifier)
     }
 
+    func registerClass<T: UITableViewCell>(cellType: T.Type) {
+        register(T.self, forCellReuseIdentifier: T.reuseIdentifier)
+    }
+
     func register<T: UITableViewHeaderFooterView>(headerFooterViewType: T.Type) {
         register(T.nib, forHeaderFooterViewReuseIdentifier: T.reuseIdentifier)
     }
