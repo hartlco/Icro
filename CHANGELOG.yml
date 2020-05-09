@@ -1,6 +1,13 @@
 upcoming:
-  version: 2.2.1
+  version: 2.3
   date: TBD
+  dev:
+    -
+  user_facing:
+    - Add loading state to load more cell
+releases:
+  version: 2.2.1
+  date: 2020-05-09
   dev:
     - Fix crash when saving a picture
   user_facing:
@@ -11,7 +18,6 @@ upcoming:
     - Don't show chat context items while showing a chat
     - Rename Conversation view to Chat to align with context action
     - Respect darkmode when inserting a links
-releases:
   version: 2.2
   date: 2020-04-30
   dev:
