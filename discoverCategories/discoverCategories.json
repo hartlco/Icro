@@ -48,5 +48,10 @@
         "title": "wwdc",
         "category": "wwdc",
         "emoji": "🖥"
+    },
+    {
+        "title": "videogame",
+        "category": "videogames",
+        "emoji": "🎮"
     }
 ]
