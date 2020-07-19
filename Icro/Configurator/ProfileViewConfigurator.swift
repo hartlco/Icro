@@ -6,7 +6,6 @@
 import Foundation
 import IcroKit
 import IcroUIKit
-import Kingfisher
 
 final class ProfileViewConfigurator: NSObject {
     private let itemNavigator: ItemNavigatorProtocol
@@ -95,16 +94,16 @@ private class AuthorImageGalleryDataSource: GalleryItemsDataSource {
 
     func provideGalleryItem(_ index: Int) -> GalleryItem {
         return GalleryItem.image { completion in
-            KingfisherManager.shared.downloader.downloadImage(with: self.author.avatar, completionHandler: { result in
-                switch result {
-                case .success(let imageLoadingResult):
-                    DispatchQueue.main.async {
-                        completion(imageLoadingResult.image)
-                    }
-                default:
-                    return
-                }
-            })
+//            KingfisherManager.shared.downloader.downloadImage(with: self.author.avatar, completionHandler: { result in
+//                switch result {
+//                case .success(let imageLoadingResult):
+//                    DispatchQueue.main.async {
+//                        completion(imageLoadingResult.image)
+//                    }
+//                default:
+//                    return
+//                }
+//            })
         }
     }
 }
