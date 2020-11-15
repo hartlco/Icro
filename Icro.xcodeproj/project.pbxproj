@@ -161,6 +161,7 @@
 		5BFCB8F6232E835F008D36E1 /* NotificationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFCB8F5232E835F008D36E1 /* NotificationComponent.swift */; };
 		8DCD1F043AA7A42B38373800 /* Pods_IcroScreenshotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4216F55176FDD95FB7B918F8 /* Pods_IcroScreenshotsTests.framework */; };
 		BF707E742131C45600506E64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
+		C51E9DD125614A1A0027376B /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C51E9DD025614A1A0027376B /* KingfisherSwiftUI */; };
 		C544111523F7CB7200428609 /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C544111423F7CB7200428609 /* Client */; };
 		C544111E23F7CED800428609 /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C544111D23F7CED800428609 /* Client */; };
 		C544112123F7E81400428609 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = C544112023F7E81400428609 /* SwiftSoup */; };
@@ -699,6 +700,7 @@
 				C5A498F923B6AE3A006ED94F /* Sourceful in Frameworks */,
 				C5F60BFD23B3862F0022448A /* SnapKit in Frameworks */,
 				5BC1384921C69BB80040353C /* IcroKit.framework in Frameworks */,
+				C51E9DD125614A1A0027376B /* KingfisherSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1855,6 +1857,7 @@
 				C5F60BFC23B3862F0022448A /* SnapKit */,
 				C5A498F823B6AE3A006ED94F /* Sourceful */,
 				C5F7F79824C41A88009BD2F8 /* Kingfisher */,
+				C51E9DD025614A1A0027376B /* KingfisherSwiftUI */,
 			);
 			productName = IcroUIKit;
 			productReference = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */;
@@ -3229,6 +3232,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */;
 			productName = AppDelegateComponent;
+		};
+		C51E9DD025614A1A0027376B /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5F7F79324C41A6B009BD2F8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
 		};
 		C544111423F7CB7200428609 /* Client */ = {
 			isa = XCSwiftPackageProductDependency;

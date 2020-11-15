@@ -30,11 +30,11 @@
       },
       {
         "package": "Kingfisher",
-        "repositoryURL": "https://github.com/hartlco/Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher",
         "state": {
-          "branch": "xcode11",
-          "revision": "d59a3a9ffe446d070834eac61aeeba8fbb7df485",
-          "version": null
+          "branch": null,
+          "revision": "0e548b700c7c123dd3b2ac776e90d63a540f084d",
+          "version": "5.15.7"
         }
       },
       {

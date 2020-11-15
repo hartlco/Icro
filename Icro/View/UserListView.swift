@@ -7,8 +7,9 @@
 //
 
 import SwiftUI
-//import KingfisherSwiftUI
 import IcroKit
+import IcroUIKit
+import KingfisherSwiftUI
 
 struct UserListView: SwiftUI.View {
     @ObservedObject var viewModel: UserListViewModel
@@ -20,11 +21,11 @@ struct UserListView: SwiftUI.View {
                 self.itemNavigator.open(author: author)
             }, label: {
                 HStack {
-//                    KFImage(author.avatar)
-//                        .resizable()
-//                        .renderingMode(.original)
-//                        .frame(width: 40, height: 40)
-//                        .clipShape(Circle())
+                    KFImage(author.avatar)
+                        .resizable()
+                        .renderingMode(.original)
+                        .frame(width: 40, height: 40)
+                        .clipShape(Circle())
                     HStack {
                         Text(author.name)
                             .font(.headline)
