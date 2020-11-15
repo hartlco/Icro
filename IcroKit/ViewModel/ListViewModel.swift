@@ -55,7 +55,6 @@ public class ListViewModel: NSObject {
     public var didFinishLoading: (Bool) -> Void = { _ in }
     public var didFinishWithError: (Error) -> Void = { _ in }
 
-    public var actionBarVisibilityChanged: (ItemActionBarChangeEvent) -> Void = { _ in }
     private var visibleActionBarIndexPath: IndexPath?
 
     private var isLoading = false
@@ -337,41 +336,6 @@ public class ListViewModel: NSObject {
 
     public var barButtonEnabled: Bool {
         return userSettings.loggedIn
-    }
-
-    public func showActionBar(at indexPath: IndexPath?) {
-        guard userSettings.loggedIn else {
-            return
-        }
-
-        guard let indexPath = indexPath else {
-            if let oldIndexPath = visibleActionBarIndexPath {
-                actionBarVisibilityChanged(.hide(indexPath: oldIndexPath))
-                visibleActionBarIndexPath = nil
-            }
-
-            return
-        }
-
-        if let oldIndexPath = visibleActionBarIndexPath {
-            actionBarVisibilityChanged(.hide(indexPath: oldIndexPath))
-
-            if oldIndexPath == indexPath {
-                visibleActionBarIndexPath = nil
-                return
-            }
-        }
-
-        visibleActionBarIndexPath = indexPath
-        actionBarVisibilityChanged(.show(indexPath: indexPath))
-    }
-
-    public func showActionBar(for indexPath: IndexPath) -> Bool {
-        return indexPath == visibleActionBarIndexPath
-    }
-
-    public var showsAnActionBar: Bool {
-        return visibleActionBarIndexPath != nil
     }
 
     // MARK: - Private

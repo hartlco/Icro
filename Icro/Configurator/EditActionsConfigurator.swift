@@ -44,31 +44,26 @@ final class EditActionsConfigurator {
         self.viewModel = viewModel
     }
 
-    func configureItemActions(for cell: ItemTableViewCell, at indexPath: IndexPath) {
+    func menu(cell: ItemTableViewCell, indexPath: IndexPath, inConversation: Bool) -> UIMenu {
         guard case .item(let item) = viewModel.viewType(forRow: indexPath.row) else {
-            return
+            fatalError("No item for indexPath")
         }
 
-        cell.actionButtonContainer.isFavorite = item.isFavorite
+        let share = shareAction(for: item, sourceView: cell).toUIAction()
+        let reply = replyAction(for: item).toUIAction()
+        let favorite = favoriteAction(for: item).toUIAction()
+        let conversation = conversationAction(for: item).toUIAction()
 
-        cell.actionButtonContainer.didPress = { [weak self] action in
-            guard let self = self else { return }
+        var actions = [share, reply, favorite]
 
-            switch action {
-            case .conversation:
-                self.itemNavigator.openConversation(item: item)
-            case .share:
-                self.itemNavigator.share(item: item, sourceView: cell)
-            case .reply:
-                self.itemNavigator.openReply(item: item)
-            case .favorite:
-                self.viewModel.toggleFave(for: item)
-            case .dismiss:
-                break
-            }
-
-            self.viewModel.showActionBar(at: nil)
+        if !inConversation {
+            actions.insert(conversation, at: 2)
         }
+
+        return UIMenu(title: "",
+                      image: nil,
+                      identifier: nil,
+                      children: actions)
     }
 
     func contextMenu(tableView: UITableView, indexPath: IndexPath, inConversation: Bool) -> UIContextMenuConfiguration? {

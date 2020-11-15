@@ -101,21 +101,6 @@ final class ListViewController: UIViewController, LoadingViewController {
             self?.showError(error: error)
         }
 
-        viewModel.actionBarVisibilityChanged = { [weak self] event in
-            guard let self = self else { return }
-
-            switch event {
-            case .hide(let indexPath):
-                guard let cell = self.tableView.cellForRow(at: indexPath) as? ItemTableViewCell else { return }
-
-                cell.hideActionButtonContainer()
-            case .show(let indexPath):
-                guard let cell = self.tableView.cellForRow(at: indexPath) as? ItemTableViewCell else { return }
-
-                cell.showActionButtonContainer()
-            }
-        }
-
         setupNavigateBackShortcut(with: notificationCenter)
 
         // Hide empty cells
@@ -180,8 +165,7 @@ final class ListViewController: UIViewController, LoadingViewController {
                 cell.delegate = self
                 cell.layer.rasterizationScale = UIScreen.main.scale
                 self.cellConfigurator.configure(cell,
-                                                forDisplaying: item,
-                                                showActionButton: self.viewModel.showActionBar(for: indexPath))
+                                                forDisplaying: item)
                 return cell
             }
         })
@@ -237,12 +221,6 @@ final class ListViewController: UIViewController, LoadingViewController {
 }
 
 extension ListViewController: UITableViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if viewModel.showsAnActionBar {
-            viewModel.showActionBar(at: nil)
-        }
-    }
-
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         switch viewModel.viewType(forRow: indexPath.row) {
         case .author, .loadMore:
@@ -255,6 +233,12 @@ extension ListViewController: UITableViewDelegate {
             rowHeightEstimate[item.id] = cell.bounds.size.height
 
             updateUnread()
+
+            if let cell = cell as? ItemTableViewCell {
+                cell.setActionMenu(editActionsConfigurator.menu(cell: cell,
+                                                                     indexPath: indexPath,
+                                                                     inConversation: viewModel.inConversation))
+            }
         }
     }
 
@@ -314,15 +298,6 @@ extension ListViewController: UITableViewDelegate {
         return editActionsConfigurator.contextMenu(tableView: tableView,
                                                    indexPath: indexPath,
                                                    inConversation: viewModel.inConversation)
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? ItemTableViewCell else {
-            return
-        }
-
-        editActionsConfigurator.configureItemActions(for: cell, at: indexPath)
-        viewModel.showActionBar(at: indexPath)
     }
 }
 

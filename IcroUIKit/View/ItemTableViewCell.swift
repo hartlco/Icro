@@ -51,8 +51,6 @@ public final class ItemTableViewCell: SwipeTableViewCell {
 
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
 
-    public let actionButtonContainer = ItemActionButtonView()
-
     var itemID: String?
 
     var media = [Media]() {
@@ -67,6 +65,8 @@ public final class ItemTableViewCell: SwipeTableViewCell {
             imageCollectionView.reloadData()
         }
     }
+
+    @IBOutlet weak var actionButton: UIButton!
 
     @IBOutlet weak var imageCollectionView: UICollectionView! {
         didSet {
@@ -87,19 +87,18 @@ public final class ItemTableViewCell: SwipeTableViewCell {
         updateAppearance()
         avatarImageView.image = nil
         isFavorite = false
-        hideActionButtonContainer(duration: 0.0)
         super.prepareForReuse()
     }
 
     override public func awakeFromNib() {
         super.awakeFromNib()
 
-        actionButtonContainer.translatesAutoresizingMaskIntoConstraints = false
-        hideActionButtonContainer(duration: 0.0)
-        addSubview(actionButtonContainer)
-        actionButtonContainer.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+        actionButton.showsMenuAsPrimaryAction = true
+        actionButton.menu = UIMenu(options: .displayInline, children: [
+            UIAction(title: "Test", handler: { _ in
+                print("test")
+            })
+        ])
 
         updateAppearance()
         let avatarGestureRecognizer = UITapGestureRecognizer(target: self,
@@ -132,9 +131,9 @@ public final class ItemTableViewCell: SwipeTableViewCell {
         return
     }
 
-    public func toggleActionButtonContainerVisibility(animation: Bool = true) {
-        let duration = animation ? 0.2 : 0.0
-        toggleActionButtonContainer(duration: duration)
+    public func setActionMenu(_ menu: UIMenu) {
+        actionButton.menu = menu
+        actionButton.showsMenuAsPrimaryAction = true
     }
 
     // MARK: - Private
@@ -197,28 +196,6 @@ extension ItemTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
             return CGSize(width: 140, height: 140)
         default:
             return CGSize.zero
-        }
-    }
-}
-
-extension ItemTableViewCell {
-    public func showActionButtonContainer(duration: Double = 0.2) {
-        UIView.animate(withDuration: duration) {
-            self.actionButtonContainer.alpha = 1.0
-        }
-    }
-
-    public func hideActionButtonContainer(duration: Double = 0.2) {
-        UIView.animate(withDuration: duration) {
-            self.actionButtonContainer.alpha = 0
-        }
-    }
-
-    private func toggleActionButtonContainer(duration: Double = 0.2) {
-        if actionButtonContainer.alpha == 0 {
-            showActionButtonContainer(duration: duration)
-        } else {
-            hideActionButtonContainer(duration: duration)
         }
     }
 }

@@ -241,7 +241,7 @@ extension ComposeViewController: UITableViewDelegate, UITableViewDataSource {
 
         cell.layer.shouldRasterize = true
         cell.layer.rasterizationScale = UIScreen.main.scale
-        cellConfigurator.configure(cell, forDisplaying: item, showActionButton: false)
+        cellConfigurator.configure(cell, forDisplaying: item)
 
         return cell
     }
