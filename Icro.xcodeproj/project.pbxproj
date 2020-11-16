@@ -1999,9 +1999,7 @@
 					};
 					5B3C799121C4E31100F699B8 = {
 						CreatedOnToolsVersion = 10.1;
-						DevelopmentTeam = 9E8SXF3Y36;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
 					};
 					5B5837342128B04A0076121E = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -2018,9 +2016,7 @@
 					};
 					5BC347AD2132944900DEB45D = {
 						CreatedOnToolsVersion = 9.4.1;
-						DevelopmentTeam = 9E8SXF3Y36;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
 					};
 					C5CE39D423CB6F9F0095013A = {
 						CreatedOnToolsVersion = 11.3;
@@ -2519,7 +2515,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.hartl.Icro.Icro-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development co.hartl.Icro.Icro-Share";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "match Development co.hartl.Icro.Icro-Share catalyst";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_UIKITFORMAC = YES;
@@ -2555,7 +2551,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.hartl.Icro.Icro-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development co.hartl.Icro.Icro-Share";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "match Development co.hartl.Icro.Icro-Share catalyst";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_UIKITFORMAC = YES;
@@ -2573,10 +2569,10 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 134;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 134;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2594,6 +2590,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2611,10 +2609,10 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 134;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 134;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2631,6 +2629,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2758,10 +2758,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 134;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 134;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2777,6 +2777,8 @@
 				MARKETING_VERSION = "$(APP_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
@@ -2796,10 +2798,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 134;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9E8SXF3Y36;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 134;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2815,6 +2817,8 @@
 				MARKETING_VERSION = "$(APP_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.IcroKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
@@ -3033,7 +3037,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.Icro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development co.hartl.Icro";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "match Development co.hartl.Icro catalyst";
 				SUPPORTS_UIKITFORMAC = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Icro/Icro-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3066,7 +3070,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.hartl.Icro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development co.hartl.Icro";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "match Development co.hartl.Icro catalyst";
 				SUPPORTS_UIKITFORMAC = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Icro/Icro-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
