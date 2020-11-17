@@ -29,12 +29,11 @@ final class VerticalTabsSplitViewController: UISplitViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        primaryBackgroundStyle = .sidebar
         viewControllers = [hostingController, tabBarViewController]
         tabBarViewController.tabBar.isHidden = true
-        preferredDisplayMode = .allVisible
-        maximumPrimaryColumnWidth = 84.0
-        minimumPrimaryColumnWidth = 84.0
+        preferredDisplayMode = .oneBesideSecondary
+        maximumPrimaryColumnWidth = 92.0
+        minimumPrimaryColumnWidth = 92.0
     }
 
     override var canBecomeFirstResponder: Bool {

@@ -1,6 +1,6 @@
 import SwiftUI
 
-@available(iOS 13.0, OSX 10.15, *)
+@available(iOS 14.0, OSX 10.15, *)
 public struct VerticalTabView: View {
     @ObservedObject var viewModel: VerticalTabViewModel
 
@@ -9,19 +9,20 @@ public struct VerticalTabView: View {
     }
 
     public var body: some View {
-        VStack(spacing: 20) {
+        VStack {
             ForEach(viewModel.tabs, id: \VerticalTab.title) { tab in
-                ImageTab(selected: self.viewModel.isSelected(tab: tab),
-                         image: tab.image,
-                         title: tab.title)
-                .onTapGesture {
+                Button(action: {
                     self.viewModel.select(tab: tab)
-                }
+                }, label: {
+                    ImageTab(selected: self.viewModel.isSelected(tab: tab),
+                             image: tab.image,
+                             title: tab.title)
+                })
             }
             Spacer()
         }
+        .listStyle(SidebarListStyle())
         .background(Color.clear)
-
     }
 }
 
