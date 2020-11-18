@@ -78,7 +78,13 @@ final class AppNavigator {
     }
 
     func showComposeViewController() {
+        #if targetEnvironment(macCatalyst)
+        guard window.isKeyWindow else { return }
+        let activity = NSUserActivity(activityType: UserActivities.compose.rawValue)
+        UIApplication.shared.requestSceneSessionActivation(nil, userActivity: activity, options: nil) { _ in }
+        #else
         tabBarViewController.present(composeNavigationController, animated: true, completion: nil)
+        #endif
     }
 
     func setup() {
