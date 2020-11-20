@@ -115,6 +115,28 @@ final class AppNavigator {
         window.makeKeyAndVisible()
     }
 
+    func setupSettingsWindow() {
+        let settingsNavigator = SettingsNavigator(presentedController: tabBarViewController,
+                                                  appNavigator: self,
+                                                  application: application)
+        let viewModel = SettingsViewModel(userSettings: userSettings,
+                                          canSendMail: MFMailComposeViewController.canSendMail())
+
+        let settingsContentView = SettingsContentView(dismissAction: {
+
+        },
+        settingsNavigator: settingsNavigator,
+        showsNaviationBarButton: false,
+        store: viewModel)
+
+        let navigationController = UINavigationController(rootViewController: UIHostingController(rootView: settingsContentView))
+        navigationController.navigationBar.isHidden = true
+        window.rootViewController = navigationController
+        setupMacCatalystSettingsWindow()
+        window.tintColor = Color.main
+        window.makeKeyAndVisible()
+    }
+
     func logout() {
         tabBarViewController.reload()
         Item.deleteAllCached()
@@ -133,6 +155,12 @@ final class AppNavigator {
     }
 
     func showSettingsView(on presentedController: UIViewController) {
+        #if targetEnvironment(macCatalyst)
+        guard window.isKeyWindow else { return }
+        let activity = NSUserActivity(activityType: UserActivities.settings.rawValue)
+        UIApplication.shared.requestSceneSessionActivation(nil, userActivity: activity, options: nil) { _ in }
+        #else
+
         let settingsNavigator = SettingsNavigator(presentedController: presentedController,
                                                   appNavigator: self,
                                                   application: application)
@@ -140,11 +168,13 @@ final class AppNavigator {
                                           canSendMail: MFMailComposeViewController.canSendMail())
 
         let settingsContentView = SettingsContentView(dismissAction: {
-                                                        presentedController.dismiss(animated: true, completion: nil)
+            presentedController.dismiss(animated: true, completion: nil)
         },
-                                                      settingsNavigator: settingsNavigator,
-                                                      store: viewModel)
+        settingsNavigator: settingsNavigator,
+        showsNaviationBarButton: true,
+        store: viewModel)
         presentedController.present(UIHostingController(rootView: settingsContentView), animated: true, completion: nil)
+        #endif
     }
 
     // MARK: - Private
@@ -169,6 +199,17 @@ final class AppNavigator {
         if let windowScene = window.windowScene,
             let titleBar = windowScene.titlebar {
             windowScene.sizeRestrictions?.maximumSize = CGSize(width: 300, height: 250)
+            titleBar.toolbar = catalystToolbar.composeToolbar
+            titleBar.titleVisibility = .hidden
+        }
+        #endif
+    }
+
+    private func setupMacCatalystSettingsWindow() {
+        #if targetEnvironment(macCatalyst)
+        if let windowScene = window.windowScene,
+            let titleBar = windowScene.titlebar {
+            windowScene.sizeRestrictions?.maximumSize = CGSize(width: 900, height: 900)
             titleBar.toolbar = catalystToolbar.composeToolbar
             titleBar.titleVisibility = .hidden
         }

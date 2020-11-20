@@ -22,9 +22,13 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                  notificationCenter: NotificationCenter.default,
                                  application: .shared)
 
-        if let firstUserActivity = connectionOptions.userActivities.first,
-            firstUserActivity.activityType == UserActivities.compose.rawValue {
-            navigator?.setupComposeWinodw()
+        if let firstUserActivity = connectionOptions.userActivities.first {
+            if firstUserActivity.activityType == UserActivities.compose.rawValue {
+                navigator?.setupComposeWinodw()
+            }
+            if firstUserActivity.activityType == UserActivities.settings.rawValue {
+                navigator?.setupSettingsWindow()
+            }
         } else {
             navigator?.setup()
         }

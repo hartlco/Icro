@@ -15,6 +15,7 @@ import IcroKit
 struct SettingsContentView: View {
     let dismissAction: () -> Void
     let settingsNavigator: SettingsNavigator
+    let showsNaviationBarButton: Bool
     @State private var modalPresented = false
 
     @ObservedObject var store: SettingsViewModel
@@ -30,13 +31,21 @@ struct SettingsContentView: View {
                 TipJarSection()
             }
             .navigationBarTitle(Text("SETTINGSVIEWCONTROLLER_TITLE"))
-            .navigationBarItems(leading: Button(action: {
+            .navigationBarItems(leading: navigationButton)
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+    }
+
+    private var navigationButton: AnyView {
+        if showsNaviationBarButton {
+            return AnyView(Button(action: {
                 self.dismissAction()
             }, label: {
                 Text("SETTINGSVIEWCONTROLLER_CANCELBUTTON_TITLE")
             }))
+        } else {
+            return AnyView(EmptyView())
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

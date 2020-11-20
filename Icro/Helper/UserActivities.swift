@@ -7,4 +7,5 @@ import Foundation
 
 enum UserActivities: String {
     case compose = "co.hartl.icro.compose"
+    case settings = "co.hartl.icro.settings"
 }
