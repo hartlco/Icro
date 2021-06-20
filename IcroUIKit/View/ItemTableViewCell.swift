@@ -9,7 +9,7 @@ import AVFoundation
 import Kingfisher
 import SnapKit
 
-public final class ItemTableViewCell: SwipeTableViewCell {
+public final class ItemTableViewCell: UITableViewCell {
     var isFavorite: Bool = false
 
     @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!
@@ -103,7 +103,7 @@ public final class ItemTableViewCell: SwipeTableViewCell {
         updateAppearance()
         let avatarGestureRecognizer = UITapGestureRecognizer(target: self,
                                                              action: #selector(didTapAvatarGestureRecognizer))
-        avatarImageView.addGestureRecognizer(avatarGestureRecognizer)
+//        avatarImageView.addGestureRecognizer(avatarGestureRecognizer)
         backgroundColor = Color.backgroundColor
     }
 

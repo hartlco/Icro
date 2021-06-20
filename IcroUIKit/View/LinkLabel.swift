@@ -13,7 +13,7 @@ class LinkLabel: UILabel {
         self.attributedText = attributedText
         if touchRecognizer == nil {
             touchRecognizer  = UITapGestureRecognizer(target: self, action: #selector(didTapText(recognizer:)))
-            addGestureRecognizer(touchRecognizer!)
+//            addGestureRecognizer(touchRecognizer!)
         }
     }
 

@@ -28,7 +28,7 @@ final class ListViewController: UIViewController, LoadingViewController {
     private let profileViewConfigurator: ProfileViewConfigurator
     private let editActionsConfigurator: EditActionsConfigurator
     private var titleView: DropdownTitleView?
-    private typealias DiffableDataSource = UITableViewDiffableDataSource<ListViewModel.Section, ListViewModel.ViewType>
+    private typealias DiffableDataSource = EditableTableViewDiffableDataSource
 
     @IBOutlet private weak var unreadView: UIView!
     @IBOutlet private weak var unreadLabel: UILabel!
@@ -162,7 +162,7 @@ final class ListViewController: UIViewController, LoadingViewController {
             case .item(let item):
                 let cell = tableView.dequeueCell(ofType: ItemTableViewCell.self, for: indexPath)
                 cell.layer.shouldRasterize = true
-                cell.delegate = self
+//                cell.delegate = self
                 cell.layer.rasterizationScale = UIScreen.main.scale
                 self.cellConfigurator.configure(cell,
                                                 forDisplaying: item)
@@ -258,6 +258,20 @@ extension ListViewController: UITableViewDelegate {
         case .item(let item):
             return rowHeightEstimate[item.id] ?? UITableView.automaticDimension
         }
+    }
+
+    func tableView(_ tableView: UITableView,
+                   leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        return editActionsConfigurator.swipeActions(indexPath: indexPath,
+                                                    direction: .leading,
+                                                    inConversation: viewModel.inConversation)
+    }
+
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        return editActionsConfigurator.swipeActions(indexPath: indexPath,
+                                                    direction: .trailing,
+                                                    inConversation: viewModel.inConversation)
     }
 
     private func authorCell(for author: Author,
@@ -390,21 +404,8 @@ extension ListViewController {
     }
 }
 
-extension ListViewController: SwipeTableViewCellDelegate {
-    func tableView(_ tableView: UITableView,
-                   editActionsForRowAt indexPath: IndexPath,
-                   for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        return editActionsConfigurator.swipeActions(indexPath: indexPath,
-                                                    orientation: orientation,
-                                                    inConversation: viewModel.inConversation)
-    }
-
-    func tableView(_ tableView: UITableView,
-                   editActionsOptionsForRowAt indexPath: IndexPath,
-                   for orientation: SwipeActionsOrientation) -> SwipeOptions {
-        var options = SwipeOptions()
-        options.expansionStyle = .selection
-
-        return options
+private final class EditableTableViewDiffableDataSource: UITableViewDiffableDataSource<ListViewModel.Section, ListViewModel.ViewType> {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
     }
 }

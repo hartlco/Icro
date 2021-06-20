@@ -9,6 +9,11 @@ import IcroUIKit
 import TypedSymbols
 
 final class EditActionsConfigurator {
+    enum CellSwipeDirection {
+        case leading
+        case trailing
+    }
+
     private struct ContextAction {
         let title: String
         let image: UIImage?
@@ -22,10 +27,11 @@ final class EditActionsConfigurator {
             }
         }
 
-        func toSwipeAction() -> SwipeAction {
-            let action = SwipeAction(style: .default,
-                                     title: title) { _, _ in
-                                        self.action()
+        func toContextualAction() -> UIContextualAction {
+            let action = UIContextualAction(style: .normal,
+                                            title: title) { _, _, completion in
+                self.action()
+                completion(true)
             }
 
             action.image = image
@@ -77,21 +83,25 @@ final class EditActionsConfigurator {
     }
 
     func swipeActions(indexPath: IndexPath,
-                      orientation: SwipeActionsOrientation,
-                      inConversation: Bool) -> [SwipeAction]? {
+                      direction: CellSwipeDirection,
+                      inConversation: Bool) -> UISwipeActionsConfiguration? {
         guard case .item(let item) = viewModel.viewType(forRow: indexPath.row) else {
             return nil
         }
 
-        switch orientation {
-        case .left:
-            return [replyAction(for: item).toSwipeAction()]
-        case .right:
+        switch direction {
+        case .leading:
+            let config = UISwipeActionsConfiguration(actions: [replyAction(for: item).toContextualAction()])
+            config.performsFirstActionWithFullSwipe = true
+            return config
+        case .trailing:
             guard !inConversation else {
-                return []
+                return nil
             }
 
-            return [conversationAction(for: item).toSwipeAction()]
+            let config = UISwipeActionsConfiguration(actions: [conversationAction(for: item).toContextualAction()])
+            config.performsFirstActionWithFullSwipe = true
+            return config
         }
     }
 
