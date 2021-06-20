@@ -162,7 +162,10 @@
 		8DCD1F043AA7A42B38373800 /* Pods_IcroScreenshotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4216F55176FDD95FB7B918F8 /* Pods_IcroScreenshotsTests.framework */; };
 		BF707E742131C45600506E64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
 		C51E9DD125614A1A0027376B /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C51E9DD025614A1A0027376B /* KingfisherSwiftUI */; };
-		C544111523F7CB7200428609 /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C544111423F7CB7200428609 /* Client */; };
+		C51F8480267F1FFB002A018E /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C51F847F267F1FFB002A018E /* Client */; };
+		C51F8487267F201A002A018E /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C51F8486267F201A002A018E /* Client */; };
+		C51F8489267F207B002A018E /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C51F8488267F207B002A018E /* Client */; };
+		C51F848B267F20E2002A018E /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C51F848A267F20E2002A018E /* Client */; };
 		C544111E23F7CED800428609 /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C544111D23F7CED800428609 /* Client */; };
 		C544112123F7E81400428609 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = C544112023F7E81400428609 /* SwiftSoup */; };
 		C5454DAE23CB9A5C00739A6C /* VerticalTabView in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DAD23CB9A5C00739A6C /* VerticalTabView */; };
@@ -687,6 +690,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B3C79D421C5238800F699B8 /* IcroUIKit.framework in Frameworks */,
+				C51F848B267F20E2002A018E /* Client in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,6 +703,7 @@
 				C5F60BFD23B3862F0022448A /* SnapKit in Frameworks */,
 				5BC1384921C69BB80040353C /* IcroKit.framework in Frameworks */,
 				C51E9DD125614A1A0027376B /* KingfisherSwiftUI in Frameworks */,
+				C51F8489267F207B002A018E /* Client in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,11 +728,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B83B00D22D06EA8004C4D8D /* Alamofire in Frameworks */,
+				C51F8487267F201A002A018E /* Client in Frameworks */,
 				C5CE39EF23CB710D0095013A /* Settings in Frameworks */,
 				5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */,
 				5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */,
 				5B8FD3A22360D59800BC72F2 /* TypedSymbols in Frameworks */,
-				C544111523F7CB7200428609 /* Client in Frameworks */,
 				C544112123F7E81400428609 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -747,6 +752,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5454DAE23CB9A5C00739A6C /* VerticalTabView in Frameworks */,
+				C51F8480267F1FFB002A018E /* Client in Frameworks */,
 				5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */,
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
 				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
@@ -1831,6 +1837,9 @@
 			dependencies = (
 			);
 			name = "Icro-Share";
+			packageProductDependencies = (
+				C51F848A267F20E2002A018E /* Client */,
+			);
 			productName = "Icro-Share";
 			productReference = 5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -1855,6 +1864,7 @@
 				C5A498F823B6AE3A006ED94F /* Sourceful */,
 				C5F7F79824C41A88009BD2F8 /* Kingfisher */,
 				C51E9DD025614A1A0027376B /* KingfisherSwiftUI */,
+				C51F8488267F207B002A018E /* Client */,
 			);
 			productName = IcroUIKit;
 			productReference = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */;
@@ -1919,8 +1929,8 @@
 				5B83B01C22D11D64004C4D8D /* KeychainAccess */,
 				5B8FD3A12360D59800BC72F2 /* TypedSymbols */,
 				C5CE39EE23CB710D0095013A /* Settings */,
-				C544111423F7CB7200428609 /* Client */,
 				C544112023F7E81400428609 /* SwiftSoup */,
+				C51F8486267F201A002A018E /* Client */,
 			);
 			productName = IcroKit;
 			productReference = 5BC347AE2132944900DEB45D /* IcroKit.framework */;
@@ -1970,6 +1980,7 @@
 			packageProductDependencies = (
 				5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */,
 				C5454DAD23CB9A5C00739A6C /* VerticalTabView */,
+				C51F847F267F1FFB002A018E /* Client */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -3240,7 +3251,19 @@
 			package = C5F7F79324C41A6B009BD2F8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = KingfisherSwiftUI;
 		};
-		C544111423F7CB7200428609 /* Client */ = {
+		C51F847F267F1FFB002A018E /* Client */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Client;
+		};
+		C51F8486267F201A002A018E /* Client */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Client;
+		};
+		C51F8488267F207B002A018E /* Client */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Client;
+		};
+		C51F848A267F20E2002A018E /* Client */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Client;
 		};
