@@ -7,7 +7,7 @@ import UIKit
 import IcroKit
 import Client
 
-public protocol LoadingViewController: class {
+public protocol LoadingViewController: AnyObject {
     func showLoading(position: LoadingPosition, dismissalTime: LoadingIndicatorDismissalTime)
     func showError(error: Error, position: LoadingPosition)
     func hideMessage()
