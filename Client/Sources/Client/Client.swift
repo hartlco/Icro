@@ -7,6 +7,11 @@ import Foundation
 
 public protocol Client {
     func load<A: Codable>(resource: Resource<A>, completion: @escaping (Result<A, Error>) -> Void)
+
+    @available(macOS 12.0, *)
+    @available(iOS 15.0, *)
+    func load<A: Codable>(resource: Resource<A>) async throws -> A
+
     func loadData(with request: URLRequest,
                   completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
 }
@@ -30,6 +35,20 @@ extension URLSession: Client {
                 completion(finalData)
             }
         }.resume()
+    }
+
+    @available(macOS 12.0, *)
+    @available(iOS 15.0, *)
+    public func load<A: Codable>(resource: Resource<A>) async throws -> A {
+        let (data, _) = try await data(for: resource.urlRequest, delegate: nil)
+        let parsedData = resource.parse(data)
+
+        switch parsedData {
+        case .failure(let error):
+            throw error
+        case .success(let data):
+            return data
+        }
     }
 }
 

@@ -112,19 +112,22 @@ public class ListViewModel: NSObject {
         didStartLoading()
         isLoading = true
         applyCache()
-        client.load(resource: type.resource) { [weak self] itemResponse in
-            guard let self = self else { return }
 
-            self.isLoading = false
-            switch itemResponse {
-            case .failure(let error):
-                self.didFinishWithError(error)
-            case .success(let value):
-                self.updateShowLoadMoreInBetweenAfterLoadMore(loadedNewItems: value.items)
-                self.loadedAuthor = value.author ?? self.loadedAuthor
-                self.insertNewItems(newItems: value.items)
-                self.updateUnreadItems()
-                self.didFinishLoading(false)
+        async {
+            do {
+                let value = try await client.load(resource: type.resource)
+
+                DispatchQueue.main.async {
+                    self.updateShowLoadMoreInBetweenAfterLoadMore(loadedNewItems: value.items)
+                    self.loadedAuthor = value.author ?? self.loadedAuthor
+                    self.insertNewItems(newItems: value.items)
+                    self.updateUnreadItems()
+                    self.didFinishLoading(false)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    self.didFinishWithError(error)
+                }
             }
         }
     }

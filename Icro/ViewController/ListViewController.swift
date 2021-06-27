@@ -162,7 +162,6 @@ final class ListViewController: UIViewController, LoadingViewController {
             case .item(let item):
                 let cell = tableView.dequeueCell(ofType: ItemTableViewCell.self, for: indexPath)
                 cell.layer.shouldRasterize = true
-//                cell.delegate = self
                 cell.layer.rasterizationScale = UIScreen.main.scale
                 self.cellConfigurator.configure(cell,
                                                 forDisplaying: item)
