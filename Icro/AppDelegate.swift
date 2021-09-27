@@ -12,7 +12,8 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore {
     let storedComponents: [AppDelegateComponent] = [DiscoveryCategoryComponent(),
                                                     UserDefaultsMigrationComponent(),
-                                                    NotificationComponent()]
+                                                    NotificationComponent(),
+                                                    AppearanceComponent()]
     private let componentRunner = AppDelegateComponentRunner()
     private let mainMenuBuilder = MainMenuBuilder()
 

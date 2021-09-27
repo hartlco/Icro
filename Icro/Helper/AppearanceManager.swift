@@ -27,5 +27,17 @@ final class AppearanceManager {
         listTableViewAppearance.backgroundColor = Color.backgroundColor
         listTableViewAppearance.sectionIndexBackgroundColor = .green
         listTableViewAppearance.separatorColor = Color.separatorColor
+
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = Color.backgroundColor
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.backgroundColor = Color.backgroundColor
+        UITabBar.appearance().standardAppearance = tabBarAppearance
+        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
     }
 }
