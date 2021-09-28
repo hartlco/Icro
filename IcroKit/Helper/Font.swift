@@ -20,9 +20,9 @@ public struct Font {
     }
 
     #if os(iOS)
-    let bodySize: CGFloat = 17
+    let bodySize = 17.0
     #elseif os(OSX)
-    let bodySize: CGFloat = 13
+    let bodySize = 13.0
     #endif
 
     public var body: XFont {

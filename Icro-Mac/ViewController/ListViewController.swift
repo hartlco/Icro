@@ -143,7 +143,7 @@ extension ListViewController: NSTableViewDelegate, NSTableViewDataSource {
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         switch viewModel.viewType(forRow: row) {
         case .item(let item):
-            let someWidth: CGFloat = tableView.bounds.size.width - 70
+            let someWidth = tableView.bounds.size.width - 70
             let frame: NSRect = NSRect(x: 0, y: 0, width: someWidth, height: CGFloat.greatestFiniteMagnitude)
             let textView = resizingTextView
             resizingTextView.frame = frame
@@ -152,7 +152,7 @@ extension ListViewController: NSTableViewDelegate, NSTableViewDataSource {
             textView.isHorizontallyResizable = false
             textView.sizeToFit()
 
-            let imageHeight: CGFloat = item.media.isEmpty ? 0 : 160
+            let imageHeight = item.media.isEmpty ? 0 : 160
 
             let height = textView.frame.size.height + 40 + imageHeight
             return height

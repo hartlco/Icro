@@ -154,7 +154,7 @@ private class LoadingView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = color
         addSubview(label)
-        let offset: CGFloat = 4
+        let offset = 4.0
         label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: offset).isActive = true
         label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -offset).isActive = true
         label.topAnchor.constraint(equalTo: topAnchor, constant: offset).isActive = true

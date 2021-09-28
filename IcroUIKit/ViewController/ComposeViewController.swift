@@ -10,7 +10,7 @@ import Kingfisher
 import Sourceful
 
 private struct Constants {
-    static let KeyboardInputViewHeight: CGFloat = 40.0
+    static let KeyboardInputViewHeight = 40.0
 }
 
 public final class ComposeViewController: UIViewController, LoadingViewController {
