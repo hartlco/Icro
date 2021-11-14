@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import Style
 import IcroKit
 import IcroUIKit
 import TypedSymbols

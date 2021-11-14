@@ -3,8 +3,6 @@
 //  Copyright © 2018 Martin Hartl. All rights reserved.
 //
 
-import Settings
-
 #if os(iOS)
 import UIKit
 public typealias XFont = UIFont
@@ -13,10 +11,10 @@ public typealias XFont = NSFont
 #endif
 
 public struct Font {
-    private let userSettings: UserSettings
+    private let stylePreference: StylePreference
 
-    public init(userSettings: UserSettings = .shared) {
-        self.userSettings = userSettings
+    public init(stylePreference: StylePreference) {
+        self.stylePreference = stylePreference
     }
 
     #if os(iOS)
@@ -26,9 +24,8 @@ public struct Font {
     #endif
 
     public var body: XFont {
-        let useMedium = userSettings.useMediumContentFont
         let font = XFont.systemFont(ofSize: bodySize,
-                                    weight: useMedium ? .medium : .regular)
+                                    weight: stylePreference.useMediumContent ? .medium : .regular)
         let fontMetrics = UIFontMetrics(forTextStyle: .body)
         return fontMetrics.scaledFont(for: font)
     }

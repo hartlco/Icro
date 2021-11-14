@@ -138,8 +138,6 @@
 		5BC347BC2132947100DEB45D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58377B212950F40076121E /* Item.swift */; };
 		5BC347BD213294A900DEB45D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AF51EB449BC006DEB40 /* Resource.swift */; };
 		5BC347C22132957300DEB45D /* HTMLContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2B001EB45213006DEB40 /* HTMLContent.swift */; };
-		5BC347C32132958600DEB45D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B494E652124C0FA00C3969B /* Color.swift */; };
-		5BC347C42132958600DEB45D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7720A613EF00B54399 /* Font.swift */; };
 		5BC347C5213295C000DEB45D /* Date+Ago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58372F2128620C0076121E /* Date+Ago.swift */; };
 		5BC347C82132962200DEB45D /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */; };
 		5BCD7F0222BDE35D00CA5B6C /* MuteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCD7F0122BDE35D00CA5B6C /* MuteView.swift */; };
@@ -173,6 +171,10 @@
 		C5454DB223CB9F5000739A6C /* VerticalTabView in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DB123CB9F5000739A6C /* VerticalTabView */; };
 		C5454DB423CB9FD200739A6C /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DB323CB9FD200739A6C /* TypedSymbols */; };
 		C5454DB523CBA0EF00739A6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
+		C550D77A2740F0E800E10CF6 /* Style in Frameworks */ = {isa = PBXBuildFile; productRef = C550D7792740F0E800E10CF6 /* Style */; };
+		C550D77C2740F0FC00E10CF6 /* Style in Frameworks */ = {isa = PBXBuildFile; productRef = C550D77B2740F0FC00E10CF6 /* Style */; };
+		C550D77E2740F29D00E10CF6 /* Style in Frameworks */ = {isa = PBXBuildFile; productRef = C550D77D2740F29D00E10CF6 /* Style */; };
+		C550D7802740F79000E10CF6 /* Font+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550D77F2740F79000E10CF6 /* Font+Settings.swift */; };
 		C59E637E23BDC9C10012BF85 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637123BDC9C10012BF85 /* WPXMLRPCDecoder.m */; };
 		C59E637F23BDC9C10012BF85 /* WPXMLRPC.h in Headers */ = {isa = PBXBuildFile; fileRef = C59E637223BDC9C10012BF85 /* WPXMLRPC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C59E638023BDC9C10012BF85 /* WPXMLRPCEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = C59E637323BDC9C10012BF85 /* WPXMLRPCEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -387,7 +389,6 @@
 		5B20952422F6B14E00C06123 /* CatalystToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CatalystToolbar.swift; path = Helper/CatalystToolbar.swift; sourceTree = "<group>"; };
 		5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AcknowledgementView.swift; path = View/Settings/AcknowledgementView.swift; sourceTree = "<group>"; };
 		5B28C8CF22C89B2600A46C52 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserListView.swift; path = View/UserListView.swift; sourceTree = "<group>"; };
-		5B2A5A7720A613EF00B54399 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableCellButton.swift; sourceTree = "<group>"; };
 		5B2B817422F6CC2E0073B393 /* appversion.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = appversion.xcconfig; sourceTree = "<group>"; };
 		5B38476021FE035900F082AD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -416,7 +417,6 @@
 		5B4639EA2169C36500200D8F /* ImageViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewItem.swift; sourceTree = "<group>"; };
 		5B4639EB2169C36500200D8F /* ImageViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewItem.xib; sourceTree = "<group>"; };
 		5B4895F122B1603E00CF08C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5B494E652124C0FA00C3969B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5B4DF0F021AA8818008CEB58 /* ListViewModelListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelListType.swift; sourceTree = "<group>"; };
 		5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-Icro-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
 		5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicropubRequestController.swift; sourceTree = "<group>"; };
@@ -510,6 +510,8 @@
 		B2175C9DAAFEF9FA508D0A47 /* Pods_Icro_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF71E43E214287CF007E88BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C5454DA723CB991A00739A6C /* VerticalTabView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = VerticalTabView; sourceTree = "<group>"; };
+		C550D7782740F0BC00E10CF6 /* Style */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Style; sourceTree = "<group>"; };
+		C550D77F2740F79000E10CF6 /* Font+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Settings.swift"; sourceTree = "<group>"; };
 		C553DD5023F7CABC0001E7DF /* Client */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Client; sourceTree = "<group>"; };
 		C55D7AC523F7C756004E5DBB /* Icro.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Icro.xctestplan; sourceTree = "<group>"; };
 		C59E637123BDC9C10012BF85 /* WPXMLRPCDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoder.m; sourceTree = "<group>"; };
@@ -656,6 +658,7 @@
 				C5A498F923B6AE3A006ED94F /* Sourceful in Frameworks */,
 				C5F60BFD23B3862F0022448A /* SnapKit in Frameworks */,
 				5BC1384921C69BB80040353C /* IcroKit.framework in Frameworks */,
+				C550D77E2740F29D00E10CF6 /* Style in Frameworks */,
 				C51E9DD125614A1A0027376B /* KingfisherSwiftUI in Frameworks */,
 				C51F8489267F207B002A018E /* Client in Frameworks */,
 			);
@@ -687,6 +690,7 @@
 				5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */,
 				5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */,
 				5B8FD3A22360D59800BC72F2 /* TypedSymbols in Frameworks */,
+				C550D77C2740F0FC00E10CF6 /* Style in Frameworks */,
 				C544112123F7E81400428609 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,6 +715,7 @@
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
 				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
 				C5F8818023B4A141008DBAD6 /* DropdownTitleView.framework in Frameworks */,
+				C550D77A2740F0E800E10CF6 /* Style in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -949,6 +954,7 @@
 				5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */,
 				5BC1384221C6332B0040353C /* LocalizedString.swift */,
 				5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */,
+				C550D77F2740F79000E10CF6 /* Font+Settings.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1100,8 +1106,6 @@
 				5BD9690921C8CBFB00313795 /* GalleryDataSource.swift */,
 				5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */,
 				5B58372F2128620C0076121E /* Date+Ago.swift */,
-				5B2A5A7720A613EF00B54399 /* Font.swift */,
-				5B494E652124C0FA00C3969B /* Color.swift */,
 				5B6A565C21735A4F003C4D92 /* Functions.swift */,
 				5B81E7992206C62E008BEA16 /* Error.swift */,
 			);
@@ -1612,6 +1616,7 @@
 		C5FA2AB71EB4482C006DEB40 = {
 			isa = PBXGroup;
 			children = (
+				C550D7782740F0BC00E10CF6 /* Style */,
 				C55D7AC523F7C756004E5DBB /* Icro.xctestplan */,
 				C553DD5023F7CABC0001E7DF /* Client */,
 				C5454DA723CB991A00739A6C /* VerticalTabView */,
@@ -1787,6 +1792,7 @@
 				C5F7F79824C41A88009BD2F8 /* Kingfisher */,
 				C51E9DD025614A1A0027376B /* KingfisherSwiftUI */,
 				C51F8488267F207B002A018E /* Client */,
+				C550D77D2740F29D00E10CF6 /* Style */,
 			);
 			productName = IcroUIKit;
 			productReference = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */;
@@ -1853,6 +1859,7 @@
 				C5CE39EE23CB710D0095013A /* Settings */,
 				C544112023F7E81400428609 /* SwiftSoup */,
 				C51F8486267F201A002A018E /* Client */,
+				C550D77B2740F0FC00E10CF6 /* Style */,
 			);
 			productName = IcroKit;
 			productReference = 5BC347AE2132944900DEB45D /* IcroKit.framework */;
@@ -1903,6 +1910,7 @@
 				5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */,
 				C5454DAD23CB9A5C00739A6C /* VerticalTabView */,
 				C51F847F267F1FFB002A018E /* Client */,
+				C550D7792740F0E800E10CF6 /* Style */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -2162,6 +2170,7 @@
 				5B3C79AD21C4E58B00F699B8 /* LinkLabel.swift in Sources */,
 				5BC1384321C6332B0040353C /* LocalizedString.swift in Sources */,
 				5B3C79AE21C4E5CD00F699B8 /* FakeTableCellButton.swift in Sources */,
+				C550D7802740F79000E10CF6 /* Font+Settings.swift in Sources */,
 				5B3C79AF21C5084900F699B8 /* SingleImageCollectionViewCell.swift in Sources */,
 				5B3C79B421C508D300F699B8 /* ItemCellConfigurator.swift in Sources */,
 				5B841ED322E8349600CDA80C /* UICollectionView+Dequeueable.swift in Sources */,
@@ -2214,7 +2223,6 @@
 				5BC347C82132962200DEB45D /* CacheStorage.swift in Sources */,
 				5BDE18EB216A5745001254F4 /* ComposeViewModel.swift in Sources */,
 				5BC347BC2132947100DEB45D /* Item.swift in Sources */,
-				5BC347C42132958600DEB45D /* Font.swift in Sources */,
 				5BC347C22132957300DEB45D /* HTMLContent.swift in Sources */,
 				5BF6637F218961AB00ABA671 /* DiscoveryCategory.swift in Sources */,
 				5BD9691121C8D61800313795 /* GalleryDataSource.swift in Sources */,
@@ -2229,7 +2237,6 @@
 				C59E637E23BDC9C10012BF85 /* WPXMLRPCDecoder.m in Sources */,
 				C59E638823BDC9C10012BF85 /* WPXMLRPCEncoder.m in Sources */,
 				5B5FE65123461A3F003C6F4D /* PushRegistration.swift in Sources */,
-				5BC347C32132958600DEB45D /* Color.swift in Sources */,
 				5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3192,6 +3199,18 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */;
 			productName = TypedSymbols;
+		};
+		C550D7792740F0E800E10CF6 /* Style */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Style;
+		};
+		C550D77B2740F0FC00E10CF6 /* Style */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Style;
+		};
+		C550D77D2740F29D00E10CF6 /* Style */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Style;
 		};
 		C5A498F823B6AE3A006ED94F /* Sourceful */ = {
 			isa = XCSwiftPackageProductDependency;

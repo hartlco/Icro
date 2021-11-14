@@ -5,6 +5,9 @@
 
 import UIKit
 import IcroKit
+import IcroUIKit
+import Style
+import Settings
 
 class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!

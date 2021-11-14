@@ -5,9 +5,11 @@
 
 import UIKit
 import IcroKit
+import Style
 import AVFoundation
 import Kingfisher
 import SnapKit
+import Settings
 
 public final class ItemTableViewCell: UITableViewCell {
     var isFavorite: Bool = false

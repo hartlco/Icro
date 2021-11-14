@@ -6,6 +6,7 @@
 import UIKit
 import IcroKit
 import Client
+import Style
 
 public protocol LoadingViewController: AnyObject {
     func showLoading(position: LoadingPosition, dismissalTime: LoadingIndicatorDismissalTime)

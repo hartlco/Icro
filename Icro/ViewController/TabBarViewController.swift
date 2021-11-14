@@ -7,6 +7,7 @@ import UIKit
 import IcroKit
 import IcroUIKit
 import SwiftUI
+import Style
 import TypedSymbols
 import Settings
 

@@ -4,6 +4,7 @@
 //
 
 import SwiftSoup
+import Style
 
 #if os(iOS)
 import UIKit
@@ -15,16 +16,21 @@ public typealias XImage = NSImage
 public final class HTMLContent: Codable {
     private let rawHTMLString: String
     private let rawHTMLStringWithoutImages: String
+    private let stylePreference: StylePreference
 
     public let imageLinks: [URL]
     public let imageDescriptions: [String]
     public let videoLinks: [URL]
 
-    init(rawHTMLString: String) {
+    init(
+        rawHTMLString: String,
+        stylePreference: StylePreference
+    ) {
         let document = try? SwiftSoup.parse(rawHTMLString)
 
         self.rawHTMLString = rawHTMLString
         self.rawHTMLStringWithoutImages = rawHTMLString.withoutImages(from: document)
+        self.stylePreference = stylePreference
 
         self.imageLinks = rawHTMLString.imagesLinks(from: document).compactMap(URL.init)
         self.videoLinks = rawHTMLString.videoLinks(from: document).compactMap(URL.init)
@@ -32,7 +38,7 @@ public final class HTMLContent: Codable {
     }
 
     public func attributedStringWithoutImages() -> NSAttributedString? {
-        return rawHTMLStringWithoutImages.htmlToAttributedString()
+        return rawHTMLStringWithoutImages.htmlToAttributedString(stylePreference: stylePreference)
     }
 
     public static func textLinks(for attributedString: NSAttributedString?) -> [(text: String, url: URL)] {
@@ -50,13 +56,13 @@ public final class HTMLContent: Codable {
     }
 
     private func attirbutedString() -> NSAttributedString? {
-        return rawHTMLString.htmlToAttributedString()
+        return rawHTMLString.htmlToAttributedString(stylePreference: stylePreference)
     }
 }
 
 private extension String {
     #if os(iOS)
-    func htmlToAttributedString() -> NSAttributedString? {
+    func htmlToAttributedString(stylePreference: StylePreference) -> NSAttributedString? {
         guard let document = try? SwiftSoup.parse(trimEmptyLines),
             let body = document.body(),
             let bodyString = try? body.text() else { return nil }
@@ -66,7 +72,7 @@ private extension String {
         let nsString = bodyString as NSString
         paragraphStyle.lineSpacing = 1.2
         let mutableAttributedString = NSMutableAttributedString(string: string.string.trimEmptyLines, attributes: [
-                .font: Font().body,
+            .font: Font(stylePreference: stylePreference).body,
                 .foregroundColor: Color.textColor,
                 .paragraphStyle: paragraphStyle
         ])
@@ -91,7 +97,7 @@ private extension String {
             guard let content = try? boldValue.text() else { continue }
             let range = nsString.range(of: content)
             mutableAttributedString.save_addAttributes([
-                NSAttributedString.Key.font: Font().boldBody
+                NSAttributedString.Key.font: Font(stylePreference: stylePreference).boldBody
             ], range: range)
         }
 
@@ -101,7 +107,7 @@ private extension String {
             guard let content = try? italicValue.text() else { continue }
             let range = nsString.range(of: content)
             mutableAttributedString.save_addAttributes([
-                NSAttributedString.Key.font: Font().italicBody
+                NSAttributedString.Key.font: Font(stylePreference: stylePreference).italicBody
             ], range: range)
         }
 
@@ -158,8 +164,8 @@ private extension String {
     }
     #endif
 
-    func htmlToString() -> String {
-        return htmlToAttributedString()?.string ?? ""
+    func htmlToString(stylePreference: StylePreference) -> String {
+        return htmlToAttributedString(stylePreference: stylePreference)?.string ?? ""
     }
 
     var trimEmptyLines: String {

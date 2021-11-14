@@ -6,6 +6,7 @@
 import UIKit
 import MobileCoreServices
 import IcroKit
+import Style
 import Kingfisher
 import Sourceful
 

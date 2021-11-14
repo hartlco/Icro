@@ -4,6 +4,8 @@
 //
 
 import Foundation
+import Settings
+import Style
 
 let dateFormatter = ISO8601DateFormatter()
 
@@ -91,7 +93,9 @@ extension Item: CustomDebugStringConvertible {
 }
 
 extension Item {
-    convenience init?(dictionary: JSONDictionary) {
+    convenience init?(
+        dictionary: JSONDictionary
+    ) {
         guard let id = dictionary["id"] as? String,
         let content_html = dictionary["content_html"] as? String,
         let urlString = dictionary["url"] as? String,
@@ -113,7 +117,10 @@ extension Item {
         }
 
         self.init(id: id,
-                  htmlContent: HTMLContent(rawHTMLString: content_html),
+                  htmlContent: HTMLContent(
+                    rawHTMLString: content_html,
+                    stylePreference: .init(useMediumContent: Settings.UserSettings.shared.useMediumContentFont)
+                  ),
                   url: url,
                   date_published: date,
                   author: author,

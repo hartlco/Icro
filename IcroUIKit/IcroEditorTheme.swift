@@ -6,6 +6,8 @@
 import Foundation
 import Sourceful
 import IcroKit
+import Style
+import Settings
 
 final class IcroEditorTheme: SourceCodeTheme {
     var lineNumbersStyle: LineNumbersStyle? {
@@ -15,11 +17,11 @@ final class IcroEditorTheme: SourceCodeTheme {
     var gutterStyle: GutterStyle = GutterStyle(backgroundColor: Color.black, minimumWidth: 0)
 
     var font: Sourceful.Font {
-        IcroKit.Font().body
+        Style.Font().body
     }
 
     var backgroundColor: Sourceful.Color {
-        IcroKit.Color.backgroundColor
+        Color.backgroundColor
     }
 
     func attributes(for token: Token) -> [NSAttributedString.Key: Any] {
@@ -49,7 +51,7 @@ final class IcroEditorTheme: SourceCodeTheme {
         var attributes = [NSAttributedString.Key: Any]()
 
         attributes[.font] = font
-        attributes[.foregroundColor] = IcroKit.Color.textColor
+        attributes[.foregroundColor] = Color.textColor
 
         return attributes
     }
@@ -57,11 +59,11 @@ final class IcroEditorTheme: SourceCodeTheme {
     func color(for syntaxColorType: SourceCodeTokenType) -> Sourceful.Color {
         switch syntaxColorType {
         case .plain:
-            return IcroKit.Color.textColor
+            return Color.textColor
         case .string, .identifier, .keyword, .comment:
-            return IcroKit.Color.secondaryTextColor
+            return Color.secondaryTextColor
         case .editorPlaceholder, .number:
-            return IcroKit.Color.main
+            return Color.main
         }
     }
 }

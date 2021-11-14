@@ -10,6 +10,7 @@ public typealias XColor = UIColor
 public typealias XColor = NSColor
 #endif
 
+@available(iOS 13.0, *)
 public struct Color {
     public static let main = XColor(named: "main")!
     public static let accentLight = XColor(named: "accentLight")!

@@ -5,6 +5,7 @@
 
 import UIKit
 import IcroKit
+import Style
 import SnapKit
 
 final class LoadMoreTableViewCell: UITableViewCell {

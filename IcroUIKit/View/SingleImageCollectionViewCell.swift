@@ -5,6 +5,7 @@
 
 import UIKit
 import IcroKit
+import Style
 
 final class SingleImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!

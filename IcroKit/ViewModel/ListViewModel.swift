@@ -113,7 +113,7 @@ public class ListViewModel: NSObject {
         isLoading = true
         applyCache()
 
-        async {
+        Task {
             do {
                 let value = try await client.load(resource: type.resource)
 

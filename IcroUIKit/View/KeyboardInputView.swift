@@ -5,6 +5,7 @@
 
 import UIKit
 import IcroKit
+import Style
 
 final class KeyboardInputView: UIView {
     private var text: String? {
