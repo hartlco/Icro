@@ -71,7 +71,7 @@
 		5B3C799A21C4E31100F699B8 /* IcroUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B3C799E21C4E33000F699B8 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */; };
 		5B3C799F21C4E33C00F699B8 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */; };
-		5B3C79A621C4E51000F699B8 /* InsertLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BECC33820A8017200EC63F2 /* InsertLinkViewController.swift */; };
+		5B3C79A621C4E51000F699B8 /* InsertLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BECC33820A8017200EC63F2 /* InsertLinkView.swift */; };
 		5B3C79A821C4E53900F699B8 /* KeyboardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F68762098BB8800A24983 /* KeyboardInputView.swift */; };
 		5B3C79A921C4E53E00F699B8 /* KeyboardInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3F68782098BBA200A24983 /* KeyboardInputView.xib */; };
 		5B3C79AA21C4E55300F699B8 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
@@ -82,7 +82,6 @@
 		5B3C79B021C5085000F699B8 /* SingleImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */; };
 		5B3C79B221C5087C00F699B8 /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */; };
 		5B3C79B421C508D300F699B8 /* ItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583720212861220076121E /* ItemCellConfigurator.swift */; };
-		5B3C79B721C509ED00F699B8 /* InsertLinkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BECC33920A8017200EC63F2 /* InsertLinkViewController.xib */; };
 		5B3C79C221C518B700F699B8 /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79C121C518B700F699B8 /* MainNavigator.swift */; };
 		5B3C79C621C51B4900F699B8 /* ItemNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79C521C51B4900F699B8 /* ItemNavigatorProtocol.swift */; };
 		5B3C79D421C5238800F699B8 /* IcroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */; };
@@ -497,8 +496,7 @@
 		5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileTableViewCell.swift; path = View/ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileTableViewCell.xib; path = View/ProfileTableViewCell.xib; sourceTree = "<group>"; };
-		5BECC33820A8017200EC63F2 /* InsertLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertLinkViewController.swift; sourceTree = "<group>"; };
-		5BECC33920A8017200EC63F2 /* InsertLinkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertLinkViewController.xib; sourceTree = "<group>"; };
+		5BECC33820A8017200EC63F2 /* InsertLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertLinkView.swift; sourceTree = "<group>"; };
 		5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryComponent.swift; sourceTree = "<group>"; };
 		5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMigrationComponent.swift; sourceTree = "<group>"; };
 		5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategory.swift; sourceTree = "<group>"; };
@@ -924,8 +922,7 @@
 		5B3C79A421C4E4D700F699B8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5BECC33820A8017200EC63F2 /* InsertLinkViewController.swift */,
-				5BECC33920A8017200EC63F2 /* InsertLinkViewController.xib */,
+				5BECC33820A8017200EC63F2 /* InsertLinkView.swift */,
 				5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */,
 				5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */,
 			);
@@ -2081,7 +2078,6 @@
 				5B3C79A921C4E53E00F699B8 /* KeyboardInputView.xib in Resources */,
 				5B3C79D721C52EB100F699B8 /* Localizable.strings in Resources */,
 				5B3C79AB21C4E55D00F699B8 /* ItemTableViewCell.xib in Resources */,
-				5B3C79B721C509ED00F699B8 /* InsertLinkViewController.xib in Resources */,
 				5BC1384821C675240040353C /* Assets.xcassets in Resources */,
 				5B3C79B021C5085000F699B8 /* SingleImageCollectionViewCell.xib in Resources */,
 				5B3C799F21C4E33C00F699B8 /* ComposeViewController.xib in Resources */,
@@ -2174,7 +2170,7 @@
 				5B3C79AF21C5084900F699B8 /* SingleImageCollectionViewCell.swift in Sources */,
 				5B3C79B421C508D300F699B8 /* ItemCellConfigurator.swift in Sources */,
 				5B841ED322E8349600CDA80C /* UICollectionView+Dequeueable.swift in Sources */,
-				5B3C79A621C4E51000F699B8 /* InsertLinkViewController.swift in Sources */,
+				5B3C79A621C4E51000F699B8 /* InsertLinkView.swift in Sources */,
 				C5A498F523B69636006ED94F /* IcroEditorTheme.swift in Sources */,
 				5B3C79C621C51B4900F699B8 /* ItemNavigatorProtocol.swift in Sources */,
 				5B3C79AA21C4E55300F699B8 /* ItemTableViewCell.swift in Sources */,

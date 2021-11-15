@@ -6,6 +6,7 @@
 import UIKit
 import IcroKit
 import IcroUIKit
+import SwiftUI
 
 final class ComposeNavigator: NSObject, ComposeNavigatorProtocol {
     private let navigationController: UINavigationController
@@ -19,8 +20,12 @@ final class ComposeNavigator: NSObject, ComposeNavigatorProtocol {
     }
 
     func openLinkInsertion(completion: @escaping (String?, URL?) -> Void) {
-        let viewController = InsertLinkViewController()
-        viewController.completion = completion
+        let insertLinkView = InsertLinkView { [weak self] title, url in
+            self?.navigationController.popViewController(animated: true)
+            completion(title, url)
+        }
+
+        let viewController = UIHostingController(rootView: insertLinkView)
         navigationController.pushViewController(viewController, animated: true)
     }
 
@@ -40,11 +45,15 @@ final class ComposeNavigator: NSObject, ComposeNavigatorProtocol {
         alert.addAction(UIAlertAction(title:
             NSLocalizedString("COMPOSENAVIGATOR_OPENIMAGEALERT_URLACTION", comment: ""),
                                       style: .default, handler: { [weak self] _ in
-            let viewController = InsertLinkViewController()
-            viewController.completion = { title, url in
+
+            let insertLinkView = InsertLinkView { [weak self] title, url in
                 guard let title = title, let url = url else { return }
+
                 imageInsertion(ComposeViewModel.Image(title: title, link: url))
+                self?.navigationController.popViewController(animated: true)
             }
+
+            let viewController = UIHostingController(rootView: insertLinkView)
             self?.navigationController.pushViewController(viewController, animated: true)
         }))
 

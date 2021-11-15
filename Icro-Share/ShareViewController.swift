@@ -8,6 +8,7 @@ import Social
 import IcroUIKit
 import IcroKit
 import MobileCoreServices
+import SwiftUI
 
 @objc(ShareViewController) class ShareViewController: UIViewController {
     override func viewDidLoad() {
@@ -140,8 +141,8 @@ private class EmptyComposeNavigator: ComposeNavigatorProtocol {
     }
 
     func openLinkInsertion(completion: @escaping (String?, URL?) -> Void) {
-        let viewController = InsertLinkViewController()
-        viewController.completion = completion
+        let insertLinkView = InsertLinkView(completion: completion)
+        let viewController = UIHostingController(rootView: insertLinkView)
         navigationController.pushViewController(viewController, animated: true)
     }
 
