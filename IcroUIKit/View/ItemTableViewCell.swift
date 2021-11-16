@@ -105,7 +105,7 @@ public final class ItemTableViewCell: UITableViewCell {
         updateAppearance()
         let avatarGestureRecognizer = UITapGestureRecognizer(target: self,
                                                              action: #selector(didTapAvatarGestureRecognizer))
-//        avatarImageView.addGestureRecognizer(avatarGestureRecognizer)
+        avatarImageView.addGestureRecognizer(avatarGestureRecognizer)
         backgroundColor = Color.backgroundColor
     }
 
