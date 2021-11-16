@@ -9,6 +9,7 @@ import IcroUIKit
 import IcroKit
 import MobileCoreServices
 import SwiftUI
+import InsertLinkView
 
 @objc(ShareViewController) class ShareViewController: UIViewController {
     override func viewDidLoad() {

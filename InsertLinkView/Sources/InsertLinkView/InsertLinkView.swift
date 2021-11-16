@@ -5,9 +5,9 @@
 
 import UIKit
 import Style
-import IcroKit
 import SwiftUI
 
+@available(iOS 15.0, *)
 public struct InsertLinkView: View {
     private enum Field: Int, Hashable {
         case title, link
@@ -51,4 +51,8 @@ public struct InsertLinkView: View {
         .padding()
         .navigationTitle(localizedString(key: "INSERTLINKVIEWCONTROLLER_TITLE"))
     }
+}
+
+private func localizedString(key: String) -> String {
+    return NSLocalizedString(key, tableName: nil, bundle: Bundle.module, value: "", comment: "")
 }

@@ -71,7 +71,6 @@
 		5B3C799A21C4E31100F699B8 /* IcroUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B3C799E21C4E33000F699B8 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */; };
 		5B3C799F21C4E33C00F699B8 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */; };
-		5B3C79A621C4E51000F699B8 /* InsertLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BECC33820A8017200EC63F2 /* InsertLinkView.swift */; };
 		5B3C79A821C4E53900F699B8 /* KeyboardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F68762098BB8800A24983 /* KeyboardInputView.swift */; };
 		5B3C79A921C4E53E00F699B8 /* KeyboardInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3F68782098BBA200A24983 /* KeyboardInputView.xib */; };
 		5B3C79AA21C4E55300F699B8 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
@@ -190,6 +189,8 @@
 		C5A498F323B66490006ED94F /* IcroLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F223B66490006ED94F /* IcroLexer.swift */; };
 		C5A498F523B69636006ED94F /* IcroEditorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F423B69636006ED94F /* IcroEditorTheme.swift */; };
 		C5A498F923B6AE3A006ED94F /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5A498F823B6AE3A006ED94F /* Sourceful */; };
+		C5C450B9274393900090377B /* InsertLinkView in Frameworks */ = {isa = PBXBuildFile; productRef = C5C450B8274393900090377B /* InsertLinkView */; };
+		C5C450BB2743955D0090377B /* InsertLinkView in Frameworks */ = {isa = PBXBuildFile; productRef = C5C450BA2743955D0090377B /* InsertLinkView */; };
 		C5CE39D823CB6F9F0095013A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE39D723CB6F9F0095013A /* AppDelegate.swift */; };
 		C5CE39DA23CB6F9F0095013A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE39D923CB6F9F0095013A /* ContentView.swift */; };
 		C5CE39DC23CB6FA00095013A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CE39DB23CB6FA00095013A /* Assets.xcassets */; };
@@ -496,7 +497,6 @@
 		5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileTableViewCell.swift; path = View/ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileTableViewCell.xib; path = View/ProfileTableViewCell.xib; sourceTree = "<group>"; };
-		5BECC33820A8017200EC63F2 /* InsertLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertLinkView.swift; sourceTree = "<group>"; };
 		5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryComponent.swift; sourceTree = "<group>"; };
 		5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMigrationComponent.swift; sourceTree = "<group>"; };
 		5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategory.swift; sourceTree = "<group>"; };
@@ -528,6 +528,7 @@
 		C5A498F223B66490006ED94F /* IcroLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcroLexer.swift; sourceTree = "<group>"; };
 		C5A498F423B69636006ED94F /* IcroEditorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcroEditorTheme.swift; sourceTree = "<group>"; };
 		C5A498FA23B6B676006ED94F /* Sourceful */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sourceful; sourceTree = "<group>"; };
+		C5C450B2274392510090377B /* InsertLinkView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = InsertLinkView; sourceTree = "<group>"; };
 		C5CE39D523CB6F9F0095013A /* Icro-Next.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Icro-Next.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CE39D723CB6F9F0095013A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5CE39D923CB6F9F0095013A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -645,6 +646,7 @@
 			files = (
 				5B3C79D421C5238800F699B8 /* IcroUIKit.framework in Frameworks */,
 				C51F848B267F20E2002A018E /* Client in Frameworks */,
+				C5C450B9274393900090377B /* InsertLinkView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,6 +717,7 @@
 				C5F8818023B4A141008DBAD6 /* DropdownTitleView.framework in Frameworks */,
 				C550D77A2740F0E800E10CF6 /* Style in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
+				C5C450BB2743955D0090377B /* InsertLinkView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -922,7 +925,6 @@
 		5B3C79A421C4E4D700F699B8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5BECC33820A8017200EC63F2 /* InsertLinkView.swift */,
 				5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */,
 				5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */,
 			);
@@ -1613,6 +1615,7 @@
 		C5FA2AB71EB4482C006DEB40 = {
 			isa = PBXGroup;
 			children = (
+				C5C450B2274392510090377B /* InsertLinkView */,
 				C550D7782740F0BC00E10CF6 /* Style */,
 				C55D7AC523F7C756004E5DBB /* Icro.xctestplan */,
 				C553DD5023F7CABC0001E7DF /* Client */,
@@ -1763,6 +1766,7 @@
 			name = "Icro-Share";
 			packageProductDependencies = (
 				C51F848A267F20E2002A018E /* Client */,
+				C5C450B8274393900090377B /* InsertLinkView */,
 			);
 			productName = "Icro-Share";
 			productReference = 5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */;
@@ -1908,6 +1912,7 @@
 				C5454DAD23CB9A5C00739A6C /* VerticalTabView */,
 				C51F847F267F1FFB002A018E /* Client */,
 				C550D7792740F0E800E10CF6 /* Style */,
+				C5C450BA2743955D0090377B /* InsertLinkView */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -2170,7 +2175,6 @@
 				5B3C79AF21C5084900F699B8 /* SingleImageCollectionViewCell.swift in Sources */,
 				5B3C79B421C508D300F699B8 /* ItemCellConfigurator.swift in Sources */,
 				5B841ED322E8349600CDA80C /* UICollectionView+Dequeueable.swift in Sources */,
-				5B3C79A621C4E51000F699B8 /* InsertLinkView.swift in Sources */,
 				C5A498F523B69636006ED94F /* IcroEditorTheme.swift in Sources */,
 				5B3C79C621C51B4900F699B8 /* ItemNavigatorProtocol.swift in Sources */,
 				5B3C79AA21C4E55300F699B8 /* ItemTableViewCell.swift in Sources */,
@@ -3211,6 +3215,14 @@
 		C5A498F823B6AE3A006ED94F /* Sourceful */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Sourceful;
+		};
+		C5C450B8274393900090377B /* InsertLinkView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InsertLinkView;
+		};
+		C5C450BA2743955D0090377B /* InsertLinkView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InsertLinkView;
 		};
 		C5CE39EE23CB710D0095013A /* Settings */ = {
 			isa = XCSwiftPackageProductDependency;
