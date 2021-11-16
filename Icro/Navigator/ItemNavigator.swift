@@ -10,6 +10,7 @@ import IcroUIKit
 import AVKit
 import SwiftUI
 import Settings
+import ImageViewer
 
 final class ItemNavigator: ItemNavigatorProtocol {
     private let navigationController: UINavigationController

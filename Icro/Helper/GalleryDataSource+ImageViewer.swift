@@ -7,6 +7,7 @@ import Foundation
 import IcroKit
 import IcroUIKit
 import Kingfisher
+import ImageViewer
 
 extension GalleryDataSource: GalleryItemsDataSource {
     public func itemCount() -> Int {

@@ -8,6 +8,7 @@ import IcroKit
 import IcroUIKit
 import SwiftUI
 import InsertLinkView
+import ImageViewer
 
 final class ComposeNavigator: NSObject, ComposeNavigatorProtocol {
     private let navigationController: UINavigationController
