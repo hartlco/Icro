@@ -11,7 +11,7 @@ import Settings
 import AppKit
 #endif
 
-protocol CatalystToolbarDelegate: class {
+protocol CatalystToolbarDelegate: AnyObject {
     func didRequestToOpenCompose()
 }
 

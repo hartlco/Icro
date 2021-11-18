@@ -29,11 +29,12 @@ struct MuteView: View {
                 .onDelete(perform: delete)
             }
             Section(header: Text("BLACKLISTVIEWCONTROLLER_ADDALERT_MESSAGE")) {
-                TextField("BLACKLISTVIEWCONTROLLER_ADDALERT_PLACEHOLDER",
-                          text: $addedWord) {
-                            self.viewModel.add(word: self.addedWord)
-                            self.addedWord = ""
-
+                TextField(
+                    "BLACKLISTVIEWCONTROLLER_ADDALERT_PLACEHOLDER",
+                    text: $addedWord
+                ).onSubmit {
+                    self.viewModel.add(word: self.addedWord)
+                    self.addedWord = ""
                 }
             }
         }

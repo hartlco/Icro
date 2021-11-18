@@ -222,16 +222,17 @@ public extension Author {
             fatalError()
         }
         let url = URL(string: followingURLString + username)!
-        return Resource<[Author]>(url: url,
-                                  httpMethod: .get,
-                                  authorization: .plain(token: UserSettings.shared.token),
-                                  parseJSON: { json in
-                                    guard let jsonItems = json as? [JSONDictionary] else {
-                                        return nil
-                                    }
-                                    
-                                    return jsonItems.compactMap(Author.init(dictionary:))
-        })
+        return Resource<[Author]>(
+            url: url,
+            httpMethod: .get,
+            authorization: .plain(token: UserSettings.shared.token),
+            parseJSON: { json in
+                guard let jsonItems = json as? [JSONDictionary] else {
+                    return nil
+                }
+                return jsonItems.compactMap(Author.init(dictionary:))
+            }
+        )
     }
 }
 

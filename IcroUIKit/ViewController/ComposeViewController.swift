@@ -9,6 +9,7 @@ import IcroKit
 import Style
 import Kingfisher
 import Sourceful
+import UniformTypeIdentifiers
 
 private struct Constants {
     static let KeyboardInputViewHeight = 40.0
@@ -273,7 +274,7 @@ extension ComposeViewController: UICollectionViewDelegate, UICollectionViewDataS
 
 extension ComposeViewController: UIDropInteractionDelegate {
     public func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
-        return session.hasItemsConforming(toTypeIdentifiers: [kUTTypeImage as String]) && session.items.count == 1
+        return session.canLoadObjects(ofClass: UIImage.self) && session.items.count == 1
     }
 
     public func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {

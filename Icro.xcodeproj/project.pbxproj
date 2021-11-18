@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -135,6 +135,8 @@
 		C550D77C2740F0FC00E10CF6 /* Style in Frameworks */ = {isa = PBXBuildFile; productRef = C550D77B2740F0FC00E10CF6 /* Style */; };
 		C550D77E2740F29D00E10CF6 /* Style in Frameworks */ = {isa = PBXBuildFile; productRef = C550D77D2740F29D00E10CF6 /* Style */; };
 		C550D7802740F79000E10CF6 /* Font+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550D77F2740F79000E10CF6 /* Font+Settings.swift */; };
+		C5921FAE27463E1600401CD8 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5921FAD27463E1600401CD8 /* Sourceful */; };
+		C5921FB527463E2500401CD8 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5921FB427463E2500401CD8 /* Sourceful */; };
 		C59E637E23BDC9C10012BF85 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637123BDC9C10012BF85 /* WPXMLRPCDecoder.m */; };
 		C59E637F23BDC9C10012BF85 /* WPXMLRPC.h in Headers */ = {isa = PBXBuildFile; fileRef = C59E637223BDC9C10012BF85 /* WPXMLRPC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C59E638023BDC9C10012BF85 /* WPXMLRPCEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = C59E637323BDC9C10012BF85 /* WPXMLRPCEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -150,7 +152,6 @@
 		C59E638A23BDC9C10012BF85 /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637D23BDC9C10012BF85 /* WPXMLRPCDataCleaner.m */; };
 		C5A498F323B66490006ED94F /* IcroLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F223B66490006ED94F /* IcroLexer.swift */; };
 		C5A498F523B69636006ED94F /* IcroEditorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F423B69636006ED94F /* IcroEditorTheme.swift */; };
-		C5A498F923B6AE3A006ED94F /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5A498F823B6AE3A006ED94F /* Sourceful */; };
 		C5C450B9274393900090377B /* InsertLinkView in Frameworks */ = {isa = PBXBuildFile; productRef = C5C450B8274393900090377B /* InsertLinkView */; };
 		C5C450BB2743955D0090377B /* InsertLinkView in Frameworks */ = {isa = PBXBuildFile; productRef = C5C450BA2743955D0090377B /* InsertLinkView */; };
 		C5C450BE274398640090377B /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = C5C450BD274398640090377B /* ImageViewer */; };
@@ -160,6 +161,8 @@
 		C5CE39DF23CB6FA00095013A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CE39DE23CB6FA00095013A /* Preview Assets.xcassets */; };
 		C5CE39E223CB6FA00095013A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CE39E023CB6FA00095013A /* Main.storyboard */; };
 		C5CE39EF23CB710D0095013A /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = C5CE39EE23CB710D0095013A /* Settings */; };
+		C5E793DB2744E4380039A23B /* DropdownTitleView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F8817423B4A124008DBAD6 /* DropdownTitleView.framework */; };
+		C5E793E92744EA260039A23B /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5E793E82744EA260039A23B /* Sourceful */; };
 		C5F60BFD23B3862F0022448A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C5F60BFC23B3862F0022448A /* SnapKit */; };
 		C5F7F79924C41A88009BD2F8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C5F7F79824C41A88009BD2F8 /* Kingfisher */; };
 		C5F8818023B4A141008DBAD6 /* DropdownTitleView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F8817423B4A124008DBAD6 /* DropdownTitleView.framework */; };
@@ -452,7 +455,6 @@
 		C59E637D23BDC9C10012BF85 /* WPXMLRPCDataCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDataCleaner.m; sourceTree = "<group>"; };
 		C5A498F223B66490006ED94F /* IcroLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcroLexer.swift; sourceTree = "<group>"; };
 		C5A498F423B69636006ED94F /* IcroEditorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcroEditorTheme.swift; sourceTree = "<group>"; };
-		C5A498FA23B6B676006ED94F /* Sourceful */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sourceful; sourceTree = "<group>"; };
 		C5C450B2274392510090377B /* InsertLinkView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = InsertLinkView; sourceTree = "<group>"; };
 		C5CE39D523CB6F9F0095013A /* Icro-Next.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Icro-Next.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CE39D723CB6F9F0095013A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B3C79D421C5238800F699B8 /* IcroUIKit.framework in Frameworks */,
+				C5921FAE27463E1600401CD8 /* Sourceful in Frameworks */,
 				C51F848B267F20E2002A018E /* Client in Frameworks */,
 				C5C450B9274393900090377B /* InsertLinkView in Frameworks */,
 			);
@@ -580,8 +583,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5F7F79924C41A88009BD2F8 /* Kingfisher in Frameworks */,
-				C5A498F923B6AE3A006ED94F /* Sourceful in Frameworks */,
 				C5F60BFD23B3862F0022448A /* SnapKit in Frameworks */,
+				C5921FB527463E2500401CD8 /* Sourceful in Frameworks */,
 				5BC1384921C69BB80040353C /* IcroKit.framework in Frameworks */,
 				C550D77E2740F29D00E10CF6 /* Style in Frameworks */,
 				C51E9DD125614A1A0027376B /* KingfisherSwiftUI in Frameworks */,
@@ -639,11 +642,13 @@
 				5BC347B52132944900DEB45D /* IcroKit.framework in Frameworks */,
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
 				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
+				C5E793E92744EA260039A23B /* Sourceful in Frameworks */,
 				C5F8818023B4A141008DBAD6 /* DropdownTitleView.framework in Frameworks */,
 				C5C450BE274398640090377B /* ImageViewer in Frameworks */,
 				C550D77A2740F0E800E10CF6 /* Style in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
 				C5C450BB2743955D0090377B /* InsertLinkView in Frameworks */,
+				C5E793DB2744E4380039A23B /* DropdownTitleView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1049,7 +1054,6 @@
 		C5F880EA23B4A124008DBAD6 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
-				C5A498FA23B6B676006ED94F /* Sourceful */,
 				C5F880EB23B4A124008DBAD6 /* DropdownTitleView */,
 			);
 			path = Submodules;
@@ -1631,6 +1635,7 @@
 			packageProductDependencies = (
 				C51F848A267F20E2002A018E /* Client */,
 				C5C450B8274393900090377B /* InsertLinkView */,
+				C5921FAD27463E1600401CD8 /* Sourceful */,
 			);
 			productName = "Icro-Share";
 			productReference = 5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */;
@@ -1653,11 +1658,11 @@
 			name = IcroUIKit;
 			packageProductDependencies = (
 				C5F60BFC23B3862F0022448A /* SnapKit */,
-				C5A498F823B6AE3A006ED94F /* Sourceful */,
 				C5F7F79824C41A88009BD2F8 /* Kingfisher */,
 				C51E9DD025614A1A0027376B /* KingfisherSwiftUI */,
 				C51F8488267F207B002A018E /* Client */,
 				C550D77D2740F29D00E10CF6 /* Style */,
+				C5921FB427463E2500401CD8 /* Sourceful */,
 			);
 			productName = IcroUIKit;
 			productReference = 5B3C799221C4E31100F699B8 /* IcroUIKit.framework */;
@@ -1778,6 +1783,7 @@
 				C550D7792740F0E800E10CF6 /* Style */,
 				C5C450BA2743955D0090377B /* InsertLinkView */,
 				C5C450BD274398640090377B /* ImageViewer */,
+				C5E793E82744EA260039A23B /* Sourceful */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -1851,7 +1857,7 @@
 				};
 			};
 			buildConfigurationList = C5FA2ABB1EB4482C006DEB40 /* Build configuration list for PBXProject "Icro" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1869,6 +1875,7 @@
 				C544111F23F7E81400428609 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				C5F7F79324C41A6B009BD2F8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				C5C450BC274398640090377B /* XCRemoteSwiftPackageReference "ImageViewer" */,
+				C5E793E72744EA260039A23B /* XCRemoteSwiftPackageReference "Sourceful" */,
 			);
 			productRefGroup = C5FA2AC11EB4482C006DEB40 /* Products */;
 			projectDirPath = "";
@@ -2950,6 +2957,14 @@
 				kind = branch;
 			};
 		};
+		C5E793E72744EA260039A23B /* XCRemoteSwiftPackageReference "Sourceful" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hartlco/Sourceful";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		C5F60BFB23B3862F0022448A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -3048,8 +3063,14 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Style;
 		};
-		C5A498F823B6AE3A006ED94F /* Sourceful */ = {
+		C5921FAD27463E1600401CD8 /* Sourceful */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = C5E793E72744EA260039A23B /* XCRemoteSwiftPackageReference "Sourceful" */;
+			productName = Sourceful;
+		};
+		C5921FB427463E2500401CD8 /* Sourceful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5E793E72744EA260039A23B /* XCRemoteSwiftPackageReference "Sourceful" */;
 			productName = Sourceful;
 		};
 		C5C450B8274393900090377B /* InsertLinkView */ = {
@@ -3068,6 +3089,11 @@
 		C5CE39EE23CB710D0095013A /* Settings */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Settings;
+		};
+		C5E793E82744EA260039A23B /* Sourceful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5E793E72744EA260039A23B /* XCRemoteSwiftPackageReference "Sourceful" */;
+			productName = Sourceful;
 		};
 		C5F60BFC23B3862F0022448A /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
