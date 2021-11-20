@@ -26,30 +26,33 @@ import InsertLinkView
         for item in items {
             guard let provider = item.attachments?.first else { return }
 
-            if provider.hasItemConformingToTypeIdentifier(kUTTypeURL as String) {
-                provider.loadItem(forTypeIdentifier: (kUTTypeURL as String), options: nil) { [weak self] attachment, _ in
-                    guard let url = attachment as? URL else {
+            if provider.canLoadObject(ofClass: URL.self) {
+                _ = provider.loadObject(ofClass: URL.self) { [weak self] url, _ in
+                    guard let self = self else { return }
+
+                    guard let url = url else {
                         return
                     }
 
                     let viewModel = ComposeViewModel(mode: .shareURL(url: url, title: item.attributedContentText?.string ?? "Link"))
                     DispatchQueue.main.async {
-                        self?.openCompose(for: viewModel)
+                        self.openCompose(for: viewModel)
                     }
                 }
-            } else if provider.hasItemConformingToTypeIdentifier(kUTTypeText as String) {
-                provider.loadItem(forTypeIdentifier: (kUTTypeText as String), options: nil) { [weak self] attachment, _ in
-                    guard let text = attachment as? String else {
+            } else if provider.canLoadObject(ofClass: String.self) {
+                _ = provider.loadObject(ofClass: String.self, completionHandler: { [weak self] string, _ in
+                    guard let self = self else { return }
+
+                    guard let text = string else {
                         return
                     }
 
                     let viewModel = ComposeViewModel(mode: .shareText(text: text))
                     DispatchQueue.main.async {
-                        self?.openCompose(for: viewModel)
+                        self.openCompose(for: viewModel)
                     }
-                }
+                })
             }
-
         }
     }
 
@@ -65,7 +68,6 @@ import InsertLinkView
         navigationController.viewControllers = [composeViewController]
         add(navigationController, view: view)
     }
-
 }
 
 @nonobjc extension UIViewController {

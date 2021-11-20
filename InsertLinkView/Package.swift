@@ -14,7 +14,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "InsertLinkView",
-            targets: ["InsertLinkView"]),
+            targets: ["InsertLinkView"])
     ],
     dependencies: [
         .package(name: "Style", path: "./Style")
@@ -27,6 +27,6 @@ let package = Package(
             dependencies: ["Style"]),
         .testTarget(
             name: "InsertLinkViewTests",
-            dependencies: ["InsertLinkView", "Style"]),
+            dependencies: ["InsertLinkView", "Style"])
     ]
 )
