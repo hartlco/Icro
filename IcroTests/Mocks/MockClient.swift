@@ -30,4 +30,8 @@ final class MockClient<B: Codable>: Client {
         guard let result = returnedResourceResult as? Result<A, Error> else { return }
         completion(result)
     }
+
+    func load<A: Codable>(resource: Resource<A>) async throws -> A {
+        fatalError("Not implemented")
+    }
 }

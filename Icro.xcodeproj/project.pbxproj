@@ -135,6 +135,7 @@
 		C550D77C2740F0FC00E10CF6 /* Style in Frameworks */ = {isa = PBXBuildFile; productRef = C550D77B2740F0FC00E10CF6 /* Style */; };
 		C550D77E2740F29D00E10CF6 /* Style in Frameworks */ = {isa = PBXBuildFile; productRef = C550D77D2740F29D00E10CF6 /* Style */; };
 		C550D7802740F79000E10CF6 /* Font+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550D77F2740F79000E10CF6 /* Font+Settings.swift */; };
+		C57D6F182748EFE400278AD5 /* Style in Frameworks */ = {isa = PBXBuildFile; productRef = C57D6F172748EFE400278AD5 /* Style */; };
 		C5921FAE27463E1600401CD8 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5921FAD27463E1600401CD8 /* Sourceful */; };
 		C5921FB527463E2500401CD8 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5921FB427463E2500401CD8 /* Sourceful */; };
 		C59E637E23BDC9C10012BF85 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637123BDC9C10012BF85 /* WPXMLRPCDecoder.m */; };
@@ -596,6 +597,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C57D6F182748EFE400278AD5 /* Style in Frameworks */,
 				C544111E23F7CED800428609 /* Client in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1684,6 +1686,7 @@
 			name = IcroTests;
 			packageProductDependencies = (
 				C544111D23F7CED800428609 /* Client */,
+				C57D6F172748EFE400278AD5 /* Style */,
 			);
 			productName = IcroTests;
 			productReference = 5B5837352128B04A0076121E /* IcroTests.xctest */;
@@ -2405,7 +2408,7 @@
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IcroTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2432,7 +2435,7 @@
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IcroTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3060,6 +3063,10 @@
 			productName = Style;
 		};
 		C550D77D2740F29D00E10CF6 /* Style */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Style;
+		};
+		C57D6F172748EFE400278AD5 /* Style */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Style;
 		};
