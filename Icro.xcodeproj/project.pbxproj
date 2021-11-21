@@ -135,6 +135,7 @@
 		C550D77C2740F0FC00E10CF6 /* Style in Frameworks */ = {isa = PBXBuildFile; productRef = C550D77B2740F0FC00E10CF6 /* Style */; };
 		C550D77E2740F29D00E10CF6 /* Style in Frameworks */ = {isa = PBXBuildFile; productRef = C550D77D2740F29D00E10CF6 /* Style */; };
 		C550D7802740F79000E10CF6 /* Font+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550D77F2740F79000E10CF6 /* Font+Settings.swift */; };
+		C577C3C8274A46B200CCC4CD /* DropdownTitleView in Frameworks */ = {isa = PBXBuildFile; productRef = C577C3C7274A46B200CCC4CD /* DropdownTitleView */; };
 		C57D6F182748EFE400278AD5 /* Style in Frameworks */ = {isa = PBXBuildFile; productRef = C57D6F172748EFE400278AD5 /* Style */; };
 		C5921FAE27463E1600401CD8 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5921FAD27463E1600401CD8 /* Sourceful */; };
 		C5921FB527463E2500401CD8 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5921FB427463E2500401CD8 /* Sourceful */; };
@@ -162,12 +163,9 @@
 		C5CE39DF23CB6FA00095013A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CE39DE23CB6FA00095013A /* Preview Assets.xcassets */; };
 		C5CE39E223CB6FA00095013A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CE39E023CB6FA00095013A /* Main.storyboard */; };
 		C5CE39EF23CB710D0095013A /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = C5CE39EE23CB710D0095013A /* Settings */; };
-		C5E793DB2744E4380039A23B /* DropdownTitleView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F8817423B4A124008DBAD6 /* DropdownTitleView.framework */; };
 		C5E793E92744EA260039A23B /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5E793E82744EA260039A23B /* Sourceful */; };
 		C5F60BFD23B3862F0022448A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C5F60BFC23B3862F0022448A /* SnapKit */; };
 		C5F7F79924C41A88009BD2F8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C5F7F79824C41A88009BD2F8 /* Kingfisher */; };
-		C5F8818023B4A141008DBAD6 /* DropdownTitleView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F8817423B4A124008DBAD6 /* DropdownTitleView.framework */; };
-		C5F8818123B4A141008DBAD6 /* DropdownTitleView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5F8817423B4A124008DBAD6 /* DropdownTitleView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */; };
 		C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
 		C5FA2ACE1EB4482C006DEB40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACC1EB4482C006DEB40 /* LaunchScreen.storyboard */; };
@@ -209,41 +207,6 @@
 			remoteGlobalIDString = 5BC347AD2132944900DEB45D;
 			remoteInfo = IcroKit;
 		};
-		C5F8817323B4A124008DBAD6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5F8816923B4A124008DBAD6 /* DropdownTitleView.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2917A41D217CD435006DC123;
-			remoteInfo = DropdownTitleView;
-		};
-		C5F8817523B4A124008DBAD6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5F8816923B4A124008DBAD6 /* DropdownTitleView.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2917A42C217CD46A006DC123;
-			remoteInfo = Tests;
-		};
-		C5F8817A23B4A124008DBAD6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5F8810B23B4A124008DBAD6 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B0BD0E69D8C9007B003D1C9DBC66CE2D;
-			remoteInfo = "Pods-DropdownTitleView";
-		};
-		C5F8817C23B4A124008DBAD6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5F8810B23B4A124008DBAD6 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 872D34A532E02774F6010FCF23BAE021;
-			remoteInfo = "Pods-Tests";
-		};
-		C5F8817E23B4A124008DBAD6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5F8810B23B4A124008DBAD6 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FE55C4184A56F058F7393E763DCD1DAF;
-			remoteInfo = Snap.swift;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -266,7 +229,6 @@
 			files = (
 				5B3C799A21C4E31100F699B8 /* IcroUIKit.framework in Embed Frameworks */,
 				5BC347B62132944900DEB45D /* IcroKit.framework in Embed Frameworks */,
-				C5F8818123B4A141008DBAD6 /* DropdownTitleView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,97 +428,6 @@
 		C5CE39E323CB6FA00095013A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5CE39E423CB6FA00095013A /* Icro_Next.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Icro_Next.entitlements; sourceTree = "<group>"; };
 		C5CE39ED23CB70550095013A /* Settings */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Settings; sourceTree = "<group>"; };
-		C5F880EC23B4A124008DBAD6 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		C5F880ED23B4A124008DBAD6 /* DropdownTitleView.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = DropdownTitleView.xcworkspace; sourceTree = "<group>"; };
-		C5F880EF23B4A124008DBAD6 /* DropdownTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropdownTitleView.h; sourceTree = "<group>"; };
-		C5F880F023B4A124008DBAD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C5F880F123B4A124008DBAD6 /* DropdownTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownTitleView.swift; sourceTree = "<group>"; };
-		C5F880F223B4A124008DBAD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C5F880F723B4A124008DBAD6 /* reference_test_withnavigationcontroller_withbaritem_withtruncatingtitle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withnavigationcontroller_withbaritem_withtruncatingtitle@3x.png"; sourceTree = "<group>"; };
-		C5F880F823B4A124008DBAD6 /* reference_test_withnavigationcontroller@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withnavigationcontroller@3x.png"; sourceTree = "<group>"; };
-		C5F880F923B4A124008DBAD6 /* reference_test_withtitle_withsubtitle_withchevron_withtruncatingsubtitle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withtitle_withsubtitle_withchevron_withtruncatingsubtitle@3x.png"; sourceTree = "<group>"; };
-		C5F880FA23B4A124008DBAD6 /* reference_test_withnavigationcontroller_withitems_withautoresizingsubtitle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withnavigationcontroller_withitems_withautoresizingsubtitle@3x.png"; sourceTree = "<group>"; };
-		C5F880FB23B4A124008DBAD6 /* reference_test_withtitle_withsubtitle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withtitle_withsubtitle@3x.png"; sourceTree = "<group>"; };
-		C5F880FC23B4A124008DBAD6 /* reference_test_withtitle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withtitle@3x.png"; sourceTree = "<group>"; };
-		C5F880FD23B4A124008DBAD6 /* reference_test_withtitle_withsubtitle_withchevron_withautoresizingsubtitle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withtitle_withsubtitle_withchevron_withautoresizingsubtitle@3x.png"; sourceTree = "<group>"; };
-		C5F880FE23B4A124008DBAD6 /* reference_test_withtitle_withsubtitle_withchevron_withtruncatingtitle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withtitle_withsubtitle_withchevron_withtruncatingtitle@3x.png"; sourceTree = "<group>"; };
-		C5F880FF23B4A124008DBAD6 /* reference_test_withnavigationcontroller_withautoresizingtitle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withnavigationcontroller_withautoresizingtitle@3x.png"; sourceTree = "<group>"; };
-		C5F8810023B4A124008DBAD6 /* reference_test_withuiappearance@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withuiappearance@3x.png"; sourceTree = "<group>"; };
-		C5F8810123B4A124008DBAD6 /* reference_test_withnavigationcontroller_withbaritem_withtruncatingsubtitle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withnavigationcontroller_withbaritem_withtruncatingsubtitle@3x.png"; sourceTree = "<group>"; };
-		C5F8810223B4A124008DBAD6 /* reference_test_withtitle_withsubtitle_withchevron_withautoresizingtitle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withtitle_withsubtitle_withchevron_withautoresizingtitle@3x.png"; sourceTree = "<group>"; };
-		C5F8810323B4A124008DBAD6 /* reference_test_withtitle_withsubtitle_withchevron_withbackgrounds_whensizetofit@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withtitle_withsubtitle_withchevron_withbackgrounds_whensizetofit@3x.png"; sourceTree = "<group>"; };
-		C5F8810423B4A124008DBAD6 /* reference_test_withtitle_withsubtitle_withchevron_withchevrontint_withfonts_withtextcolors@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withtitle_withsubtitle_withchevron_withchevrontint_withfonts_withtextcolors@3x.png"; sourceTree = "<group>"; };
-		C5F8810523B4A124008DBAD6 /* reference_test_withtitle_withchevron@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withtitle_withchevron@3x.png"; sourceTree = "<group>"; };
-		C5F8810623B4A124008DBAD6 /* reference_test_withtitle_withsubtitle_withchevron_withbackgrounds_whensettingframe@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reference_test_withtitle_withsubtitle_withchevron_withbackgrounds_whensettingframe@3x.png"; sourceTree = "<group>"; };
-		C5F8810723B4A124008DBAD6 /* SnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTests.swift; sourceTree = "<group>"; };
-		C5F8810823B4A124008DBAD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C5F8810923B4A124008DBAD6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		C5F8810B23B4A124008DBAD6 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pods.xcodeproj; sourceTree = "<group>"; };
-		C5F8811023B4A124008DBAD6 /* Pods-DropdownTitleView-dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Pods-DropdownTitleView-dummy.m"; sourceTree = "<group>"; };
-		C5F8811123B4A124008DBAD6 /* Pods-DropdownTitleView.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Pods-DropdownTitleView.debug.xcconfig"; sourceTree = "<group>"; };
-		C5F8811223B4A124008DBAD6 /* Pods-DropdownTitleView.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Pods-DropdownTitleView.release.xcconfig"; sourceTree = "<group>"; };
-		C5F8811323B4A124008DBAD6 /* Pods-DropdownTitleView-acknowledgements.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Pods-DropdownTitleView-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C5F8811423B4A124008DBAD6 /* Pods-DropdownTitleView-resources.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Pods-DropdownTitleView-resources.sh"; sourceTree = "<group>"; };
-		C5F8811523B4A124008DBAD6 /* Pods-DropdownTitleView-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pods-DropdownTitleView-acknowledgements.plist"; sourceTree = "<group>"; };
-		C5F8811723B4A124008DBAD6 /* Snap.swift.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Snap.swift.xcconfig; sourceTree = "<group>"; };
-		C5F8811823B4A124008DBAD6 /* Snap.swift-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snap.swift-prefix.pch"; sourceTree = "<group>"; };
-		C5F8811923B4A124008DBAD6 /* Snap.swift-dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Snap.swift-dummy.m"; sourceTree = "<group>"; };
-		C5F8811B23B4A124008DBAD6 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C5F8811C23B4A124008DBAD6 /* Pods-Tests-umbrella.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pods-Tests-umbrella.h"; sourceTree = "<group>"; };
-		C5F8811D23B4A124008DBAD6 /* Pods-Tests.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Tests.modulemap"; sourceTree = "<group>"; };
-		C5F8811E23B4A124008DBAD6 /* Pods-Tests-frameworks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Pods-Tests-frameworks.sh"; sourceTree = "<group>"; };
-		C5F8811F23B4A124008DBAD6 /* Pods-Tests-acknowledgements.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Pods-Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C5F8812023B4A124008DBAD6 /* Pods-Tests-resources.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Pods-Tests-resources.sh"; sourceTree = "<group>"; };
-		C5F8812123B4A124008DBAD6 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C5F8812223B4A124008DBAD6 /* Pods-Tests-dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tests-dummy.m"; sourceTree = "<group>"; };
-		C5F8812323B4A124008DBAD6 /* Pods-Tests-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pods-Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		C5F8812423B4A124008DBAD6 /* Manifest.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Manifest.lock; sourceTree = "<group>"; };
-		C5F8812623B4A124008DBAD6 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		C5F8812723B4A124008DBAD6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		C5F8812C23B4A124008DBAD6 /* SnapshotViewExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotViewExpectation.swift; sourceTree = "<group>"; };
-		C5F8812D23B4A124008DBAD6 /* SnapshotLayerExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotLayerExpectation.swift; sourceTree = "<group>"; };
-		C5F8812F23B4A124008DBAD6 /* Recordable+XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recordable+XCTestCase.swift"; sourceTree = "<group>"; };
-		C5F8813023B4A124008DBAD6 /* Recordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recordable.swift; sourceTree = "<group>"; };
-		C5F8813223B4A124008DBAD6 /* Matcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matcher.swift; sourceTree = "<group>"; };
-		C5F8813323B4A124008DBAD6 /* SnapshotLayerMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotLayerMatcher.swift; sourceTree = "<group>"; };
-		C5F8813423B4A124008DBAD6 /* SnapshotViewMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotViewMatcher.swift; sourceTree = "<group>"; };
-		C5F8813623B4A124008DBAD6 /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
-		C5F8813823B4A124008DBAD6 /* ExtractViewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractViewImage.swift; sourceTree = "<group>"; };
-		C5F8813923B4A124008DBAD6 /* AddAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAttachment.swift; sourceTree = "<group>"; };
-		C5F8813A23B4A124008DBAD6 /* SaveImageToDisk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImageToDisk.swift; sourceTree = "<group>"; };
-		C5F8813B23B4A124008DBAD6 /* CompareImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareImages.swift; sourceTree = "<group>"; };
-		C5F8813F23B4A124008DBAD6 /* UIImage+Compare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Compare.swift"; sourceTree = "<group>"; };
-		C5F8814023B4A124008DBAD6 /* UIImage+Diff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Diff.swift"; sourceTree = "<group>"; };
-		C5F8814123B4A124008DBAD6 /* UIImage+Normalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Normalized.swift"; sourceTree = "<group>"; };
-		C5F8814223B4A124008DBAD6 /* UIImage+Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Context.swift"; sourceTree = "<group>"; };
-		C5F8814423B4A124008DBAD6 /* UIView+Render.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Render.swift"; sourceTree = "<group>"; };
-		C5F8814623B4A124008DBAD6 /* Device+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+Size.swift"; sourceTree = "<group>"; };
-		C5F8814723B4A124008DBAD6 /* AllDevices+All.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllDevices+All.swift"; sourceTree = "<group>"; };
-		C5F8814923B4A124008DBAD6 /* CALayer+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Image.swift"; sourceTree = "<group>"; };
-		C5F8814B23B4A124008DBAD6 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
-		C5F8814C23B4A124008DBAD6 /* Assembly+Matchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembly+Matchers.swift"; sourceTree = "<group>"; };
-		C5F8814D23B4A124008DBAD6 /* Assembly+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembly+Actions.swift"; sourceTree = "<group>"; };
-		C5F8814E23B4A124008DBAD6 /* Assembly+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembly+Utils.swift"; sourceTree = "<group>"; };
-		C5F8815123B4A124008DBAD6 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
-		C5F8815323B4A124008DBAD6 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		C5F8815423B4A124008DBAD6 /* ApplicationEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationEnvironment.swift; sourceTree = "<group>"; };
-		C5F8815623B4A124008DBAD6 /* Interoperability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interoperability.swift; sourceTree = "<group>"; };
-		C5F8815723B4A124008DBAD6 /* Snap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Snap.h; sourceTree = "<group>"; };
-		C5F8815A23B4A124008DBAD6 /* Reference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
-		C5F8815B23B4A124008DBAD6 /* TestTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTarget.swift; sourceTree = "<group>"; };
-		C5F8815C23B4A124008DBAD6 /* TestTarget+Reference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestTarget+Reference.swift"; sourceTree = "<group>"; };
-		C5F8815D23B4A124008DBAD6 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
-		C5F8816123B4A124008DBAD6 /* Snap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Snap.h; sourceTree = "<group>"; };
-		C5F8816323B4A124008DBAD6 /* Snap.swift.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Snap.swift.modulemap; sourceTree = "<group>"; };
-		C5F8816423B4A124008DBAD6 /* Snap.swift-umbrella.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snap.swift-umbrella.h"; sourceTree = "<group>"; };
-		C5F8816723B4A124008DBAD6 /* Snap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Snap.h; sourceTree = "<group>"; };
-		C5F8816823B4A124008DBAD6 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		C5F8816923B4A124008DBAD6 /* DropdownTitleView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = DropdownTitleView.xcodeproj; sourceTree = "<group>"; };
-		C5F8816C23B4A124008DBAD6 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		C5F8816D23B4A124008DBAD6 /* DropdownTitleView.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = DropdownTitleView.podspec; sourceTree = "<group>"; };
-		C5F8816E23B4A124008DBAD6 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
-		C5F8816F23B4A124008DBAD6 /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
-		C5F8817023B4A124008DBAD6 /* readme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = readme.png; sourceTree = "<group>"; };
 		C5FA2AC01EB4482C006DEB40 /* Icro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Icro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -645,12 +516,11 @@
 				5B3C799921C4E31100F699B8 /* IcroUIKit.framework in Frameworks */,
 				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
 				C5E793E92744EA260039A23B /* Sourceful in Frameworks */,
-				C5F8818023B4A141008DBAD6 /* DropdownTitleView.framework in Frameworks */,
 				C5C450BE274398640090377B /* ImageViewer in Frameworks */,
 				C550D77A2740F0E800E10CF6 /* Style in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
 				C5C450BB2743955D0090377B /* InsertLinkView in Frameworks */,
-				C5E793DB2744E4380039A23B /* DropdownTitleView.framework in Frameworks */,
+				C577C3C8274A46B200CCC4CD /* DropdownTitleView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1053,435 +923,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C5F880EA23B4A124008DBAD6 /* Submodules */ = {
-			isa = PBXGroup;
-			children = (
-				C5F880EB23B4A124008DBAD6 /* DropdownTitleView */,
-			);
-			path = Submodules;
-			sourceTree = "<group>";
-		};
-		C5F880EB23B4A124008DBAD6 /* DropdownTitleView */ = {
-			isa = PBXGroup;
-			children = (
-				C5F880EC23B4A124008DBAD6 /* LICENSE */,
-				C5F880ED23B4A124008DBAD6 /* DropdownTitleView.xcworkspace */,
-				C5F880EE23B4A124008DBAD6 /* Source */,
-				C5F880F323B4A124008DBAD6 /* Tests */,
-				C5F8810923B4A124008DBAD6 /* README.md */,
-				C5F8810A23B4A124008DBAD6 /* Pods */,
-				C5F8816823B4A124008DBAD6 /* .gitignore */,
-				C5F8816923B4A124008DBAD6 /* DropdownTitleView.xcodeproj */,
-				C5F8816C23B4A124008DBAD6 /* Podfile */,
-				C5F8816D23B4A124008DBAD6 /* DropdownTitleView.podspec */,
-				C5F8816E23B4A124008DBAD6 /* .travis.yml */,
-				C5F8816F23B4A124008DBAD6 /* Podfile.lock */,
-				C5F8817023B4A124008DBAD6 /* readme.png */,
-			);
-			path = DropdownTitleView;
-			sourceTree = "<group>";
-		};
-		C5F880EE23B4A124008DBAD6 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				C5F880EF23B4A124008DBAD6 /* DropdownTitleView.h */,
-				C5F880F023B4A124008DBAD6 /* Assets.xcassets */,
-				C5F880F123B4A124008DBAD6 /* DropdownTitleView.swift */,
-				C5F880F223B4A124008DBAD6 /* Info.plist */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		C5F880F323B4A124008DBAD6 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				C5F880F423B4A124008DBAD6 /* snapshots */,
-				C5F8810723B4A124008DBAD6 /* SnapshotTests.swift */,
-				C5F8810823B4A124008DBAD6 /* Info.plist */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		C5F880F423B4A124008DBAD6 /* snapshots */ = {
-			isa = PBXGroup;
-			children = (
-				C5F880F523B4A124008DBAD6 /* Snap */,
-			);
-			path = snapshots;
-			sourceTree = "<group>";
-		};
-		C5F880F523B4A124008DBAD6 /* Snap */ = {
-			isa = PBXGroup;
-			children = (
-				C5F880F623B4A124008DBAD6 /* SnapshotTests */,
-			);
-			path = Snap;
-			sourceTree = "<group>";
-		};
-		C5F880F623B4A124008DBAD6 /* SnapshotTests */ = {
-			isa = PBXGroup;
-			children = (
-				C5F880F723B4A124008DBAD6 /* reference_test_withnavigationcontroller_withbaritem_withtruncatingtitle@3x.png */,
-				C5F880F823B4A124008DBAD6 /* reference_test_withnavigationcontroller@3x.png */,
-				C5F880F923B4A124008DBAD6 /* reference_test_withtitle_withsubtitle_withchevron_withtruncatingsubtitle@3x.png */,
-				C5F880FA23B4A124008DBAD6 /* reference_test_withnavigationcontroller_withitems_withautoresizingsubtitle@3x.png */,
-				C5F880FB23B4A124008DBAD6 /* reference_test_withtitle_withsubtitle@3x.png */,
-				C5F880FC23B4A124008DBAD6 /* reference_test_withtitle@3x.png */,
-				C5F880FD23B4A124008DBAD6 /* reference_test_withtitle_withsubtitle_withchevron_withautoresizingsubtitle@3x.png */,
-				C5F880FE23B4A124008DBAD6 /* reference_test_withtitle_withsubtitle_withchevron_withtruncatingtitle@3x.png */,
-				C5F880FF23B4A124008DBAD6 /* reference_test_withnavigationcontroller_withautoresizingtitle@3x.png */,
-				C5F8810023B4A124008DBAD6 /* reference_test_withuiappearance@3x.png */,
-				C5F8810123B4A124008DBAD6 /* reference_test_withnavigationcontroller_withbaritem_withtruncatingsubtitle@3x.png */,
-				C5F8810223B4A124008DBAD6 /* reference_test_withtitle_withsubtitle_withchevron_withautoresizingtitle@3x.png */,
-				C5F8810323B4A124008DBAD6 /* reference_test_withtitle_withsubtitle_withchevron_withbackgrounds_whensizetofit@3x.png */,
-				C5F8810423B4A124008DBAD6 /* reference_test_withtitle_withsubtitle_withchevron_withchevrontint_withfonts_withtextcolors@3x.png */,
-				C5F8810523B4A124008DBAD6 /* reference_test_withtitle_withchevron@3x.png */,
-				C5F8810623B4A124008DBAD6 /* reference_test_withtitle_withsubtitle_withchevron_withbackgrounds_whensettingframe@3x.png */,
-			);
-			path = SnapshotTests;
-			sourceTree = "<group>";
-		};
-		C5F8810A23B4A124008DBAD6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8810B23B4A124008DBAD6 /* Pods.xcodeproj */,
-				C5F8810E23B4A124008DBAD6 /* Target Support Files */,
-				C5F8812423B4A124008DBAD6 /* Manifest.lock */,
-				C5F8812523B4A124008DBAD6 /* Snap.swift */,
-				C5F8815E23B4A124008DBAD6 /* Headers */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		C5F8810C23B4A124008DBAD6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8817B23B4A124008DBAD6 /* libPods-DropdownTitleView.a */,
-				C5F8817D23B4A124008DBAD6 /* libPods-Tests.a */,
-				C5F8817F23B4A124008DBAD6 /* libSnap.swift.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C5F8810E23B4A124008DBAD6 /* Target Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8810F23B4A124008DBAD6 /* Pods-DropdownTitleView */,
-				C5F8811623B4A124008DBAD6 /* Snap.swift */,
-				C5F8811A23B4A124008DBAD6 /* Pods-Tests */,
-			);
-			path = "Target Support Files";
-			sourceTree = "<group>";
-		};
-		C5F8810F23B4A124008DBAD6 /* Pods-DropdownTitleView */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8811023B4A124008DBAD6 /* Pods-DropdownTitleView-dummy.m */,
-				C5F8811123B4A124008DBAD6 /* Pods-DropdownTitleView.debug.xcconfig */,
-				C5F8811223B4A124008DBAD6 /* Pods-DropdownTitleView.release.xcconfig */,
-				C5F8811323B4A124008DBAD6 /* Pods-DropdownTitleView-acknowledgements.markdown */,
-				C5F8811423B4A124008DBAD6 /* Pods-DropdownTitleView-resources.sh */,
-				C5F8811523B4A124008DBAD6 /* Pods-DropdownTitleView-acknowledgements.plist */,
-			);
-			path = "Pods-DropdownTitleView";
-			sourceTree = "<group>";
-		};
-		C5F8811623B4A124008DBAD6 /* Snap.swift */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8811723B4A124008DBAD6 /* Snap.swift.xcconfig */,
-				C5F8811823B4A124008DBAD6 /* Snap.swift-prefix.pch */,
-				C5F8811923B4A124008DBAD6 /* Snap.swift-dummy.m */,
-			);
-			path = Snap.swift;
-			sourceTree = "<group>";
-		};
-		C5F8811A23B4A124008DBAD6 /* Pods-Tests */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8811B23B4A124008DBAD6 /* Pods-Tests.debug.xcconfig */,
-				C5F8811C23B4A124008DBAD6 /* Pods-Tests-umbrella.h */,
-				C5F8811D23B4A124008DBAD6 /* Pods-Tests.modulemap */,
-				C5F8811E23B4A124008DBAD6 /* Pods-Tests-frameworks.sh */,
-				C5F8811F23B4A124008DBAD6 /* Pods-Tests-acknowledgements.markdown */,
-				C5F8812023B4A124008DBAD6 /* Pods-Tests-resources.sh */,
-				C5F8812123B4A124008DBAD6 /* Pods-Tests.release.xcconfig */,
-				C5F8812223B4A124008DBAD6 /* Pods-Tests-dummy.m */,
-				C5F8812323B4A124008DBAD6 /* Pods-Tests-acknowledgements.plist */,
-			);
-			path = "Pods-Tests";
-			sourceTree = "<group>";
-		};
-		C5F8812523B4A124008DBAD6 /* Snap.swift */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8812623B4A124008DBAD6 /* LICENSE */,
-				C5F8812723B4A124008DBAD6 /* README.md */,
-				C5F8812823B4A124008DBAD6 /* Snap */,
-			);
-			path = Snap.swift;
-			sourceTree = "<group>";
-		};
-		C5F8812823B4A124008DBAD6 /* Snap */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8812923B4A124008DBAD6 /* Core */,
-			);
-			path = Snap;
-			sourceTree = "<group>";
-		};
-		C5F8812923B4A124008DBAD6 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8812A23B4A124008DBAD6 /* Application */,
-				C5F8813C23B4A124008DBAD6 /* Infrastructure */,
-				C5F8815823B4A124008DBAD6 /* Domain */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		C5F8812A23B4A124008DBAD6 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8812B23B4A124008DBAD6 /* Expectation */,
-				C5F8812E23B4A124008DBAD6 /* Recordable */,
-				C5F8813123B4A124008DBAD6 /* Matcher */,
-				C5F8813523B4A124008DBAD6 /* Snap */,
-				C5F8813723B4A124008DBAD6 /* Actions */,
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
-		C5F8812B23B4A124008DBAD6 /* Expectation */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8812C23B4A124008DBAD6 /* SnapshotViewExpectation.swift */,
-				C5F8812D23B4A124008DBAD6 /* SnapshotLayerExpectation.swift */,
-			);
-			path = Expectation;
-			sourceTree = "<group>";
-		};
-		C5F8812E23B4A124008DBAD6 /* Recordable */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8812F23B4A124008DBAD6 /* Recordable+XCTestCase.swift */,
-				C5F8813023B4A124008DBAD6 /* Recordable.swift */,
-			);
-			path = Recordable;
-			sourceTree = "<group>";
-		};
-		C5F8813123B4A124008DBAD6 /* Matcher */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8813223B4A124008DBAD6 /* Matcher.swift */,
-				C5F8813323B4A124008DBAD6 /* SnapshotLayerMatcher.swift */,
-				C5F8813423B4A124008DBAD6 /* SnapshotViewMatcher.swift */,
-			);
-			path = Matcher;
-			sourceTree = "<group>";
-		};
-		C5F8813523B4A124008DBAD6 /* Snap */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8813623B4A124008DBAD6 /* Snap.swift */,
-			);
-			path = Snap;
-			sourceTree = "<group>";
-		};
-		C5F8813723B4A124008DBAD6 /* Actions */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8813823B4A124008DBAD6 /* ExtractViewImage.swift */,
-				C5F8813923B4A124008DBAD6 /* AddAttachment.swift */,
-				C5F8813A23B4A124008DBAD6 /* SaveImageToDisk.swift */,
-				C5F8813B23B4A124008DBAD6 /* CompareImages.swift */,
-			);
-			path = Actions;
-			sourceTree = "<group>";
-		};
-		C5F8813C23B4A124008DBAD6 /* Infrastructure */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8813D23B4A124008DBAD6 /* Extension */,
-				C5F8814A23B4A124008DBAD6 /* Assembly */,
-				C5F8814F23B4A124008DBAD6 /* Utils */,
-				C5F8815523B4A124008DBAD6 /* Interoperability */,
-			);
-			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		C5F8813D23B4A124008DBAD6 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8813E23B4A124008DBAD6 /* UIImage */,
-				C5F8814323B4A124008DBAD6 /* UIView */,
-				C5F8814523B4A124008DBAD6 /* Device */,
-				C5F8814823B4A124008DBAD6 /* CALayer */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		C5F8813E23B4A124008DBAD6 /* UIImage */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8813F23B4A124008DBAD6 /* UIImage+Compare.swift */,
-				C5F8814023B4A124008DBAD6 /* UIImage+Diff.swift */,
-				C5F8814123B4A124008DBAD6 /* UIImage+Normalized.swift */,
-				C5F8814223B4A124008DBAD6 /* UIImage+Context.swift */,
-			);
-			path = UIImage;
-			sourceTree = "<group>";
-		};
-		C5F8814323B4A124008DBAD6 /* UIView */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8814423B4A124008DBAD6 /* UIView+Render.swift */,
-			);
-			path = UIView;
-			sourceTree = "<group>";
-		};
-		C5F8814523B4A124008DBAD6 /* Device */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8814623B4A124008DBAD6 /* Device+Size.swift */,
-				C5F8814723B4A124008DBAD6 /* AllDevices+All.swift */,
-			);
-			path = Device;
-			sourceTree = "<group>";
-		};
-		C5F8814823B4A124008DBAD6 /* CALayer */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8814923B4A124008DBAD6 /* CALayer+Image.swift */,
-			);
-			path = CALayer;
-			sourceTree = "<group>";
-		};
-		C5F8814A23B4A124008DBAD6 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8814B23B4A124008DBAD6 /* Assembly.swift */,
-				C5F8814C23B4A124008DBAD6 /* Assembly+Matchers.swift */,
-				C5F8814D23B4A124008DBAD6 /* Assembly+Actions.swift */,
-				C5F8814E23B4A124008DBAD6 /* Assembly+Utils.swift */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		C5F8814F23B4A124008DBAD6 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8815023B4A124008DBAD6 /* Path */,
-				C5F8815223B4A124008DBAD6 /* Environment */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		C5F8815023B4A124008DBAD6 /* Path */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8815123B4A124008DBAD6 /* Path.swift */,
-			);
-			path = Path;
-			sourceTree = "<group>";
-		};
-		C5F8815223B4A124008DBAD6 /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8815323B4A124008DBAD6 /* Environment.swift */,
-				C5F8815423B4A124008DBAD6 /* ApplicationEnvironment.swift */,
-			);
-			path = Environment;
-			sourceTree = "<group>";
-		};
-		C5F8815523B4A124008DBAD6 /* Interoperability */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8815623B4A124008DBAD6 /* Interoperability.swift */,
-				C5F8815723B4A124008DBAD6 /* Snap.h */,
-			);
-			path = Interoperability;
-			sourceTree = "<group>";
-		};
-		C5F8815823B4A124008DBAD6 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8815923B4A124008DBAD6 /* Model */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		C5F8815923B4A124008DBAD6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8815A23B4A124008DBAD6 /* Reference.swift */,
-				C5F8815B23B4A124008DBAD6 /* TestTarget.swift */,
-				C5F8815C23B4A124008DBAD6 /* TestTarget+Reference.swift */,
-				C5F8815D23B4A124008DBAD6 /* Device.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C5F8815E23B4A124008DBAD6 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8815F23B4A124008DBAD6 /* Public */,
-				C5F8816523B4A124008DBAD6 /* Private */,
-			);
-			path = Headers;
-			sourceTree = "<group>";
-		};
-		C5F8815F23B4A124008DBAD6 /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8816023B4A124008DBAD6 /* Snap.swift */,
-				C5F8816223B4A124008DBAD6 /* Snap_swift */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		C5F8816023B4A124008DBAD6 /* Snap.swift */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8816123B4A124008DBAD6 /* Snap.h */,
-			);
-			path = Snap.swift;
-			sourceTree = "<group>";
-		};
-		C5F8816223B4A124008DBAD6 /* Snap_swift */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8816323B4A124008DBAD6 /* Snap.swift.modulemap */,
-				C5F8816423B4A124008DBAD6 /* Snap.swift-umbrella.h */,
-			);
-			path = Snap_swift;
-			sourceTree = "<group>";
-		};
-		C5F8816523B4A124008DBAD6 /* Private */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8816623B4A124008DBAD6 /* Snap.swift */,
-			);
-			path = Private;
-			sourceTree = "<group>";
-		};
-		C5F8816623B4A124008DBAD6 /* Snap.swift */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8816723B4A124008DBAD6 /* Snap.h */,
-			);
-			path = Snap.swift;
-			sourceTree = "<group>";
-		};
-		C5F8816A23B4A124008DBAD6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C5F8817423B4A124008DBAD6 /* DropdownTitleView.framework */,
-				C5F8817623B4A124008DBAD6 /* Tests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C5FA2AB71EB4482C006DEB40 = {
 			isa = PBXGroup;
 			children = (
@@ -1492,7 +933,6 @@
 				C5454DA723CB991A00739A6C /* VerticalTabView */,
 				C5CE39ED23CB70550095013A /* Settings */,
 				5B2B817422F6CC2E0073B393 /* appversion.xcconfig */,
-				C5F880EA23B4A124008DBAD6 /* Submodules */,
 				5B2EF3D222E82649006931A7 /* External */,
 				C5FA2AC21EB4482C006DEB40 /* Icro */,
 				5B3C797F21C4DFAF00F699B8 /* Icro-Share */,
@@ -1787,6 +1227,7 @@
 				C5C450BA2743955D0090377B /* InsertLinkView */,
 				C5C450BD274398640090377B /* ImageViewer */,
 				C5E793E82744EA260039A23B /* Sourceful */,
+				C577C3C7274A46B200CCC4CD /* DropdownTitleView */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -1879,19 +1320,10 @@
 				C5F7F79324C41A6B009BD2F8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				C5C450BC274398640090377B /* XCRemoteSwiftPackageReference "ImageViewer" */,
 				C5E793E72744EA260039A23B /* XCRemoteSwiftPackageReference "Sourceful" */,
+				C577C3C6274A46B200CCC4CD /* XCRemoteSwiftPackageReference "dropdowntitleview" */,
 			);
 			productRefGroup = C5FA2AC11EB4482C006DEB40 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C5F8816A23B4A124008DBAD6 /* Products */;
-					ProjectRef = C5F8816923B4A124008DBAD6 /* DropdownTitleView.xcodeproj */;
-				},
-				{
-					ProductGroup = C5F8810C23B4A124008DBAD6 /* Products */;
-					ProjectRef = C5F8810B23B4A124008DBAD6 /* Pods.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				C5FA2ABF1EB4482C006DEB40 /* Icro */,
@@ -1904,44 +1336,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C5F8817423B4A124008DBAD6 /* DropdownTitleView.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = DropdownTitleView.framework;
-			remoteRef = C5F8817323B4A124008DBAD6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C5F8817623B4A124008DBAD6 /* Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = Tests.xctest;
-			remoteRef = C5F8817523B4A124008DBAD6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C5F8817B23B4A124008DBAD6 /* libPods-DropdownTitleView.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libPods-DropdownTitleView.a";
-			remoteRef = C5F8817A23B4A124008DBAD6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C5F8817D23B4A124008DBAD6 /* libPods-Tests.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libPods-Tests.a";
-			remoteRef = C5F8817C23B4A124008DBAD6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C5F8817F23B4A124008DBAD6 /* libSnap.swift.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSnap.swift.a;
-			remoteRef = C5F8817E23B4A124008DBAD6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5B3C797C21C4DFAF00F699B8 /* Resources */ = {
@@ -2952,6 +2346,14 @@
 				minimumVersion = 2.3.0;
 			};
 		};
+		C577C3C6274A46B200CCC4CD /* XCRemoteSwiftPackageReference "dropdowntitleview" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hartlco/dropdowntitleview";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		C5C450BC274398640090377B /* XCRemoteSwiftPackageReference "ImageViewer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/ImageViewer";
@@ -3065,6 +2467,11 @@
 		C550D77D2740F29D00E10CF6 /* Style */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Style;
+		};
+		C577C3C7274A46B200CCC4CD /* DropdownTitleView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C577C3C6274A46B200CCC4CD /* XCRemoteSwiftPackageReference "dropdowntitleview" */;
+			productName = DropdownTitleView;
 		};
 		C57D6F172748EFE400278AD5 /* Style */ = {
 			isa = XCSwiftPackageProductDependency;
