@@ -1,4 +1,4 @@
-git_url("git@github.com:hartlco/Icro-certificates.git")
+git_url("https://github.com/hartlco/Icro-certificates.git")
 app_identifier(["co.hartl.Icro", "co.hartl.Icro.Icro-Share"])
 storage_mode("git")
 derive_catalyst_app_identifier(true)
@@ -6,8 +6,3 @@ type("development") # The default type, can be: appstore, adhoc, enterprise or d
 
 # app_identifier(["tools.fastlane.app", "tools.fastlane.app2"])
 username("dev@hartl.co") # Your Apple Developer Portal username
-
-# For all available options run `fastlane match --help`
-# Remove the # in the beginning of the line to enable the other options
-
-# The docs are available on https://docs.fastlane.tools/actions/match
