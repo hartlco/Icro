@@ -9,7 +9,7 @@
 import SwiftUI
 import IcroKit
 import IcroUIKit
-import KingfisherSwiftUI
+import Kingfisher
 
 struct UserListView: SwiftUI.View {
     @ObservedObject var viewModel: UserListViewModel
