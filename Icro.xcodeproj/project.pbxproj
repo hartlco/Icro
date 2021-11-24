@@ -119,10 +119,12 @@
 		5BFCB8F6232E835F008D36E1 /* NotificationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFCB8F5232E835F008D36E1 /* NotificationComponent.swift */; };
 		8DCD1F043AA7A42B38373800 /* Pods_IcroScreenshotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4216F55176FDD95FB7B918F8 /* Pods_IcroScreenshotsTests.framework */; };
 		BF707E742131C45600506E64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
+		C5023CB1274E2E8F0034BDC9 /* IcroKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC347AE2132944900DEB45D /* IcroKit.framework */; };
+		C5023CB7274E2F5C0034BDC9 /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C5023CB6274E2F5C0034BDC9 /* Client */; };
+		C5023CB9274E2F5C0034BDC9 /* InsertLinkView in Frameworks */ = {isa = PBXBuildFile; productRef = C5023CB8274E2F5C0034BDC9 /* InsertLinkView */; };
 		C51F8480267F1FFB002A018E /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C51F847F267F1FFB002A018E /* Client */; };
 		C51F8487267F201A002A018E /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C51F8486267F201A002A018E /* Client */; };
 		C51F8489267F207B002A018E /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C51F8488267F207B002A018E /* Client */; };
-		C51F848B267F20E2002A018E /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C51F848A267F20E2002A018E /* Client */; };
 		C544111E23F7CED800428609 /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C544111D23F7CED800428609 /* Client */; };
 		C544112123F7E81400428609 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = C544112023F7E81400428609 /* SwiftSoup */; };
 		C5454DAE23CB9A5C00739A6C /* VerticalTabView in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DAD23CB9A5C00739A6C /* VerticalTabView */; };
@@ -136,7 +138,6 @@
 		C550D7802740F79000E10CF6 /* Font+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550D77F2740F79000E10CF6 /* Font+Settings.swift */; };
 		C577C3C8274A46B200CCC4CD /* DropdownTitleView in Frameworks */ = {isa = PBXBuildFile; productRef = C577C3C7274A46B200CCC4CD /* DropdownTitleView */; };
 		C57D6F182748EFE400278AD5 /* Style in Frameworks */ = {isa = PBXBuildFile; productRef = C57D6F172748EFE400278AD5 /* Style */; };
-		C5921FAE27463E1600401CD8 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5921FAD27463E1600401CD8 /* Sourceful */; };
 		C5921FB527463E2500401CD8 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5921FB427463E2500401CD8 /* Sourceful */; };
 		C59E637E23BDC9C10012BF85 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637123BDC9C10012BF85 /* WPXMLRPCDecoder.m */; };
 		C59E637F23BDC9C10012BF85 /* WPXMLRPC.h in Headers */ = {isa = PBXBuildFile; fileRef = C59E637223BDC9C10012BF85 /* WPXMLRPC.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -153,7 +154,6 @@
 		C59E638A23BDC9C10012BF85 /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637D23BDC9C10012BF85 /* WPXMLRPCDataCleaner.m */; };
 		C5A498F323B66490006ED94F /* IcroLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F223B66490006ED94F /* IcroLexer.swift */; };
 		C5A498F523B69636006ED94F /* IcroEditorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F423B69636006ED94F /* IcroEditorTheme.swift */; };
-		C5C450B9274393900090377B /* InsertLinkView in Frameworks */ = {isa = PBXBuildFile; productRef = C5C450B8274393900090377B /* InsertLinkView */; };
 		C5C450BB2743955D0090377B /* InsertLinkView in Frameworks */ = {isa = PBXBuildFile; productRef = C5C450BA2743955D0090377B /* InsertLinkView */; };
 		C5C450BE274398640090377B /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = C5C450BD274398640090377B /* ImageViewer */; };
 		C5CE39D823CB6F9F0095013A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE39D723CB6F9F0095013A /* AppDelegate.swift */; };
@@ -164,7 +164,6 @@
 		C5CE39EF23CB710D0095013A /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = C5CE39EE23CB710D0095013A /* Settings */; };
 		C5E793E92744EA260039A23B /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5E793E82744EA260039A23B /* Sourceful */; };
 		C5F50599274CC9DC00BCDC0F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C5F50598274CC9DC00BCDC0F /* Kingfisher */; };
-		C5F5059B274CCA2A00BCDC0F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C5F5059A274CCA2A00BCDC0F /* Kingfisher */; };
 		C5F60BFD23B3862F0022448A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C5F60BFC23B3862F0022448A /* SnapKit */; };
 		C5F7F79924C41A88009BD2F8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C5F7F79824C41A88009BD2F8 /* Kingfisher */; };
 		C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */; };
@@ -202,6 +201,13 @@
 			remoteInfo = Icro;
 		};
 		5BC347B32132944900DEB45D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5FA2AB81EB4482C006DEB40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BC347AD2132944900DEB45D;
+			remoteInfo = IcroKit;
+		};
+		C5023CB3274E2E8F0034BDC9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C5FA2AB81EB4482C006DEB40 /* Project object */;
 			proxyType = 1;
@@ -444,11 +450,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5023CB9274E2F5C0034BDC9 /* InsertLinkView in Frameworks */,
+				C5023CB1274E2E8F0034BDC9 /* IcroKit.framework in Frameworks */,
 				5B3C79D421C5238800F699B8 /* IcroUIKit.framework in Frameworks */,
-				C5921FAE27463E1600401CD8 /* Sourceful in Frameworks */,
-				C51F848B267F20E2002A018E /* Client in Frameworks */,
-				C5C450B9274393900090377B /* InsertLinkView in Frameworks */,
-				C5F5059B274CCA2A00BCDC0F /* Kingfisher in Frameworks */,
+				C5023CB7274E2F5C0034BDC9 /* Client in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1074,13 +1079,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				C5023CB4274E2E8F0034BDC9 /* PBXTargetDependency */,
 			);
 			name = "Icro-Share";
 			packageProductDependencies = (
-				C51F848A267F20E2002A018E /* Client */,
-				C5C450B8274393900090377B /* InsertLinkView */,
-				C5921FAD27463E1600401CD8 /* Sourceful */,
-				C5F5059A274CCA2A00BCDC0F /* Kingfisher */,
+				C5023CB6274E2F5C0034BDC9 /* Client */,
+				C5023CB8274E2F5C0034BDC9 /* InsertLinkView */,
 			);
 			productName = "Icro-Share";
 			productReference = 5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */;
@@ -1212,6 +1216,7 @@
 				5B494E642123590E00C3969B /* SwiftLint */,
 				5BC347BA2132944900DEB45D /* Embed Frameworks */,
 				5B3C798C21C4DFAF00F699B8 /* Embed App Extensions */,
+				C5EA18C1274E2BC00054DC6D /* Remove duplicated Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1426,6 +1431,24 @@
 			shellPath = /bin/sh;
 			shellScript = "${SRCROOT}/External/SwiftLint/swiftlint0340\n";
 		};
+		C5EA18C1274E2BC00054DC6D /* Remove duplicated Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Remove duplicated Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CODESIGNING_FOLDER_PATH}/Frameworks/\"\n        for framework in *; do\n            if [ -d \"$framework\" ]; then\n                if [ -d \"${framework}/Frameworks\" ]; then\n                    echo \"Moving nested frameworks from ${framework}/Frameworks/ to ${PRODUCT_NAME}.app/Frameworks/\"\n        \n                    cd \"${framework}/Frameworks/\"\n                    for nestedFramework in *; do\n                        echo \"- nested: ${nestedFramework}\"\n                        movedFrameworks+=(\"${nestedFramework}\")\n                    done\n                    cd ..\n                    cd ..\n        \n                    cp -R \"${framework}/Frameworks/\" .\n                    rm -rf \"${framework}/Frameworks\"\n                fi\n            fi\n        done\n        \n        if [ \"${CONFIGURATION}\" == \"Debug\" ] & [ \"${PLATFORM_NAME}\" != \"iphonesimulator\" ] ; then\n            for movedFramework in \"${movedFrameworks[@]}\"\n            do\n                codesign --force --deep --sign \"${EXPANDED_CODE_SIGN_IDENTITY}\" --preserve-metadata=identifier,entitlements --timestamp=none \"${movedFramework}\"\n            done\n        else\n            echo \"Info: CODESIGNING is only needed for Debug on device (will be re-signed anyway when archiving) \"\n        fi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1600,6 +1623,11 @@
 			isa = PBXTargetDependency;
 			target = 5BC347AD2132944900DEB45D /* IcroKit */;
 			targetProxy = 5BC347B32132944900DEB45D /* PBXContainerItemProxy */;
+		};
+		C5023CB4274E2E8F0034BDC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BC347AD2132944900DEB45D /* IcroKit */;
+			targetProxy = C5023CB3274E2E8F0034BDC9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2412,6 +2440,14 @@
 			package = 5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */;
 			productName = AppDelegateComponent;
 		};
+		C5023CB6274E2F5C0034BDC9 /* Client */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Client;
+		};
+		C5023CB8274E2F5C0034BDC9 /* InsertLinkView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InsertLinkView;
+		};
 		C51F847F267F1FFB002A018E /* Client */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Client;
@@ -2421,10 +2457,6 @@
 			productName = Client;
 		};
 		C51F8488267F207B002A018E /* Client */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Client;
-		};
-		C51F848A267F20E2002A018E /* Client */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Client;
 		};
@@ -2475,19 +2507,10 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Style;
 		};
-		C5921FAD27463E1600401CD8 /* Sourceful */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C5E793E72744EA260039A23B /* XCRemoteSwiftPackageReference "Sourceful" */;
-			productName = Sourceful;
-		};
 		C5921FB427463E2500401CD8 /* Sourceful */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C5E793E72744EA260039A23B /* XCRemoteSwiftPackageReference "Sourceful" */;
 			productName = Sourceful;
-		};
-		C5C450B8274393900090377B /* InsertLinkView */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = InsertLinkView;
 		};
 		C5C450BA2743955D0090377B /* InsertLinkView */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -2508,11 +2531,6 @@
 			productName = Sourceful;
 		};
 		C5F50598274CC9DC00BCDC0F /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C5F7F79324C41A6B009BD2F8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		C5F5059A274CCA2A00BCDC0F /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C5F7F79324C41A6B009BD2F8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;

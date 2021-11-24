@@ -36,6 +36,11 @@ Push a new beta build to TestFlight
 fastlane ios beta_ci
 ```
 
+### ios upload_test
+```
+fastlane ios upload_test
+```
+
 
 ----
 
