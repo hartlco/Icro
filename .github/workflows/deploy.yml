@@ -19,3 +19,5 @@ jobs:
       run: echo ${{ secrets.APPSTORE_KEYFILE }} > fastlane/BAA6SVWYPF.json
     - name: Fastlane Beta CI
       run: bundle exec fastlane beta_ci
+      env:
+        MATCH_PASSWORD: ${{ secrets.KEYSTORE_PASSPHRASE }}
