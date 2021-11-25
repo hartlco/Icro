@@ -6,7 +6,6 @@
 import UIKit
 import IcroKit
 import Style
-import IcroUIKit
 import SwiftUI
 import Settings
 import VerticalTabView

@@ -4,7 +4,6 @@
 //
 
 import IcroKit
-import IcroUIKit
 import SwiftUI
 
 struct ListView: UIViewControllerRepresentable {

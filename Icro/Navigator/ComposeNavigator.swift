@@ -5,7 +5,6 @@
 
 import UIKit
 import IcroKit
-import IcroUIKit
 import SwiftUI
 import InsertLinkView
 import ImageViewer

@@ -5,7 +5,6 @@
 
 import UIKit
 import Social
-import IcroUIKit
 import IcroKit
 import MobileCoreServices
 import SwiftUI

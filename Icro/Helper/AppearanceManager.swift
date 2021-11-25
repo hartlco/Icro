@@ -6,7 +6,6 @@
 import UIKit
 import Style
 import IcroKit
-import IcroUIKit
 
 final class AppearanceManager {
     static let shared = AppearanceManager()

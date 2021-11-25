@@ -6,7 +6,6 @@
 import UIKit
 import Style
 import IcroKit
-import IcroUIKit
 import DropdownTitleView
 
 final class ListViewController: UIViewController, LoadingViewController {

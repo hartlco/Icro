@@ -6,7 +6,6 @@
 import UIKit
 import SafariServices
 import IcroKit
-import IcroUIKit
 import AVKit
 import SwiftUI
 import Settings

@@ -5,7 +5,6 @@
 
 import Foundation
 import IcroKit
-import IcroUIKit
 import ImageViewer
 
 final class ProfileViewConfigurator: NSObject {

@@ -5,7 +5,6 @@
 
 import Foundation
 import IcroKit
-import IcroUIKit
 import Kingfisher
 import ImageViewer
 

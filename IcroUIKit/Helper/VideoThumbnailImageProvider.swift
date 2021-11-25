@@ -3,7 +3,7 @@
 //  Copyright © 2019 Martin Hartl. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Kingfisher
 import AVFoundation
 

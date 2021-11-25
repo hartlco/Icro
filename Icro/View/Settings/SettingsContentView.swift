@@ -9,7 +9,6 @@
 import SwiftUI
 import Combine
 import SafariServices
-import IcroUIKit
 import IcroKit
 
 struct SettingsContentView: View {

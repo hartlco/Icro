@@ -5,7 +5,6 @@
 
 import UIKit
 import IcroKit
-import IcroUIKit
 import Style
 import Settings
 
