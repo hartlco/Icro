@@ -71,7 +71,6 @@
 		5B6A565D21735A4F003C4D92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A565C21735A4F003C4D92 /* Functions.swift */; };
 		5B81E79A2206C62E008BEA16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81E7992206C62E008BEA16 /* Error.swift */; };
 		5B83B00D22D06EA8004C4D8D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B00C22D06EA8004C4D8D /* Alamofire */; };
-		5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83B01C22D11D64004C4D8D /* KeychainAccess */; };
 		5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B841ECD22E832F700CDA80C /* libiconv.tbd */; };
 		5B841ED322E8349600CDA80C /* UICollectionView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A7BF22E8313200D420BD /* UICollectionView+Dequeueable.swift */; };
 		5B869B08214E4633000A051C /* MicropubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B869B07214E4633000A051C /* MicropubEndpoint.swift */; };
@@ -494,7 +493,6 @@
 				5B83B00D22D06EA8004C4D8D /* Alamofire in Frameworks */,
 				C51F8487267F201A002A018E /* Client in Frameworks */,
 				C5CE39EF23CB710D0095013A /* Settings in Frameworks */,
-				5B83B01D22D11D64004C4D8D /* KeychainAccess in Frameworks */,
 				5B841ECF22E8331700CDA80C /* libiconv.tbd in Frameworks */,
 				5B8FD3A22360D59800BC72F2 /* TypedSymbols in Frameworks */,
 				C550D77C2740F0FC00E10CF6 /* Style in Frameworks */,
@@ -1173,7 +1171,6 @@
 			name = IcroKit;
 			packageProductDependencies = (
 				5B83B00C22D06EA8004C4D8D /* Alamofire */,
-				5B83B01C22D11D64004C4D8D /* KeychainAccess */,
 				5B8FD3A12360D59800BC72F2 /* TypedSymbols */,
 				C5CE39EE23CB710D0095013A /* Settings */,
 				C544112023F7E81400428609 /* SwiftSoup */,
@@ -2424,11 +2421,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		5B83B01C22D11D64004C4D8D /* KeychainAccess */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */;
-			productName = KeychainAccess;
 		};
 		5B8FD3A12360D59800BC72F2 /* TypedSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
