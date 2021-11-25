@@ -1,4 +1,4 @@
-git_url("git@github.com:hartlco/Icro-certificates.git")
+git_url("https://github.com/hartlco/Icro-certificates")
 app_identifier(["co.hartl.Icro", "co.hartl.Icro.Icro-Share"])
 storage_mode("git")
 derive_catalyst_app_identifier(true)
