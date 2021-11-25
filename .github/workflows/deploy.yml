@@ -15,8 +15,7 @@ jobs:
       uses: snickerbockers/submodules-init@v4
     - name: Bundle Install
       run: bundle install
+    - name: Install Keyfile
+      run: echo ${{ secrets.APPSTORE_KEYFILE }} > fastlane/BAA6SVWYPF.json
     - name: Fastlane Beta CI
       run: bundle exec fastlane beta_ci
-      env:
-        MATCH_PASSWORD: ${{ secrets.KEYSTORE_PASSPHRASE }}
-        FASTLANE_PASSWORD: ${{ secrets.APPSTORE_PASSWORD }}
