@@ -4,7 +4,7 @@
 //
 
 import Foundation
-import IcroKit
+import UIKit
 
 public protocol ComposeNavigatorProtocol {
 

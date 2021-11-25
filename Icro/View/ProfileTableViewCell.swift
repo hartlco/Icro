@@ -4,7 +4,6 @@
 //
 
 import UIKit
-import IcroKit
 import Style
 import Settings
 

@@ -6,7 +6,6 @@
 import UIKit
 import XCTest
 @testable import Icro
-@testable import IcroKit
 @testable import Style
 
 class HTMLContentTests: XCTestCase {

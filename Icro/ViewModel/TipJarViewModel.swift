@@ -5,7 +5,6 @@
 
 import Foundation
 import StoreKit
-import IcroKit
 import SwiftUI
 import Combine
 

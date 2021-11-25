@@ -4,7 +4,6 @@
 //
 
 import Foundation
-import IcroKit
 import ImageViewer
 
 final class ProfileViewConfigurator: NSObject {

@@ -4,7 +4,6 @@
 //
 
 import UIKit
-import IcroKit
 
 public protocol ItemNavigatorProtocol {
     func open(url: URL)

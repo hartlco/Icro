@@ -5,7 +5,6 @@
 
 import Foundation
 import MessageUI
-import IcroKit
 import SwiftUI
 import Settings
 import Client

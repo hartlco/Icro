@@ -4,7 +4,6 @@
 //
 
 import Foundation
-import IcroKit
 import Kingfisher
 import ImageViewer
 

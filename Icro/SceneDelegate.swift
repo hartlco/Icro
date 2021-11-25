@@ -4,7 +4,6 @@
 //
 
 import UIKit
-import IcroKit
 import Settings
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {

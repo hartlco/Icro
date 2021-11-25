@@ -4,7 +4,6 @@
 //
 
 import UIKit
-import IcroKit
 import SwiftUI
 import InsertLinkView
 import ImageViewer

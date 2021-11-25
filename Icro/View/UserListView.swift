@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import IcroKit
 import Kingfisher
 
 struct UserListView: SwiftUI.View {

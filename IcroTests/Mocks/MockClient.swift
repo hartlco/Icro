@@ -4,7 +4,6 @@
 //
 
 import Foundation
-@testable import IcroKit
 import Client
 
 final class MockClient<B: Codable>: Client {

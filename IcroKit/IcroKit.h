@@ -15,4 +15,3 @@ FOUNDATION_EXPORT double IcroKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char IcroKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <IcroKit/PublicHeader.h>
-#import "WPXMLRPC.h"

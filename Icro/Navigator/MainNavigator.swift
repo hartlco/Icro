@@ -4,7 +4,6 @@
 //
 
 import UIKit
-import IcroKit
 import SafariServices
 
 final class MainNavigator {

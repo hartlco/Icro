@@ -4,7 +4,6 @@
 //
 
 import SwiftUI
-import IcroKit
 
 struct TipJarView: View {
     @ObservedObject var viewModel: TipJarViewModel

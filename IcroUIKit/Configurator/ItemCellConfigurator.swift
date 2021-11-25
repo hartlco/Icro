@@ -5,7 +5,7 @@
 
 import Foundation
 import Kingfisher
-import IcroKit
+import UIKit
 
 public final class ItemCellConfigurator: NSObject {
     fileprivate let itemNavigator: ItemNavigatorProtocol

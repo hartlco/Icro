@@ -3,7 +3,6 @@
 //  Copyright © 2019 Martin Hartl. All rights reserved.
 //
 
-import IcroKit
 import SwiftUI
 
 struct ListView: UIViewControllerRepresentable {

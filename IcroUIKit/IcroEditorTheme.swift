@@ -5,9 +5,9 @@
 
 import Foundation
 import Sourceful
-import IcroKit
 import Style
 import Settings
+import UIKit
 
 final class IcroEditorTheme: SourceCodeTheme {
     var lineNumbersStyle: LineNumbersStyle? {

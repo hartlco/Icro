@@ -6,6 +6,7 @@
 import Foundation
 import Settings
 import Client
+import UIKit
 
 // swiftlint:disable type_body_length
 public class ListViewModel: NSObject {

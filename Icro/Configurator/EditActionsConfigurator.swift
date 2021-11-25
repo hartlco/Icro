@@ -5,7 +5,6 @@
 
 import UIKit
 import Style
-import IcroKit
 import TypedSymbols
 
 final class EditActionsConfigurator {

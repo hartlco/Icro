@@ -6,7 +6,7 @@
 import XCTest
 import Client
 @testable import Icro
-@testable import IcroKit
+
 
 class UserListViewModelTests: XCTestCase {
     func test_numberOfUsers() {

@@ -9,7 +9,6 @@
 import SwiftUI
 import Combine
 import SafariServices
-import IcroKit
 
 struct SettingsContentView: View {
     let dismissAction: () -> Void

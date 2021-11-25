@@ -5,7 +5,6 @@
 
 import SwiftUI
 import Combine
-import IcroKit
 import TypedSymbols
 import Settings
 import VerticalTabView
