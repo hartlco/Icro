@@ -1,0 +1,97 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "747c8db8d57b68d5e35275f10c92d55f982adbd4",
+          "version": "4.9.1"
+        }
+      },
+      {
+        "package": "AppDelegateComponent",
+        "repositoryURL": "https://github.com/hartlco/AppDelegateComponent",
+        "state": {
+          "branch": "master",
+          "revision": "5b251cc38a3430c24074bb47aab1cb9e4dd59664",
+          "version": null
+        }
+      },
+      {
+        "package": "Sourceful",
+        "repositoryURL": "https://github.com/hartlco/dropdowntitleview",
+        "state": {
+          "branch": "master",
+          "revision": "ad3652fc704ca3a7912e66f5285b1e902ead4057",
+          "version": null
+        }
+      },
+      {
+        "package": "ImageViewer",
+        "repositoryURL": "https://github.com/hartlco/ImageViewer",
+        "state": {
+          "branch": "master",
+          "revision": "5ce18ce9012955eb0e36d7f155a3aafc0d178917",
+          "version": null
+        }
+      },
+      {
+        "package": "KeychainAccess",
+        "repositoryURL": "https://github.com/hartlco/KeychainAccess",
+        "state": {
+          "branch": "master",
+          "revision": "8dbcaab61ad9017ef99a33a368ba63960cd5d034",
+          "version": null
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher",
+        "state": {
+          "branch": null,
+          "revision": "318e319998bf555c3e914d5c3adb6da05af86a32",
+          "version": "7.1.1"
+        }
+      },
+      {
+        "package": "SnapKit",
+        "repositoryURL": "https://github.com/SnapKit/SnapKit",
+        "state": {
+          "branch": null,
+          "revision": "d458564516e5676af9c70b4f4b2a9178294f1bc6",
+          "version": "5.0.1"
+        }
+      },
+      {
+        "package": "Sourceful",
+        "repositoryURL": "https://github.com/hartlco/Sourceful",
+        "state": {
+          "branch": "master",
+          "revision": "780441f39fcb3788477a766d2bbab320af808453",
+          "version": null
+        }
+      },
+      {
+        "package": "SwiftSoup",
+        "repositoryURL": "https://github.com/scinfu/SwiftSoup",
+        "state": {
+          "branch": null,
+          "revision": "02c63b7be50bda384f22c56c64d347231754a07e",
+          "version": "2.3.3"
+        }
+      },
+      {
+        "package": "TypedSymbols",
+        "repositoryURL": "https://github.com/hartlco/TypedSymbols.git",
+        "state": {
+          "branch": "master",
+          "revision": "e61c9a874a391cd3914bc92f1064740c9c60f33d",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
