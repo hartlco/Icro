@@ -49,6 +49,10 @@ public extension UICollectionView {
         register(T.nib, forCellWithReuseIdentifier: T.reuseIdentifier)
     }
 
+    func registerClass<T: UICollectionViewCell>(cellType: T.Type) {
+        register(T.self, forCellWithReuseIdentifier: T.reuseIdentifier)
+    }
+
     func dequeueCell<T: UICollectionViewCell>(ofType: T.Type,
                                               for indexPath: IndexPath) -> T {
         guard let cell = dequeueReusableCell(withReuseIdentifier: T.reuseIdentifier, for: indexPath) as? T else {

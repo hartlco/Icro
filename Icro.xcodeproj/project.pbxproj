@@ -82,7 +82,6 @@
 		C504652E274F77C60004B812 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
 		C504652F274F77C60004B812 /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */; };
 		C5046530274F77C60004B812 /* KeyboardInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3F68782098BBA200A24983 /* KeyboardInputView.xib */; };
-		C5046531274F77C60004B812 /* SingleImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */; };
 		C5046532274F77C60004B812 /* KeyboardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F68762098BB8800A24983 /* KeyboardInputView.swift */; };
 		C5046533274F77C60004B812 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */; };
 		C5046534274F77C70004B812 /* VideoThumbnailImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */; };
@@ -99,7 +98,6 @@
 		C504653F274F77C70004B812 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
 		C5046540274F77C70004B812 /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */; };
 		C5046541274F77C70004B812 /* KeyboardInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3F68782098BBA200A24983 /* KeyboardInputView.xib */; };
-		C5046542274F77C70004B812 /* SingleImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */; };
 		C5046543274F77C70004B812 /* KeyboardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F68762098BB8800A24983 /* KeyboardInputView.swift */; };
 		C5046544274F77C70004B812 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */; };
 		C5046545274F77CD0004B812 /* IcroEditorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F423B69636006ED94F /* IcroEditorTheme.swift */; };
@@ -358,7 +356,6 @@
 		5BC1384121C632FF0040353C /* Icro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Icro.entitlements; sourceTree = "<group>"; };
 		5BC1384221C6332B0040353C /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		5BC184D322E47CE7000155DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BC184D422E47D2F000155DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BC184D522E47D34000155DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -652,7 +649,6 @@
 			isa = PBXGroup;
 			children = (
 				5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */,
-				5BC1820620790C930061F261 /* SingleImageCollectionViewCell.xib */,
 				5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */,
 				5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */,
 				5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */,
@@ -1239,7 +1235,6 @@
 				C504653C274F77C70004B812 /* ComposeViewController.xib in Resources */,
 				C5046541274F77C70004B812 /* KeyboardInputView.xib in Resources */,
 				5BC1384721C639160040353C /* Assets.xcassets in Resources */,
-				C5046542274F77C70004B812 /* SingleImageCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1279,7 +1274,6 @@
 				C5046530274F77C60004B812 /* KeyboardInputView.xib in Resources */,
 				5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */,
 				C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */,
-				C5046531274F77C60004B812 /* SingleImageCollectionViewCell.xib in Resources */,
 				5B609F1423091FD600F2C1BC /* ListViewController.xib in Resources */,
 				5B20952122F6B0CF00C06123 /* acknowledgements.json in Resources */,
 				5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */,

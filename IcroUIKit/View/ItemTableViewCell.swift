@@ -71,7 +71,7 @@ public final class ItemTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageCollectionView: UICollectionView! {
         didSet {
-            imageCollectionView.register(cellType: SingleImageCollectionViewCell.self)
+            imageCollectionView.registerClass(cellType: SingleImageCollectionViewCell.self)
             imageCollectionView.delegate = self
             imageCollectionView.dataSource = self
             imageCollectionView.allowsSelection = true
