@@ -117,6 +117,7 @@ public class ListViewModel: NSObject {
         Task {
             do {
                 let value = try await client.load(resource: type.resource)
+                self.isLoading = false
 
                 DispatchQueue.main.async {
                     self.updateShowLoadMoreInBetweenAfterLoadMore(loadedNewItems: value.items)
@@ -127,6 +128,7 @@ public class ListViewModel: NSObject {
                 }
             } catch {
                 DispatchQueue.main.async {
+                    self.isLoading = false
                     self.didFinishWithError(error)
                 }
             }
