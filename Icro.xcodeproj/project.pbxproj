@@ -42,7 +42,6 @@
 		5B609F182309203400F2C1BC /* ItemNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F172309203400F2C1BC /* ItemNavigator.swift */; };
 		5B609F1A2309204B00F2C1BC /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F192309204B00F2C1BC /* TipJarViewModel.swift */; };
 		5B609F1C2309206600F2C1BC /* ComposeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F1B2309206600F2C1BC /* ComposeNavigator.swift */; };
-		5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B689BAB20837ECE005B9874 /* TabBarViewController.xib */; };
 		5B69E65122AA16310081CDFB /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsContentView.swift */; };
 		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
 		5B99C67A229FB47200437552 /* UITableView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99C679229FB47200437552 /* UITableView+Keyboard.swift */; };
@@ -113,6 +112,7 @@
 		C5046553274F795A0004B812 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5046552274F795A0004B812 /* Sourceful */; };
 		C51F8480267F1FFB002A018E /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C51F847F267F1FFB002A018E /* Client */; };
 		C544111E23F7CED800428609 /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C544111D23F7CED800428609 /* Client */; };
+		C5443C642758AF1500F5BB1C /* LoginOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5443C632758AF1500F5BB1C /* LoginOverlayView.swift */; };
 		C5454DAE23CB9A5C00739A6C /* VerticalTabView in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DAD23CB9A5C00739A6C /* VerticalTabView */; };
 		C5454DB023CB9F4A00739A6C /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DAF23CB9F4A00739A6C /* Settings */; };
 		C5454DB223CB9F5000739A6C /* VerticalTabView in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DB123CB9F5000739A6C /* VerticalTabView */; };
@@ -329,7 +329,6 @@
 		5B66EE6D227D734800317FE3 /* MediaEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEndpoint.swift; sourceTree = "<group>"; };
 		5B66EE73227D74DF00317FE3 /* MockClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockClient.swift; sourceTree = "<group>"; };
 		5B66EE75227D780300317FE3 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
-		5B689BAB20837ECE005B9874 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TabBarViewController.xib; path = ViewController/TabBarViewController.xib; sourceTree = "<group>"; };
 		5B69E65022AA16310081CDFB /* SettingsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsContentView.swift; path = View/Settings/SettingsContentView.swift; sourceTree = "<group>"; };
 		5B6A565C21735A4F003C4D92 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		5B6BCC3021A2F215007225C2 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
@@ -385,6 +384,7 @@
 		7D2709F418E0D6293A75A02B /* Pods_Icro_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Share.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2175C9DAAFEF9FA508D0A47 /* Pods_Icro_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF71E43E214287CF007E88BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C5443C632758AF1500F5BB1C /* LoginOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginOverlayView.swift; path = View/LoginOverlayView.swift; sourceTree = "<group>"; };
 		C5454DA723CB991A00739A6C /* VerticalTabView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = VerticalTabView; sourceTree = "<group>"; };
 		C550D7782740F0BC00E10CF6 /* Style */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Style; sourceTree = "<group>"; };
 		C550D77F2740F79000E10CF6 /* Font+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Settings.swift"; sourceTree = "<group>"; };
@@ -757,7 +757,6 @@
 				5B609F1123091FD500F2C1BC /* ListViewController.swift */,
 				5B609F1223091FD600F2C1BC /* ListViewController.xib */,
 				5B8754F92070137300018DFA /* TabBarViewController.swift */,
-				5B689BAB20837ECE005B9874 /* TabBarViewController.xib */,
 				5B20951C22F6B05800C06123 /* VerticalTabsSplitViewController.swift */,
 			);
 			name = ViewController;
@@ -980,6 +979,7 @@
 				5B51621A22B2C900009C0064 /* LoginView.swift */,
 				5B165D8722BF436D00B851B2 /* TipJarView.swift */,
 				5B28C8CF22C89B2600A46C52 /* UserListView.swift */,
+				C5443C632758AF1500F5BB1C /* LoginOverlayView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1276,7 +1276,6 @@
 				C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */,
 				5B609F1423091FD600F2C1BC /* ListViewController.xib in Resources */,
 				5B20952122F6B0CF00C06123 /* acknowledgements.json in Resources */,
-				5B689BAD20837ECE005B9874 /* TabBarViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1392,6 +1391,7 @@
 				5B69E65122AA16310081CDFB /* SettingsContentView.swift in Sources */,
 				5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */,
 				5B39B7BE22AD504A004D5134 /* ListView.swift in Sources */,
+				C5443C642758AF1500F5BB1C /* LoginOverlayView.swift in Sources */,
 				C58956EB27500B3D00B7E392 /* Date+Ago.swift in Sources */,
 				5B583723212861220076121E /* ProfileViewConfigurator.swift in Sources */,
 				C58956EC27500B3D00B7E392 /* ListViewModelListType.swift in Sources */,

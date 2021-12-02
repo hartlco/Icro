@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol ItemNavigatorProtocol {
+public protocol ItemNavigatorProtocol: AnyObject {
     func open(url: URL)
 
     func open(author: Author)

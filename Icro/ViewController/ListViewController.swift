@@ -6,6 +6,7 @@
 import UIKit
 import Style
 import DropdownTitleView
+import SwiftUI
 
 final class ListViewController: UIViewController, LoadingViewController {
     @IBOutlet fileprivate weak var tableView: UITableView! {
@@ -31,13 +32,14 @@ final class ListViewController: UIViewController, LoadingViewController {
 
     @IBOutlet private weak var unreadView: UIView!
     @IBOutlet private weak var unreadLabel: UILabel!
-    @IBOutlet private weak var loginLabel: UILabel!
-    @IBOutlet private weak var loginView: UIView!
+
     private var isLoading = false
     private var rowHeightEstimate = [String: CGFloat]()
     private let notificationCenter: NotificationCenter
     private let loadingSpinner = UIActivityIndicatorView(style: .medium)
     private let loadingBarButtonItem: UIBarButtonItem
+
+    private let loginOverlayHostingViewController: UIHostingController<LoginOverlayView>
 
     private var dataSource: UITableViewDiffableDataSource<ListViewModel.Section, ListViewModel.ViewType>?
 
@@ -51,6 +53,11 @@ final class ListViewController: UIViewController, LoadingViewController {
         editActionsConfigurator = EditActionsConfigurator(itemNavigator: itemNavigator, viewModel: viewModel)
         self.notificationCenter = notificationCenter
         self.loadingBarButtonItem = UIBarButtonItem(customView: loadingSpinner)
+        self.loginOverlayHostingViewController = UIHostingController(
+            rootView: LoginOverlayView { [weak itemNavigator] in
+                itemNavigator?.showLogin()
+            }
+        )
 
         super.init(nibName: "ListViewController", bundle: nil)
 
@@ -124,7 +131,13 @@ final class ListViewController: UIViewController, LoadingViewController {
         super.viewWillAppear(animated)
         updateAppearance()
         updateDiscoverySectionsIfNeeded()
-        loginView.isHidden = !viewModel.showsLoginView
+
+        if viewModel.showsLoginView {
+            showLoginOverlay()
+        } else {
+            hideLoginOverlay()
+        }
+
         navigationItem.rightBarButtonItem?.isEnabled = viewModel.barButtonEnabled
         navigationItem.leftBarButtonItem?.isEnabled = viewModel.barButtonEnabled
     }
@@ -215,6 +228,19 @@ final class ListViewController: UIViewController, LoadingViewController {
             navigationController.navigationBar.isHidden = navigationController.viewControllers.count > 1 ? false : true
         }
         #endif
+    }
+
+    private func showLoginOverlay() {
+        addChild(loginOverlayHostingViewController)
+        loginOverlayHostingViewController.view.frame = view.bounds
+        view.addSubview(loginOverlayHostingViewController.view)
+        loginOverlayHostingViewController.didMove(toParent: self)
+    }
+
+    private func hideLoginOverlay() {
+        loginOverlayHostingViewController.willMove(toParent: nil)
+        loginOverlayHostingViewController.view.removeFromSuperview()
+        loginOverlayHostingViewController.removeFromParent()
     }
 }
 

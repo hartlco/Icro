@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14865.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController">
             <connections>
-                <outlet property="loginLabel" destination="lzf-hW-gSq" id="Vhb-f2-EhW"/>
-                <outlet property="loginView" destination="mTp-vb-XJe" id="6Kk-PP-nSS"/>
                 <outlet property="tableView" destination="6st-4k-O1Z" id="9d4-Qj-kh0"/>
                 <outlet property="unreadLabel" destination="dTo-bR-xcK" id="nU8-h0-jY7"/>
                 <outlet property="unreadView" destination="VeU-rW-Mbg" id="89p-Yh-osn"/>
@@ -25,7 +24,7 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6st-4k-O1Z">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <color key="separatorColor" name="separatorColor"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="U23-59-Afg"/>
@@ -55,53 +54,17 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTp-vb-XJe">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qcM-sU-AmK">
-                            <rect key="frame" x="77.5" y="302" width="220" height="63.5"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You need to be logged in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzf-hW-gSq">
-                                    <rect key="frame" x="0.0" y="0.0" width="220" height="20.5"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOe-KC-Jyz">
-                                    <rect key="frame" x="0.0" y="30.5" width="220" height="33"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                    <state key="normal" title="Log In"/>
-                                    <connections>
-                                        <action selector="loginPressed:" destination="-1" eventType="touchUpInside" id="NLa-Jv-3rb"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="220" id="onA-de-hu8"/>
-                            </constraints>
-                        </stackView>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstItem="qcM-sU-AmK" firstAttribute="centerX" secondItem="mTp-vb-XJe" secondAttribute="centerX" id="4Zo-NW-0B2"/>
-                        <constraint firstItem="qcM-sU-AmK" firstAttribute="centerY" secondItem="mTp-vb-XJe" secondAttribute="centerY" id="SbQ-72-5j9"/>
-                    </constraints>
-                </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="CPL-Gv-fyg"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="mTp-vb-XJe" firstAttribute="leading" secondItem="CPL-Gv-fyg" secondAttribute="leading" id="Ds9-PZ-vgS"/>
                 <constraint firstItem="CPL-Gv-fyg" firstAttribute="bottom" secondItem="6st-4k-O1Z" secondAttribute="bottom" id="ETh-4r-VYt"/>
-                <constraint firstItem="CPL-Gv-fyg" firstAttribute="trailing" secondItem="mTp-vb-XJe" secondAttribute="trailing" id="TfG-R8-BMr"/>
-                <constraint firstItem="CPL-Gv-fyg" firstAttribute="bottom" secondItem="mTp-vb-XJe" secondAttribute="bottom" id="VfP-z5-LsQ"/>
                 <constraint firstItem="6st-4k-O1Z" firstAttribute="leading" secondItem="CPL-Gv-fyg" secondAttribute="leading" id="bkL-ly-8UA"/>
                 <constraint firstItem="VeU-rW-Mbg" firstAttribute="top" secondItem="6st-4k-O1Z" secondAttribute="top" constant="-4" id="g11-ep-p4W"/>
                 <constraint firstItem="VeU-rW-Mbg" firstAttribute="leading" secondItem="CPL-Gv-fyg" secondAttribute="leading" constant="12" id="oLW-DA-mFk"/>
                 <constraint firstItem="CPL-Gv-fyg" firstAttribute="trailing" secondItem="6st-4k-O1Z" secondAttribute="trailing" id="v2N-qK-Ptq"/>
-                <constraint firstItem="mTp-vb-XJe" firstAttribute="top" secondItem="CPL-Gv-fyg" secondAttribute="top" id="vfm-fR-Wl2"/>
                 <constraint firstItem="6st-4k-O1Z" firstAttribute="top" secondItem="CPL-Gv-fyg" secondAttribute="top" id="xMl-HH-xv6"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="CPL-Gv-fyg"/>
             <point key="canvasLocation" x="85.5" y="53.5"/>
         </view>
     </objects>
@@ -112,5 +75,8 @@
         <namedColor name="separatorColor">
             <color white="0.83899998664855957" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
