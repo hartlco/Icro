@@ -30,8 +30,11 @@ final class ListViewController: UIViewController, LoadingViewController {
     private var titleView: DropdownTitleView?
     private typealias DiffableDataSource = EditableTableViewDiffableDataSource
 
-    @IBOutlet private weak var unreadView: UIView!
-    @IBOutlet private weak var unreadLabel: UILabel!
+    private let unreadView: UnreadView = {
+        let view = UnreadView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     private var isLoading = false
     private var rowHeightEstimate = [String: CGFloat]()
@@ -62,6 +65,13 @@ final class ListViewController: UIViewController, LoadingViewController {
         super.init(nibName: "ListViewController", bundle: nil)
 
         title = viewModel.title
+
+        view.addSubview(unreadView)
+
+        NSLayoutConstraint.activate([
+            unreadView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: UnreadView.Constants.mainViewLeading),
+            unreadView.topAnchor.constraint(equalTo: view.topAnchor, constant: -UnreadView.Constants.cornerRadius)
+        ])
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -321,7 +331,8 @@ extension ListViewController: UITableViewDelegate {
             unreadView.isHidden = true
             return
         }
-        unreadLabel.text = String(count)
+
+        unreadView.setCount(count)
 
         if count == 0 {
             unreadView.isHidden = true
@@ -431,5 +442,55 @@ extension ListViewController {
 private final class EditableTableViewDiffableDataSource: UITableViewDiffableDataSource<ListViewModel.Section, ListViewModel.ViewType> {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         true
+    }
+}
+
+private final class UnreadView: UIView {
+    enum Constants {
+        static let mainViewLeading: CGFloat = 12.0
+
+        static let labelPadding: CGFloat = 10.0
+
+        static let cornerRadius: CGFloat = 4.0
+        static let height: CGFloat = 24.0
+    }
+
+    private let unreadLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.font = .boldSystemFont(ofSize: 12.0)
+
+        return label
+    }()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        addSubview(unreadLabel)
+
+        NSLayoutConstraint.activate([
+            unreadLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.labelPadding),
+            unreadLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.labelPadding),
+            unreadLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.cornerRadius),
+            unreadLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+            heightAnchor.constraint(equalToConstant: Constants.height)
+        ])
+
+        backgroundColor = Color.accent
+    }
+
+    override func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+
+        layer.cornerRadius = Constants.cornerRadius
+    }
+
+    func setCount(_ count: Int) {
+        unreadLabel.text = String(count)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

@@ -897,9 +897,9 @@
 		C5FA2AB71EB4482C006DEB40 = {
 			isa = PBXGroup;
 			children = (
+				C55D7AC523F7C756004E5DBB /* Icro.xctestplan */,
 				C5C450B2274392510090377B /* InsertLinkView */,
 				C550D7782740F0BC00E10CF6 /* Style */,
-				C55D7AC523F7C756004E5DBB /* Icro.xctestplan */,
 				C553DD5023F7CABC0001E7DF /* Client */,
 				C5454DA723CB991A00739A6C /* VerticalTabView */,
 				C5CE39ED23CB70550095013A /* Settings */,
