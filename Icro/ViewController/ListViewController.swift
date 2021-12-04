@@ -9,18 +9,22 @@ import DropdownTitleView
 import SwiftUI
 
 final class ListViewController: UIViewController, LoadingViewController {
-    @IBOutlet fileprivate weak var tableView: UITableView! {
-        didSet {
-            tableView.refreshControl = UIRefreshControl()
-            tableView.refreshControl?.addTarget(viewModel, action: #selector(ListViewModel.load), for: .valueChanged)
-            tableView.register(cellType: ItemTableViewCell.self)
-            tableView.register(cellType: ProfileTableViewCell.self)
-            tableView.registerClass(cellType: LoadMoreTableViewCell.self)
-            tableView.estimatedRowHeight = UITableView.automaticDimension
-            tableView.rowHeight = UITableView.automaticDimension
-            tableView.separatorColor = Color.separatorColor
-        }
-    }
+    fileprivate lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+
+        tableView.separatorColor = Color.separatorColor
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(viewModel, action: #selector(ListViewModel.load), for: .valueChanged)
+        tableView.register(cellType: ItemTableViewCell.self)
+        tableView.register(cellType: ProfileTableViewCell.self)
+        tableView.registerClass(cellType: LoadMoreTableViewCell.self)
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.separatorColor = Color.separatorColor
+
+        return tableView
+    }()
 
     private let viewModel: ListViewModel
     private let cellConfigurator: ItemCellConfigurator
@@ -62,16 +66,23 @@ final class ListViewController: UIViewController, LoadingViewController {
             }
         )
 
-        super.init(nibName: "ListViewController", bundle: nil)
+        super.init(nibName: nil, bundle: nil)
 
         title = viewModel.title
 
+        view.addSubview(tableView)
         view.addSubview(unreadView)
 
         NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
             unreadView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: UnreadView.Constants.mainViewLeading),
             unreadView.topAnchor.constraint(equalTo: view.topAnchor, constant: -UnreadView.Constants.cornerRadius)
         ])
+
+        tableView.delegate = self
     }
 
     required init?(coder aDecoder: NSCoder) {

@@ -37,7 +37,6 @@
 		5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837292128618B0076121E /* UserListViewModel.swift */; };
 		5B609F1023091FA900F2C1BC /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F0F23091FA900F2C1BC /* ViewModelState.swift */; };
 		5B609F1323091FD600F2C1BC /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F1123091FD500F2C1BC /* ListViewController.swift */; };
-		5B609F1423091FD600F2C1BC /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B609F1223091FD600F2C1BC /* ListViewController.xib */; };
 		5B609F162309200400F2C1BC /* GalleryDataSource+ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F152309200300F2C1BC /* GalleryDataSource+ImageViewer.swift */; };
 		5B609F182309203400F2C1BC /* ItemNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F172309203400F2C1BC /* ItemNavigator.swift */; };
 		5B609F1A2309204B00F2C1BC /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F192309204B00F2C1BC /* TipJarViewModel.swift */; };
@@ -319,7 +318,6 @@
 		5B5FE65023461A3F003C6F4D /* PushRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushRegistration.swift; sourceTree = "<group>"; };
 		5B609F0F23091FA900F2C1BC /* ViewModelState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModelState.swift; path = ViewModel/ViewModelState.swift; sourceTree = "<group>"; };
 		5B609F1123091FD500F2C1BC /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ViewController/ListViewController.swift; sourceTree = "<group>"; };
-		5B609F1223091FD600F2C1BC /* ListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListViewController.xib; path = ViewController/ListViewController.xib; sourceTree = "<group>"; };
 		5B609F152309200300F2C1BC /* GalleryDataSource+ImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GalleryDataSource+ImageViewer.swift"; path = "Helper/GalleryDataSource+ImageViewer.swift"; sourceTree = "<group>"; };
 		5B609F172309203400F2C1BC /* ItemNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemNavigator.swift; path = Navigator/ItemNavigator.swift; sourceTree = "<group>"; };
 		5B609F192309204B00F2C1BC /* TipJarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipJarViewModel.swift; path = ViewModel/TipJarViewModel.swift; sourceTree = "<group>"; };
@@ -755,7 +753,6 @@
 			isa = PBXGroup;
 			children = (
 				5B609F1123091FD500F2C1BC /* ListViewController.swift */,
-				5B609F1223091FD600F2C1BC /* ListViewController.xib */,
 				5B8754F92070137300018DFA /* TabBarViewController.swift */,
 				5B20951C22F6B05800C06123 /* VerticalTabsSplitViewController.swift */,
 			);
@@ -1274,7 +1271,6 @@
 				C5046530274F77C60004B812 /* KeyboardInputView.xib in Resources */,
 				5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */,
 				C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */,
-				5B609F1423091FD600F2C1BC /* ListViewController.xib in Resources */,
 				5B20952122F6B0CF00C06123 /* acknowledgements.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
