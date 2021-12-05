@@ -17,7 +17,7 @@ final class ListViewController: UIViewController, LoadingViewController {
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(viewModel, action: #selector(ListViewModel.load), for: .valueChanged)
         tableView.register(cellType: ItemTableViewCell.self)
-        tableView.register(cellType: ProfileTableViewCell.self)
+        tableView.registerClass(cellType: HostingCell<ProfileCellView>.self)
         tableView.registerClass(cellType: LoadMoreTableViewCell.self)
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
@@ -321,9 +321,9 @@ extension ListViewController: UITableViewDelegate {
 
     private func authorCell(for author: Author,
                             in tableView: UITableView,
-                            at indexPath: IndexPath) -> ProfileTableViewCell {
-        let cell = tableView.dequeueCell(ofType: ProfileTableViewCell.self, for: indexPath)
-        profileViewConfigurator.configure(cell, using: author)
+                            at indexPath: IndexPath) -> HostingCell<ProfileCellView> {
+        let cell = tableView.dequeueCell(ofType: HostingCell<ProfileCellView>.self, for: indexPath)
+        profileViewConfigurator.configure(cell, using: author, parentViewController: self)
         return cell
     }
 

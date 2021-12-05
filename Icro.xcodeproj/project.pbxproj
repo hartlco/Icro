@@ -57,8 +57,6 @@
 		5BCD7F0222BDE35D00CA5B6C /* MuteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCD7F0122BDE35D00CA5B6C /* MuteView.swift */; };
 		5BD95AFD2290A16100C74C52 /* AppearanceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD95AFC2290A16100C74C52 /* AppearanceComponent.swift */; };
 		5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */; };
-		5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */; };
-		5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */; };
 		5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
 		5BF2DAA6228802000055240D /* UserDefaultsMigrationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */; };
 		5BFCB8F6232E835F008D36E1 /* NotificationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFCB8F5232E835F008D36E1 /* NotificationComponent.swift */; };
@@ -189,6 +187,8 @@
 		C5CE39DC23CB6FA00095013A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CE39DB23CB6FA00095013A /* Assets.xcassets */; };
 		C5CE39DF23CB6FA00095013A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CE39DE23CB6FA00095013A /* Preview Assets.xcassets */; };
 		C5CE39E223CB6FA00095013A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CE39E023CB6FA00095013A /* Main.storyboard */; };
+		C5DEA4E1275B49C300530E96 /* HostingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DEA4E0275B49C300530E96 /* HostingCell.swift */; };
+		C5DEA4E3275B4A0C00530E96 /* ProfileCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DEA4E2275B4A0C00530E96 /* ProfileCellView.swift */; };
 		C5E793E92744EA260039A23B /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5E793E82744EA260039A23B /* Sourceful */; };
 		C5F50599274CC9DC00BCDC0F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C5F50598274CC9DC00BCDC0F /* Kingfisher */; };
 		C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */; };
@@ -370,8 +370,6 @@
 		5BDE18F4216A7A47001254F4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
-		5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileTableViewCell.swift; path = View/ProfileTableViewCell.swift; sourceTree = "<group>"; };
-		5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileTableViewCell.xib; path = View/ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryComponent.swift; sourceTree = "<group>"; };
 		5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMigrationComponent.swift; sourceTree = "<group>"; };
 		5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategory.swift; sourceTree = "<group>"; };
@@ -415,6 +413,8 @@
 		C5CE39E323CB6FA00095013A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5CE39E423CB6FA00095013A /* Icro_Next.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Icro_Next.entitlements; sourceTree = "<group>"; };
 		C5CE39ED23CB70550095013A /* Settings */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Settings; sourceTree = "<group>"; };
+		C5DEA4E0275B49C300530E96 /* HostingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HostingCell.swift; path = View/HostingCell.swift; sourceTree = "<group>"; };
+		C5DEA4E2275B4A0C00530E96 /* ProfileCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCellView.swift; path = View/ProfileCellView.swift; sourceTree = "<group>"; };
 		C5FA2AC01EB4482C006DEB40 /* Icro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Icro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -969,14 +969,14 @@
 			isa = PBXGroup;
 			children = (
 				5BF2DA972287E85D0055240D /* Settings */,
-				5BE945612079F8C7004F9FF4 /* ProfileTableViewCell.swift */,
-				5BE945622079F8C7004F9FF4 /* ProfileTableViewCell.xib */,
 				5BBC6702218EB0150090629C /* LoadMoreTableViewCell.swift */,
 				5B39B7BD22AD504A004D5134 /* ListView.swift */,
 				5B51621A22B2C900009C0064 /* LoginView.swift */,
 				5B165D8722BF436D00B851B2 /* TipJarView.swift */,
 				5B28C8CF22C89B2600A46C52 /* UserListView.swift */,
 				C5443C632758AF1500F5BB1C /* LoginOverlayView.swift */,
+				C5DEA4E0275B49C300530E96 /* HostingCell.swift */,
+				C5DEA4E2275B4A0C00530E96 /* ProfileCellView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1269,7 +1269,6 @@
 				BF707E742131C45600506E64 /* Localizable.strings in Resources */,
 				C5FA2ACE1EB4482C006DEB40 /* LaunchScreen.storyboard in Resources */,
 				C5046530274F77C60004B812 /* KeyboardInputView.xib in Resources */,
-				5BE945642079F8C7004F9FF4 /* ProfileTableViewCell.xib in Resources */,
 				C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */,
 				5B20952122F6B0CF00C06123 /* acknowledgements.json in Resources */,
 			);
@@ -1382,6 +1381,8 @@
 				C58956F727500B3D00B7E392 /* Media.swift in Sources */,
 				5B583728212861770076121E /* SettingsNavigator.swift in Sources */,
 				C504652D274F77C60004B812 /* KeyboardLayoutGuide.swift in Sources */,
+				C5DEA4E1275B49C300530E96 /* HostingCell.swift in Sources */,
+				C5DEA4E3275B4A0C00530E96 /* ProfileCellView.swift in Sources */,
 				C589571327500B9100B7E392 /* WPBase64Utils.m in Sources */,
 				C589571527500B9100B7E392 /* WPXMLRPCEncoder.m in Sources */,
 				5B69E65122AA16310081CDFB /* SettingsContentView.swift in Sources */,
@@ -1424,7 +1425,6 @@
 				5BBC6704218EB0150090629C /* LoadMoreTableViewCell.swift in Sources */,
 				C504652A274F77C60004B812 /* ItemCellConfigurator.swift in Sources */,
 				C5046533274F77C60004B812 /* ComposeViewController.swift in Sources */,
-				5BE945632079F8C7004F9FF4 /* ProfileTableViewCell.swift in Sources */,
 				C58956F827500B3D00B7E392 /* Functions.swift in Sources */,
 				5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */,
 				C5046525274F77C60004B812 /* Font+Settings.swift in Sources */,

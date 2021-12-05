@@ -5,6 +5,7 @@
 
 import Foundation
 import ImageViewer
+import UIKit
 
 final class ProfileViewConfigurator: NSObject {
     private let itemNavigator: ItemNavigatorProtocol
@@ -16,66 +17,55 @@ final class ProfileViewConfigurator: NSObject {
         self.viewModel = viewModel
     }
 
-    func configure(_ view: ProfileTableViewCell, using author: Author) {
+    func configure(_ view: HostingCell<ProfileCellView>, using author: Author, parentViewController: UIViewController) {
         guard let username = author.username,
             let followingCount = author.followingCount else {
                 emptyConfig(for: view)
                 return
         }
 
-        view.nameLabel.text = author.name
-        view.usernameLabel.text = "@" + username
-        view.avatarImageView.kf.setImage(with: author.avatar)
-        view.profileButton.setTitle((author.url?.absoluteString ?? ""), for: .normal)
-        view.profilePressed = { [weak self] in
+        var profileCellView = ProfileCellView(
+            avatarURL: author.avatar,
+            realname: author.name,
+            username: "@" + username,
+            aboutText: author.bio ?? "",
+            authorURL: author.url?.absoluteString ?? "",
+            isOwnProfile: author.isYou,
+            isFollowing: author.isFollowing ?? false,
+            followingCount: followingCount,
+            disabledAllInteractions: !viewModel.barButtonEnabled
+        )
+
+        profileCellView.profilePressed = {[weak self] in
             if let url = author.url {
                 self?.itemNavigator.open(url: url)
             }
         }
-        view.bioLabel.text = author.bio
 
-        view.followButton.isEnabled = true
-        view.followingButton.isEnabled = true
-
-        view.followPressed = { [weak view] in
-            view?.followButton.isEnabled = false
-            self.viewModel.toggleFollowForLoadedAuthor()
+        profileCellView.followPressed = { [weak self] in
+            self?.viewModel.toggleFollowForLoadedAuthor()
         }
 
-        view.followingPressed = { [weak self] in
+        profileCellView.followingPressed = { [weak self] in
             self?.itemNavigator.openFollowing(for: author)
         }
 
-        view.avatarPressed = { [weak self] in
+        profileCellView.avatarPressed = { [weak self] in
             let media = Media(url: author.avatar, isVideo: false)
             self?.itemNavigator.openMedia(media: [media], index: 0)
         }
 
-        view.followButton.isHidden = author.isYou
-
-        if let follows = author.isFollowing {
-            view.followButton.setTitle(follows ? NSLocalizedString("PROFILEVIEWCONFIGURATOR_UNFOLLOWBUTTON_TITLE", comment: "") :
-                NSLocalizedString("PROFILEVIEWCONFIGURATOR_FOLLOWBUTTON_TITLE", comment: ""),
-                                       for: .normal)
-        } else {
-            view.followButton.setTitle("", for: .normal)
-        }
-
-        view.followingButton.setTitle(
-            String(format: NSLocalizedString("PROFILEVIEWCONFIGURATOR_FOLLOWINGBUTTON_TITLE", comment: ""), followingCount), for: .normal)
-
-        view.followButton.isEnabled = viewModel.barButtonEnabled
-        view.followingButton.isEnabled = viewModel.barButtonEnabled
+        view.set(rootView: profileCellView, parentController: parentViewController)
     }
 
-    private func emptyConfig(for cell: ProfileTableViewCell) {
-        cell.avatarImageView.image = nil
-        cell.usernameLabel.text = ""
-        cell.nameLabel.text = ""
-        cell.followButton.setTitle("", for: .normal)
-        cell.followingButton.setTitle("", for: .normal)
-        cell.profileButton.setTitle("", for: .normal)
-        cell.bioLabel.text = ""
+    private func emptyConfig(for cell: HostingCell<ProfileCellView>) {
+//        cell.avatarImageView.image = nil
+//        cell.usernameLabel.text = ""
+//        cell.nameLabel.text = ""
+//        cell.followButton.setTitle("", for: .normal)
+//        cell.followingButton.setTitle("", for: .normal)
+//        cell.profileButton.setTitle("", for: .normal)
+//        cell.bioLabel.text = ""
 
     }
 }

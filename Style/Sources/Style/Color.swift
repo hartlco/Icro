@@ -29,6 +29,6 @@ public struct Color {
     public static var secondaryTextColor: XColor {
         return UIColor.secondaryLabel
     }
-    public static let buttonColor = XColor(named: "whiteTransparent")
+    public static let buttonColor = XColor(named: "whiteTransparent")!
     public static let successColor = XColor(named: "success")
 }
