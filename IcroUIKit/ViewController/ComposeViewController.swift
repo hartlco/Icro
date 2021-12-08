@@ -6,6 +6,7 @@
 import UIKit
 import MobileCoreServices
 import Style
+import SwiftUI
 import Kingfisher
 import Sourceful
 import UniformTypeIdentifiers
@@ -22,9 +23,11 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
     private let viewModel: ComposeViewModel
     private let composeNavigator: ComposeNavigatorProtocol
 
+    private var composeKeyboardInputViewModel: ComposeKeyboardInputViewModel?
+    private var keyboardInputViewController: UIHostingController<ComposeKeyboardInputView>?
+
     private var cancelButton: UIBarButtonItem?
     private let itemNavigator: ItemNavigatorProtocol
-    private let keyboardInputView = KeyboardInputView.instanceFromNib()
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
@@ -62,30 +65,39 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
         self.viewModel = viewModel
         self.composeNavigator = composeNavigator
         self.itemNavigator = itemNavigator
+
         super.init(nibName: "ComposeViewController", bundle: Bundle(for: ComposeViewController.self))
+
+        let composeKeyboardInputViewModel = ComposeKeyboardInputViewModel()
+        var composeKeyboardInputView = ComposeKeyboardInputView(viewModel: composeKeyboardInputViewModel)
+        self.composeKeyboardInputViewModel = composeKeyboardInputViewModel
+        composeKeyboardInputView.didPressPostButton = post
+        composeKeyboardInputView.didPressLinkButton = insertLink
+        composeKeyboardInputView.didPressImageButton = insertImage
+        composeKeyboardInputView.didPressCancelButton = canelImageUpload
+        self.keyboardInputViewController = UIHostingController(rootView: composeKeyboardInputView)
+
         title = localizedString(key: "COMPOSEVIEWCONTROLLER_TITLE")
         cancelButton = UIBarButtonItem(title: localizedString(key: "COMPOSEVIEWCONTROLLER_CANCELBUTTON_TITLE"),
                                        style: .plain, target: self, action: #selector(cancel))
         let sendButton = UIBarButtonItem(title: localizedString(key: "KEYBOARDINPUTVIEW_POSTBUTTON_TITLE"),
                                        style: .plain, target: self, action: #selector(post))
-        keyboardInputView.postButton.addTarget(self, action: #selector(post), for: .touchUpInside)
-        keyboardInputView.linkButton.addTarget(self, action: #selector(insertLink), for: .touchUpInside)
-        keyboardInputView.imageButton.addTarget(self, action: #selector(insertImage), for: .touchUpInside)
-        keyboardInputView.cancelButton.addTarget(self, action: #selector(canelImageUpload), for: .touchUpInside)
 
         viewModel.didUpdateImages = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.updateImageCollection()
-            strongSelf.keyboardInputView.update(for: strongSelf.syntaxView.text,
-                                                numberOfImages: strongSelf.viewModel.numberOfImages,
-                                                imageState: strongSelf.viewModel.imageState)
+            strongSelf.composeKeyboardInputViewModel?.update(for: strongSelf.syntaxView.text,
+                                                                numberOfImages: strongSelf.viewModel.numberOfImages,
+                                                                imageState: strongSelf.viewModel.imageState,
+                                                                hidesImageButton: !viewModel.imageUploadEnabled)
         }
 
         viewModel.didChangeImageState = { [weak self] imageState in
             guard let strongSelf = self else { return }
-            strongSelf.keyboardInputView.update(for: strongSelf.syntaxView.text,
-                                                numberOfImages: strongSelf.viewModel.numberOfImages,
-                                                imageState: strongSelf.viewModel.imageState)
+            strongSelf.composeKeyboardInputViewModel?.update(for: strongSelf.syntaxView.text,
+                                                                numberOfImages: strongSelf.viewModel.numberOfImages,
+                                                                imageState: strongSelf.viewModel.imageState,
+                                                                hidesImageButton: !viewModel.imageUploadEnabled)
         }
 
         navigationItem.leftBarButtonItem = cancelButton
@@ -128,12 +140,21 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
     // MARK: - Private
 
     private func setupKeyboardInputView() {
-        keyboardInputView.update(for: viewModel.startText,
-                                 numberOfImages: viewModel.numberOfImages,
-                                 imageState: viewModel.imageState)
-        keyboardInputView.backgroundColor = Color.accentSuperLight
-        keyboardInputView.translatesAutoresizingMaskIntoConstraints = false
-        keyboardInputView.addConstraint(NSLayoutConstraint(item: keyboardInputView,
+        guard let composeKeyboardInputViewModel = composeKeyboardInputViewModel, let keyboardInputViewController = keyboardInputViewController else {
+            return
+        }
+
+        composeKeyboardInputViewModel.update(
+            for: viewModel.startText,
+            numberOfImages: viewModel.numberOfImages,
+            imageState: viewModel.imageState,
+            hidesImageButton: !viewModel.imageUploadEnabled
+        )
+        addChild(keyboardInputViewController)
+        view.addSubview(keyboardInputViewController.view)
+        keyboardInputViewController.didMove(toParent: self)
+        keyboardInputViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        keyboardInputViewController.view.addConstraint(NSLayoutConstraint(item: keyboardInputViewController.view!,
                                                            attribute: .height,
                                                            relatedBy: .equal,
                                                            toItem: nil,
@@ -141,13 +162,11 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
                                                            multiplier: 1,
                                                            constant: Constants.KeyboardInputViewHeight))
 
-        keyboardInputView.imageButton.isHidden = !viewModel.canUploadImage
-
-        view.addSubview(keyboardInputView)
+        view.addSubview(keyboardInputViewController.view)
         if let layoutGuide = layoutGuide {
-            keyboardInputView.bottomAnchor.constraint(equalTo: layoutGuide.topGuide.topAnchor).isActive = true
-            keyboardInputView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-            keyboardInputView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+            keyboardInputViewController.view.bottomAnchor.constraint(equalTo: layoutGuide.topGuide.topAnchor).isActive = true
+            keyboardInputViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            keyboardInputViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         }
     }
 
@@ -185,7 +204,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
 
     @objc private func insertImage() {
         syntaxView.resignFirstResponder()
-        composeNavigator.openImageInsertion(sourceView: keyboardInputView.imageButton, imageInsertion: { [weak self] image in
+        composeNavigator.openImageInsertion(sourceView: keyboardInputViewController?.view ?? view, imageInsertion: { [weak self] image in
             self?.viewModel.insertImage(image: image)
         }, imageUpload: { [weak self] image in
             self?.viewModel.upload(image: image)
@@ -198,7 +217,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
 
     private func setButtonState(enabled: Bool) {
         cancelButton?.isEnabled = enabled
-        keyboardInputView.postButton.isEnabled = enabled
+        composeKeyboardInputViewModel?.postButtonEnabled = enabled
     }
 
     private func updateImageCollection() {
@@ -298,6 +317,9 @@ extension ComposeViewController: SyntaxTextViewDelegate {
     }
 
     public func didChangeText(_ syntaxTextView: SyntaxTextView) {
-        keyboardInputView.update(for: syntaxTextView.text, numberOfImages: viewModel.numberOfImages, imageState: viewModel.imageState)
+        composeKeyboardInputViewModel?.update(for: syntaxTextView.text,
+                                                 numberOfImages: viewModel.numberOfImages,
+                                                 imageState: viewModel.imageState,
+                                                 hidesImageButton: !viewModel.imageUploadEnabled)
     }
 }

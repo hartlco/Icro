@@ -64,15 +64,6 @@ public final class ComposeViewModel {
         }
     }
 
-    public var canUploadImage: Bool {
-        switch mode {
-        case .shareText, .shareURL:
-            return false
-        case .post, .reply, .shareImage:
-            return true
-        }
-    }
-
     public var startText: String {
         switch mode {
         case .post:
