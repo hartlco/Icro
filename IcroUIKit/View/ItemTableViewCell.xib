@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -76,20 +75,10 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </collectionView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMY-dB-hug">
-                        <rect key="frame" x="100" y="223" width="120" height="22"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="120" id="C6m-Dq-xzr"/>
-                        </constraints>
-                        <color key="tintColor" name="black-separatorColor"/>
-                        <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
-                        <state key="normal" image="ellipsis" catalog="system"/>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="RIb-aZ-J41" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="2LR-fx-iMR"/>
                     <constraint firstItem="1qd-s8-lxc" firstAttribute="leading" secondItem="FRj-XY-IWC" secondAttribute="leading" id="90I-wu-fvJ"/>
-                    <constraint firstItem="kMY-dB-hug" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="CNw-54-fgw"/>
                     <constraint firstItem="EpN-OF-974" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="52" id="Dqq-ht-meY"/>
                     <constraint firstItem="FRj-XY-IWC" firstAttribute="top" secondItem="RIb-aZ-J41" secondAttribute="top" id="FBd-g2-nRH"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1qd-s8-lxc" secondAttribute="trailing" constant="12" id="LpI-Le-RBh"/>
@@ -97,7 +86,6 @@
                     <constraint firstItem="EpN-OF-974" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="-16" id="QAa-Uu-zUT"/>
                     <constraint firstItem="FRj-XY-IWC" firstAttribute="leading" secondItem="RIb-aZ-J41" secondAttribute="trailing" constant="12" id="Ts9-vj-2zm"/>
                     <constraint firstAttribute="trailingMargin" secondItem="FRj-XY-IWC" secondAttribute="trailing" id="YHC-y6-bBL"/>
-                    <constraint firstAttribute="bottom" secondItem="kMY-dB-hug" secondAttribute="bottom" constant="4" id="YP0-hz-6LP"/>
                     <constraint firstItem="RIb-aZ-J41" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="cik-u9-oUU"/>
                     <constraint firstItem="EpN-OF-974" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="4" id="dVw-ge-H7V"/>
                     <constraint firstItem="1qd-s8-lxc" firstAttribute="top" secondItem="FRj-XY-IWC" secondAttribute="bottom" constant="4" id="jRU-HP-2nc"/>
@@ -105,7 +93,6 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="actionButton" destination="kMY-dB-hug" id="k7R-fo-tix"/>
                 <outlet property="atUsernameLabel" destination="sdI-JH-OCy" id="vVX-mO-kSw"/>
                 <outlet property="attributedLabel" destination="1qd-s8-lxc" id="LUY-0o-c9O"/>
                 <outlet property="avatarImageView" destination="RIb-aZ-J41" id="RK3-yf-jXh"/>
@@ -118,10 +105,4 @@
             <point key="canvasLocation" x="65.599999999999994" y="152.47376311844079"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="ellipsis" catalog="system" width="128" height="37"/>
-        <namedColor name="black-separatorColor">
-            <color red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>

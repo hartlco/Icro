@@ -11,6 +11,10 @@ import SnapKit
 import Settings
 
 public final class ItemTableViewCell: UITableViewCell {
+    enum Constants {
+        static let actionButtonWidth: CGFloat = 120.0
+    }
+
     var isFavorite: Bool = false
 
     @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!
@@ -67,7 +71,14 @@ public final class ItemTableViewCell: UITableViewCell {
         }
     }
 
-    @IBOutlet weak var actionButton: UIButton!
+    private let actionButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(symbol: .ellipsis), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = Style.Color.separatorColor
+
+        return button
+    }()
 
     @IBOutlet weak var imageCollectionView: UICollectionView! {
         didSet {
@@ -94,18 +105,22 @@ public final class ItemTableViewCell: UITableViewCell {
     override public func awakeFromNib() {
         super.awakeFromNib()
 
-        actionButton.showsMenuAsPrimaryAction = true
-        actionButton.menu = UIMenu(options: .displayInline, children: [
-            UIAction(title: "Test", handler: { _ in
-                print("test")
-            })
-        ])
+        setupActionButton()
 
         updateAppearance()
         let avatarGestureRecognizer = UITapGestureRecognizer(target: self,
                                                              action: #selector(didTapAvatarGestureRecognizer))
         avatarImageView.addGestureRecognizer(avatarGestureRecognizer)
         backgroundColor = Color.backgroundColor
+    }
+
+    private func setupActionButton() {
+        addSubview(actionButton)
+        NSLayoutConstraint.activate([
+            actionButton.widthAnchor.constraint(equalToConstant: Constants.actionButtonWidth),
+            actionButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            actionButton.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
     }
 
     deinit {
