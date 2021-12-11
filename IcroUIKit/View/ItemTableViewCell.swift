@@ -12,60 +12,67 @@ import Settings
 
 public final class ItemTableViewCell: UITableViewCell {
     enum Constants {
+        static let layoutSpace: CGFloat = 16.0
+
+        static let avatarImageHeightWidth = 42.0
         static let actionButtonWidth: CGFloat = 120.0
     }
 
     var isFavorite: Bool = false
 
-    @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!
+    let avatarImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.isUserInteractionEnabled = true
 
-    @IBOutlet weak var avatarImageView: UIImageView! {
-        didSet {
-            avatarImageView.layer.cornerRadius = 20
-            avatarImageView.clipsToBounds = true
-        }
-    }
-    @IBOutlet weak var attributedLabel: LinkLabel! {
-        didSet {
-            attributedLabel.isOpaque = true
-        }
-    }
-    @IBOutlet weak var usernameLabel: UILabel! {
-        didSet {
-            usernameLabel.isOpaque = true
-            usernameLabel.adjustsFontForContentSizeCategory = true
-            usernameLabel.font = Font().name
-        }
-    }
-    @IBOutlet weak var atUsernameLabel: UILabel! {
-        didSet {
-            atUsernameLabel.textColor = Color.secondaryTextColor
-            atUsernameLabel.isOpaque = true
-            atUsernameLabel.adjustsFontForContentSizeCategory = true
-            atUsernameLabel.font = Font().username
-        }
-    }
-    @IBOutlet weak var timeLabel: UILabel! {
-        didSet {
-            timeLabel.textColor = Color.secondaryTextColor
-            timeLabel.isOpaque = true
-            timeLabel.adjustsFontForContentSizeCategory = true
-            timeLabel.font = Font().username
-        }
-    }
+        imageView.layer.cornerRadius = 20
+        imageView.clipsToBounds = true
 
-    @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
+        return imageView
+    }()
+
+    let attributedLabel: LinkLabel = {
+        let label = LinkLabel()
+        label.isOpaque = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.isUserInteractionEnabled = true
+
+        return label
+    }()
+
+    let usernameLabel: UILabel = {
+        let label = UILabel()
+
+        label.isOpaque = true
+        label.adjustsFontForContentSizeCategory = true
+        label.font = Font().name
+
+        return label
+    }()
+
+    let atUsernameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        label.textColor = Color.secondaryTextColor
+        label.isOpaque = true
+        label.adjustsFontForContentSizeCategory = true
+        label.font = Font().username
+
+        return label
+    }()
 
     var itemID: String?
 
     var media = [Media]() {
         didSet {
             if media.count == 1 {
-                collectionViewHeightConstraint.constant = 240
+                collectionViewHeightConstraint?.constant = 240
             } else if media.count > 1 {
-                collectionViewHeightConstraint.constant = 140
+                collectionViewHeightConstraint?.constant = 140
             } else {
-                collectionViewHeightConstraint.constant = 0
+                collectionViewHeightConstraint?.constant = 0
             }
             imageCollectionView.reloadData()
         }
@@ -80,19 +87,64 @@ public final class ItemTableViewCell: UITableViewCell {
         return button
     }()
 
-    @IBOutlet weak var imageCollectionView: UICollectionView! {
-        didSet {
-            imageCollectionView.registerClass(cellType: SingleImageCollectionViewCell.self)
-            imageCollectionView.delegate = self
-            imageCollectionView.dataSource = self
-            imageCollectionView.allowsSelection = true
-        }
-    }
+    private var collectionViewHeightConstraint: NSLayoutConstraint?
+    private let imageCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 10.0
+        layout.minimumInteritemSpacing = 10.0
+
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.registerClass(cellType: SingleImageCollectionViewCell.self)
+        collectionView.allowsSelection = true
+        collectionView.layer.cornerRadius = 4.0
+
+        return collectionView
+    }()
+
+    private let titleHorizontalStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.spacing = Constants.layoutSpace / 2.0
+        stackView.alignment = .top
+        stackView.axis = .horizontal
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+
+        return stackView
+    }()
+
+    private let usernamesVerticalStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+
+        return stackView
+    }()
 
     var didTapAvatar: (() -> Void)?
     var didSelectAccessibilityLink :(() -> Void)?
     var didTapMedia: (([Media], Int) -> Void)?
     var didTapReply: (() -> Void)?
+
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        setupActionButton()
+        setupTitleHorizontalStackView()
+        setupLinkLabel()
+        setupCollectionView()
+
+        updateAppearance()
+        let avatarGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                             action: #selector(didTapAvatarGestureRecognizer))
+        avatarImageView.addGestureRecognizer(avatarGestureRecognizer)
+        backgroundColor = Color.backgroundColor
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("Not supported")
+    }
 
     override public func prepareForReuse() {
         media = []
@@ -102,24 +154,58 @@ public final class ItemTableViewCell: UITableViewCell {
         super.prepareForReuse()
     }
 
-    override public func awakeFromNib() {
-        super.awakeFromNib()
-
-        setupActionButton()
-
-        updateAppearance()
-        let avatarGestureRecognizer = UITapGestureRecognizer(target: self,
-                                                             action: #selector(didTapAvatarGestureRecognizer))
-        avatarImageView.addGestureRecognizer(avatarGestureRecognizer)
-        backgroundColor = Color.backgroundColor
-    }
-
     private func setupActionButton() {
-        addSubview(actionButton)
+        contentView.addSubview(actionButton)
         NSLayoutConstraint.activate([
             actionButton.widthAnchor.constraint(equalToConstant: Constants.actionButtonWidth),
-            actionButton.bottomAnchor.constraint(equalTo: bottomAnchor),
-            actionButton.centerXAnchor.constraint(equalTo: centerXAnchor)
+            actionButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            actionButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+        ])
+    }
+
+    private func setupCollectionView() {
+        imageCollectionView.delegate = self
+        imageCollectionView.dataSource = self
+
+        contentView.addSubview(imageCollectionView)
+
+        let heightConstraint = imageCollectionView.heightAnchor.constraint(equalToConstant: 140.0)
+        self.collectionViewHeightConstraint = heightConstraint
+
+        NSLayoutConstraint.activate([
+            heightConstraint,
+            imageCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.layoutSpace),
+            imageCollectionView.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -Constants.layoutSpace / 4.0),
+            imageCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.layoutSpace),
+            imageCollectionView.topAnchor.constraint(equalTo: attributedLabel.bottomAnchor, constant: Constants.layoutSpace)
+        ])
+    }
+
+    private func setupLinkLabel() {
+        contentView.addSubview(attributedLabel)
+
+        NSLayoutConstraint.activate([
+            attributedLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.layoutSpace),
+            attributedLabel.topAnchor.constraint(equalTo: titleHorizontalStackView.bottomAnchor, constant: Constants.layoutSpace),
+            attributedLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.layoutSpace)
+        ])
+    }
+
+    private func setupTitleHorizontalStackView() {
+        contentView.addSubview(titleHorizontalStackView)
+
+        titleHorizontalStackView.addArrangedSubview(avatarImageView)
+
+        usernamesVerticalStackView.addArrangedSubview(usernameLabel)
+        usernamesVerticalStackView.addArrangedSubview(atUsernameLabel)
+        titleHorizontalStackView.addArrangedSubview(usernamesVerticalStackView)
+
+        NSLayoutConstraint.activate([
+            titleHorizontalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.layoutSpace),
+            titleHorizontalStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.layoutSpace),
+            titleHorizontalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.layoutSpace),
+            avatarImageView.heightAnchor.constraint(equalToConstant: Constants.avatarImageHeightWidth),
+            avatarImageView.widthAnchor.constraint(equalToConstant: Constants.avatarImageHeightWidth)
         ])
     }
 
@@ -167,8 +253,6 @@ public final class ItemTableViewCell: UITableViewCell {
         atUsernameLabel.textColor = Color.secondaryTextColor
         usernameLabel.textColor = Color.textColor
         usernameLabel.backgroundColor = Color.backgroundColor
-        timeLabel.backgroundColor = Color.backgroundColor
-        timeLabel.textColor = Color.secondaryTextColor
         imageCollectionView.backgroundColor = Color.accentSuperLight
         attributedLabel.backgroundColor = Color.backgroundColor
         backgroundColor = Color.backgroundColor

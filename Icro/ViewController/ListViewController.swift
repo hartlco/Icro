@@ -16,7 +16,7 @@ final class ListViewController: UIViewController, LoadingViewController {
         tableView.separatorColor = Color.separatorColor
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(viewModel, action: #selector(ListViewModel.load), for: .valueChanged)
-        tableView.register(cellType: ItemTableViewCell.self)
+        tableView.registerClass(cellType: ItemTableViewCell.self)
         tableView.registerClass(cellType: HostingCell<ProfileCellView>.self)
         tableView.registerClass(cellType: LoadMoreTableViewCell.self)
         tableView.estimatedRowHeight = UITableView.automaticDimension

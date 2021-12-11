@@ -69,7 +69,6 @@
 		C5046525274F77C60004B812 /* Font+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550D77F2740F79000E10CF6 /* Font+Settings.swift */; };
 		C5046526274F77C60004B812 /* SingleImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */; };
 		C5046527274F77C60004B812 /* FakeTableCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */; };
-		C5046528274F77C60004B812 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */; };
 		C5046529274F77C60004B812 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79AC21C4E58B00F699B8 /* LinkLabel.swift */; };
 		C504652A274F77C60004B812 /* ItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583720212861220076121E /* ItemCellConfigurator.swift */; };
 		C504652B274F77C60004B812 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */; };
@@ -83,7 +82,6 @@
 		C5046536274F77C70004B812 /* Font+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550D77F2740F79000E10CF6 /* Font+Settings.swift */; };
 		C5046537274F77C70004B812 /* SingleImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */; };
 		C5046538274F77C70004B812 /* FakeTableCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */; };
-		C5046539274F77C70004B812 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */; };
 		C504653A274F77C70004B812 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79AC21C4E58B00F699B8 /* LinkLabel.swift */; };
 		C504653B274F77C70004B812 /* ItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583720212861220076121E /* ItemCellConfigurator.swift */; };
 		C504653C274F77C70004B812 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */; };
@@ -365,7 +363,6 @@
 		5BDE18F2216A76FA001254F4 /* SettingsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsStoryboard.storyboard; sourceTree = "<group>"; };
 		5BDE18F4216A7A47001254F4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
-		5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryComponent.swift; sourceTree = "<group>"; };
 		5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMigrationComponent.swift; sourceTree = "<group>"; };
 		5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategory.swift; sourceTree = "<group>"; };
@@ -646,7 +643,6 @@
 				5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */,
 				5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */,
 				5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */,
-				5BE9455E2079EFCE004F9FF4 /* ItemTableViewCell.xib */,
 				5B3C79AC21C4E58B00F699B8 /* LinkLabel.swift */,
 				C55BAF28275D489D009E8A9C /* ComposeKeyboardInputView.swift */,
 			);
@@ -1224,7 +1220,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5046539274F77C70004B812 /* ItemTableViewCell.xib in Resources */,
 				C504653C274F77C70004B812 /* ComposeViewController.xib in Resources */,
 				5BC1384721C639160040353C /* Assets.xcassets in Resources */,
 			);
@@ -1259,7 +1254,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5046528274F77C60004B812 /* ItemTableViewCell.xib in Resources */,
 				C504652B274F77C60004B812 /* ComposeViewController.xib in Resources */,
 				BF707E742131C45600506E64 /* Localizable.strings in Resources */,
 				C5FA2ACE1EB4482C006DEB40 /* LaunchScreen.storyboard in Resources */,
