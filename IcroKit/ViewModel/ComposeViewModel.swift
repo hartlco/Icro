@@ -12,8 +12,8 @@ public enum ImageState {
     case uploading(progress: Float)
 }
 
-public final class ComposeViewModel {
-    public struct Image {
+public final class ComposeViewModel: ObservableObject {
+    public struct Image: Identifiable {
         public init(title: String, link: URL) {
             self.title = title
             self.link = link
@@ -21,6 +21,10 @@ public final class ComposeViewModel {
 
         public let title: String
         public let link: URL
+
+        public var id: String {
+            return link.absoluteString
+        }
     }
 
     public enum Mode {
@@ -32,10 +36,13 @@ public final class ComposeViewModel {
     }
 
     private let mode: Mode
-    private var images = [Image]()
     private let imageUploadService = MicropubRequestController()
     private let userSettings: UserSettings
     private let client: Client
+
+    @Published var text = "test"
+    @Published var replyItem: Item?
+    @Published private(set) var images = [Image]()
 
     private(set) public var imageState = ImageState.idle {
         didSet {
@@ -53,6 +60,15 @@ public final class ComposeViewModel {
         self.mode = mode
         self.userSettings = userSettings
         self.client = client
+
+        switch mode {
+        case .reply(let item):
+            self.replyItem = item
+        case .post, .shareURL, .shareImage, .shareText:
+            self.replyItem = nil
+        }
+
+        self.text = startText
     }
 
     public var showKeyboardOnAppear: Bool {
@@ -206,15 +222,6 @@ public final class ComposeViewModel {
             case .success:
                 completion(nil)
             }
-        }
-    }
-
-    public var replyItem: Item? {
-        switch mode {
-        case .reply(let item):
-            return item
-        case .post, .shareURL, .shareImage, .shareText:
-            return nil
         }
     }
 }

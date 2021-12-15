@@ -102,6 +102,10 @@
 		C5046551274F794A0004B812 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C5046550274F794A0004B812 /* Kingfisher */; };
 		C5046553274F795A0004B812 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5046552274F795A0004B812 /* Sourceful */; };
 		C51F8480267F1FFB002A018E /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C51F847F267F1FFB002A018E /* Client */; };
+		C5282B932764AC47004F5106 /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5282B922764AC47004F5106 /* ComposeView.swift */; };
+		C5282B942764AC47004F5106 /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5282B922764AC47004F5106 /* ComposeView.swift */; };
+		C5282B972764ADD8004F5106 /* HighlightedTextEditor in Frameworks */ = {isa = PBXBuildFile; productRef = C5282B962764ADD8004F5106 /* HighlightedTextEditor */; };
+		C5282B992764AEBF004F5106 /* HighlightedTextEditor in Frameworks */ = {isa = PBXBuildFile; productRef = C5282B982764AEBF004F5106 /* HighlightedTextEditor */; };
 		C544111E23F7CED800428609 /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C544111D23F7CED800428609 /* Client */; };
 		C5443C642758AF1500F5BB1C /* LoginOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5443C632758AF1500F5BB1C /* LoginOverlayView.swift */; };
 		C5454DAE23CB9A5C00739A6C /* VerticalTabView in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DAD23CB9A5C00739A6C /* VerticalTabView */; };
@@ -373,6 +377,7 @@
 		7D2709F418E0D6293A75A02B /* Pods_Icro_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Share.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2175C9DAAFEF9FA508D0A47 /* Pods_Icro_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF71E43E214287CF007E88BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C5282B922764AC47004F5106 /* ComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeView.swift; sourceTree = "<group>"; };
 		C5443C632758AF1500F5BB1C /* LoginOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginOverlayView.swift; path = View/LoginOverlayView.swift; sourceTree = "<group>"; };
 		C5454DA723CB991A00739A6C /* VerticalTabView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = VerticalTabView; sourceTree = "<group>"; };
 		C550D7782740F0BC00E10CF6 /* Style */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Style; sourceTree = "<group>"; };
@@ -430,6 +435,7 @@
 				C589572627500E3C00B7E392 /* TypedSymbols in Frameworks */,
 				C504654E274F790D0004B812 /* SnapKit in Frameworks */,
 				C5023CB7274E2F5C0034BDC9 /* Client in Frameworks */,
+				C5282B992764AEBF004F5106 /* HighlightedTextEditor in Frameworks */,
 				C589571727500C0A00B7E392 /* libiconv.tbd in Frameworks */,
 				C5046551274F794A0004B812 /* Kingfisher in Frameworks */,
 				C5046553274F795A0004B812 /* Sourceful in Frameworks */,
@@ -473,6 +479,7 @@
 				C51F8480267F1FFB002A018E /* Client in Frameworks */,
 				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
 				C5E793E92744EA260039A23B /* Sourceful in Frameworks */,
+				C5282B972764ADD8004F5106 /* HighlightedTextEditor in Frameworks */,
 				C5C450BE274398640090377B /* ImageViewer in Frameworks */,
 				C550D77A2740F0E800E10CF6 /* Style in Frameworks */,
 				C589572027500DB600B7E392 /* Settings in Frameworks */,
@@ -633,6 +640,7 @@
 			children = (
 				5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */,
 				5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */,
+				C5282B922764AC47004F5106 /* ComposeView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1017,6 +1025,7 @@
 				C589571D27500DA900B7E392 /* Settings */,
 				C589572327500DF900B7E392 /* SwiftSoup */,
 				C589572527500E3C00B7E392 /* TypedSymbols */,
+				C5282B982764AEBF004F5106 /* HighlightedTextEditor */,
 			);
 			productName = "Icro-Share";
 			productReference = 5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */;
@@ -1116,6 +1125,7 @@
 				C589571F27500DB600B7E392 /* Settings */,
 				C589572127500DF300B7E392 /* SwiftSoup */,
 				C589572727500E4400B7E392 /* TypedSymbols */,
+				C5282B962764ADD8004F5106 /* HighlightedTextEditor */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -1201,6 +1211,7 @@
 				C5C450BC274398640090377B /* XCRemoteSwiftPackageReference "ImageViewer" */,
 				C5E793E72744EA260039A23B /* XCRemoteSwiftPackageReference "Sourceful" */,
 				C577C3C6274A46B200CCC4CD /* XCRemoteSwiftPackageReference "dropdowntitleview" */,
+				C5282B952764ADD8004F5106 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */,
 			);
 			productRefGroup = C5FA2AC11EB4482C006DEB40 /* Products */;
 			projectDirPath = "";
@@ -1316,6 +1327,7 @@
 				C589570E27500B9100B7E392 /* WPBase64Utils.m in Sources */,
 				C58956D827500B3C00B7E392 /* ListViewModelListType.swift in Sources */,
 				C58956D527500B3C00B7E392 /* MicropubEndpoint.swift in Sources */,
+				C5282B942764AC47004F5106 /* ComposeView.swift in Sources */,
 				C58956DD27500B3C00B7E392 /* DiscoveryCategory.swift in Sources */,
 				C58956E527500B3C00B7E392 /* Item.swift in Sources */,
 				C504654A274F78460004B812 /* ComposeNavigatorProtocol.swift in Sources */,
@@ -1435,6 +1447,7 @@
 				5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */,
 				C589571127500B9100B7E392 /* WPXMLRPCDecoderDelegate.m in Sources */,
 				5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */,
+				C5282B932764AC47004F5106 /* ComposeView.swift in Sources */,
 				5B20952322F6B12300C06123 /* VerticalTabViewModel+Extensions.swift in Sources */,
 				C58956F227500B3D00B7E392 /* Resource.swift in Sources */,
 				C58956F427500B3D00B7E392 /* MediaEndpoint.swift in Sources */,
@@ -2039,6 +2052,14 @@
 				kind = branch;
 			};
 		};
+		C5282B952764ADD8004F5106 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kyle-n/HighlightedTextEditor";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		C544111F23F7E81400428609 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup";
@@ -2126,6 +2147,16 @@
 		C51F847F267F1FFB002A018E /* Client */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Client;
+		};
+		C5282B962764ADD8004F5106 /* HighlightedTextEditor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5282B952764ADD8004F5106 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */;
+			productName = HighlightedTextEditor;
+		};
+		C5282B982764AEBF004F5106 /* HighlightedTextEditor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5282B952764ADD8004F5106 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */;
+			productName = HighlightedTextEditor;
 		};
 		C544111D23F7CED800428609 /* Client */ = {
 			isa = XCSwiftPackageProductDependency;

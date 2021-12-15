@@ -167,3 +167,34 @@ extension Item {
         return accessibilityLabel
     }
 }
+
+#if DEBUG
+extension Item {
+    static var mock: Item {
+        let htmlContent = HTMLContent(
+            rawHTMLString: "Hello, this is a <b>test</b>",
+            stylePreference: .init(useMediumContent: true)
+        )
+
+        let author = Author(
+            name: "Test",
+            url: nil,
+            avatar: URL(string: "http://micro.blog/photos/96/https://micro.blog/hartlco/avatar.jpg")!,
+            username: "hartlco",
+            bio: nil,
+            followingCount: 120,
+            isFollowing: false
+        )
+
+        return Item(
+            id: "123",
+            htmlContent: htmlContent,
+            url: URL(string: "http://google.de")!,
+            date_published: .now.addingTimeInterval(3600),
+            author: author,
+            isFavorite: false
+        )
+    }
+}
+
+#endif

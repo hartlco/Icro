@@ -31,7 +31,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
-            tableView.register(cellType: ItemTableViewCell.self)
+            tableView.registerClass(cellType: ItemTableViewCell.self)
             tableView.delegate = self
             tableView.dataSource = self
         }
@@ -66,7 +66,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
         self.composeNavigator = composeNavigator
         self.itemNavigator = itemNavigator
 
-        super.init(nibName: "ComposeViewController", bundle: Bundle(for: ComposeViewController.self))
+        super.init(nibName: nil, bundle: nil)
 
         let composeKeyboardInputViewModel = ComposeKeyboardInputViewModel()
         var composeKeyboardInputView = ComposeKeyboardInputView(viewModel: composeKeyboardInputViewModel)

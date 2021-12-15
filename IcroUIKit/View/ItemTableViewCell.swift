@@ -25,7 +25,7 @@ public final class ItemTableViewCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.isUserInteractionEnabled = true
 
-        imageView.layer.cornerRadius = 20
+        imageView.layer.cornerRadius = Constants.avatarImageHeightWidth / 2.0
         imageView.clipsToBounds = true
 
         return imageView
