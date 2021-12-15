@@ -78,10 +78,10 @@ final class ItemNavigator: ItemNavigatorProtocol {
         let navController = UINavigationController()
         let viewModel = ComposeViewModel(mode: .reply(item: item))
         let navigator = ComposeNavigator(navigationController: navController, viewModel: viewModel)
-        let extractedExpr = ComposeViewController(viewModel: viewModel,
+        let composeViewController = ComposeViewController(viewModel: viewModel,
                                                   composeNavigator: navigator,
                                                   itemNavigator: self)
-        let viewController = extractedExpr
+        let viewController = composeViewController
         navController.viewControllers = [viewController]
         navigationController.present(navController, animated: true, completion: nil)
     }
