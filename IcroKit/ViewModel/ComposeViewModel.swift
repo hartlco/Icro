@@ -44,6 +44,8 @@ public final class ComposeViewModel: ObservableObject {
     @Published var replyItem: Item?
     @Published private(set) var images = [Image]()
 
+    let composeKeyboardInputViewModel: ComposeKeyboardInputViewModel
+
     private(set) public var imageState = ImageState.idle {
         didSet {
             didChangeImageState?(imageState)
@@ -60,6 +62,7 @@ public final class ComposeViewModel: ObservableObject {
         self.mode = mode
         self.userSettings = userSettings
         self.client = client
+        self.composeKeyboardInputViewModel = .init()
 
         switch mode {
         case .reply(let item):

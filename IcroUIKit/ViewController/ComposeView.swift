@@ -46,17 +46,22 @@ struct ComposeView: View {
                 }
                 // Replace
                 VStack {
-                    ComposeKeyboardInputView(viewModel: .init())
+                    ComposeKeyboardInputView(viewModel: viewModel.composeKeyboardInputViewModel)
                 }
                 .background(Color(uiColor: Style.Color.accentLight))
             }
-            .navigationBarItems(leading:
-                Button("COMPOSEVIEWCONTROLLER_CANCELBUTTON_TITLE") {
-                    print("close")
-                }, trailing:
-                Button("KEYBOARDINPUTVIEW_POSTBUTTON_TITLE") {
-                    print("close")
-                }
+            .navigationBarItems(
+                leading:
+                    Button("COMPOSEVIEWCONTROLLER_CANCELBUTTON_TITLE") {
+                        print("close")
+            }, trailing:
+                    HStack {
+                        // TODO: Add loading state
+                        ProgressView()
+                        Button("KEYBOARDINPUTVIEW_POSTBUTTON_TITLE") {
+                            print("close")
+                        }
+                    }
             )
             .navigationBarTitle("COMPOSEVIEWCONTROLLER_TITLE")
         }
