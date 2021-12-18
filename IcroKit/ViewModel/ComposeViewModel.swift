@@ -40,19 +40,32 @@ public final class ComposeViewModel: ObservableObject {
     private let userSettings: UserSettings
     private let client: Client
 
-    @Published var text = "test"
+    @Published var text = "test" {
+        didSet {
+            composeKeyboardInputViewModel.update(
+                for: text,
+                   numberOfImages: images.count,
+                   imageState: imageState,
+                   hidesImageButton: !imageUploadEnabled
+            )
+        }
+    }
     @Published var replyItem: Item?
     @Published private(set) var images = [Image]()
+    @Published var uploading = false
 
     let composeKeyboardInputViewModel: ComposeKeyboardInputViewModel
 
     private(set) public var imageState = ImageState.idle {
         didSet {
-            didChangeImageState?(imageState)
+            composeKeyboardInputViewModel.update(
+                for: text,
+                   numberOfImages: images.count,
+                   imageState: imageState,
+                   hidesImageButton: !imageUploadEnabled
+            )
         }
     }
-
-    public var didChangeImageState: ((ImageState) -> Void)?
 
     public var didUpdateImages: (() -> Void)?
 
@@ -62,6 +75,7 @@ public final class ComposeViewModel: ObservableObject {
         self.mode = mode
         self.userSettings = userSettings
         self.client = client
+        
         self.composeKeyboardInputViewModel = .init()
 
         switch mode {
@@ -103,20 +117,30 @@ public final class ComposeViewModel: ObservableObject {
         return userSettings.wordpressInfo == nil
     }
 
-    public func post(string: String, completion: @escaping (Error?) -> Void) {
-        let string = postWithImages(string: string)
+    public func post(completion: @escaping (Error?) -> Void) {
+        uploading = true
+        composeKeyboardInputViewModel.postButtonEnabled = false
+
+        let newCompletion = { [weak self] (error: Error?) in
+            self?.composeKeyboardInputViewModel.postButtonEnabled = true
+            self?.uploading = false
+            
+            completion(error)
+        }
+
+        let string = postWithImages(string: text)
 
         switch mode {
         case .post, .shareURL, .shareImage, .shareText:
             if userSettings.wordpressInfo != nil {
-                postXMLRPC(string: string, completion: completion)
+                postXMLRPC(string: string, completion: newCompletion)
             } else if let info = userSettings.micropubInfo {
-                MicropubRequestController().post(endpoint: .custom(info: info), message: string, completion: completion)
+                MicropubRequestController().post(endpoint: .custom(info: info), message: string, completion: newCompletion)
             } else {
-                MicropubRequestController().post(endpoint: .micropub, message: string, completion: completion)
+                MicropubRequestController().post(endpoint: .micropub, message: string, completion: newCompletion)
             }
         case .reply(let item):
-            reply(item: item, string: string, completion: completion)
+            reply(item: item, string: string, completion: newCompletion)
         }
     }
 
@@ -135,6 +159,10 @@ public final class ComposeViewModel: ObservableObject {
 
     public func linkText(url: URL, title: String) -> String {
         return "[\(title)](\(url))"
+    }
+
+    public func insertLink(url: URL, title: String?) {
+        text += " [\(title ?? "")](\(url.absoluteString))"
     }
 
     public func removeImage(at index: Int) {

@@ -20,13 +20,6 @@ final class ComposeNavigator: NSObject, ComposeNavigatorProtocol {
     }
 
     func openLinkInsertion(completion: @escaping (String?, URL?) -> Void) {
-        let insertLinkView = InsertLinkView { [weak self] title, url in
-            self?.navigationController.popViewController(animated: true)
-            completion(title, url)
-        }
-
-        let viewController = UIHostingController(rootView: insertLinkView)
-        navigationController.pushViewController(viewController, animated: true)
     }
 
     func openImageInsertion(sourceView: UIView?,

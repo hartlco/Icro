@@ -10,9 +10,15 @@ import SwiftUI
 import Style
 import HighlightedTextEditor
 import Kingfisher
+import InsertLinkView
 
 struct ComposeView: View {
     @ObservedObject var viewModel: ComposeViewModel
+
+    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
+
+    @State var insertLinkActive = false
 
     init(viewModel: ComposeViewModel) {
         self.viewModel = viewModel
@@ -44,26 +50,75 @@ struct ComposeView: View {
                     .padding()
                     .background(Color(uiColor: Style.Color.accentSuperLight))
                 }
-                // Replace
                 VStack {
-                    ComposeKeyboardInputView(viewModel: viewModel.composeKeyboardInputViewModel)
+                    keyboardInputView
                 }
                 .background(Color(uiColor: Style.Color.accentLight))
+                NavigationLink(destination:
+                   insertLinkView,
+                   isActive: $insertLinkActive) {
+                     EmptyView()
+                }.hidden()
             }
             .navigationBarItems(
                 leading:
                     Button("COMPOSEVIEWCONTROLLER_CANCELBUTTON_TITLE") {
-                        print("close")
+                        dismiss()
             }, trailing:
                     HStack {
-                        // TODO: Add loading state
-                        ProgressView()
+                        if viewModel.uploading {
+                            ProgressView()
+                        }
                         Button("KEYBOARDINPUTVIEW_POSTBUTTON_TITLE") {
-                            print("close")
+                            viewModel.post { error in
+                                // TODO: Show Error
+                                // TODO: Dismiss
+                            }
                         }
                     }
             )
             .navigationBarTitle("COMPOSEVIEWCONTROLLER_TITLE")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+
+    var keyboardInputView: ComposeKeyboardInputView {
+        var view = ComposeKeyboardInputView(viewModel: viewModel.composeKeyboardInputViewModel)
+        view.didPressPostButton = {
+            viewModel.post(completion: { error in
+                // TODO: Show Error
+                // TODO: Dismiss
+            })
+        }
+
+        view.didPressLinkButton = {
+            insertLinkActive = true
+        }
+
+        view.didPressCancelButton = {
+            viewModel.cancelImageUpload()
+        }
+
+        view.didPressImageButton = {
+            // Insert Image
+//            syntaxView.resignFirstResponder()
+//            composeNavigator.openImageInsertion(sourceView: keyboardInputViewController?.view ?? view, imageInsertion: { [weak self] image in
+//                self?.viewModel.insertImage(image: image)
+//            }, imageUpload: { [weak self] image in
+//                self?.viewModel.upload(image: image)
+//            })
+        }
+
+        return view
+    }
+
+    var insertLinkView: InsertLinkView {
+        InsertLinkView { title, url in
+            insertLinkActive = false
+
+            guard let url = url else { return }
+
+            viewModel.insertLink(url: url, title: title)
         }
     }
 }

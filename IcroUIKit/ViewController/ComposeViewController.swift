@@ -23,9 +23,6 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
     private let viewModel: ComposeViewModel
     private let composeNavigator: ComposeNavigatorProtocol
 
-    private var composeKeyboardInputViewModel: ComposeKeyboardInputViewModel?
-    private var keyboardInputViewController: UIHostingController<ComposeKeyboardInputView>?
-
     private var cancelButton: UIBarButtonItem?
     private let itemNavigator: ItemNavigatorProtocol
     @IBOutlet weak var scrollView: UIScrollView!
@@ -68,40 +65,7 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
 
         super.init(nibName: nil, bundle: nil)
 
-        let composeKeyboardInputViewModel = ComposeKeyboardInputViewModel()
-        var composeKeyboardInputView = ComposeKeyboardInputView(viewModel: composeKeyboardInputViewModel)
-        self.composeKeyboardInputViewModel = composeKeyboardInputViewModel
-        composeKeyboardInputView.didPressPostButton = post
-        composeKeyboardInputView.didPressLinkButton = insertLink
-        composeKeyboardInputView.didPressImageButton = insertImage
-        composeKeyboardInputView.didPressCancelButton = canelImageUpload
-        self.keyboardInputViewController = UIHostingController(rootView: composeKeyboardInputView)
-
-        title = localizedString(key: "COMPOSEVIEWCONTROLLER_TITLE")
-        cancelButton = UIBarButtonItem(title: localizedString(key: "COMPOSEVIEWCONTROLLER_CANCELBUTTON_TITLE"),
-                                       style: .plain, target: self, action: #selector(cancel))
-        let sendButton = UIBarButtonItem(title: localizedString(key: "KEYBOARDINPUTVIEW_POSTBUTTON_TITLE"),
-                                       style: .plain, target: self, action: #selector(post))
-
-        viewModel.didUpdateImages = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.updateImageCollection()
-            strongSelf.composeKeyboardInputViewModel?.update(for: strongSelf.syntaxView.text,
-                                                                numberOfImages: strongSelf.viewModel.numberOfImages,
-                                                                imageState: strongSelf.viewModel.imageState,
-                                                                hidesImageButton: !viewModel.imageUploadEnabled)
-        }
-
-        viewModel.didChangeImageState = { [weak self] imageState in
-            guard let strongSelf = self else { return }
-            strongSelf.composeKeyboardInputViewModel?.update(for: strongSelf.syntaxView.text,
-                                                                numberOfImages: strongSelf.viewModel.numberOfImages,
-                                                                imageState: strongSelf.viewModel.imageState,
-                                                                hidesImageButton: !viewModel.imageUploadEnabled)
-        }
-
         navigationItem.leftBarButtonItem = cancelButton
-        navigationItem.rightBarButtonItem = sendButton
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -124,7 +88,6 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
         tableViewHeightConstraint.constant = tableView.contentSize.height
 
         updateImageCollection()
-        setupKeyboardInputView()
         let dropInteraction = UIDropInteraction(delegate: self)
         view.addInteraction(dropInteraction)
     }
@@ -139,85 +102,10 @@ public final class ComposeViewController: UIViewController, LoadingViewControlle
 
     // MARK: - Private
 
-    private func setupKeyboardInputView() {
-        guard let composeKeyboardInputViewModel = composeKeyboardInputViewModel, let keyboardInputViewController = keyboardInputViewController else {
-            return
-        }
-
-        composeKeyboardInputViewModel.update(
-            for: viewModel.startText,
-            numberOfImages: viewModel.numberOfImages,
-            imageState: viewModel.imageState,
-            hidesImageButton: !viewModel.imageUploadEnabled
-        )
-        addChild(keyboardInputViewController)
-        view.addSubview(keyboardInputViewController.view)
-        keyboardInputViewController.didMove(toParent: self)
-        keyboardInputViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        keyboardInputViewController.view.addConstraint(NSLayoutConstraint(item: keyboardInputViewController.view!,
-                                                           attribute: .height,
-                                                           relatedBy: .equal,
-                                                           toItem: nil,
-                                                           attribute: .notAnAttribute,
-                                                           multiplier: 1,
-                                                           constant: Constants.KeyboardInputViewHeight))
-
-        view.addSubview(keyboardInputViewController.view)
-        if let layoutGuide = layoutGuide {
-            keyboardInputViewController.view.bottomAnchor.constraint(equalTo: layoutGuide.topGuide.topAnchor).isActive = true
-            keyboardInputViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-            keyboardInputViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        }
-    }
-
     @objc private func cancel() {
         syntaxView.resignFirstResponder()
         dismiss(animated: true, completion: nil)
         didClose()
-    }
-
-    @objc private func post() {
-        resignFirstResponder()
-        showLoading(position: .top)
-
-        setButtonState(enabled: false)
-
-        viewModel.post(string: syntaxView.text) { [weak self] error in
-            self?.setButtonState(enabled: true)
-            if let error = error {
-                self?.showError(error: error, position: .top)
-            } else {
-                self?.hideMessage()
-                self?.dismiss(animated: true, completion: nil)
-                self?.didClose()
-            }
-        }
-    }
-
-    @objc private func insertLink() {
-        composeNavigator.openLinkInsertion { [weak self] title, url in
-            guard let title = title, let url = url else { return }
-            self?.syntaxView.insertText(self?.viewModel.linkText(url: url,
-                                                               title: title) ?? "")
-        }
-    }
-
-    @objc private func insertImage() {
-        syntaxView.resignFirstResponder()
-        composeNavigator.openImageInsertion(sourceView: keyboardInputViewController?.view ?? view, imageInsertion: { [weak self] image in
-            self?.viewModel.insertImage(image: image)
-        }, imageUpload: { [weak self] image in
-            self?.viewModel.upload(image: image)
-        })
-    }
-
-    @objc private func canelImageUpload() {
-        viewModel.cancelImageUpload()
-    }
-
-    private func setButtonState(enabled: Bool) {
-        cancelButton?.isEnabled = enabled
-        composeKeyboardInputViewModel?.postButtonEnabled = enabled
     }
 
     private func updateImageCollection() {
@@ -314,12 +202,5 @@ extension ComposeViewController: UIDropInteractionDelegate {
 extension ComposeViewController: SyntaxTextViewDelegate {
     public func lexerForSource(_ source: String) -> Lexer {
         return IcroLexer()
-    }
-
-    public func didChangeText(_ syntaxTextView: SyntaxTextView) {
-        composeKeyboardInputViewModel?.update(for: syntaxTextView.text,
-                                                 numberOfImages: viewModel.numberOfImages,
-                                                 imageState: viewModel.imageState,
-                                                 hidesImageButton: !viewModel.imageUploadEnabled)
     }
 }

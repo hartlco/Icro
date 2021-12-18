@@ -71,7 +71,6 @@
 		C5046527274F77C60004B812 /* FakeTableCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */; };
 		C5046529274F77C60004B812 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79AC21C4E58B00F699B8 /* LinkLabel.swift */; };
 		C504652A274F77C60004B812 /* ItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583720212861220076121E /* ItemCellConfigurator.swift */; };
-		C504652B274F77C60004B812 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */; };
 		C504652C274F77C60004B812 /* IcroLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F223B66490006ED94F /* IcroLexer.swift */; };
 		C504652D274F77C60004B812 /* KeyboardLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */; };
 		C504652E274F77C60004B812 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
@@ -84,7 +83,6 @@
 		C5046538274F77C70004B812 /* FakeTableCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */; };
 		C504653A274F77C70004B812 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79AC21C4E58B00F699B8 /* LinkLabel.swift */; };
 		C504653B274F77C70004B812 /* ItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583720212861220076121E /* ItemCellConfigurator.swift */; };
-		C504653C274F77C70004B812 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */; };
 		C504653D274F77C70004B812 /* IcroLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F223B66490006ED94F /* IcroLexer.swift */; };
 		C504653E274F77C70004B812 /* KeyboardLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */; };
 		C504653F274F77C70004B812 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
@@ -321,7 +319,6 @@
 		5B609F192309204B00F2C1BC /* TipJarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipJarViewModel.swift; path = ViewModel/TipJarViewModel.swift; sourceTree = "<group>"; };
 		5B609F1B2309206600F2C1BC /* ComposeNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComposeNavigator.swift; path = Navigator/ComposeNavigator.swift; sourceTree = "<group>"; };
 		5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
-		5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
 		5B66EE6D227D734800317FE3 /* MediaEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEndpoint.swift; sourceTree = "<group>"; };
 		5B66EE73227D74DF00317FE3 /* MockClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockClient.swift; sourceTree = "<group>"; };
 		5B66EE75227D780300317FE3 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
@@ -639,7 +636,6 @@
 			isa = PBXGroup;
 			children = (
 				5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */,
-				5B60CF4D2072A66C00C51258 /* ComposeViewController.xib */,
 				C5282B922764AC47004F5106 /* ComposeView.swift */,
 			);
 			path = ViewController;
@@ -1231,7 +1227,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C504653C274F77C70004B812 /* ComposeViewController.xib in Resources */,
 				5BC1384721C639160040353C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1265,7 +1260,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C504652B274F77C60004B812 /* ComposeViewController.xib in Resources */,
 				BF707E742131C45600506E64 /* Localizable.strings in Resources */,
 				C5FA2ACE1EB4482C006DEB40 /* LaunchScreen.storyboard in Resources */,
 				C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */,

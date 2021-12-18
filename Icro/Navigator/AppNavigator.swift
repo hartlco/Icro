@@ -107,7 +107,6 @@ final class AppNavigator {
 
     func setupComposeWinodw() {
         let navigationController = composeNavigationController
-        navigationController.navigationBar.isHidden = true
         window.rootViewController = navigationController
         setupMacCatalystComposeWindow()
         window.tintColor = Color.main
@@ -215,16 +214,17 @@ final class AppNavigator {
         #endif
     }
 
-    private var composeNavigationController: UINavigationController {
+    private var composeNavigationController: UIViewController {
         let navController = UINavigationController()
         let viewModel = ComposeViewModel(mode: .post)
         let itemNavigator = ItemNavigator(navigationController: navController,
                                           appNavigator: self,
                                           notificationCenter: notificationCenter)
         let navigator = ComposeNavigator(navigationController: navController, viewModel: viewModel)
-        let viewController = ComposeViewController(viewModel: viewModel, composeNavigator: navigator, itemNavigator: itemNavigator)
-        navController.viewControllers = [viewController]
-        return navController
+        let view = ComposeView(viewModel: viewModel)
+
+        let viewController = UIHostingController(rootView: view)
+        return viewController
 
     }
 
