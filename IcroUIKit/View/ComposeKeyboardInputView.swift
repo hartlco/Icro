@@ -60,15 +60,11 @@ struct ComposeKeyboardInputView: View {
             Button(action: {
                 didPressLinkButton?()
             }, label: {
-                HStack {
-                    Text("KEYBOARDINPUTVIEW_LINKBUTTON_TTILE")
-                        .foregroundColor(Color(uiColor: Style.Color.accent))
-                }
+                Label("KEYBOARDINPUTVIEW_LINKBUTTON_TTILE", systemImage: "link")
+                    .labelStyle(.iconOnly)
             })
-            .tint(Color(uiColor: Style.Color.buttonColor))
-            .buttonStyle(.borderedProminent)
             if !viewModel.imageButtonHidden {
-                Menu("KEYBOARDINPUTVIEW_IMAGEBUTTON_TITLE") {
+                Menu {
                     Button {
                         didPressImageURLMenu?()
                     } label: {
@@ -83,13 +79,12 @@ struct ComposeKeyboardInputView: View {
                                   systemImage: "photo")
                         }
                     }
+                } label: {
+                    Label("KEYBOARDINPUTVIEW_IMAGEBUTTON_TITLE", systemImage: "photo")
+                        .labelStyle(.iconOnly)
                 }
-                .padding([.top, .bottom], 6.5)
-                .padding([.leading, .trailing], 9.0)
-                .tint(Color(uiColor: Style.Color.accent))
-                .background(Color(uiColor: Style.Color.buttonColor))
+
                 .buttonStyle(.borderedProminent)
-                .clipShape(RoundedRectangle(cornerRadius: 6.0, style: .continuous))
                 .disabled(!viewModel.imageButtonEnabled)
             }
             Spacer()
