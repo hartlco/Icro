@@ -7,6 +7,8 @@ import UIKit
 import Client
 import Style
 
+extension UIViewController: LoadingViewController { }
+
 public protocol LoadingViewController: AnyObject {
     func showLoading(position: LoadingPosition, dismissalTime: LoadingIndicatorDismissalTime)
     func showError(error: Error, position: LoadingPosition)

@@ -8,7 +8,7 @@ import Style
 import DropdownTitleView
 import SwiftUI
 
-final class ListViewController: UIViewController, LoadingViewController {
+final class ListViewController: UIViewController {
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false

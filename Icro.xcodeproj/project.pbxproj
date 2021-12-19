@@ -40,7 +40,6 @@
 		5B609F162309200400F2C1BC /* GalleryDataSource+ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F152309200300F2C1BC /* GalleryDataSource+ImageViewer.swift */; };
 		5B609F182309203400F2C1BC /* ItemNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F172309203400F2C1BC /* ItemNavigator.swift */; };
 		5B609F1A2309204B00F2C1BC /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F192309204B00F2C1BC /* TipJarViewModel.swift */; };
-		5B609F1C2309206600F2C1BC /* ComposeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F1B2309206600F2C1BC /* ComposeNavigator.swift */; };
 		5B69E65122AA16310081CDFB /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsContentView.swift */; };
 		5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8754F92070137300018DFA /* TabBarViewController.swift */; };
 		5B99C67A229FB47200437552 /* UITableView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99C679229FB47200437552 /* UITableView+Keyboard.swift */; };
@@ -75,7 +74,6 @@
 		C504652D274F77C60004B812 /* KeyboardLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */; };
 		C504652E274F77C60004B812 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
 		C504652F274F77C60004B812 /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */; };
-		C5046533274F77C60004B812 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */; };
 		C5046534274F77C70004B812 /* VideoThumbnailImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */; };
 		C5046535274F77C70004B812 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1384221C6332B0040353C /* LocalizedString.swift */; };
 		C5046536274F77C70004B812 /* Font+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550D77F2740F79000E10CF6 /* Font+Settings.swift */; };
@@ -87,13 +85,10 @@
 		C504653E274F77C70004B812 /* KeyboardLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */; };
 		C504653F274F77C70004B812 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
 		C5046540274F77C70004B812 /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */; };
-		C5046544274F77C70004B812 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */; };
 		C5046545274F77CD0004B812 /* IcroEditorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F423B69636006ED94F /* IcroEditorTheme.swift */; };
 		C5046546274F77CE0004B812 /* IcroEditorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F423B69636006ED94F /* IcroEditorTheme.swift */; };
 		C5046547274F78460004B812 /* ItemNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79C521C51B4900F699B8 /* ItemNavigatorProtocol.swift */; };
-		C5046548274F78460004B812 /* ComposeNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD9690D21C8D44000313795 /* ComposeNavigatorProtocol.swift */; };
 		C5046549274F78460004B812 /* ItemNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79C521C51B4900F699B8 /* ItemNavigatorProtocol.swift */; };
-		C504654A274F78460004B812 /* ComposeNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD9690D21C8D44000313795 /* ComposeNavigatorProtocol.swift */; };
 		C504654C274F78F60004B812 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C504654B274F78F60004B812 /* SnapKit */; };
 		C504654E274F790D0004B812 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C504654D274F790D0004B812 /* SnapKit */; };
 		C504654F274F79330004B812 /* UICollectionView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A7BF22E8313200D420BD /* UICollectionView+Dequeueable.swift */; };
@@ -111,6 +106,10 @@
 		C5454DB223CB9F5000739A6C /* VerticalTabView in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DB123CB9F5000739A6C /* VerticalTabView */; };
 		C5454DB423CB9FD200739A6C /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DB323CB9FD200739A6C /* TypedSymbols */; };
 		C5454DB523CBA0EF00739A6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
+		C5470E63276F0CEE001B1963 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = C5470E62276F0CEE001B1963 /* SwiftUIX */; };
+		C5470E65276F0E8E001B1963 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = C5470E64276F0E8E001B1963 /* SwiftUIX */; };
+		C5470E68276F1210001B1963 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = C5470E67276F1210001B1963 /* Introspect */; };
+		C5470E6A276F124F001B1963 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = C5470E69276F124F001B1963 /* Introspect */; };
 		C550D77A2740F0E800E10CF6 /* Style in Frameworks */ = {isa = PBXBuildFile; productRef = C550D7792740F0E800E10CF6 /* Style */; };
 		C55BAF29275D489D009E8A9C /* ComposeKeyboardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55BAF28275D489D009E8A9C /* ComposeKeyboardInputView.swift */; };
 		C55BAF2A275D489D009E8A9C /* ComposeKeyboardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55BAF28275D489D009E8A9C /* ComposeKeyboardInputView.swift */; };
@@ -317,8 +316,6 @@
 		5B609F152309200300F2C1BC /* GalleryDataSource+ImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GalleryDataSource+ImageViewer.swift"; path = "Helper/GalleryDataSource+ImageViewer.swift"; sourceTree = "<group>"; };
 		5B609F172309203400F2C1BC /* ItemNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemNavigator.swift; path = Navigator/ItemNavigator.swift; sourceTree = "<group>"; };
 		5B609F192309204B00F2C1BC /* TipJarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipJarViewModel.swift; path = ViewModel/TipJarViewModel.swift; sourceTree = "<group>"; };
-		5B609F1B2309206600F2C1BC /* ComposeNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComposeNavigator.swift; path = Navigator/ComposeNavigator.swift; sourceTree = "<group>"; };
-		5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		5B66EE6D227D734800317FE3 /* MediaEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEndpoint.swift; sourceTree = "<group>"; };
 		5B66EE73227D74DF00317FE3 /* MockClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockClient.swift; sourceTree = "<group>"; };
 		5B66EE75227D780300317FE3 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
@@ -358,7 +355,6 @@
 		5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailImageProvider.swift; sourceTree = "<group>"; };
 		5BD95AFC2290A16100C74C52 /* AppearanceComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceComponent.swift; sourceTree = "<group>"; };
 		5BD9690921C8CBFB00313795 /* GalleryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDataSource.swift; sourceTree = "<group>"; };
-		5BD9690D21C8D44000313795 /* ComposeNavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeNavigatorProtocol.swift; sourceTree = "<group>"; };
 		5BDE18EC216A5771001254F4 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		5BDE18ED216A5771001254F4 /* ComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
 		5BDE18F2216A76FA001254F4 /* SettingsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsStoryboard.storyboard; sourceTree = "<group>"; };
@@ -427,8 +423,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5023CB9274E2F5C0034BDC9 /* InsertLinkView in Frameworks */,
+				C5470E6A276F124F001B1963 /* Introspect in Frameworks */,
 				C589571E27500DA900B7E392 /* Settings in Frameworks */,
 				C589571A27500D6E00B7E392 /* Alamofire in Frameworks */,
+				C5470E65276F0E8E001B1963 /* SwiftUIX in Frameworks */,
 				C589572627500E3C00B7E392 /* TypedSymbols in Frameworks */,
 				C504654E274F790D0004B812 /* SnapKit in Frameworks */,
 				C5023CB7274E2F5C0034BDC9 /* Client in Frameworks */,
@@ -477,9 +475,11 @@
 				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
 				C5E793E92744EA260039A23B /* Sourceful in Frameworks */,
 				C5282B972764ADD8004F5106 /* HighlightedTextEditor in Frameworks */,
+				C5470E68276F1210001B1963 /* Introspect in Frameworks */,
 				C5C450BE274398640090377B /* ImageViewer in Frameworks */,
 				C550D77A2740F0E800E10CF6 /* Style in Frameworks */,
 				C589572027500DB600B7E392 /* Settings in Frameworks */,
+				C5470E63276F0CEE001B1963 /* SwiftUIX in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
 				C589571827500C1400B7E392 /* libiconv.tbd in Frameworks */,
 				C504654C274F78F60004B812 /* SnapKit in Frameworks */,
@@ -627,7 +627,6 @@
 			isa = PBXGroup;
 			children = (
 				5B3C79C521C51B4900F699B8 /* ItemNavigatorProtocol.swift */,
-				5BD9690D21C8D44000313795 /* ComposeNavigatorProtocol.swift */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -635,7 +634,6 @@
 		5B3C79A421C4E4D700F699B8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5B60CF4C2072A66C00C51258 /* ComposeViewController.swift */,
 				C5282B922764AC47004F5106 /* ComposeView.swift */,
 			);
 			path = ViewController;
@@ -736,7 +734,6 @@
 		5B8754F5206FEC6800018DFA /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
-				5B609F1B2309206600F2C1BC /* ComposeNavigator.swift */,
 				5B583727212861770076121E /* SettingsNavigator.swift */,
 				5BA6D180208904D300F484B2 /* AppNavigator.swift */,
 				5B3C79C121C518B700F699B8 /* MainNavigator.swift */,
@@ -1022,6 +1019,8 @@
 				C589572327500DF900B7E392 /* SwiftSoup */,
 				C589572527500E3C00B7E392 /* TypedSymbols */,
 				C5282B982764AEBF004F5106 /* HighlightedTextEditor */,
+				C5470E64276F0E8E001B1963 /* SwiftUIX */,
+				C5470E69276F124F001B1963 /* Introspect */,
 			);
 			productName = "Icro-Share";
 			productReference = 5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */;
@@ -1122,6 +1121,8 @@
 				C589572127500DF300B7E392 /* SwiftSoup */,
 				C589572727500E4400B7E392 /* TypedSymbols */,
 				C5282B962764ADD8004F5106 /* HighlightedTextEditor */,
+				C5470E62276F0CEE001B1963 /* SwiftUIX */,
+				C5470E67276F1210001B1963 /* Introspect */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -1208,6 +1209,8 @@
 				C5E793E72744EA260039A23B /* XCRemoteSwiftPackageReference "Sourceful" */,
 				C577C3C6274A46B200CCC4CD /* XCRemoteSwiftPackageReference "dropdowntitleview" */,
 				C5282B952764ADD8004F5106 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */,
+				C5470E61276F0CEE001B1963 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				C5470E66276F1210001B1963 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = C5FA2AC11EB4482C006DEB40 /* Products */;
 			projectDirPath = "";
@@ -1324,7 +1327,6 @@
 				C5282B942764AC47004F5106 /* ComposeView.swift in Sources */,
 				C58956DD27500B3C00B7E392 /* DiscoveryCategory.swift in Sources */,
 				C58956E527500B3C00B7E392 /* Item.swift in Sources */,
-				C504654A274F78460004B812 /* ComposeNavigatorProtocol.swift in Sources */,
 				C58956D627500B3C00B7E392 /* ComposeViewModel.swift in Sources */,
 				C55BAF2A275D489D009E8A9C /* ComposeKeyboardInputView.swift in Sources */,
 				C5046538274F77C70004B812 /* FakeTableCellButton.swift in Sources */,
@@ -1334,7 +1336,6 @@
 				C504653B274F77C70004B812 /* ItemCellConfigurator.swift in Sources */,
 				C58956E827500B3C00B7E392 /* PushRegistration.swift in Sources */,
 				C58956DB27500B3C00B7E392 /* Error.swift in Sources */,
-				C5046544274F77C70004B812 /* ComposeViewController.swift in Sources */,
 				C58956E127500B3C00B7E392 /* Author.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1398,7 +1399,6 @@
 				C58956F027500B3D00B7E392 /* MicropubRequestController.swift in Sources */,
 				5B44C71720979CF20003B35D /* MuteViewModel.swift in Sources */,
 				C5046547274F78460004B812 /* ItemNavigatorProtocol.swift in Sources */,
-				C5046548274F78460004B812 /* ComposeNavigatorProtocol.swift in Sources */,
 				5B28C8D022C89B2600A46C52 /* UserListView.swift in Sources */,
 				C5046526274F77C60004B812 /* SingleImageCollectionViewCell.swift in Sources */,
 				5BCD7F0222BDE35D00CA5B6C /* MuteView.swift in Sources */,
@@ -1419,14 +1419,12 @@
 				C58956F627500B3D00B7E392 /* GalleryDataSource.swift in Sources */,
 				5BBC6704218EB0150090629C /* LoadMoreTableViewCell.swift in Sources */,
 				C504652A274F77C60004B812 /* ItemCellConfigurator.swift in Sources */,
-				C5046533274F77C60004B812 /* ComposeViewController.swift in Sources */,
 				C58956F827500B3D00B7E392 /* Functions.swift in Sources */,
 				5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */,
 				C5046525274F77C60004B812 /* Font+Settings.swift in Sources */,
 				5BA0C37A22FFF24400A9B44D /* MainMenuActionNotifier.swift in Sources */,
 				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
 				5B609F182309203400F2C1BC /* ItemNavigator.swift in Sources */,
-				5B609F1C2309206600F2C1BC /* ComposeNavigator.swift in Sources */,
 				C504652C274F77C60004B812 /* IcroLexer.swift in Sources */,
 				C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */,
 				5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */,
@@ -2062,6 +2060,22 @@
 				minimumVersion = 2.3.0;
 			};
 		};
+		C5470E61276F0CEE001B1963 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
+		C5470E66276F1210001B1963 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.3;
+			};
+		};
 		C577C3C6274A46B200CCC4CD /* XCRemoteSwiftPackageReference "dropdowntitleview" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/dropdowntitleview";
@@ -2172,6 +2186,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */;
 			productName = TypedSymbols;
+		};
+		C5470E62276F0CEE001B1963 /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5470E61276F0CEE001B1963 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+		C5470E64276F0E8E001B1963 /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5470E61276F0CEE001B1963 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+		C5470E67276F1210001B1963 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5470E66276F1210001B1963 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+		C5470E69276F124F001B1963 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5470E66276F1210001B1963 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
 		};
 		C550D7792740F0E800E10CF6 /* Style */ = {
 			isa = XCSwiftPackageProductDependency;

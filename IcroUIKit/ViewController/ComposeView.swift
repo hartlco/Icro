@@ -11,6 +11,8 @@ import Style
 import HighlightedTextEditor
 import Kingfisher
 import InsertLinkView
+import SwiftUIX
+import Introspect
 
 struct ComposeView: View {
     @ObservedObject var viewModel: ComposeViewModel
@@ -19,6 +21,7 @@ struct ComposeView: View {
     @Environment(\.dismiss) var dismiss
 
     @State var insertLinkActive = false
+    @State var insertImageURLActive = false
 
     init(viewModel: ComposeViewModel) {
         self.viewModel = viewModel
@@ -54,30 +57,56 @@ struct ComposeView: View {
                     keyboardInputView
                 }
                 .background(Color(uiColor: Style.Color.accentLight))
-                NavigationLink(destination:
-                   insertLinkView,
-                   isActive: $insertLinkActive) {
+                NavigationLink(
+                    destination: insertLinkView,
+                    isActive: $insertLinkActive
+                ) {
                      EmptyView()
                 }.hidden()
+                NavigationLink(
+                    destination: insertImageLinkView,
+                    isActive: $insertImageURLActive
+                ) {
+                     EmptyView()
+                }.hidden()
+                .sheet(
+                    isPresented: $viewModel.imagePickerActive) {
+                        viewModel.imagePickerActive = false
+                    } content: {
+                        ImagePicker(
+                            data: $viewModel.pickedImage,
+                            encoding: .jpeg(compressionQuality: 0.8),
+                            onCancel: {
+                                viewModel.imagePickerActive = false
+                            }
+                        )
+                    }
             }
             .navigationBarItems(
                 leading:
-                    Button("COMPOSEVIEWCONTROLLER_CANCELBUTTON_TITLE") {
+                    Button(NSLocalizedString("COMPOSEVIEWCONTROLLER_CANCELBUTTON_TITLE", comment: "")) {
                         dismiss()
             }, trailing:
                     HStack {
                         if viewModel.uploading {
                             ProgressView()
                         }
-                        Button("KEYBOARDINPUTVIEW_POSTBUTTON_TITLE") {
-                            viewModel.post { error in
-                                // TODO: Show Error
-                                // TODO: Dismiss
-                            }
+                        Button(NSLocalizedString("KEYBOARDINPUTVIEW_POSTBUTTON_TITLE", comment: "")) {
+                            // TODO: Add Native Error handling / view
+                            viewModel.post(completion: { error in
+                                if let error = error {
+                                   _ =  introspectViewController { viewController in
+                                        viewController.showError(error: error, position: .top)
+                                    }
+                                } else {
+                                    dismiss()
+                                }
+                            })
                         }
                     }
             )
-            .navigationBarTitle("COMPOSEVIEWCONTROLLER_TITLE")
+            // TODO: Add Drag/Drop interaction
+            .navigationBarTitle(NSLocalizedString("COMPOSEVIEWCONTROLLER_TITLE", comment: ""))
             .navigationBarTitleDisplayMode(.inline)
         }
     }
@@ -86,8 +115,13 @@ struct ComposeView: View {
         var view = ComposeKeyboardInputView(viewModel: viewModel.composeKeyboardInputViewModel)
         view.didPressPostButton = {
             viewModel.post(completion: { error in
-                // TODO: Show Error
-                // TODO: Dismiss
+                if let error = error {
+                   _ =  introspectViewController { viewController in
+                        viewController.showError(error: error, position: .top)
+                    }
+                } else {
+                    dismiss()
+                }
             })
         }
 
@@ -99,14 +133,12 @@ struct ComposeView: View {
             viewModel.cancelImageUpload()
         }
 
-        view.didPressImageButton = {
-            // Insert Image
-//            syntaxView.resignFirstResponder()
-//            composeNavigator.openImageInsertion(sourceView: keyboardInputViewController?.view ?? view, imageInsertion: { [weak self] image in
-//                self?.viewModel.insertImage(image: image)
-//            }, imageUpload: { [weak self] image in
-//                self?.viewModel.upload(image: image)
-//            })
+        view.didPressImageURLMenu = {
+            insertImageURLActive = true
+        }
+
+        view.didPressImageUploadMenu = {
+            viewModel.imagePickerActive = true
         }
 
         return view
@@ -119,6 +151,16 @@ struct ComposeView: View {
             guard let url = url else { return }
 
             viewModel.insertLink(url: url, title: title)
+        }
+    }
+
+    var insertImageLinkView: InsertLinkView {
+        InsertLinkView { title, url in
+            insertImageURLActive = false
+
+            guard let url = url else { return }
+
+            viewModel.insertImage(image: .init(title: title ?? "", link: url))
         }
     }
 }

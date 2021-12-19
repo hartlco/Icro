@@ -215,12 +215,7 @@ final class AppNavigator {
     }
 
     private var composeNavigationController: UIViewController {
-        let navController = UINavigationController()
         let viewModel = ComposeViewModel(mode: .post)
-        let itemNavigator = ItemNavigator(navigationController: navController,
-                                          appNavigator: self,
-                                          notificationCenter: notificationCenter)
-        let navigator = ComposeNavigator(navigationController: navController, viewModel: viewModel)
         let view = ComposeView(viewModel: viewModel)
 
         let viewController = UIHostingController(rootView: view)

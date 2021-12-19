@@ -54,6 +54,17 @@ public final class ComposeViewModel: ObservableObject {
     @Published private(set) var images = [Image]()
     @Published var uploading = false
 
+    @Published var imagePickerActive = false
+    @Published var pickedImage: Data? {
+        didSet {
+            imagePickerActive = false
+
+            guard let data = pickedImage, let image = XImage(data: data) else { return }
+
+            upload(image: image)
+        }
+    }
+
     let composeKeyboardInputViewModel: ComposeKeyboardInputViewModel
 
     private(set) public var imageState = ImageState.idle {

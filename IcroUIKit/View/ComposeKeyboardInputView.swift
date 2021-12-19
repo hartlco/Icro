@@ -45,9 +45,11 @@ struct ComposeKeyboardInputView: View {
     @ObservedObject private var viewModel: ComposeKeyboardInputViewModel
 
     var didPressLinkButton: (() -> Void)?
-    var didPressImageButton: (() -> Void)?
     var didPressCancelButton: (() -> Void)?
     var didPressPostButton: (() -> Void)?
+
+    var didPressImageURLMenu: (() -> Void)?
+    var didPressImageUploadMenu: (() -> Void)?
 
     init(viewModel: ComposeKeyboardInputViewModel) {
         self.viewModel = viewModel
@@ -66,16 +68,28 @@ struct ComposeKeyboardInputView: View {
             .tint(Color(uiColor: Style.Color.buttonColor))
             .buttonStyle(.borderedProminent)
             if !viewModel.imageButtonHidden {
-                Button(action: {
-                    didPressImageButton?()
-                }, label: {
-                    HStack {
-                        Text("KEYBOARDINPUTVIEW_IMAGEBUTTON_TITLE")
-                            .foregroundColor(Color(uiColor: Style.Color.accent))
+                Menu("KEYBOARDINPUTVIEW_IMAGEBUTTON_TITLE") {
+                    Button {
+                        didPressImageURLMenu?()
+                    } label: {
+                        Label("COMPOSENAVIGATOR_OPENIMAGEALERT_URLACTION",
+                              systemImage: "link")
                     }
-                })
-                .tint(Color(uiColor: Style.Color.buttonColor))
+                    if viewModel.imageButtonEnabled {
+                        Button {
+                            didPressImageUploadMenu?()
+                        } label: {
+                            Label("COMPOSENAVIGATOR_OPENIMAGEALERT_UPLOADACTION",
+                                  systemImage: "photo")
+                        }
+                    }
+                }
+                .padding([.top, .bottom], 6.5)
+                .padding([.leading, .trailing], 9.0)
+                .tint(Color(uiColor: Style.Color.accent))
+                .background(Color(uiColor: Style.Color.buttonColor))
                 .buttonStyle(.borderedProminent)
+                .clipShape(RoundedRectangle(cornerRadius: 6.0, style: .continuous))
                 .disabled(!viewModel.imageButtonEnabled)
             }
             Spacer()
@@ -118,7 +132,7 @@ struct ComposeKeyboardInputView_Previews: PreviewProvider {
         viewModel.update(
             for: "Hi123",
             numberOfImages: 1,
-            imageState: .uploading(progress: 0.5),
+            imageState: .idle,
             hidesImageButton: false
         )
         return view

@@ -57,13 +57,11 @@ import Client
 
     private func openCompose(for viewModel: ComposeViewModel) {
         let navigationController = UINavigationController(nibName: nil, bundle: nil)
-        let composeNavigator = EmptyComposeNavigator(navigationController: navigationController)
-        let composeViewController = ComposeViewController(viewModel: viewModel,
-                                                          composeNavigator: composeNavigator,
-                                                          itemNavigator: EmptyItemNavigator())
-        composeViewController.didClose = { [weak self] in
-            self?.extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
-        }
+        let composeView = ComposeView(viewModel: viewModel)
+        let composeViewController = UIHostingController(rootView: composeView)
+//        composeViewController.didClose = { [weak self] in
+//            self?.extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
+//        }
         navigationController.viewControllers = [composeViewController]
         add(navigationController, view: view)
     }
@@ -131,30 +129,6 @@ private class EmptyItemNavigator: ItemNavigatorProtocol {
     }
 
     func showDiscoveryCategories(categories: [DiscoveryCategory], sourceView: UIView) {
-
-    }
-}
-
-private class EmptyComposeNavigator: ComposeNavigatorProtocol {
-    private let navigationController: UINavigationController
-
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-
-    func openLinkInsertion(completion: @escaping (String?, URL?) -> Void) {
-        let insertLinkView = InsertLinkView(completion: completion)
-        let viewController = UIHostingController(rootView: insertLinkView)
-        navigationController.pushViewController(viewController, animated: true)
-    }
-
-    func openImageInsertion(sourceView: UIView?,
-                            imageInsertion: @escaping (ComposeViewModel.Image) -> Void,
-                            imageUpload: @escaping (UIImage) -> Void) {
-
-    }
-
-    func open(datasource: GalleryDataSource) {
 
     }
 }
