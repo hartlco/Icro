@@ -95,6 +95,7 @@
 		C5046551274F794A0004B812 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C5046550274F794A0004B812 /* Kingfisher */; };
 		C5046553274F795A0004B812 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5046552274F795A0004B812 /* Sourceful */; };
 		C51F8480267F1FFB002A018E /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C51F847F267F1FFB002A018E /* Client */; };
+		C527CEAE2770526F0086397A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
 		C5282B932764AC47004F5106 /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5282B922764AC47004F5106 /* ComposeView.swift */; };
 		C5282B942764AC47004F5106 /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5282B922764AC47004F5106 /* ComposeView.swift */; };
 		C5282B972764ADD8004F5106 /* HighlightedTextEditor in Frameworks */ = {isa = PBXBuildFile; productRef = C5282B962764ADD8004F5106 /* HighlightedTextEditor */; };
@@ -1231,6 +1232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC1384721C639160040353C /* Assets.xcassets in Resources */,
+				C527CEAE2770526F0086397A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

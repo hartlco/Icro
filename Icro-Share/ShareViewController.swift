@@ -56,14 +56,13 @@ import Client
     }
 
     private func openCompose(for viewModel: ComposeViewModel) {
-        let navigationController = UINavigationController(nibName: nil, bundle: nil)
-        let composeView = ComposeView(viewModel: viewModel)
+        var composeView = ComposeView(viewModel: viewModel)
+        composeView.didClose = { [weak self] in
+            self?.extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
+        }
+
         let composeViewController = UIHostingController(rootView: composeView)
-//        composeViewController.didClose = { [weak self] in
-//            self?.extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
-//        }
-        navigationController.viewControllers = [composeViewController]
-        add(navigationController, view: view)
+        add(composeViewController, view: view)
     }
 }
 
@@ -80,55 +79,5 @@ import Client
         willMove(toParent: nil)
         view.removeFromSuperview()
         removeFromParent()
-    }
-}
-
-private class EmptyItemNavigator: ItemNavigatorProtocol {
-    func showLogin() {
-
-    }
-
-    func open(url: URL) {
-
-    }
-
-    func open(author: Author) {
-
-    }
-
-    func open(authorName: String) {
-
-    }
-
-    func openFollowing(for user: Author) {
-
-    }
-
-    func openConversation(item: Item) {
-
-    }
-
-    func openMedia(media: [Media], index: Int) {
-
-    }
-
-    func openReply(item: Item) {
-
-    }
-
-    func share(item: Item, sourceView: UIView?) {
-
-    }
-
-    func accessibilityPresentLinks(linkList: [(text: String, url: URL)], message: String, sourceView: UIView) {
-
-    }
-
-    func openMore(item: Item, sourceView: UIView?) {
-
-    }
-
-    func showDiscoveryCategories(categories: [DiscoveryCategory], sourceView: UIView) {
-
     }
 }

@@ -23,6 +23,8 @@ struct ComposeView: View {
     @State var insertLinkActive = false
     @State var insertImageURLActive = false
 
+    var didClose: (() -> Void)?
+
     init(viewModel: ComposeViewModel) {
         self.viewModel = viewModel
     }
@@ -85,7 +87,7 @@ struct ComposeView: View {
             .navigationBarItems(
                 leading:
                     Button(NSLocalizedString("COMPOSEVIEWCONTROLLER_CANCELBUTTON_TITLE", comment: "")) {
-                        dismiss()
+                        dismissView()
             }, trailing:
                     HStack {
                         if viewModel.uploading {
@@ -99,7 +101,7 @@ struct ComposeView: View {
                                         viewController.showError(error: error, position: .top)
                                     }
                                 } else {
-                                    dismiss()
+                                    dismissView()
                                 }
                             })
                         }
@@ -120,7 +122,7 @@ struct ComposeView: View {
                         viewController.showError(error: error, position: .top)
                     }
                 } else {
-                    dismiss()
+                    dismissView()
                 }
             })
         }
@@ -142,6 +144,11 @@ struct ComposeView: View {
         }
 
         return view
+    }
+
+    func dismissView() {
+        didClose?()
+        dismiss()
     }
 
     var insertLinkView: InsertLinkView {
@@ -171,7 +178,7 @@ private struct ReplyView: View {
     var body: some View {
         VStack(alignment: .leading) {
             ItemView(item: item)
-            Text("COMPOSEVIEWCONTROLLER_TABLEVIEW_HEADER_TITLE")
+            Text(NSLocalizedString("COMPOSEVIEWCONTROLLER_TABLEVIEW_HEADER_TITLE", comment: ""))
                 .font(.headline).bold()
         }
         .padding()
