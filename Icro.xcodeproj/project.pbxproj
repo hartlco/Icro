@@ -70,7 +70,6 @@
 		C5046527274F77C60004B812 /* FakeTableCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */; };
 		C5046529274F77C60004B812 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79AC21C4E58B00F699B8 /* LinkLabel.swift */; };
 		C504652A274F77C60004B812 /* ItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583720212861220076121E /* ItemCellConfigurator.swift */; };
-		C504652C274F77C60004B812 /* IcroLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F223B66490006ED94F /* IcroLexer.swift */; };
 		C504652D274F77C60004B812 /* KeyboardLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */; };
 		C504652E274F77C60004B812 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
 		C504652F274F77C60004B812 /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */; };
@@ -81,19 +80,15 @@
 		C5046538274F77C70004B812 /* FakeTableCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */; };
 		C504653A274F77C70004B812 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79AC21C4E58B00F699B8 /* LinkLabel.swift */; };
 		C504653B274F77C70004B812 /* ItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583720212861220076121E /* ItemCellConfigurator.swift */; };
-		C504653D274F77C70004B812 /* IcroLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F223B66490006ED94F /* IcroLexer.swift */; };
 		C504653E274F77C70004B812 /* KeyboardLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */; };
 		C504653F274F77C70004B812 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
 		C5046540274F77C70004B812 /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */; };
-		C5046545274F77CD0004B812 /* IcroEditorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F423B69636006ED94F /* IcroEditorTheme.swift */; };
-		C5046546274F77CE0004B812 /* IcroEditorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A498F423B69636006ED94F /* IcroEditorTheme.swift */; };
 		C5046547274F78460004B812 /* ItemNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79C521C51B4900F699B8 /* ItemNavigatorProtocol.swift */; };
 		C5046549274F78460004B812 /* ItemNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79C521C51B4900F699B8 /* ItemNavigatorProtocol.swift */; };
 		C504654C274F78F60004B812 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C504654B274F78F60004B812 /* SnapKit */; };
 		C504654E274F790D0004B812 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C504654D274F790D0004B812 /* SnapKit */; };
 		C504654F274F79330004B812 /* UICollectionView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A7BF22E8313200D420BD /* UICollectionView+Dequeueable.swift */; };
 		C5046551274F794A0004B812 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C5046550274F794A0004B812 /* Kingfisher */; };
-		C5046553274F795A0004B812 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5046552274F795A0004B812 /* Sourceful */; };
 		C51F8480267F1FFB002A018E /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C51F847F267F1FFB002A018E /* Client */; };
 		C527CEAE2770526F0086397A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
 		C5282B932764AC47004F5106 /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5282B922764AC47004F5106 /* ComposeView.swift */; };
@@ -187,7 +182,6 @@
 		C5CE39E223CB6FA00095013A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CE39E023CB6FA00095013A /* Main.storyboard */; };
 		C5DEA4E1275B49C300530E96 /* HostingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DEA4E0275B49C300530E96 /* HostingCell.swift */; };
 		C5DEA4E3275B4A0C00530E96 /* ProfileCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DEA4E2275B4A0C00530E96 /* ProfileCellView.swift */; };
-		C5E793E92744EA260039A23B /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = C5E793E82744EA260039A23B /* Sourceful */; };
 		C5F50599274CC9DC00BCDC0F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C5F50598274CC9DC00BCDC0F /* Kingfisher */; };
 		C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2AC31EB4482C006DEB40 /* AppDelegate.swift */; };
 		C5FA2ACB1EB4482C006DEB40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
@@ -394,8 +388,6 @@
 		C59E637B23BDC9C10012BF85 /* WPXMLRPCEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCEncoder.m; sourceTree = "<group>"; };
 		C59E637C23BDC9C10012BF85 /* WPBase64Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPBase64Utils.h; sourceTree = "<group>"; };
 		C59E637D23BDC9C10012BF85 /* WPXMLRPCDataCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDataCleaner.m; sourceTree = "<group>"; };
-		C5A498F223B66490006ED94F /* IcroLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcroLexer.swift; sourceTree = "<group>"; };
-		C5A498F423B69636006ED94F /* IcroEditorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcroEditorTheme.swift; sourceTree = "<group>"; };
 		C5C450B2274392510090377B /* InsertLinkView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = InsertLinkView; sourceTree = "<group>"; };
 		C5CE39D523CB6F9F0095013A /* Icro-Next.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Icro-Next.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CE39D723CB6F9F0095013A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -434,7 +426,6 @@
 				C5282B992764AEBF004F5106 /* HighlightedTextEditor in Frameworks */,
 				C589571727500C0A00B7E392 /* libiconv.tbd in Frameworks */,
 				C5046551274F794A0004B812 /* Kingfisher in Frameworks */,
-				C5046553274F795A0004B812 /* Sourceful in Frameworks */,
 				C589572427500DF900B7E392 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,7 +465,6 @@
 				C5454DAE23CB9A5C00739A6C /* VerticalTabView in Frameworks */,
 				C51F8480267F1FFB002A018E /* Client in Frameworks */,
 				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
-				C5E793E92744EA260039A23B /* Sourceful in Frameworks */,
 				C5282B972764ADD8004F5106 /* HighlightedTextEditor in Frameworks */,
 				C5470E68276F1210001B1963 /* Introspect in Frameworks */,
 				C5C450BE274398640090377B /* ImageViewer in Frameworks */,
@@ -618,8 +608,6 @@
 				5B3C79A321C4E4CC00F699B8 /* Navigator */,
 				5B3C799421C4E31100F699B8 /* IcroUIKit.h */,
 				5B3C799521C4E31100F699B8 /* Info.plist */,
-				C5A498F223B66490006ED94F /* IcroLexer.swift */,
-				C5A498F423B69636006ED94F /* IcroEditorTheme.swift */,
 			);
 			path = IcroUIKit;
 			sourceTree = "<group>";
@@ -1014,7 +1002,6 @@
 				C5023CB8274E2F5C0034BDC9 /* InsertLinkView */,
 				C504654D274F790D0004B812 /* SnapKit */,
 				C5046550274F794A0004B812 /* Kingfisher */,
-				C5046552274F795A0004B812 /* Sourceful */,
 				C589571927500D6E00B7E392 /* Alamofire */,
 				C589571D27500DA900B7E392 /* Settings */,
 				C589572327500DF900B7E392 /* SwiftSoup */,
@@ -1113,7 +1100,6 @@
 				C550D7792740F0E800E10CF6 /* Style */,
 				C5C450BA2743955D0090377B /* InsertLinkView */,
 				C5C450BD274398640090377B /* ImageViewer */,
-				C5E793E82744EA260039A23B /* Sourceful */,
 				C577C3C7274A46B200CCC4CD /* DropdownTitleView */,
 				C5F50598274CC9DC00BCDC0F /* Kingfisher */,
 				C504654B274F78F60004B812 /* SnapKit */,
@@ -1207,7 +1193,6 @@
 				C544111F23F7E81400428609 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				C5F7F79324C41A6B009BD2F8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				C5C450BC274398640090377B /* XCRemoteSwiftPackageReference "ImageViewer" */,
-				C5E793E72744EA260039A23B /* XCRemoteSwiftPackageReference "Sourceful" */,
 				C577C3C6274A46B200CCC4CD /* XCRemoteSwiftPackageReference "dropdowntitleview" */,
 				C5282B952764ADD8004F5106 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */,
 				C5470E61276F0CEE001B1963 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
@@ -1308,14 +1293,12 @@
 				C58956DF27500B3C00B7E392 /* ListViewModel.swift in Sources */,
 				C5046537274F77C70004B812 /* SingleImageCollectionViewCell.swift in Sources */,
 				C504654F274F79330004B812 /* UICollectionView+Dequeueable.swift in Sources */,
-				C5046545274F77CD0004B812 /* IcroEditorTheme.swift in Sources */,
 				C58956E427500B3C00B7E392 /* Functions.swift in Sources */,
 				C58956E727500B3C00B7E392 /* HTMLContent.swift in Sources */,
 				C58956E327500B3C00B7E392 /* Media.swift in Sources */,
 				C589570D27500B9100B7E392 /* WPStringUtils.m in Sources */,
 				C5046534274F77C70004B812 /* VideoThumbnailImageProvider.swift in Sources */,
 				C58956E627500B3C00B7E392 /* CacheStorage.swift in Sources */,
-				C504653D274F77C70004B812 /* IcroLexer.swift in Sources */,
 				C58956E227500B3C00B7E392 /* GalleryDataSource.swift in Sources */,
 				C58956DA27500B3C00B7E392 /* DiscoveryCategoryStore.swift in Sources */,
 				C504653A274F77C70004B812 /* LinkLabel.swift in Sources */,
@@ -1427,7 +1410,6 @@
 				5BA0C37A22FFF24400A9B44D /* MainMenuActionNotifier.swift in Sources */,
 				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
 				5B609F182309203400F2C1BC /* ItemNavigator.swift in Sources */,
-				C504652C274F77C60004B812 /* IcroLexer.swift in Sources */,
 				C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */,
 				5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */,
 				5BA0C37C2300610E00A9B44D /* UIViewController+ViewVisible.swift in Sources */,
@@ -1453,7 +1435,6 @@
 				C58956EF27500B3D00B7E392 /* Error.swift in Sources */,
 				C58956FB27500B3D00B7E392 /* HTMLContent.swift in Sources */,
 				C58956F127500B3D00B7E392 /* DiscoveryCategory.swift in Sources */,
-				C5046546274F77CE0004B812 /* IcroEditorTheme.swift in Sources */,
 				5B3B4C2C21D0C6BF00F511A6 /* AppearanceManager.swift in Sources */,
 				C58956F527500B3D00B7E392 /* Author.swift in Sources */,
 				C5046523274F77C60004B812 /* VideoThumbnailImageProvider.swift in Sources */,
@@ -2094,14 +2075,6 @@
 				kind = branch;
 			};
 		};
-		C5E793E72744EA260039A23B /* XCRemoteSwiftPackageReference "Sourceful" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hartlco/Sourceful";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		C5F60BFB23B3862F0022448A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -2148,11 +2121,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C5F7F79324C41A6B009BD2F8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		C5046552274F795A0004B812 /* Sourceful */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C5E793E72744EA260039A23B /* XCRemoteSwiftPackageReference "Sourceful" */;
-			productName = Sourceful;
 		};
 		C51F847F267F1FFB002A018E /* Client */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -2268,11 +2236,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C5C450BC274398640090377B /* XCRemoteSwiftPackageReference "ImageViewer" */;
 			productName = ImageViewer;
-		};
-		C5E793E82744EA260039A23B /* Sourceful */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C5E793E72744EA260039A23B /* XCRemoteSwiftPackageReference "Sourceful" */;
-			productName = Sourceful;
 		};
 		C5F50598274CC9DC00BCDC0F /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
