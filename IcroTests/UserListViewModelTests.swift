@@ -7,7 +7,6 @@ import XCTest
 import Client
 @testable import Icro
 
-
 class UserListViewModelTests: XCTestCase {
     func test_numberOfUsers() {
         let client = MockClient<[Author]>(returnedData: nil,

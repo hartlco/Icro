@@ -228,6 +228,7 @@ struct ComposeView_Previews: PreviewProvider {
                             title: "Google"))
 
         Group {
+            ComposeView(viewModel: viewModel)
             ComposeView(viewModel: shareURLViewModel)
             ComposeView(viewModel: replyViewModel)
             ComposeView(viewModel: imageViewModel)

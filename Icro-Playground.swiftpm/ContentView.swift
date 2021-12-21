@@ -6,12 +6,11 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Button { 
+            Button {
                 print("button print")
-            } label: { 
+            } label: {
                 Text("Button Text")
             }
-            
             Text("Hello, world!")
         }
     }

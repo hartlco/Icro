@@ -67,20 +67,16 @@
 		C5046524274F77C60004B812 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1384221C6332B0040353C /* LocalizedString.swift */; };
 		C5046525274F77C60004B812 /* Font+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550D77F2740F79000E10CF6 /* Font+Settings.swift */; };
 		C5046526274F77C60004B812 /* SingleImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */; };
-		C5046527274F77C60004B812 /* FakeTableCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */; };
 		C5046529274F77C60004B812 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79AC21C4E58B00F699B8 /* LinkLabel.swift */; };
 		C504652A274F77C60004B812 /* ItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583720212861220076121E /* ItemCellConfigurator.swift */; };
-		C504652D274F77C60004B812 /* KeyboardLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */; };
 		C504652E274F77C60004B812 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
 		C504652F274F77C60004B812 /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */; };
 		C5046534274F77C70004B812 /* VideoThumbnailImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */; };
 		C5046535274F77C70004B812 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1384221C6332B0040353C /* LocalizedString.swift */; };
 		C5046536274F77C70004B812 /* Font+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550D77F2740F79000E10CF6 /* Font+Settings.swift */; };
 		C5046537274F77C70004B812 /* SingleImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */; };
-		C5046538274F77C70004B812 /* FakeTableCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */; };
 		C504653A274F77C70004B812 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79AC21C4E58B00F699B8 /* LinkLabel.swift */; };
 		C504653B274F77C70004B812 /* ItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B583720212861220076121E /* ItemCellConfigurator.swift */; };
-		C504653E274F77C70004B812 /* KeyboardLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */; };
 		C504653F274F77C70004B812 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */; };
 		C5046540274F77C70004B812 /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */; };
 		C5046547274F78460004B812 /* ItemNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C79C521C51B4900F699B8 /* ItemNavigatorProtocol.swift */; };
@@ -261,7 +257,6 @@
 		5B20952422F6B14E00C06123 /* CatalystToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CatalystToolbar.swift; path = Helper/CatalystToolbar.swift; sourceTree = "<group>"; };
 		5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AcknowledgementView.swift; path = View/Settings/AcknowledgementView.swift; sourceTree = "<group>"; };
 		5B28C8CF22C89B2600A46C52 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserListView.swift; path = View/UserListView.swift; sourceTree = "<group>"; };
-		5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableCellButton.swift; sourceTree = "<group>"; };
 		5B2B817422F6CC2E0073B393 /* appversion.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = appversion.xcconfig; sourceTree = "<group>"; };
 		5B38476021FE035900F082AD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5B38476821FE073800F082AD /* UIView+Contraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Contraints.swift"; path = "Helper/UIView+Contraints.swift"; sourceTree = "<group>"; };
@@ -276,7 +271,6 @@
 		5B3C79AC21C4E58B00F699B8 /* LinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLabel.swift; sourceTree = "<group>"; };
 		5B3C79C121C518B700F699B8 /* MainNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainNavigator.swift; path = Navigator/MainNavigator.swift; sourceTree = "<group>"; };
 		5B3C79C521C51B4900F699B8 /* ItemNavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNavigatorProtocol.swift; sourceTree = "<group>"; };
-		5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutGuide.swift; sourceTree = "<group>"; };
 		5B44C71620979CF20003B35D /* MuteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuteViewModel.swift; path = ViewModel/MuteViewModel.swift; sourceTree = "<group>"; };
 		5B4639DC2168FE9B00200D8F /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		5B4639DE216901BE00200D8F /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
@@ -632,7 +626,6 @@
 			isa = PBXGroup;
 			children = (
 				5BC1820520790C930061F261 /* SingleImageCollectionViewCell.swift */,
-				5B2A5A7920A6196700B54399 /* FakeTableCellButton.swift */,
 				5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */,
 				5B3C79AC21C4E58B00F699B8 /* LinkLabel.swift */,
 				C55BAF28275D489D009E8A9C /* ComposeKeyboardInputView.swift */,
@@ -644,7 +637,6 @@
 			isa = PBXGroup;
 			children = (
 				5BA6D1782087ACF900F484B2 /* UIViewController+Loading.swift */,
-				5B3C79D521C52D2C00F699B8 /* KeyboardLayoutGuide.swift */,
 				5BC1384221C6332B0040353C /* LocalizedString.swift */,
 				5BD2FE672259E0DC00591490 /* VideoThumbnailImageProvider.swift */,
 				C550D77F2740F79000E10CF6 /* Font+Settings.swift */,
@@ -1287,7 +1279,6 @@
 				5B3C798121C4DFAF00F699B8 /* ShareViewController.swift in Sources */,
 				C589570B27500B8500B7E392 /* WPXMLRPCDecoder.m in Sources */,
 				C589571027500B9100B7E392 /* WPXMLRPCEncoder.m in Sources */,
-				C504653E274F77C70004B812 /* KeyboardLayoutGuide.swift in Sources */,
 				C5046549274F78460004B812 /* ItemNavigatorProtocol.swift in Sources */,
 				C5046536274F77C70004B812 /* Font+Settings.swift in Sources */,
 				C58956DF27500B3C00B7E392 /* ListViewModel.swift in Sources */,
@@ -1314,7 +1305,6 @@
 				C58956E527500B3C00B7E392 /* Item.swift in Sources */,
 				C58956D627500B3C00B7E392 /* ComposeViewModel.swift in Sources */,
 				C55BAF2A275D489D009E8A9C /* ComposeKeyboardInputView.swift in Sources */,
-				C5046538274F77C70004B812 /* FakeTableCellButton.swift in Sources */,
 				C58956D727500B3C00B7E392 /* Date+Ago.swift in Sources */,
 				C504653F274F77C70004B812 /* ItemTableViewCell.swift in Sources */,
 				C589570C27500B9100B7E392 /* WPXMLRPCDecoderDelegate.m in Sources */,
@@ -1360,7 +1350,6 @@
 			files = (
 				C58956F727500B3D00B7E392 /* Media.swift in Sources */,
 				5B583728212861770076121E /* SettingsNavigator.swift in Sources */,
-				C504652D274F77C60004B812 /* KeyboardLayoutGuide.swift in Sources */,
 				C55BAF29275D489D009E8A9C /* ComposeKeyboardInputView.swift in Sources */,
 				C5DEA4E1275B49C300530E96 /* HostingCell.swift in Sources */,
 				C5DEA4E3275B4A0C00530E96 /* ProfileCellView.swift in Sources */,
@@ -1439,7 +1428,6 @@
 				C58956F527500B3D00B7E392 /* Author.swift in Sources */,
 				C5046523274F77C60004B812 /* VideoThumbnailImageProvider.swift in Sources */,
 				C58956EE27500B3D00B7E392 /* DiscoveryCategoryStore.swift in Sources */,
-				C5046527274F77C60004B812 /* FakeTableCellButton.swift in Sources */,
 				C58956E927500B3D00B7E392 /* MicropubEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

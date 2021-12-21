@@ -6,6 +6,6 @@
 import Foundation
 
 public func localizedString(key: String) -> String {
-    let bundle = Bundle(for: KeyboardLayoutGuide.self)
+    let bundle = Bundle(for: ItemCellConfigurator.self)
     return NSLocalizedString(key, tableName: nil, bundle: bundle, value: "", comment: "")
 }

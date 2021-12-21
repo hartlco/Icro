@@ -20,7 +20,6 @@ final class ProfileViewConfigurator: NSObject {
     func configure(_ view: HostingCell<ProfileCellView>, using author: Author, parentViewController: UIViewController) {
         guard let username = author.username,
             let followingCount = author.followingCount else {
-                emptyConfig(for: view)
                 return
         }
 
@@ -56,43 +55,5 @@ final class ProfileViewConfigurator: NSObject {
         }
 
         view.set(rootView: profileCellView, parentController: parentViewController)
-    }
-
-    private func emptyConfig(for cell: HostingCell<ProfileCellView>) {
-//        cell.avatarImageView.image = nil
-//        cell.usernameLabel.text = ""
-//        cell.nameLabel.text = ""
-//        cell.followButton.setTitle("", for: .normal)
-//        cell.followingButton.setTitle("", for: .normal)
-//        cell.profileButton.setTitle("", for: .normal)
-//        cell.bioLabel.text = ""
-
-    }
-}
-
-private class AuthorImageGalleryDataSource: GalleryItemsDataSource {
-    let author: Author
-
-    init(author: Author) {
-        self.author = author
-    }
-
-    func itemCount() -> Int {
-        return 1
-    }
-
-    func provideGalleryItem(_ index: Int) -> GalleryItem {
-        return GalleryItem.image { completion in
-//            KingfisherManager.shared.downloader.downloadImage(with: self.author.avatar, completionHandler: { result in
-//                switch result {
-//                case .success(let imageLoadingResult):
-//                    DispatchQueue.main.async {
-//                        completion(imageLoadingResult.image)
-//                    }
-//                default:
-//                    return
-//                }
-//            })
-        }
     }
 }

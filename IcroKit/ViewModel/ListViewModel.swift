@@ -119,6 +119,7 @@ public class ListViewModel: NSObject {
                 let value = try await client.load(resource: type.resource)
                 self.isLoading = false
 
+                // TODO: Use mainActor here
                 DispatchQueue.main.async {
                     self.updateShowLoadMoreInBetweenAfterLoadMore(loadedNewItems: value.items)
                     self.loadedAuthor = value.author ?? self.loadedAuthor
