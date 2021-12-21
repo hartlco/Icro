@@ -40,7 +40,7 @@ public final class ComposeViewModel: ObservableObject {
     private let userSettings: UserSettings
     private let client: Client
 
-    @Published var text = "test" {
+    @Published var text = "" {
         didSet {
             composeKeyboardInputViewModel.update(
                 for: text,
@@ -78,15 +78,12 @@ public final class ComposeViewModel: ObservableObject {
         }
     }
 
-    public var didUpdateImages: (() -> Void)?
-
     public init(mode: Mode,
                 userSettings: UserSettings = .shared,
                 client: Client = URLSession.shared) {
         self.mode = mode
         self.userSettings = userSettings
         self.client = client
-        
         self.composeKeyboardInputViewModel = .init()
 
         switch mode {
@@ -108,7 +105,7 @@ public final class ComposeViewModel: ObservableObject {
         }
     }
 
-    public var startText: String {
+    private var startText: String {
         switch mode {
         case .post:
             return ""
@@ -128,31 +125,28 @@ public final class ComposeViewModel: ObservableObject {
         return userSettings.wordpressInfo == nil
     }
 
-    public func post(completion: @escaping (Error?) -> Void) {
+    @MainActor
+    public func post() async throws {
         uploading = true
         composeKeyboardInputViewModel.postButtonEnabled = false
-
-        let newCompletion = { [weak self] (error: Error?) in
-            self?.composeKeyboardInputViewModel.postButtonEnabled = true
-            self?.uploading = false
-            
-            completion(error)
-        }
 
         let string = postWithImages(string: text)
 
         switch mode {
         case .post, .shareURL, .shareImage, .shareText:
             if userSettings.wordpressInfo != nil {
-                postXMLRPC(string: string, completion: newCompletion)
+                try await postXMLRPC(string: string)
             } else if let info = userSettings.micropubInfo {
-                MicropubRequestController().post(endpoint: .custom(info: info), message: string, completion: newCompletion)
+                try await MicropubRequestController().post(endpoint: .custom(info: info), message: string)
             } else {
-                MicropubRequestController().post(endpoint: .micropub, message: string, completion: newCompletion)
+                try await MicropubRequestController().post(endpoint: .micropub, message: string)
             }
         case .reply(let item):
-            reply(item: item, string: string, completion: newCompletion)
+            try await reply(item: item, string: string)
         }
+
+        composeKeyboardInputViewModel.postButtonEnabled = true
+        uploading = false
     }
 
     public var numberOfImages: Int {
@@ -165,7 +159,6 @@ public final class ComposeViewModel: ObservableObject {
 
     public func insertImage(image: Image) {
         images.append(image)
-        didUpdateImages?()
     }
 
     public func linkText(url: URL, title: String) -> String {
@@ -182,7 +175,6 @@ public final class ComposeViewModel: ObservableObject {
         }
 
         images.remove(at: index)
-        didUpdateImages?()
     }
 
     public func upload(image: XImage) {
@@ -229,11 +221,10 @@ public final class ComposeViewModel: ObservableObject {
         return string + "\n" + imagesStrings.joined(separator: "\n")
     }
 
-    private func postXMLRPC(string: String, completion: @escaping (Error?) -> Void) {
+    private func postXMLRPC(string: String) async throws {
         guard let info = userSettings.wordpressInfo,
         let url = URL(string: info.urlString) else {
-            completion(NetworkingError.wordPressURLError)
-            return
+            throw NetworkingError.wordPressURLError
         }
 
         let postingURL = url.appendingPathComponent("xmlrpc.php")
@@ -243,27 +234,11 @@ public final class ComposeViewModel: ObservableObject {
         request.httpMethod = "POST"
         let encoder = WPXMLRPCEncoder(method: "wp.newPost", andParameters: params)
         request.httpBody = try? encoder.dataEncoded()
-        client.loadData(with: request) { (_, _, error) in
-            DispatchQueue.main.async {
-                completion(error)
-            }
-        }
+
+        try await _ = client.data(for: request, delegate: nil)
     }
 
-    public func postHostedBlog(string: String, completion: @escaping () -> Void) {
-        client.load(resource: Item.post(text: string)) { _ in
-            completion()
-        }
-    }
-
-    public func reply(item: Item, string: String, completion: @escaping (Error?) -> Void) {
-        client.load(resource: item.reply(with: string)) { response in
-            switch response {
-            case .failure(let error):
-                completion(error)
-            case .success:
-                completion(nil)
-            }
-        }
+    private func reply(item: Item, string: String) async throws {
+        try await _ = client.load(resource: item.reply(with: string))
     }
 }

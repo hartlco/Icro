@@ -75,13 +75,10 @@ final class ItemNavigator: ItemNavigatorProtocol {
     }
 
     func openReply(item: Item) {
-        let navController = UINavigationController()
         let viewModel = ComposeViewModel(mode: .reply(item: item))
         let view = ComposeView(viewModel: viewModel)
         let composeViewController = UIHostingController(rootView: view)
-        let viewController = composeViewController
-        navController.viewControllers = [viewController]
-        navigationController.present(navController, animated: true, completion: nil)
+        navigationController.present(composeViewController, animated: true, completion: nil)
     }
 
     func share(item: Item, sourceView: UIView?) {

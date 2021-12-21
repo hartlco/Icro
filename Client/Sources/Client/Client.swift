@@ -12,6 +12,10 @@ public protocol Client {
     @available(iOS 15.0, *)
     func load<A: Codable>(resource: Resource<A>) async throws -> A
 
+    @available(macOS 12.0, *)
+    @available(iOS 15.0, *)
+    func data(for request: URLRequest, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse)
+
     func loadData(with request: URLRequest,
                   completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
 }

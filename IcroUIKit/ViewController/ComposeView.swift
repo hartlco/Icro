@@ -94,16 +94,14 @@ struct ComposeView: View {
                             ProgressView()
                         }
                         Button(NSLocalizedString("KEYBOARDINPUTVIEW_POSTBUTTON_TITLE", comment: "")) {
-                            // TODO: Add Native Error handling / view
-                            viewModel.post(completion: { error in
-                                if let error = error {
-                                   _ =  introspectViewController { viewController in
-                                        viewController.showError(error: error, position: .top)
-                                    }
-                                } else {
-                                    dismissView()
+                            Task {
+                                do {
+                                    try await viewModel.post()
+                                } catch {
+                                    // TODO: Proper error handling
                                 }
-                            })
+                                dismissView()
+                            }
                         }
                     }
             )
@@ -116,15 +114,14 @@ struct ComposeView: View {
     var keyboardInputView: ComposeKeyboardInputView {
         var view = ComposeKeyboardInputView(viewModel: viewModel.composeKeyboardInputViewModel)
         view.didPressPostButton = {
-            viewModel.post(completion: { error in
-                if let error = error {
-                   _ =  introspectViewController { viewController in
-                        viewController.showError(error: error, position: .top)
-                    }
-                } else {
-                    dismissView()
+            Task {
+                do {
+                    try await viewModel.post()
+                } catch {
+                    // TODO: Proper error handling
                 }
-            })
+                dismissView()
+            }
         }
 
         view.didPressLinkButton = {

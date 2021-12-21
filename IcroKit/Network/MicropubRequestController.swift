@@ -17,14 +17,13 @@ final class MicropubRequestController {
         self.client = client
     }
 
-    func post(endpoint: MicropubEndpoint, message: String, completion: @escaping (Error?) -> Void) {
+    func post(endpoint: MicropubEndpoint, message: String) async throws {
         let sessionConfig = URLSessionConfiguration.default
 
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
 
         guard let URL = URL(string: endpoint.urlString) else {
-            completion(NetworkingError.micropubURLError)
-            return
+            throw NetworkingError.micropubURLError
         }
         var request = URLRequest(url: URL)
         request.httpMethod = "POST"
@@ -40,17 +39,8 @@ final class MicropubRequestController {
         let bodyString = bodyParameters.queryParameters
         request.httpBody = bodyString.data(using: .utf8, allowLossyConversion: true)
 
-        /* Start a new Task */
-        let task = session.dataTask(with: request, completionHandler: { (_, _, error: Error?) -> Void in
-            DispatchQueue.main.async {
-                if error == nil {
-                    completion(nil)
-                } else {
-                    completion(NetworkingError.micropubURLError)
-                }
-            }
-        })
-        task.resume()
+        try await _ = session.data(for: request, delegate: nil)
+
         session.finishTasksAndInvalidate()
     }
 
