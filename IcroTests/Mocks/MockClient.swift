@@ -16,8 +16,17 @@ final class MockClient<B: Codable>: Client {
         self.returnedResourceResult = returnedResourceResult
     }
 
-    func loadData(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        completionHandler(returnedData, nil, nil)
+    func data(for request: URLRequest, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse) {
+        guard let returnedData = returnedData else {
+            fatalError("Return Data not set")
+        }
+
+        return (returnedData, URLResponse(
+            url: request.url!,
+            mimeType: "",
+            expectedContentLength: 0,
+            textEncodingName: "")
+        )
     }
 
     var error: Error?

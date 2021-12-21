@@ -15,16 +15,9 @@ public protocol Client {
     @available(macOS 12.0, *)
     @available(iOS 15.0, *)
     func data(for request: URLRequest, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse)
-
-    func loadData(with request: URLRequest,
-                  completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
 }
 
 extension URLSession: Client {
-    public func loadData(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        dataTask(with: request, completionHandler: completionHandler).resume()
-    }
-
     public func load<A: Codable>(resource: Resource<A>, completion: @escaping (Result<A, Error>) -> Void) {
         dataTask(with: resource.urlRequest) { (data, _, _) in
             guard let data = data else {
