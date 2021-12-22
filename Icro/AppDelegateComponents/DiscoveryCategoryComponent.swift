@@ -15,7 +15,10 @@ final class DiscoveryCategoryComponent: AppDelegateComponent {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        categoryStore.update()
+        Task {
+            await categoryStore.update()
+        }
+        
         return true
     }
 }

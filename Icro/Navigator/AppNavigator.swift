@@ -141,7 +141,7 @@ final class AppNavigator {
         userSettings.logout()
     }
 
-    func handleDeeplink(url: URL) {
+    @MainActor func handleDeeplink(url: URL) {
         if url.absoluteString.contains("auth") {
             handleIndieAuthTokenCallback(url: url)
             return

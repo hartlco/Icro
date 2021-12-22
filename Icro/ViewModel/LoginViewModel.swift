@@ -71,16 +71,18 @@ final class LoginViewModel: ObservableObject {
         self.client = client
     }
 
-    func login() {
-        switch loginType {
-        case .mail:
-            requestLoginMail()
-        case .token:
-            login(withToken: loginString)
+    @MainActor func login() {
+        Task {
+            switch loginType {
+            case .mail:
+                await requestLoginMail()
+            case .token:
+                await login(withToken: loginString)
+            }
         }
     }
 
-    private func requestLoginMail() {
+    @MainActor private func requestLoginMail() async {
         isLoading = true
 
         guard let emailRequestResource = emailRequestResource else {
@@ -90,14 +92,16 @@ final class LoginViewModel: ObservableObject {
             return
         }
 
-        client.load(resource: emailRequestResource) { _ in
-            self.isLoading = false
-            self.didRequest = true
-            self.infoMessage = NSLocalizedString("LOGINVIEWCONTROLLER_INFOLABEL_TEXT", comment: "")
+        do {
+            _ = try await client.load(resource: emailRequestResource)
+            isLoading = false
+            didRequest = true
+            infoMessage = NSLocalizedString("LOGINVIEWCONTROLLER_INFOLABEL_TEXT", comment: "")
+        } catch {
         }
     }
 
-    private func login(withToken token: String) {
+    @MainActor private func login(withToken token: String) async {
         isLoading = true
 
         guard let loginRequestResource = loginRequestResource(token: token) else {
@@ -107,20 +111,18 @@ final class LoginViewModel: ObservableObject {
             return
         }
 
-        client.load(resource: loginRequestResource) { [weak self] info in
-            guard let self = self else { return }
+        do {
+            let info = try await client.load(resource: loginRequestResource)
 
-            self.isLoading = false
-            self.didRequest = true
-
-            guard let info = info.value else {
-                self.infoMessage = NSLocalizedString("UIVIEWCONTROLLERLOADING_INVALIDINPUT_TEXT", comment: "")
-                return
-            }
-            self.userSettings.save(loginInformation: info)
-            self.didLogin(info)
+            userSettings.save(loginInformation: info)
+            didLogin(info)
             self.loginString = ""
+        } catch {
+            infoMessage = NSLocalizedString("UIVIEWCONTROLLERLOADING_INVALIDINPUT_TEXT", comment: "")
         }
+
+        isLoading = false
+        didRequest = true
     }
 
     private var loginType: LoginType {

@@ -34,6 +34,11 @@ struct UserListView: SwiftUI.View {
                 }
             })
         }
+        .onAppear {
+            Task {
+                await viewModel.load()
+            }
+        }
         .navigationBarTitle(Text("Following"))
     }
 }

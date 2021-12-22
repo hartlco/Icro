@@ -32,20 +32,16 @@ final class UserListViewModel: ObservableObject {
          client: Client = URLSession.shared) {
         self.resource = resource
         self.client = client
-
-        load()
     }
 
-    func load() {
+    @MainActor func load() async {
         state = .loading
-        client.load(resource: resource) { [weak self] users in
-            guard let self = self else { return }
-            switch users {
-            case .failure(let error):
-                self.state = .error(error)
-            case .success(let value):
-                self.state = .loaded(content: value)
-            }
+
+        do {
+            let users = try await client.load(resource: resource)
+            state = .loaded(content: users)
+        } catch let error {
+            state = .error(error)
         }
     }
 }
