@@ -8,19 +8,19 @@ import Client
 @testable import Icro
 
 class UserListViewModelTests: XCTestCase {
-    func test_numberOfUsers() {
+    func test_numberOfUsers() async {
         let client = MockClient<[Author]>(returnedData: nil,
                                           returnedResourceResult: Result.success(makeAuthors()))
         let viewModel = UserListViewModel(resource: makeResource(), client: client)
-        viewModel.load()
+        await viewModel.load()
         XCTAssert(viewModel.users.count == 2)
     }
 
-    func test_userForRow() {
+    func test_userForRow() async {
         let client = MockClient<[Author]>(returnedData: nil,
                                           returnedResourceResult: Result.success(makeAuthors()))
         let viewModel = UserListViewModel(resource: makeResource(), client: client)
-        viewModel.load()
+        await viewModel.load()
         XCTAssert(viewModel.users[1].name == "Author 2")
     }
 

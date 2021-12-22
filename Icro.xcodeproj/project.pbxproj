@@ -17,7 +17,6 @@
 		5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */; };
 		5B28C8D022C89B2600A46C52 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CF22C89B2600A46C52 /* UserListView.swift */; };
 		5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B38476021FE035900F082AD /* StoreKit.framework */; };
-		5B38476921FE073800F082AD /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38476821FE073800F082AD /* UIView+Contraints.swift */; };
 		5B39A4CE22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39A4CD22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift */; };
 		5B39A4CF22F6A5F400B2B38F /* MockClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE73227D74DF00317FE3 /* MockClient.swift */; };
 		5B39A4D122F6A5FB00B2B38F /* HTMLContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58373F2128B0680076121E /* HTMLContentTests.swift */; };
@@ -259,7 +258,6 @@
 		5B28C8CF22C89B2600A46C52 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserListView.swift; path = View/UserListView.swift; sourceTree = "<group>"; };
 		5B2B817422F6CC2E0073B393 /* appversion.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = appversion.xcconfig; sourceTree = "<group>"; };
 		5B38476021FE035900F082AD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		5B38476821FE073800F082AD /* UIView+Contraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Contraints.swift"; path = "Helper/UIView+Contraints.swift"; sourceTree = "<group>"; };
 		5B39A4CD22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerticalTabAwareHostingController.swift; path = Helper/VerticalTabAwareHostingController.swift; sourceTree = "<group>"; };
 		5B39B7BD22AD504A004D5134 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = View/ListView.swift; sourceTree = "<group>"; };
 		5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppearanceManager.swift; path = Helper/AppearanceManager.swift; sourceTree = "<group>"; };
@@ -961,7 +959,6 @@
 				5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */,
 				5B609F152309200300F2C1BC /* GalleryDataSource+ImageViewer.swift */,
 				5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */,
-				5B38476821FE073800F082AD /* UIView+Contraints.swift */,
 				5B99C679229FB47200437552 /* UITableView+Keyboard.swift */,
 				5B39A4CD22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift */,
 				5B20951E22F6B0B900C06123 /* UserActivities.swift */,
@@ -1387,7 +1384,6 @@
 				C589571427500B9100B7E392 /* WPXMLRPCDataCleaner.m in Sources */,
 				C504652E274F77C60004B812 /* ItemTableViewCell.swift in Sources */,
 				5B609F162309200400F2C1BC /* GalleryDataSource+ImageViewer.swift in Sources */,
-				5B38476921FE073800F082AD /* UIView+Contraints.swift in Sources */,
 				C58956F327500B3D00B7E392 /* ListViewModel.swift in Sources */,
 				5BFCB8F6232E835F008D36E1 /* NotificationComponent.swift in Sources */,
 				C58956F627500B3D00B7E392 /* GalleryDataSource.swift in Sources */,
