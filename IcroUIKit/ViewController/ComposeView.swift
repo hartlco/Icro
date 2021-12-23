@@ -109,6 +109,7 @@ struct ComposeView: View {
             .navigationBarTitle(NSLocalizedString("COMPOSEVIEWCONTROLLER_TITLE", comment: ""))
             .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationViewStyle(.stack)
     }
 
     var keyboardInputView: ComposeKeyboardInputView {
