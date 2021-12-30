@@ -99,23 +99,23 @@ struct ComposeKeyboardInputView: View {
 
             Spacer()
             Text(viewModel.characterCountText)
-                .foregroundColor(Color(uiColor: Style.Color.secondaryTextColor))
+                .foregroundColor(Style.Color.secondaryTextColor.swiftUIColor)
                 .font(.footnote)
             Button(action: {
                 didPressPostButton?()
             }, label: {
                 HStack {
                     Text("KEYBOARDINPUTVIEW_POSTBUTTON_TITLE")
-                        .foregroundColor(Color(uiColor: Style.Color.main))
+                        .foregroundColor(Style.Color.main.swiftUIColor)
                         .fontWeight(.medium)
                 }
             })
-            .tint(Color(uiColor: Style.Color.buttonColor))
+            .tint(Style.Color.buttonColor.swiftUIColor)
             .buttonStyle(.borderedProminent)
             .disabled(!viewModel.postButtonEnabled)
         }
         .padding(6.0)
-        .background(Color(uiColor: Style.Color.accentLight))
+        .background(Style.Color.accentLight.swiftUIColor)
     }
 }
 

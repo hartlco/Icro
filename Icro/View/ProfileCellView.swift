@@ -67,7 +67,7 @@ struct ProfileCellView: View {
                             Spacer()
                         }
                     }).disabled(isFollowEnabled == false)
-                    .tint(Color(uiColor: Style.Color.buttonColor))
+                    .tint(Style.Color.buttonColor.swiftUIColor)
                     .buttonStyle(.borderedProminent)
                 }
                 Button(action: {
@@ -79,12 +79,12 @@ struct ProfileCellView: View {
                         Spacer()
                     }
                 })
-                .tint(Color(uiColor: Style.Color.buttonColor))
+                .tint(Style.Color.buttonColor.swiftUIColor)
                 .buttonStyle(.borderedProminent)
             }
         }
         .padding()
-        .background(Color(uiColor: Style.Color.accentLight))
+        .background(Style.Color.accentLight.swiftUIColor)
         .disabled(disabledAllInteractions)
     }
 
@@ -93,7 +93,7 @@ struct ProfileCellView: View {
              "PROFILEVIEWCONFIGURATOR_UNFOLLOWBUTTON_TITLE" :
                 "PROFILEVIEWCONFIGURATOR_FOLLOWBUTTON_TITLE")
             .fontWeight(.medium)
-            .foregroundColor(Color(uiColor: Style.Color.main))
+            .foregroundColor(Style.Color.main.swiftUIColor)
     }
 
     private var followingButtonText: Text {
@@ -103,7 +103,7 @@ struct ProfileCellView: View {
 
         return Text(title)
             .fontWeight(.medium)
-            .foregroundColor(Color(uiColor: Style.Color.main))
+            .foregroundColor(Style.Color.main.swiftUIColor)
     }
 }
 

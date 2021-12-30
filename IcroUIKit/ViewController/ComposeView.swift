@@ -50,15 +50,15 @@ struct ComposeView: View {
                                 // TODO: Add image selection / deletion
                             }
                         }
-                        .background(Color(uiColor: Style.Color.accentLight))
+                        .background(Style.Color.accentLight.swiftUIColor)
                     }
                     .padding()
-                    .background(Color(uiColor: Style.Color.accentSuperLight))
+                    .background(Style.Color.accentSuperLight.swiftUIColor)
                 }
                 VStack {
                     keyboardInputView
                 }
-                .background(Color(uiColor: Style.Color.accentLight))
+                .background(Style.Color.accentLight.swiftUIColor)
                 NavigationLink(
                     destination: insertLinkView,
                     isActive: $insertLinkActive

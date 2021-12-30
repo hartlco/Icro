@@ -6,8 +6,8 @@ import PackageDescription
 let package = Package(
     name: "Style",
     platforms: [
-        .iOS(.v13),
-        .macOS("10.15")
+        .iOS(.v15),
+        .macOS("12.0")
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.

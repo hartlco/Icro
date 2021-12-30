@@ -5,12 +5,12 @@
 
 #if os(iOS)
 import UIKit
+import SwiftUI
 public typealias XColor = UIColor
 #elseif os(OSX)
 public typealias XColor = NSColor
 #endif
 
-@available(iOS 13.0, *)
 public struct Color {
     public static let main = XColor(named: "main")!
     public static let accentLight = XColor(named: "accentLight")!
@@ -31,4 +31,11 @@ public struct Color {
     }
     public static let buttonColor = XColor(named: "whiteTransparent")!
     public static let successColor = XColor(named: "success")
+}
+
+public extension UIColor {
+    @available(iOS 15.0, *)
+    var swiftUIColor: SwiftUI.Color {
+        SwiftUI.Color(uiColor: self)
+    }
 }
