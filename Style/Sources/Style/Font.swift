@@ -49,18 +49,6 @@ public struct Font {
             return font
         }
     }
-
-    public var name: XFont {
-        let font = XFont.systemFont(ofSize: 19, weight: .bold)
-        let fontMetrics = UIFontMetrics(forTextStyle: .headline)
-        return fontMetrics.scaledFont(for: font)
-    }
-
-    public var username: XFont {
-        let font = XFont.systemFont(ofSize: 14, weight: .medium)
-        let fontMetrics = UIFontMetrics(forTextStyle: .headline)
-        return fontMetrics.scaledFont(for: font)
-    }
 }
 
 #if os(OSX)
