@@ -10,6 +10,8 @@ public typealias XFont = UIFont
 public typealias XFont = NSFont
 #endif
 
+import SwiftUI
+
 public struct Font {
     private let stylePreference: StylePreference
 
@@ -57,18 +59,6 @@ public struct Font {
     public var username: XFont {
         let font = XFont.systemFont(ofSize: 14, weight: .medium)
         let fontMetrics = UIFontMetrics(forTextStyle: .headline)
-        return fontMetrics.scaledFont(for: font)
-    }
-
-    public var time: XFont {
-        let font = XFont.systemFont(ofSize: 11)
-        let fontMetrics = UIFontMetrics(forTextStyle: .headline)
-        return fontMetrics.scaledFont(for: font)
-    }
-
-    public var loading: XFont {
-        let font = XFont.boldSystemFont(ofSize: 15)
-        let fontMetrics = UIFontMetrics(forTextStyle: .body)
         return fontMetrics.scaledFont(for: font)
     }
 }
