@@ -9,6 +9,7 @@ import MobileCoreServices
 import SwiftUI
 import InsertLinkView
 import Client
+import Style
 
 @objc(ShareViewController) class ShareViewController: UIViewController {
     override func viewDidLoad() {
@@ -61,7 +62,7 @@ import Client
             self?.extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
         }
 
-        let composeViewController = UIHostingController(rootView: composeView)
+        let composeViewController = UIHostingController(rootView: composeView.tint(Style.Color.main.swiftUIColor))
         add(composeViewController, view: view)
     }
 }

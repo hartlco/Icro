@@ -71,11 +71,14 @@ private extension String {
         let paragraphStyle = NSMutableParagraphStyle()
         let nsString = bodyString as NSString
         paragraphStyle.lineSpacing = 1.2
-        let mutableAttributedString = NSMutableAttributedString(string: string.string.trimEmptyLines, attributes: [
-            .font: Font(stylePreference: stylePreference).body,
+        let mutableAttributedString = NSMutableAttributedString(
+            string: string.string.trimEmptyLines,
+            attributes: [
+                .font: Font(stylePreference: stylePreference).body,
                 .foregroundColor: Color.textColor,
                 .paragraphStyle: paragraphStyle
-        ])
+            ]
+        )
 
         let linkValues = try? body.select("a[href]").array()
 
