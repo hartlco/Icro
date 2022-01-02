@@ -42,7 +42,7 @@ final class LoadMoreTableViewCell: UITableViewCell {
                          action: #selector(loadMorePressed(_:)),
                          for: .touchUpInside)
 
-        addSubview(stackView)
+        contentView.addSubview(stackView)
         stackView.axis = .horizontal
         stackView.spacing = 10
 

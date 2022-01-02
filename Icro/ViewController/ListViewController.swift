@@ -329,6 +329,7 @@ extension ListViewController: UITableViewDelegate {
 
     private func loadMoreCell(at indexPath: IndexPath, in tableView: UITableView) -> LoadMoreTableViewCell {
         let cell = tableView.dequeueCell(ofType: LoadMoreTableViewCell.self, for: indexPath)
+        cell.selectionStyle = .none
         cell.didPressLoadMore = { [weak self] in
             guard let self = self else { return }
             self.viewModel.loadMore(afterItemAtIndex: indexPath.row - 1)
