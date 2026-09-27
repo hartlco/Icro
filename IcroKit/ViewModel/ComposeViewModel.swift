@@ -94,6 +94,12 @@ public final class ComposeViewModel: ObservableObject {
         }
 
         self.text = startText
+        composeKeyboardInputViewModel.update(
+            for: text,
+            numberOfImages: images.count,
+            imageState: imageState,
+            hidesImageButton: !imageUploadEnabled
+        )
     }
 
     public var showKeyboardOnAppear: Bool {

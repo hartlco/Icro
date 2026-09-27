@@ -76,17 +76,14 @@ final class ListViewController: UIViewController {
         title = viewModel.title
 
         view.addSubview(tableView)
-        view.addSubview(unreadView)
-
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            unreadView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: UnreadView.Constants.mainViewLeading),
-            unreadView.topAnchor.constraint(equalTo: view.topAnchor, constant: -UnreadView.Constants.cornerRadius)
+            tableView.topAnchor.constraint(equalTo: view.topAnchor)
         ])
 
+        unreadView.addTarget(self, action: #selector(showUnreadPosts), for: .touchUpInside)
         tableView.delegate = self
     }
 
@@ -361,6 +358,7 @@ extension ListViewController: UITableViewDelegate {
     private func updateUnread() {
         guard let count = viewModel.numberOfUnreadItems else {
             unreadView.isHidden = true
+            if navigationItem.titleView === unreadView { navigationItem.titleView = nil }
             return
         }
 
@@ -368,9 +366,17 @@ extension ListViewController: UITableViewDelegate {
 
         if count == 0 {
             unreadView.isHidden = true
+            if navigationItem.titleView === unreadView { navigationItem.titleView = nil }
         } else {
             unreadView.isHidden = false
+            if navigationItem.titleView !== unreadView { navigationItem.titleView = unreadView }
         }
+    }
+
+    @objc private func showUnreadPosts() {
+        unreadView.isHidden = true
+        if navigationItem.titleView === unreadView { navigationItem.titleView = nil }
+        scrollToTop()
     }
 
     func tableView(_ tableView: UITableView,
@@ -477,49 +483,71 @@ private final class EditableTableViewDiffableDataSource: UITableViewDiffableData
     }
 }
 
-private final class UnreadView: UIView {
-    enum Constants {
-        static let mainViewLeading: CGFloat = 12.0
-
-        static let labelPadding: CGFloat = 10.0
-
-        static let cornerRadius: CGFloat = 4.0
-        static let height: CGFloat = 24.0
+private final class UnreadView: UIControl {
+    override var intrinsicContentSize: CGSize {
+        CGSize(width: unreadLabel.intrinsicContentSize.width + 71, height: 40)
     }
+
+    private let glassView: UIVisualEffectView = {
+        let view = UIVisualEffectView(effect: UIGlassEffect(style: .regular))
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 20
+        view.clipsToBounds = true
+        view.isUserInteractionEnabled = false
+        return view
+    }()
+
+    private let arrowView: UIImageView = {
+        let view = UIImageView(image: UIImage(systemName: "arrow.up"))
+        view.tintColor = .label
+        view.contentMode = .scaleAspectFit
+        view.setContentHuggingPriority(.required, for: .horizontal)
+        return view
+    }()
 
     private let unreadLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
-        label.font = .boldSystemFont(ofSize: 12.0)
-
+        label.textColor = .label
+        label.font = .systemFont(ofSize: 14, weight: .semibold)
+        label.adjustsFontForContentSizeCategory = true
         return label
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        translatesAutoresizingMaskIntoConstraints = false
+        accessibilityTraits = .button
 
-        addSubview(unreadLabel)
+        let stack = UIStackView(arrangedSubviews: [arrowView, unreadLabel])
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.alignment = .center
+        stack.spacing = 7
+
+        addSubview(glassView)
+        glassView.contentView.addSubview(stack)
 
         NSLayoutConstraint.activate([
-            unreadLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.labelPadding),
-            unreadLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.labelPadding),
-            unreadLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.cornerRadius),
-            unreadLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-            heightAnchor.constraint(equalToConstant: Constants.height)
+            glassView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            glassView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            glassView.topAnchor.constraint(equalTo: topAnchor),
+            glassView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            stack.leadingAnchor.constraint(equalTo: glassView.contentView.leadingAnchor, constant: 16),
+            stack.trailingAnchor.constraint(equalTo: glassView.contentView.trailingAnchor, constant: -16),
+            stack.centerYAnchor.constraint(equalTo: glassView.contentView.centerYAnchor),
+            stack.topAnchor.constraint(greaterThanOrEqualTo: glassView.contentView.topAnchor, constant: 8),
+            stack.bottomAnchor.constraint(lessThanOrEqualTo: glassView.contentView.bottomAnchor, constant: -8),
+            heightAnchor.constraint(greaterThanOrEqualToConstant: 40)
         ])
-
-        backgroundColor = Color.accent
-    }
-
-    override func layoutSublayers(of layer: CALayer) {
-        super.layoutSublayers(of: layer)
-
-        layer.cornerRadius = Constants.cornerRadius
     }
 
     func setCount(_ count: Int) {
-        unreadLabel.text = String(count)
+        let key = count == 1 ? "TIMELINE_NEW_POST_SINGULAR" : "TIMELINE_NEW_POSTS_PLURAL"
+        let format = NSLocalizedString(key, comment: "Unread timeline posts")
+        let title = String.localizedStringWithFormat(format, count)
+        unreadLabel.text = title
+        accessibilityLabel = title
+        invalidateIntrinsicContentSize()
     }
 
     required init?(coder: NSCoder) {

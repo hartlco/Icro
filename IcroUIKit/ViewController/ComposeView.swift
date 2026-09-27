@@ -21,6 +21,7 @@ struct ComposeView: View {
     @State var insertLinkActive = false
     @State var insertImageURLActive = false
     @State private var selectedPhoto: PhotosPickerItem?
+    @State private var didFocusEditor = false
 
     var didClose: (() -> Void)?
 
@@ -38,6 +39,14 @@ struct ComposeView: View {
                     text: $viewModel.text,
                     highlightRules: .markdown
                 )
+                .introspect { editor in
+                    guard viewModel.showKeyboardOnAppear, !didFocusEditor else { return }
+                    DispatchQueue.main.async {
+                        guard !didFocusEditor else { return }
+                        didFocusEditor = true
+                        editor.textView.becomeFirstResponder()
+                    }
+                }
                 if !viewModel.images.isEmpty {
                     ScrollView(.horizontal) {
                         HStack {
@@ -54,26 +63,27 @@ struct ComposeView: View {
                     .padding()
                     .background(Style.Color.accentSuperLight.swiftUIColor)
                 }
-                VStack {
-                    keyboardInputView
-                }
-                .background(Style.Color.accentLight.swiftUIColor)
-                .navigationDestination(isPresented: $insertLinkActive) {
-                    insertLinkView
-                }
-                .navigationDestination(isPresented: $insertImageURLActive) {
-                    insertImageLinkView
-                }
-                .photosPicker(isPresented: $viewModel.imagePickerActive,
-                              selection: $selectedPhoto,
-                              matching: .images)
-                .onChange(of: selectedPhoto) { _, photo in
-                    Task {
-                        let data = try? await photo?.loadTransferable(type: Data.self)
-                        await MainActor.run {
-                            viewModel.pickedImage = data
-                            selectedPhoto = nil
-                        }
+            }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                keyboardInputView
+                    .padding(.horizontal, 12)
+                    .padding(.bottom, 8)
+            }
+            .navigationDestination(isPresented: $insertLinkActive) {
+                insertLinkView
+            }
+            .navigationDestination(isPresented: $insertImageURLActive) {
+                insertImageLinkView
+            }
+            .photosPicker(isPresented: $viewModel.imagePickerActive,
+                          selection: $selectedPhoto,
+                          matching: .images)
+            .onChange(of: selectedPhoto) { _, photo in
+                Task {
+                    let data = try? await photo?.loadTransferable(type: Data.self)
+                    await MainActor.run {
+                        viewModel.pickedImage = data
+                        selectedPhoto = nil
                     }
                 }
             }
@@ -98,7 +108,7 @@ struct ComposeView: View {
                                 dismissView()
                             }
                         }
-                        .disabled(viewModel.uploading)
+                        .disabled(viewModel.uploading || (viewModel.text.isEmpty && viewModel.images.isEmpty))
                     }
                 }
             }

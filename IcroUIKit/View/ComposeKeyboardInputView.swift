@@ -8,7 +8,6 @@
 
 import Combine
 import SwiftUI
-import Style
 
 final class ComposeKeyboardInputViewModel: ObservableObject {
     @Published var characterCountText = ""
@@ -56,13 +55,15 @@ struct ComposeKeyboardInputView: View {
     }
 
     var body: some View {
-        HStack {
+        HStack(spacing: 4) {
             Button(action: {
                 didPressLinkButton?()
             }, label: {
                 Label("KEYBOARDINPUTVIEW_LINKBUTTON_TTILE", systemImage: "link")
                     .labelStyle(.iconOnly)
             })
+            .frame(width: 44, height: 44)
+            .accessibilityLabel(Text("KEYBOARDINPUTVIEW_LINKBUTTON_TTILE"))
             if !viewModel.imageButtonHidden {
                 Menu {
                     Button {
@@ -83,39 +84,40 @@ struct ComposeKeyboardInputView: View {
                     Label("KEYBOARDINPUTVIEW_IMAGEBUTTON_TITLE", systemImage: "photo")
                         .labelStyle(.iconOnly)
                 }
-
-                .buttonStyle(.borderedProminent)
+                .frame(width: 44, height: 44)
                 .disabled(!viewModel.imageButtonEnabled)
             }
             Spacer()
             if !viewModel.progressHidden {
                 ProgressView(value: viewModel.progress, total: 1)
+                    .frame(maxWidth: 64)
                 Button {
                     didPressCancelButton?()
                 } label: {
-                    Image("cancel", bundle: nil)
+                    Image(systemName: "xmark.circle.fill")
                 }
+                .frame(width: 44, height: 44)
             }
-
-            Spacer()
             Text(viewModel.characterCountText)
-                .foregroundColor(Style.Color.secondaryTextColor.swiftUIColor)
-                .font(.footnote)
+                .foregroundStyle(.secondary)
+                .font(.caption.monospacedDigit())
+                .accessibilityHidden(viewModel.characterCountText.isEmpty)
             Button(action: {
                 didPressPostButton?()
             }, label: {
-                HStack {
-                    Text("KEYBOARDINPUTVIEW_POSTBUTTON_TITLE")
-                        .foregroundColor(Style.Color.main.swiftUIColor)
-                        .fontWeight(.medium)
-                }
+                Text("KEYBOARDINPUTVIEW_POSTBUTTON_TITLE")
+                    .font(.subheadline.weight(.semibold))
             })
-            .tint(Style.Color.buttonColor.swiftUIColor)
-            .buttonStyle(.borderedProminent)
+            .padding(.horizontal, 12)
+            .frame(minHeight: 44)
             .disabled(!viewModel.postButtonEnabled)
         }
-        .padding(6.0)
-        .background(Style.Color.accentLight.swiftUIColor)
+        .font(.system(size: 18, weight: .medium))
+        .foregroundStyle(.primary)
+        .buttonStyle(.plain)
+        .padding(.horizontal, 8)
+        .padding(.vertical, 4)
+        .glassEffect(.regular, in: Capsule())
     }
 }
 

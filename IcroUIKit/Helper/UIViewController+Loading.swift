@@ -56,25 +56,17 @@ public extension LoadingViewController where Self: UIViewController {
     }
 
     func hideMessage() {
-        hideWorkItem = makeHideMessageWorkItem()
-        guard let hideWorkItem = hideWorkItem else { return }
-        DispatchQueue.main.async(execute: hideWorkItem)
-    }
+        hideWorkItem?.cancel()
+        hideWorkItem = nil
+        guard let loadingView else { return }
 
-    private func makeHideMessageWorkItem() -> DispatchWorkItem {
-        return DispatchWorkItem {
-            guard let loadingView = self.loadingView else { return }
-
-            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
-                loadingView.alpha = 0
-                loadingView.anchor?.constant = loadingView.position == .top ? -loadingView.frame.size.height : loadingView.frame.size.height
-                self.view.layoutIfNeeded()
-            }, completion: { completed in
-                guard completed else { return }
-                loadingView.removeFromSuperview()
-                self.loadingView = nil
-            })
-        }
+        UIView.animate(withDuration: 0.18, delay: 0, options: .curveEaseIn, animations: {
+            loadingView.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+        }, completion: { completed in
+            guard completed, self.loadingView === loadingView else { return }
+            loadingView.removeFromSuperview()
+            self.loadingView = nil
+        })
     }
 
     func showMessage(text: String,
@@ -83,41 +75,53 @@ public extension LoadingViewController where Self: UIViewController {
                      dismissalTime: LoadingIndicatorDismissalTime) {
         reset()
 
-        let loadingView = LoadingView(text: text,
-                                      color: color,
-                                      position: position)
-        loadingView.alpha = 0
-        view.addSubview(loadingView)
-        loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        let showsSpinner: Bool
+        switch dismissalTime {
+        case .forever: showsSpinner = true
+        case .seconds: showsSpinner = false
+        }
+        let loadingView = LoadingView(text: text, color: color, showsSpinner: showsSpinner)
+        guard let ownView = view else { return }
+        let host: UIView = position == .bottom ? (tabBarController?.view ?? ownView) : ownView
+        host.layoutIfNeeded()
+        host.addSubview(loadingView)
 
-        let anchor: NSLayoutConstraint
+        let preferredWidth = loadingView.widthAnchor.constraint(equalToConstant: 360)
+        preferredWidth.priority = .defaultHigh
+        NSLayoutConstraint.activate([
+            loadingView.centerXAnchor.constraint(equalTo: host.safeAreaLayoutGuide.centerXAnchor),
+            loadingView.leadingAnchor.constraint(greaterThanOrEqualTo: host.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            loadingView.trailingAnchor.constraint(lessThanOrEqualTo: host.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            preferredWidth
+        ])
+
         switch position {
         case .top:
-            anchor = loadingView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+            loadingView.topAnchor.constraint(equalTo: host.safeAreaLayoutGuide.topAnchor, constant: 12).isActive = true
         case .bottom:
-            anchor = loadingView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            if let tabBar = tabBarController?.tabBar,
+               tabBar.isDescendant(of: host),
+               !tabBar.isHidden,
+               tabBar.convert(tabBar.bounds, to: host).minY > host.bounds.midY {
+                loadingView.bottomAnchor.constraint(equalTo: tabBar.topAnchor, constant: -12).isActive = true
+            } else {
+                loadingView.bottomAnchor.constraint(equalTo: host.safeAreaLayoutGuide.bottomAnchor, constant: -12).isActive = true
+            }
         }
 
-        anchor.isActive = true
-        loadingView.anchor = anchor
         self.loadingView = loadingView
-        loadingView.layoutIfNeeded()
-        anchor.constant = position == .top ? -(loadingView.frame.size.height) : loadingView.frame.size.height
-        view.layoutIfNeeded()
+        loadingView.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
 
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
-            loadingView.alpha = 1
-            anchor.constant = 0
-            self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: [], animations: {
+            loadingView.transform = .identity
         }, completion: nil)
 
         if case .seconds(let seconds) = dismissalTime {
-            hideWorkItem = DispatchWorkItem {
-                self.hideMessage()
+            let workItem = DispatchWorkItem { [weak self] in
+                self?.hideMessage()
             }
-            guard let hideWorkItem = hideWorkItem else { return }
-            DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: hideWorkItem)
+            hideWorkItem = workItem
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: workItem)
         }
     }
 
@@ -138,29 +142,53 @@ public enum LoadingIndicatorDismissalTime {
     case seconds(_ : TimeInterval)
 }
 
-private class LoadingView: UIView {
-    private let label: UILabel
-    var anchor: NSLayoutConstraint?
-    var position: LoadingPosition
+private final class LoadingView: UIVisualEffectView {
+    init(text: String, color: UIColor, showsSpinner: Bool) {
+        let glass = UIGlassEffect(style: .regular)
+        glass.tintColor = color.withAlphaComponent(0.12)
+        super.init(effect: glass)
 
-    init(text: String, color: UIColor, position: LoadingPosition) {
-        self.label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        self.position = position
-        super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.font = Font().boldBody
-        label.textColor = .white
-        label.text = text
-        label.translatesAutoresizingMaskIntoConstraints = false
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = color
-        addSubview(label)
-        let offset = 4.0
-        label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: offset).isActive = true
-        label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -offset).isActive = true
-        label.topAnchor.constraint(equalTo: topAnchor, constant: offset).isActive = true
-        label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -offset).isActive = true
+        layer.cornerRadius = 22
+        clipsToBounds = true
+        isUserInteractionEnabled = false
+        accessibilityLabel = text
+
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = .preferredFont(forTextStyle: .subheadline)
+        label.adjustsFontForContentSizeCategory = true
+        label.textColor = .label
+        label.text = text
+
+        let indicator: UIView
+        if showsSpinner {
+            let spinner = UIActivityIndicatorView(style: .medium)
+            spinner.color = color
+            spinner.startAnimating()
+            indicator = spinner
+        } else {
+            let image = UIImageView(image: UIImage(systemName: "exclamationmark.circle.fill"))
+            image.tintColor = color
+            image.contentMode = .scaleAspectFit
+            indicator = image
+        }
+        indicator.setContentHuggingPriority(.required, for: .horizontal)
+
+        let stack = UIStackView(arrangedSubviews: [indicator, label])
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.alignment = .center
+        stack.spacing = 10
+        contentView.addSubview(stack)
+
+        NSLayoutConstraint.activate([
+            stack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            stack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            stack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            stack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
+            heightAnchor.constraint(greaterThanOrEqualToConstant: 52)
+        ])
     }
 
     required init?(coder aDecoder: NSCoder) {

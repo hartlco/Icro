@@ -114,6 +114,8 @@
 // UIViewController+Loading
 "UIVIEWCONTROLLERLOADING_LOADING_MORE" = "Lade mehr";
 "TIMELINE_RETRY_LOADING" = "Ältere Beiträge erneut laden";
+"TIMELINE_NEW_POST_SINGULAR" = "%d neuer Beitrag";
+"TIMELINE_NEW_POSTS_PLURAL" = "%d neue Beiträge";
 "UIVIEWCONTROLLERLOADING_LOADING_TEXT" = "Lade";
 "UIVIEWCONTROLLERLOADING_WORDPRESSURLERROR_TEXT" = "Ungültige Wordpress Einstellungen";
 "UIVIEWCONTROLLERLOADING_MICROPUBURLERROR_TEXT" = "Ungültige Micropub Einstellungen";
