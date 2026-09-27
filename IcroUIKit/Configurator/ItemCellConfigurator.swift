@@ -20,7 +20,7 @@ public final class ItemCellConfigurator: NSObject {
         cell.usernameLabel.text = item.author.name
         cell.isFavorite = item.isFavorite
         let attributedString = item.content
-        cell.attributedLabel.set(attributedText: attributedString)
+        cell.setContent(attributedString)
         cell.attributedLabel.didTap = { [weak self] link in
             if let link = link {
                 self?.itemNavigator.open(url: link)

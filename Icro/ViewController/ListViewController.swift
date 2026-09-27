@@ -13,7 +13,8 @@ final class ListViewController: UIViewController {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
-        tableView.separatorColor = Color.separatorColor
+        tableView.separatorColor = UIColor.separator.withAlphaComponent(0.45)
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(viewModel, action: #selector(ListViewModel.load), for: .valueChanged)
         tableView.registerClass(cellType: ItemTableViewCell.self)
@@ -21,7 +22,6 @@ final class ListViewController: UIViewController {
         tableView.registerClass(cellType: LoadMoreTableViewCell.self)
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.separatorColor = Color.separatorColor
 
         return tableView
     }()
@@ -41,6 +41,7 @@ final class ListViewController: UIViewController {
     }()
 
     private var isLoading = false
+    private var didRestoreUnreadPosition = false
     private var rowHeightEstimate = [String: CGFloat]()
     private let notificationCenter: NotificationCenter
     private let loadingSpinner = UIActivityIndicatorView(style: .medium)
@@ -117,9 +118,14 @@ final class ListViewController: UIViewController {
             }
 
             self?.applySnapshot()
-            if let newIndex = self?.viewModel.numberOfUnreadItems, newIndex != 0 {
-                self?.updateUnread()
-                self?.tableView.scrollToRow(at: IndexPath(row: newIndex, section: 0), at: .top, animated: false)
+            if let self = self, !self.didRestoreUnreadPosition {
+                if let newIndex = self.viewModel.numberOfUnreadItems, newIndex != 0 {
+                    self.updateUnread()
+                    self.tableView.scrollToRow(at: IndexPath(row: newIndex, section: 0), at: .top, animated: false)
+                    self.didRestoreUnreadPosition = true
+                } else if !cache {
+                    self.didRestoreUnreadPosition = true
+                }
             }
             self?.isLoading = false
         }
@@ -128,6 +134,7 @@ final class ListViewController: UIViewController {
             self?.hideLoadingSpinner()
             self?.tableView.refreshControl?.endRefreshing()
             self?.isLoading = false
+            self?.tableView.visibleCells.compactMap { $0 as? LoadMoreTableViewCell }.forEach { $0.showRetry() }
             self?.showError(error: error)
         }
 
@@ -197,8 +204,6 @@ final class ListViewController: UIViewController {
                 return self.loadMoreCell(at: indexPath, in: tableView)
             case .item(let item):
                 let cell = tableView.dequeueCell(ofType: ItemTableViewCell.self, for: indexPath)
-                cell.layer.shouldRasterize = true
-                cell.layer.rasterizationScale = self.view.traitCollection.displayScale
                 self.cellConfigurator.configure(cell,
                                                 forDisplaying: item)
                 return cell
@@ -271,8 +276,16 @@ final class ListViewController: UIViewController {
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         switch viewModel.viewType(forRow: indexPath.row) {
-        case .author, .loadMore:
+        case .author:
             return
+        case .loadMore:
+            guard let cell = cell as? LoadMoreTableViewCell else { return }
+            if viewModel.loadMore(afterItemAtIndex: indexPath.row - 1, automatically: true)
+                || viewModel.isLoadingMore {
+                cell.showLoading()
+            } else if viewModel.shouldShowLoadMoreRetry {
+                cell.showRetry()
+            }
         case .item(let item):
             if isLoading == false {
                 viewModel.set(lastReadRow: tableView.indexPathsForVisibleRows!.first!.row)

@@ -22,7 +22,7 @@ public final class HTMLContent: Codable {
     public let imageDescriptions: [String]
     public let videoLinks: [URL]
 
-    init(
+    public init(
         rawHTMLString: String,
         stylePreference: StylePreference
     ) {

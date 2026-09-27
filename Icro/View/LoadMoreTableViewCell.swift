@@ -1,27 +1,37 @@
-//
-//  Created by martin on 04.11.18.
-//  Copyright © 2018 Martin Hartl. All rights reserved.
-//
-
 import UIKit
-import Style
-import SnapKit
 
 final class LoadMoreTableViewCell: UITableViewCell {
-    private let button = UIButton()
-    private let stackView = UIStackView()
+    private let retryButton = UIButton(type: .system)
     private let activityIndicator = UIActivityIndicatorView(style: .medium)
-
-    private var isLoading = false
 
     var didPressLoadMore: (() -> Void)?
 
-    override init(style: UITableViewCell.CellStyle,
-                  reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        setup()
-        applyAppearance()
+        selectionStyle = .none
+        backgroundColor = .systemBackground
+        contentView.backgroundColor = .systemBackground
+        separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+
+        retryButton.translatesAutoresizingMaskIntoConstraints = false
+        retryButton.setTitle(NSLocalizedString("TIMELINE_RETRY_LOADING", comment: "Retry loading older posts"), for: .normal)
+        retryButton.titleLabel?.font = .preferredFont(forTextStyle: .footnote)
+        retryButton.addTarget(self, action: #selector(retryPressed), for: .touchUpInside)
+
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.color = .secondaryLabel
+
+        contentView.addSubview(retryButton)
+        contentView.addSubview(activityIndicator)
+        NSLayoutConstraint.activate([
+            retryButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            retryButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            activityIndicator.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 44)
+        ])
+        showLoading()
     }
 
     required init?(coder: NSCoder) {
@@ -30,54 +40,22 @@ final class LoadMoreTableViewCell: UITableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-
-        isLoading = false
-        applyAppearance()
+        didPressLoadMore = nil
+        showLoading()
     }
 
-    private func setup() {
-        button.setTitleColor(Color.main, for: .normal)
-        button.setTitleColor(Color.accentLight, for: .disabled)
-        button.addTarget(self,
-                         action: #selector(loadMorePressed(_:)),
-                         for: .touchUpInside)
-
-        contentView.addSubview(stackView)
-        stackView.axis = .horizontal
-        stackView.spacing = 10
-
-        stackView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.centerX.equalToSuperview()
-        }
-
-        stackView.addArrangedSubview(button)
+    func showLoading() {
+        retryButton.isHidden = true
+        activityIndicator.startAnimating()
     }
 
-    private func applyAppearance() {
-        backgroundColor = Color.backgroundColor
-
-        if isLoading {
-            button.setTitle(NSLocalizedString("UIVIEWCONTROLLERLOADING_LOADING_TEXT",
-                                              comment: "Loading"),
-                            for: .normal)
-            button.isEnabled = false
-            stackView.insertArrangedSubview(activityIndicator, at: 0)
-            activityIndicator.startAnimating()
-        } else {
-            button.setTitle(NSLocalizedString("UIVIEWCONTROLLERLOADING_LOADING_MORE",
-                                              comment: "Load More"),
-                            for: .normal)
-            button.isEnabled = true
-            stackView.removeArrangedSubview(activityIndicator)
-            activityIndicator.stopAnimating()
-        }
+    func showRetry() {
+        activityIndicator.stopAnimating()
+        retryButton.isHidden = false
     }
 
-    @objc private func loadMorePressed(_ sender: Any) {
+    @objc private func retryPressed() {
+        showLoading()
         didPressLoadMore?()
-        isLoading = true
-
-        applyAppearance()
     }
 }

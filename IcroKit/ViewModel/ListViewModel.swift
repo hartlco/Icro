@@ -59,6 +59,9 @@ public class ListViewModel: NSObject {
     private var visibleActionBarIndexPath: IndexPath?
 
     private var isLoading = false
+    private var canAutomaticallyLoadMore = true
+    public private(set) var isLoadingMore = false
+    public var shouldShowLoadMoreRetry: Bool { !canAutomaticallyLoadMore && !isLoadingMore }
 
     private lazy var showLoadMore: Bool = {
         return supportedLodMoreTypes
@@ -66,7 +69,7 @@ public class ListViewModel: NSObject {
 
     private lazy var supportedLodMoreTypes: Bool = {
         switch type {
-        case .mentions, .timeline, .favorites:
+        case .mentions, .timeline, .favorites, .photos, .discover, .discoverCollection:
             return true
         default:
             return false
@@ -121,6 +124,7 @@ public class ListViewModel: NSObject {
 
                 // TODO: Use mainActor here
                 DispatchQueue.main.async {
+                    self.canAutomaticallyLoadMore = true
                     self.updateShowLoadMoreInBetweenAfterLoadMore(loadedNewItems: value.items)
                     self.loadedAuthor = value.author ?? self.loadedAuthor
                     self.insertNewItems(newItems: value.items)
@@ -145,11 +149,13 @@ public class ListViewModel: NSObject {
         }
     }
 
-    public func loadMore(afterItemAtIndex index: Int) {
-        guard !isLoading else { return }
+    @discardableResult
+    public func loadMore(afterItemAtIndex index: Int, automatically: Bool = false) -> Bool {
+        guard !isLoading, !showsLoginView else { return false }
+        guard !automatically || canAutomaticallyLoadMore else { return false }
 
-        guard index <= items.count,
-        case .item(let lastItem) = viewTypes[index] else { return }
+        guard viewTypes.indices.contains(index),
+        case .item(let lastItem) = viewTypes[index] else { return false }
 
         if items.count > index + 1 {
             let nextItem = items[index + 1]
@@ -159,9 +165,12 @@ public class ListViewModel: NSObject {
 
         didStartLoading()
         isLoading = true
+        isLoadingMore = true
+        canAutomaticallyLoadMore = false
         client.load(resource: Item.resourceBefore(oldResource: type.resource, item: lastItem)) { [weak self] itemResponse in
             guard let self = self else { return }
             self.isLoading = false
+            self.isLoadingMore = false
 
             switch itemResponse {
             case .failure(let error):
@@ -174,9 +183,11 @@ public class ListViewModel: NSObject {
                 }
                 self.insertNewItems(newItems: value.items)
                 self.updateUnreadItems()
+                self.canAutomaticallyLoadMore = true
                 self.didFinishLoading(false)
             }
         }
+        return true
     }
 
     public func applicableSnapshot(snapshotBlock: ((NSDiffableDataSourceSnapshot<Section, ListViewModel.ViewType>) -> Void)) {

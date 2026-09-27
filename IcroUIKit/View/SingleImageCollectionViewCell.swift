@@ -1,64 +1,54 @@
-//
-//  Created by martin on 07.04.18.
-//  Copyright © 2018 Martin Hartl. All rights reserved.
-//
-
 import UIKit
-import Style
+import Kingfisher
 
 final class SingleImageCollectionViewCell: UICollectionViewCell {
-    let videoPlayImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "play-button")
-
-        return imageView
+    let imageView: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
+        return view
     }()
 
-    let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-
-        return imageView
+    let videoPlayImage: UIImageView = {
+        let view = UIImageView(image: UIImage(systemName: "play.fill"))
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.tintColor = .white
+        view.contentMode = .center
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.55)
+        view.layer.cornerRadius = 22
+        view.isHidden = true
+        return view
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        updateAppearance()
+        contentView.clipsToBounds = true
+        contentView.layer.cornerRadius = 12
+        contentView.addSubview(imageView)
+        contentView.addSubview(videoPlayImage)
+
+        NSLayoutConstraint.activate([
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            videoPlayImage.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            videoPlayImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            videoPlayImage.widthAnchor.constraint(equalToConstant: 44),
+            videoPlayImage.heightAnchor.constraint(equalToConstant: 44)
+        ])
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        videoPlayImage.isHidden = true
-    }
-
     override func prepareForReuse() {
-        updateAppearance()
+        super.prepareForReuse()
+        imageView.kf.cancelDownloadTask()
         imageView.image = nil
-    }
-
-    private func updateAppearance() {
-        addSubview(imageView)
-        addSubview(videoPlayImage)
-
-        NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            imageView.topAnchor.constraint(equalTo: topAnchor),
-            imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-
-            videoPlayImage.centerXAnchor.constraint(equalTo: centerXAnchor),
-            videoPlayImage.centerYAnchor.constraint(equalTo: centerYAnchor),
-            videoPlayImage.heightAnchor.constraint(equalToConstant: 34.0),
-            videoPlayImage.widthAnchor.constraint(equalToConstant: 34.0)
-        ])
-
-        imageView.backgroundColor = Color.accentLight
+        videoPlayImage.isHidden = true
     }
 }
