@@ -181,11 +181,11 @@ public final class ItemTableViewCell: UITableViewCell {
 
         namesStack.addArrangedSubview(usernameLabel)
         namesStack.addArrangedSubview(atUsernameLabel)
-        namesStack.addArrangedSubview(dateLabel)
         let headerSpacer = UIView()
         headerSpacer.setContentHuggingPriority(.defaultLow, for: .horizontal)
         headerSpacer.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         namesStack.addArrangedSubview(headerSpacer)
+        namesStack.addArrangedSubview(dateLabel)
         titleStack.addArrangedSubview(avatarImageView)
         titleStack.addArrangedSubview(namesStack)
         namesStack.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)

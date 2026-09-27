@@ -167,7 +167,8 @@ class ListViewModelTests: XCTestCase {
         XCTAssertLessThan(cell.atUsernameLabel.bounds.width,
                           cell.atUsernameLabel.intrinsicContentSize.width)
         XCTAssertLessThanOrEqual(cell.atUsernameLabel.frame.minX - cell.usernameLabel.frame.maxX, 6)
-        XCTAssertLessThanOrEqual(cell.dateLabel.frame.minX - cell.atUsernameLabel.frame.maxX, 6)
+        let dateFrame = cell.dateLabel.convert(cell.dateLabel.bounds, to: cell.contentView)
+        XCTAssertEqual(dateFrame.maxX, width - 14, accuracy: 1)
 
         let avatarFrame = cell.avatarImageView.convert(cell.avatarImageView.bounds, to: cell.contentView)
         let actionButton = cell.contentView.subviews.compactMap { $0 as? UIButton }.first
@@ -177,6 +178,27 @@ class ListViewModelTests: XCTestCase {
             XCTAssertGreaterThan(actionButton.frame.minX, avatarFrame.maxX)
             XCTAssertEqual(actionButton.frame.maxX, width - 14, accuracy: 1)
         }
+    }
+
+    @MainActor
+    func testPostTimeStaysAtTrailingEdgeWithoutHandle() {
+        let cell = ItemTableViewCell(style: .default, reuseIdentifier: nil)
+        cell.usernameLabel.text = "Short name"
+        cell.atUsernameLabel.isHidden = true
+        cell.dateLabel.text = "20h"
+        cell.setContent(NSAttributedString(string: "A short post"))
+
+        let width: CGFloat = 390
+        let height = cell.contentView.systemLayoutSizeFitting(
+            CGSize(width: width, height: UIView.layoutFittingCompressedSize.height),
+            withHorizontalFittingPriority: .required,
+            verticalFittingPriority: .fittingSizeLevel
+        ).height
+        cell.contentView.frame = CGRect(x: 0, y: 0, width: width, height: height)
+        cell.contentView.layoutIfNeeded()
+
+        let dateFrame = cell.dateLabel.convert(cell.dateLabel.bounds, to: cell.contentView)
+        XCTAssertEqual(dateFrame.maxX, width - 14, accuracy: 1)
     }
 }
 
