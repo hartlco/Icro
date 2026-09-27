@@ -36,7 +36,7 @@
 		5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5837292128618B0076121E /* UserListViewModel.swift */; };
 		5B609F1023091FA900F2C1BC /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F0F23091FA900F2C1BC /* ViewModelState.swift */; };
 		5B609F1323091FD600F2C1BC /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F1123091FD500F2C1BC /* ListViewController.swift */; };
-		5B609F162309200400F2C1BC /* GalleryDataSource+ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F152309200300F2C1BC /* GalleryDataSource+ImageViewer.swift */; };
+		5B609F162309200400F2C1BC /* MediaGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F152309200300F2C1BC /* MediaGalleryView.swift */; };
 		5B609F182309203400F2C1BC /* ItemNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F172309203400F2C1BC /* ItemNavigator.swift */; };
 		5B609F1A2309204B00F2C1BC /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B609F192309204B00F2C1BC /* TipJarViewModel.swift */; };
 		5B69E65122AA16310081CDFB /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69E65022AA16310081CDFB /* SettingsContentView.swift */; };
@@ -97,10 +97,6 @@
 		C5454DB223CB9F5000739A6C /* VerticalTabView in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DB123CB9F5000739A6C /* VerticalTabView */; };
 		C5454DB423CB9FD200739A6C /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = C5454DB323CB9FD200739A6C /* TypedSymbols */; };
 		C5454DB523CBA0EF00739A6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
-		C5470E63276F0CEE001B1963 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = C5470E62276F0CEE001B1963 /* SwiftUIX */; };
-		C5470E65276F0E8E001B1963 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = C5470E64276F0E8E001B1963 /* SwiftUIX */; };
-		C5470E68276F1210001B1963 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = C5470E67276F1210001B1963 /* Introspect */; };
-		C5470E6A276F124F001B1963 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = C5470E69276F124F001B1963 /* Introspect */; };
 		C550D77A2740F0E800E10CF6 /* Style in Frameworks */ = {isa = PBXBuildFile; productRef = C550D7792740F0E800E10CF6 /* Style */; };
 		C55BAF29275D489D009E8A9C /* ComposeKeyboardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55BAF28275D489D009E8A9C /* ComposeKeyboardInputView.swift */; };
 		C55BAF2A275D489D009E8A9C /* ComposeKeyboardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55BAF28275D489D009E8A9C /* ComposeKeyboardInputView.swift */; };
@@ -169,7 +165,6 @@
 		C589572627500E3C00B7E392 /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = C589572527500E3C00B7E392 /* TypedSymbols */; };
 		C589572827500E4400B7E392 /* TypedSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = C589572727500E4400B7E392 /* TypedSymbols */; };
 		C5C450BB2743955D0090377B /* InsertLinkView in Frameworks */ = {isa = PBXBuildFile; productRef = C5C450BA2743955D0090377B /* InsertLinkView */; };
-		C5C450BE274398640090377B /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = C5C450BD274398640090377B /* ImageViewer */; };
 		C5CE39D823CB6F9F0095013A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE39D723CB6F9F0095013A /* AppDelegate.swift */; };
 		C5CE39DA23CB6F9F0095013A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE39D923CB6F9F0095013A /* ContentView.swift */; };
 		C5CE39DC23CB6FA00095013A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CE39DB23CB6FA00095013A /* Assets.xcassets */; };
@@ -300,7 +295,7 @@
 		5B5FE65023461A3F003C6F4D /* PushRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushRegistration.swift; sourceTree = "<group>"; };
 		5B609F0F23091FA900F2C1BC /* ViewModelState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModelState.swift; path = ViewModel/ViewModelState.swift; sourceTree = "<group>"; };
 		5B609F1123091FD500F2C1BC /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ViewController/ListViewController.swift; sourceTree = "<group>"; };
-		5B609F152309200300F2C1BC /* GalleryDataSource+ImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GalleryDataSource+ImageViewer.swift"; path = "Helper/GalleryDataSource+ImageViewer.swift"; sourceTree = "<group>"; };
+		5B609F152309200300F2C1BC /* MediaGalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MediaGalleryView.swift"; path = "Helper/MediaGalleryView.swift"; sourceTree = "<group>"; };
 		5B609F172309203400F2C1BC /* ItemNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemNavigator.swift; path = Navigator/ItemNavigator.swift; sourceTree = "<group>"; };
 		5B609F192309204B00F2C1BC /* TipJarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipJarViewModel.swift; path = ViewModel/TipJarViewModel.swift; sourceTree = "<group>"; };
 		5B66EE6D227D734800317FE3 /* MediaEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEndpoint.swift; sourceTree = "<group>"; };
@@ -408,10 +403,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5023CB9274E2F5C0034BDC9 /* InsertLinkView in Frameworks */,
-				C5470E6A276F124F001B1963 /* Introspect in Frameworks */,
 				C589571E27500DA900B7E392 /* Settings in Frameworks */,
 				C589571A27500D6E00B7E392 /* Alamofire in Frameworks */,
-				C5470E65276F0E8E001B1963 /* SwiftUIX in Frameworks */,
 				C589572627500E3C00B7E392 /* TypedSymbols in Frameworks */,
 				C504654E274F790D0004B812 /* SnapKit in Frameworks */,
 				C5023CB7274E2F5C0034BDC9 /* Client in Frameworks */,
@@ -458,11 +451,8 @@
 				C51F8480267F1FFB002A018E /* Client in Frameworks */,
 				5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */,
 				C5282B972764ADD8004F5106 /* HighlightedTextEditor in Frameworks */,
-				C5470E68276F1210001B1963 /* Introspect in Frameworks */,
-				C5C450BE274398640090377B /* ImageViewer in Frameworks */,
 				C550D77A2740F0E800E10CF6 /* Style in Frameworks */,
 				C589572027500DB600B7E392 /* Settings in Frameworks */,
-				C5470E63276F0CEE001B1963 /* SwiftUIX in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
 				C589571827500C1400B7E392 /* libiconv.tbd in Frameworks */,
 				C504654C274F78F60004B812 /* SnapKit in Frameworks */,
@@ -957,7 +947,7 @@
 			isa = PBXGroup;
 			children = (
 				5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */,
-				5B609F152309200300F2C1BC /* GalleryDataSource+ImageViewer.swift */,
+				5B609F152309200300F2C1BC /* MediaGalleryView.swift */,
 				5B3B4C2B21D0C6BF00F511A6 /* AppearanceManager.swift */,
 				5B99C679229FB47200437552 /* UITableView+Keyboard.swift */,
 				5B39A4CD22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift */,
@@ -996,8 +986,6 @@
 				C589572327500DF900B7E392 /* SwiftSoup */,
 				C589572527500E3C00B7E392 /* TypedSymbols */,
 				C5282B982764AEBF004F5106 /* HighlightedTextEditor */,
-				C5470E64276F0E8E001B1963 /* SwiftUIX */,
-				C5470E69276F124F001B1963 /* Introspect */,
 			);
 			productName = "Icro-Share";
 			productReference = 5B3C797E21C4DFAF00F699B8 /* Icro-Share.appex */;
@@ -1072,7 +1060,6 @@
 				C5FA2ABC1EB4482C006DEB40 /* Sources */,
 				C5FA2ABD1EB4482C006DEB40 /* Frameworks */,
 				C5FA2ABE1EB4482C006DEB40 /* Resources */,
-				5B494E642123590E00C3969B /* SwiftLint */,
 				5BC347BA2132944900DEB45D /* Embed Frameworks */,
 				5B3C798C21C4DFAF00F699B8 /* Embed App Extensions */,
 			);
@@ -1088,7 +1075,6 @@
 				C51F847F267F1FFB002A018E /* Client */,
 				C550D7792740F0E800E10CF6 /* Style */,
 				C5C450BA2743955D0090377B /* InsertLinkView */,
-				C5C450BD274398640090377B /* ImageViewer */,
 				C577C3C7274A46B200CCC4CD /* DropdownTitleView */,
 				C5F50598274CC9DC00BCDC0F /* Kingfisher */,
 				C504654B274F78F60004B812 /* SnapKit */,
@@ -1097,8 +1083,6 @@
 				C589572127500DF300B7E392 /* SwiftSoup */,
 				C589572727500E4400B7E392 /* TypedSymbols */,
 				C5282B962764ADD8004F5106 /* HighlightedTextEditor */,
-				C5470E62276F0CEE001B1963 /* SwiftUIX */,
-				C5470E67276F1210001B1963 /* Introspect */,
 			);
 			productName = Icro;
 			productReference = C5FA2AC01EB4482C006DEB40 /* Icro.app */;
@@ -1175,17 +1159,13 @@
 			mainGroup = C5FA2AB71EB4482C006DEB40;
 			packageReferences = (
 				5B70C0E822D06E9200D85F2B /* XCRemoteSwiftPackageReference "Alamofire" */,
-				5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				5BE92EF422D1BAAD0048E8F1 /* XCRemoteSwiftPackageReference "AppDelegateComponent" */,
 				5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */,
 				C5F60BFB23B3862F0022448A /* XCRemoteSwiftPackageReference "SnapKit" */,
 				C544111F23F7E81400428609 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				C5F7F79324C41A6B009BD2F8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				C5C450BC274398640090377B /* XCRemoteSwiftPackageReference "ImageViewer" */,
 				C577C3C6274A46B200CCC4CD /* XCRemoteSwiftPackageReference "dropdowntitleview" */,
 				C5282B952764ADD8004F5106 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */,
-				C5470E61276F0CEE001B1963 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
-				C5470E66276F1210001B1963 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = C5FA2AC11EB4482C006DEB40 /* Products */;
 			projectDirPath = "";
@@ -1249,20 +1229,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5B494E642123590E00C3969B /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/External/SwiftLint/swiftlint0340\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1383,7 +1349,7 @@
 				C5046529274F77C60004B812 /* LinkLabel.swift in Sources */,
 				C589571427500B9100B7E392 /* WPXMLRPCDataCleaner.m in Sources */,
 				C504652E274F77C60004B812 /* ItemTableViewCell.swift in Sources */,
-				5B609F162309200400F2C1BC /* GalleryDataSource+ImageViewer.swift in Sources */,
+				5B609F162309200400F2C1BC /* MediaGalleryView.swift in Sources */,
 				C58956F327500B3D00B7E392 /* ListViewModel.swift in Sources */,
 				5BFCB8F6232E835F008D36E1 /* NotificationComponent.swift in Sources */,
 				C58956F627500B3D00B7E392 /* GalleryDataSource.swift in Sources */,
@@ -1496,12 +1462,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 384;
+				CURRENT_PROJECT_VERSION = 385;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Icro-Share/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1534,12 +1500,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 384;
+				CURRENT_PROJECT_VERSION = 385;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Icro-Share/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1573,7 +1539,7 @@
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IcroTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1600,7 +1566,7 @@
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IcroTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1626,7 +1592,7 @@
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IcroScreenshotsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1654,7 +1620,7 @@
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IcroScreenshotsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1784,7 +1750,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1842,7 +1808,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1864,12 +1830,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 384;
+				CURRENT_PROJECT_VERSION = 385;
 				DEFINES_MODULE = YES;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				INFOPLIST_FILE = Icro/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1897,12 +1863,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 384;
+				CURRENT_PROJECT_VERSION = 385;
 				DEFINES_MODULE = YES;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				INFOPLIST_FILE = Icro/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1987,14 +1953,6 @@
 				minimumVersion = 4.8.2;
 			};
 		};
-		5B83B01922D11B3D004C4D8D /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hartlco/KeychainAccess";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/TypedSymbols.git";
@@ -2027,33 +1985,9 @@
 				minimumVersion = 2.3.0;
 			};
 		};
-		C5470E61276F0CEE001B1963 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.1;
-			};
-		};
-		C5470E66276F1210001B1963 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.3;
-			};
-		};
 		C577C3C6274A46B200CCC4CD /* XCRemoteSwiftPackageReference "dropdowntitleview" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hartlco/dropdowntitleview";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		C5C450BC274398640090377B /* XCRemoteSwiftPackageReference "ImageViewer" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hartlco/ImageViewer";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -2072,7 +2006,7 @@
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
+				minimumVersion = 8.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -2141,26 +2075,6 @@
 			package = 5B8FD39E2360D53700BC72F2 /* XCRemoteSwiftPackageReference "TypedSymbols" */;
 			productName = TypedSymbols;
 		};
-		C5470E62276F0CEE001B1963 /* SwiftUIX */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C5470E61276F0CEE001B1963 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
-			productName = SwiftUIX;
-		};
-		C5470E64276F0E8E001B1963 /* SwiftUIX */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C5470E61276F0CEE001B1963 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
-			productName = SwiftUIX;
-		};
-		C5470E67276F1210001B1963 /* Introspect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C5470E66276F1210001B1963 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = Introspect;
-		};
-		C5470E69276F124F001B1963 /* Introspect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C5470E66276F1210001B1963 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = Introspect;
-		};
 		C550D7792740F0E800E10CF6 /* Style */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Style;
@@ -2215,11 +2129,6 @@
 		C5C450BA2743955D0090377B /* InsertLinkView */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = InsertLinkView;
-		};
-		C5C450BD274398640090377B /* ImageViewer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C5C450BC274398640090377B /* XCRemoteSwiftPackageReference "ImageViewer" */;
-			productName = ImageViewer;
 		};
 		C5F50598274CC9DC00BCDC0F /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

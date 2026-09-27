@@ -7,7 +7,7 @@ let package = Package(
     name: "InsertLinkView",
     defaultLocalization: LanguageTag("en"),
     platforms: [
-        .iOS(.v15),
+        .iOS("27.0"),
         .macOS("10.15")
     ],
     products: [

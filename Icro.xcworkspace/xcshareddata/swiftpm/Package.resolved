@@ -29,21 +29,21 @@
         }
       },
       {
-        "package": "ImageViewer",
-        "repositoryURL": "https://github.com/hartlco/ImageViewer",
+        "package": "HighlightedTextEditor",
+        "repositoryURL": "https://github.com/kyle-n/HighlightedTextEditor",
         "state": {
-          "branch": "master",
-          "revision": "5ce18ce9012955eb0e36d7f155a3aafc0d178917",
-          "version": null
+          "branch": null,
+          "revision": "a0af7fbf17e9b5c7ac6fabe17034be2f7195bd1e",
+          "version": "2.0.2"
         }
       },
       {
         "package": "KeychainAccess",
-        "repositoryURL": "https://github.com/hartlco/KeychainAccess",
+        "repositoryURL": "https://github.com/kishikawakatsumi/KeychainAccess.git",
         "state": {
-          "branch": "master",
-          "revision": "8dbcaab61ad9017ef99a33a368ba63960cd5d034",
-          "version": null
+          "branch": null,
+          "revision": "84e546727d66f1adc5439debad16270d0fdd04e7",
+          "version": "4.2.2"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/onevcat/Kingfisher",
         "state": {
           "branch": null,
-          "revision": "318e319998bf555c3e914d5c3adb6da05af86a32",
-          "version": "7.1.1"
+          "revision": "8648fe649c5d62be38721110f835821906e9242a",
+          "version": "8.13.0"
         }
       },
       {
@@ -65,21 +65,12 @@
         }
       },
       {
-        "package": "Sourceful",
-        "repositoryURL": "https://github.com/hartlco/Sourceful",
-        "state": {
-          "branch": "master",
-          "revision": "780441f39fcb3788477a766d2bbab320af808453",
-          "version": null
-        }
-      },
-      {
         "package": "SwiftSoup",
         "repositoryURL": "https://github.com/scinfu/SwiftSoup",
         "state": {
           "branch": null,
-          "revision": "21e2a405e19298ad477fc007094db91b6cac08c3",
-          "version": "2.3.1"
+          "revision": "3fa09f4d79e5172b14cb50e02f1d5f115a2bbaef",
+          "version": "2.3.4"
         }
       },
       {

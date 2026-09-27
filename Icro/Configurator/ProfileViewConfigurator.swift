@@ -4,7 +4,6 @@
 //
 
 import Foundation
-import ImageViewer
 import UIKit
 
 final class ProfileViewConfigurator: NSObject {

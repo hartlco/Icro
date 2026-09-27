@@ -13,7 +13,7 @@ struct LoginView: View {
     }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 Section(footer: Text("LOGINVIEWCONTROLLER_TEXTFIELDINFO_TEXT").lineLimit(nil)) {
                     TextField("LOGINVIEWCONTROLLER_TEXTFIELD_PLACEHOLDER",
@@ -35,16 +35,15 @@ struct LoginView: View {
                 }
             }
             .listStyle(GroupedListStyle())
-            .navigationBarItems(leading:
-                Button(action: {
-                    self.viewModel.didDismiss()
-                }, label: {
-                    Text("ITEMNAVIGATOR_MOREALERT_CANCELACTION")
-                })
-            )
-            .navigationBarTitle(Text("LOGINVIEWCONTROLLER_TITLE"))
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("ITEMNAVIGATOR_MOREALERT_CANCELACTION") {
+                        viewModel.didDismiss()
+                    }
+                }
+            }
+            .navigationTitle("LOGINVIEWCONTROLLER_TITLE")
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

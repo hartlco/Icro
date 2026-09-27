@@ -30,11 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore
                                        performFetchWithCompletionHandler: completionHandler)
     }
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        return componentRunner.componentStore(self,
-                                              app: app, open: url)
-    }
-
     func application(_ application: UIApplication,
                      configurationForConnecting connectingSceneSession: UISceneSession,
                      options: UIScene.ConnectionOptions) -> UISceneConfiguration {

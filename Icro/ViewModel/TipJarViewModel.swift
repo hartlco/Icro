@@ -1,144 +1,59 @@
-//
-//  Created by martin on 27.01.19.
-//  Copyright © 2019 Martin Hartl. All rights reserved.
-//
-
 import Foundation
 import StoreKit
 import SwiftUI
-import Combine
 
-final class TipJarViewModel: NSObject, ObservableObject {
-    var objectWillChange = ObservableObjectPublisher()
-
-    private(set) var state = State.unloaded {
-        willSet {
-            DispatchQueue.main.async {
-                self.objectWillChange.send()
-            }
-        }
-
-        didSet {
-            stateChanged(state)
-        }
-    }
-
-    private(set) var products = [InAppPurchaseProduct]() {
-        willSet {
-            DispatchQueue.main.async {
-                self.objectWillChange.send()
-            }
-        }
-    }
-
+@MainActor
+final class TipJarViewModel: ObservableObject {
     enum State {
         case unloaded
         case loading
-        case loaded(products: [InAppPurchaseProduct])
+        case loaded
         case purchasing(message: String)
         case purchased(message: String)
         case purchasingError(error: Error)
         case cancelled
     }
 
-    var stateChanged: ((State) -> Void) = { _ in }
+    @Published private(set) var state: State = .unloaded
+    @Published private(set) var products: [Product] = []
 
-    var numberOfProducts: Int {
-        return products.count
-    }
-
-    override init() {
-        super.init()
-        load()
-    }
-
-    func product(at index: Int) -> InAppPurchaseProduct {
-        return products[index]
-    }
-
-    func load() {
-        let identifiers = ["nice_tip", "big_tip", "huge_tip"]
-        let request = SKProductsRequest(productIdentifiers: Set(identifiers))
-        request.delegate = self
-        request.start()
+    func load() async {
+        guard case .unloaded = state else { return }
         state = .loading
-    }
 
-    func purchase(product: InAppPurchaseProduct) {
-        if canMakePurchases {
-            let purchase = product.product
-            let payment = SKPayment(product: purchase)
-            SKPaymentQueue.default().add(self)
-            SKPaymentQueue.default().add(payment)
-
+        do {
+            products = try await Product.products(for: ["nice_tip", "big_tip", "huge_tip"])
+                .sorted { $0.price < $1.price }
+            state = .loaded
+        } catch {
+            state = .purchasingError(error: error)
         }
     }
 
-    private var canMakePurchases: Bool {
-        return SKPaymentQueue.canMakePayments()
-    }
-}
+    func purchase(_ product: Product, using purchase: PurchaseAction) async {
+        guard AppStore.canMakePayments else {
+            state = .purchasingError(error: PurchaseError.paymentError)
+            return
+        }
 
-extension TipJarViewModel: SKProductsRequestDelegate, SKPaymentTransactionObserver {
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        for transaction in transactions {
-            switch transaction.transactionState {
-            case .purchased:
+        state = .purchasing(message: NSLocalizedString("IN-APP-PURCHASE-STATE-PURCHASING", comment: ""))
+
+        do {
+            switch try await purchase(product) {
+            case .success(.verified(let transaction)):
                 state = .purchased(message: NSLocalizedString("IN-APP-PURCHASE-STATE-PURCHASED", comment: ""))
-                queue.finishTransaction(transaction)
-            case .deferred, .purchasing:
-                state = .loading
-            case .failed:
-                if let error = transaction.error as? SKError,
-                    error.code == SKError.paymentCancelled {
-                    state = .cancelled
-                    return
-                }
-
-                state = .purchasingError(error: PurchaseError.paymentError)
-                queue.finishTransaction(transaction)
-            case .restored:
-                queue.finishTransaction(transaction)
-                return
+                await transaction.finish()
+            case .success(.unverified(_, let error)):
+                state = .purchasingError(error: error)
+            case .pending:
+                state = .purchasing(message: NSLocalizedString("IN-APP-PURCHASE-STATE-PURCHASING", comment: ""))
+            case .userCancelled:
+                state = .cancelled
             @unknown default:
                 state = .purchasingError(error: PurchaseError.paymentError)
-                queue.finishTransaction(transaction)
             }
+        } catch {
+            state = .purchasingError(error: error)
         }
     }
-
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        products = response.products.compactMap {
-            return InAppPurchaseProduct(identifier: $0.productIdentifier,
-                                        title: $0.localizedTitle,
-                                        price: priceOf(product: $0),
-                                        product: $0)
-        }.sorted {
-            return $0.price < $1.price
-        }
-        state = .loaded(products: products)
-    }
-
-    func request(_ request: SKRequest, didFailWithError error: Error) {
-       state = .purchasingError(error: error)
-    }
-
-    private func priceOf(product: SKProduct) -> String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.formatterBehavior = .behavior10_4
-        numberFormatter.numberStyle = .currency
-        numberFormatter.locale = product.priceLocale
-        return numberFormatter.string(from: product.price)!
-    }
-}
-
-struct InAppPurchaseProduct: Identifiable {
-    var id: String {
-        return identifier
-    }
-
-    let identifier: String
-    let title: String
-    let price: String
-    let product: SKProduct
 }

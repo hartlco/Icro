@@ -87,13 +87,7 @@ final class AppNavigator {
     }
 
     func setup() {
-        if device.userInterfaceIdiom == .phone {
-            window.rootViewController = tabBarViewController
-        } else {
-            let splitViewController = VerticalTabsSplitViewController(verticalTabView: VerticalTabView(viewModel: verticalTabViewModel),
-                                                                      tabBarViewController: tabBarViewController)
-            window.rootViewController = splitViewController
-        }
+        window.rootViewController = tabBarViewController
 
         setupMacCatalystWindow()
 

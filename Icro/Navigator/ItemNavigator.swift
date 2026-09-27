@@ -8,7 +8,6 @@ import SafariServices
 import AVKit
 import SwiftUI
 import Settings
-import ImageViewer
 
 final class ItemNavigator: ItemNavigatorProtocol {
     private let navigationController: UINavigationController
@@ -67,11 +66,9 @@ final class ItemNavigator: ItemNavigatorProtocol {
     }
 
     func openMedia(media: [Media], index: Int) {
-        let dataSource = GalleryDataSource(index: index, media: media)
-        let gallery = GalleryViewController(startIndex: index,
-                                            itemsDataSource: dataSource,
-                                            configuration: [GalleryConfigurationItem.deleteButtonMode(.none)])
-        navigationController.presentImageGallery(gallery)
+        guard media.indices.contains(index) else { return }
+        let gallery = UIHostingController(rootView: MediaGalleryView(media: media, startIndex: index))
+        navigationController.present(gallery, animated: true)
     }
 
     func openReply(item: Item) {

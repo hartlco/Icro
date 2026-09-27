@@ -14,7 +14,7 @@ public final class ItemCellConfigurator: NSObject {
         self.itemNavigator = itemNavigator
     }
 
-    public func configure(_ cell: ItemTableViewCell, forDisplaying item: Item) {
+    @MainActor public func configure(_ cell: ItemTableViewCell, forDisplaying item: Item) {
         cell.itemID = item.id
         cell.avatarImageView.kf.setImage(with: item.author.avatar)
         cell.usernameLabel.text = item.author.name

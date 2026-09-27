@@ -14,12 +14,10 @@ struct SettingsContentView: View {
     let dismissAction: () -> Void
     let settingsNavigator: SettingsNavigator
     let showsNaviationBarButton: Bool
-    @State private var modalPresented = false
-
     @ObservedObject var store: SettingsViewModel
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 AppearanceSection(store: store)
                 WordpressSection(store: store)
@@ -28,21 +26,14 @@ struct SettingsContentView: View {
                 OtherSection(settingsNavigator: settingsNavigator, store: store)
                 TipJarSection()
             }
-            .navigationBarTitle(Text("SETTINGSVIEWCONTROLLER_TITLE"))
-            .navigationBarItems(leading: navigationButton)
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
-    }
-
-    private var navigationButton: AnyView {
-        if showsNaviationBarButton {
-            return AnyView(Button(action: {
-                self.dismissAction()
-            }, label: {
-                Text("SETTINGSVIEWCONTROLLER_CANCELBUTTON_TITLE")
-            }))
-        } else {
-            return AnyView(EmptyView())
+            .navigationTitle("SETTINGSVIEWCONTROLLER_TITLE")
+            .toolbar {
+                if showsNaviationBarButton {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("SETTINGSVIEWCONTROLLER_CANCELBUTTON_TITLE", action: dismissAction)
+                    }
+                }
+            }
         }
     }
 }
@@ -172,7 +163,7 @@ struct AppearanceSection: View {
 }
 
 struct TipJarSection: View {
-    @ObservedObject var tipJarViewModel = TipJarViewModel()
+    @StateObject private var tipJarViewModel = TipJarViewModel()
 
     var body: some View {
         return Section(header: Text("IN-APP-PURCHASE-TIP-JAR")
@@ -181,6 +172,7 @@ struct TipJarSection: View {
                 stateView
                 TipJarView(viewModel: tipJarViewModel)
         }
+        .task { await tipJarViewModel.load() }
     }
 
     private var stateView: AnyView? {

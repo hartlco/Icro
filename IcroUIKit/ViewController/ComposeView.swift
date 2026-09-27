@@ -11,17 +11,16 @@ import Style
 import HighlightedTextEditor
 import Kingfisher
 import InsertLinkView
-import SwiftUIX
-import Introspect
+import PhotosUI
 
 struct ComposeView: View {
     @ObservedObject var viewModel: ComposeViewModel
 
-    @Environment(\.presentationMode) var presentationMode
     @Environment(\.dismiss) var dismiss
 
     @State var insertLinkActive = false
     @State var insertImageURLActive = false
+    @State private var selectedPhoto: PhotosPickerItem?
 
     var didClose: (() -> Void)?
 
@@ -30,7 +29,7 @@ struct ComposeView: View {
     }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(alignment: .leading) {
                 if let item = viewModel.replyItem {
                     ReplyView(item: item)
@@ -59,37 +58,33 @@ struct ComposeView: View {
                     keyboardInputView
                 }
                 .background(Style.Color.accentLight.swiftUIColor)
-                NavigationLink(
-                    destination: insertLinkView,
-                    isActive: $insertLinkActive
-                ) {
-                     EmptyView()
-                }.hidden()
-                NavigationLink(
-                    destination: insertImageLinkView,
-                    isActive: $insertImageURLActive
-                ) {
-                     EmptyView()
-                }.hidden()
-                .sheet(
-                    isPresented: $viewModel.imagePickerActive) {
-                        viewModel.imagePickerActive = false
-                    } content: {
-                        ImagePicker(
-                            data: $viewModel.pickedImage,
-                            encoding: .jpeg(compressionQuality: 0.8),
-                            onCancel: {
-                                viewModel.imagePickerActive = false
-                            }
-                        )
+                .navigationDestination(isPresented: $insertLinkActive) {
+                    insertLinkView
+                }
+                .navigationDestination(isPresented: $insertImageURLActive) {
+                    insertImageLinkView
+                }
+                .photosPicker(isPresented: $viewModel.imagePickerActive,
+                              selection: $selectedPhoto,
+                              matching: .images)
+                .onChange(of: selectedPhoto) { _, photo in
+                    Task {
+                        let data = try? await photo?.loadTransferable(type: Data.self)
+                        await MainActor.run {
+                            viewModel.pickedImage = data
+                            selectedPhoto = nil
+                        }
                     }
+                }
             }
-            .navigationBarItems(
-                leading:
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
                     Button(NSLocalizedString("COMPOSEVIEWCONTROLLER_CANCELBUTTON_TITLE", comment: "")) {
                         dismissView()
-            }, trailing:
-                    HStack {
+                    }
+                }
+                ToolbarItem(placement: .topBarPinnedTrailing) {
+                    HStack(spacing: 8) {
                         if viewModel.uploading {
                             ProgressView()
                         }
@@ -103,13 +98,14 @@ struct ComposeView: View {
                                 dismissView()
                             }
                         }
+                        .disabled(viewModel.uploading)
                     }
-            )
+                }
+            }
             // TODO: Add Drag/Drop interaction
-            .navigationBarTitle(NSLocalizedString("COMPOSEVIEWCONTROLLER_TITLE", comment: ""))
+            .navigationTitle(NSLocalizedString("COMPOSEVIEWCONTROLLER_TITLE", comment: ""))
             .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationViewStyle(.stack)
     }
 
     var keyboardInputView: ComposeKeyboardInputView {

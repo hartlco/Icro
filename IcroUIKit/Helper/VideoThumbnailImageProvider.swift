@@ -25,7 +25,7 @@ public struct VideoThumbnailImageProvider: ImageDataProvider {
     public func data(handler: @escaping (Result<Data, Error>) -> Void) {
 
         DispatchQueue.global(qos: .userInitiated).async {
-            let asset = AVAsset(url: self.url)
+            let asset = AVURLAsset(url: self.url)
             let assetImgGenerate = AVAssetImageGenerator(asset: asset)
             assetImgGenerate.appliesPreferredTrackTransform = true
             assetImgGenerate.maximumSize = self.size

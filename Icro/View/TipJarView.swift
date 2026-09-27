@@ -4,27 +4,25 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct TipJarView: View {
     @ObservedObject var viewModel: TipJarViewModel
+    @Environment(\.purchase) private var purchase
 
     var body: some View {
-        List(viewModel.products) { product in
-            Button(action: {
-                self.viewModel.purchase(product: product)
-            }, label: {
+        ForEach(viewModel.products) { product in
+            Button {
+                Task { await viewModel.purchase(product, using: purchase) }
+            } label: {
                 HStack {
-                    Text(product.title)
-                        .font(.headline)
-                        .foregroundColor(.primary)
-                    Spacer(minLength: 10)
-                    Group {
-                        Text(product.price)
-                            .foregroundColor(.red)
-                        }
-                        .padding(.all, 8)
+                    Text(product.displayName)
+                    Spacer()
+                    Text(product.displayPrice)
+                        .foregroundStyle(.secondary)
                 }
-            })
+            }
+            .disabled(!AppStore.canMakePayments)
         }
     }
 }

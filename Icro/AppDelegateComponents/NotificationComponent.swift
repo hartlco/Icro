@@ -6,6 +6,7 @@
 import UIKit
 import AppDelegateComponent
 import Client
+import UserNotifications
 
 final class NotificationComponent: AppDelegateComponent {
     private let client: Client
@@ -16,7 +17,7 @@ final class NotificationComponent: AppDelegateComponent {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        application.applicationIconBadgeNumber = 0
+        UNUserNotificationCenter.current().setBadgeCount(0) { _ in }
         registerForPushNotifications(application: application)
         return true
     }
@@ -26,7 +27,6 @@ final class NotificationComponent: AppDelegateComponent {
         let token = tokenParts.joined()
         let pushRegistration = PushRegistration(token: token)
         client.load(resource: pushRegistration.register()) { _ in }
-        print("Device Token: \(token)")
     }
 
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

@@ -59,7 +59,6 @@ final class TabBarViewController: UITabBarController {
         let viewControllers: [UINavigationController] = types.map { type in
             let viewModel = ListViewModel(type: type)
             let navigationController = UINavigationController()
-            navigationController.navigationBar.isTranslucent = false
             let itemNavigator = ItemNavigator(navigationController: navigationController,
                                               appNavigator: appNavigator,
                                               notificationCenter: notificationCenter)
@@ -96,9 +95,8 @@ final class TabBarViewController: UITabBarController {
             return navigationController
         }
 
-        tabBar.isTranslucent = false
-
         setViewControllers(viewControllers, animated: false)
+        mode = .tabSidebar
         previousViewController = viewControllers.first
         setupMainMenuNotifications()
     }

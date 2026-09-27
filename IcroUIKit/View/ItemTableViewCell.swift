@@ -46,7 +46,7 @@ public final class ItemTableViewCell: UITableViewCell {
 
         label.isOpaque = true
         label.adjustsFontForContentSizeCategory = true
-        label.font = UIFont.preferredFont(forTextStyle: .headline).bold
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
 
         return label
     }()
