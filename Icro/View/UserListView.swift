@@ -14,19 +14,25 @@ struct UserListView: SwiftUI.View {
     let itemNavigator: ItemNavigator
 
     var body: some SwiftUI.View {
-        List(viewModel.users, id: \.self) { author in
-            Button {
-                itemNavigator.open(author: author)
-            } label: {
-                FollowingUserRow(avatarURL: author.avatar,
-                                 name: author.name,
-                                 username: author.username)
+        Group {
+            if viewModel.isLoading {
+                LoadingSkeletonView(kind: .people)
+            } else {
+                List(viewModel.users, id: \.self) { author in
+                    Button {
+                        itemNavigator.open(author: author)
+                    } label: {
+                        FollowingUserRow(avatarURL: author.avatar,
+                                         name: author.name,
+                                         username: author.username)
+                    }
+                    .buttonStyle(.plain)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 9, leading: 16, bottom: 9, trailing: 16))
+                }
+                .listStyle(.plain)
             }
-            .buttonStyle(.plain)
-            .listRowSeparator(.hidden)
-            .listRowInsets(EdgeInsets(top: 9, leading: 16, bottom: 9, trailing: 16))
         }
-        .listStyle(.plain)
         .navigationTitle("USERLISTVIEWCONTROLLER_TITLE")
         .navigationBarTitleDisplayMode(.inline)
         .task { await viewModel.load() }

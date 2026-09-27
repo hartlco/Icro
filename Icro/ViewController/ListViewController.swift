@@ -52,6 +52,9 @@ final class ListViewController: UIViewController {
     private let loadingBarButtonItem: UIBarButtonItem
 
     private let loginOverlayHostingViewController: UIHostingController<LoginOverlayView>
+    private lazy var loadingPlaceholderHostingViewController = UIHostingController(
+        rootView: LoadingSkeletonView(kind: .feed(profile: viewModel.shouldShowProfileHeader))
+    )
 
     private var dataSource: UITableViewDiffableDataSource<ListViewModel.Section, ListViewModel.ViewType>?
 
@@ -109,6 +112,7 @@ final class ListViewController: UIViewController {
         viewModel.didStartLoading = { [weak self] in
             guard let self = self else { return }
             self.isLoading = true
+            self.showLoadingPlaceholderIfNeeded()
             self.showLoadingSpinnerIfNeeded()
         }
 
@@ -119,6 +123,9 @@ final class ListViewController: UIViewController {
             }
 
             self?.applySnapshot()
+            if cache == false || self?.viewModel.shouldLoad == false {
+                self?.hideLoadingPlaceholder()
+            }
             if let self = self, !self.didRestoreUnreadPosition {
                 if let newIndex = self.viewModel.numberOfUnreadItems, newIndex != 0 {
                     self.updateUnread()
@@ -135,6 +142,7 @@ final class ListViewController: UIViewController {
             self?.hideLoadingSpinner()
             self?.tableView.refreshControl?.endRefreshing()
             self?.isLoading = false
+            self?.hideLoadingPlaceholder()
             self?.tableView.visibleCells.compactMap { $0 as? LoadMoreTableViewCell }.forEach { $0.showRetry() }
             self?.showError(error: error)
         }
@@ -147,6 +155,20 @@ final class ListViewController: UIViewController {
 
         // Hide empty cells
         tableView.tableFooterView = UIView(frame: .zero)
+
+        let loadingView = loadingPlaceholderHostingViewController.view!
+        addChild(loadingPlaceholderHostingViewController)
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.isUserInteractionEnabled = false
+        loadingView.isHidden = true
+        view.addSubview(loadingView)
+        NSLayoutConstraint.activate([
+            loadingView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            loadingView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            loadingView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            loadingView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        loadingPlaceholderHostingViewController.didMove(toParent: self)
     }
 
     deinit {
@@ -167,6 +189,7 @@ final class ListViewController: UIViewController {
         super.viewWillAppear(animated)
         updateAppearance()
         updateDiscoverySectionsIfNeeded()
+        showLoadingPlaceholderIfNeeded()
 
         if viewModel.showsLoginView {
             showLoginOverlay()
@@ -266,6 +289,7 @@ final class ListViewController: UIViewController {
     }
 
     private func showLoginOverlay() {
+        hideLoadingPlaceholder()
         addChild(loginOverlayHostingViewController)
         loginOverlayHostingViewController.view.frame = view.bounds
         view.addSubview(loginOverlayHostingViewController.view)
@@ -276,6 +300,14 @@ final class ListViewController: UIViewController {
         loginOverlayHostingViewController.willMove(toParent: nil)
         loginOverlayHostingViewController.view.removeFromSuperview()
         loginOverlayHostingViewController.removeFromParent()
+    }
+
+    private func showLoadingPlaceholderIfNeeded() {
+        loadingPlaceholderHostingViewController.view.isHidden = !viewModel.shouldLoad || viewModel.showsLoginView
+    }
+
+    private func hideLoadingPlaceholder() {
+        loadingPlaceholderHostingViewController.view.isHidden = true
     }
 }
 

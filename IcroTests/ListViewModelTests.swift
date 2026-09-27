@@ -168,6 +168,15 @@ class ListViewModelTests: XCTestCase {
                           cell.atUsernameLabel.intrinsicContentSize.width)
         XCTAssertLessThanOrEqual(cell.atUsernameLabel.frame.minX - cell.usernameLabel.frame.maxX, 6)
         XCTAssertLessThanOrEqual(cell.dateLabel.frame.minX - cell.atUsernameLabel.frame.maxX, 6)
+
+        let avatarFrame = cell.avatarImageView.convert(cell.avatarImageView.bounds, to: cell.contentView)
+        let actionButton = cell.contentView.subviews.compactMap { $0 as? UIButton }.first
+        XCTAssertNotNil(actionButton)
+        if let actionButton {
+            XCTAssertGreaterThanOrEqual(actionButton.frame.minY, avatarFrame.maxY)
+            XCTAssertGreaterThan(actionButton.frame.minX, avatarFrame.maxX)
+            XCTAssertEqual(actionButton.frame.maxX, width - 14, accuracy: 1)
+        }
     }
 }
 

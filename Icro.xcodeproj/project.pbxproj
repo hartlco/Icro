@@ -16,6 +16,7 @@
 		5B20952522F6B14E00C06123 /* CatalystToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20952422F6B14E00C06123 /* CatalystToolbar.swift */; };
 		5B28C8C522C732F900A46C52 /* AcknowledgementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */; };
 		5B28C8D022C89B2600A46C52 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C8CF22C89B2600A46C52 /* UserListView.swift */; };
+		B11D1C882900000000000002 /* LoadingSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11D1C882900000000000001 /* LoadingSkeletonView.swift */; };
 		5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B38476021FE035900F082AD /* StoreKit.framework */; };
 		5B39A4CE22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39A4CD22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift */; };
 		5B39A4CF22F6A5F400B2B38F /* MockClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66EE73227D74DF00317FE3 /* MockClient.swift */; };
@@ -236,6 +237,7 @@
 		5B20952422F6B14E00C06123 /* CatalystToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CatalystToolbar.swift; path = Helper/CatalystToolbar.swift; sourceTree = "<group>"; };
 		5B28C8C422C732F900A46C52 /* AcknowledgementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AcknowledgementView.swift; path = View/Settings/AcknowledgementView.swift; sourceTree = "<group>"; };
 		5B28C8CF22C89B2600A46C52 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserListView.swift; path = View/UserListView.swift; sourceTree = "<group>"; };
+		B11D1C882900000000000001 /* LoadingSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadingSkeletonView.swift; path = View/LoadingSkeletonView.swift; sourceTree = "<group>"; };
 		5B2B817422F6CC2E0073B393 /* appversion.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = appversion.xcconfig; sourceTree = "<group>"; };
 		5B38476021FE035900F082AD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5B39A4CD22F6A32F00B2B38F /* VerticalTabAwareHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerticalTabAwareHostingController.swift; path = Helper/VerticalTabAwareHostingController.swift; sourceTree = "<group>"; };
@@ -881,6 +883,7 @@
 				5B51621A22B2C900009C0064 /* LoginView.swift */,
 				5B165D8722BF436D00B851B2 /* TipJarView.swift */,
 				5B28C8CF22C89B2600A46C52 /* UserListView.swift */,
+				B11D1C882900000000000001 /* LoadingSkeletonView.swift */,
 				C5443C632758AF1500F5BB1C /* LoginOverlayView.swift */,
 				C5DEA4E0275B49C300530E96 /* HostingCell.swift */,
 				C5DEA4E2275B4A0C00530E96 /* ProfileCellView.swift */,
@@ -1272,6 +1275,7 @@
 				5B44C71720979CF20003B35D /* MuteViewModel.swift in Sources */,
 				C5046547274F78460004B812 /* ItemNavigatorProtocol.swift in Sources */,
 				5B28C8D022C89B2600A46C52 /* UserListView.swift in Sources */,
+				B11D1C882900000000000002 /* LoadingSkeletonView.swift in Sources */,
 				C5046526274F77C60004B812 /* SingleImageCollectionViewCell.swift in Sources */,
 				5BCD7F0222BDE35D00CA5B6C /* MuteView.swift in Sources */,
 				5B4E418B208B31BC00FC610A /* SettingsViewModel.swift in Sources */,
@@ -1394,7 +1398,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 391;
+				CURRENT_PROJECT_VERSION = 392;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1432,7 +1436,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 391;
+				CURRENT_PROJECT_VERSION = 392;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1762,7 +1766,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 391;
+				CURRENT_PROJECT_VERSION = 392;
 				DEFINES_MODULE = YES;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
@@ -1795,7 +1799,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 391;
+				CURRENT_PROJECT_VERSION = 392;
 				DEFINES_MODULE = YES;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;

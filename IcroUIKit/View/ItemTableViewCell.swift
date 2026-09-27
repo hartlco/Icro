@@ -203,8 +203,8 @@ public final class ItemTableViewCell: UITableViewCell {
         mediaTopConstraint = imageCollectionView.topAnchor.constraint(equalTo: attributedLabel.bottomAnchor, constant: 8)
         mediaTopConstraint.priority = .defaultHigh
         collectionViewHeightConstraint = imageCollectionView.heightAnchor.constraint(equalToConstant: Layout.singleMediaHeight)
-        textBottomConstraint = attributedLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
-        mediaBottomConstraint = imageCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
+        textBottomConstraint = attributedLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -2)
+        mediaBottomConstraint = imageCollectionView.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -2)
 
         NSLayoutConstraint.activate([
             titleStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Layout.inset),
@@ -212,10 +212,11 @@ public final class ItemTableViewCell: UITableViewCell {
             titleStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Layout.inset),
             avatarImageView.widthAnchor.constraint(equalToConstant: Layout.avatarSize),
             avatarImageView.heightAnchor.constraint(equalToConstant: Layout.avatarSize),
-            actionButton.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: -10),
-            actionButton.centerXAnchor.constraint(equalTo: avatarImageView.centerXAnchor),
-            actionButton.widthAnchor.constraint(equalToConstant: 40),
-            actionButton.heightAnchor.constraint(equalToConstant: 40),
+            actionButton.topAnchor.constraint(greaterThanOrEqualTo: avatarImageView.bottomAnchor, constant: 2),
+            actionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Layout.inset),
+            actionButton.widthAnchor.constraint(equalToConstant: 44),
+            actionButton.heightAnchor.constraint(equalToConstant: 36),
+            actionButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4),
             contentTopConstraint,
             attributedLabel.leadingAnchor.constraint(equalTo: namesStack.leadingAnchor),
             attributedLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Layout.inset),
@@ -224,8 +225,7 @@ public final class ItemTableViewCell: UITableViewCell {
             imageCollectionView.leadingAnchor.constraint(equalTo: namesStack.leadingAnchor),
             imageCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Layout.inset),
             collectionViewHeightConstraint,
-            textBottomConstraint,
-            contentView.bottomAnchor.constraint(greaterThanOrEqualTo: actionButton.bottomAnchor, constant: 10)
+            textBottomConstraint
         ])
     }
 

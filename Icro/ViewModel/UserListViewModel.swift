@@ -19,6 +19,15 @@ final class UserListViewModel: ObservableObject {
         return []
     }
 
+    var isLoading: Bool {
+        switch state {
+        case .initial, .loading:
+            return true
+        case .loaded, .error:
+            return false
+        }
+    }
+
     private let resource: Resource<[Author]>
     private let client: Client
 
