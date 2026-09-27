@@ -153,32 +153,84 @@ final class ItemNavigator: ItemNavigatorProtocol {
         navigationController.present(alert, animated: true, completion: nil)
     }
 
-    func showDiscoveryCategories(categories: [DiscoveryCategory], sourceView: UIView) {
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        for category in categories {
-            let action = UIAlertAction(title: "\(category.emoji) - \(category.title)",
-            style: .default) { [weak self] _ in
-                guard let self = self else { return }
+    func showDiscoveryCategories(categories: [DiscoveryCategory]) {
+        let picker = DiscoveryTopicsView(categories: categories, onSelect: { [weak self] category in
+            guard let self else { return }
+            self.navigationController.dismiss(animated: true) {
                 let viewModel = ListViewModel(type: .discoverCollection(category: category))
                 let itemNavigator = ItemNavigator(navigationController: self.navigationController,
                                                   appNavigator: self.appNavigator,
                                                   application: self.application,
                                                   notificationCenter: self.notificationCenter)
-                let viewController = ListViewController(viewModel: viewModel, itemNavigator: itemNavigator)
-                self.navigationController.pushViewController(viewController, animated: true)
+                let controller = ListViewController(viewModel: viewModel, itemNavigator: itemNavigator)
+                self.navigationController.pushViewController(controller, animated: true)
             }
+        }, onDismiss: { [weak self] in
+            self?.navigationController.dismiss(animated: true)
+        })
+        let controller = UIHostingController(rootView: picker)
+        controller.modalPresentationStyle = .pageSheet
+        navigationController.present(controller, animated: true)
+    }
+}
 
-            alertController.addAction(action)
+private struct DiscoveryTopicsView: View {
+    let categories: [DiscoveryCategory]
+    let onSelect: (DiscoveryCategory) -> Void
+    let onDismiss: () -> Void
+    @State private var searchText = ""
+
+    private var visibleCategories: [DiscoveryCategory] {
+        guard !searchText.isEmpty else { return categories }
+        return categories.filter {
+            $0.title.localizedCaseInsensitiveContains(searchText)
+                || $0.category.localizedCaseInsensitiveContains(searchText)
         }
+    }
 
-        alertController.addAction(UIAlertAction(title:
-            NSLocalizedString("ITEMNAVIGATOR_MOREALERT_CANCELACTION", comment: ""),
-                                                style: .cancel,
-                                                handler: nil))
+    var body: some View {
+        NavigationStack {
+            List {
+                if searchText.isEmpty {
+                    Section("DISCOVER_FEATURED_TOPICS") {
+                        TopicRows(topics: visibleCategories.filter(\.isFeatured), onSelect: onSelect)
+                    }
+                    Section("DISCOVER_MORE_TOPICS") {
+                        TopicRows(topics: visibleCategories.filter { !$0.isFeatured }, onSelect: onSelect)
+                    }
+                } else {
+                    TopicRows(topics: visibleCategories, onSelect: onSelect)
+                }
+            }
+            .searchable(text: $searchText)
+            .navigationTitle("DISCOVER_TOPICS_TITLE")
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("SETTINGSVIEWCONTROLLER_CANCELBUTTON_TITLE", action: onDismiss)
+                }
+            }
+        }
+    }
 
-        alertController.popoverPresentationController?.sourceView = sourceView
-        alertController.popoverPresentationController?.sourceRect = sourceView.bounds
+}
 
-        navigationController.present(alertController, animated: true, completion: nil)
+private struct TopicRows: View {
+    let topics: [DiscoveryCategory]
+    let onSelect: (DiscoveryCategory) -> Void
+
+    var body: some View {
+        ForEach(topics, id: \.category) { topic in
+            Button {
+                onSelect(topic)
+            } label: {
+                HStack(spacing: 12) {
+                    Text(topic.emoji)
+                        .font(.title2)
+                    Text(topic.title)
+                        .foregroundStyle(.primary)
+                }
+                .frame(minHeight: 44, alignment: .leading)
+            }
+        }
     }
 }

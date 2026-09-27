@@ -21,7 +21,7 @@ public class ListViewModel: NSObject {
 
     public enum ListType: Equatable {
         case timeline
-        case photos
+        case media
         case mentions
         case favorites
         case discover
@@ -55,6 +55,7 @@ public class ListViewModel: NSObject {
     public var didStartLoading: () -> Void = { }
     public var didFinishLoading: (Bool) -> Void = { _ in }
     public var didFinishWithError: (Error) -> Void = { _ in }
+    public var didUpdateDiscoveryCategories: () -> Void = { }
 
     private var visibleActionBarIndexPath: IndexPath?
 
@@ -69,7 +70,7 @@ public class ListViewModel: NSObject {
 
     private lazy var supportedLodMoreTypes: Bool = {
         switch type {
-        case .mentions, .timeline, .favorites, .photos, .discover, .discoverCollection:
+        case .mentions, .timeline, .favorites, .media, .discover, .discoverCollection:
             return true
         default:
             return false
@@ -112,6 +113,14 @@ public class ListViewModel: NSObject {
 
     @objc public func load() {
         guard !isLoading, !showsLoginView else { return }
+
+        if case .discover = type {
+            Task { [weak self] in
+                guard let self else { return }
+                await self.discoveryMananger.update()
+                await MainActor.run { self.didUpdateDiscoveryCategories() }
+            }
+        }
 
         didStartLoading()
         isLoading = true

@@ -28,19 +28,16 @@ final class AppNavigator {
     private let verticalTabViewModel: VerticalTabViewModel
     private let device: UIDevice
     private let notificationCenter: NotificationCenter
-    private let application: UIApplication
     private var selectedIndexCancellable: AnyCancellable?
 
     init(window: UIWindow,
          userSettings: UserSettings,
          device: UIDevice = .current,
-         notificationCenter: NotificationCenter,
-         application: UIApplication) {
+         notificationCenter: NotificationCenter) {
         self.window = window
         self.userSettings = userSettings
         self.device = device
         self.notificationCenter = notificationCenter
-        self.application = application
 
         let loginView = LoginView(viewModel: loginViewModel)
 
@@ -109,8 +106,7 @@ final class AppNavigator {
 
     func setupSettingsWindow() {
         let settingsNavigator = SettingsNavigator(presentedController: tabBarViewController,
-                                                  appNavigator: self,
-                                                  application: application)
+                                                  appNavigator: self)
         let viewModel = SettingsViewModel(userSettings: userSettings,
                                           canSendMail: MFMailComposeViewController.canSendMail())
 
@@ -136,10 +132,7 @@ final class AppNavigator {
     }
 
     @MainActor func handleDeeplink(url: URL) {
-        if url.host == "auth" {
-            handleIndieAuthTokenCallback(url: url)
-            return
-        }
+        if url.host == "auth" { return }
 
         let token = URLComponents(url: url, resolvingAgainstBaseURL: false)?
             .queryItems?.first(where: { $0.name == "token" })?.value
@@ -155,8 +148,7 @@ final class AppNavigator {
         #else
 
         let settingsNavigator = SettingsNavigator(presentedController: presentedController,
-                                                  appNavigator: self,
-                                                  application: application)
+                                                  appNavigator: self)
         let viewModel = SettingsViewModel(userSettings: userSettings,
                                           canSendMail: MFMailComposeViewController.canSendMail())
 
@@ -218,22 +210,6 @@ final class AppNavigator {
 
     }
 
-    private func handleIndieAuthTokenCallback(url: URL) {
-        guard let meURL = URL(string: userSettings.indieAuthMeURLString),
-            let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
-            let code = components.queryItems?[0],
-            let codeValue = code.value else { return }
-
-        IndieAuth.makeTokenRequest(forEndpoint: IndieAuth.Constants.tokenURL,
-                                   meUrl: meURL,
-                                   code: codeValue,
-                                   redirectURI: IndieAuth.Constants.callback,
-                                   clientId: IndieAuth.Constants.clientIDURL.absoluteString) { (_, _, accessToken) in
-            DispatchQueue.main.async {
-                self.userSettings.micropubToken = accessToken
-            }
-        }
-    }
 }
 
 extension AppNavigator: CatalystToolbarDelegate {

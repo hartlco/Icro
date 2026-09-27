@@ -42,6 +42,7 @@ final class ComposeKeyboardInputViewModel: ObservableObject {
 
 struct ComposeKeyboardInputView: View {
     @ObservedObject private var viewModel: ComposeKeyboardInputViewModel
+    let isDraft: Bool
 
     var didPressLinkButton: (() -> Void)?
     var didPressCancelButton: (() -> Void)?
@@ -50,8 +51,9 @@ struct ComposeKeyboardInputView: View {
     var didPressImageURLMenu: (() -> Void)?
     var didPressImageUploadMenu: (() -> Void)?
 
-    init(viewModel: ComposeKeyboardInputViewModel) {
+    init(viewModel: ComposeKeyboardInputViewModel, isDraft: Bool = false) {
         self.viewModel = viewModel
+        self.isDraft = isDraft
     }
 
     var body: some View {
@@ -105,9 +107,13 @@ struct ComposeKeyboardInputView: View {
             Button(action: {
                 didPressPostButton?()
             }, label: {
-                Text("KEYBOARDINPUTVIEW_POSTBUTTON_TITLE")
-                    .font(.subheadline.weight(.semibold))
+                if isDraft {
+                    Text("COMPOSE_SAVE_DRAFT")
+                } else {
+                    Text("KEYBOARDINPUTVIEW_POSTBUTTON_TITLE")
+                }
             })
+            .font(.subheadline.weight(.semibold))
             .padding(.horizontal, 12)
             .frame(minHeight: 44)
             .disabled(!viewModel.postButtonEnabled)

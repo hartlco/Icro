@@ -59,15 +59,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <gridView xPlacement="leading" yPlacement="bottom" rowAlignment="none" translatesAutoresizingMaskIntoConstraints="NO" id="y9L-8j-162">
-                                <rect key="frame" x="20" y="11" width="440" height="78"/>
+                                <rect key="frame" x="20" y="11" width="440" height="22"/>
                                 <constraints>
-                                    <constraint firstItem="3L3-yf-5KG" firstAttribute="trailing" secondItem="i9S-iy-85r" secondAttribute="trailing" id="cL5-9w-g1d"/>
-                                    <constraint firstItem="3L3-yf-5KG" firstAttribute="trailing" secondItem="W5Y-aS-led" secondAttribute="trailing" id="tvY-b9-Ig1"/>
                                 </constraints>
                                 <rows>
                                     <gridRow rowAlignment="lastBaseline" id="abi-e6-X4y"/>
-                                    <gridRow rowAlignment="firstBaseline" id="tor-ZF-Wf1"/>
-                                    <gridRow rowAlignment="firstBaseline" id="587-4v-ShO"/>
                                 </rows>
                                 <columns>
                                     <gridColumn xPlacement="trailing" id="7KX-zY-fEA"/>
@@ -76,7 +72,7 @@
                                 <gridCells>
                                     <gridCell row="abi-e6-X4y" column="7KX-zY-fEA" id="xJI-JO-8aD">
                                         <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vL7-HU-2dl">
-                                            <rect key="frame" x="-2" y="59" width="112" height="17"/>
+                                            <rect key="frame" x="-2" y="3" width="112" height="17"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="justified" title="micro.blog Token:" id="LrI-Jz-4g8">
                                                 <font key="font" usesAppearanceFont="YES"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -86,48 +82,8 @@
                                     </gridCell>
                                     <gridCell row="abi-e6-X4y" column="scP-Al-FWq" id="fk0-LD-RxG">
                                         <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i9S-iy-85r">
-                                            <rect key="frame" x="114" y="56" width="100" height="22"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="6MA-9s-ekZ">
-                                                <font key="font" usesAppearanceFont="YES"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                    </gridCell>
-                                    <gridCell row="tor-ZF-Wf1" column="7KX-zY-fEA" id="OFy-YI-Pfi">
-                                        <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HFk-lq-LOe">
-                                            <rect key="frame" x="25" y="31" width="85" height="17"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="justified" title="micropub url:" id="fCy-d7-ghl">
-                                                <font key="font" usesAppearanceFont="YES"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                    </gridCell>
-                                    <gridCell row="tor-ZF-Wf1" column="scP-Al-FWq" id="kdO-jR-zsQ">
-                                        <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3L3-yf-5KG">
-                                            <rect key="frame" x="114" y="28" width="100" height="22"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="sgU-zd-iwR">
-                                                <font key="font" usesAppearanceFont="YES"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                    </gridCell>
-                                    <gridCell row="587-4v-ShO" column="7KX-zY-fEA" id="m3H-if-Fsb">
-                                        <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Etq-To-nK9">
-                                            <rect key="frame" x="7" y="3" width="103" height="17"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="micropub token:" id="Gg0-bX-FJe">
-                                                <font key="font" usesAppearanceFont="YES"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                    </gridCell>
-                                    <gridCell row="587-4v-ShO" column="scP-Al-FWq" id="sde-uz-C73">
-                                        <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W5Y-aS-led">
                                             <rect key="frame" x="114" y="0.0" width="100" height="22"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="Gzu-D7-YPv">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="6MA-9s-ekZ">
                                                 <font key="font" usesAppearanceFont="YES"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -145,8 +101,6 @@
                     </view>
                     <connections>
                         <outlet property="microblogTokenTextField" destination="i9S-iy-85r" id="m34-di-eRz"/>
-                        <outlet property="micropubTokenTextField" destination="W5Y-aS-led" id="QnB-7t-OlG"/>
-                        <outlet property="micropubURLTextField" destination="3L3-yf-5KG" id="G8d-oQ-hEZ"/>
                     </connections>
                 </viewController>
                 <customObject id="GcI-a1-pya" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -28,7 +28,7 @@ private extension ListViewModel.ListType {
             return Image(symbol: Symbol.safari_fill)
         case .user, .username:
             return Image(symbol: Symbol.person_fill)
-        case .conversation, .photos, .discoverCollection:
+        case .conversation, .media, .discoverCollection:
             return Image(symbol: Symbol.house_fill)
         }
     }

@@ -9,7 +9,7 @@ import Client
 public final class DiscoveryCategoryStore {
     public private(set) var categories = [DiscoveryCategory]()
 
-    private static let cacheKey = "DiscoveryCategoryManager.list"
+    private static let cacheKey = "DiscoveryCategoryManager.microblogTagmoji"
 
     private let client: Client
 
@@ -26,9 +26,11 @@ public final class DiscoveryCategoryStore {
     public func update() async {
         do {
             let categories = try await client.load(resource: DiscoveryCategory.all())
-            self.categories = categories
-            let response = DiscoveryResponse(categories: categories)
-            CacheStorage.store(response, to: .caches, as: DiscoveryCategoryStore.cacheKey)
+            await MainActor.run {
+                self.categories = categories
+                let response = DiscoveryResponse(categories: categories)
+                CacheStorage.store(response, to: .caches, as: DiscoveryCategoryStore.cacheKey)
+            }
         } catch {
         }
     }

@@ -22,6 +22,8 @@ struct ComposeView: View {
     @State var insertImageURLActive = false
     @State private var selectedPhoto: PhotosPickerItem?
     @State private var didFocusEditor = false
+    @State private var showingPostError = false
+    @State private var postErrorText = ""
 
     var didClose: (() -> Void)?
 
@@ -34,6 +36,9 @@ struct ComposeView: View {
             VStack(alignment: .leading) {
                 if let item = viewModel.replyItem {
                     ReplyView(item: item)
+                } else {
+                    PostingOptionsView(viewModel: viewModel)
+                        .padding(.top, 4)
                 }
                 HighlightedTextEditor(
                     text: $viewModel.text,
@@ -87,6 +92,12 @@ struct ComposeView: View {
                     }
                 }
             }
+            .task { await viewModel.loadPublishingOptions() }
+            .alert("COMPOSE_POST_ERROR_TITLE", isPresented: $showingPostError) {
+                Button("COMPOSE_POST_ERROR_OK", role: .cancel) { }
+            } message: {
+                Text(postErrorText)
+            }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button(NSLocalizedString("COMPOSEVIEWCONTROLLER_CANCELBUTTON_TITLE", comment: "")) {
@@ -98,14 +109,11 @@ struct ComposeView: View {
                         if viewModel.uploading {
                             ProgressView()
                         }
-                        Button(NSLocalizedString("KEYBOARDINPUTVIEW_POSTBUTTON_TITLE", comment: "")) {
-                            Task {
-                                do {
-                                    try await viewModel.post()
-                                } catch {
-                                    // TODO: Proper error handling
-                                }
-                                dismissView()
+                        Button(action: submitPost) {
+                            if viewModel.isDraft && !viewModel.isReply {
+                                Text("COMPOSE_SAVE_DRAFT")
+                            } else {
+                                Text("KEYBOARDINPUTVIEW_POSTBUTTON_TITLE")
                             }
                         }
                         .disabled(viewModel.uploading || (viewModel.text.isEmpty && viewModel.images.isEmpty))
@@ -119,17 +127,9 @@ struct ComposeView: View {
     }
 
     var keyboardInputView: ComposeKeyboardInputView {
-        var view = ComposeKeyboardInputView(viewModel: viewModel.composeKeyboardInputViewModel)
-        view.didPressPostButton = {
-            Task {
-                do {
-                    try await viewModel.post()
-                } catch {
-                    // TODO: Proper error handling
-                }
-                dismissView()
-            }
-        }
+        var view = ComposeKeyboardInputView(viewModel: viewModel.composeKeyboardInputViewModel,
+                                            isDraft: viewModel.isDraft && !viewModel.isReply)
+        view.didPressPostButton = submitPost
 
         view.didPressLinkButton = {
             insertLinkActive = true
@@ -155,6 +155,18 @@ struct ComposeView: View {
         dismiss()
     }
 
+    private func submitPost() {
+        Task {
+            do {
+                try await viewModel.post()
+                dismissView()
+            } catch {
+                postErrorText = error.text
+                showingPostError = true
+            }
+        }
+    }
+
     var insertLinkView: InsertLinkView {
         InsertLinkView { title, url in
             insertLinkActive = false
@@ -173,6 +185,102 @@ struct ComposeView: View {
 
             viewModel.insertImage(image: .init(title: title ?? "", link: url))
         }
+    }
+}
+
+private struct PostingOptionsView: View {
+    @ObservedObject var viewModel: ComposeViewModel
+
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                Menu {
+                    Button("COMPOSE_DEFAULT_BLOG") {
+                        Task { await viewModel.selectDestination(nil) }
+                    }
+                    ForEach(viewModel.destinations) { destination in
+                        Button {
+                            Task { await viewModel.selectDestination(destination) }
+                        } label: {
+                            if viewModel.selectedDestination == destination {
+                                Label(destination.title, systemImage: "checkmark")
+                            } else {
+                                Text(destination.title)
+                            }
+                        }
+                    }
+                } label: {
+                    Label {
+                        if let destination = viewModel.selectedDestination {
+                            Text(destination.title)
+                        } else {
+                            Text("COMPOSE_DEFAULT_BLOG")
+                        }
+                    } icon: {
+                        Image(systemName: "globe")
+                    }
+                    .padding(.horizontal, 14)
+                    .frame(minHeight: 40)
+                }
+                .glassEffect(.regular, in: Capsule())
+
+                Menu {
+                    ForEach(viewModel.availableCategories, id: \.self) { category in
+                        Button {
+                            viewModel.toggleCategory(category)
+                        } label: {
+                            if viewModel.selectedCategories.contains(category) {
+                                Label(category, systemImage: "checkmark")
+                            } else {
+                                Text(category)
+                            }
+                        }
+                    }
+                } label: {
+                    Label {
+                        HStack(spacing: 4) {
+                            Text("COMPOSE_CATEGORIES")
+                            if !viewModel.selectedCategories.isEmpty {
+                                Text(viewModel.selectedCategories.count, format: .number)
+                            }
+                        }
+                    } icon: {
+                        Image(systemName: "folder")
+                    }
+                    .padding(.horizontal, 14)
+                    .frame(minHeight: 40)
+                }
+                .disabled(viewModel.availableCategories.isEmpty)
+                .glassEffect(.regular, in: Capsule())
+
+                Button {
+                    viewModel.isDraft.toggle()
+                } label: {
+                    if viewModel.isDraft {
+                        Label("COMPOSE_DRAFT_SELECTED", systemImage: "checkmark.circle.fill")
+                    } else {
+                        Label("COMPOSE_DRAFT_OPTION", systemImage: "doc")
+                    }
+                }
+                .padding(.horizontal, 14)
+                .frame(minHeight: 40)
+                .glassEffect(.regular, in: Capsule())
+
+                if viewModel.publishingOptionsFailed {
+                    Button("COMPOSE_RETRY_OPTIONS") {
+                        Task { await viewModel.loadPublishingOptions() }
+                    }
+                    .padding(.horizontal, 14)
+                    .frame(minHeight: 40)
+                    .glassEffect(.regular, in: Capsule())
+                }
+            }
+            .font(.subheadline)
+            .buttonStyle(.plain)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 4)
+        }
+        .accessibilityIdentifier("postingOptions")
     }
 }
 

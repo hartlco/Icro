@@ -8,6 +8,7 @@ import Settings
 import Client
 import Style
 @testable import Icro
+@testable import Client
 
 class ListViewModelTests: XCTestCase {
     func testAutomaticPaginationLoadsOnceAndOffersRetryAfterFailure() async {
@@ -63,7 +64,8 @@ class ListViewModelTests: XCTestCase {
             (Item.all().urlRequest, "/posts/timeline"),
             (Item.mentions.urlRequest, "/posts/mentions"),
             (Item.favorites.urlRequest, "/posts/bookmarks"),
-            (Item.discover.urlRequest, "/posts/discover")
+            (Item.discover.urlRequest, "/posts/discover"),
+            (Item.media.urlRequest, "/posts/media")
         ]
 
         for (request, path) in requests {
@@ -100,9 +102,9 @@ class ListViewModelTests: XCTestCase {
         XCTAssert(viewModel.shouldShowProfileHeader == false, "shouldShowProfileHeader true for .timeline")
     }
 
-    func test_shouldShowProfileHeader_showsNoHeaderForPhotos() {
-        let viewModel = ListViewModel(type: .photos)
-        XCTAssert(viewModel.shouldShowProfileHeader == false, "shouldShowProfileHeader true for .photos")
+    func test_shouldShowProfileHeader_showsNoHeaderForMedia() {
+        let viewModel = ListViewModel(type: .media)
+        XCTAssert(viewModel.shouldShowProfileHeader == false, "shouldShowProfileHeader true for .media")
     }
 
     func test_shouldShowProfileHeader_showsNoHeaderForMentions() {
@@ -113,6 +115,102 @@ class ListViewModelTests: XCTestCase {
     func test_shouldShowProfileHeader_showsNoHeaderForDiscover() {
         let viewModel = ListViewModel(type: .discover)
         XCTAssert(viewModel.shouldShowProfileHeader == false, "shouldShowProfileHeader true for .discover")
+    }
+}
+
+final class MicroBlogAPITests: XCTestCase {
+    func testDiscoverTopicsComeFromMicroBlogFeedMetadata() throws {
+        let response = Data("""
+        {"_microblog":{"tagmoji":[
+          {"name":"books","title":"books","emoji":"📚","is_featured":true},
+          {"name":"meditation","title":"","emoji":"🧘","is_featured":false}
+        ]},"items":[]}
+        """.utf8)
+        let categories = try DiscoveryCategory.all().parse(response).get()
+
+        XCTAssertEqual(DiscoveryCategory.all().urlRequest.url?.absoluteString,
+                       "https://micro.blog/posts/discover")
+        XCTAssertEqual(categories.map(\.category), ["books", "meditation"])
+        XCTAssertEqual(categories.map(\.title), ["books", "meditation"])
+        XCTAssertEqual(categories.map(\.isFeatured), [true, false])
+    }
+
+    func testPostingOptionsUseMicroBlogConfigAndCategoryAPI() throws {
+        let configJSON = Data("""
+        {"destination":[{"uid":"https://one.micro.blog/","name":"one.example",
+                          "microblog-title":"My Blog"}]}
+        """.utf8)
+        let configResource = MicroBlogConfiguration.get(token: "abc")
+        let config = try configResource.parse(configJSON).get()
+        XCTAssertEqual(configResource.urlRequest.url?.absoluteString, "https://micro.blog/micropub?q=config")
+        XCTAssertEqual(configResource.urlRequest.value(forHTTPHeaderField: "Authorization"), "Bearer abc")
+        XCTAssertEqual(config.destinations.first?.title, "My Blog")
+
+        let destination = try XCTUnwrap(config.destinations.first)
+        let categoryResource = MicroBlogCategories.get(token: "abc", destination: destination.uid)
+        let components = try XCTUnwrap(URLComponents(url: categoryResource.urlRequest.url!, resolvingAgainstBaseURL: false))
+        XCTAssertEqual(components.queryItems?.first(where: { $0.name == "q" })?.value, "category")
+        XCTAssertEqual(components.queryItems?.first(where: { $0.name == "mp-destination" })?.value,
+                       destination.id)
+        XCTAssertEqual(try categoryResource.parse(Data("{\"categories\":[\"Travel\"]}".utf8)).get().categories,
+                       ["Travel"])
+    }
+
+    func testDraftPostEncodesDestinationAndMultipleCategories() throws {
+        let destination = URL(string: "https://one.micro.blog/")!
+        let request = MicropubRequestController.postRequest(token: "abc",
+                                                             message: "Hello & goodbye",
+                                                             destination: destination,
+                                                             categories: ["Travel", "Photos"],
+                                                             draft: true)
+        XCTAssertEqual(request.url?.absoluteString, "https://micro.blog/micropub")
+        XCTAssertEqual(request.httpMethod, "POST")
+        XCTAssertEqual(request.value(forHTTPHeaderField: "Authorization"), "Bearer abc")
+        let body = try XCTUnwrap(String(data: request.httpBody!, encoding: .utf8))
+        var components = URLComponents()
+        components.percentEncodedQuery = body
+        let items = try XCTUnwrap(components.queryItems)
+        XCTAssertEqual(items.first(where: { $0.name == "content" })?.value, "Hello & goodbye")
+        XCTAssertEqual(items.first(where: { $0.name == "mp-destination" })?.value, destination.absoluteString)
+        XCTAssertEqual(items.filter { $0.name == "category[]" }.compactMap(\.value), ["Travel", "Photos"])
+        XCTAssertEqual(items.first(where: { $0.name == "post-status" })?.value, "draft")
+    }
+
+    @MainActor
+    func testFailedPublishKeepsComposerReadyToRetry() async {
+        let settings = UserSettings(userDefaults: UserDefaults(suiteName: "icro-publish-\(UUID().uuidString)")!)
+        settings.token = "abc"
+        let viewModel = ComposeViewModel(mode: .post,
+                                         userSettings: settings,
+                                         client: FailedPublishingClient())
+        viewModel.text = "Keep this draft"
+
+        do {
+            try await viewModel.post()
+            XCTFail("Expected the failed server response to throw")
+        } catch NetworkingError.httpStatus(let status) {
+            XCTAssertEqual(status, 500)
+        } catch {
+            XCTFail("Unexpected error: \(error)")
+        }
+
+        XCTAssertFalse(viewModel.uploading)
+        XCTAssertTrue(viewModel.composeKeyboardInputViewModel.postButtonEnabled)
+        XCTAssertEqual(viewModel.text, "Keep this draft")
+    }
+}
+
+private final class FailedPublishingClient: Client {
+    func data(for request: URLRequest, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse) {
+        (Data(), HTTPURLResponse(url: request.url!, statusCode: 500, httpVersion: nil, headerFields: nil)!)
+    }
+
+    func load<A: Codable>(resource: Resource<A>) async throws -> A {
+        fatalError("Unexpected resource request")
+    }
+
+    func load<A: Codable>(resource: Resource<A>, completion: @escaping (Result<A, Error>) -> Void) {
+        fatalError("Unexpected resource request")
     }
 }
 

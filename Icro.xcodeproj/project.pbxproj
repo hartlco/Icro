@@ -55,7 +55,6 @@
 		5BCD7F0222BDE35D00CA5B6C /* MuteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCD7F0122BDE35D00CA5B6C /* MuteView.swift */; };
 		5BD95AFD2290A16100C74C52 /* AppearanceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD95AFC2290A16100C74C52 /* AppearanceComponent.swift */; };
 		5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */; };
-		5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */; };
 		5BF2DAA6228802000055240D /* UserDefaultsMigrationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */; };
 		5BFCB8F6232E835F008D36E1 /* NotificationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFCB8F5232E835F008D36E1 /* NotificationComponent.swift */; };
 		8DCD1F043AA7A42B38373800 /* Pods_IcroScreenshotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4216F55176FDD95FB7B918F8 /* Pods_IcroScreenshotsTests.framework */; };
@@ -142,20 +141,6 @@
 		C58956FA27500B3D00B7E392 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7FCD2081BF8E0096A764 /* CacheStorage.swift */; };
 		C58956FB27500B3D00B7E392 /* HTMLContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA2B001EB45213006DEB40 /* HTMLContent.swift */; };
 		C58956FC27500B3D00B7E392 /* PushRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE65023461A3F003C6F4D /* PushRegistration.swift */; };
-		C589570A27500B8300B7E392 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637123BDC9C10012BF85 /* WPXMLRPCDecoder.m */; };
-		C589570B27500B8500B7E392 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637123BDC9C10012BF85 /* WPXMLRPCDecoder.m */; };
-		C589570C27500B9100B7E392 /* WPXMLRPCDecoderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637923BDC9C10012BF85 /* WPXMLRPCDecoderDelegate.m */; };
-		C589570D27500B9100B7E392 /* WPStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637A23BDC9C10012BF85 /* WPStringUtils.m */; };
-		C589570E27500B9100B7E392 /* WPBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637723BDC9C10012BF85 /* WPBase64Utils.m */; };
-		C589570F27500B9100B7E392 /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637D23BDC9C10012BF85 /* WPXMLRPCDataCleaner.m */; };
-		C589571027500B9100B7E392 /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637B23BDC9C10012BF85 /* WPXMLRPCEncoder.m */; };
-		C589571127500B9100B7E392 /* WPXMLRPCDecoderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637923BDC9C10012BF85 /* WPXMLRPCDecoderDelegate.m */; };
-		C589571227500B9100B7E392 /* WPStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637A23BDC9C10012BF85 /* WPStringUtils.m */; };
-		C589571327500B9100B7E392 /* WPBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637723BDC9C10012BF85 /* WPBase64Utils.m */; };
-		C589571427500B9100B7E392 /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637D23BDC9C10012BF85 /* WPXMLRPCDataCleaner.m */; };
-		C589571527500B9100B7E392 /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E637B23BDC9C10012BF85 /* WPXMLRPCEncoder.m */; };
-		C589571727500C0A00B7E392 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C589571627500C0100B7E392 /* libiconv.tbd */; };
-		C589571827500C1400B7E392 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C589571627500C0100B7E392 /* libiconv.tbd */; };
 		C589571A27500D6E00B7E392 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C589571927500D6E00B7E392 /* Alamofire */; };
 		C589571C27500D7900B7E392 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C589571B27500D7900B7E392 /* Alamofire */; };
 		C589571E27500DA900B7E392 /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = C589571D27500DA900B7E392 /* Settings */; };
@@ -342,7 +327,6 @@
 		5BDE18F2216A76FA001254F4 /* SettingsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsStoryboard.storyboard; sourceTree = "<group>"; };
 		5BDE18F4216A7A47001254F4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5BE9455D2079EFCE004F9FF4 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
-		5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryComponent.swift; sourceTree = "<group>"; };
 		5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMigrationComponent.swift; sourceTree = "<group>"; };
 		5BF6637E218961AB00ABA671 /* DiscoveryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategory.swift; sourceTree = "<group>"; };
 		5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryResource.swift; sourceTree = "<group>"; };
@@ -360,21 +344,7 @@
 		C553DD5023F7CABC0001E7DF /* Client */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Client; sourceTree = "<group>"; };
 		C55BAF28275D489D009E8A9C /* ComposeKeyboardInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeKeyboardInputView.swift; sourceTree = "<group>"; };
 		C55D7AC523F7C756004E5DBB /* Icro.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Icro.xctestplan; sourceTree = "<group>"; };
-		C589571627500C0100B7E392 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
 		C589572927500FF200B7E392 /* Icro-Share-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Icro-Share-Bridging-Header.h"; sourceTree = "<group>"; };
-		C59E637123BDC9C10012BF85 /* WPXMLRPCDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoder.m; sourceTree = "<group>"; };
-		C59E637223BDC9C10012BF85 /* WPXMLRPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPC.h; sourceTree = "<group>"; };
-		C59E637323BDC9C10012BF85 /* WPXMLRPCEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCEncoder.h; sourceTree = "<group>"; };
-		C59E637423BDC9C10012BF85 /* WPStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPStringUtils.h; sourceTree = "<group>"; };
-		C59E637523BDC9C10012BF85 /* WPXMLRPCDecoderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDecoderDelegate.h; sourceTree = "<group>"; };
-		C59E637623BDC9C10012BF85 /* WPXMLRPCDataCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDataCleaner.h; sourceTree = "<group>"; };
-		C59E637723BDC9C10012BF85 /* WPBase64Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPBase64Utils.m; sourceTree = "<group>"; };
-		C59E637823BDC9C10012BF85 /* WPXMLRPCDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDecoder.h; sourceTree = "<group>"; };
-		C59E637923BDC9C10012BF85 /* WPXMLRPCDecoderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoderDelegate.m; sourceTree = "<group>"; };
-		C59E637A23BDC9C10012BF85 /* WPStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPStringUtils.m; sourceTree = "<group>"; };
-		C59E637B23BDC9C10012BF85 /* WPXMLRPCEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCEncoder.m; sourceTree = "<group>"; };
-		C59E637C23BDC9C10012BF85 /* WPBase64Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPBase64Utils.h; sourceTree = "<group>"; };
-		C59E637D23BDC9C10012BF85 /* WPXMLRPCDataCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDataCleaner.m; sourceTree = "<group>"; };
 		C5C450B2274392510090377B /* InsertLinkView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = InsertLinkView; sourceTree = "<group>"; };
 		C5CE39D523CB6F9F0095013A /* Icro-Next.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Icro-Next.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CE39D723CB6F9F0095013A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -409,7 +379,6 @@
 				C504654E274F790D0004B812 /* SnapKit in Frameworks */,
 				C5023CB7274E2F5C0034BDC9 /* Client in Frameworks */,
 				C5282B992764AEBF004F5106 /* HighlightedTextEditor in Frameworks */,
-				C589571727500C0A00B7E392 /* libiconv.tbd in Frameworks */,
 				C5046551274F794A0004B812 /* Kingfisher in Frameworks */,
 				C589572427500DF900B7E392 /* SwiftSoup in Frameworks */,
 			);
@@ -454,7 +423,6 @@
 				C550D77A2740F0E800E10CF6 /* Style in Frameworks */,
 				C589572027500DB600B7E392 /* Settings in Frameworks */,
 				5B38476121FE035900F082AD /* StoreKit.framework in Frameworks */,
-				C589571827500C1400B7E392 /* libiconv.tbd in Frameworks */,
 				C504654C274F78F60004B812 /* SnapKit in Frameworks */,
 				C589572827500E4400B7E392 /* TypedSymbols in Frameworks */,
 				C5C450BB2743955D0090377B /* InsertLinkView in Frameworks */,
@@ -471,7 +439,6 @@
 			isa = PBXGroup;
 			children = (
 				5B841ECD22E832F700CDA80C /* libiconv.tbd */,
-				C589571627500C0100B7E392 /* libiconv.tbd */,
 				5B38476021FE035900F082AD /* StoreKit.framework */,
 				14B873910DAE1E815D6F7A22 /* Pods_IcroTests.framework */,
 				FD791585584689A5DBBBA5F4 /* Pods_Icro_IcroKit.framework */,
@@ -563,7 +530,6 @@
 		5B2EF3D222E82649006931A7 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				C59E637023BDC9C10012BF85 /* WPXMLRPC */,
 				5B01A7B922E8313200D420BD /* Dequeueable */,
 			);
 			path = External;
@@ -795,7 +761,6 @@
 		5BF2DAA02287F4A50055240D /* AppDelegateComponents */ = {
 			isa = PBXGroup;
 			children = (
-				5BF2DAA3228800B30055240D /* DiscoveryCategoryComponent.swift */,
 				5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */,
 				5BD95AFC2290A16100C74C52 /* AppearanceComponent.swift */,
 				5BFCB8F5232E835F008D36E1 /* NotificationComponent.swift */,
@@ -809,26 +774,6 @@
 				5BF663842189673100ABA671 /* DiscoveryCategoryStore.swift */,
 			);
 			path = Manager;
-			sourceTree = "<group>";
-		};
-		C59E637023BDC9C10012BF85 /* WPXMLRPC */ = {
-			isa = PBXGroup;
-			children = (
-				C59E637123BDC9C10012BF85 /* WPXMLRPCDecoder.m */,
-				C59E637223BDC9C10012BF85 /* WPXMLRPC.h */,
-				C59E637323BDC9C10012BF85 /* WPXMLRPCEncoder.h */,
-				C59E637423BDC9C10012BF85 /* WPStringUtils.h */,
-				C59E637523BDC9C10012BF85 /* WPXMLRPCDecoderDelegate.h */,
-				C59E637623BDC9C10012BF85 /* WPXMLRPCDataCleaner.h */,
-				C59E637723BDC9C10012BF85 /* WPBase64Utils.m */,
-				C59E637823BDC9C10012BF85 /* WPXMLRPCDecoder.h */,
-				C59E637923BDC9C10012BF85 /* WPXMLRPCDecoderDelegate.m */,
-				C59E637A23BDC9C10012BF85 /* WPStringUtils.m */,
-				C59E637B23BDC9C10012BF85 /* WPXMLRPCEncoder.m */,
-				C59E637C23BDC9C10012BF85 /* WPBase64Utils.h */,
-				C59E637D23BDC9C10012BF85 /* WPXMLRPCDataCleaner.m */,
-			);
-			path = WPXMLRPC;
 			sourceTree = "<group>";
 		};
 		C5CE39D623CB6F9F0095013A /* Icro-Next */ = {
@@ -1240,8 +1185,6 @@
 				C58956E027500B3C00B7E392 /* MediaEndpoint.swift in Sources */,
 				C58956D927500B3C00B7E392 /* DiscoveryCategoryResource.swift in Sources */,
 				5B3C798121C4DFAF00F699B8 /* ShareViewController.swift in Sources */,
-				C589570B27500B8500B7E392 /* WPXMLRPCDecoder.m in Sources */,
-				C589571027500B9100B7E392 /* WPXMLRPCEncoder.m in Sources */,
 				C5046549274F78460004B812 /* ItemNavigatorProtocol.swift in Sources */,
 				C5046536274F77C70004B812 /* Font+Settings.swift in Sources */,
 				C58956DF27500B3C00B7E392 /* ListViewModel.swift in Sources */,
@@ -1250,17 +1193,14 @@
 				C58956E427500B3C00B7E392 /* Functions.swift in Sources */,
 				C58956E727500B3C00B7E392 /* HTMLContent.swift in Sources */,
 				C58956E327500B3C00B7E392 /* Media.swift in Sources */,
-				C589570D27500B9100B7E392 /* WPStringUtils.m in Sources */,
 				C5046534274F77C70004B812 /* VideoThumbnailImageProvider.swift in Sources */,
 				C58956E627500B3C00B7E392 /* CacheStorage.swift in Sources */,
 				C58956E227500B3C00B7E392 /* GalleryDataSource.swift in Sources */,
 				C58956DA27500B3C00B7E392 /* DiscoveryCategoryStore.swift in Sources */,
 				C504653A274F77C70004B812 /* LinkLabel.swift in Sources */,
 				C58956DE27500B3C00B7E392 /* Resource.swift in Sources */,
-				C589570F27500B9100B7E392 /* WPXMLRPCDataCleaner.m in Sources */,
 				C5046540274F77C70004B812 /* UIViewController+Loading.swift in Sources */,
 				C5046535274F77C70004B812 /* LocalizedString.swift in Sources */,
-				C589570E27500B9100B7E392 /* WPBase64Utils.m in Sources */,
 				C58956D827500B3C00B7E392 /* ListViewModelListType.swift in Sources */,
 				C58956D527500B3C00B7E392 /* MicropubEndpoint.swift in Sources */,
 				C5282B942764AC47004F5106 /* ComposeView.swift in Sources */,
@@ -1270,7 +1210,6 @@
 				C55BAF2A275D489D009E8A9C /* ComposeKeyboardInputView.swift in Sources */,
 				C58956D727500B3C00B7E392 /* Date+Ago.swift in Sources */,
 				C504653F274F77C70004B812 /* ItemTableViewCell.swift in Sources */,
-				C589570C27500B9100B7E392 /* WPXMLRPCDecoderDelegate.m in Sources */,
 				C504653B274F77C70004B812 /* ItemCellConfigurator.swift in Sources */,
 				C58956E827500B3C00B7E392 /* PushRegistration.swift in Sources */,
 				C58956DB27500B3C00B7E392 /* Error.swift in Sources */,
@@ -1316,8 +1255,6 @@
 				C55BAF29275D489D009E8A9C /* ComposeKeyboardInputView.swift in Sources */,
 				C5DEA4E1275B49C300530E96 /* HostingCell.swift in Sources */,
 				C5DEA4E3275B4A0C00530E96 /* ProfileCellView.swift in Sources */,
-				C589571327500B9100B7E392 /* WPBase64Utils.m in Sources */,
-				C589571527500B9100B7E392 /* WPXMLRPCEncoder.m in Sources */,
 				5B69E65122AA16310081CDFB /* SettingsContentView.swift in Sources */,
 				5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */,
 				5B39B7BE22AD504A004D5134 /* ListView.swift in Sources */,
@@ -1331,8 +1268,6 @@
 				C58956EA27500B3D00B7E392 /* ComposeViewModel.swift in Sources */,
 				C58956FA27500B3D00B7E392 /* CacheStorage.swift in Sources */,
 				5B51621B22B2C900009C0064 /* LoginView.swift in Sources */,
-				C589571227500B9100B7E392 /* WPStringUtils.m in Sources */,
-				C589570A27500B8300B7E392 /* WPXMLRPCDecoder.m in Sources */,
 				C58956F027500B3D00B7E392 /* MicropubRequestController.swift in Sources */,
 				5B44C71720979CF20003B35D /* MuteViewModel.swift in Sources */,
 				C5046547274F78460004B812 /* ItemNavigatorProtocol.swift in Sources */,
@@ -1347,7 +1282,6 @@
 				5B4895F222B1603E00CF08C2 /* SceneDelegate.swift in Sources */,
 				5B609F1023091FA900F2C1BC /* ViewModelState.swift in Sources */,
 				C5046529274F77C60004B812 /* LinkLabel.swift in Sources */,
-				C589571427500B9100B7E392 /* WPXMLRPCDataCleaner.m in Sources */,
 				C504652E274F77C60004B812 /* ItemTableViewCell.swift in Sources */,
 				5B609F162309200400F2C1BC /* MediaGalleryView.swift in Sources */,
 				C58956F327500B3D00B7E392 /* ListViewModel.swift in Sources */,
@@ -1362,7 +1296,6 @@
 				5B583721212861220076121E /* EditActionsConfigurator.swift in Sources */,
 				5B609F182309203400F2C1BC /* ItemNavigator.swift in Sources */,
 				C5FA2AC41EB4482C006DEB40 /* AppDelegate.swift in Sources */,
-				5BF2DAA4228800B30055240D /* DiscoveryCategoryComponent.swift in Sources */,
 				5BA0C37C2300610E00A9B44D /* UIViewController+ViewVisible.swift in Sources */,
 				5B99C67A229FB47200437552 /* UITableView+Keyboard.swift in Sources */,
 				5BD95AFD2290A16100C74C52 /* AppearanceComponent.swift in Sources */,
@@ -1372,7 +1305,6 @@
 				5B609F1323091FD600F2C1BC /* ListViewController.swift in Sources */,
 				C5046524274F77C60004B812 /* LocalizedString.swift in Sources */,
 				5B58372A2128618B0076121E /* UserListViewModel.swift in Sources */,
-				C589571127500B9100B7E392 /* WPXMLRPCDecoderDelegate.m in Sources */,
 				5B8754FA2070137300018DFA /* TabBarViewController.swift in Sources */,
 				C5282B932764AC47004F5106 /* ComposeView.swift in Sources */,
 				5B20952322F6B12300C06123 /* VerticalTabViewModel+Extensions.swift in Sources */,
@@ -1462,7 +1394,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 389;
+				CURRENT_PROJECT_VERSION = 390;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1500,7 +1432,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 389;
+				CURRENT_PROJECT_VERSION = 390;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1830,7 +1762,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 389;
+				CURRENT_PROJECT_VERSION = 390;
 				DEFINES_MODULE = YES;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;
@@ -1863,7 +1795,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 389;
+				CURRENT_PROJECT_VERSION = 390;
 				DEFINES_MODULE = YES;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9E8SXF3Y36;

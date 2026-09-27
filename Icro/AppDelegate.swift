@@ -9,8 +9,7 @@ import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AppDelegateComponentStore {
-    let storedComponents: [AppDelegateComponent] = [DiscoveryCategoryComponent(),
-                                                    UserDefaultsMigrationComponent(),
+    let storedComponents: [AppDelegateComponent] = [UserDefaultsMigrationComponent(),
                                                     NotificationComponent(),
                                                     AppearanceComponent()]
     private let componentRunner = AppDelegateComponentRunner()

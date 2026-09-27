@@ -68,8 +68,6 @@ public struct Resource<A> {
 public enum NetworkingError: Error {
     case cannotParse
     case httpStatus(Int)
-    case wordPressURLError
-    case micropubURLError
     case generalError(error: Error)
     case invalidInput
 }

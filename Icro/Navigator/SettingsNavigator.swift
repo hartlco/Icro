@@ -7,22 +7,18 @@ import Foundation
 import MessageUI
 import SwiftUI
 import Settings
-import Client
 
 final class SettingsNavigator: NSObject {
     private let presentedController: UIViewController
     private let appNavigator: AppNavigator
     private let userSettings: UserSettings
-    private let application: UIApplication
 
     init(presentedController: UIViewController,
          appNavigator: AppNavigator,
-         userSettings: UserSettings = .shared,
-         application: UIApplication) {
+         userSettings: UserSettings = .shared) {
         self.presentedController = presentedController
         self.appNavigator = appNavigator
         self.userSettings = userSettings
-        self.application = application
     }
 
     var muteView: MuteView {
@@ -32,24 +28,6 @@ final class SettingsNavigator: NSObject {
 
     var acknowledgmentsView: AcknowledgementView {
         return AcknowledgementView()
-    }
-
-    func openIndieAuthFlow(for urlString: String) {
-        guard let url = URL(string: urlString) else {
-            return
-        }
-
-        let me = url
-
-        guard let indieAuthURL = IndieAuth.buildAuthorizationURL(forEndpoint: IndieAuth.Constants.authURL,
-                                                                 meUrl: me,
-                                                                 redirectURI: IndieAuth.Constants.callback,
-                                                                 clientId: IndieAuth.Constants.clientIDURL,
-                                                                 state: "") else {
-                                                                    return
-        }
-
-        application.open(indieAuthURL, options: [:], completionHandler: nil)
     }
 
     var mailView: MailView {

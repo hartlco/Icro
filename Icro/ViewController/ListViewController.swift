@@ -139,6 +139,10 @@ final class ListViewController: UIViewController {
             self?.showError(error: error)
         }
 
+        viewModel.didUpdateDiscoveryCategories = { [weak self] in
+            self?.updateDiscoverySectionsIfNeeded()
+        }
+
         setupNavigateBackShortcut(with: notificationCenter)
 
         // Hide empty cells
@@ -226,6 +230,7 @@ final class ListViewController: UIViewController {
 
     private func updateDiscoverySectionsIfNeeded() {
         guard viewModel.showsDiscoverySections else { return }
+        guard titleView == nil else { return }
 
         titleView = DropdownTitleView()
 
@@ -241,7 +246,7 @@ final class ListViewController: UIViewController {
     }
 
     @objc private func onTitle() {
-        itemNavigator.showDiscoveryCategories(categories: viewModel.discoveryCategories, sourceView: titleView ?? view)
+        itemNavigator.showDiscoveryCategories(categories: viewModel.discoveryCategories)
     }
 
     private func updateAppearance() {

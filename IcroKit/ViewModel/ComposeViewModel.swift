@@ -36,7 +36,7 @@ public final class ComposeViewModel: ObservableObject {
     }
 
     private let mode: Mode
-    private let imageUploadService = MicropubRequestController()
+    private let imageUploadService: MicropubRequestController
     private let userSettings: UserSettings
     private let client: Client
 
@@ -46,13 +46,19 @@ public final class ComposeViewModel: ObservableObject {
                 for: text,
                    numberOfImages: images.count,
                    imageState: imageState,
-                   hidesImageButton: !imageUploadEnabled
+                   hidesImageButton: false
             )
         }
     }
     @Published var replyItem: Item?
     @Published private(set) var images = [Image]()
     @Published var uploading = false
+    @Published public private(set) var destinations = [MicroBlogDestination]()
+    @Published public private(set) var selectedDestination: MicroBlogDestination?
+    @Published public private(set) var availableCategories = [String]()
+    @Published public private(set) var selectedCategories = Set<String>()
+    @Published public private(set) var publishingOptionsFailed = false
+    @Published public var isDraft = false
 
     @Published var imagePickerActive = false
     @Published var pickedImage: Data? {
@@ -73,7 +79,7 @@ public final class ComposeViewModel: ObservableObject {
                 for: text,
                    numberOfImages: images.count,
                    imageState: imageState,
-                   hidesImageButton: !imageUploadEnabled
+                   hidesImageButton: false
             )
         }
     }
@@ -84,7 +90,15 @@ public final class ComposeViewModel: ObservableObject {
         self.mode = mode
         self.userSettings = userSettings
         self.client = client
+        self.imageUploadService = MicropubRequestController(client: client)
         self.composeKeyboardInputViewModel = .init()
+        if let preferred = userSettings.preferredBlogDestination,
+           let uid = URL(string: preferred), uid.scheme == "https" {
+            let displayName = uid.host ?? preferred
+            self.selectedDestination = MicroBlogDestination(uid: uid,
+                                                             name: displayName,
+                                                             title: displayName)
+        }
 
         switch mode {
         case .reply(let item):
@@ -98,7 +112,7 @@ public final class ComposeViewModel: ObservableObject {
             for: text,
             numberOfImages: images.count,
             imageState: imageState,
-            hidesImageButton: !imageUploadEnabled
+            hidesImageButton: false
         )
     }
 
@@ -127,32 +141,83 @@ public final class ComposeViewModel: ObservableObject {
         }
     }
 
-    public var imageUploadEnabled: Bool {
-        return userSettings.wordpressInfo == nil
+    public var isReply: Bool {
+        if case .reply = mode { return true }
+        return false
+    }
+
+    @MainActor
+    public func loadPublishingOptions() async {
+        guard !isReply else { return }
+        do {
+            let configuration = try await client.load(resource: MicroBlogConfiguration.get(token: userSettings.token))
+            destinations = configuration.destinations
+            selectedDestination = destinations.first { $0.id == userSettings.preferredBlogDestination }
+            publishingOptionsFailed = false
+        } catch {
+            publishingOptionsFailed = true
+        }
+        await loadCategories()
+    }
+
+    @MainActor
+    public func selectDestination(_ destination: MicroBlogDestination?) async {
+        selectedDestination = destination
+        userSettings.preferredBlogDestination = destination?.id
+        selectedCategories = []
+        await loadCategories()
+    }
+
+    public func toggleCategory(_ category: String) {
+        if selectedCategories.contains(category) {
+            selectedCategories.remove(category)
+        } else {
+            selectedCategories.insert(category)
+        }
+    }
+
+    @MainActor
+    private func loadCategories() async {
+        do {
+            let destination = selectedDestination?.uid
+            let response = try await client.load(resource: MicroBlogCategories.get(token: userSettings.token,
+                                                                                    destination: destination))
+            guard selectedDestination?.uid == destination else { return }
+            availableCategories = response.categories
+            publishingOptionsFailed = false
+        } catch {
+            availableCategories = []
+            publishingOptionsFailed = true
+        }
     }
 
     @MainActor
     public func post() async throws {
+        guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || !images.isEmpty else {
+            throw NetworkingError.invalidInput
+        }
         uploading = true
         composeKeyboardInputViewModel.postButtonEnabled = false
+        defer {
+            uploading = false
+            composeKeyboardInputViewModel.update(for: text,
+                                                 numberOfImages: images.count,
+                                                 imageState: imageState,
+                                                 hidesImageButton: false)
+        }
 
         let string = postWithImages(string: text)
 
         switch mode {
         case .post, .shareURL, .shareImage, .shareText:
-            if userSettings.wordpressInfo != nil {
-                try await postXMLRPC(string: string)
-            } else if let info = userSettings.micropubInfo {
-                try await MicropubRequestController().post(endpoint: .custom(info: info), message: string)
-            } else {
-                try await MicropubRequestController().post(endpoint: .micropub, message: string)
-            }
+            try await imageUploadService.post(token: userSettings.token,
+                                              message: string,
+                                              destination: selectedDestination?.uid,
+                                              categories: selectedCategories.sorted(),
+                                              draft: isDraft)
         case .reply(let item):
             try await reply(item: item, string: string)
         }
-
-        composeKeyboardInputViewModel.postButtonEnabled = true
-        uploading = false
     }
 
     public var numberOfImages: Int {
@@ -186,14 +251,10 @@ public final class ComposeViewModel: ObservableObject {
     public func upload(image: XImage) {
         imageState = .uploading(progress: 0.0)
 
-        let endpoint: MicropubEndpoint
-        if let info = userSettings.micropubInfo {
-            endpoint = .custom(info: info)
-        } else {
-            endpoint = .micropub
-        }
-
-        imageUploadService.uploadImages(endpoint: endpoint, image: image, uploadProgress: { [weak self] progress in
+        imageUploadService.uploadImages(token: userSettings.token,
+                                        destination: selectedDestination?.uid,
+                                        image: image,
+                                        uploadProgress: { [weak self] progress in
             self?.imageState = .uploading(progress: progress)
             }, completion: { [weak self] image, _ in
             self?.imageState = .idle
@@ -225,23 +286,6 @@ public final class ComposeViewModel: ObservableObject {
         }
 
         return string + "\n" + imagesStrings.joined(separator: "\n")
-    }
-
-    private func postXMLRPC(string: String) async throws {
-        guard let info = userSettings.wordpressInfo,
-        let url = URL(string: info.urlString) else {
-            throw NetworkingError.wordPressURLError
-        }
-
-        let postingURL = url.appendingPathComponent("xmlrpc.php")
-
-        let params: [Any] = [1, info.username, info.password, ["post_content": string, "post_status": "publish"]]
-        var request = URLRequest(url: postingURL)
-        request.httpMethod = "POST"
-        let encoder = WPXMLRPCEncoder(method: "wp.newPost", andParameters: params)
-        request.httpBody = try? encoder.dataEncoded()
-
-        try await _ = client.data(for: request, delegate: nil)
     }
 
     private func reply(item: Item, string: String) async throws {

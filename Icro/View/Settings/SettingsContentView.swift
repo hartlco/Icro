@@ -8,7 +8,6 @@
 
 import SwiftUI
 import Combine
-import SafariServices
 
 struct SettingsContentView: View {
     let dismissAction: () -> Void
@@ -20,8 +19,6 @@ struct SettingsContentView: View {
         NavigationStack {
             Form {
                 AppearanceSection(store: store)
-                WordpressSection(store: store)
-                MicropubSection(store: store, settingsNavigator: settingsNavigator)
                 AccountSection(settingsNavigator: settingsNavigator)
                 OtherSection(settingsNavigator: settingsNavigator, store: store)
                 TipJarSection()
@@ -34,74 +31,6 @@ struct SettingsContentView: View {
                     }
                 }
             }
-        }
-    }
-}
-
-struct WordpressSection: View {
-    @ObservedObject var store: SettingsViewModel
-
-    var body: some View {
-        Section(header: Text("SETTINGSVIEWCONTROLLER_BLOGSETUP_TITLE")
-            .font(.headline)
-            .fontWeight(.bold),
-                footer: Text("SETTINGSVIEWCONTROLLER_BLOGINFO_TEXT").lineLimit(nil)) {
-                Toggle(isOn: $store.isWordpressBlog) {
-                    Text("SETTINGSVIEWCONTROLLER_BLOGSETUPSWITCH_TEXT")
-                }
-                inputField
-        }
-    }
-
-    private var inputField: AnyView? {
-        if store.isWordpressBlog {
-            return AnyView(Group {
-                TextField("SETTINGSVIEWCONTROLLER_BLOGURLFIELD_PLACEHOLDER", text: $store.wordpressURL)
-                TextField("SETTINGSVIEWCONTROLLER_BLOGUSERNAMEFIELD_PLACEHOLDER", text: $store.wordpressUsername)
-                SecureField("SETTINGSVIEWCONTROLLER_BLOGPASSWORDFIELD_PLACEHOLDER", text: $store.wordpressPassword)
-            })
-        } else {
-            return nil
-        }
-    }
-}
-
-struct MicropubSection: View {
-    @ObservedObject var store: SettingsViewModel
-    let settingsNavigator: SettingsNavigator
-
-    var body: some View {
-        Section(header: Text("SETTINGSVIEWCONTROLLER_MICROPUBSETUP_TITLE")
-            .font(.headline)
-            .fontWeight(.bold),
-                footer: Text("SETTINGSVIEWCONTROLLER_MICROPUBINFO_TEXT").lineLimit(nil)) {
-                    Toggle(isOn: $store.isMicropubBlog) {
-                        Text("SETTINGSVIEWCONTROLLER_MICROPUBSETUPSWITCH_TEXT")
-                    }
-                    inputField
-        }
-    }
-
-    private var inputField: AnyView? {
-        if store.isMicropubBlog {
-            return AnyView(Group {
-                TextField("SETTINGSVIEWCONTROLLER_MICROPUBURLFIELD_PLACEHOLDER",
-                          text: $store.micropubURL)
-                SecureField("SETTINGSVIEWCONTROLLER_MICROPUBTOKENFIELD_PLACEHOLDER",
-                            text: $store.micropubToken)
-                HStack {
-                    TextField("Website URL", text: $store.indieAuthMeURLString)
-                        .disableAutocorrection(true)
-                        .autocapitalization(UITextAutocapitalizationType.none)
-                    Button(action: {
-                        self.settingsNavigator.openIndieAuthFlow(for: self.store.indieAuthMeURLString)
-                    }, label: {
-                        Text("Indie Auth")
-                    })
-                }
-            })
-        } else {
-            return nil
         }
     }
 }

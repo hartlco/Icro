@@ -84,11 +84,12 @@ final class TabBarViewController: UITabBarController {
 				settingsButton.accessibilityLabel = "Settings"
 				viewController.navigationItem.leftBarButtonItem = settingsButton
             case .timeline:
-                let photosButton  = UIBarButtonItem(image: UIImage(symbol: Symbol.photo),
+                let mediaButton = UIBarButtonItem(image: UIImage(systemName: "photo.on.rectangle.angled"),
                                                     style: .plain,
                                                     target: self,
-                                                    action: #selector(showPhotosTimeline))
-                viewController.navigationItem.leftBarButtonItem = photosButton
+                                                    action: #selector(showMediaTimeline))
+                mediaButton.accessibilityLabel = NSLocalizedString("LISTVIEWMODEL_RESOURCETITLE_MEDIA", comment: "")
+                viewController.navigationItem.leftBarButtonItem = mediaButton
             default:
                 break
             }
@@ -132,10 +133,10 @@ final class TabBarViewController: UITabBarController {
         appNavigator.showSettingsView(on: self)
     }
 
-    @objc private func showPhotosTimeline() {
+    @objc private func showMediaTimeline() {
         guard let navigationController = selectedViewController as? UINavigationController else { return }
 
-        let viewModel = ListViewModel(type: .photos)
+        let viewModel = ListViewModel(type: .media)
         let itemNavigator = ItemNavigator(navigationController: navigationController,
                                           appNavigator: appNavigator,
                                           notificationCenter: notificationCenter)

@@ -10,7 +10,7 @@ import Client
 public typealias JSONDictionary = [String: Any]
 
 let itemURL = URL(string: "https://micro.blog/posts/timeline")!
-let photosURL = URL(string: "https://micro.blog/posts/photos")!
+let mediaURL = URL(string: "https://micro.blog/posts/media")!
 let mentionsURL = URL(string: "https://micro.blog/posts/mentions")!
 let favoritesURL = URL(string: "https://micro.blog/posts/bookmarks")!
 let discoverURL = URL(string: "https://micro.blog/posts/discover")!
@@ -22,8 +22,6 @@ let replyURLString = "https://micro.blog/posts/reply"
 let followURLString = "https://micro.blog/users/follow?username="
 let unfollowURLString = "https://micro.blog/users/unfollow?username="
 let followingURLString = "https://micro.blog/users/following/"
-
-public let microblogMedia = "?q=config"
 
 public extension Item {
     static func allCached(completion: @escaping (ItemResponse?) -> Void) {
@@ -85,7 +83,7 @@ public extension Item {
         return resource(for: url)
     }
 
-    static var photos: Resource<ItemResponse> { resource(for: photosURL) }
+    static var media: Resource<ItemResponse> { resource(for: mediaURL) }
 
     static func usernamePostURL(for username: String) -> Resource<ItemResponse> {
         let url = userPostsURL.appendingPathComponent(username)
@@ -175,18 +173,6 @@ public extension Item {
         return Item.resource(for: url)
     }
 
-    static func post(text: String) -> Resource<Empty> {
-        let content = text.stringByAddingPercentEncodingForFormData() ?? ""
-
-        let urlString = "https://" + UserSettings.shared.defaultSite + "/micropub?h=entry&content=\(content)"
-        let url = URL(string: urlString)!
-        return Resource<Empty>(url: url,
-                               httpMethod: .post(nil),
-                               authorization: .bearer(token: UserSettings.shared.token),
-            parseJSON: { _ in
-            return Empty()
-        })
-    }
 }
 
 public extension Author {
@@ -236,21 +222,43 @@ public extension Author {
 }
 
 public extension MediaEndpoint {
-    static func get(endpoint: MicropubEndpoint) -> Resource<MediaEndpoint> {
-        let urlString = endpoint.urlString + microblogMedia
-
-        guard let url = URL(string: urlString) else {
-            fatalError()
-        }
-
-        return Resource<MediaEndpoint>(url: url,
-                                       authorization: .bearer(token: UserSettings.shared.token),
+    static func get(token: String) -> Resource<MediaEndpoint> {
+        return Resource<MediaEndpoint>(url: MicropubEndpoint.url.appendingQueryParameters(["q": "config"]),
+                                       authorization: .bearer(token: token),
                                        parseJSON: { json in
             guard let json = json as? JSONDictionary else {
                 return nil
             }
 
             return MediaEndpoint(dictionary: json)
+        })
+    }
+}
+
+public extension MicroBlogConfiguration {
+    static func get(token: String) -> Resource<MicroBlogConfiguration> {
+        Resource(url: MicropubEndpoint.url.appendingQueryParameters(["q": "config"]),
+                 authorization: .bearer(token: token),
+                 parseJSON: { json in
+            guard let dictionary = json as? JSONDictionary else { return nil }
+            let destinations = (dictionary["destination"] as? [JSONDictionary] ?? [])
+                .compactMap(MicroBlogDestination.init(dictionary:))
+            return MicroBlogConfiguration(destinations: destinations)
+        })
+    }
+}
+
+public extension MicroBlogCategories {
+    static func get(token: String, destination: URL?) -> Resource<MicroBlogCategories> {
+        var components = URLComponents(url: MicropubEndpoint.url, resolvingAgainstBaseURL: false)!
+        components.queryItems = [URLQueryItem(name: "q", value: "category")]
+        if let destination {
+            components.queryItems?.append(URLQueryItem(name: "mp-destination", value: destination.absoluteString))
+        }
+        return Resource(url: components.url!, authorization: .bearer(token: token), parseJSON: { json in
+            guard let dictionary = json as? JSONDictionary,
+                  let categories = dictionary["categories"] as? [String] else { return nil }
+            return MicroBlogCategories(categories: categories)
         })
     }
 }

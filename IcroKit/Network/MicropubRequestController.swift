@@ -17,54 +17,72 @@ final class MicropubRequestController {
         self.client = client
     }
 
-    func post(endpoint: MicropubEndpoint, message: String) async throws {
-        let sessionConfig = URLSessionConfiguration.default
-
-        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
-
-        guard let URL = URL(string: endpoint.urlString) else {
-            throw NetworkingError.micropubURLError
+    func post(token: String, message: String, destination: URL?, categories: [String], draft: Bool) async throws {
+        let request = Self.postRequest(token: token,
+                                       message: message,
+                                       destination: destination,
+                                       categories: categories,
+                                       draft: draft)
+        let (_, response) = try await client.data(for: request, delegate: nil)
+        if let response = response as? HTTPURLResponse, !(200...299).contains(response.statusCode) {
+            throw NetworkingError.httpStatus(response.statusCode)
         }
-        var request = URLRequest(url: URL)
+    }
+
+    static func postRequest(token: String,
+                            message: String,
+                            destination: URL?,
+                            categories: [String],
+                            draft: Bool) -> URLRequest {
+        var request = URLRequest(url: MicropubEndpoint.url)
         request.httpMethod = "POST"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
-        request.addValue("Bearer \(endpoint.token)", forHTTPHeaderField: "Authorization")
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-
-        let bodyParameters = [
-            "name": "",
-            "content": message,
-            "h": "entry"
-            ]
-        let bodyString = bodyParameters.queryParameters
-        request.httpBody = bodyString.data(using: .utf8, allowLossyConversion: true)
-
-        try await _ = session.data(for: request, delegate: nil)
-
-        session.finishTasksAndInvalidate()
+        var components = URLComponents()
+        components.queryItems = [URLQueryItem(name: "h", value: "entry"),
+                                 URLQueryItem(name: "content", value: message)]
+        if let destination {
+            components.queryItems?.append(URLQueryItem(name: "mp-destination", value: destination.absoluteString))
+        }
+        for category in categories {
+            components.queryItems?.append(URLQueryItem(name: "category[]", value: category))
+        }
+        if draft {
+            components.queryItems?.append(URLQueryItem(name: "post-status", value: "draft"))
+        }
+        request.httpBody = components.percentEncodedQuery?.data(using: .utf8)
+        return request
     }
 
     func cancelImageUpload() {
         currentlyRunningTask?.cancel()
     }
 
-    func uploadImages(endpoint: MicropubEndpoint,
+    func uploadImages(token: String,
+                      destination: URL?,
                       image: XImage,
                       uploadProgress: @escaping (Float) -> Void,
                       completion: @escaping (ComposeViewModel.Image?, Error?) -> Void) {
 
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(endpoint.token)"
+            "Authorization": "Bearer \(token)"
         ]
 
-        client.load(resource: MediaEndpoint.get(endpoint: endpoint)) { endpoint in
+        client.load(resource: MediaEndpoint.get(token: token)) { endpoint in
             let endpointValue = endpoint.value?.mediaEndpoint
 
-            guard let url = endpointValue else { return }
+            guard let url = endpointValue, let jpeg = image.jpeg else {
+                completion(nil, NetworkingError.cannotParse)
+                return
+            }
 
             let filename = UUID().uuidString + ".jpg"
             Alamofire.upload(multipartFormData: { multipartFormData in
-                multipartFormData.append(image.jpeg!, withName: "file", fileName: filename, mimeType: "image/jpeg")
+                multipartFormData.append(jpeg, withName: "file", fileName: filename, mimeType: "image/jpeg")
+                if let destination {
+                    multipartFormData.append(Data(destination.absoluteString.utf8), withName: "mp-destination")
+                }
             },
                              usingThreshold: UInt64.init(),
                              to: url,
@@ -77,8 +95,9 @@ final class MicropubRequestController {
                                         if let linkURLString = response.response?.allHeaderFields["Location"] as? String,
                                             let url = URL(string: linkURLString) {
                                             completion(ComposeViewModel.Image(title: filename, link: url), nil)
+                                            return
                                         }
-                                        completion(nil, nil)
+                                        completion(nil, NetworkingError.cannotParse)
                                     })
 
                                     upload.uploadProgress { progress in

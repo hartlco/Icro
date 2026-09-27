@@ -201,10 +201,6 @@ public extension Error {
     var text: String {
         if let networkingError = self as? NetworkingError {
             switch networkingError {
-            case .wordPressURLError:
-                return localizedString(key: "UIVIEWCONTROLLERLOADING_WORDPRESSURLERROR_TEXT")
-            case .micropubURLError:
-                return localizedString(key: "UIVIEWCONTROLLERLOADING_MICROPUBURLERROR_TEXT")
             case .invalidInput:
                 return localizedString(key: "UIVIEWCONTROLLERLOADING_INVALIDINPUT_TEXT")
             case .httpStatus(401):

@@ -24,8 +24,8 @@ public extension ListViewModel.ListType {
         switch self {
         case .timeline:
             return Item.all()
-        case .photos:
-            return Item.photos
+        case .media:
+            return Item.media
         case .mentions:
             return Item.mentions
         case .favorites:
@@ -47,8 +47,8 @@ public extension ListViewModel.ListType {
         switch self {
         case .timeline:
             return NSLocalizedString("LISTVIEWMODEL_RESOURCETITLE_TIMELINE", comment: "")
-        case .photos:
-            return NSLocalizedString("LISTVIEWMODEL_RESOURCETITLE_PHOTOS", comment: "")
+        case .media:
+            return NSLocalizedString("LISTVIEWMODEL_RESOURCETITLE_MEDIA", comment: "")
         case .mentions:
             return NSLocalizedString("LISTVIEWMODEL_RESOURCETITLE_MENTIONS", comment: "")
         case .favorites:
@@ -78,7 +78,7 @@ public extension ListViewModel.ListType {
             return UIImage(symbol: .safari_fill)
         case .user, .username:
             return UIImage(symbol: .person_fill)
-        case .conversation, .photos, .discoverCollection:
+        case .conversation, .media, .discoverCollection:
             return nil
         }
     }
@@ -95,7 +95,7 @@ public extension ListViewModel.ListType {
             return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_DISCOVER", comment: "")
         case .user, .username:
             return NSLocalizedString("TABBARVIEWCONTROLLER_TABTILE_PROFILE", comment: "")
-        case .conversation, .photos, .discoverCollection:
+        case .conversation, .media, .discoverCollection:
             return nil
         }
     }

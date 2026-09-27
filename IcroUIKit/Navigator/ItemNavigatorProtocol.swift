@@ -26,7 +26,7 @@ public protocol ItemNavigatorProtocol: AnyObject {
 
     func openMore(item: Item, sourceView: UIView?)
 
-    func showDiscoveryCategories(categories: [DiscoveryCategory], sourceView: UIView)
+    func showDiscoveryCategories(categories: [DiscoveryCategory])
 
     func showLogin()
 }

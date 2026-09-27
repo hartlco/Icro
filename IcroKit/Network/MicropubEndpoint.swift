@@ -4,27 +4,40 @@
 //
 
 import Foundation
-import Settings
 
 public enum MicropubEndpoint {
-    case micropub
-    case custom(info: UserSettings.MicropubInfo)
+    public static let url = URL(string: "https://micro.blog/micropub")!
+}
 
-    public var urlString: String {
-        switch self {
-        case .micropub:
-            return "https://micro.blog/micropub"
-        case .custom(let info):
-            return info.urlString
-        }
+public struct MicroBlogDestination: Codable, Hashable, Identifiable {
+    public let uid: URL
+    public let name: String
+    public let title: String
+
+    public var id: String { uid.absoluteString }
+
+    public init(uid: URL, name: String, title: String) {
+        self.uid = uid
+        self.name = name
+        self.title = title
     }
 
-    public var token: String {
-        switch self {
-        case .micropub:
-            return UserSettings.shared.token
-        case .custom(let info):
-            return info.micropubToken
-        }
+    init?(dictionary: [String: Any]) {
+        guard let uidString = dictionary["uid"] as? String,
+              let uid = URL(string: uidString),
+              uid.scheme == "https" else { return nil }
+        self.init(uid: uid,
+                  name: dictionary["name"] as? String ?? uid.host ?? uidString,
+                  title: dictionary["microblog-title"] as? String
+                    ?? dictionary["name"] as? String
+                    ?? uid.host ?? uidString)
     }
+}
+
+public struct MicroBlogConfiguration: Codable {
+    public let destinations: [MicroBlogDestination]
+}
+
+public struct MicroBlogCategories: Codable {
+    public let categories: [String]
 }

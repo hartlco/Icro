@@ -5,17 +5,16 @@
 
 import Foundation
 import Client
-import Settings
-
-// swiftlint:disable line_length
-private let discoveryCategoriesResource = URL(string: "https://raw.githubusercontent.com/hartlco/Icro/master/discoverCategories/discoverCategories.json")!
+private let discoveryCategoriesResource = URL(string: "https://micro.blog/posts/discover")!
 
 public extension DiscoveryCategory {
     static func all() -> Resource<[DiscoveryCategory]> {
         return Resource<[DiscoveryCategory]>(url: discoveryCategoriesResource,
                                              authorization: nil,
                                              parseJSON: { json in
-            guard let categories = json as? [JSONDictionary] else { return nil }
+            guard let response = json as? JSONDictionary,
+                  let metadata = response["_microblog"] as? JSONDictionary,
+                  let categories = metadata["tagmoji"] as? [JSONDictionary] else { return nil }
             return categories.compactMap(DiscoveryCategory.init(dictionary:))
         })
     }
