@@ -4,9 +4,35 @@
 //
 
 import XCTest
+import Settings
 @testable import Icro
 
 class ListViewModelTests: XCTestCase {
+    func testMicroblogTabRequestsUseCurrentEndpointsAndBearerToken() {
+        let settings = UserSettings.shared
+        let originalToken = settings.token
+        defer { settings.token = originalToken }
+
+        settings.token = "first-token"
+        let requests = [
+            (Item.all().urlRequest, "/posts/timeline"),
+            (Item.mentions.urlRequest, "/posts/mentions"),
+            (Item.favorites.urlRequest, "/posts/bookmarks"),
+            (Item.discover.urlRequest, "/posts/discover")
+        ]
+
+        for (request, path) in requests {
+            XCTAssertEqual(request.url?.path, path)
+            XCTAssertEqual(request.value(forHTTPHeaderField: "Authorization"), "Bearer first-token")
+        }
+
+        settings.token = "new-token"
+        XCTAssertEqual(Item.all().urlRequest.value(forHTTPHeaderField: "Authorization"), "Bearer new-token")
+        XCTAssertEqual(Item.mentions.urlRequest.value(forHTTPHeaderField: "Authorization"), "Bearer new-token")
+        XCTAssertEqual(Item.favorites.urlRequest.value(forHTTPHeaderField: "Authorization"), "Bearer new-token")
+        XCTAssertEqual(Item.discover.urlRequest.value(forHTTPHeaderField: "Authorization"), "Bearer new-token")
+    }
+
     // MARK: - shouldShowProfileHeader
     func test_shouldShowProfileHeader_showsHeaderForLoggedInUser() {
         let author = Author(name: "Testuser",

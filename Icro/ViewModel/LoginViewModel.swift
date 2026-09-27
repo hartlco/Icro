@@ -12,7 +12,7 @@ import Client
 final class LoginViewModel: ObservableObject {
     let objectWillChange = ObservableObjectPublisher()
 
-    enum LoginType {
+    enum LoginType: CaseIterable, Hashable {
         case mail
         case token
     }
@@ -43,8 +43,16 @@ final class LoginViewModel: ObservableObject {
         }
     }
 
+    var loginType: LoginType = .mail {
+        willSet { objectWillChange.send() }
+        didSet {
+            guard oldValue != loginType else { return }
+            loginString = ""
+        }
+    }
+
     var buttonActivated: Bool {
-        return loginString.count > 0 && !isLoading && !didRequest
+        return !loginString.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !isLoading && !didRequest
     }
 
     var buttonString: String {
@@ -72,6 +80,8 @@ final class LoginViewModel: ObservableObject {
     }
 
     @MainActor func login() {
+        guard buttonActivated else { return }
+        isLoading = true
         Task {
             switch loginType {
             case .mail:
@@ -80,6 +90,12 @@ final class LoginViewModel: ObservableObject {
                 await login(withToken: loginString)
             }
         }
+    }
+
+    @MainActor func login(tokenFromLink token: String) {
+        loginType = .token
+        loginString = token
+        login()
     }
 
     @MainActor private func requestLoginMail() async {
@@ -98,6 +114,8 @@ final class LoginViewModel: ObservableObject {
             didRequest = true
             infoMessage = NSLocalizedString("LOGINVIEWCONTROLLER_INFOLABEL_TEXT", comment: "")
         } catch {
+            infoMessage = NSLocalizedString("UIVIEWCONTROLLERLOADING_ERROR_TEXT", comment: "")
+            isLoading = false
         }
     }
 
@@ -122,38 +140,48 @@ final class LoginViewModel: ObservableObject {
         }
 
         isLoading = false
-        didRequest = true
-    }
-
-    private var loginType: LoginType {
-        return loginString.contains("@") ? .mail : .token
+        didRequest = false
     }
 
     private var emailRequestResource: Resource<Empty>? {
-        let mail = loginString.replacingOccurrences(of: " ", with: "")
-        let baseURLString = "https://micro.blog/account/signin?email=\(mail)&app_name=Icro&redirect_url=icro://"
-        guard let url = URL(string: baseURLString) else {
+        guard let url = URL(string: "https://micro.blog/account/signin"),
+              let body = formBody([
+                URLQueryItem(name: "email", value: loginString.trimmingCharacters(in: .whitespacesAndNewlines)),
+                URLQueryItem(name: "app_name", value: "Icro"),
+                URLQueryItem(name: "redirect_url", value: "icro://")
+              ]) else {
             return nil
         }
         return Resource<Empty>(url: url,
-                                       httpMethod: .post(nil),
-                                       authorization: .plain(token: userSettings.token),
-                                       parseJSON: { _ in
-                                        return Empty()
+                                       httpMethod: .post(body),
+                                       authorization: nil,
+                                       contentType: "application/x-www-form-urlencoded",
+                                       parseJSON: { _ in Empty()
         })
     }
 
     private func loginRequestResource(token: String) -> Resource<LoginInformation>? {
-        let baseURLString = "https://micro.blog/account/verify?token=\(token)"
-        guard let url = URL(string: baseURLString) else {
+        guard let url = URL(string: "https://micro.blog/account/verify"),
+              let body = formBody([URLQueryItem(name: "token", value: token.trimmingCharacters(in: .whitespacesAndNewlines))]) else {
             return nil
         }
         return Resource<LoginInformation>(url: url,
-                                          httpMethod: .post(nil),
-                                          authorization: .plain(token: userSettings.token),
+                                          httpMethod: .post(body),
+                                          authorization: nil,
+                                          contentType: "application/x-www-form-urlencoded",
                                           parseJSON: { json in
                                             guard let json = json as? JSONDictionary else { return nil }
                                             return LoginInformation(json: json)
         })
+    }
+
+    private func formBody(_ queryItems: [URLQueryItem]) -> Data? {
+        let allowed = CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._*")
+        let fields = queryItems.compactMap { item -> String? in
+            guard let value = item.value?.addingPercentEncoding(withAllowedCharacters: allowed) else { return nil }
+            return "\(item.name)=\(value)"
+        }
+        guard fields.count == queryItems.count else { return nil }
+        return fields.joined(separator: "&").data(using: .utf8)
     }
 }

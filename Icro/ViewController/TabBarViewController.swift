@@ -28,6 +28,7 @@ final class TabBarViewController: UITabBarController {
 
         super.init(nibName: "TabBarViewController", bundle: nil)
         commonInit()
+        setupMainMenuNotifications()
         view.tintColor = Color.main
         delegate = self
     }
@@ -98,7 +99,6 @@ final class TabBarViewController: UITabBarController {
         setViewControllers(viewControllers, animated: false)
         mode = .tabSidebar
         previousViewController = viewControllers.first
-        setupMainMenuNotifications()
     }
 
     private func setupMainMenuNotifications() {

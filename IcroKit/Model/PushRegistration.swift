@@ -23,7 +23,7 @@ extension PushRegistration {
     public func register() -> Resource<Empty> {
         let url = URL(string: pushRegistrationURLStrig + "?device_token=\(token)&push_env=\(enviornment)&app_name=\(appName)")!
         return Resource<Empty>(url: url, httpMethod: .post(nil),
-                               authorization: .plain(token: UserSettings.shared.token),
+                               authorization: .bearer(token: UserSettings.shared.token),
                                parseJSON: { _ in
             return Empty()
         })

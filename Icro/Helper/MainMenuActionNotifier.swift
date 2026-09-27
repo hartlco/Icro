@@ -48,7 +48,7 @@ enum MainMenuKeyCommand: CaseIterable {
         case .mentions:
             return ("2", [.command], "Mentions", #selector(AppDelegate.handleMainMenuMentionsCommand(command:)))
         case .favorites:
-            return ("3", [.command], "Favorites", #selector(AppDelegate.handleMainMenuFavoritesCommand(command:)))
+            return ("3", [.command], "Bookmarks", #selector(AppDelegate.handleMainMenuFavoritesCommand(command:)))
         case .discover:
             return ("4", [.command], "Discover", #selector(AppDelegate.handleMainMenuDiscoverCommand(command:)))
         case .profile:

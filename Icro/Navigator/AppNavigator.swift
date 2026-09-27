@@ -136,14 +136,15 @@ final class AppNavigator {
     }
 
     @MainActor func handleDeeplink(url: URL) {
-        if url.absoluteString.contains("auth") {
+        if url.host == "auth" {
             handleIndieAuthTokenCallback(url: url)
             return
         }
 
-        let token = url.absoluteString.replacingOccurrences(of: "icro://", with: "")
-        loginViewModel.loginString = token
-        loginViewModel.login()
+        let token = URLComponents(url: url, resolvingAgainstBaseURL: false)?
+            .queryItems?.first(where: { $0.name == "token" })?.value
+            ?? url.absoluteString.replacingOccurrences(of: "icro://", with: "")
+        loginViewModel.login(tokenFromLink: token)
     }
 
     func showSettingsView(on presentedController: UIViewController) {

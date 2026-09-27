@@ -179,6 +179,8 @@ public extension Error {
                 return localizedString(key: "UIVIEWCONTROLLERLOADING_MICROPUBURLERROR_TEXT")
             case .invalidInput:
                 return localizedString(key: "UIVIEWCONTROLLERLOADING_INVALIDINPUT_TEXT")
+            case .httpStatus(401):
+                return localizedString(key: "UIVIEWCONTROLLERLOADING_SESSION_EXPIRED_TEXT")
             default:
                 return localizedString(key: "UIVIEWCONTROLLERLOADING_ERROR_TEXT")
             }

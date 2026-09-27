@@ -9,7 +9,7 @@
 "TABBARVIEWCONTROLLER_PHOTOSBUTTON_TITLE" = "Fotos";
 "TABBARVIEWCONTROLLER_TABTILE_TIMELINE" = "Verlauf";
 "TABBARVIEWCONTROLLER_TABTILE_MENTIONS" = "Erwähnungen";
-"TABBARVIEWCONTROLLER_TABTILE_FAVORITES" = "Favoriten";
+"TABBARVIEWCONTROLLER_TABTILE_FAVORITES" = "Lesezeichen";
 "TABBARVIEWCONTROLLER_TABTILE_DISCOVER" = "Entdecken";
 "TABBARVIEWCONTROLLER_TABTILE_PROFILE" = "Profil";
 
@@ -27,6 +27,18 @@
 "LOGINVIEWCONTROLLER_TEXTFIELDINFO_TEXT" = "Melde dich mit einer bei micro.blog registrierten E-Mail Adresse oder einem dort erstellten Zugriffstoken an.";
 "LOGINVIEWCONTROLLER_LOGINBUTTON_TITLE" = "Anmelden";
 "LOGINVIEWCONTROLLER_INFOLABEL_TEXT" = "Bitte verwende den \'Open in Icro\' Link in der Anmelde E-Mail von micro.blog.";
+"LOGIN_WELCOME_TITLE" = "Willkommen bei Icro";
+"LOGIN_WELCOME_SUBTITLE" = "Deine Micro.blog-Timeline zum Entdecken.";
+"LOGIN_METHOD" = "Anmeldemethode";
+"LOGIN_EMAIL_OPTION" = "E-Mail";
+"LOGIN_TOKEN_OPTION" = "App-Token";
+"LOGIN_EMAIL_LABEL" = "E-Mail-Adresse";
+"LOGIN_TOKEN_LABEL" = "App-Token";
+"LOGIN_EMAIL_FIELD" = "du@beispiel.de";
+"LOGIN_TOKEN_FIELD" = "App-Token einfügen";
+"LOGIN_EMAIL_HINT" = "Wir senden dir einen sicheren Anmeldelink per E-Mail.";
+"LOGIN_TOKEN_HINT" = "Deinen Token findest du bei Micro.blog unter Account → App tokens.";
+"LOGIN_POWERED_BY_MICROBLOG" = "Für Micro.blog gemacht";
 
 // SettingsViewController
 "SETTINGSVIEWCONTROLLER_TITLE" = "Einstellungen";
@@ -91,8 +103,8 @@
 "EDITACTIONSCONFIGURATOR_SHAREACTION" = "Teilen";
 "EDITACTIONSCONFIGURATOR_LEADINGEDITACTIONS" = "Antworten";
 "EDITACTIONSCONFIGURATOR_MOREACTION" = "Mehr";
-"EDITACTIONSCONFIGURATOR_FAVORITEACTION_UNFAVORITE" = "Gefällt mir nicht mehr";
-"EDITACTIONSCONFIGURATOR_FAVORITEACTION_FAVORITE" = "Gefällt mir";
+"EDITACTIONSCONFIGURATOR_FAVORITEACTION_UNFAVORITE" = "Lesezeichen entfernen";
+"EDITACTIONSCONFIGURATOR_FAVORITEACTION_FAVORITE" = "Als Lesezeichen speichern";
 
 // ProfileViewConfigurator
 "PROFILEVIEWCONFIGURATOR_UNFOLLOWBUTTON_TITLE" = "Entfolgen";
@@ -106,6 +118,7 @@
 "UIVIEWCONTROLLERLOADING_MICROPUBURLERROR_TEXT" = "Ungültige Micropub Einstellungen";
 "UIVIEWCONTROLLERLOADING_INVALIDINPUT_TEXT" = "Ungültige Eingabe";
 "UIVIEWCONTROLLERLOADING_ERROR_TEXT" = "Etwas ist schief gelaufen, bitte versuche es erneut";
+"UIVIEWCONTROLLERLOADING_SESSION_EXPIRED_TEXT" = "Melde dich erneut an, um dein Micro.blog-Konto zu laden.";
 
 // ProfileTableViewCell
 "PROFILETABLEVIEWCELL_FOLLOWBUTTON_TITLE" = "Folgen";
@@ -120,16 +133,16 @@
 "LISTVIEWMODEL_RESOURCETITLE_TIMELINE" = "Verlauf";
 "LISTVIEWMODEL_RESOURCETITLE_PHOTOS" = "Fotos";
 "LISTVIEWMODEL_RESOURCETITLE_MENTIONS" = "Erwähnungen";
-"LISTVIEWMODEL_RESOURCETITLE_FAVORITES" = "Favoriten";
+"LISTVIEWMODEL_RESOURCETITLE_FAVORITES" = "Lesezeichen";
 "LISTVIEWMODEL_RESOURCETITLE_DISCOVER" = "Entdecken";
 "LISTVIEWMODEL_RESOURCETITLE_CONVERSATION" = "Unterhaltung";
-"LISTVIEWMODEL_FAVEBUTTON_TITLE" = "Gefällt mir";
-"LISTVIEWMODEL_UNFAVEBUTTON_TITLE" = "Gefällt mir nicht mehr";
+"LISTVIEWMODEL_FAVEBUTTON_TITLE" = "Als Lesezeichen speichern";
+"LISTVIEWMODEL_UNFAVEBUTTON_TITLE" = "Lesezeichen entfernen";
 "LISTVIEWMODEL_DISCOVER_SUBTITLE" = "Entdecke collections";
 
 // LoginViewModel
-"LOGINVIEWMODEL_LOGINTYPE_MAIL" = "Per E-Mail anmelden";
-"LOGINVIEWMODEL_LOGINTYPE_TOKEN" = "Per Token anmelden";
+"LOGINVIEWMODEL_LOGINTYPE_MAIL" = "Anmeldelink per E-Mail senden";
+"LOGINVIEWMODEL_LOGINTYPE_TOKEN" = "Mit App-Token anmelden";
 
 // BlacklistViewModel
 "BLACKLISTVIEWMODEL_TITLE" = "Füge Wörter/Nutzernamen zu deiner Sperrliste hinzu";

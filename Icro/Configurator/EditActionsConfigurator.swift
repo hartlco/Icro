@@ -135,7 +135,7 @@ final class EditActionsConfigurator {
         let favoriteTitle = item.isFavorite ?
             NSLocalizedString("EDITACTIONSCONFIGURATOR_FAVORITEACTION_UNFAVORITE", comment: "") :
             NSLocalizedString("EDITACTIONSCONFIGURATOR_FAVORITEACTION_FAVORITE", comment: "")
-        let favoriteImage = item.isFavorite ? UIImage(symbol: Symbol.heart_fill) : UIImage(symbol: Symbol.heart)
+        let favoriteImage = UIImage(systemName: item.isFavorite ? "bookmark.fill" : "bookmark")
         let color = UIColor.systemYellow
         return ContextAction(title: favoriteTitle,
                              image: favoriteImage,

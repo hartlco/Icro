@@ -23,7 +23,7 @@ private extension ListViewModel.ListType {
         case .mentions:
             return Image(symbol: Symbol.text_bubble_fill)
         case .favorites:
-            return Image(symbol: Symbol.heart_fill)
+            return Image(systemName: "bookmark.fill")
         case .discover:
             return Image(symbol: Symbol.safari_fill)
         case .user, .username:

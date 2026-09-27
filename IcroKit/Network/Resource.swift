@@ -9,19 +9,19 @@ import Client
 
 public typealias JSONDictionary = [String: Any]
 
-let itemURL = URL(string: "https://micro.blog/posts/all")!
+let itemURL = URL(string: "https://micro.blog/posts/timeline")!
 let photosURL = URL(string: "https://micro.blog/posts/photos")!
 let mentionsURL = URL(string: "https://micro.blog/posts/mentions")!
-let favoritesURL = URL(string: "https://micro.blog/posts/favorites")!
+let favoritesURL = URL(string: "https://micro.blog/posts/bookmarks")!
 let discoverURL = URL(string: "https://micro.blog/posts/discover")!
 let conversationsURLString = "https://micro.blog/posts/conversation?id="
 let userPostsURL = URL(string: "https://micro.blog/posts/")!
-let faveURLString = "https://micro.blog/posts/favorites?id="
-let unfaveURLString = "https://micro.blog/posts/favorites/"
+let faveURLString = "https://micro.blog/posts/bookmarks"
+let unfaveURLString = "https://micro.blog/posts/bookmarks/"
 let replyURLString = "https://micro.blog/posts/reply"
 let followURLString = "https://micro.blog/users/follow?username="
 let unfollowURLString = "https://micro.blog/users/unfollow?username="
-let followingURLString = "http://micro.blog/users/following/"
+let followingURLString = "https://micro.blog/users/following/"
 
 public let microblogMedia = "?q=config"
 
@@ -57,12 +57,10 @@ public extension Item {
     }
 
     static func all() -> Resource<ItemResponse> {
-        return allItems
+        return resource(for: itemURL, cacheName: "homestream")
     }
 
-    private static let allItems = resource(for: itemURL, cacheName: "homestream")
-
-    static let mentions = resource(for: mentionsURL)
+    static var mentions: Resource<ItemResponse> { resource(for: mentionsURL) }
 
     static func resourceBefore(oldResource: Resource<ItemResponse>, item: Item) -> Resource<ItemResponse> {
         guard let url = oldResource.urlRequest.url else {
@@ -78,21 +76,21 @@ public extension Item {
         return url.appendingQueryParameters(["before_id": item.id])
     }
 
-    static let favorites = resource(for: favoritesURL)
+    static var favorites: Resource<ItemResponse> { resource(for: favoritesURL) }
 
-    static let discover = resource(for: discoverURL)
+    static var discover: Resource<ItemResponse> { resource(for: discoverURL) }
 
     static func discoverCollection(for category: DiscoveryCategory) -> Resource<ItemResponse> {
         let url = discoverURL.appendingPathComponent(category.category)
         return resource(for: url)
     }
 
-    static let photos = resource(for: photosURL)
+    static var photos: Resource<ItemResponse> { resource(for: photosURL) }
 
     static func usernamePostURL(for username: String) -> Resource<ItemResponse> {
         let url = userPostsURL.appendingPathComponent(username)
         return Resource<ItemResponse>(url: url,
-                                      authorization: .plain(token: UserSettings.shared.token),
+                                      authorization: .bearer(token: UserSettings.shared.token),
                                       parseJSON: { json in
             guard let jsonDictionary = json as? JSONDictionary,
                 let jsonItems = jsonDictionary["items"] as? [JSONDictionary],
@@ -109,7 +107,7 @@ public extension Item {
 
     fileprivate static func resource(for url: URL, cacheName: String? = nil) -> Resource<ItemResponse> {
         return Resource<ItemResponse>(url: url,
-                                      authorization: .plain(token: UserSettings.shared.token),
+                                      authorization: .bearer(token: UserSettings.shared.token),
                                       parseJSON: { json in
             guard let jsonDictionary = json as? JSONDictionary,
                 let jsonItems = jsonDictionary["items"] as? [JSONDictionary] else {
@@ -149,23 +147,24 @@ public extension Item {
     }
 
     func toggleFave() -> Resource<Empty> {
-        let httpMethod: HttpMethod = isFavorite ? .delete : .post(nil)
-
-        let baseUrl = isFavorite ? unfaveURLString : faveURLString
-        let urlString = baseUrl + id
+        let httpMethod: HttpMethod = isFavorite ? .delete : .post(Data("id=\(id)".utf8))
+        let urlString = isFavorite ? unfaveURLString + id : faveURLString
         let url = URL(string: urlString)!
         return Resource<Empty>(url: url,
                                httpMethod: httpMethod,
-                               authorization: .plain(token: UserSettings.shared.token),
+                               authorization: .bearer(token: UserSettings.shared.token),
+                               contentType: "application/x-www-form-urlencoded",
                                parseJSON: { _ in return Empty() })
     }
 
     func reply(with text: String) -> Resource<Empty> {
         let encodedText = text.stringByAddingPercentEncodingForFormData() ?? ""
-        let url = URL(string: replyURLString + "?id=\(id)&text=\(encodedText)")!
+        let url = URL(string: replyURLString)!
+        let body = Data("id=\(id)&content=\(encodedText)".utf8)
         return Resource<Empty>(url: url,
-                               httpMethod: .post(nil),
-                               authorization: .plain(token: UserSettings.shared.token),
+                               httpMethod: .post(body),
+                               authorization: .bearer(token: UserSettings.shared.token),
+                               contentType: "application/x-www-form-urlencoded",
                                parseJSON: { _ in return Empty() })
     }
 
@@ -198,7 +197,7 @@ public extension Author {
         let url = URL(string: followURLString + username)!
         return Resource<Empty>(url: url,
                                httpMethod: .post(nil),
-                               authorization: .plain(token: UserSettings.shared.token),
+                               authorization: .bearer(token: UserSettings.shared.token),
                                parseJSON: { _ in
                                 return Empty()
         })
@@ -211,7 +210,7 @@ public extension Author {
         let url = URL(string: unfollowURLString + username)!
         return Resource<Empty>(url: url,
                                httpMethod: .post(nil),
-                               authorization: .plain(token: UserSettings.shared.token),
+                               authorization: .bearer(token: UserSettings.shared.token),
                                parseJSON: { _ in
                                 return Empty()
         })
@@ -225,7 +224,7 @@ public extension Author {
         return Resource<[Author]>(
             url: url,
             httpMethod: .get,
-            authorization: .plain(token: UserSettings.shared.token),
+            authorization: .bearer(token: UserSettings.shared.token),
             parseJSON: { json in
                 guard let jsonItems = json as? [JSONDictionary] else {
                     return nil

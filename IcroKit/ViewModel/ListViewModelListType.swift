@@ -73,7 +73,7 @@ public extension ListViewModel.ListType {
         case .mentions:
             return UIImage(symbol: .text_bubble_fill)
         case .favorites:
-            return UIImage(symbol: .heart_fill)
+            return UIImage(systemName: "bookmark.fill")
         case .discover:
             return UIImage(symbol: .safari_fill)
         case .user, .username:

@@ -125,6 +125,9 @@ final class ListViewController: UIViewController {
         }
 
         viewModel.didFinishWithError = { [weak self] error in
+            self?.hideLoadingSpinner()
+            self?.tableView.refreshControl?.endRefreshing()
+            self?.isLoading = false
             self?.showError(error: error)
         }
 

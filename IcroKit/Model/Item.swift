@@ -110,8 +110,8 @@ extension Item {
 
         let fav: Bool
         if let microblog = dictionary["_microblog"] as? JSONDictionary,
-            let isFavorite = microblog["is_favorite"] as? Bool {
-            fav = isFavorite
+            let isBookmarked = microblog["is_bookmark"] as? Bool {
+            fav = isBookmarked
         } else {
             fav = false
         }
