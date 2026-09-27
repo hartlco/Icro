@@ -99,6 +99,7 @@ final class TabBarViewController: UITabBarController {
 
         setViewControllers(viewControllers, animated: false)
         mode = .tabSidebar
+        tabBarMinimizeBehavior = .onScrollDown
         previousViewController = viewControllers.first
     }
 

@@ -4,6 +4,7 @@
 //
 
 import XCTest
+import UIKit
 import Settings
 import Client
 import Style
@@ -116,6 +117,58 @@ class ListViewModelTests: XCTestCase {
         let viewModel = ListViewModel(type: .discover)
         XCTAssert(viewModel.shouldShowProfileHeader == false, "shouldShowProfileHeader true for .discover")
     }
+
+    func testFollowStateChangesOnlyAfterSuccessfulRequest() {
+        let author = Author(name: "Taylor",
+                            url: nil,
+                            avatar: URL(string: "https://example.com/avatar.jpg")!,
+                            username: "taylor",
+                            bio: nil,
+                            followingCount: 4,
+                            isFollowing: false)
+        let client = FollowClient()
+        let viewModel = ListViewModel(type: .user(user: author), client: client)
+        var errors = 0
+        viewModel.didFinishWithError = { _ in errors += 1 }
+
+        viewModel.toggleFollowForLoadedAuthor()
+        viewModel.toggleFollowForLoadedAuthor()
+        XCTAssertEqual(client.requestCount, 1)
+
+        client.complete(.failure(NetworkingError.httpStatus(500)))
+        XCTAssertEqual(errors, 1)
+        XCTAssertEqual(viewModel.author?.isFollowing, false)
+
+        viewModel.toggleFollowForLoadedAuthor()
+        client.complete(.success(Empty()))
+        XCTAssertEqual(client.requestCount, 2)
+        XCTAssertEqual(viewModel.author?.isFollowing, true)
+    }
+
+    @MainActor
+    func testNarrowPostHeaderKeepsDateReadable() {
+        let cell = ItemTableViewCell(style: .default, reuseIdentifier: nil)
+        cell.usernameLabel.text = "A very long display name"
+        cell.atUsernameLabel.text = "@an_even_longer_username"
+        cell.dateLabel.text = "· 20h"
+        cell.setContent(NSAttributedString(string: "A short post"))
+
+        let width: CGFloat = 320
+        let height = cell.contentView.systemLayoutSizeFitting(
+            CGSize(width: width, height: UIView.layoutFittingCompressedSize.height),
+            withHorizontalFittingPriority: .required,
+            verticalFittingPriority: .fittingSizeLevel
+        ).height
+        cell.contentView.frame = CGRect(x: 0, y: 0, width: width, height: height)
+        cell.contentView.layoutIfNeeded()
+
+        XCTAssertGreaterThanOrEqual(cell.dateLabel.bounds.width,
+                                    cell.dateLabel.intrinsicContentSize.width - 1)
+        XCTAssertLessThan(cell.atUsernameLabel.bounds.width,
+                          cell.atUsernameLabel.intrinsicContentSize.width)
+        XCTAssertLessThanOrEqual(cell.atUsernameLabel.frame.minX - cell.usernameLabel.frame.maxX, 6)
+        XCTAssertLessThanOrEqual(cell.dateLabel.frame.minX - cell.atUsernameLabel.frame.maxX, 6)
+    }
 }
 
 final class MicroBlogAPITests: XCTestCase {
@@ -211,6 +264,35 @@ private final class FailedPublishingClient: Client {
 
     func load<A: Codable>(resource: Resource<A>, completion: @escaping (Result<A, Error>) -> Void) {
         fatalError("Unexpected resource request")
+    }
+}
+
+private final class FollowClient: Client {
+    private var pending: ((Result<Empty, Error>) -> Void)?
+    private(set) var requestCount = 0
+
+    func load<A: Codable>(resource: Resource<A>) async throws -> A {
+        fatalError("Unexpected async resource request")
+    }
+
+    func load<A: Codable>(resource: Resource<A>, completion: @escaping (Result<A, Error>) -> Void) {
+        requestCount += 1
+        pending = { result in
+            switch result {
+            case .success(let value): completion(.success(value as! A))
+            case .failure(let error): completion(.failure(error))
+            }
+        }
+    }
+
+    func complete(_ result: Result<Empty, Error>) {
+        let completion = pending
+        pending = nil
+        completion?(result)
+    }
+
+    func data(for request: URLRequest, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse) {
+        fatalError("Unexpected raw network request")
     }
 }
 

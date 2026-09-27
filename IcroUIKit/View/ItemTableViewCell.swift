@@ -42,6 +42,16 @@ public final class ItemTableViewCell: UITableViewCell {
         return label
     }()
 
+    let dateLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFontMetrics(forTextStyle: .subheadline)
+            .scaledFont(for: .systemFont(ofSize: 14))
+        label.adjustsFontForContentSizeCategory = true
+        label.textColor = .secondaryLabel
+        label.numberOfLines = 1
+        return label
+    }()
+
     let attributedLabel: LinkLabel = {
         let label = LinkLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -133,6 +143,8 @@ public final class ItemTableViewCell: UITableViewCell {
         avatarImageView.image = nil
         itemID = nil
         attributedLabel.attributedText = nil
+        atUsernameLabel.text = nil
+        dateLabel.text = nil
         media = []
         isFavorite = false
         didTapAvatar = nil
@@ -169,11 +181,18 @@ public final class ItemTableViewCell: UITableViewCell {
 
         namesStack.addArrangedSubview(usernameLabel)
         namesStack.addArrangedSubview(atUsernameLabel)
+        namesStack.addArrangedSubview(dateLabel)
+        let headerSpacer = UIView()
+        headerSpacer.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        headerSpacer.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        namesStack.addArrangedSubview(headerSpacer)
         titleStack.addArrangedSubview(avatarImageView)
         titleStack.addArrangedSubview(namesStack)
         namesStack.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         usernameLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         atUsernameLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        dateLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+        dateLabel.setContentHuggingPriority(.required, for: .horizontal)
 
         contentView.addSubview(titleStack)
         contentView.addSubview(actionButton)
@@ -190,11 +209,11 @@ public final class ItemTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             titleStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Layout.inset),
             titleStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            titleStack.trailingAnchor.constraint(lessThanOrEqualTo: actionButton.leadingAnchor, constant: -4),
+            titleStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Layout.inset),
             avatarImageView.widthAnchor.constraint(equalToConstant: Layout.avatarSize),
             avatarImageView.heightAnchor.constraint(equalToConstant: Layout.avatarSize),
-            actionButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 7),
-            actionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            actionButton.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: -10),
+            actionButton.centerXAnchor.constraint(equalTo: avatarImageView.centerXAnchor),
             actionButton.widthAnchor.constraint(equalToConstant: 40),
             actionButton.heightAnchor.constraint(equalToConstant: 40),
             contentTopConstraint,
@@ -206,7 +225,7 @@ public final class ItemTableViewCell: UITableViewCell {
             imageCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Layout.inset),
             collectionViewHeightConstraint,
             textBottomConstraint,
-            contentView.bottomAnchor.constraint(greaterThanOrEqualTo: avatarImageView.bottomAnchor, constant: 12)
+            contentView.bottomAnchor.constraint(greaterThanOrEqualTo: actionButton.bottomAnchor, constant: 10)
         ])
     }
 

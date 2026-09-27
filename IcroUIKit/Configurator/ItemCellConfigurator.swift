@@ -37,9 +37,13 @@ public final class ItemCellConfigurator: NSObject {
         }
 
         if let username = item.author.username, !username.isEmpty {
-            cell.atUsernameLabel.text = "@\(username) · \(item.relativeDateString)"
+            cell.atUsernameLabel.isHidden = false
+            cell.atUsernameLabel.text = "@\(username)"
+            cell.dateLabel.text = "· \(item.relativeDateString)"
         } else {
-            cell.atUsernameLabel.text = item.relativeDateString
+            cell.atUsernameLabel.isHidden = true
+            cell.atUsernameLabel.text = nil
+            cell.dateLabel.text = item.relativeDateString
         }
 
         cell.didTapMedia = { [weak self] media, index in

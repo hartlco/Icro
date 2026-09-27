@@ -58,6 +58,7 @@ public class ListViewModel: NSObject {
     public var didUpdateDiscoveryCategories: () -> Void = { }
 
     private var visibleActionBarIndexPath: IndexPath?
+    private var isFollowRequestInFlight = false
 
     private var isLoading = false
     private var canAutomaticallyLoadMore = true
@@ -277,12 +278,22 @@ public class ListViewModel: NSObject {
     }
 
     public func toggleFollowForLoadedAuthor() {
-        guard let author = author,
+        guard !isFollowRequestInFlight,
+        let author = author,
         let following = author.isFollowing else { return }
         let resource = following ? author.unfollowResource() : author.followResource()
 
+        isFollowRequestInFlight = true
         didStartLoading()
-        client.load(resource: resource) { [weak self] _ in
+        client.load(resource: resource) { [weak self] result in
+            guard let self else { return }
+            self.isFollowRequestInFlight = false
+            guard case .success = result else {
+                if case .failure(let error) = result {
+                    self.didFinishWithError(error)
+                }
+                return
+            }
             let newAuthor = Author(name: author.name,
                                    url: author.url,
                                    avatar: author.avatar,
@@ -291,9 +302,9 @@ public class ListViewModel: NSObject {
                                    followingCount: author.followingCount,
                                    isFollowing: !following,
                                    isYou: author.isYou)
-            self?.loadedAuthor = newAuthor
-            self?.updateViewTypes()
-            self?.didFinishLoading(false)
+            self.loadedAuthor = newAuthor
+            self.updateViewTypes()
+            self.didFinishLoading(false)
         }
     }
 
