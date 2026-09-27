@@ -37,8 +37,8 @@ public final class HTMLContent: Codable {
         self.imageDescriptions = rawHTMLString.imageDescriptions(from: document)
     }
 
-    public func attributedStringWithoutImages() -> NSAttributedString? {
-        return rawHTMLStringWithoutImages.htmlToAttributedString(stylePreference: stylePreference)
+    public func attributedStringWithoutImages(stylePreference override: StylePreference? = nil) -> NSAttributedString? {
+        return rawHTMLStringWithoutImages.htmlToAttributedString(stylePreference: override ?? stylePreference)
     }
 
     public static func textLinks(for attributedString: NSAttributedString?) -> [(text: String, url: URL)] {
@@ -75,7 +75,7 @@ private extension String {
             string: string.string.trimEmptyLines,
             attributes: [
                 .font: Font(stylePreference: stylePreference).body,
-                .foregroundColor: Color.textColor,
+                .foregroundColor: Color.postBodyTextColor,
                 .paragraphStyle: paragraphStyle
             ]
         )

@@ -13,8 +13,12 @@ final class ListViewController: UIViewController {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
-        tableView.separatorColor = UIColor.separator.withAlphaComponent(0.45)
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        tableView.separatorColor = UIColor { traits in
+            traits.userInterfaceStyle == .dark
+                ? UIColor(red: 0.20, green: 0.21, blue: 0.23, alpha: 1)
+                : UIColor(red: 0.93, green: 0.94, blue: 0.95, alpha: 1)
+        }
+        tableView.separatorInset = .zero
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(viewModel, action: #selector(ListViewModel.load), for: .valueChanged)
         tableView.registerClass(cellType: ItemTableViewCell.self)

@@ -36,7 +36,11 @@ public final class ItemCellConfigurator: NSObject {
             self.itemNavigator.openReply(item: item)
         }
 
-        cell.atUsernameLabel.text = "@" + (item.author.username ?? "") + " • \(item.relativeDateString)"
+        if let username = item.author.username, !username.isEmpty {
+            cell.atUsernameLabel.text = "@\(username) · \(item.relativeDateString)"
+        } else {
+            cell.atUsernameLabel.text = item.relativeDateString
+        }
 
         cell.didTapMedia = { [weak self] media, index in
             self?.itemNavigator.openMedia(media: media, index: index)

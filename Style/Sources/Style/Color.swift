@@ -26,6 +26,13 @@ public struct Color {
     public static var textColor: XColor {
         return UIColor.label
     }
+    public static var postBodyTextColor: XColor {
+        return UIColor { traits in
+            traits.userInterfaceStyle == .dark
+                ? UIColor(red: 0.86, green: 0.87, blue: 0.89, alpha: 1)
+                : UIColor(red: 0.18, green: 0.20, blue: 0.23, alpha: 1)
+        }
+    }
     public static var secondaryTextColor: XColor {
         return UIColor.secondaryLabel
     }

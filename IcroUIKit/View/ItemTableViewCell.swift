@@ -4,8 +4,8 @@ import Kingfisher
 
 public final class ItemTableViewCell: UITableViewCell {
     private enum Layout {
-        static let inset: CGFloat = 16
-        static let avatarSize: CGFloat = 36
+        static let inset: CGFloat = 14
+        static let avatarSize: CGFloat = 40
         static let singleMediaHeight: CGFloat = 216
         static let multipleMediaHeight: CGFloat = 146
     }
@@ -26,7 +26,7 @@ public final class ItemTableViewCell: UITableViewCell {
     let usernameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFontMetrics(forTextStyle: .subheadline)
-            .scaledFont(for: .systemFont(ofSize: 16, weight: .semibold))
+            .scaledFont(for: .systemFont(ofSize: 15.5, weight: .semibold))
         label.adjustsFontForContentSizeCategory = true
         label.lineBreakMode = .byTruncatingTail
         return label
@@ -34,7 +34,8 @@ public final class ItemTableViewCell: UITableViewCell {
 
     let atUsernameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .caption1)
+        label.font = UIFontMetrics(forTextStyle: .subheadline)
+            .scaledFont(for: .systemFont(ofSize: 14))
         label.adjustsFontForContentSizeCategory = true
         label.textColor = .secondaryLabel
         label.lineBreakMode = .byTruncatingTail
@@ -78,16 +79,16 @@ public final class ItemTableViewCell: UITableViewCell {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
-        stack.alignment = .center
+        stack.alignment = .top
         stack.spacing = 10
         return stack
     }()
 
     private let namesStack: UIStackView = {
         let stack = UIStackView()
-        stack.axis = .vertical
-        stack.alignment = .leading
-        stack.spacing = 0
+        stack.axis = .horizontal
+        stack.alignment = .firstBaseline
+        stack.spacing = 5
         return stack
     }()
 
@@ -154,7 +155,7 @@ public final class ItemTableViewCell: UITableViewCell {
         let hasText = !content.string.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         attributedLabel.isHidden = !hasText
         contentTopConstraint.constant = hasText ? 8 : 0
-        mediaTopConstraint.constant = hasText ? 10 : 4
+        mediaTopConstraint.constant = hasText ? 8 : 4
     }
 
     @objc func accessibilityDidTapAvatar() { didTapAvatar?() }
@@ -171,7 +172,7 @@ public final class ItemTableViewCell: UITableViewCell {
         titleStack.addArrangedSubview(avatarImageView)
         titleStack.addArrangedSubview(namesStack)
         namesStack.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        usernameLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        usernameLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         atUsernameLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
 
         contentView.addSubview(titleStack)
@@ -179,8 +180,9 @@ public final class ItemTableViewCell: UITableViewCell {
         contentView.addSubview(attributedLabel)
         contentView.addSubview(imageCollectionView)
 
-        contentTopConstraint = attributedLabel.topAnchor.constraint(equalTo: titleStack.bottomAnchor, constant: 8)
-        mediaTopConstraint = imageCollectionView.topAnchor.constraint(equalTo: attributedLabel.bottomAnchor, constant: 10)
+        contentTopConstraint = attributedLabel.topAnchor.constraint(equalTo: namesStack.bottomAnchor, constant: 8)
+        mediaTopConstraint = imageCollectionView.topAnchor.constraint(equalTo: attributedLabel.bottomAnchor, constant: 8)
+        mediaTopConstraint.priority = .defaultHigh
         collectionViewHeightConstraint = imageCollectionView.heightAnchor.constraint(equalToConstant: Layout.singleMediaHeight)
         textBottomConstraint = attributedLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
         mediaBottomConstraint = imageCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
@@ -191,18 +193,20 @@ public final class ItemTableViewCell: UITableViewCell {
             titleStack.trailingAnchor.constraint(lessThanOrEqualTo: actionButton.leadingAnchor, constant: -4),
             avatarImageView.widthAnchor.constraint(equalToConstant: Layout.avatarSize),
             avatarImageView.heightAnchor.constraint(equalToConstant: Layout.avatarSize),
-            actionButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 9),
-            actionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
+            actionButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 7),
+            actionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             actionButton.widthAnchor.constraint(equalToConstant: 40),
             actionButton.heightAnchor.constraint(equalToConstant: 40),
             contentTopConstraint,
-            attributedLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Layout.inset),
+            attributedLabel.leadingAnchor.constraint(equalTo: namesStack.leadingAnchor),
             attributedLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Layout.inset),
             mediaTopConstraint,
-            imageCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Layout.inset),
+            imageCollectionView.topAnchor.constraint(greaterThanOrEqualTo: avatarImageView.bottomAnchor, constant: 8),
+            imageCollectionView.leadingAnchor.constraint(equalTo: namesStack.leadingAnchor),
             imageCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Layout.inset),
             collectionViewHeightConstraint,
-            textBottomConstraint
+            textBottomConstraint,
+            contentView.bottomAnchor.constraint(greaterThanOrEqualTo: avatarImageView.bottomAnchor, constant: 12)
         ])
     }
 

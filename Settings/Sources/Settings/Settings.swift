@@ -240,7 +240,7 @@ public final class UserSettings {
             userDefaults.set(newValue, forKey: #function)
         }
         get {
-            guard let data = userDefaults.value(forKey: #function) as? Bool else { return true }
+            guard let data = userDefaults.value(forKey: #function) as? Bool else { return false }
             return data
         }
     }

@@ -36,7 +36,8 @@ public class Item: Codable {
     public let htmlContent: HTMLContent
 
     public lazy var content: NSAttributedString = {
-        return htmlContent.attributedStringWithoutImages() ?? NSAttributedString(string: "")
+        let preference = StylePreference(useMediumContent: Settings.UserSettings.shared.useMediumContentFont)
+        return htmlContent.attributedStringWithoutImages(stylePreference: preference) ?? NSAttributedString(string: "")
     }()
 
     public lazy var media: [Media] = {
