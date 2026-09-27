@@ -158,16 +158,11 @@ final class ListViewController: UIViewController {
 
         let loadingView = loadingPlaceholderHostingViewController.view!
         addChild(loadingPlaceholderHostingViewController)
-        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.frame = view.bounds
+        loadingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         loadingView.isUserInteractionEnabled = false
         loadingView.isHidden = true
         view.addSubview(loadingView)
-        NSLayoutConstraint.activate([
-            loadingView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            loadingView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            loadingView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            loadingView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
         loadingPlaceholderHostingViewController.didMove(toParent: self)
     }
 
@@ -203,6 +198,11 @@ final class ListViewController: UIViewController {
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         updateAppearance()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        loadingPlaceholderHostingViewController.view.frame = view.bounds
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -303,7 +303,14 @@ final class ListViewController: UIViewController {
     }
 
     private func showLoadingPlaceholderIfNeeded() {
-        loadingPlaceholderHostingViewController.view.isHidden = !viewModel.shouldLoad || viewModel.showsLoginView
+        let profileHeaderCount = viewModel.shouldShowProfileHeader && viewModel.author != nil ? 1 : 0
+        let hasPosts = viewModel.numberOfItems() > profileHeaderCount
+        let loadingView = loadingPlaceholderHostingViewController.view!
+        loadingView.isHidden = hasPosts || viewModel.showsLoginView
+        if !loadingView.isHidden {
+            loadingView.frame = view.bounds
+            view.bringSubviewToFront(loadingView)
+        }
     }
 
     private func hideLoadingPlaceholder() {

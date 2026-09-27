@@ -12,24 +12,24 @@ struct LoadingSkeletonView: View {
     @State private var shimmerPosition = false
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                switch kind {
-                case .feed(let profile):
-                    if profile {
-                        SkeletonProfileHeader(shimmerPosition: shimmerPosition)
-                    }
-                    ForEach(0..<4, id: \.self) { index in
-                        SkeletonPostRow(index: index, shimmerPosition: shimmerPosition)
-                    }
-                case .people:
-                    ForEach(0..<8, id: \.self) { _ in
-                        SkeletonPersonRow(shimmerPosition: shimmerPosition)
-                    }
+        VStack(spacing: 0) {
+            switch kind {
+            case .feed(let profile):
+                if profile {
+                    SkeletonProfileHeader(shimmerPosition: shimmerPosition)
+                }
+                ForEach(0..<(profile ? 2 : 4), id: \.self) { index in
+                    SkeletonPostRow(index: index, shimmerPosition: shimmerPosition)
+                }
+            case .people:
+                ForEach(0..<8, id: \.self) { _ in
+                    SkeletonPersonRow(shimmerPosition: shimmerPosition)
                 }
             }
+            Spacer(minLength: 0)
         }
-        .scrollDisabled(true)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .clipped()
         .background(Color(uiColor: .systemBackground))
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text("UIVIEWCONTROLLERLOADING_LOADING_TEXT"))
