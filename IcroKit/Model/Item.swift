@@ -45,8 +45,9 @@ public class Item: Codable {
             return Media(url: $0, isVideo: false)
         }
 
+        let posters = htmlContent.videoPosterURLs
         let videoMedia = htmlContent.videoLinks.map {
-            return Media(url: $0, isVideo: true)
+            return Media(url: $0, isVideo: true, posterURL: posters[$0])
         }
 
         return imageMedia + videoMedia

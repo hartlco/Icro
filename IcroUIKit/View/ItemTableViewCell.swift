@@ -213,7 +213,7 @@ public final class ItemTableViewCell: UITableViewCell {
             avatarImageView.widthAnchor.constraint(equalToConstant: Layout.avatarSize),
             avatarImageView.heightAnchor.constraint(equalToConstant: Layout.avatarSize),
             actionButton.topAnchor.constraint(greaterThanOrEqualTo: avatarImageView.bottomAnchor, constant: 2),
-            actionButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Layout.inset),
+            actionButton.centerXAnchor.constraint(equalTo: avatarImageView.centerXAnchor),
             actionButton.widthAnchor.constraint(equalToConstant: 44),
             actionButton.heightAnchor.constraint(equalToConstant: 32),
             actionButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
@@ -251,7 +251,11 @@ extension ItemTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         let mediaItem = media[indexPath.row]
         cell.videoPlayImage.isHidden = !mediaItem.isVideo
         if mediaItem.isVideo {
-            cell.imageView.kf.setImage(with: VideoThumbnailImageProvider(url: mediaItem.url))
+            if let posterURL = mediaItem.posterURL {
+                cell.imageView.kf.setImage(with: posterURL)
+            } else {
+                cell.imageView.kf.setImage(with: VideoThumbnailImageProvider(url: mediaItem.url))
+            }
         } else {
             cell.imageView.kf.setImage(with: mediaItem.url)
         }

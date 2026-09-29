@@ -31,6 +31,29 @@ class HTMLContentTests: XCTestCase {
         XCTAssert(expectedURLStrings == htmlContent.videoLinks, "Parsed images links no equal")
     }
 
+    func testVideoSourcesAndPostersFromMicroBlogMarkup() {
+        let stream = URL(string: "https://cdn.uploads.micro.mov/example/playlist.m3u8")!
+        let poster = URL(string: "https://cdn.uploads.micro.blog/example/poster.jpg")!
+        let source = URL(string: "https://example.com/other-video.mp4")!
+        let html = """
+        <video controls src="\(stream)" poster="\(poster)"></video>
+        <video controls><source src="\(source)" type="video/mp4"></video>
+        """
+        let content = HTMLContent(rawHTMLString: html, stylePreference: .init(useMediumContent: false))
+
+        XCTAssertEqual(content.videoLinks, [stream, source])
+        XCTAssertEqual(content.videoPosterURLs[stream], poster)
+        XCTAssertNil(content.videoPosterURLs[source])
+
+        let item = Item(id: "video", htmlContent: content, url: URL(string: "https://example.com/post")!,
+                        date_published: Date(),
+                        author: Author(name: "Author", url: nil, avatar: poster, username: "author",
+                                       bio: nil, followingCount: nil, isFollowing: nil),
+                        isFavorite: false)
+        XCTAssertEqual(item.media.map(\.url), [stream, source])
+        XCTAssertEqual(item.media.first?.posterURL, poster)
+    }
+
     func test_attributedStringWihthoutImages_hasCorrectText() {
         // swiftlint:disable line_length
         let htmlString = "<!DOCTYPE html><html lang=\"en\"><body><h1>Hi thats a test</h1><p><img src=\"http://share.hartl.co/micro/A948A912-8D59-4131-BD7C-F0AF10944808.jpg\"/><img src=\"http://share.hartl.co/micro/2302C8AE-5672-450C-8A16-B365048B7412.jpg\"/><img src=\"http://share.hartl.co/micro/37C4E25F-FA48-48B4-BBEC-A64509D010E1.jpg\"/></p></body></html>"

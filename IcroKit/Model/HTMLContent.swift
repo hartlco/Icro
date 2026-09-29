@@ -22,6 +22,21 @@ public final class HTMLContent: Codable {
     public let imageDescriptions: [String]
     public let videoLinks: [URL]
 
+    public var videoPosterURLs: [URL: URL] {
+        guard let document = try? SwiftSoup.parse(rawHTMLString),
+              let videos = try? document.select("video") else { return [:] }
+
+        var posters = [URL: URL]()
+        for video in videos.array() {
+            guard let source = videoSource(from: video),
+                  let videoURL = URL(string: source),
+                  let poster = try? video.attr("poster"),
+                  let posterURL = URL(string: poster) else { continue }
+            posters[videoURL] = posterURL
+        }
+        return posters
+    }
+
     public init(
         rawHTMLString: String,
         stylePreference: StylePreference
@@ -58,6 +73,13 @@ public final class HTMLContent: Codable {
     private func attirbutedString() -> NSAttributedString? {
         return rawHTMLString.htmlToAttributedString(stylePreference: stylePreference)
     }
+}
+
+private func videoSource(from video: Element) -> String? {
+    if let src = try? video.attr("src"), !src.isEmpty { return src }
+    guard let source = try? video.select("source[src]").first(),
+          let src = try? source.attr("src"), !src.isEmpty else { return nil }
+    return src
 }
 
 private extension String {
@@ -188,10 +210,9 @@ private extension String {
 
     func videoLinks(from document: Document?) -> [String] {
         guard let document = document,
-            let srcs = try? document.select("video[src]") else { return [] }
+            let videos = try? document.select("video") else { return [] }
 
-        let srcsStringArray: [String] = srcs.array().compactMap { try? $0.attr("src").description }
-        return srcsStringArray
+        return videos.array().compactMap(videoSource(from:))
     }
 
     func imagesLinks(from document: Document?) -> [String] {

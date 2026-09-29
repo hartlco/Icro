@@ -175,7 +175,7 @@ class ListViewModelTests: XCTestCase {
         XCTAssertNotNil(actionButton)
         if let actionButton {
             XCTAssertGreaterThanOrEqual(actionButton.frame.minY, avatarFrame.maxY)
-            XCTAssertEqual(actionButton.frame.minX, 14, accuracy: 1)
+            XCTAssertEqual(actionButton.frame.midX, avatarFrame.midX, accuracy: 1)
             XCTAssertEqual(actionButton.frame.maxY, height - 10, accuracy: 1)
             XCTAssertLessThanOrEqual(cell.attributedLabel.frame.maxY, actionButton.frame.maxY)
             XCTAssertLessThan(cell.attributedLabel.frame.height, 40,

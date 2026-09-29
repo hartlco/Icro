@@ -20,7 +20,8 @@ struct MediaGalleryView: View {
                 ForEach(media.indices, id: \.self) { index in
                     Group {
                         if media[index].isVideo {
-                            VideoPlayer(player: AVPlayer(url: media[index].url))
+                            VideoMediaPage(url: media[index].url,
+                                           isSelected: selectedIndex == index)
                         } else {
                             AsyncImage(url: media[index].url) { image in
                                 image.resizable().scaledToFit()
@@ -44,5 +45,32 @@ struct MediaGalleryView: View {
             }
         }
         .tint(.white)
+    }
+}
+
+private struct VideoMediaPage: View {
+    let url: URL
+    let isSelected: Bool
+
+    @State private var player = AVPlayer()
+
+    var body: some View {
+        VideoPlayer(player: player)
+            .onAppear {
+                if player.currentItem == nil {
+                    player.replaceCurrentItem(with: AVPlayerItem(url: url))
+                }
+                updatePlayback()
+            }
+            .onChange(of: isSelected) { _, _ in updatePlayback() }
+            .onDisappear { player.pause() }
+    }
+
+    private func updatePlayback() {
+        if isSelected {
+            player.play()
+        } else {
+            player.pause()
+        }
     }
 }
