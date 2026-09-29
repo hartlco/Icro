@@ -12,6 +12,11 @@ import HighlightedTextEditor
 import Kingfisher
 import InsertLinkView
 import PhotosUI
+import UIKit
+
+private final class ComposeEditorReference {
+    weak var textView: UITextView?
+}
 
 struct ComposeView: View {
     @ObservedObject var viewModel: ComposeViewModel
@@ -24,6 +29,17 @@ struct ComposeView: View {
     @State private var didFocusEditor = false
     @State private var showingPostError = false
     @State private var postErrorText = ""
+    @State private var editorSelection = NSRange(location: 0, length: 0)
+    @State private var editorReference = ComposeEditorReference()
+
+    private static let mentionPattern = try! NSRegularExpression(
+        pattern: "(?<![\\p{L}\\p{N}_@/])@[\\p{L}\\p{N}_.-]+"
+    )
+    private static let editorHighlightRules = [HighlightRule].markdown + [
+        HighlightRule(pattern: mentionPattern,
+                      formattingRule: TextFormattingRule(key: .foregroundColor,
+                                                         value: Style.Color.accent))
+    ]
 
     var didClose: (() -> Void)?
 
@@ -42,14 +58,24 @@ struct ComposeView: View {
                 }
                 HighlightedTextEditor(
                     text: $viewModel.text,
-                    highlightRules: .markdown
+                    highlightRules: Self.editorHighlightRules
                 )
                 .introspect { editor in
+                    editorReference.textView = editor.textView
+                    editor.textView.tintColor = Style.Color.accent
                     guard viewModel.showKeyboardOnAppear, !didFocusEditor else { return }
                     DispatchQueue.main.async {
                         guard !didFocusEditor else { return }
                         didFocusEditor = true
                         editor.textView.becomeFirstResponder()
+                    }
+                }
+                .onSelectionChange { editorSelection = $0 }
+                .onTextChange { _ in
+                    DispatchQueue.main.async {
+                        if let selection = editorReference.textView?.selectedRange {
+                            editorSelection = selection
+                        }
                     }
                 }
                 if !viewModel.images.isEmpty {
@@ -70,9 +96,18 @@ struct ComposeView: View {
                 }
             }
             .safeAreaInset(edge: .bottom, spacing: 0) {
-                keyboardInputView
-                    .padding(.horizontal, 12)
-                    .padding(.bottom, 8)
+                VStack(spacing: 8) {
+                    if let mention = activeMention {
+                        MentionSuggestionsView(
+                            authors: viewModel.mentionSuggestions(matching: mention.searchText),
+                            isLoading: viewModel.mentionsLoading,
+                            onSelect: { completeMention($0, mention: mention) }
+                        )
+                    }
+                    keyboardInputView
+                }
+                .padding(.horizontal, 12)
+                .padding(.bottom, 8)
             }
             .navigationDestination(isPresented: $insertLinkActive) {
                 insertLinkView
@@ -93,6 +128,8 @@ struct ComposeView: View {
                 }
             }
             .task { await viewModel.loadPublishingOptions() }
+            .task { await viewModel.loadFollowingCandidates() }
+            .task { await viewModel.loadReplyThreadCandidates() }
             .alert("COMPOSE_POST_ERROR_TITLE", isPresented: $showingPostError) {
                 Button("COMPOSE_POST_ERROR_OK", role: .cancel) { }
             } message: {
@@ -167,6 +204,21 @@ struct ComposeView: View {
         }
     }
 
+    private var activeMention: MentionQuery? {
+        MentionQuery.active(in: viewModel.text, selection: editorSelection)
+    }
+
+    private func completeMention(_ author: Author, mention: MentionQuery) {
+        guard let username = author.username else { return }
+        let completion = mention.completing(with: username, in: viewModel.text)
+        editorSelection = NSRange(location: completion.cursor, length: 0)
+        viewModel.text = completion.text
+        DispatchQueue.main.async {
+            editorReference.textView?.becomeFirstResponder()
+            editorReference.textView?.selectedRange = NSRange(location: completion.cursor, length: 0)
+        }
+    }
+
     var insertLinkView: InsertLinkView {
         InsertLinkView { title, url in
             insertLinkActive = false
@@ -185,6 +237,75 @@ struct ComposeView: View {
 
             viewModel.insertImage(image: .init(title: title ?? "", link: url))
         }
+    }
+}
+
+private struct MentionSuggestionsView: View {
+    let authors: [Author]
+    let isLoading: Bool
+    let onSelect: (Author) -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text("COMPOSE_MENTIONS_TITLE")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .padding(.horizontal, 12)
+                .padding(.top, 8)
+
+            if authors.isEmpty {
+                HStack(spacing: 10) {
+                    if isLoading { ProgressView() }
+                    if isLoading {
+                        Text("COMPOSE_MENTIONS_LOADING")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    } else {
+                        Text("COMPOSE_MENTIONS_EMPTY")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                    Spacer(minLength: 0)
+                }
+                .padding(.horizontal, 12)
+                .frame(height: 44)
+            } else {
+                ScrollView {
+                    LazyVStack(spacing: 0) {
+                        ForEach(authors, id: \.username) { author in
+                            Button { onSelect(author) } label: {
+                                HStack(spacing: 10) {
+                                    KFImage(author.avatar)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 36, height: 36)
+                                        .clipShape(Circle())
+                                    VStack(alignment: .leading, spacing: 1) {
+                                        Text(author.name)
+                                            .font(.subheadline.weight(.semibold))
+                                            .lineLimit(1)
+                                        Text("@\(author.username ?? "")")
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
+                                            .lineLimit(1)
+                                    }
+                                    Spacer(minLength: 0)
+                                }
+                                .padding(.horizontal, 12)
+                                .frame(height: 52)
+                                .contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                }
+                .frame(height: min(CGFloat(authors.count) * 52, 208))
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.vertical, 6)
+        .glassEffect(.regular, in: RoundedRectangle(cornerRadius: 20))
+        .shadow(color: .black.opacity(0.09), radius: 12, y: 4)
     }
 }
 

@@ -25,6 +25,9 @@
 "COMPOSE_RETRY_OPTIONS" = "Blogoptionen erneut laden";
 "COMPOSE_POST_ERROR_TITLE" = "Veröffentlichen fehlgeschlagen";
 "COMPOSE_POST_ERROR_OK" = "OK";
+"COMPOSE_MENTIONS_TITLE" = "Personen";
+"COMPOSE_MENTIONS_LOADING" = "Suche Personen…";
+"COMPOSE_MENTIONS_EMPTY" = "Keine passenden Personen";
 "DISCOVER_TOPICS_TITLE" = "Themen entdecken";
 "DISCOVER_FEATURED_TOPICS" = "Empfohlen";
 "DISCOVER_MORE_TOPICS" = "Weitere Themen";

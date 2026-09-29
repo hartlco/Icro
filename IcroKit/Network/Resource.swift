@@ -206,11 +206,15 @@ public extension Author {
         guard let username = username else {
             fatalError()
         }
+        return Author.followingResource(username: username, token: UserSettings.shared.token)
+    }
+
+    static func followingResource(username: String, token: String) -> Resource<[Author]> {
         let url = URL(string: followingURLString + username)!
         return Resource<[Author]>(
             url: url,
             httpMethod: .get,
-            authorization: .bearer(token: UserSettings.shared.token),
+            authorization: .bearer(token: token),
             parseJSON: { json in
                 guard let jsonItems = json as? [JSONDictionary] else {
                     return nil

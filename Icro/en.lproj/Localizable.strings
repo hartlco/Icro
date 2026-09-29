@@ -25,6 +25,9 @@
 "COMPOSE_RETRY_OPTIONS" = "Retry blog options";
 "COMPOSE_POST_ERROR_TITLE" = "Couldn’t publish";
 "COMPOSE_POST_ERROR_OK" = "OK";
+"COMPOSE_MENTIONS_TITLE" = "People";
+"COMPOSE_MENTIONS_LOADING" = "Finding people…";
+"COMPOSE_MENTIONS_EMPTY" = "No matching people";
 "DISCOVER_TOPICS_TITLE" = "Explore topics";
 "DISCOVER_FEATURED_TOPICS" = "Featured";
 "DISCOVER_MORE_TOPICS" = "More topics";

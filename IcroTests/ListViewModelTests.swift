@@ -175,8 +175,11 @@ class ListViewModelTests: XCTestCase {
         XCTAssertNotNil(actionButton)
         if let actionButton {
             XCTAssertGreaterThanOrEqual(actionButton.frame.minY, avatarFrame.maxY)
-            XCTAssertGreaterThan(actionButton.frame.minX, avatarFrame.maxX)
-            XCTAssertEqual(actionButton.frame.maxX, width - 14, accuracy: 1)
+            XCTAssertEqual(actionButton.frame.minX, 14, accuracy: 1)
+            XCTAssertEqual(actionButton.frame.maxY, height - 10, accuracy: 1)
+            XCTAssertLessThanOrEqual(cell.attributedLabel.frame.maxY, actionButton.frame.maxY)
+            XCTAssertLessThan(cell.attributedLabel.frame.height, 40,
+                              "A short post should keep its natural text height")
         }
     }
 
@@ -199,6 +202,84 @@ class ListViewModelTests: XCTestCase {
 
         let dateFrame = cell.dateLabel.convert(cell.dateLabel.bounds, to: cell.contentView)
         XCTAssertEqual(dateFrame.maxX, width - 14, accuracy: 1)
+    }
+}
+
+final class ComposeMentionTests: XCTestCase {
+    func testActiveMentionUsesCaretAndReplacesFullToken() {
+        let text = "Hello @martin today"
+        let query = MentionQuery.active(in: text, selection: NSRange(location: 10, length: 0))
+
+        XCTAssertEqual(query?.searchText, "mar")
+        XCTAssertEqual(query?.range, NSRange(location: 6, length: 7))
+        let completion = query!.completing(with: "mark", in: text)
+        XCTAssertEqual(completion.text, "Hello @mark today")
+        XCTAssertEqual(completion.cursor, 11)
+    }
+
+    func testMentionRequiresTokenBoundaryAndPreservesUnicodeCursor() {
+        XCTAssertNil(MentionQuery.active(in: "test@example.com", selection: NSRange(location: 16, length: 0)))
+        XCTAssertNil(MentionQuery.active(in: "https://micro.blog/@me", selection: NSRange(location: 22, length: 0)))
+        XCTAssertNil(MentionQuery.active(in: "Hi @ma", selection: NSRange(location: 3, length: 2)))
+
+        let text = "Hi 👋 @jör"
+        let query = MentionQuery.active(in: text, selection: NSRange(location: (text as NSString).length, length: 0))!
+        let completion = query.completing(with: "jörg", in: text)
+        XCTAssertEqual(completion.text, "Hi 👋 @jörg ")
+        XCTAssertEqual(completion.cursor, (completion.text as NSString).length)
+    }
+
+    @MainActor
+    func testFollowingMentionsMatchHandleOrDisplayName() async {
+        let settings = makeSettings()
+        let authors = [makeAuthor("anna", name: "Anna"),
+                       makeAuthor("marta", name: "Marta"),
+                       makeAuthor("tom", name: "Martin Tom"),
+                       makeAuthor("me", name: "Myself")]
+        let client = MockClient<[Author]>(returnedData: nil, returnedResourceResult: .success(authors))
+        let viewModel = ComposeViewModel(mode: .post, userSettings: settings, client: client)
+
+        await viewModel.loadFollowingCandidates()
+
+        XCTAssertEqual(viewModel.mentionSuggestions(matching: "mar").compactMap(\.username), ["marta", "tom"])
+        XCTAssertFalse(viewModel.mentionSuggestions(matching: "").compactMap(\.username).contains("me"))
+        XCTAssertEqual(Author.followingResource(username: "me", token: "test-token")
+            .urlRequest.value(forHTTPHeaderField: "Authorization"), "Bearer test-token")
+    }
+
+    @MainActor
+    func testReplyMentionsIncludeConversationParticipants() async {
+        let settings = makeSettings()
+        let repliedTo = makeItem("1", author: makeAuthor("anna", name: "Anna"))
+        let response = ItemResponse(author: nil, items: [
+            makeItem("2", author: makeAuthor("marta", name: "Marta")),
+            makeItem("3", author: makeAuthor("anna", name: "Anna")),
+            makeItem("4", author: makeAuthor("me", name: "Myself"))
+        ])
+        let client = MockClient<ItemResponse>(returnedData: nil, returnedResourceResult: .success(response))
+        let viewModel = ComposeViewModel(mode: .reply(item: repliedTo), userSettings: settings, client: client)
+
+        await viewModel.loadReplyThreadCandidates()
+
+        XCTAssertEqual(viewModel.mentionSuggestions(matching: "").compactMap(\.username), ["anna", "marta"])
+    }
+
+    private func makeSettings() -> UserSettings {
+        let settings = UserSettings(userDefaults: UserDefaults(suiteName: "icro-mentions-\(UUID().uuidString)")!)
+        settings.username = "me"
+        settings.token = "test-token"
+        return settings
+    }
+
+    private func makeAuthor(_ username: String, name: String) -> Author {
+        Author(name: name, url: nil, avatar: URL(string: "https://example.com/avatar.jpg")!,
+               username: username, bio: nil, followingCount: nil, isFollowing: nil)
+    }
+
+    private func makeItem(_ id: String, author: Author) -> Item {
+        Item(id: id, htmlContent: HTMLContent(rawHTMLString: "Post", stylePreference: .init(useMediumContent: false)),
+             url: URL(string: "https://example.com/\(id)")!, date_published: Date(),
+             author: author, isFavorite: false)
     }
 }
 

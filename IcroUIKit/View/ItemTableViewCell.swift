@@ -166,7 +166,7 @@ public final class ItemTableViewCell: UITableViewCell {
         attributedLabel.set(attributedText: content)
         let hasText = !content.string.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         attributedLabel.isHidden = !hasText
-        contentTopConstraint.constant = hasText ? 8 : 0
+        contentTopConstraint.constant = hasText ? 4 : 0
         mediaTopConstraint.constant = hasText ? 8 : 4
     }
 
@@ -203,8 +203,8 @@ public final class ItemTableViewCell: UITableViewCell {
         mediaTopConstraint = imageCollectionView.topAnchor.constraint(equalTo: attributedLabel.bottomAnchor, constant: 8)
         mediaTopConstraint.priority = .defaultHigh
         collectionViewHeightConstraint = imageCollectionView.heightAnchor.constraint(equalToConstant: Layout.singleMediaHeight)
-        textBottomConstraint = attributedLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -2)
-        mediaBottomConstraint = imageCollectionView.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -2)
+        textBottomConstraint = attributedLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -10)
+        mediaBottomConstraint = imageCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
 
         NSLayoutConstraint.activate([
             titleStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Layout.inset),
@@ -213,10 +213,10 @@ public final class ItemTableViewCell: UITableViewCell {
             avatarImageView.widthAnchor.constraint(equalToConstant: Layout.avatarSize),
             avatarImageView.heightAnchor.constraint(equalToConstant: Layout.avatarSize),
             actionButton.topAnchor.constraint(greaterThanOrEqualTo: avatarImageView.bottomAnchor, constant: 2),
-            actionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Layout.inset),
+            actionButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Layout.inset),
             actionButton.widthAnchor.constraint(equalToConstant: 44),
-            actionButton.heightAnchor.constraint(equalToConstant: 36),
-            actionButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4),
+            actionButton.heightAnchor.constraint(equalToConstant: 32),
+            actionButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             contentTopConstraint,
             attributedLabel.leadingAnchor.constraint(equalTo: namesStack.leadingAnchor),
             attributedLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Layout.inset),
