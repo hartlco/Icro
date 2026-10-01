@@ -18,7 +18,6 @@ struct SettingsContentView: View {
     var body: some View {
         NavigationStack {
             Form {
-                AppearanceSection(store: store)
                 AccountSection(settingsNavigator: settingsNavigator)
                 OtherSection(settingsNavigator: settingsNavigator, store: store)
                 TipJarSection()
@@ -73,20 +72,6 @@ struct AccountSection: View {
             }, label: {
                 Text("SETTINGSVIEWCONTROLLER_LOGOUTBUTTON_TITLE")
             })
-        }
-    }
-}
-
-struct AppearanceSection: View {
-    @ObservedObject var store: SettingsViewModel
-
-    var body: some View {
-        return Section(header: Text("Appearance")
-            .font(.headline)
-            .fontWeight(.bold)) {
-                Toggle(isOn: $store.useMediumContentFont) {
-                    Text("Use bolder content font")
-                }
         }
     }
 }

@@ -1,46 +1,103 @@
 {
-  "fill" : {
-    "automatic-gradient" : "extended-gray:0.97000,1.00000"
-  },
+  "fill-specializations" : [
+    {
+      "value" : {
+        "automatic-gradient" : "extended-gray:0.97000,1.00000"
+      }
+    },
+    {
+      "appearance" : "dark",
+      "value" : {
+        "automatic-gradient" : "extended-srgb:0.17300,0.17300,0.18000,1.00000"
+      }
+    }
+  ],
   "groups" : [
     {
       "layers" : [
         {
-          "fill" : { "solid" : "extended-srgb:0.72700,0.35200,0.49300,0.94000" },
+          "fill" : {
+            "solid" : "extended-srgb:0.72700,0.35200,0.49300,0.94000"
+          },
           "glass" : true,
           "image-name" : "01-plum.svg",
-          "name" : "Plum"
+          "name" : "Plum",
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              8,
+              0
+            ]
+          }
         }
       ],
-      "shadow" : { "kind" : "neutral", "opacity" : 0.35 },
-      "translucency" : { "enabled" : true, "value" : 0.62 }
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.35
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.48
+      }
     },
     {
       "layers" : [
         {
-          "fill" : { "solid" : "extended-srgb:0.99200,0.43200,0.48000,0.94000" },
+          "fill" : {
+            "solid" : "extended-srgb:0.99200,0.43200,0.48000,0.94000"
+          },
           "glass" : true,
           "image-name" : "02-coral.svg",
-          "name" : "Coral"
+          "name" : "Coral",
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              -1,
+              0
+            ]
+          }
         }
       ],
-      "shadow" : { "kind" : "neutral", "opacity" : 0.35 },
-      "translucency" : { "enabled" : true, "value" : 0.62 }
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.35
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.48
+      }
     },
     {
       "layers" : [
         {
-          "fill" : { "solid" : "extended-srgb:1.00000,0.63300,0.48500,0.94000" },
+          "fill" : {
+            "solid" : "extended-srgb:1.00000,0.63300,0.48500,0.94000"
+          },
           "glass" : true,
           "image-name" : "03-peach.svg",
-          "name" : "Peach"
+          "name" : "Peach",
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              -10,
+              0
+            ]
+          }
         }
       ],
-      "shadow" : { "kind" : "neutral", "opacity" : 0.35 },
-      "translucency" : { "enabled" : true, "value" : 0.62 }
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.35
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.48
+      }
     }
   ],
   "supported-platforms" : {
-    "squares" : [ "iOS" ]
+    "squares" : [
+      "iOS"
+    ]
   }
 }

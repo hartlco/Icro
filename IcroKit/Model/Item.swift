@@ -4,7 +4,6 @@
 //
 
 import Foundation
-import Settings
 import Style
 
 let dateFormatter = ISO8601DateFormatter()
@@ -36,7 +35,7 @@ public class Item: Codable {
     public let htmlContent: HTMLContent
 
     public lazy var content: NSAttributedString = {
-        let preference = StylePreference(useMediumContent: Settings.UserSettings.shared.useMediumContentFont)
+        let preference = StylePreference(useMediumContent: false)
         return htmlContent.attributedStringWithoutImages(stylePreference: preference) ?? NSAttributedString(string: "")
     }()
 
@@ -83,7 +82,8 @@ public class Item: Codable {
     }
 
     public func resetContent() {
-        content = htmlContent.attributedStringWithoutImages() ?? NSAttributedString(string: "")
+        content = htmlContent.attributedStringWithoutImages(stylePreference: .init(useMediumContent: false))
+            ?? NSAttributedString(string: "")
         accessibilityContent = accessibilityLabel(for: self, attributedContent: content)
     }
 }
@@ -121,7 +121,7 @@ extension Item {
         self.init(id: id,
                   htmlContent: HTMLContent(
                     rawHTMLString: content_html,
-                    stylePreference: .init(useMediumContent: Settings.UserSettings.shared.useMediumContentFont)
+                    stylePreference: .init(useMediumContent: false)
                   ),
                   url: url,
                   date_published: date,
@@ -175,7 +175,7 @@ extension Item {
     static var mock: Item {
         let htmlContent = HTMLContent(
             rawHTMLString: "Hello, this is a <b>test</b>",
-            stylePreference: .init(useMediumContent: true)
+            stylePreference: .init(useMediumContent: false)
         )
 
         let author = Author(

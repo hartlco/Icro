@@ -35,7 +35,7 @@ struct MediaGalleryView: View {
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: media.count > 1 ? .automatic : .never))
-            .background(.black)
+            .background(Color(uiColor: .secondarySystemBackground))
             .navigationTitle("\(selectedIndex + 1) of \(media.count)")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -44,7 +44,7 @@ struct MediaGalleryView: View {
                 }
             }
         }
-        .tint(.white)
+        .tint(Color(uiColor: .label))
     }
 }
 

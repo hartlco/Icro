@@ -107,8 +107,7 @@ final class AppNavigator {
     func setupSettingsWindow() {
         let settingsNavigator = SettingsNavigator(presentedController: tabBarViewController,
                                                   appNavigator: self)
-        let viewModel = SettingsViewModel(userSettings: userSettings,
-                                          canSendMail: MFMailComposeViewController.canSendMail())
+        let viewModel = SettingsViewModel(canSendMail: MFMailComposeViewController.canSendMail())
 
         let settingsContentView = SettingsContentView(dismissAction: {
 
@@ -149,8 +148,7 @@ final class AppNavigator {
 
         let settingsNavigator = SettingsNavigator(presentedController: presentedController,
                                                   appNavigator: self)
-        let viewModel = SettingsViewModel(userSettings: userSettings,
-                                          canSendMail: MFMailComposeViewController.canSendMail())
+        let viewModel = SettingsViewModel(canSendMail: MFMailComposeViewController.canSendMail())
 
         let settingsContentView = SettingsContentView(dismissAction: {
             presentedController.dismiss(animated: true, completion: nil)
