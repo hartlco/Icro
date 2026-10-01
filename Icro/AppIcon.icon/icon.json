@@ -1,6 +1,6 @@
 {
   "fill" : {
-    "automatic-gradient" : "extended-srgb:0.21000,0.13000,0.20500,1.00000"
+    "automatic-gradient" : "extended-gray:0.97000,1.00000"
   },
   "groups" : [
     {
@@ -13,7 +13,7 @@
         }
       ],
       "shadow" : { "kind" : "neutral", "opacity" : 0.35 },
-      "translucency" : { "enabled" : true, "value" : 0.48 }
+      "translucency" : { "enabled" : true, "value" : 0.62 }
     },
     {
       "layers" : [
@@ -25,7 +25,7 @@
         }
       ],
       "shadow" : { "kind" : "neutral", "opacity" : 0.35 },
-      "translucency" : { "enabled" : true, "value" : 0.48 }
+      "translucency" : { "enabled" : true, "value" : 0.62 }
     },
     {
       "layers" : [
@@ -37,7 +37,7 @@
         }
       ],
       "shadow" : { "kind" : "neutral", "opacity" : 0.35 },
-      "translucency" : { "enabled" : true, "value" : 0.48 }
+      "translucency" : { "enabled" : true, "value" : 0.62 }
     }
   ],
   "supported-platforms" : {

@@ -80,9 +80,12 @@ public extension LoadingViewController where Self: UIViewController {
         case .forever: showsSpinner = true
         case .seconds: showsSpinner = false
         }
-        let loadingView = LoadingView(text: text, color: color, showsSpinner: showsSpinner)
         guard let ownView = view else { return }
         let host: UIView = position == .bottom ? (tabBarController?.view ?? ownView) : ownView
+        let loadingView = LoadingView(text: text,
+                                      color: color,
+                                      glassTintColor: host.tintColor,
+                                      showsSpinner: showsSpinner)
         host.layoutIfNeeded()
         host.addSubview(loadingView)
 
@@ -143,9 +146,9 @@ public enum LoadingIndicatorDismissalTime {
 }
 
 private final class LoadingView: UIVisualEffectView {
-    init(text: String, color: UIColor, showsSpinner: Bool) {
+    init(text: String, color: UIColor, glassTintColor: UIColor, showsSpinner: Bool) {
         let glass = UIGlassEffect(style: .regular)
-        glass.tintColor = color.withAlphaComponent(0.12)
+        glass.tintColor = glassTintColor.withAlphaComponent(0.35)
         super.init(effect: glass)
 
         translatesAutoresizingMaskIntoConstraints = false

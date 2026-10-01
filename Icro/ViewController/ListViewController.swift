@@ -543,7 +543,7 @@ private final class UnreadView: UIControl {
 
     private let arrowView: UIImageView = {
         let view = UIImageView(image: UIImage(systemName: "arrow.up"))
-        view.tintColor = .label
+        view.tintColor = Color.main
         view.contentMode = .scaleAspectFit
         view.setContentHuggingPriority(.required, for: .horizontal)
         return view
@@ -561,6 +561,7 @@ private final class UnreadView: UIControl {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
         accessibilityTraits = .button
+        updateGlassTint()
 
         let stack = UIStackView(arrangedSubviews: [arrowView, unreadLabel])
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -592,6 +593,16 @@ private final class UnreadView: UIControl {
         unreadLabel.text = title
         accessibilityLabel = title
         invalidateIntrinsicContentSize()
+    }
+
+    override func tintColorDidChange() {
+        super.tintColorDidChange()
+        updateGlassTint()
+    }
+
+    private func updateGlassTint() {
+        (glassView.effect as? UIGlassEffect)?.tintColor = tintColor.withAlphaComponent(0.35)
+        arrowView.tintColor = tintColor
     }
 
     required init?(coder: NSCoder) {

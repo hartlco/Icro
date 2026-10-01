@@ -304,7 +304,7 @@ private struct MentionSuggestionsView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 6)
-        .glassEffect(.regular, in: RoundedRectangle(cornerRadius: 20))
+        .glassEffect(.regular.tint(Style.Color.main.swiftUIColor), in: RoundedRectangle(cornerRadius: 20))
         .shadow(color: .black.opacity(0.09), radius: 12, y: 4)
     }
 }
