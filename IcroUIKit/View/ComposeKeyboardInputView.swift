@@ -8,6 +8,7 @@
 
 import Combine
 import SwiftUI
+import Style
 
 final class ComposeKeyboardInputViewModel: ObservableObject {
     @Published var characterCountText = ""
@@ -122,8 +123,8 @@ struct ComposeKeyboardInputView: View {
         .foregroundStyle(.primary)
         .buttonStyle(.plain)
         .padding(.horizontal, 8)
-        .padding(.vertical, 4)
-        .glassEffect(.regular, in: Capsule())
+        .padding(.vertical, 6)
+        .glassEffect(.regular.tint(Style.Color.main.swiftUIColor), in: Capsule())
     }
 }
 

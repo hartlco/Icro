@@ -136,26 +136,31 @@ private struct ProfileActions: View {
                     Button(action: { followPressed?() }) {
                         Label("PROFILEVIEWCONFIGURATOR_UNFOLLOWBUTTON_TITLE", systemImage: "person.crop.circle.badge.checkmark")
                             .frame(maxWidth: .infinity)
+                            .frame(minHeight: 52)
                     }
-                    .buttonStyle(.glass)
+                    .buttonStyle(.plain)
+                    .glassEffect(.regular.tint(Style.Color.main.swiftUIColor).interactive(), in: Capsule())
                 } else {
                     Button(action: { followPressed?() }) {
                         Label("PROFILEVIEWCONFIGURATOR_FOLLOWBUTTON_TITLE", systemImage: "person.badge.plus")
                             .frame(maxWidth: .infinity)
+                            .frame(minHeight: 52)
                     }
-                    .buttonStyle(.glassProminent)
-                    .tint(Style.Color.main.swiftUIColor)
+                    .buttonStyle(.plain)
+                    .glassEffect(.regular.tint(Style.Color.main.swiftUIColor).interactive(), in: Capsule())
                 }
             }
 
             Button(action: { followingPressed?() }) {
                 Label(followingTitle, systemImage: "person.2")
                     .frame(maxWidth: .infinity)
+                    .frame(minHeight: 52)
             }
-            .buttonStyle(.glass)
+            .buttonStyle(.plain)
+            .glassEffect(.regular.tint(Style.Color.main.swiftUIColor).interactive(), in: Capsule())
         }
         .font(.subheadline.weight(.semibold))
-        .controlSize(.regular)
+        .foregroundStyle(.primary)
     }
 
     private var followingTitle: String {

@@ -529,13 +529,13 @@ private final class EditableTableViewDiffableDataSource: UITableViewDiffableData
 
 private final class UnreadView: UIControl {
     override var intrinsicContentSize: CGSize {
-        CGSize(width: unreadLabel.intrinsicContentSize.width + 71, height: 40)
+        CGSize(width: unreadLabel.intrinsicContentSize.width + 71, height: 48)
     }
 
     private let glassView: UIVisualEffectView = {
         let view = UIVisualEffectView(effect: UIGlassEffect(style: .regular))
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 24
         view.clipsToBounds = true
         view.isUserInteractionEnabled = false
         return view
@@ -582,7 +582,7 @@ private final class UnreadView: UIControl {
             stack.centerYAnchor.constraint(equalTo: glassView.contentView.centerYAnchor),
             stack.topAnchor.constraint(greaterThanOrEqualTo: glassView.contentView.topAnchor, constant: 8),
             stack.bottomAnchor.constraint(lessThanOrEqualTo: glassView.contentView.bottomAnchor, constant: -8),
-            heightAnchor.constraint(greaterThanOrEqualToConstant: 40)
+            heightAnchor.constraint(greaterThanOrEqualToConstant: 48)
         ])
     }
 
@@ -602,7 +602,7 @@ private final class UnreadView: UIControl {
 
     private func updateGlassTint() {
         (glassView.effect as? UIGlassEffect)?.tintColor = tintColor.withAlphaComponent(0.35)
-        arrowView.tintColor = tintColor
+        arrowView.tintColor = .label
     }
 
     required init?(coder: NSCoder) {

@@ -341,9 +341,9 @@ private struct PostingOptionsView: View {
                         Image(systemName: "globe")
                     }
                     .padding(.horizontal, 14)
-                    .frame(minHeight: 40)
+                    .frame(minHeight: 48)
                 }
-                .glassEffect(.regular, in: Capsule())
+                .glassEffect(.regular.tint(Style.Color.main.swiftUIColor).interactive(), in: Capsule())
 
                 Menu {
                     ForEach(viewModel.availableCategories, id: \.self) { category in
@@ -369,10 +369,10 @@ private struct PostingOptionsView: View {
                         Image(systemName: "folder")
                     }
                     .padding(.horizontal, 14)
-                    .frame(minHeight: 40)
+                    .frame(minHeight: 48)
                 }
                 .disabled(viewModel.availableCategories.isEmpty)
-                .glassEffect(.regular, in: Capsule())
+                .glassEffect(.regular.tint(Style.Color.main.swiftUIColor).interactive(), in: Capsule())
 
                 Button {
                     viewModel.isDraft.toggle()
@@ -384,19 +384,20 @@ private struct PostingOptionsView: View {
                     }
                 }
                 .padding(.horizontal, 14)
-                .frame(minHeight: 40)
-                .glassEffect(.regular, in: Capsule())
+                .frame(minHeight: 48)
+                .glassEffect(.regular.tint(Style.Color.main.swiftUIColor).interactive(), in: Capsule())
 
                 if viewModel.publishingOptionsFailed {
                     Button("COMPOSE_RETRY_OPTIONS") {
                         Task { await viewModel.loadPublishingOptions() }
                     }
                     .padding(.horizontal, 14)
-                    .frame(minHeight: 40)
-                    .glassEffect(.regular, in: Capsule())
+                    .frame(minHeight: 48)
+                    .glassEffect(.regular.tint(Style.Color.main.swiftUIColor).interactive(), in: Capsule())
                 }
             }
             .font(.subheadline)
+            .foregroundStyle(.primary)
             .buttonStyle(.plain)
             .padding(.horizontal, 12)
             .padding(.vertical, 4)
