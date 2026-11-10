@@ -69,21 +69,7 @@ playground.xcworkspace
 # Package.pins
 .build/
 
-# CocoaPods - Refactored to standalone file
-
 # Carthage - Refactored to standalone file
-
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
-
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots
-fastlane/test_output
 
 ### Xcode ###
 # Xcode
@@ -103,7 +89,11 @@ fastlane/test_output
 *.xcbkptlist
 xcuserstate
 
-# Fastlane
+# Local files from previous releases
 fastlane/Appfile
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
 /BAA6SVWYPF.json
 /fastlane/BAA6SVWYPF.json

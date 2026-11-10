@@ -50,7 +50,6 @@
 		5BA6D17F20884E7C00F484B2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D17E20884E7C00F484B2 /* LoginViewModel.swift */; };
 		5BA6D181208904D300F484B2 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6D180208904D300F484B2 /* AppNavigator.swift */; };
 		5BB3E470226C514C00C1B6BB /* IcroScreenshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB3E46F226C514C00C1B6BB /* IcroScreenshotsTests.swift */; };
-		5BB3E478226C518100C1B6BB /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB3E477226C518000C1B6BB /* SnapshotHelper.swift */; };
 		5BB73F0C212C9E0B00120FAB /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB73F0B212C9E0B00120FAB /* ListViewModelTests.swift */; };
 		5BBC6704218EB0150090629C /* LoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC6702218EB0150090629C /* LoadMoreTableViewCell.swift */; };
 		5BC1384721C639160040353C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */; };
@@ -59,7 +58,6 @@
 		5BE92EF622D1BAAD0048E8F1 /* AppDelegateComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE92EF522D1BAAD0048E8F1 /* AppDelegateComponent */; };
 		5BF2DAA6228802000055240D /* UserDefaultsMigrationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2DAA5228802000055240D /* UserDefaultsMigrationComponent.swift */; };
 		5BFCB8F6232E835F008D36E1 /* NotificationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFCB8F5232E835F008D36E1 /* NotificationComponent.swift */; };
-		8DCD1F043AA7A42B38373800 /* Pods_IcroScreenshotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4216F55176FDD95FB7B918F8 /* Pods_IcroScreenshotsTests.framework */; };
 		BF707E742131C45600506E64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF707E762131C45600506E64 /* Localizable.strings */; };
 		C5023CB7274E2F5C0034BDC9 /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = C5023CB6274E2F5C0034BDC9 /* Client */; };
 		C5023CB9274E2F5C0034BDC9 /* InsertLinkView in Frameworks */ = {isa = PBXBuildFile; productRef = C5023CB8274E2F5C0034BDC9 /* InsertLinkView */; };
@@ -215,11 +213,6 @@
 
 /* Begin PBXFileReference section */
 		B11D1C882900000000000012 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
-		13B54E7197572F75267B493C /* Pods_IcroKit_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IcroKit_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		14B873910DAE1E815D6F7A22 /* Pods_IcroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IcroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		34B8B79BF11C171B505D9E7F /* Pods_Icro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4216F55176FDD95FB7B918F8 /* Pods_IcroScreenshotsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IcroScreenshotsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		51AA34E84478019BAD74376C /* Pods_IcroUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IcroUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B01A7BF22E8313200D420BD /* UICollectionView+Dequeueable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeueable.swift"; sourceTree = "<group>"; };
 		5B01CBC92168D6A90007E01D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B01CBCD2168D6AA0007E01D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -263,7 +256,6 @@
 		5B4639EB2169C36500200D8F /* ImageViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewItem.xib; sourceTree = "<group>"; };
 		5B4895F122B1603E00CF08C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5B4DF0F021AA8818008CEB58 /* ListViewModelListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelListType.swift; sourceTree = "<group>"; };
-		5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-Icro-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Icro/Pods-Icro-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
 		5B4E4188208B08CE00FC610A /* MicropubRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicropubRequestController.swift; sourceTree = "<group>"; };
 		5B4E418A208B31BC00FC610A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewModel.swift; path = ViewModel/SettingsViewModel.swift; sourceTree = "<group>"; };
 		5B51109B20823C1E00C24807 /* Icro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Icro-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -309,7 +301,6 @@
 		5BB3E46D226C514C00C1B6BB /* IcroScreenshotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IcroScreenshotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB3E46F226C514C00C1B6BB /* IcroScreenshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcroScreenshotsTests.swift; sourceTree = "<group>"; };
 		5BB3E471226C514C00C1B6BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BB3E477226C518000C1B6BB /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		5BB73F0B212C9E0B00120FAB /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		5BBC6702218EB0150090629C /* LoadMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadMoreTableViewCell.swift; path = View/LoadMoreTableViewCell.swift; sourceTree = "<group>"; };
 		5BC1384021C632F20040353C /* Icro-Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Icro-Share.entitlements"; sourceTree = "<group>"; };
@@ -336,9 +327,6 @@
 		5BF663802189628300ABA671 /* DiscoveryCategoryResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryResource.swift; sourceTree = "<group>"; };
 		5BF663842189673100ABA671 /* DiscoveryCategoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCategoryStore.swift; sourceTree = "<group>"; };
 		5BFCB8F5232E835F008D36E1 /* NotificationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponent.swift; sourceTree = "<group>"; };
-		67999FE2A9BB198E3B64937D /* Pods_IcroKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IcroKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D2709F418E0D6293A75A02B /* Pods_Icro_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Share.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2175C9DAAFEF9FA508D0A47 /* Pods_Icro_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF71E43E214287CF007E88BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C5282B922764AC47004F5106 /* ComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeView.swift; sourceTree = "<group>"; };
 		C5443C632758AF1500F5BB1C /* LoginOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginOverlayView.swift; path = View/LoginOverlayView.swift; sourceTree = "<group>"; };
@@ -367,8 +355,6 @@
 		C5FA2ACF1EB4482C006DEB40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5FA2AF51EB449BC006DEB40 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		C5FA2B001EB45213006DEB40 /* HTMLContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLContent.swift; sourceTree = "<group>"; };
-		CC2D196BF2B2C750700D818D /* Pods_Icro_IcroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_IcroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD791585584689A5DBBBA5F4 /* Pods_Icro_IcroKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Icro_IcroKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,7 +387,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DCD1F043AA7A42B38373800 /* Pods_IcroScreenshotsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,16 +429,6 @@
 			children = (
 				5B841ECD22E832F700CDA80C /* libiconv.tbd */,
 				5B38476021FE035900F082AD /* StoreKit.framework */,
-				14B873910DAE1E815D6F7A22 /* Pods_IcroTests.framework */,
-				FD791585584689A5DBBBA5F4 /* Pods_Icro_IcroKit.framework */,
-				13B54E7197572F75267B493C /* Pods_IcroKit_Mac.framework */,
-				34B8B79BF11C171B505D9E7F /* Pods_Icro.framework */,
-				CC2D196BF2B2C750700D818D /* Pods_Icro_IcroTests.framework */,
-				B2175C9DAAFEF9FA508D0A47 /* Pods_Icro_Mac.framework */,
-				7D2709F418E0D6293A75A02B /* Pods_Icro_Share.framework */,
-				67999FE2A9BB198E3B64937D /* Pods_IcroKit.framework */,
-				51AA34E84478019BAD74376C /* Pods_IcroUIKit.framework */,
-				4216F55176FDD95FB7B918F8 /* Pods_IcroScreenshotsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -694,7 +669,6 @@
 		5BB3E46E226C514C00C1B6BB /* IcroScreenshotsTests */ = {
 			isa = PBXGroup;
 			children = (
-				5BB3E477226C518000C1B6BB /* SnapshotHelper.swift */,
 				5BB3E46F226C514C00C1B6BB /* IcroScreenshotsTests.swift */,
 				5BB3E471226C514C00C1B6BB /* Info.plist */,
 			);
@@ -857,7 +831,6 @@
 				C5FA2ACA1EB4482C006DEB40 /* Assets.xcassets */,
 				C5FA2ACC1EB4482C006DEB40 /* LaunchScreen.storyboard */,
 				C5FA2ACF1EB4482C006DEB40 /* Info.plist */,
-				5B4E4186208AF8C700FC610A /* Pods-Icro-acknowledgements.plist */,
 				BF707E762131C45600506E64 /* Localizable.strings */,
 			);
 			path = Icro;
@@ -1240,7 +1213,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BB3E470226C514C00C1B6BB /* IcroScreenshotsTests.swift in Sources */,
-				5BB3E478226C518100C1B6BB /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

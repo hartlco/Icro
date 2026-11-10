@@ -6,38 +6,32 @@
 import XCTest
 
 class IcroScreenshotsTests: XCTestCase {
-    static let accessToken = "ACCESS_TOKEN_REPLACE"
-
-    override func setUp() {
-        let app = XCUIApplication()
-        setupSnapshot(app)
-        app.launch()
-    }
-
     func testScreenshots() {
+        continueAfterFailure = false
         let app = XCUIApplication()
-
-        if app.buttons["Login with access token"].exists {
-            login()
-        }
+        app.launch()
+        let tabBar = app.tabBars.firstMatch
+        let timeline = tabBar.buttons["Timeline"]
+        XCTAssertTrue(timeline.waitForExistence(timeout: 10))
+        timeline.tap()
+        XCTAssertFalse(app.buttons["Log In"].exists, "Sign in to Micro.blog on this simulator before running Screenshots.")
 
         sleep(15)
-        snapshot("01Timeline")
+        attachScreenshot(named: "01Timeline")
 
-        let tabBarsQuery = XCUIApplication().tabBars
-        tabBarsQuery.buttons["Discover"].tap()
+        tabBar.buttons["Discover"].tap()
         sleep(15)
-        snapshot("02Discover")
-        tabBarsQuery.buttons["Profile"].tap()
+        attachScreenshot(named: "02Discover")
+
+        tabBar.buttons["Profile"].tap()
         sleep(15)
-        snapshot("03Profile")
+        attachScreenshot(named: "03Profile")
     }
 
-    func login() {
-        let app = XCUIApplication()
-        let mailAddressOrAccessTokenTextField = app.textFields["Mail address or access token"]
-        mailAddressOrAccessTokenTextField.tap()
-        mailAddressOrAccessTokenTextField.typeText(IcroScreenshotsTests.accessToken)
-        app.buttons["Login with access token"].tap()
+    private func attachScreenshot(named name: String) {
+        let attachment = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        attachment.name = name
+        attachment.lifetime = .keepAlways
+        add(attachment)
     }
 }

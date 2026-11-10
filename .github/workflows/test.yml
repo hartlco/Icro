@@ -4,18 +4,24 @@ on: [push, pull_request]
 
 jobs:
   build:
-
-    runs-on: macos-11
+    runs-on: xcode-27
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Bundle Install
-      run: bundle install
-    - name: Install Danger
-      run: brew install danger/tap/danger-js 
-    - name: Run Danger
-      run: danger ci
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Build and test
-      run: bundle exec fastlane tests
+      - uses: actions/checkout@v7
+      - name: Build and test
+        run: >-
+          xcodebuild test
+          -workspace Icro.xcworkspace
+          -scheme Icro
+          -testPlan Icro
+          -destination 'platform=iOS Simulator,name=iPhone 18 Pro,OS=latest'
+          -parallel-testing-enabled NO
+          CODE_SIGNING_ALLOWED=NO
+      - name: Run Danger
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        run: |
+          brew install danger/tap/danger-js
+          danger ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
